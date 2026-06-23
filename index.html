@@ -168,6 +168,14 @@ body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; b
 .manual-add-row { padding: 12px 18px; border-top: 1px solid #f0f0f0; }
 
 .hidden { display: none !important; }
+.merge-modal-overlay { position: fixed; inset: 0; background: rgba(0,0,0,.45); z-index: 1000; display: flex; align-items: center; justify-content: center; }
+.merge-modal { background: #fff; border-radius: 14px; padding: 28px 28px 22px; max-width: 420px; width: calc(100% - 40px); box-shadow: 0 20px 60px rgba(0,0,0,.2); }
+.merge-modal-title { font-size: 15px; font-weight: 700; margin-bottom: 8px; }
+.merge-modal-body { font-size: 13px; color: #3a3a3c; line-height: 1.55; margin-bottom: 20px; }
+.merge-modal-name { font-weight: 600; color: #1a1a2e; }
+.merge-modal-conv { background: #f0f0f5; border-radius: 8px; padding: 10px 12px; margin: 10px 0; font-size: 12px; color: #3a3a3c; }
+.merge-modal-conv strong { display: block; font-size: 13px; margin-bottom: 2px; }
+.merge-modal-actions { display: flex; gap: 8px; justify-content: flex-end; }
 </style>
 </head>
 <body>
@@ -235,14 +243,17 @@ function deleteManualEntry(key, id) {
 function getManualStats(key) {
   const entries = getManualEntries(key);
   const s = { opgelost:0, brandmeester:0, afkoop:0, terugbel:0, geenDekking:0 };
+  let count = 0;
   entries.forEach(e => {
+    if (e.gelinktMetGesprek) return; // merged: skip stats
+    count++;
     if (e.uitkomst === 'outcome-opgelost' || e.uitkomst === 'outcome-verkeerd') s.opgelost++;
     else if (e.uitkomst === 'outcome-brandmeester') s.brandmeester++;
     else if (e.uitkomst === 'outcome-afkoop') s.afkoop++;
     else if (e.uitkomst === 'outcome-terugbel') s.terugbel++;
     else if (e.uitkomst === 'outcome-geen-dekking') s.geenDekking++;
   });
-  return { count: entries.length, stats: s };
+  return { count, stats: s };
 }
 function mergeStats(granolaStats, manualStats) {
   return {
@@ -262,23 +273,66 @@ function onManualOutcomeChange(key) {
   const row = document.getElementById('manual-schadenr-row-' + key);
   if (row) row.style.display = (v === 'outcome-afkoop' || v === 'outcome-brandmeester') ? '' : 'none';
 }
+let _pendingMerge = null;
+function _normName(s) { return (s||'').toLowerCase().replace(/[^a-z0-9 ]/g,'').trim(); }
+function _findMatchingConv(key, naam) {
+  const convs = weekData[key]?.conversations || [];
+  const needle = _normName(naam);
+  if (!needle) return null;
+  return convs.find(c => {
+    const hay = _normName(c.personen + ' ' + c.titel);
+    return needle.split(' ').filter(w=>w.length>2).every(w => hay.includes(w));
+  }) || null;
+}
 function saveManualEntry(key) {
   const g = id => document.getElementById(id)?.value?.trim() || '';
   const uitkomst = g('manual-uitkomst-' + key);
   if (!uitkomst) { alert('Selecteer eerst een uitkomst.'); return; }
   const label = MANUAL_OUTCOMES.find(([v]) => v === uitkomst)?.[1] || uitkomst;
+  const naam = g('manual-naam-' + key);
   const entry = {
     id: Date.now().toString(),
     ticketnummer:  g('manual-ticket-' + key),
     type:          g('manual-type-' + key),
-    uitkomst,
-    uitkomstLabel: label,
-    naamVerzekerde: g('manual-naam-' + key),
+    uitkomst, uitkomstLabel: label,
+    naamVerzekerde: naam,
     telefoon:      g('manual-tel-' + key),
     email:         g('manual-email-' + key),
     schadenummer:  g('manual-schadenr-' + key),
     opmerkingen:   g('manual-opmerking-' + key)
   };
+  if (naam) {
+    const match = _findMatchingConv(key, naam);
+    if (match) {
+      _pendingMerge = { key, entry, match };
+      const body = document.getElementById('mergeModalBody');
+      body.innerHTML = `Is <span class="merge-modal-name">${naam}</span> dezelfde persoon als in het gesprek hieronder?`
+        + `<div class="merge-modal-conv"><strong>${match.tijd} — ${match.titel}</strong><br>${match.personen}<br><em>${match.samenvatting}</em></div>`
+        + `Kies <b>Ja</b> om samen te voegen (telt niet dubbel mee in statistieken), of <b>Nee</b> om apart toe te voegen.`;
+      document.getElementById('mergeModal').classList.remove('hidden');
+      return;
+    }
+  }
+  _doSaveEntry(key, entry);
+}
+function confirmMerge() {
+  if (!_pendingMerge) return;
+  const { key, entry, match } = _pendingMerge;
+  entry.gelinktMetGesprek = { tijd: match.tijd, titel: match.titel };
+  _doSaveEntry(key, entry);
+  closeMergeModal();
+}
+function confirmSeparate() {
+  if (!_pendingMerge) return;
+  const { key, entry } = _pendingMerge;
+  _doSaveEntry(key, entry);
+  closeMergeModal();
+}
+function closeMergeModal() {
+  document.getElementById('mergeModal').classList.add('hidden');
+  _pendingMerge = null;
+}
+function _doSaveEntry(key, entry) {
   const entries = getManualEntries(key);
   entries.push(entry);
   saveManualEntries(key, entries);
@@ -292,11 +346,12 @@ function buildManualSection(key) {
     const typeTag = e.type ? `<span class="tag tag-overig">${e.type}</span> ` : '';
     const ticketTag = e.ticketnummer ? `<span class="tag tag-overig">🎫 #${e.ticketnummer}</span> ` : '';
     const contact = [e.naamVerzekerde, e.telefoon, e.email].filter(Boolean).join(' · ');
-    return `<div class="manual-entry">
+    const mergeTag = e.gelinktMetGesprek ? `<span class="tag" style="background:#e8f0fe;color:#1a73e8;font-size:10px">🔗 aanvulling op gesprek ${e.gelinktMetGesprek.tijd}</span>` : '';
+    return `<div class="manual-entry" style="${e.gelinktMetGesprek ? 'background:#f8fbff;' : ''}">
       <div style="flex:1;min-width:0">
         <div style="display:flex;align-items:center;gap:6px;flex-wrap:wrap;margin-bottom:3px">
           <span style="font-size:13px;font-weight:600">${e.naamVerzekerde || 'Anoniem'}</span>
-          ${ticketTag}${typeTag}
+          ${ticketTag}${typeTag}${mergeTag}
         </div>
         ${contact ? `<div class="conv-persons">${contact}</div>` : ''}
         ${e.opmerkingen ? `<div class="conv-summary" style="margin-bottom:6px">${e.opmerkingen}</div>` : ''}
@@ -645,5 +700,18 @@ function toggleCheck(el) {
 function refresh() { setView(currentView); }
 setView("vandaag");
 </script>
+
+<!-- Merge confirmation modal -->
+<div class="merge-modal-overlay hidden" id="mergeModal">
+  <div class="merge-modal">
+    <div class="merge-modal-title">Zelfde persoon?</div>
+    <div class="merge-modal-body" id="mergeModalBody"></div>
+    <div class="merge-modal-actions">
+      <button class="btn-annuleren" onclick="closeMergeModal()">Annuleren</button>
+      <button class="btn-toevoegen" onclick="confirmSeparate()">Nee, apart toevoegen</button>
+      <button class="btn-opslaan" onclick="confirmMerge()">Ja, samenvoegen</button>
+    </div>
+  </div>
+</div>
 </body>
 </html>
