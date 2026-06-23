@@ -219,7 +219,7 @@ const weekData = {
   // Volgende dagen worden hier toegevoegd door de scheduled task
 };
 
-// ===================== MANUAL ENTRIES (localStorage) =====================
+// ===================== MANUAL ENTRIES (GitHub-synced) =====================
 const MANUAL_OUTCOMES = [
   ["outcome-opgelost","Eerstelijns opgelost"],
   ["outcome-brandmeester","Doorverwezen naar Brandmeester"],
@@ -229,12 +229,51 @@ const MANUAL_OUTCOMES = [
   ["outcome-verkeerd","Verkeerd nummer"]
 ];
 
+const _GH_TOKEN = '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';
+const _GH_API = 'https://api.github.com/repos/LancyrJHD/dagelijks-overzicht/contents/data/manual-entries.json';
+const _GH_RAW = 'https://raw.githubusercontent.com/LancyrJHD/dagelijks-overzicht/main/data/manual-entries.json';
+let _ghData = {};
+let _ghSha = null;
+let _ghLoaded = false;
+let _ghSaving = false;
+let _ghDirty = false;
+
+async function _ghLoad() {
+  try {
+    const [raw, meta] = await Promise.all([
+      fetch(_GH_RAW + '?t=' + Date.now()).then(r => r.ok ? r.json() : {}),
+      fetch(_GH_API, { headers: { Authorization: 'Bearer ' + _GH_TOKEN, Accept: 'application/vnd.github+json' } }).then(r => r.json())
+    ]);
+    _ghData = (raw && typeof raw === 'object' && !Array.isArray(raw)) ? raw : {};
+    _ghSha = meta.sha || null;
+  } catch(e) { console.warn('GitHub load fout:', e); _ghData = {}; }
+  _ghLoaded = true;
+  if (typeof setView === 'function') setView(currentView);
+}
+
+async function _ghFlush() {
+  if (_ghSaving) { _ghDirty = true; return; }
+  _ghSaving = true; _ghDirty = false;
+  try {
+    const content = btoa(unescape(encodeURIComponent(JSON.stringify(_ghData))));
+    const r = await fetch(_GH_API, {
+      method: 'PUT',
+      headers: { Authorization: 'Bearer ' + _GH_TOKEN, 'Content-Type': 'application/json', Accept: 'application/vnd.github+json' },
+      body: JSON.stringify({ message: 'update manual entries', content, sha: _ghSha })
+    });
+    const j = await r.json();
+    if (j.content?.sha) _ghSha = j.content.sha;
+  } catch(e) { console.warn('GitHub sync fout:', e); }
+  _ghSaving = false;
+  if (_ghDirty) _ghFlush();
+}
+
 function getManualEntries(key) {
-  try { return JSON.parse(localStorage.getItem('lancyr-manual-' + key) || '[]'); }
-  catch(e) { return []; }
+  return (_ghLoaded ? _ghData[key] : null) || [];
 }
 function saveManualEntries(key, entries) {
-  localStorage.setItem('lancyr-manual-' + key, JSON.stringify(entries));
+  _ghData[key] = entries;
+  _ghFlush();
 }
 function deleteManualEntry(key, id) {
   saveManualEntries(key, getManualEntries(key).filter(e => e.id !== id));
@@ -698,7 +737,8 @@ function toggleCheck(el) {
   if (txt) txt.classList.toggle("done-text", el.classList.contains("done"));
 }
 function refresh() { setView(currentView); }
-setView("vandaag");
+_ghLoad(); // laad GitHub data en render daarna
+setView("vandaag"); // initieel renderen (zonder manual entries, worden na load toegevoegd)
 </script>
 
 <!-- Merge confirmation modal -->
