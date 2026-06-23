@@ -57,6 +57,7 @@ body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; b
 .stat-card.afkoop .number { color: #7b1fa2; }
 .stat-card.terugbel .number { color: #e65100; }
 .stat-card.geen-dekking .number { color: #6e6e73; }
+.stat-card.stam .number { color: #b45309; }
 
 .chart-row { background: #fff; border: 1px solid #e5e5e5; border-radius: 10px; padding: 16px 20px; margin-bottom: 16px; display: flex; align-items: center; gap: 24px; }
 .chart-wrap { width: 140px; height: 140px; flex-shrink: 0; }
@@ -123,6 +124,7 @@ body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; b
 .outcome-afkoop { background: #f3e5f5; color: #7b1fa2; }
 .outcome-terugbel { background: #fff3e0; color: #e65100; }
 .outcome-geen-dekking { background: #f5f5f5; color: #6e6e73; }
+.outcome-stam { background: #fff7ed; color: #b45309; }
 .outcome-verkeerd { background: #f5f5f5; color: #6e6e73; }
 
 .action-item { padding: 11px 18px; border-bottom: 1px solid #f5f5f7; display: flex; align-items: flex-start; gap: 10px; }
@@ -223,6 +225,8 @@ const weekData = {
 const MANUAL_OUTCOMES = [
   ["outcome-opgelost","Eerstelijns opgelost"],
   ["outcome-brandmeester","Doorverwezen naar Brandmeester"],
+  ["outcome-stam","Doorverwezen naar Stam Advocaten (VSO)"],
+  ["outcome-stam","Doorverwezen naar Stam Advocaten (VSO)"],
   ["outcome-afkoop","Afkoop"],
   ["outcome-terugbel","Terugbellen"],
   ["outcome-geen-dekking","Geen dekking / niet kunnen helpen"],
@@ -281,7 +285,7 @@ function deleteManualEntry(key, id) {
 }
 function getManualStats(key) {
   const entries = getManualEntries(key);
-  const s = { opgelost:0, brandmeester:0, afkoop:0, terugbel:0, geenDekking:0 };
+  const s = { opgelost:0, brandmeester:0, afkoop:0, terugbel:0, geenDekking:0, stam:0 };
   let count = 0;
   entries.forEach(e => {
     if (e.gelinktMetGesprek) return; // merged: skip stats
@@ -291,6 +295,8 @@ function getManualStats(key) {
     else if (e.uitkomst === 'outcome-afkoop') s.afkoop++;
     else if (e.uitkomst === 'outcome-terugbel') s.terugbel++;
     else if (e.uitkomst === 'outcome-geen-dekking') s.geenDekking++;
+    else if (e.uitkomst === 'outcome-stam') s.stam++;
+    else if (e.uitkomst === 'outcome-stam') s.stam++;
   });
   return { count, stats: s };
 }
@@ -300,7 +306,9 @@ function mergeStats(granolaStats, manualStats) {
     brandmeester: (granolaStats?.brandmeester || 0) + manualStats.brandmeester,
     afkoop:       (granolaStats?.afkoop       || 0) + manualStats.afkoop,
     terugbel:     (granolaStats?.terugbel     || 0) + manualStats.terugbel,
-    geenDekking:  (granolaStats?.geenDekking  || 0) + manualStats.geenDekking
+    geenDekking:  (granolaStats?.geenDekking  || 0) + manualStats.geenDekking,
+    stam:         (granolaStats?.stam         || 0) + manualStats.stam,
+    stam:         (granolaStats?.stam         || 0) + manualStats.stam
   };
 }
 function toggleManualForm(key) {
@@ -310,7 +318,7 @@ function toggleManualForm(key) {
 function onManualOutcomeChange(key) {
   const v = document.getElementById('manual-uitkomst-' + key)?.value || '';
   const row = document.getElementById('manual-schadenr-row-' + key);
-  if (row) row.style.display = (v === 'outcome-afkoop' || v === 'outcome-brandmeester') ? '' : 'none';
+  if (row) row.style.display = (v === 'outcome-afkoop' || v === 'outcome-brandmeester' || v === 'outcome-stam') ? '' : 'none';
 }
 let _pendingMerge = null;
 function _normName(s) { return (s||'').toLowerCase().replace(/[^a-z0-9 ]/g,'').trim(); }
@@ -469,7 +477,7 @@ function buildManualSection(key) {
 // ===================== DISPLAY HELPERS =====================
 const DAYS_NL = ["zondag","maandag","dinsdag","woensdag","donderdag","vrijdag","zaterdag"];
 const MONTHS_NL = ["januari","februari","maart","april","mei","juni","juli","augustus","september","oktober","november","december"];
-const COLORS = { opgelost:"#2e7d32", brandmeester:"#1565c0", afkoop:"#7b1fa2", terugbel:"#e65100", geenDekking:"#aeaeb2" };
+const COLORS = { opgelost:"#2e7d32", brandmeester:"#1565c0", stam:"#b45309", afkoop:"#7b1fa2", terugbel:"#e65100", geenDekking:"#aeaeb2" };
 
 function dateKey(d) { return d.toISOString().slice(0,10); }
 function formatDate(key) {
@@ -506,6 +514,8 @@ function buildStats(stats) {
     <div class="stat-card afkoop"><div class="number">${stats.afkoop}</div><div class="label">Afgehandeld / afkoop</div></div>
     <div class="stat-card terugbel"><div class="number">${stats.terugbel}</div><div class="label">Terugbellen</div></div>
     <div class="stat-card geen-dekking"><div class="number">${stats.geenDekking}</div><div class="label">Geen dekking</div></div>
+    ${stats.stam > 0 ? `<div class="stat-card stam"><div class="number">${stats.stam}</div><div class="label">→ Stam Advocaten (VSO)</div></div>` : ""}
+    ${stats.stam > 0 ? `<div class="stat-card stam"><div class="number">${stats.stam}</div><div class="label">→ Stam Advocaten (VSO)</div></div>` : ""}
   </div>`;
 }
 
@@ -515,7 +525,7 @@ function buildChart(stats) {
   return `<div class="chart-row">
     <div><div class="chart-title">Uitkomsten verdeling</div><div class="chart-wrap"><canvas id="uitkomstenChart"></canvas></div></div>
     <div class="chart-legend">
-      ${[["#2e7d32","Eerstelijns opgelost",stats.opgelost],["#1565c0","→ Brandmeester",stats.brandmeester],["#7b1fa2","Afkoop",stats.afkoop],["#e65100","Terugbellen",stats.terugbel],["#aeaeb2","Geen dekking",stats.geenDekking]].map(([col,name,n]) => `
+      ${[["#2e7d32","Eerstelijns opgelost",stats.opgelost],["#1565c0","→ Brandmeester",stats.brandmeester],["#7b1fa2","Afkoop",stats.afkoop],["#e65100","Terugbellen",stats.terugbel],["#aeaeb2","Geen dekking",stats.geenDekking],["#b45309","→ Stam (VSO)",stats.stam]].map(([col,name,n]) => `
         <div class="legend-item">
           <div class="legend-dot" style="background:${col}"></div>
           <div class="legend-name">${name}</div>
@@ -532,28 +542,136 @@ function initChart(stats) {
   if (chart) { chart.destroy(); chart = null; }
   chart = new Chart(canvas.getContext("2d"), {
     type: "doughnut",
-    data: { labels: ["Opgelost","→ Brandmeester","Afkoop","Terugbellen","Geen dekking"], datasets: [{ data: [stats.opgelost,stats.brandmeester,stats.afkoop,stats.terugbel,stats.geenDekking], backgroundColor: Object.values(COLORS), borderWidth: 2, borderColor: "#fff" }] },
+    data: { labels: ["Opgelost","→ Brandmeester","→ Stam (VSO)","Afkoop","Terugbellen","Geen dekking"], datasets: [{ data: [stats.opgelost,stats.brandmeester,stats.stam,stats.afkoop,stats.terugbel,stats.geenDekking], backgroundColor: Object.values(COLORS), borderWidth: 2, borderColor: "#fff" }] },
     options: { cutout:"68%", plugins:{ legend:{display:false}, tooltip:{callbacks:{label:c=>` ${c.label}: ${c.raw}`}}}, animation:{animateRotate:true}}
   });
 }
 
+function _normPersonName(personen) {
+  const m = (personen||'').match(/Verzekerde:\s*([^\xb7\n]+)/);
+  if (!m) return null;
+  const name = m[1].trim().toLowerCase().replace(/[^a-z0-9 ]/g,'').replace(/\s+/g,' ').trim();
+  if (!name || name.length < 4) return null;
+  const skip = ['anoniem','onbekend','mevrouw','meneer','dhr','mevr','partner','echtgenoot'];
+  if (skip.some(s => name === s || name.startsWith(s + ' '))) return null;
+  const words = name.split(' ').filter(Boolean);
+  return words.length >= 2 ? words[0] + ' ' + words[words.length-1] : name;
+}
+function _groupConvsByPerson(convs) {
+  const seen = {}, result = [];
+  (convs||[]).forEach(c => {
+    const key = _normPersonName(c.personen);
+    if (key && seen[key] !== undefined) {
+      result[seen[key]].push(c);
+    } else {
+      const idx = result.length;
+      result.push([c]);
+      if (key) seen[key] = idx;
+    }
+  });
+  return result;
+}
+function _statsFromGroups(groups) {
+  const s = {opgelost:0,brandmeester:0,afkoop:0,terugbel:0,geenDekking:0,stam:0};
+  groups.forEach(group => {
+    const uit = Array.isArray(group[0].uitkomst) ? group[0].uitkomst[0] : group[0].uitkomst;
+    if (uit === 'outcome-opgelost' || uit === 'outcome-verkeerd') s.opgelost++;
+    else if (uit === 'outcome-brandmeester') s.brandmeester++;
+    else if (uit === 'outcome-afkoop') s.afkoop++;
+    else if (uit === 'outcome-terugbel') s.terugbel++;
+    else if (uit === 'outcome-geen-dekking') s.geenDekking++;
+    else if (uit === 'outcome-stam') s.stam++;
+  });
+  return s;
+}
+function _normPersonName(personen) {
+  const m = (personen||'').match(/Verzekerde:\s*([^\xb7\n]+)/);
+  if (!m) return null;
+  const name = m[1].trim().toLowerCase().replace(/[^a-z0-9 ]/g,'').replace(/\s+/g,' ').trim();
+  if (!name || name.length < 4) return null;
+  const skip = ['anoniem','onbekend','mevrouw','meneer','dhr','mevr','partner','echtgenoot'];
+  if (skip.some(s => name === s || name.startsWith(s + ' '))) return null;
+  const words = name.split(' ').filter(Boolean);
+  return words.length >= 2 ? words[0] + ' ' + words[words.length-1] : name;
+}
+function _groupConvsByPerson(convs) {
+  const seen = {}, result = [];
+  (convs||[]).forEach(c => {
+    const key = _normPersonName(c.personen);
+    if (key && seen[key] !== undefined) {
+      result[seen[key]].push(c);
+    } else {
+      const idx = result.length;
+      result.push([c]);
+      if (key) seen[key] = idx;
+    }
+  });
+  return result;
+}
+function _statsFromGroups(groups) {
+  const s = {opgelost:0,brandmeester:0,afkoop:0,terugbel:0,geenDekking:0,stam:0};
+  groups.forEach(group => {
+    const uit = Array.isArray(group[0].uitkomst) ? group[0].uitkomst[0] : group[0].uitkomst;
+    if (uit === 'outcome-opgelost' || uit === 'outcome-verkeerd') s.opgelost++;
+    else if (uit === 'outcome-brandmeester') s.brandmeester++;
+    else if (uit === 'outcome-afkoop') s.afkoop++;
+    else if (uit === 'outcome-terugbel') s.terugbel++;
+    else if (uit === 'outcome-geen-dekking') s.geenDekking++;
+    else if (uit === 'outcome-stam') s.stam++;
+  });
+  return s;
+}
 function buildConversations(convs, showDagHeader, dagLabel, dagScore) {
   if (!convs || convs.length === 0) return `<div style="padding:16px 18px;color:#aeaeb2;font-size:13px;">Geen gesprekken geregistreerd.</div>`;
   let html = "";
   if (showDagHeader) html += `<div class="dag-header"><span>${dagLabel}</span>${dagScore != null ? `<span class="dag-score">⭐ ${dagScore.toFixed(1)}/10</span>` : ""}</div>`;
-  html += convs.map(c => `
-    <div class="conv-item">
-      <div class="conv-time">${c.tijd}</div>
+  const groups = _groupConvsByPerson(convs);
+  html += groups.map(group => {
+    const isVso = g => /vso|vaststellingsovereenkomst/i.test((g.titel||'') + ' ' + (g.samenvatting||''));
+    const vsoWarn = g => isVso(g) && (Array.isArray(g.uitkomst) ? g.uitkomst[0] : g.uitkomst) !== 'outcome-stam'
+      ? `<span style="background:#fef3c7;color:#92400e;padding:2px 8px;border-radius:4px;font-size:11px;font-weight:600">&#9889; VSO &rarr; Stam Advocaten aanbieden?</span>` : '';
+    if (group.length === 1) {
+      const cv = group[0];
+      const uit = Array.isArray(cv.uitkomst) ? cv.uitkomst : [cv.uitkomst, cv.uitkomst];
+      return `<div class="conv-item">
+      <div class="conv-time">${cv.tijd}</div>
       <div>
-        <div class="conv-title">${c.titel}</div>
-        <div class="conv-persons">${c.personen}</div>
-        <div class="conv-summary">${c.samenvatting}</div>
+        <div class="conv-title">${cv.titel}</div>
+        <div class="conv-persons">${cv.personen}</div>
+        <div class="conv-summary">${cv.samenvatting}</div>
         <div class="conv-footer">
-          ${c.tags.map(([cls,lbl]) => `<span class="tag ${cls}">${lbl}</span>`).join("")}
-          <span class="outcome-badge ${c.uitkomst[0]}">${c.uitkomst[1]}</span>
+          ${cv.tags.map(([cls,lbl]) => `<span class="tag ${cls}">${lbl}</span>`).join("")}
+          <span class="outcome-badge ${uit[0]}">${uit[1]}</span>
+          ${vsoWarn(cv)}
         </div>
       </div>
-    </div>`).join("");
+    </div>`;
+    } else {
+      const firstName = (() => { const m = group[0].personen.match(/Verzekerde:\s*([^\xb7]+)/); return m ? m[1].trim() : 'Meerdere gesprekken'; })();
+      return `<div class="conv-item" style="border-left:3px solid #1565c0;padding-left:10px">
+      <div class="conv-time">${group[0].tijd}</div>
+      <div style="width:100%">
+        <div style="display:flex;align-items:center;gap:8px;margin-bottom:6px">
+          <div class="conv-title">${firstName}</div>
+          <span style="background:#1565c0;color:#fff;padding:1px 7px;border-radius:10px;font-size:10px;font-weight:700">${group.length}&times;</span>
+        </div>
+        ${group.map((cv, i) => {
+          const medewerker = cv.personen.split('\xb7')[1]?.trim() || '';
+          const uit = Array.isArray(cv.uitkomst) ? cv.uitkomst : [cv.uitkomst, cv.uitkomst];
+          return `<div style="border-top:1px solid #e5e7eb;padding:8px 0 4px">
+            <div style="font-size:11px;font-weight:600;color:#6b7280;margin-bottom:4px">${i === 0 ? medewerker : 'Vervolg — ' + medewerker} <span style="color:#9ca3af;font-weight:400">${cv.tijd}</span></div>
+            <div class="conv-summary">${cv.samenvatting}</div>
+            <div class="conv-footer" style="margin-top:4px">
+              ${cv.tags.map(([cls,lbl]) => `<span class="tag ${cls}">${lbl}</span>`).join("")}
+              <span class="outcome-badge ${uit[0]}">${uit[1]}</span>
+              ${vsoWarn(cv)}
+            </div>
+          </div>`;
+        }).join("")}
+      </div>
+    </div>`;
+    }
+  }).join("");
   return html;
 }
 
@@ -597,10 +715,13 @@ function renderDay(key, headerLabel) {
   document.getElementById("header-date").textContent = headerLabel;
 
   const manualData = getManualStats(key);
-  const granolaStats = d?.stats || {opgelost:0,brandmeester:0,afkoop:0,terugbel:0,geenDekking:0};
-  const granolaCount = d?.gesprekken || 0;
+  const granolaStats = d?.stats || {opgelost:0,brandmeester:0,afkoop:0,terugbel:0,geenDekking:0,stam:0};
+  const granolaGroups = _groupConvsByPerson(d?.conversations || []);
+  const granolaStatsAdj = _statsFromGroups(granolaGroups);
+  const granolaCountAdj = granolaGroups.length;
+  const granolaCount = granolaCountAdj;
   const totalCount = granolaCount + manualData.count;
-  const merged = mergeStats(granolaStats, manualData.stats);
+  const merged = mergeStats(granolaStatsAdj, manualData.stats);
   const db = drukteBadge(granolaCount, totalCount);
 
   if (!d && totalCount === 0) {
