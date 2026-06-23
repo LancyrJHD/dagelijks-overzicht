@@ -131,6 +131,8 @@ body { font-family: 'Poppins', -apple-system, BlinkMacSystemFont, 'Segoe UI', sa
 .outcome-terugbel { background: #fff3e0; color: #e65100; }
 .outcome-geen-dekking { background: #f5f5f5; color: #6e6e73; }
 .outcome-stam { background: #fff7ed; color: #b45309; }
+.conv-det { display:none; margin-top:8px; padding:8px 12px; background:#f9f7fc; border-left:3px solid #2D0051; font-size:12px; color:#3a3a3c; line-height:1.6; }
+.outcome-badge { cursor:pointer; user-select:none; }
 .outcome-verkeerd { background: #f5f5f5; color: #6e6e73; }
 
 .action-item { padding: 11px 18px; border-bottom: 1px solid #f5f5f7; display: flex; align-items: flex-start; gap: 10px; }
@@ -667,6 +669,34 @@ function _statsFromGroups(groups) {
   });
   return s;
 }
+function toggleDet(id) {
+  const el = document.getElementById(id);
+  if (el) el.style.display = el.style.display === 'none' ? 'block' : 'none';
+}
+function buildOKRWeekBanner(totals) {
+  const bmMax = 6;
+  const bm = totals.brandmeester || 0;
+  const bmColor = bm < bmMax ? '#2e7d32' : bm === bmMax ? '#e65100' : '#c62828';
+  const bmBg   = bm < bmMax ? '#e8f5e9' : bm === bmMax ? '#fff3e0' : '#ffebee';
+  const bmStatus = bm < bmMax ? '✅ Op schema' : bm === bmMax ? '⚠️ Op de grens' : '🔴 Boven doel';
+  return `<div style="display:flex;gap:10px;flex-wrap:wrap;margin-bottom:14px">
+    <div style="background:${bmBg};border:1px solid ${bmColor};border-radius:0;padding:11px 15px;flex:1;min-width:140px;cursor:pointer" onclick="filterByOutcome('outcome-brandmeester')" title="Klik voor gefilterde lijst">
+      <div style="font-size:10px;font-weight:700;color:${bmColor};text-transform:uppercase;letter-spacing:.5px">→ Brandmeester / week</div>
+      <div style="font-size:22px;font-weight:800;color:${bmColor};margin:2px 0">${bm}<span style="font-size:12px;font-weight:400;color:#6e6e73"> / ${bmMax}</span></div>
+      <div style="font-size:11px;color:${bmColor}">${bmStatus}</div>
+    </div>
+    <div style="background:#f7f7f9;border:1px solid #e5e5e5;border-radius:0;padding:11px 15px;flex:1;min-width:140px">
+      <div style="font-size:10px;font-weight:700;color:#6e6e73;text-transform:uppercase;letter-spacing:.5px">Gemiste bellers / dag</div>
+      <div style="font-size:14px;font-weight:600;color:#6e6e73;margin:3px 0">doel: ≤ 1</div>
+      <div style="font-size:11px;color:#aeaeb2">Nulmeting juni · Zoho nodig</div>
+    </div>
+    <div style="background:#f7f7f9;border:1px solid #e5e5e5;border-radius:0;padding:11px 15px;flex:1;min-width:140px">
+      <div style="font-size:10px;font-weight:700;color:#6e6e73;text-transform:uppercase;letter-spacing:.5px">Open tickets einde dag</div>
+      <div style="font-size:14px;font-weight:600;color:#6e6e73;margin:3px 0">doel: 0</div>
+      <div style="font-size:11px;color:#aeaeb2">Meting loopt · Zoho nodig</div>
+    </div>
+  </div>`;
+}
 function buildConversations(convs, showDagHeader, dagLabel, dagScore) {
   if (!convs || convs.length === 0) return `<div style="padding:16px 18px;color:#aeaeb2;font-size:13px;">Geen gesprekken geregistreerd.</div>`;
   let html = "";
@@ -681,6 +711,8 @@ function buildConversations(convs, showDagHeader, dagLabel, dagScore) {
     if (group.length === 1) {
       const cv = group[0];
       const uit = Array.isArray(cv.uitkomst) ? cv.uitkomst : [cv.uitkomst, cv.uitkomst];
+      const detId = 'cd' + Math.random().toString(36).substr(2,7);
+      const bullets = (cv.samenvatting||'').split(/(?<=[.;])\s+/).filter(s=>s.trim().length>8).map(s=>`<div>• ${s.trim()}</div>`).join('');
       return `<div class="conv-item">
       <div class="conv-time">${cv.tijd}</div>
       <div>
@@ -689,9 +721,10 @@ function buildConversations(convs, showDagHeader, dagLabel, dagScore) {
         <div class="conv-summary">${cv.samenvatting}</div>
         <div class="conv-footer">
           ${cv.tags.map(([cls,lbl]) => `<span class="tag ${cls}">${lbl}</span>`).join("")}
-          <span class="outcome-badge ${uit[0]}">${uit[1]}</span>
+          <span class="outcome-badge ${uit[0]}" onclick="toggleDet('${detId}')" title="Klik voor redenen">${uit[1]} ▾</span>
           ${vsoWarn(cv)}
         </div>
+        <div id="${detId}" class="conv-det">${bullets || cv.samenvatting}</div>
       </div>
     </div>`;
     } else {
@@ -817,37 +850,40 @@ function renderDay(key, headerLabel) {
     ${buildManualSection(key)}
     <div class="section">
       <div class="section-header" onclick="toggle(this)">
+        <div class="section-icon" style="background:#f3e5f5">📊</div>
+        <div class="section-title">Kwaliteitsanalyse</div>
+        <span class="chevron">▼</span>
+      </div>
+      <div class="section-body">${d ? buildAnalyse(d.analyse, d.score) : '<div style="padding:16px 18px;color:#aeaeb2;font-size:13px">Geen analyse beschikbaar.</div>'}</div>
+    </div>
+    <div class="section">
+      <div class="section-header" onclick="toggle(this)">
         <div class="section-icon" style="background:#e8f5e9">✅</div>
         <div class="section-title">Actiepunten</div>
         <span class="section-count">${d?.acties?.length || 0}</span>
         <span class="chevron">▼</span>
       </div>
       <div class="section-body">${buildActies(d?.acties)}</div>
-    </div>
-    <div class="section">
-      <div class="section-header" onclick="toggle(this)">
-        <div class="section-icon" style="background:#f3e5f5">📊</div>
-        <div class="section-title">Kwaliteitsanalyse</div>
-        <span class="chevron">▼</span>
-      </div>
-      <div class="section-body">${d ? buildAnalyse(d.analyse, d.score) : '<div style="padding:16px 18px;color:#aeaeb2;font-size:13px">Geen analyse beschikbaar.</div>'}</div>
     </div>`;
   initChart(merged);
 }
 
 function buildWeekAnalyse(keys) {
   const allGoed = [], allBeter = [];
+  let scoreSum = 0, scoreDays = 0;
   keys.forEach(k => {
     const d = weekData[k]; if (!d || !d.analyse) return;
     const dag = formatDate(k);
     d.analyse.goed.forEach(t => allGoed.push({ dag, t }));
     d.analyse.beter.forEach(t => allBeter.push({ dag, t }));
+    if (d.score > 0) { scoreSum += d.score; scoreDays++; }
   });
+  const avgScore = scoreDays > 0 ? (scoreSum/scoreDays).toFixed(1) : null;
   if (allGoed.length === 0 && allBeter.length === 0) return '';
   return `<div class="section">
     <div class="section-header" onclick="toggle(this)">
       <div class="section-icon" style="background:#f3e5f5">📊</div>
-      <div class="section-title">Kwaliteitsanalyse — hele week</div>
+      <div class="section-title">Kwaliteitsanalyse — hele week${avgScore ? ` · ⭐ ${avgScore}/10` : ''}</div>
       <span class="chevron">▼</span>
     </div>
     <div class="section-body">
@@ -951,18 +987,19 @@ function renderWeek() {
       <div class="week-totals"><div>Totaal</div><div style="text-align:center;color:#2e7d32">${totals.opgelost}</div><div style="text-align:center;color:#1565c0">${totals.brandmeester}</div><div style="text-align:center;color:#7b1fa2">${totals.afkoop}</div><div style="text-align:center;color:#e65100">${totals.terugbel}</div><div style="text-align:center;color:#aeaeb2">${totals.geenDekking}</div><div style="text-align:right">${avgScore !== null ? avgScore.toFixed(1) : "—"}</div></div>
     </div>
     ${buildStats(totals)}
+    ${buildOKRWeekBanner(totals)}
     ${buildFilterBanner(keys.flatMap(k => weekData[k]?.conversations||[]), keys.flatMap(k => getManualEntries(k)))}
     ${buildChart(totals)}
     <div class="section">
       <div class="section-header" onclick="toggle(this)"><div class="section-icon" style="background:#e3f2fd">💬</div><div class="section-title">Alle gesprekken deze week</div><span class="section-count">${keys.reduce((a,k)=>(weekData[k]?.gesprekken||0)+a,0)}</span><span class="chevron">▼</span></div>
       <div class="section-body">${allConvs || '<div style="padding:16px 18px;color:#aeaeb2;font-size:13px">Nog geen gesprekken deze week.</div>'}</div>
     </div>
+    ${buildWeekAnalyse(keys)}
+    ${buildBrandmeesterRedenen(keys)}
     <div class="section">
       <div class="section-header" onclick="toggle(this)"><div class="section-icon" style="background:#e8f5e9">✅</div><div class="section-title">Openstaande actiepunten</div><span class="section-count">${allActies.length}</span><span class="chevron">▼</span></div>
       <div class="section-body">${buildActies(allActies)}</div>
-    </div>
-    ${buildWeekAnalyse(keys)}
-    ${buildBrandmeesterRedenen(keys)}`;
+    </div>`;
   initChart(totals);
 }
 
