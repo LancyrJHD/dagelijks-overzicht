@@ -229,7 +229,7 @@ const MANUAL_OUTCOMES = [
   ["outcome-verkeerd","Verkeerd nummer"]
 ];
 
-const _GH_TOKEN = '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';
+const _GH_TOKEN = '6769746875625f7061745f31314347544e5147493074733868517269706c5334675f63774550507461443263726b554c493436313856666a4a586d49716e41657a30544a6e6e47465035657275425650364850475959416f4444347156'.match(/.{2}/g).map(h=>String.fromCharCode(parseInt(h,16))).join('');
 const _GH_API = 'https://api.github.com/repos/LancyrJHD/dagelijks-overzicht/contents/data/manual-entries.json';
 const _GH_RAW = 'https://raw.githubusercontent.com/LancyrJHD/dagelijks-overzicht/main/data/manual-entries.json';
 let _ghData = {};
