@@ -988,9 +988,9 @@ function renderWeek(keysOverride, labelOverride) {
 
   const allConvs = keys.map(k => {
     const d = weekData[k];
-    if (!d || !d.conversations || d.conversations.length === 0) return "";
-    return buildConversations(d.conversations, true, formatDate(k), d.score);
+    return (!d || !d.conversations || d.conversations.length === 0) ? "" : buildConversations(d.conversations, true, formatDate(k), d.score);
   }).join("");
+  const allManualWeek = keys.filter(k => getManualEntries(k).length > 0).map(k => buildManualSection(k)).join("");
   const allActies = keys.flatMap(k => weekData[k]?.acties || []);
   const app = document.getElementById("app");
 
@@ -1012,6 +1012,7 @@ function renderWeek(keysOverride, labelOverride) {
       <div class="section-header" onclick="toggle(this)"><div class="section-icon" style="background:#e3f2fd">💬</div><div class="section-title">Alle gesprekken deze week</div><span class="section-count">${keys.reduce((a,k)=>(weekData[k]?.gesprekken||0)+a,0)}</span><span class="chevron">▼</span></div>
       <div class="section-body">${allConvs || '<div style="padding:16px 18px;color:#aeaeb2;font-size:13px">Nog geen gesprekken deze week.</div>'}</div>
     </div>
+    ${allManualWeek}
     ${buildWeekAnalyse(keys)}
     ${buildBrandmeesterRedenen(keys)}
     <div class="section">
