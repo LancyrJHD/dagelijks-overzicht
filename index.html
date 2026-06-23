@@ -736,7 +736,8 @@ function toggleCheck(el) {
   const txt = el.closest(".action-item").querySelector(".action-text");
   if (txt) txt.classList.toggle("done-text", el.classList.contains("done"));
 }
-function refresh() { setView(currentView); }
+function refresh() { _ghLoad(); } // haalt GitHub data opnieuw op
+setInterval(() => { _ghLoad(); }, 3 * 60 * 1000); // auto-sync elke 3 minuten
 _ghLoad(); // laad GitHub data en render daarna
 setView("vandaag"); // initieel renderen (zonder manual entries, worden na load toegevoegd)
 </script>
