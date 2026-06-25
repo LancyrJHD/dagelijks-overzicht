@@ -1066,7 +1066,187 @@ body {
   flex-wrap: wrap;
 }
 .gesprekken-table tbody tr { cursor: pointer; }
+
+/* ── AUTH OVERLAY ── */
+.auth-overlay {
+  position: fixed;
+  inset: 0;
+  background: var(--navy);
+  z-index: 1000;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 24px;
+  font-family: 'Poppins', sans-serif;
+}
+.auth-overlay.hidden { display: none; }
+
+.auth-logo {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-bottom: 32px;
+}
+.auth-logo-divider {
+  width: 1px;
+  height: 32px;
+  background: rgba(255,255,255,0.25);
+}
+.auth-logo-opdracht {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+.auth-logo-label {
+  font-size: 8px;
+  font-weight: 700;
+  color: rgba(255,255,255,0.45);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.auth-card {
+  background: var(--white);
+  border-radius: var(--radius-card);
+  padding: 40px;
+  width: 100%;
+  max-width: 400px;
+  box-shadow: 0 32px 80px rgba(0,0,0,0.3);
+}
+.auth-screen { display: none; }
+.auth-screen.active { display: block; }
+
+.auth-eyebrow {
+  font-size: 10px;
+  font-weight: 700;
+  color: var(--gold);
+  text-transform: uppercase;
+  letter-spacing: 1.2px;
+  margin-bottom: 6px;
+}
+.auth-title {
+  font-size: 26px;
+  font-weight: 700;
+  color: var(--navy);
+  margin-bottom: 6px;
+  line-height: 1.2;
+}
+.auth-subtitle {
+  font-size: 13px;
+  color: var(--ink-50);
+  margin-bottom: 28px;
+}
+
+.auth-field {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  margin-bottom: 16px;
+}
+.auth-label {
+  font-size: 11px;
+  font-weight: 700;
+  color: var(--ink-50);
+  text-transform: uppercase;
+  letter-spacing: 0.6px;
+}
+.auth-input {
+  width: 100%;
+  padding: 11px 14px;
+  border: 1.5px solid var(--line);
+  border-radius: 10px;
+  font-family: 'Poppins', sans-serif;
+  font-size: 14px;
+  color: var(--ink);
+  background: var(--white);
+  transition: border-color 0.15s;
+  box-sizing: border-box;
+  outline: none;
+}
+.auth-input:focus { border-color: var(--gold); }
+.auth-input::placeholder { color: var(--ink-30); }
+
+.auth-btn {
+  width: 100%;
+  padding: 13px;
+  background: var(--navy);
+  color: var(--white);
+  border: none;
+  border-radius: 10px;
+  font-family: 'Poppins', sans-serif;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  margin-top: 8px;
+  transition: background 0.15s, transform 0.1s;
+}
+.auth-btn:hover { background: #162d42; }
+.auth-btn:active { transform: scale(0.99); }
+.auth-btn:disabled { opacity: 0.6; cursor: not-allowed; }
+
+.auth-switch {
+  text-align: center;
+  margin-top: 20px;
+  font-size: 13px;
+  color: var(--ink-50);
+}
+.auth-switch a {
+  color: var(--gold);
+  font-weight: 600;
+  text-decoration: none;
+  cursor: pointer;
+}
+.auth-switch a:hover { color: var(--gold-dark); }
+
+.auth-error {
+  background: var(--red-bg);
+  color: var(--red);
+  border-radius: 8px;
+  padding: 10px 14px;
+  font-size: 13px;
+  font-weight: 500;
+  margin-bottom: 16px;
+  display: none;
+}
+.auth-error.visible { display: block; }
+
+.auth-success {
+  background: var(--green-bg);
+  color: var(--green);
+  border-radius: 8px;
+  padding: 10px 14px;
+  font-size: 13px;
+  font-weight: 500;
+  margin-bottom: 16px;
+  display: none;
+}
+.auth-success.visible { display: block; }
+
+/* Logout knop in topbar */
+.logout-btn {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 6px 14px;
+  border: 1px solid var(--line);
+  border-radius: var(--radius-pill);
+  background: var(--white);
+  color: var(--ink-50);
+  font-family: 'Poppins', sans-serif;
+  font-size: 12px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.15s;
+}
+.logout-btn:hover { background: var(--bg); color: var(--navy); }
+
+@media (max-width: 480px) {
+  .auth-card { padding: 28px 20px; }
+  .auth-title { font-size: 22px; }
+}
 </style>
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2/dist/umd/supabase.js"></script>
 </head>
 <body>
 
@@ -1089,6 +1269,7 @@ body {
       <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="23 4 23 10 17 10"></polyline><path d="M20.49 15a9 9 0 1 1-2.12-9.36L23 10"></path></svg>
       Vernieuwen
     </button>
+    <button class="logout-btn" id="logout-btn" onclick="authLogout()" style="display:none">Uitloggen</button>
     <div class="avatar-stack">
       <div class="av" title="Jackie Stam">JS</div>
       <div class="av" title="Senne Duifhuis" style="background:#8a7356">SD</div>
@@ -2432,6 +2613,9 @@ document.addEventListener('DOMContentLoaded', async () => {
   setTime();
   setInterval(setTime, 60000);
 
+  const authed = await checkAuth();
+  if (!authed) return;
+
   await loadLiveToday();
 
   const tabs = document.querySelectorAll('.period-tab');
@@ -2563,7 +2747,206 @@ function closeGesprekModalDirect() {
 document.addEventListener('keydown', function(e) {
   if (e.key === 'Escape') closeGesprekModalDirect();
 });
+
+// ======================== SUPABASE AUTH ========================
+// ⚠️  Vul hieronder jouw Supabase project-URL en anon-key in
+//    Zie: app.supabase.com → jouw project → Settings → API
+const SUPABASE_URL      = 'JOUW_SUPABASE_URL';       // bijv. https://xyzxyz.supabase.co
+const SUPABASE_ANON_KEY = 'JOUW_SUPABASE_ANON_KEY';  // begint met eyJ...
+
+let _supabase = null;
+function getSupabase() {
+  if (!_supabase && typeof supabase !== 'undefined') {
+    _supabase = supabase.createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
+  }
+  return _supabase;
+}
+
+// ── UI helpers ──
+function showAuthOverlay() {
+  document.getElementById('auth-overlay').classList.remove('hidden');
+  document.getElementById('logout-btn').style.display = 'none';
+}
+function hideAuthOverlay() {
+  document.getElementById('auth-overlay').classList.add('hidden');
+  document.getElementById('logout-btn').style.display = '';
+}
+function showLogin() {
+  document.getElementById('auth-login-screen').classList.add('active');
+  document.getElementById('auth-register-screen').classList.remove('active');
+  clearAuthMessages();
+}
+function showRegister() {
+  document.getElementById('auth-register-screen').classList.add('active');
+  document.getElementById('auth-login-screen').classList.remove('active');
+  clearAuthMessages();
+}
+function showAuthError(id, msg) {
+  const el = document.getElementById(id);
+  el.textContent = msg;
+  el.classList.add('visible');
+}
+function clearAuthMessages() {
+  ['login-error','register-error','register-success'].forEach(id => {
+    const el = document.getElementById(id);
+    if (el) { el.textContent = ''; el.classList.remove('visible'); }
+  });
+}
+
+// ── Login ──
+async function authLogin() {
+  const sb = getSupabase();
+  if (!sb) { showAuthError('login-error', 'Supabase niet geconfigureerd.'); return; }
+  const email    = document.getElementById('login-email').value.trim();
+  const password = document.getElementById('login-password').value;
+  if (!email || !password) { showAuthError('login-error', 'Vul e-mail en wachtwoord in.'); return; }
+  const btn = document.getElementById('login-btn');
+  btn.disabled = true; btn.textContent = 'Bezig…';
+  clearAuthMessages();
+  const { error } = await sb.auth.signInWithPassword({ email, password });
+  btn.disabled = false; btn.textContent = 'Aanmelden';
+  if (error) { showAuthError('login-error', vertaalAuthFout(error.message)); return; }
+  hideAuthOverlay();
+}
+
+// ── Register ──
+async function authRegister() {
+  const sb = getSupabase();
+  if (!sb) { showAuthError('register-error', 'Supabase niet geconfigureerd.'); return; }
+  const email = document.getElementById('register-email').value.trim();
+  const pw1   = document.getElementById('register-password').value;
+  const pw2   = document.getElementById('register-password2').value;
+  if (!email || !pw1) { showAuthError('register-error', 'Vul alle velden in.'); return; }
+  if (pw1 !== pw2)    { showAuthError('register-error', 'Wachtwoorden komen niet overeen.'); return; }
+  if (pw1.length < 8) { showAuthError('register-error', 'Wachtwoord moet minimaal 8 tekens zijn.'); return; }
+  const btn = document.getElementById('register-btn');
+  btn.disabled = true; btn.textContent = 'Bezig…';
+  clearAuthMessages();
+  const { error } = await sb.auth.signUp({ email, password: pw1 });
+  btn.disabled = false; btn.textContent = 'Account aanmaken';
+  if (error) { showAuthError('register-error', vertaalAuthFout(error.message)); return; }
+  const suc = document.getElementById('register-success');
+  suc.textContent = 'Account aangemaakt! Controleer je e-mail om te bevestigen.';
+  suc.classList.add('visible');
+}
+
+// ── Logout ──
+async function authLogout() {
+  const sb = getSupabase();
+  if (sb) await sb.auth.signOut();
+  showAuthOverlay();
+  showLogin();
+}
+
+// ── Foutmeldingen vertalen ──
+function vertaalAuthFout(msg) {
+  if (msg.includes('Invalid login')) return 'E-mail of wachtwoord klopt niet.';
+  if (msg.includes('Email not confirmed')) return 'Bevestig eerst je e-mail.';
+  if (msg.includes('already registered')) return 'Dit e-mailadres is al in gebruik.';
+  if (msg.includes('Password should be')) return 'Wachtwoord moet minimaal 8 tekens zijn.';
+  if (msg.includes('not configured')) return 'Supabase niet ingesteld — zie SUPABASE_URL/KEY in de code.';
+  return msg;
+}
+
+// ── Enter-toets in login-velden ──
+document.addEventListener('keydown', function(e) {
+  if (e.key === 'Enter') {
+    const loginActive = document.getElementById('auth-login-screen')?.classList.contains('active');
+    const overlay = document.getElementById('auth-overlay');
+    if (overlay && !overlay.classList.contains('hidden')) {
+      if (loginActive) authLogin(); else authRegister();
+    }
+  }
+});
+
+// ── Auth check bij init (wordt aangeroepen vanuit DOMContentLoaded) ──
+async function checkAuth() {
+  // Als Supabase nog niet geconfigureerd is, sla over (dev-mode)
+  if (SUPABASE_URL === 'JOUW_SUPABASE_URL') {
+    console.warn('[Auth] Supabase niet geconfigureerd — auth overgeslagen in dev-mode');
+    return true; // toegang verlenen zodat dashboard zichtbaar blijft tijdens development
+  }
+  const sb = getSupabase();
+  if (!sb) return false;
+  const { data: { session } } = await sb.auth.getSession();
+  if (session) {
+    hideAuthOverlay();
+    return true;
+  } else {
+    showAuthOverlay();
+    return false;
+  }
+}
 </script>
+
+
+<!-- AUTH OVERLAY -->
+<div class="auth-overlay hidden" id="auth-overlay">
+  <div class="auth-logo">
+    <!-- HTJZ badge logo -->
+    <svg viewBox="0 0 58 58" width="52" height="52" xmlns="http://www.w3.org/2000/svg">
+      <circle cx="29" cy="29" r="27" fill="none" stroke="#A07C35" stroke-width="1.5"/>
+      <rect x="7" y="11" width="44" height="36" rx="2" fill="none" stroke="#A07C35" stroke-width="1"/>
+      <text x="29" y="21" text-anchor="middle" fill="#A07C35" font-size="6.5" font-weight="600" font-family="Poppins,sans-serif">Het</text>
+      <text x="29" y="31" text-anchor="middle" fill="#A07C35" font-size="10" font-weight="700" font-family="Poppins,sans-serif">Team</text>
+      <text x="29" y="39" text-anchor="middle" fill="#A07C35" font-size="5.2" font-weight="700" font-family="Poppins,sans-serif" letter-spacing="0.3">JURIDISCHE</text>
+      <text x="29" y="45.5" text-anchor="middle" fill="#A07C35" font-size="5.2" font-weight="700" font-family="Poppins,sans-serif" letter-spacing="0.3">ZAKEN</text>
+    </svg>
+    <div class="auth-logo-divider"></div>
+    <div class="auth-logo-opdracht">
+      <span class="auth-logo-label">In opdracht van</span>
+      <!-- Lancyr wordmark logo -->
+      <svg viewBox="0 0 130 32" width="118" height="29" xmlns="http://www.w3.org/2000/svg">
+        <text x="0" y="26" fill="#2D1760" font-size="27" font-weight="800" font-family="Poppins,sans-serif" letter-spacing="-0.5">LANCYR</text>
+        <text x="103" y="26" fill="#8C6FBD" font-size="24" font-weight="700" font-family="Poppins,sans-serif">+</text>
+      </svg>
+    </div>
+  </div>
+  <div class="auth-card">
+
+    <!-- LOGIN SCHERM -->
+    <div class="auth-screen active" id="auth-login-screen">
+      <div class="auth-eyebrow">Juridische Helpdesk</div>
+      <div class="auth-title">Inloggen</div>
+      <div class="auth-subtitle">Log in om het dagrapport te bekijken.</div>
+      <div class="auth-error" id="login-error"></div>
+      <div class="auth-field">
+        <label class="auth-label">E-mailadres</label>
+        <input class="auth-input" id="login-email" type="email" placeholder="jouw@email.nl" autocomplete="email" />
+      </div>
+      <div class="auth-field">
+        <label class="auth-label">Wachtwoord</label>
+        <input class="auth-input" id="login-password" type="password" placeholder="••••••••" autocomplete="current-password" />
+      </div>
+      <button class="auth-btn" id="login-btn" onclick="authLogin()">Aanmelden</button>
+      <div class="auth-switch">Nog geen account? <a onclick="showRegister()">Registreren →</a></div>
+    </div>
+
+    <!-- REGISTREER SCHERM -->
+    <div class="auth-screen" id="auth-register-screen">
+      <div class="auth-eyebrow">Juridische Helpdesk</div>
+      <div class="auth-title">Account aanmaken</div>
+      <div class="auth-subtitle">Maak een account aan voor toegang tot het dagrapport.</div>
+      <div class="auth-error" id="register-error"></div>
+      <div class="auth-success" id="register-success"></div>
+      <div class="auth-field">
+        <label class="auth-label">E-mailadres</label>
+        <input class="auth-input" id="register-email" type="email" placeholder="jouw@email.nl" autocomplete="email" />
+      </div>
+      <div class="auth-field">
+        <label class="auth-label">Wachtwoord</label>
+        <input class="auth-input" id="register-password" type="password" placeholder="Min. 8 tekens" autocomplete="new-password" />
+      </div>
+      <div class="auth-field">
+        <label class="auth-label">Wachtwoord bevestigen</label>
+        <input class="auth-input" id="register-password2" type="password" placeholder="Herhaal wachtwoord" autocomplete="new-password" />
+      </div>
+      <button class="auth-btn" id="register-btn" onclick="authRegister()">Account aanmaken</button>
+      <div class="auth-switch">Al een account? <a onclick="showLogin()">Inloggen →</a></div>
+    </div>
+
+  </div>
+</div>
 
 <!-- GESPREK DETAIL MODAL -->
 <div class="gesprek-modal-overlay" id="gesprek-modal" onclick="closeGesprekModal(event)">
