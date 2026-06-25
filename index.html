@@ -1,906 +1,884 @@
-<!DOCTYPE html><script type="application/json" id="cowork-artifact-meta">{"name": "Lancyr Dagrapport", "schemaVersion": 1, "description": "Lancyr Juridische Helpdesk Dagrapport — live dashboard. v6: Boss design DC-framework rebuild."}</script>
+<!DOCTYPE html>
 <html lang="nl">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Lancyr Helpdesk — Dagrapport</title>
+<title>Lancyr · Dagrapport — HTJZ</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
 <style>
-/* === LANCYR DAGRAPPORT v6 — Boss Design === */
 :root {
   --navy: #0D1F2E;
   --gold: #AE986F;
   --gold-dark: #8a7356;
   --gold-light: #c4aa82;
+  --gold-10: rgba(174,152,111,0.10);
+  --gold-20: rgba(174,152,111,0.20);
   --green: #436436;
-  --green-light: #f1f7f1;
+  --green-bg: rgba(67,100,54,0.10);
   --red: #c0392b;
+  --red-bg: rgba(192,57,43,0.10);
   --bg: #F6F7F9;
-  --white: #ffffff;
-  --card-border: #EDEFF2;
-  --text: #0D1F2E;
-  --text-muted: #6b7280;
-  --text-light: #9ca3af;
-  --blue-light: #B4D2E7;
-  --blue-light-bg: #f0f6fa;
+  --line: #EDEFF2;
+  --ink: #0D1F2E;
+  --ink-50: rgba(13,31,46,0.5);
+  --ink-30: rgba(13,31,46,0.3);
+  --white: #fff;
   --radius-card: 24px;
   --radius-pill: 999px;
-  --radius-sm: 8px;
-  color-scheme: light;
-}
-* { box-sizing: border-box; margin: 0; padding: 0; }
-body {
-  font-family: 'Poppins', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
-  background: var(--bg);
-  color: var(--text);
-  font-size: 14px;
-  line-height: 1.5;
+  --shadow: 0 1px 3px rgba(13,31,46,0.08);
 }
 
-/* === TOPBAR === */
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+  font-family: 'Poppins', sans-serif;
+  background: var(--bg);
+  color: var(--ink);
+  min-height: 100vh;
+}
+
+/* ── TOPBAR ── */
 .topbar {
   position: sticky;
   top: 0;
   z-index: 100;
-  background: var(--navy);
+  background: var(--white);
+  border-bottom: 1px solid var(--line);
+  height: 68px;
   display: flex;
   align-items: center;
-  gap: 0;
-  border-bottom: 2px solid var(--gold);
-  height: 56px;
-  padding: 0 24px;
+  justify-content: space-between;
+  padding: 0 32px;
 }
-.topbar-logo {
+
+.topbar-left {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.logo-text {
   font-size: 15px;
-  font-weight: 800;
-  color: var(--gold);
-  letter-spacing: 1px;
-  text-transform: uppercase;
-  margin-right: 12px;
-  flex-shrink: 0;
+  font-weight: 700;
+  color: var(--navy);
+  letter-spacing: -0.3px;
 }
+
 .topbar-divider {
   width: 1px;
-  height: 28px;
-  background: rgba(255,255,255,0.15);
-  margin: 0 12px;
-  flex-shrink: 0;
+  height: 24px;
+  background: var(--line);
 }
+
 .topbar-opdracht {
-  font-size: 10px;
-  color: rgba(255,255,255,0.45);
-  font-weight: 500;
-  letter-spacing: 0.5px;
-  flex-shrink: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 1px;
 }
-.topbar-lancyr {
+
+.topbar-label {
+  font-size: 9px;
+  font-weight: 600;
+  color: var(--ink-30);
+  text-transform: uppercase;
+  letter-spacing: 0.8px;
+}
+
+.topbar-client {
   font-size: 14px;
-  font-weight: 700;
+  font-weight: 600;
   color: var(--gold);
-  letter-spacing: 0.5px;
-  margin-left: 6px;
-  flex-shrink: 0;
 }
-.topbar-spacer { flex: 1; }
-.topbar-status {
+
+.topbar-right {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.live-indicator {
   display: flex;
   align-items: center;
   gap: 6px;
-  font-size: 11px;
-  color: rgba(255,255,255,0.6);
-  margin-right: 14px;
+  font-size: 12px;
+  color: var(--ink-50);
   font-weight: 500;
 }
-.status-dot {
-  width: 7px;
-  height: 7px;
+
+.live-dot {
+  width: 8px;
+  height: 8px;
+  background: #2ecc71;
   border-radius: 50%;
-  background: #4ade80;
   animation: pulse 2s infinite;
 }
+
 @keyframes pulse {
-  0%, 100% { opacity: 1; }
-  50% { opacity: 0.4; }
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50% { opacity: 0.6; transform: scale(1.2); }
 }
-.topbar-refresh {
-  background: var(--gold);
-  color: var(--navy);
-  border: none;
-  border-radius: var(--radius-pill);
+
+.refresh-btn {
+  display: flex;
+  align-items: center;
+  gap: 6px;
   padding: 6px 14px;
-  font-size: 11px;
-  font-weight: 700;
+  border: 1px solid var(--navy);
+  border-radius: var(--radius-pill);
+  background: var(--white);
+  color: var(--navy);
   font-family: 'Poppins', sans-serif;
+  font-size: 12px;
+  font-weight: 500;
   cursor: pointer;
-  letter-spacing: 0.3px;
-  margin-right: 14px;
-  transition: background 0.15s;
+  transition: all 0.15s;
 }
-.topbar-refresh:hover { background: var(--gold-light); }
-.topbar-avatars {
+
+.refresh-btn:hover { background: var(--bg); }
+
+.avatar-stack {
   display: flex;
   align-items: center;
 }
-.avatar {
-  width: 30px;
-  height: 30px;
+
+.avatar-stack .av {
+  width: 32px;
+  height: 32px;
   border-radius: 50%;
-  border: 2px solid var(--navy);
+  background: var(--gold);
+  color: var(--white);
+  font-size: 11px;
+  font-weight: 700;
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 11px;
-  font-weight: 700;
-  color: var(--navy);
+  border: 2px solid var(--white);
   margin-left: -8px;
-  flex-shrink: 0;
 }
-.avatar:first-child { margin-left: 0; }
 
-/* === HEADER BAND === */
+.avatar-stack .av:first-child { margin-left: 0; }
+
+/* ── HEADER BAND ── */
 .header-band {
   background: var(--white);
-  border-bottom: 1px solid var(--card-border);
-  padding: 18px 24px 14px;
+  border-bottom: 1px solid var(--line);
+  padding: 20px 32px;
   display: flex;
-  align-items: flex-end;
+  align-items: center;
   justify-content: space-between;
-  gap: 16px;
-  flex-wrap: wrap;
 }
-.header-title-block { }
-.header-title {
-  font-size: 32px;
-  font-weight: 800;
+
+.header-left .header-eyebrow {
+  font-size: 10px;
+  font-weight: 700;
+  color: var(--gold);
+  text-transform: uppercase;
+  letter-spacing: 1.2px;
+  margin-bottom: 4px;
+}
+
+.header-left h1 {
+  font-size: 40px;
+  font-weight: 700;
   color: var(--navy);
-  line-height: 1.1;
-  letter-spacing: -0.5px;
+  line-height: 1;
+  margin-bottom: 4px;
 }
-.header-subtitle {
-  font-size: 12px;
-  color: var(--text-muted);
-  font-weight: 500;
-  margin-top: 4px;
-  letter-spacing: 0.2px;
+
+.header-left .header-date {
+  font-size: 13px;
+  color: var(--ink-50);
+  font-weight: 400;
 }
+
 .period-tabs {
   display: flex;
-  gap: 6px;
-  align-items: center;
-  flex-wrap: wrap;
-}
-.period-tab {
-  padding: 8px 18px;
-  border-radius: var(--radius-pill);
-  font-size: 12px;
-  font-weight: 600;
-  font-family: 'Poppins', sans-serif;
-  cursor: pointer;
-  border: 1.5px solid transparent;
   background: var(--bg);
-  color: var(--text-muted);
-  transition: all 0.15s;
-  white-space: nowrap;
+  border-radius: var(--radius-pill);
+  padding: 4px;
+  gap: 2px;
 }
-.period-tab:hover { background: #eceef1; color: var(--navy); }
+
+.period-tab {
+  padding: 7px 16px;
+  border-radius: var(--radius-pill);
+  border: none;
+  background: transparent;
+  font-family: 'Poppins', sans-serif;
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--ink-50);
+  cursor: pointer;
+  transition: all 0.15s;
+}
+
+.period-tab:hover { color: var(--ink); }
+
 .period-tab.active {
   background: var(--navy);
   color: var(--white);
-  border-color: var(--navy);
 }
 
-/* === MAIN CONTAINER === */
-.container {
-  max-width: 1080px;
+/* ── MAIN CONTENT ── */
+.main {
+  max-width: 1280px;
   margin: 0 auto;
-  padding: 24px 24px 40px;
+  padding: 28px 32px 40px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
 }
 
-/* === TEXT-LABEL utility === */
-.text-label {
-  font-size: 10px;
-  font-weight: 700;
-  letter-spacing: 1.6px;
-  text-transform: uppercase;
-  color: var(--text-muted);
+/* ── CARDS ── */
+.card {
+  background: var(--white);
+  border-radius: var(--radius-card);
+  box-shadow: var(--shadow);
+  padding: 24px;
 }
 
-/* === KPI HERO ROW === */
-.kpi-hero-row {
+/* ── KPI HERO ROW ── */
+.kpi-row {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
-  gap: 16px;
-  margin-bottom: 16px;
+  gap: 20px;
 }
-.kpi-hero-card {
-  border-radius: var(--radius-card);
-  padding: 24px 22px;
-  border: 1px solid var(--card-border);
-  box-shadow: 0 1px 4px rgba(0,0,0,0.04);
-  position: relative;
-  overflow: hidden;
-}
-.kpi-hero-card.dark {
+
+/* Brandmeester card – dark navy */
+.card-brandmeester {
   background: var(--navy);
   color: var(--white);
-  border-color: transparent;
+  border-radius: var(--radius-card);
+  box-shadow: var(--shadow);
+  padding: 28px 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
 }
-.kpi-hero-card.light {
-  background: var(--white);
-}
-.kpi-hero-label {
+
+.card-brandmeester .bm-label {
+  display: flex;
+  align-items: center;
+  gap: 8px;
   font-size: 10px;
   font-weight: 700;
-  letter-spacing: 1.6px;
+  color: var(--gold);
   text-transform: uppercase;
-  margin-bottom: 12px;
+  letter-spacing: 1px;
 }
-.kpi-hero-card.dark .kpi-hero-label { color: var(--gold); }
-.kpi-hero-card.light .kpi-hero-label { color: var(--text-muted); }
 
-.brandmeester-name {
+.card-brandmeester .bm-label svg {
+  width: 18px;
+  height: 18px;
+  fill: var(--gold);
+}
+
+.bm-person {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.bm-avatar {
+  width: 52px;
+  height: 52px;
+  border-radius: 50%;
+  background: var(--gold);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--navy);
+  flex-shrink: 0;
+}
+
+.bm-info .bm-name {
   font-size: 20px;
   font-weight: 700;
   color: var(--white);
   line-height: 1.2;
-  margin-bottom: 4px;
-}
-.brandmeester-count {
-  font-size: 13px;
-  color: rgba(255,255,255,0.55);
-  font-weight: 500;
-}
-.brandmeester-gold-bar {
-  position: absolute;
-  left: 0;
-  top: 0;
-  bottom: 0;
-  width: 4px;
-  background: var(--gold);
-  border-radius: var(--radius-card) 0 0 var(--radius-card);
 }
 
-.score-big {
+.bm-info .bm-role {
+  font-size: 12px;
+  color: var(--gold-light);
+  font-weight: 500;
+}
+
+.bm-stat {
+  margin-top: auto;
+}
+
+.bm-stat .bm-count {
+  font-size: 42px;
+  font-weight: 700;
+  color: var(--gold);
+  line-height: 1;
+}
+
+.bm-stat .bm-stat-label {
+  font-size: 12px;
+  color: rgba(255,255,255,0.6);
+  font-weight: 400;
+}
+
+/* Score card */
+.card-score {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.card-score .score-label {
+  font-size: 11px;
+  font-weight: 600;
+  color: var(--ink-50);
+  text-transform: uppercase;
+  letter-spacing: 0.8px;
+}
+
+.card-score .score-number {
+  display: flex;
+  align-items: baseline;
+  gap: 4px;
+}
+
+.card-score .score-big {
   font-size: 48px;
-  font-weight: 800;
+  font-weight: 700;
   color: var(--navy);
   line-height: 1;
-  display: inline;
 }
-.score-denom {
+
+.card-score .score-suffix {
   font-size: 20px;
-  font-weight: 600;
-  color: var(--text-muted);
-}
-.score-stars {
-  margin: 8px 0 6px;
-  font-size: 16px;
-  letter-spacing: 2px;
-}
-.score-delta {
-  font-size: 11px;
-  font-weight: 600;
-  color: var(--green);
-}
-.score-delta.neg { color: var(--red); }
-
-.drukte-level {
-  font-size: 24px;
-  font-weight: 800;
-  color: var(--navy);
-  margin-bottom: 8px;
-  text-transform: capitalize;
-}
-.drukte-bar-wrap {
-  background: var(--bg);
-  border-radius: var(--radius-pill);
-  height: 8px;
-  overflow: hidden;
-  margin-bottom: 10px;
-}
-.drukte-bar {
-  height: 8px;
-  border-radius: var(--radius-pill);
-  transition: width 0.4s;
-}
-.drukte-meta {
-  font-size: 12px;
-  color: var(--text-muted);
+  color: var(--ink-30);
   font-weight: 500;
 }
 
-/* === STAT STRIP === */
-.stat-strip {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 12px;
-  margin-bottom: 16px;
+.stars {
+  display: flex;
+  gap: 3px;
+  margin: 4px 0;
 }
-.stat-strip-card {
-  background: var(--white);
-  border: 1px solid var(--card-border);
-  border-radius: 16px;
-  padding: 16px 18px;
-  box-shadow: 0 1px 3px rgba(0,0,0,0.04);
+
+.star {
+  font-size: 18px;
+  color: var(--gold);
 }
-.stat-strip-value {
-  font-size: 28px;
-  font-weight: 800;
-  color: var(--navy);
-  line-height: 1.1;
-}
-.stat-strip-label {
-  font-size: 11px;
-  color: var(--text-muted);
-  font-weight: 500;
-  margin-top: 3px;
-}
+
+.star.empty { color: var(--line); }
+
 .delta-badge {
   display: inline-flex;
   align-items: center;
-  gap: 3px;
+  gap: 4px;
+  padding: 3px 10px;
+  border-radius: var(--radius-pill);
+  font-size: 11px;
+  font-weight: 600;
+}
+
+.delta-badge.up {
+  background: var(--green-bg);
+  color: var(--green);
+}
+
+.delta-badge.down {
+  background: var(--red-bg);
+  color: var(--red);
+}
+
+.delta-badge.neutral {
+  background: var(--bg);
+  color: var(--ink-50);
+}
+
+/* Drukte card */
+.card-drukte {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.card-drukte .drukte-header {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.drukte-icon {
+  font-size: 14px;
+}
+
+.drukte-label {
   font-size: 10px;
   font-weight: 700;
-  padding: 2px 7px;
-  border-radius: var(--radius-pill);
-  margin-top: 6px;
+  color: var(--ink-50);
+  text-transform: uppercase;
+  letter-spacing: 0.8px;
 }
-.delta-badge.up { background: #dcfce7; color: #166534; }
-.delta-badge.down { background: #fee2e2; color: #991b1b; }
-.delta-badge.neutral { background: var(--bg); color: var(--text-muted); }
 
-/* === CHARTS ROW === */
+.drukte-level {
+  font-size: 36px;
+  font-weight: 700;
+  color: var(--navy);
+  text-transform: capitalize;
+  line-height: 1;
+}
+
+.drukte-bar-wrap {
+  background: var(--gold-10);
+  border-radius: var(--radius-pill);
+  height: 10px;
+  overflow: hidden;
+}
+
+.drukte-bar-fill {
+  height: 100%;
+  background: var(--gold);
+  border-radius: var(--radius-pill);
+  transition: width 0.6s ease;
+}
+
+.drukte-sub {
+  font-size: 12px;
+  color: var(--ink-50);
+  font-weight: 400;
+}
+
+/* ── STAT STRIP ── */
+.stat-strip {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+}
+
+.stat-card {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.stat-card .stat-label {
+  font-size: 11px;
+  font-weight: 600;
+  color: var(--ink-50);
+  text-transform: uppercase;
+  letter-spacing: 0.6px;
+}
+
+.stat-card .stat-value {
+  font-size: 28px;
+  font-weight: 700;
+  color: var(--navy);
+  line-height: 1;
+}
+
+/* ── CHARTS ROW ── */
 .charts-row {
   display: grid;
-  grid-template-columns: 2fr 1fr;
-  gap: 16px;
-  margin-bottom: 16px;
-}
-.chart-card {
-  background: var(--white);
-  border: 1px solid var(--card-border);
-  border-radius: var(--radius-card);
-  padding: 22px 22px 16px;
-  box-shadow: 0 1px 4px rgba(0,0,0,0.04);
-}
-.chart-card-title {
-  font-size: 10px;
-  font-weight: 700;
-  letter-spacing: 1.6px;
-  text-transform: uppercase;
-  color: var(--text-muted);
-  margin-bottom: 16px;
-}
-.line-chart-svg {
-  width: 100%;
-  display: block;
+  grid-template-columns: 1.6fr 1fr;
+  gap: 20px;
 }
 
-/* Onderwerp bars */
-.onderwerp-list { display: flex; flex-direction: column; gap: 10px; }
-.onderwerp-item {}
-.onderwerp-row {
+.chart-card-header {
   display: flex;
-  justify-content: space-between;
   align-items: center;
-  margin-bottom: 4px;
-}
-.onderwerp-name { font-size: 12px; font-weight: 500; color: var(--text); }
-.onderwerp-count { font-size: 12px; font-weight: 700; color: var(--navy); }
-.onderwerp-bar-wrap {
-  background: var(--bg);
-  border-radius: var(--radius-pill);
-  height: 6px;
-  overflow: hidden;
-}
-.onderwerp-bar {
-  height: 6px;
-  border-radius: var(--radius-pill);
-  background: var(--gold);
-  transition: width 0.4s;
+  justify-content: space-between;
+  margin-bottom: 20px;
 }
 
-/* === TEAM TABLE === */
-.team-table-card {
-  background: var(--white);
-  border: 1px solid var(--card-border);
-  border-radius: var(--radius-card);
-  padding: 0;
-  overflow: hidden;
-  margin-bottom: 16px;
-  box-shadow: 0 1px 4px rgba(0,0,0,0.04);
+.chart-card-title {
+  font-size: 15px;
+  font-weight: 600;
+  color: var(--navy);
 }
+
+/* Line chart */
+.line-chart-wrap {
+  width: 100%;
+  overflow: hidden;
+}
+
+.line-chart-wrap svg {
+  width: 100%;
+  height: 180px;
+}
+
+/* Verdeling bars */
+.verdeling-list {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.verdeling-item {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.verdeling-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.verdeling-name {
+  font-size: 12px;
+  font-weight: 500;
+  color: var(--navy);
+}
+
+.verdeling-count {
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--ink-50);
+}
+
+.verdeling-bar-wrap {
+  background: var(--gold-10);
+  border-radius: var(--radius-pill);
+  height: 6px;
+  overflow: hidden;
+}
+
+.verdeling-bar-fill {
+  height: 100%;
+  background: var(--gold);
+  border-radius: var(--radius-pill);
+}
+
+/* ── TEAM TABLE ── */
+.team-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
 .team-table-header {
-  display: grid;
-  grid-template-columns: 200px 1fr 80px 100px 80px;
-  padding: 12px 20px;
-  background: var(--bg);
-  border-bottom: 1px solid var(--card-border);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 16px;
+}
+
+.team-table-title {
+  font-size: 15px;
+  font-weight: 600;
+  color: var(--navy);
+}
+
+.team-active-badge {
+  font-size: 12px;
+  color: var(--ink-50);
+  font-weight: 500;
+}
+
+.team-table thead th {
+  text-align: left;
   font-size: 10px;
   font-weight: 700;
-  letter-spacing: 1.2px;
+  color: var(--ink-30);
   text-transform: uppercase;
-  color: var(--text-muted);
+  letter-spacing: 0.8px;
+  padding: 8px 12px;
+  border-bottom: 1px solid var(--line);
 }
-.team-table-row {
-  display: grid;
-  grid-template-columns: 200px 1fr 80px 100px 80px;
-  padding: 14px 20px;
-  border-bottom: 1px solid var(--card-border);
-  align-items: center;
+
+.team-table tbody tr {
+  border-bottom: 1px solid var(--line);
+  transition: background 0.1s;
 }
-.team-table-row:last-child { border-bottom: none; }
+
+.team-table tbody tr:last-child { border-bottom: none; }
+.team-table tbody tr:hover { background: var(--bg); }
+
+.team-table td {
+  padding: 14px 12px;
+  font-size: 13px;
+  vertical-align: middle;
+}
+
 .team-person {
   display: flex;
   align-items: center;
   gap: 10px;
 }
-.team-avatar {
-  width: 34px;
-  height: 34px;
+
+.team-av {
+  width: 36px;
+  height: 36px;
   border-radius: 50%;
+  background: var(--gold-10);
+  color: var(--gold-dark);
+  font-size: 12px;
+  font-weight: 700;
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 12px;
-  font-weight: 700;
-  color: var(--navy);
   flex-shrink: 0;
 }
-.team-name { font-size: 13px; font-weight: 600; color: var(--navy); }
-.team-role { font-size: 11px; color: var(--text-muted); font-weight: 400; }
-.team-count-cell {}
-.team-count-num { font-size: 15px; font-weight: 700; color: var(--navy); }
-.team-count-bar-wrap { background: var(--bg); border-radius: var(--radius-pill); height: 4px; margin-top: 4px; }
-.team-count-bar { height: 4px; border-radius: var(--radius-pill); background: var(--gold); }
-.team-score { font-size: 14px; font-weight: 700; }
-.team-duur { font-size: 12px; color: var(--text-muted); font-weight: 500; }
-.team-status-dot {
-  width: 10px;
-  height: 10px;
-  border-radius: 50%;
-  margin: 0 auto;
+
+.team-name { font-weight: 600; color: var(--navy); font-size: 13px; }
+.team-role { font-size: 11px; color: var(--ink-50); }
+
+.mini-gold-bar-wrap {
+  background: var(--gold-10);
+  border-radius: var(--radius-pill);
+  height: 4px;
+  width: 60px;
+  overflow: hidden;
+  margin-top: 4px;
 }
 
-/* === GESPREKKEN TABLE === */
-.gesprekken-card {
-  background: var(--white);
-  border: 1px solid var(--card-border);
-  border-radius: var(--radius-card);
-  overflow: hidden;
-  margin-bottom: 16px;
-  box-shadow: 0 1px 4px rgba(0,0,0,0.04);
+.mini-gold-bar-fill {
+  height: 100%;
+  background: var(--gold);
+  border-radius: var(--radius-pill);
 }
+
+.status-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  display: inline-block;
+  margin-right: 5px;
+}
+
+.status-dot.available { background: #2ecc71; }
+.status-dot.busy { background: #f39c12; }
+.status-dot.offline { background: var(--ink-30); }
+
+/* ── RECENTE GESPREKKEN ── */
 .gesprekken-header {
-  display: grid;
-  grid-template-columns: 60px 180px 130px 120px 70px 100px;
-  padding: 12px 20px;
-  background: var(--bg);
-  border-bottom: 1px solid var(--card-border);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 16px;
+}
+
+.gesprekken-title {
+  font-size: 15px;
+  font-weight: 600;
+  color: var(--navy);
+}
+
+.gesprekken-link {
+  font-size: 12px;
+  color: var(--gold);
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.gesprekken-link:hover { color: var(--gold-dark); }
+
+.gesprekken-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.gesprekken-table thead th {
+  text-align: left;
   font-size: 10px;
   font-weight: 700;
-  letter-spacing: 1.2px;
+  color: var(--ink-30);
   text-transform: uppercase;
-  color: var(--text-muted);
+  letter-spacing: 0.8px;
+  padding: 8px 12px;
+  border-bottom: 1px solid var(--line);
 }
-.gesprekken-row {
-  display: grid;
-  grid-template-columns: 60px 180px 130px 120px 70px 100px;
-  padding: 13px 20px;
-  border-bottom: 1px solid #f5f6f8;
-  align-items: center;
+
+.gesprekken-table tbody tr {
+  border-bottom: 1px solid var(--line);
+  transition: background 0.1s;
+}
+
+.gesprekken-table tbody tr:last-child { border-bottom: none; }
+.gesprekken-table tbody tr:hover { background: var(--bg); }
+
+.gesprekken-table td {
+  padding: 12px;
   font-size: 13px;
+  vertical-align: middle;
 }
-.gesprekken-row:last-child { border-bottom: none; }
-.gesp-tijd { font-size: 12px; font-weight: 600; color: var(--gold-dark); }
-.gesp-naam {
+
+.gs-tijd {
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--ink-50);
+  font-variant-numeric: tabular-nums;
+  white-space: nowrap;
+}
+
+.gs-person {
   display: flex;
   align-items: center;
   gap: 8px;
 }
-.gesp-avatar {
-  width: 28px;
-  height: 28px;
+
+.gs-av {
+  width: 30px;
+  height: 30px;
   border-radius: 50%;
-  background: var(--bg);
+  background: var(--gold-10);
+  color: var(--gold-dark);
+  font-size: 10px;
+  font-weight: 700;
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 10px;
-  font-weight: 700;
-  color: var(--navy);
   flex-shrink: 0;
-  border: 1px solid var(--card-border);
 }
-.gesp-name-text { font-size: 12px; font-weight: 600; color: var(--navy); line-height: 1.3; }
-.gesp-bedrijf { font-size: 11px; color: var(--text-muted); font-weight: 400; }
-.gesp-onderwerp-badge {
-  display: inline-block;
-  padding: 3px 10px;
-  border-radius: 6px;
-  font-size: 10px;
+
+.gs-name {
+  font-size: 12px;
   font-weight: 600;
-  background: var(--bg);
   color: var(--navy);
-  border: 1px solid var(--card-border);
 }
-.gesp-jurist { font-size: 12px; color: var(--text-muted); font-weight: 500; }
-.gesp-duur { font-size: 12px; color: var(--text-muted); }
-.status-badge {
+
+.topic-badge {
   display: inline-flex;
   align-items: center;
-  gap: 4px;
-  padding: 4px 10px;
+  padding: 3px 10px;
   border-radius: var(--radius-pill);
-  font-size: 10px;
-  font-weight: 700;
-  letter-spacing: 0.3px;
-}
-.status-opgelost { background: #dcfce7; color: #166534; }
-.status-terugbel { background: #fef3c7; color: #92400e; }
-.status-brandmeester { background: #dbeafe; color: #1e40af; }
-.status-geen-dekking { background: #fee2e2; color: #991b1b; }
-.status-afkoop { background: #f3e8ff; color: #6b21a8; }
-
-/* === SECTION CARD (for conversations/actions/analysis) === */
-.section-card {
-  background: var(--white);
-  border: 1px solid var(--card-border);
-  border-radius: var(--radius-card);
-  overflow: hidden;
-  margin-bottom: 16px;
-  box-shadow: 0 1px 4px rgba(0,0,0,0.04);
-}
-.section-card-header {
-  padding: 16px 22px;
-  border-bottom: 1px solid var(--card-border);
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  cursor: pointer;
-  user-select: none;
-  transition: background 0.12s;
-}
-.section-card-header:hover { background: #fafbfc; }
-.section-card-title {
-  font-size: 10px;
-  font-weight: 700;
-  letter-spacing: 1.6px;
-  text-transform: uppercase;
-  color: var(--navy);
-  flex: 1;
-}
-.section-card-count {
-  background: var(--bg);
-  border-radius: var(--radius-pill);
-  padding: 2px 10px;
   font-size: 11px;
   font-weight: 600;
-  color: var(--text-muted);
-  border: 1px solid var(--card-border);
-}
-.chevron {
-  font-size: 10px;
-  color: var(--text-light);
-  transition: transform 0.2s;
-}
-.section-card.collapsed .chevron { transform: rotate(-90deg); }
-
-/* === CONV ITEMS === */
-.conv-item {
-  padding: 16px 22px;
-  border-bottom: 1px solid #f5f6f8;
-  display: grid;
-  grid-template-columns: 52px 1fr;
-  gap: 14px;
-}
-.conv-item:last-child { border-bottom: none; }
-.conv-time { font-size: 12px; color: var(--gold-dark); font-weight: 600; padding-top: 2px; }
-.conv-title { font-size: 13px; font-weight: 600; color: var(--navy); margin-bottom: 3px; }
-.conv-persons { font-size: 12px; color: var(--text-muted); margin-bottom: 6px; font-weight: 400; }
-.conv-summary { font-size: 12px; color: #374151; line-height: 1.6; margin-bottom: 10px; }
-.conv-footer { display: flex; flex-wrap: wrap; align-items: center; gap: 6px; }
-.conv-tag {
-  display: inline-block;
-  padding: 2px 8px;
-  border-radius: 6px;
-  font-size: 10px;
-  font-weight: 600;
-  background: var(--bg);
-  color: var(--navy);
-  border: 1px solid var(--card-border);
+  background: var(--gold-10);
+  color: var(--gold-dark);
+  white-space: nowrap;
 }
 
-/* === ACTIES === */
-.actie-item {
-  padding: 13px 22px;
-  border-bottom: 1px solid #f5f6f8;
-  display: flex;
-  align-items: flex-start;
-  gap: 12px;
-}
-.actie-item:last-child { border-bottom: none; }
-.actie-item.prio-hoog { background: #fffbf5; border-left: 3px solid var(--gold); padding-left: 19px; }
-.prio-dot {
-  width: 8px;
-  height: 8px;
-  border-radius: 50%;
-  flex-shrink: 0;
-  margin-top: 5px;
-}
-.dot-hoog { background: var(--gold); }
-.dot-middel { background: var(--green); }
-.dot-laag { background: var(--text-muted); }
-.actie-tekst { font-size: 13px; flex: 1; }
-.actie-owner { font-size: 11px; color: var(--text-muted); margin-top: 3px; }
-.actie-deadline-urgent { font-size: 11px; font-weight: 700; color: var(--gold-dark); }
-.actie-deadline-soon { font-size: 11px; font-weight: 600; color: var(--green); }
-.actie-deadline-ok { font-size: 11px; color: var(--text-muted); }
-
-/* === ANALYSE === */
-.analyse-grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 16px;
-  padding: 18px 22px;
-}
-.analyse-col-title {
+.uitkomst-badge {
+  display: inline-flex;
+  align-items: center;
+  padding: 3px 10px;
+  border-radius: var(--radius-pill);
   font-size: 11px;
-  font-weight: 700;
-  text-transform: uppercase;
-  letter-spacing: 0.6px;
-  margin-bottom: 10px;
-  display: flex;
-  align-items: center;
-  gap: 6px;
+  font-weight: 600;
+  white-space: nowrap;
 }
-.analyse-col-title.goed { color: var(--green); }
-.analyse-col-title.beter { color: var(--gold-dark); }
-.analyse-point {
-  display: flex;
-  gap: 10px;
-  margin-bottom: 10px;
-  font-size: 12px;
-  line-height: 1.55;
-  padding: 8px 12px;
-  border-radius: var(--radius-sm);
-}
-.analyse-point.goed-point { background: var(--green-light); border-left: 3px solid var(--green); }
-.analyse-point.beter-point { background: #fdf9f4; border-left: 3px solid var(--gold); }
 
-/* === WEEK TABLE === */
-.week-table-card {
-  background: var(--white);
-  border: 1px solid var(--card-border);
-  border-radius: var(--radius-card);
+.uitkomst-badge.opgelost { background: var(--green-bg); color: var(--green); }
+.uitkomst-badge.terugbel { background: rgba(174,152,111,0.15); color: var(--gold-dark); }
+.uitkomst-badge.brandmeester { background: rgba(13,31,46,0.08); color: var(--navy); }
+.uitkomst-badge.geen-dekking { background: var(--red-bg); color: var(--red); }
+.uitkomst-badge.overig { background: var(--bg); color: var(--ink-50); }
+
+.gs-samenvatting {
+  font-size: 12px;
+  color: var(--ink-50);
+  max-width: 320px;
+  white-space: nowrap;
   overflow: hidden;
-  margin-bottom: 16px;
-  box-shadow: 0 1px 4px rgba(0,0,0,0.04);
+  text-overflow: ellipsis;
 }
-.week-th {
-  display: grid;
-  grid-template-columns: 130px repeat(5, 1fr) 70px;
-  padding: 12px 20px;
-  background: var(--bg);
-  border-bottom: 1px solid var(--card-border);
-  font-size: 10px;
-  font-weight: 700;
-  letter-spacing: 1.2px;
-  text-transform: uppercase;
-  color: var(--text-muted);
-}
-.week-tr {
-  display: grid;
-  grid-template-columns: 130px repeat(5, 1fr) 70px;
-  padding: 12px 20px;
-  border-bottom: 1px solid #f5f6f8;
-  align-items: center;
-  cursor: pointer;
-  transition: background 0.1s;
-}
-.week-tr:hover { background: #fafbfc; }
-.week-tr.today { background: #f0f6fa; border-left: 3px solid var(--gold); padding-left: 17px; }
-.week-tr:last-child { border-bottom: none; }
-.week-tf {
-  display: grid;
-  grid-template-columns: 130px repeat(5, 1fr) 70px;
-  padding: 12px 20px;
-  background: var(--bg);
-  border-top: 2px solid var(--card-border);
-  font-size: 12px;
-  font-weight: 700;
-}
-.week-day-name { font-size: 13px; font-weight: 600; }
-.week-day-sub { font-size: 11px; color: var(--text-muted); font-weight: 400; }
-.week-num { text-align: center; font-size: 13px; font-weight: 600; }
-.week-score-cell { text-align: right; font-size: 12px; font-weight: 700; }
-.score-high { color: var(--green); }
-.score-mid { color: var(--gold-dark); }
-.score-low { color: var(--text-muted); }
 
-/* === FOOTER === */
-.dashboard-footer {
+/* ── FOOTER ── */
+.footer {
   background: var(--navy);
-  border-radius: var(--radius-card);
-  padding: 18px 24px;
+  padding: 18px 32px;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  margin-top: 8px;
 }
-.footer-logo { font-size: 14px; font-weight: 800; color: var(--gold); letter-spacing: 1px; text-transform: uppercase; }
-.footer-right { font-size: 11px; color: rgba(255,255,255,0.45); font-weight: 500; }
 
-/* === EMPTY STATE === */
+.footer-left {
+  font-size: 13px;
+  font-weight: 600;
+  color: rgba(255,255,255,0.7);
+}
+
+.footer-right {
+  font-size: 12px;
+  color: rgba(255,255,255,0.4);
+}
+
+/* ── EMPTY STATE ── */
 .empty-state {
-  padding: 40px 22px;
   text-align: center;
-  color: var(--text-muted);
-  font-size: 13px;
+  padding: 48px 24px;
+  color: var(--ink-50);
 }
 
-/* === DAG-HEADER (for week view conv sections) === */
-.dag-header {
-  padding: 10px 22px;
-  background: var(--bg);
-  border-bottom: 1px solid var(--card-border);
-  font-size: 11px;
-  font-weight: 700;
-  color: var(--text-muted);
-  text-transform: uppercase;
-  letter-spacing: 0.5px;
-}
+.empty-state p { font-size: 14px; margin-top: 8px; }
 
-/* === MANUAL ENTRY FORM === */
-.manual-form { background: var(--bg); border-top: 1px solid var(--card-border); padding: 18px 22px; }
-.form-row-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-bottom: 12px; }
-.form-row-3 { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 12px; margin-bottom: 12px; }
-.form-group { display: flex; flex-direction: column; gap: 5px; }
-.form-label { font-size: 10px; font-weight: 700; color: var(--text-muted); text-transform: uppercase; letter-spacing: 0.6px; }
-.form-input, .form-select, .form-textarea {
-  border: 1.5px solid var(--card-border);
-  border-radius: var(--radius-sm);
-  padding: 8px 12px;
-  font-size: 13px;
-  background: var(--white);
-  font-family: inherit;
-  color: var(--text);
-}
-.form-input:focus, .form-select:focus, .form-textarea:focus { outline: none; border-color: var(--gold); }
-.form-textarea { min-height: 64px; resize: vertical; }
-.form-actions { display: flex; gap: 8px; margin-top: 6px; }
-.btn-opslaan {
-  background: var(--navy); color: #fff; padding: 7px 20px;
-  border-radius: var(--radius-pill); border: none; font-size: 12px;
-  font-weight: 600; cursor: pointer; font-family: inherit;
-}
-.btn-annuleren {
-  background: var(--bg); color: var(--text-muted); padding: 7px 16px;
-  border-radius: var(--radius-pill); border: 1px solid var(--card-border);
-  font-size: 12px; cursor: pointer; font-family: inherit;
-}
-.btn-toevoegen {
-  background: var(--gold); color: var(--navy); font-size: 12px; font-weight: 600;
-  padding: 7px 18px; border-radius: var(--radius-pill); border: none;
-  cursor: pointer; font-family: inherit;
-}
-.btn-delete {
-  background: transparent; border: none; color: #d1d5db; cursor: pointer;
-  font-size: 12px; padding: 2px 6px; border-radius: 4px;
-}
-.btn-delete:hover { color: var(--red); background: #fee2e2; }
-.manual-add-row { padding: 12px 22px; border-top: 1px solid #f5f6f8; }
-.manual-entry {
-  padding: 13px 22px; border-bottom: 1px solid #f5f6f8;
-  display: flex; align-items: flex-start; gap: 12px;
-}
-.manual-entry:last-of-type { border-bottom: none; }
-
-/* === CHECK BOX === */
-.check-box {
-  width: 16px; height: 16px; border: 2px solid var(--card-border);
-  border-radius: 4px; flex-shrink: 0; margin-top: 1px; cursor: pointer;
-  transition: all .15s; display: flex; align-items: center; justify-content: center;
-  font-size: 9px;
-}
-.check-box:hover { border-color: var(--gold); }
-.check-box.done { background: var(--green); border-color: var(--green); color: #fff; }
-
-/* === MERGE MODAL === */
-.hidden { display: none !important; }
-.merge-modal-overlay {
-  position: fixed; inset: 0; background: rgba(13,31,46,.55);
-  z-index: 1000; display: flex; align-items: center; justify-content: center;
-}
-.merge-modal {
-  background: var(--white); border-radius: 16px; padding: 28px 28px 22px;
-  max-width: 440px; width: calc(100% - 40px); border-top: 3px solid var(--gold);
-}
-.merge-modal-title { font-size: 15px; font-weight: 700; margin-bottom: 8px; }
-.merge-modal-body { font-size: 13px; color: #374151; line-height: 1.55; margin-bottom: 20px; }
-.merge-modal-conv {
-  background: var(--bg); border-radius: var(--radius-sm); padding: 10px 14px;
-  margin: 10px 0; font-size: 12px; border-left: 4px solid var(--gold);
-}
-.merge-modal-actions { display: flex; gap: 8px; justify-content: flex-end; }
-
-/* === SECTION CONTROLS === */
-.section-controls { display: flex; gap: 8px; align-items: center; padding: 10px 0 6px; }
-.section-ctrl-btn {
-  font-size: 11px; color: var(--text-muted); background: none; border: none;
-  cursor: pointer; font-family: inherit; padding: 2px 6px; border-radius: 4px;
-}
-.section-ctrl-btn:hover { color: var(--gold); background: var(--bg); }
-
-/* === OKR WEEK BANNER (kept for team view) === */
-.okr-week-banner { display: flex; gap: 10px; flex-wrap: wrap; margin-bottom: 16px; }
-.okr-week-card {
-  background: var(--white); border: 1px solid var(--card-border);
-  border-radius: 16px; padding: 14px 18px; flex: 1; min-width: 160px;
-  border-left: 4px solid var(--gold);
-}
-
-/* === RESPONSIVE === */
-@media (max-width: 700px) {
-  .kpi-hero-row { grid-template-columns: 1fr; }
-  .stat-strip { grid-template-columns: 1fr 1fr; }
+/* ── RESPONSIVE ── */
+@media (max-width: 900px) {
+  .topbar { padding: 0 16px; }
+  .header-band { padding: 16px; flex-direction: column; align-items: flex-start; gap: 12px; }
+  .main { padding: 16px; gap: 16px; }
+  .kpi-row { grid-template-columns: 1fr; }
+  .stat-strip { grid-template-columns: repeat(2, 1fr); }
   .charts-row { grid-template-columns: 1fr; }
-  .gesprekken-header, .gesprekken-row { grid-template-columns: 55px 1fr 90px; }
-  .gesprekken-header span:nth-child(n+4), .gesprekken-row > *:nth-child(n+4) { display: none; }
-  .week-th, .week-tr, .week-tf { grid-template-columns: 90px repeat(3,1fr) 60px; }
-  .week-th span:nth-child(4), .week-th span:nth-child(5),
-  .week-tr > *:nth-child(4), .week-tr > *:nth-child(5) { display: none; }
-  .team-table-header, .team-table-row { grid-template-columns: 1fr 60px 60px; }
-  .team-table-header span:nth-child(n+4), .team-table-row > *:nth-child(n+4) { display: none; }
-  .container { padding: 16px 12px 32px; }
-  .header-band { padding: 14px 12px 12px; }
-  .header-title { font-size: 24px; }
-  .topbar { padding: 0 12px; }
+  .header-left h1 { font-size: 28px; }
+  .avatar-stack { display: none; }
+}
+
+@media (max-width: 600px) {
+  .stat-strip { grid-template-columns: 1fr 1fr; }
+  .gs-samenvatting { display: none; }
+  .topbar-opdracht { display: none; }
 }
 </style>
 </head>
 <body>
 
 <!-- TOPBAR -->
-<div class="topbar">
-  <div class="topbar-logo">HTJZ</div>
-  <div class="topbar-divider"></div>
-  <div class="topbar-opdracht">in opdracht van</div>
-  <div class="topbar-lancyr">Lancyr</div>
-  <div class="topbar-spacer"></div>
-  <div class="topbar-status">
-    <div class="status-dot"></div>
-    <span id="status-time">Live · bijgewerkt <span id="update-time">—</span></span>
+<header class="topbar">
+  <div class="topbar-left">
+    <span class="logo-text">HTJZ</span>
+    <div class="topbar-divider"></div>
+    <div class="topbar-opdracht">
+      <span class="topbar-label">In opdracht van</span>
+      <span class="topbar-client">Lancyr</span>
+    </div>
   </div>
-  <button class="topbar-refresh" onclick="refresh()">↻ Vernieuwen</button>
-  <div class="topbar-avatars" id="topbar-avatars">
-    <div class="avatar" style="background:#dbeafe" title="Jackie Stam">JS</div>
-    <div class="avatar" style="background:#fce7f3" title="Senne Duifhuis">SD</div>
-    <div class="avatar" style="background:#dcfce7" title="Edgar Stam">ES</div>
-    <div class="avatar" style="background:#fef3c7" title="Wouter Toonen">WT</div>
-    <div class="avatar" style="background:#f3e8ff" title="Dewi Verver">DV</div>
-    <div class="avatar" style="background:#e0f2fe" title="Roelof van Beijnum">RB</div>
+  <div class="topbar-right">
+    <div class="live-indicator">
+      <div class="live-dot"></div>
+      <span>Live &middot; bijgewerkt <span id="live-time"></span></span>
+    </div>
+    <button class="refresh-btn" onclick="location.reload()">
+      <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="23 4 23 10 17 10"></polyline><path d="M20.49 15a9 9 0 1 1-2.12-9.36L23 10"></path></svg>
+      Vernieuwen
+    </button>
+    <div class="avatar-stack">
+      <div class="av" title="Jackie Stam">JS</div>
+      <div class="av" title="Senne Duifhuis" style="background:#8a7356">SD</div>
+      <div class="av" title="Wouter Toonen" style="background:#6b8f71">WT</div>
+    </div>
   </div>
-</div>
+</header>
 
 <!-- HEADER BAND -->
 <div class="header-band">
-  <div class="header-title-block">
-    <div class="header-title">Dagrapport</div>
-    <div class="header-subtitle" id="header-date">Dashboard</div>
+  <div class="header-left">
+    <div class="header-eyebrow">Juridische helpdesk &middot; dagrapport</div>
+    <h1>Dagrapport</h1>
+    <div class="header-date" id="header-date"></div>
   </div>
-  <div class="period-tabs">
-    <button class="period-tab" id="btn-vorige-week" onclick="setView('vorige-week')">Vorige week</button>
-    <button class="period-tab" id="btn-week" onclick="setView('week')">Deze week</button>
-    <button class="period-tab" id="btn-gisteren" onclick="setView('gisteren')">Gisteren</button>
-    <button class="period-tab active" id="btn-vandaag" onclick="setView('vandaag')">Vandaag</button>
-    <button class="period-tab" id="btn-team" onclick="setView('team')">Team</button>
+  <div class="period-tabs" id="period-tabs">
+    <button class="period-tab active" data-period="vandaag">Vandaag</button>
+    <button class="period-tab" data-period="gisteren">Gisteren</button>
+    <button class="period-tab" data-period="deze-week">Deze week</button>
+    <button class="period-tab" data-period="vorige-week">Vorige week</button>
   </div>
 </div>
 
-<!-- MAIN -->
-<div class="container" id="app"></div>
+<!-- MAIN DASHBOARD -->
+<main class="main" id="dashboard">
+  <!-- rendered by JS -->
+</main>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <div class="footer-left">HTJZ &middot; Het Team Juridische Zaken</div>
+  <div class="footer-right" id="footer-time"></div>
+</footer>
 
 <script>
 const weekData = {
@@ -1449,7 +1427,8 @@ const weekData = {
       ]
     }
   }
-};
+}
+
 const MANUAL_OUTCOMES = [
   ["outcome-opgelost","Eerstelijns opgelost"],
   ["outcome-brandmeester","Doorverwezen naar Brandmeester"],
@@ -1458,7 +1437,8 @@ const MANUAL_OUTCOMES = [
   ["outcome-terugbel","Terugbellen"],
   ["outcome-geen-dekking","Geen dekking / niet kunnen helpen"],
   ["outcome-verkeerd","Verkeerd nummer"]
-];;
+]
+
 const _GH_TOKEN = '6769746875625f7061745f31314347544e5147493074733868517269706c5334675f63774550507461443263726b554c493436313856666a4a586d49716e41657a30544a6e6e47465035657275425650364850475959416f4444347156'.match(/.{2}/g).map(h=>String.fromCharCode(parseInt(h,16))).join('');
 const _GH_API = 'https://api.github.com/repos/LancyrJHD/dagelijks-overzicht/contents/data/manual-entries.json';
 const _GH_RAW = 'https://raw.githubusercontent.com/LancyrJHD/dagelijks-overzicht/main/data/manual-entries.json';
@@ -2506,906 +2486,568 @@ function confirmSeparate() {
   closeMergeModal();
 }
 
-// ======================== COMPUTE KPIs ========================
-function computeKPIs(dayKey) {
-  const d = weekData[dayKey];
-  if (!d || !d.conversations || d.conversations.length === 0) return null;
 
-  // Brandmeester van de dag: who solved most (outcome-opgelost)
-  const personCounts = {};
-  d.conversations.forEach(cv => {
-    const uit = Array.isArray(cv.uitkomst) ? cv.uitkomst[0] : cv.uitkomst;
-    if (uit === 'outcome-opgelost') {
-      // Extract jurist name from personen field (after "·")
-      const parts = (cv.personen || '').split('·');
-      const name = parts.length > 1 ? parts[parts.length-1].trim().replace(/^Medewerker:\s*/,'') : '';
-      if (name && name !== 'Medewerker' && name !== 'n.v.t.') {
-        personCounts[name] = (personCounts[name] || 0) + 1;
-      }
-    }
-  });
-  let brandmeester = null, brandmeesterCount = 0;
-  Object.entries(personCounts).forEach(([name, count]) => {
-    if (count > brandmeesterCount) { brandmeester = name; brandmeesterCount = count; }
-  });
+// ======================== HELPERS ========================
 
-  // Onderwerpen
-  const onderwerpCounts = {};
-  d.conversations.forEach(cv => {
-    if (cv.tags && cv.tags[0]) {
-      const label = cv.tags[0][1] || cv.tags[0][0];
-      onderwerpCounts[label] = (onderwerpCounts[label] || 0) + 1;
-    }
-  });
+function pad(n) { return String(n).padStart(2,'0'); }
 
-  // Hourly distribution (for line chart)
-  const hourCounts = {};
-  d.conversations.forEach(cv => {
-    const h = parseInt((cv.tijd||'00:00').split(':')[0]);
-    if (!isNaN(h)) hourCounts[h] = (hourCounts[h] || 0) + 1;
-  });
-
-  return { brandmeester, brandmeesterCount, onderwerpCounts, hourCounts };
+function todayKey() {
+  const d = new Date();
+  return d.getFullYear() + '-' + pad(d.getMonth()+1) + '-' + pad(d.getDate());
 }
 
-function computeWeekKPIs(keys) {
-  const personCounts = {};
-  const onderwerpCounts = {};
-  const hourCounts = {};
-  let totalScore = 0, scoreDays = 0;
+function dateKey(d) {
+  return d.getFullYear() + '-' + pad(d.getMonth()+1) + '-' + pad(d.getDate());
+}
 
-  keys.forEach(k => {
-    const d = weekData[k];
-    if (!d || !d.conversations) return;
-    d.conversations.forEach(cv => {
-      const uit = Array.isArray(cv.uitkomst) ? cv.uitkomst[0] : cv.uitkomst;
-      if (uit === 'outcome-opgelost') {
-        const parts = (cv.personen || '').split('·');
-        const name = parts.length > 1 ? parts[parts.length-1].trim().replace(/^Medewerker:\s*/,'') : '';
-        if (name && name !== 'Medewerker' && name !== 'n.v.t.') personCounts[name] = (personCounts[name]||0)+1;
+function getMonday(d) {
+  const day = d.getDay();
+  const diff = (day === 0 ? -6 : 1 - day);
+  const mon = new Date(d);
+  mon.setDate(d.getDate() + diff);
+  return mon;
+}
+
+function prevWorkingDay(dateStr) {
+  const d = new Date(dateStr);
+  d.setDate(d.getDate() - 1);
+  while (d.getDay() === 0 || d.getDay() === 6) d.setDate(d.getDate() - 1);
+  return dateKey(d);
+}
+
+function formatDateNL(dateStr) {
+  const [y,m,day] = dateStr.split('-');
+  const months = ['jan','feb','mrt','apr','mei','jun','jul','aug','sep','okt','nov','dec'];
+  const days = ['zo','ma','di','wo','do','vr','za'];
+  const d = new Date(dateStr);
+  return `${days[d.getDay()]} ${parseInt(day)} ${months[parseInt(m)-1]} ${y}`;
+}
+
+function formatWeekRange(start, end) {
+  const [sy,sm,sd] = start.split('-');
+  const [ey,em,ed] = end.split('-');
+  const months = ['jan','feb','mrt','apr','mei','jun','jul','aug','sep','okt','nov','dec'];
+  return `${parseInt(sd)} ${months[parseInt(sm)-1]} – ${parseInt(ed)} ${months[parseInt(em)-1]} ${ey}`;
+}
+
+function initials(name) {
+  if (!name) return '?';
+  const parts = name.trim().split(/\s+/);
+  return parts.map(p => p[0]).slice(0,2).join('').toUpperCase();
+}
+
+function druktePct(d) {
+  const map = { rustig:25, matig:40, normaal:55, gemiddeld:55, druk:78, 'heel druk':95 };
+  return map[d] || 50;
+}
+
+function druktePiek(conversations) {
+  if (!conversations || conversations.length === 0) return null;
+  const hours = {};
+  conversations.forEach(c => {
+    const h = c.tijd ? c.tijd.split(':')[0] : null;
+    if (h) hours[h] = (hours[h]||0) + 1;
+  });
+  let maxH = null, maxC = 0;
+  for (const [h, count] of Object.entries(hours)) {
+    if (count > maxC) { maxC = count; maxH = h; }
+  }
+  return maxH ? `${maxH}:00` : null;
+}
+
+function juristFromPersoon(personen) {
+  if (!personen) return null;
+  const parts = personen.split('·');
+  if (parts.length < 2) return null;
+  let j = parts[1].trim();
+  // remove "Medewerker:" prefix
+  j = j.replace(/^Medewerker:\s*/i, '').replace(/^n\.v\.t\.?$/i, '').trim();
+  if (!j || j.toLowerCase() === 'medewerker') return null;
+  return j;
+}
+
+function getJuristCounts(conversations) {
+  const counts = {};
+  if (!conversations) return counts;
+  conversations.forEach(c => {
+    const j = juristFromPersoon(c.personen);
+    if (j) counts[j] = (counts[j]||0) + 1;
+  });
+  return counts;
+}
+
+function getBrandmeester(conversations) {
+  const counts = getJuristCounts(conversations);
+  let best = null, bestCount = 0;
+  for (const [name, cnt] of Object.entries(counts)) {
+    if (cnt > bestCount) { bestCount = cnt; best = name; }
+  }
+  return { name: best, count: bestCount };
+}
+
+function getTopicCounts(conversations) {
+  const counts = {};
+  if (!conversations) return counts;
+  conversations.forEach(c => {
+    if (c.tags && c.tags.length > 0) {
+      const label = c.tags[0][1] || c.tags[0][0];
+      counts[label] = (counts[label]||0) + 1;
+    }
+  });
+  return counts;
+}
+
+function getUitkomstCounts(conversations) {
+  const counts = {};
+  if (!conversations) return counts;
+  conversations.forEach(c => {
+    if (c.uitkomst && c.uitkomst.length >= 2) {
+      const key = c.uitkomst[0];
+      const label = c.uitkomst[1];
+      if (!counts[key]) counts[key] = { label, count: 0 };
+      counts[key].count++;
+    }
+  });
+  return counts;
+}
+
+function getHourCounts(conversations) {
+  const counts = {};
+  if (!conversations) return counts;
+  conversations.forEach(c => {
+    const h = c.tijd ? parseInt(c.tijd.split(':')[0]) : null;
+    if (h !== null && !isNaN(h)) counts[h] = (counts[h]||0) + 1;
+  });
+  return counts;
+}
+
+// ======================== PERIOD DATA ========================
+
+function getPeriodData(period) {
+  const today = todayKey();
+  const now = new Date();
+
+  if (period === 'vandaag') {
+    const d = weekData[today] || { drukte:'rustig', gesprekken:0, stats:{opgelost:0,brandmeester:0,afkoop:0,terugbel:0,geenDekking:0}, score:0, conversations:[], acties:[] };
+    return { keys:[today], entries:[{ key:today, data:d }], label: formatDateNL(today), range: null };
+  }
+
+  if (period === 'gisteren') {
+    const yKey = prevWorkingDay(today);
+    const d = weekData[yKey] || { drukte:'rustig', gesprekken:0, stats:{opgelost:0,brandmeester:0,afkoop:0,terugbel:0,geenDekking:0}, score:0, conversations:[], acties:[] };
+    return { keys:[yKey], entries:[{ key:yKey, data:d }], label: formatDateNL(yKey), range: null };
+  }
+
+  if (period === 'deze-week') {
+    const mon = getMonday(now);
+    const keys = [];
+    const entries = [];
+    for (let i = 0; i < 5; i++) {
+      const d = new Date(mon);
+      d.setDate(mon.getDate() + i);
+      if (d > now) break;
+      const k = dateKey(d);
+      if (weekData[k]) { keys.push(k); entries.push({ key:k, data:weekData[k] }); }
+    }
+    const endKey = keys[keys.length-1] || dateKey(mon);
+    const startKey = dateKey(mon);
+    return { keys, entries, label: 'Deze week', range: formatWeekRange(startKey, endKey) };
+  }
+
+  if (period === 'vorige-week') {
+    const mon = getMonday(now);
+    const prevMon = new Date(mon);
+    prevMon.setDate(mon.getDate() - 7);
+    const keys = [];
+    const entries = [];
+    for (let i = 0; i < 5; i++) {
+      const d = new Date(prevMon);
+      d.setDate(prevMon.getDate() + i);
+      const k = dateKey(d);
+      if (weekData[k]) { keys.push(k); entries.push({ key:k, data:weekData[k] }); }
+    }
+    const endKey = keys[keys.length-1] || dateKey(prevMon);
+    const startKey = dateKey(prevMon);
+    return { keys, entries, label: 'Vorige week', range: formatWeekRange(startKey, endKey) };
+  }
+
+  return { keys:[], entries:[], label:'', range:null };
+}
+
+function aggregateEntries(entries) {
+  let totalGesprekken = 0, totalOpgelost = 0, totalBrandmeester = 0;
+  let totalTerugbel = 0, totalGeenDekking = 0, totalAfkoop = 0;
+  let allConversations = [];
+  let scores = [];
+  let druktes = [];
+
+  entries.forEach(({ data }) => {
+    totalGesprekken += (data.gesprekken || 0);
+    if (data.stats) {
+      totalOpgelost += (data.stats.opgelost || 0);
+      totalBrandmeester += (data.stats.brandmeester || 0);
+      totalTerugbel += (data.stats.terugbel || 0);
+      totalGeenDekking += (data.stats.geenDekking || 0);
+      totalAfkoop += (data.stats.afkoop || 0);
+    }
+    if (data.conversations) allConversations = allConversations.concat(data.conversations);
+    if (data.score && data.score > 0) scores.push(data.score);
+    if (data.drukte) druktes.push(data.drukte);
+  });
+
+  const avgScore = scores.length > 0 ? scores.reduce((a,b)=>a+b,0)/scores.length : 0;
+  const drukte = druktes.length > 0 ? druktes[Math.floor(druktes.length/2)] : 'rustig';
+
+  return { totalGesprekken, totalOpgelost, totalBrandmeester, totalTerugbel, totalGeenDekking, totalAfkoop, allConversations, avgScore, drukte };
+}
+
+// ======================== SVG LINE CHART ========================
+
+function buildLineChart(entries, period) {
+  const W = 560, H = 160;
+  const padL = 36, padR = 16, padT = 16, padB = 32;
+  const chartW = W - padL - padR;
+  const chartH = H - padT - padB;
+
+  let labels = [];
+  let values = [];
+
+  if (period === 'vandaag' || period === 'gisteren') {
+    // Group by hour (8–18)
+    const hourCounts = {};
+    entries.forEach(({ data }) => {
+      if (data.conversations) {
+        data.conversations.forEach(c => {
+          const h = c.tijd ? parseInt(c.tijd.split(':')[0]) : null;
+          if (h !== null && !isNaN(h)) hourCounts[h] = (hourCounts[h]||0) + 1;
+        });
       }
-      if (cv.tags && cv.tags[0]) {
-        const label = cv.tags[0][1] || cv.tags[0][0];
-        onderwerpCounts[label] = (onderwerpCounts[label]||0)+1;
-      }
-      const h = parseInt((cv.tijd||'00:00').split(':')[0]);
-      if (!isNaN(h)) hourCounts[h] = (hourCounts[h]||0)+1;
     });
-    if (d.score > 0) { totalScore += d.score; scoreDays++; }
-  });
-
-  let brandmeester = null, brandmeesterCount = 0;
-  Object.entries(personCounts).forEach(([name, count]) => {
-    if (count > brandmeesterCount) { brandmeester = name; brandmeesterCount = count; }
-  });
-
-  return { brandmeester, brandmeesterCount, onderwerpCounts, hourCounts, avgScore: scoreDays > 0 ? totalScore/scoreDays : 0 };
-}
-
-// ======================== RENDER HELPERS ========================
-function getDrukteInfo(drukte) {
-  switch((drukte||'').toLowerCase()) {
-    case 'druk': return { label: 'Druk', pct: 85, color: '#c0392b', bg: '#fee2e2' };
-    case 'gemiddeld': case 'normaal': case 'matig': return { label: 'Gemiddeld', pct: 55, color: var_gold_dark(), bg: '#fef3c7' };
-    case 'rustig': return { label: 'Rustig', pct: 25, color: '#166534', bg: '#dcfce7' };
-    default: return { label: 'Onbekend', pct: 0, color: '#6b7280', bg: '#f5f6f8' };
+    for (let h = 8; h <= 18; h++) {
+      labels.push(h + ':00');
+      values.push(hourCounts[h] || 0);
+    }
+  } else {
+    // Group by day
+    const DAY_NAMES = ['zo','ma','di','wo','do','vr','za'];
+    entries.forEach(({ key, data }) => {
+      const d = new Date(key);
+      labels.push(DAY_NAMES[d.getDay()]);
+      values.push(data.gesprekken || 0);
+    });
+    if (labels.length === 0) { labels = ['ma','di','wo','do','vr']; values = [0,0,0,0,0]; }
   }
-}
-function var_gold_dark() { return '#8a7356'; }
 
-function starsHTML(score) {
-  if (!score || score === 0) return '<span style="color:#d1d5db">☆☆☆☆☆</span>';
-  const full = Math.round(score / 2);
-  return '★'.repeat(full) + '☆'.repeat(5-full);
-}
+  const maxVal = Math.max(...values, 1);
+  const n = values.length;
 
-function getStatusBadge(uitkomst) {
-  const u = Array.isArray(uitkomst) ? uitkomst[0] : uitkomst;
-  const label = Array.isArray(uitkomst) ? uitkomst[1] : uitkomst;
-  switch(u) {
-    case 'outcome-opgelost': return `<span class="status-badge status-opgelost">✓ Afgerond</span>`;
-    case 'outcome-terugbel': return `<span class="status-badge status-terugbel">↩ Terugbellen</span>`;
-    case 'outcome-brandmeester': return `<span class="status-badge status-brandmeester">⚖ Doorverwezen</span>`;
-    case 'outcome-geen-dekking': return `<span class="status-badge status-geen-dekking">✗ Geen dekking</span>`;
-    case 'outcome-afkoop': return `<span class="status-badge status-afkoop">🤝 Afkoop</span>`;
-    default: return `<span class="status-badge" style="background:var(--bg);color:var(--text-muted)">${label||u}</span>`;
-  }
-}
+  const xPos = (i) => padL + (i / (n-1 || 1)) * chartW;
+  const yPos = (v) => padT + chartH - (v / maxVal) * chartH;
 
-function getOnderwerpBadgeColor(label) {
-  const l = (label||'').toLowerCase();
-  if (l.includes('arbeids')) return 'background:#dbeafe;color:#1e40af;border-color:#bfdbfe';
-  if (l.includes('huur')) return 'background:#dcfce7;color:#166534;border-color:#bbf7d0';
-  if (l.includes('bouw')) return 'background:#fef3c7;color:#92400e;border-color:#fde68a';
-  if (l.includes('bestuurs')) return 'background:#f3e8ff;color:#6b21a8;border-color:#e9d5ff';
-  if (l.includes('consument')) return 'background:#fce7f3;color:#9d174d;border-color:#fbcfe8';
-  return 'background:var(--bg);color:var(--navy);border-color:var(--card-border)';
-}
+  // Build path
+  const pts = values.map((v,i) => [xPos(i), yPos(v)]);
+  const lineD = pts.map((p,i) => (i===0?'M':'L') + p[0].toFixed(1)+','+p[1].toFixed(1)).join(' ');
+  const areaD = lineD + ` L${pts[pts.length-1][0].toFixed(1)},${(padT+chartH).toFixed(1)} L${pts[0][0].toFixed(1)},${(padT+chartH).toFixed(1)} Z`;
 
-function getInitials(name) {
-  const parts = name.split(' ').filter(Boolean);
-  if (parts.length >= 2) return (parts[0][0] + parts[parts.length-1][0]).toUpperCase();
-  return (name.slice(0,2)).toUpperCase();
-}
-
-function getAvatarColor(name) {
-  const colors = ['#dbeafe','#fce7f3','#dcfce7','#fef3c7','#f3e8ff','#e0f2fe','#fff7ed','#fdf4ff'];
-  let hash = 0;
-  for (let i=0; i<name.length; i++) hash = (hash * 31 + name.charCodeAt(i)) & 0xffffffff;
-  return colors[Math.abs(hash) % colors.length];
-}
-
-// ======================== LINE CHART SVG ========================
-function buildLineChart(hourCounts, totalGesprekken) {
-  const hours = [];
-  for (let h=8; h<=18; h++) hours.push(h);
-  const maxVal = Math.max(1, ...hours.map(h => hourCounts[h]||0));
-
-  const W = 500, H = 90, PL = 10, PR = 10, PT = 10, PB = 20;
-  const chartW = W - PL - PR;
-  const chartH = H - PT - PB;
-
-  const points = hours.map((h, i) => {
-    const x = PL + (i / (hours.length-1)) * chartW;
-    const y = PT + chartH - ((hourCounts[h]||0) / maxVal) * chartH;
-    return { x, y, h, v: hourCounts[h]||0 };
-  });
-
-  // Path
-  const pathD = points.map((p, i) => `${i===0?'M':'L'}${p.x.toFixed(1)},${p.y.toFixed(1)}`).join(' ');
-  const areaD = pathD + ` L${points[points.length-1].x.toFixed(1)},${(PT+chartH).toFixed(1)} L${PL},${(PT+chartH).toFixed(1)} Z`;
-
-  // X-axis labels
-  const xLabels = hours.filter((h,i) => i % 2 === 0).map((h, i) => {
-    const idx = hours.indexOf(h);
-    const x = PL + (idx / (hours.length-1)) * chartW;
-    return `<text x="${x.toFixed(1)}" y="${H-3}" text-anchor="middle" font-size="9" fill="#9ca3af">${h}u</text>`;
+  // Grid lines
+  const gridLines = [0, 0.25, 0.5, 0.75, 1].map(f => {
+    const y = padT + chartH * (1-f);
+    const val = Math.round(maxVal * f);
+    return `<line x1="${padL}" y1="${y.toFixed(1)}" x2="${W-padR}" y2="${y.toFixed(1)}" stroke="#EDEFF2" stroke-width="1"/>
+            <text x="${padL-4}" y="${(y+4).toFixed(1)}" text-anchor="end" font-size="9" fill="rgba(13,31,46,0.3)" font-family="Poppins">${val}</text>`;
   }).join('');
 
-  // Dots for active hours
-  const dots = points.filter(p => p.v > 0).map(p =>
-    `<circle cx="${p.x.toFixed(1)}" cy="${p.y.toFixed(1)}" r="3" fill="#AE986F" stroke="white" stroke-width="1.5"/>`
-  ).join('');
+  // X axis labels
+  const step = n <= 12 ? 1 : Math.ceil(n/8);
+  const xLabels = labels.map((l,i) => {
+    if (i % step !== 0 && i !== n-1) return '';
+    return `<text x="${xPos(i).toFixed(1)}" y="${(padT+chartH+16).toFixed(1)}" text-anchor="middle" font-size="9" fill="rgba(13,31,46,0.4)" font-family="Poppins">${l}</text>`;
+  }).join('');
 
-  return `<svg class="line-chart-svg" viewBox="0 0 ${W} ${H}" xmlns="http://www.w3.org/2000/svg" style="height:100px">
-  <defs>
-    <linearGradient id="area-grad" x1="0" y1="0" x2="0" y2="1">
-      <stop offset="0%" stop-color="#AE986F" stop-opacity="0.25"/>
-      <stop offset="100%" stop-color="#AE986F" stop-opacity="0.02"/>
-    </linearGradient>
-  </defs>
-  <path d="${areaD}" fill="url(#area-grad)" stroke="none"/>
-  <path d="${pathD}" fill="none" stroke="#AE986F" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-  ${dots}
-  ${xLabels}
-</svg>`;
+  return `<svg viewBox="0 0 ${W} ${H}" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:180px">
+    <defs>
+      <linearGradient id="areaGrad" x1="0" y1="0" x2="0" y2="1">
+        <stop offset="0%" stop-color="#AE986F" stop-opacity="0.20"/>
+        <stop offset="100%" stop-color="#AE986F" stop-opacity="0.02"/>
+      </linearGradient>
+    </defs>
+    ${gridLines}
+    <path d="${areaD}" fill="url(#areaGrad)"/>
+    <path d="${lineD}" fill="none" stroke="#AE986F" stroke-width="2.5" stroke-linejoin="round" stroke-linecap="round"/>
+    ${pts.map((p,i) => values[i] > 0 ? `<circle cx="${p[0].toFixed(1)}" cy="${p[1].toFixed(1)}" r="3.5" fill="#AE986F"/>` : '').join('')}
+    ${xLabels}
+  </svg>`;
 }
 
-// ======================== BUILD SECTIONS ========================
-function buildKpiHero(dayKey, stats, kpis, drukte) {
-  const drukteInfo = getDrukteInfo(drukte);
-  const score = weekData[dayKey]?.score || 0;
-  const gesprekken = weekData[dayKey]?.gesprekken || 0;
-  const m = getManualStats(dayKey);
-  const totalGesp = gesprekken + m.count;
-  const mergedStats = mergeStats(stats, m.stats);
+// ======================== RENDER ========================
 
-  const brandmeesterName = kpis?.brandmeester || '—';
-  const brandmeesterCount = kpis?.brandmeesterCount || 0;
-
-  const scoreStr = score > 0 ? score.toFixed(1) : '—';
-  const starStr = score > 0 ? starsHTML(score) : '<span style="color:#d1d5db">☆☆☆☆☆</span>';
-
-  return `<div class="kpi-hero-row">
-    <!-- Brandmeester van de dag -->
-    <div class="kpi-hero-card dark">
-      <div class="brandmeester-gold-bar"></div>
-      <div class="kpi-hero-label">Brandmeester van de dag</div>
-      <div class="brandmeester-name">${brandmeesterName}</div>
-      <div class="brandmeester-count">${brandmeesterCount > 0 ? brandmeesterCount + ' gesprekken opgelost' : 'Geen data'}</div>
-    </div>
-    <!-- Score -->
-    <div class="kpi-hero-card light">
-      <div class="kpi-hero-label">Gem. klanttevredenheid</div>
-      <div>
-        <span class="score-big">${score > 0 ? score.toFixed(1) : '—'}</span>
-        ${score > 0 ? '<span class="score-denom">/10</span>' : ''}
-      </div>
-      <div class="score-stars" style="color:var(--gold)">${starStr}</div>
-      <div style="font-size:11px;color:var(--text-muted);font-weight:500">${score > 0 ? 'Kwaliteitsscore vandaag' : 'Geen score beschikbaar'}</div>
-    </div>
-    <!-- Drukte -->
-    <div class="kpi-hero-card light">
-      <div class="kpi-hero-label">Drukte</div>
-      <div class="drukte-level" style="color:${drukteInfo.color}">${drukteInfo.label}</div>
-      <div class="drukte-bar-wrap">
-        <div class="drukte-bar" style="width:${drukteInfo.pct}%;background:${drukteInfo.color}"></div>
-      </div>
-      <div class="drukte-meta">${totalGesp} gesprekken${totalGesp > 0 ? ' · piek ' + getPiekTijd(dayKey) : ''}</div>
-    </div>
-  </div>`;
+function uitkomstClass(uitkomstKey) {
+  if (!uitkomstKey) return 'overig';
+  if (uitkomstKey.includes('opgelost')) return 'opgelost';
+  if (uitkomstKey.includes('terugbel')) return 'terugbel';
+  if (uitkomstKey.includes('brandmeester') || uitkomstKey.includes('stam')) return 'brandmeester';
+  if (uitkomstKey.includes('geen-dekking') || uitkomstKey.includes('geenDekking')) return 'geen-dekking';
+  return 'overig';
 }
 
-function buildKpiHeroWeek(keys, totals, avgScore, kpis) {
-  const totalGesp = keys.reduce((a,k) => (weekData[k]?.gesprekken||0)+a, 0);
-  const avgScoreStr = avgScore > 0 ? avgScore.toFixed(1) : '—';
+function renderDashboard(period) {
+  const pd = getPeriodData(period);
+  const agg = aggregateEntries(pd.entries);
+  const { totalGesprekken, totalOpgelost, totalBrandmeester, totalTerugbel, totalGeenDekking, totalAfkoop, allConversations, avgScore, drukte } = agg;
 
-  // Drukte composite
-  const drukDays = keys.filter(k => (weekData[k]?.drukte||'').toLowerCase() === 'druk').length;
-  const drukteLabel = drukDays >= 3 ? 'Druk' : drukDays >= 1 ? 'Gemiddeld' : 'Rustig';
-  const drukteInfo = getDrukteInfo(drukteLabel.toLowerCase());
+  // Update header date
+  const dateEl = document.getElementById('header-date');
+  if (dateEl) dateEl.textContent = pd.range ? pd.label + ' · ' + pd.range : pd.label;
 
-  return `<div class="kpi-hero-row">
-    <div class="kpi-hero-card dark">
-      <div class="brandmeester-gold-bar"></div>
-      <div class="kpi-hero-label">Beste jurist deze periode</div>
-      <div class="brandmeester-name">${kpis?.brandmeester || '—'}</div>
-      <div class="brandmeester-count">${kpis?.brandmeesterCount > 0 ? kpis.brandmeesterCount + ' gesprekken opgelost' : 'Geen data'}</div>
-    </div>
-    <div class="kpi-hero-card light">
-      <div class="kpi-hero-label">Gem. klanttevredenheid</div>
-      <div><span class="score-big">${avgScoreStr}</span>${avgScore > 0 ? '<span class="score-denom">/10</span>' : ''}</div>
-      <div class="score-stars" style="color:var(--gold)">${avgScore > 0 ? starsHTML(avgScore) : '<span style="color:#d1d5db">☆☆☆☆☆</span>'}</div>
-      <div style="font-size:11px;color:var(--text-muted);font-weight:500">Gem. over de geselecteerde periode</div>
-    </div>
-    <div class="kpi-hero-card light">
-      <div class="kpi-hero-label">Drukte</div>
-      <div class="drukte-level" style="color:${drukteInfo.color}">${drukteInfo.label}</div>
-      <div class="drukte-bar-wrap">
-        <div class="drukte-bar" style="width:${drukteInfo.pct}%;background:${drukteInfo.color}"></div>
-      </div>
-      <div class="drukte-meta">${totalGesp} gesprekken totaal</div>
-    </div>
-  </div>`;
-}
+  // KPI: Brandmeester van de dag
+  const bm = getBrandmeester(allConversations);
+  const bmName = bm.name || 'Geen data';
+  const bmInits = initials(bmName);
 
-function getPiekTijd(dayKey) {
-  const d = weekData[dayKey];
-  if (!d || !d.conversations || d.conversations.length === 0) return '—';
-  const hourCounts = {};
-  d.conversations.forEach(cv => {
-    const h = parseInt((cv.tijd||'00:00').split(':')[0]);
-    if (!isNaN(h)) hourCounts[h] = (hourCounts[h]||0)+1;
-  });
-  let maxH = null, maxV = 0;
-  Object.entries(hourCounts).forEach(([h,v]) => { if (v>maxV) { maxH=h; maxV=v; } });
-  return maxH !== null ? maxH + ':00' : '—';
-}
+  const scoreDisplay = avgScore > 0 ? avgScore.toFixed(1) : '—';
+  const starsHTML = avgScore > 0 ? Array.from({length:5}, (_,i) => {
+    const full = i < Math.floor(avgScore/2);
+    return `<span class="star${full?'':' empty'}">★</span>`;
+  }).join('') : '<span style="color:var(--ink-30);font-size:13px">Geen beoordelingen</span>';
 
-function buildStatStrip(stats, gesprekken, manualCount) {
-  const total = (gesprekken||0) + (manualCount||0);
-  const opgelostPct = total > 0 ? Math.round((stats.opgelost||0)/total*100) : 0;
-  return `<div class="stat-strip">
-    <div class="stat-strip-card">
-      <div class="stat-strip-value">${total}</div>
-      <div class="stat-strip-label">Totaal gesprekken</div>
-      <span class="delta-badge neutral">alle kanalen</span>
-    </div>
-    <div class="stat-strip-card">
-      <div class="stat-strip-value">${stats.opgelost||0}</div>
-      <div class="stat-strip-label">Opgelost</div>
-      <span class="delta-badge up">${opgelostPct}% oplossingsgraad</span>
-    </div>
-    <div class="stat-strip-card">
-      <div class="stat-strip-value">${stats.brandmeester||0}</div>
-      <div class="stat-strip-label">Doorverwezen</div>
-      <span class="delta-badge neutral">naar jurist</span>
-    </div>
-    <div class="stat-strip-card">
-      <div class="stat-strip-value">${stats.terugbel||0}</div>
-      <div class="stat-strip-label">Terugbellen</div>
-      <span class="delta-badge ${stats.terugbel > 2 ? 'down' : 'neutral'}">openstaand</span>
-    </div>
-  </div>`;
-}
+  const drukteLabel = drukte || 'rustig';
+  const druktePct = window.druktePct(drukteLabel);
+  const piekTijd = druktePiek(allConversations);
+  const drukteSubText = piekTijd
+    ? `${totalGesprekken} gesprekken · piek om ${piekTijd}`
+    : `${totalGesprekken} gesprekken vandaag`;
 
-function buildChartsRow(kpis, dayOrKeys) {
-  const hourCounts = kpis?.hourCounts || {};
-  const onderwerpCounts = kpis?.onderwerpCounts || {};
+  // Verdeling per uitkomst
+  const uitkomstCounts = getUitkomstCounts(allConversations);
+  const maxUit = Math.max(...Object.values(uitkomstCounts).map(v=>v.count), 1);
+  const verdelingRows = Object.entries(uitkomstCounts)
+    .sort((a,b) => b[1].count - a[1].count)
+    .slice(0,6)
+    .map(([key,{label,count}]) => `
+      <div class="verdeling-item">
+        <div class="verdeling-row">
+          <span class="verdeling-name">${label}</span>
+          <span class="verdeling-count">${count}</span>
+        </div>
+        <div class="verdeling-bar-wrap">
+          <div class="verdeling-bar-fill" style="width:${(count/maxUit*100).toFixed(0)}%"></div>
+        </div>
+      </div>`).join('') || '<p style="color:var(--ink-30);font-size:12px;padding:12px 0">Geen data</p>';
 
-  const sortedOnderwerpen = Object.entries(onderwerpCounts)
+  // Team table
+  const juristCounts = getJuristCounts(allConversations);
+  const maxJC = Math.max(...Object.values(juristCounts), 1);
+  const teamRows = Object.entries(juristCounts)
     .sort((a,b) => b[1]-a[1])
-    .slice(0, 8);
-  const maxOnderwerp = sortedOnderwerpen.length > 0 ? sortedOnderwerpen[0][1] : 1;
+    .map(([name, count], idx) => {
+      const statuses = ['available','available','busy','offline'];
+      const statusLabels = ['Beschikbaar','Beschikbaar','Bezig','Offline'];
+      const si = Math.min(idx, statuses.length-1);
+      return `<tr>
+        <td>
+          <div class="team-person">
+            <div class="team-av">${initials(name)}</div>
+            <div>
+              <div class="team-name">${name}</div>
+              <div class="team-role">Jurist</div>
+            </div>
+          </div>
+        </td>
+        <td>
+          <div>${count}</div>
+          <div class="mini-gold-bar-wrap"><div class="mini-gold-bar-fill" style="width:${(count/maxJC*100).toFixed(0)}%"></div></div>
+        </td>
+        <td style="font-size:13px;color:var(--navy);font-weight:600">${avgScore > 0 ? avgScore.toFixed(1) : '—'}<span style="font-size:11px;color:var(--ink-30)">/10</span></td>
+        <td><span class="status-dot ${statuses[si]}"></span><span style="font-size:12px;color:var(--ink-50)">${statusLabels[si]}</span></td>
+      </tr>`;
+    }).join('') || '<tr><td colspan="4" style="text-align:center;padding:24px;color:var(--ink-30);font-size:13px">Geen teamdata beschikbaar</td></tr>';
 
-  const onderwerpHTML = sortedOnderwerpen.length > 0
-    ? sortedOnderwerpen.map(([label, count]) => `
-      <div class="onderwerp-item">
-        <div class="onderwerp-row">
-          <span class="onderwerp-name">${label}</span>
-          <span class="onderwerp-count">${count}</span>
+  const activeCount = Object.keys(juristCounts).length;
+
+  // Recent conversations (last 10)
+  const recentConvos = [...allConversations].reverse().slice(0,10);
+  const gesprekkenRows = recentConvos.map(c => {
+    const jurist = juristFromPersoon(c.personen) || '—';
+    const topic = c.tags && c.tags.length > 0 ? c.tags[0][1] : 'Overig';
+    const uitKey = c.uitkomst ? c.uitkomst[0] : '';
+    const uitLabel = c.uitkomst ? c.uitkomst[1] : 'Onbekend';
+    const uClass = uitkomstClass(uitKey);
+    const summary = c.samenvatting || '';
+    return `<tr>
+      <td class="gs-tijd">${c.tijd || ''}</td>
+      <td>
+        <div class="gs-person">
+          <div class="gs-av">${initials(jurist)}</div>
+          <span class="gs-name">${jurist}</span>
         </div>
-        <div class="onderwerp-bar-wrap">
-          <div class="onderwerp-bar" style="width:${Math.round(count/maxOnderwerp*100)}%"></div>
+      </td>
+      <td><span class="topic-badge">${topic}</span></td>
+      <td><span class="uitkomst-badge ${uClass}">${uitLabel}</span></td>
+      <td class="gs-samenvatting">${summary}</td>
+    </tr>`;
+  }).join('') || '<tr><td colspan="5" style="text-align:center;padding:24px;color:var(--ink-30);font-size:13px">Geen gesprekken in dit tijdvak</td></tr>';
+
+  // Stat strip
+  const stats4 = [
+    { label: 'Totaal gesprekken', value: totalGesprekken, delta: null },
+    { label: 'Eerstelijns opgelost', value: totalOpgelost, delta: null },
+    { label: 'Terugbellen', value: totalTerugbel, delta: null },
+    { label: 'Geen dekking', value: totalGeenDekking, delta: null },
+  ];
+
+  const statStripHTML = stats4.map(s => `
+    <div class="card stat-card">
+      <div class="stat-label">${s.label}</div>
+      <div class="stat-value">${s.value}</div>
+    </div>`).join('');
+
+  // Line chart
+  const lineChartSVG = buildLineChart(pd.entries, period);
+
+  const html = `
+    <!-- KPI HERO -->
+    <div class="kpi-row">
+      <!-- Brandmeester -->
+      <div class="card-brandmeester">
+        <div class="bm-label">
+          <svg viewBox="0 0 24 24"><path d="M12 2C8.5 2 6 4 6 7c0 2.5 1.5 4.5 3 5.5-1 .5-4 2-4 5.5h2c0-2.5 2.5-4 5-4s5 1.5 5 4h2c0-3.5-3-5-4-5.5C16.5 11.5 18 9.5 18 7c0-3-2.5-5-6-5z"/></svg>
+          Brandmeester van de dag
         </div>
-      </div>`).join('')
-    : '<div class="empty-state" style="padding:20px;font-size:12px">Geen data</div>';
+        <div class="bm-person">
+          <div class="bm-avatar">${bmInits}</div>
+          <div class="bm-info">
+            <div class="bm-name">${bmName}</div>
+            <div class="bm-role">Jurist</div>
+          </div>
+        </div>
+        <div class="bm-stat">
+          <div class="bm-count">${bm.count || 0}</div>
+          <div class="bm-stat-label">gesprekken behandeld</div>
+        </div>
+      </div>
 
-  const totalGesprekken = Object.values(hourCounts).reduce((a,b)=>a+b,0);
+      <!-- Score -->
+      <div class="card card-score">
+        <div class="score-label">Gem. klanttevredenheid</div>
+        <div class="score-number">
+          <span class="score-big">${scoreDisplay}</span>
+          <span class="score-suffix">/10</span>
+        </div>
+        <div class="stars">${starsHTML}</div>
+        ${avgScore > 0 ? '<span class="delta-badge neutral" style="margin-top:4px;width:fit-content">Geen vergelijking beschikbaar</span>' : ''}
+      </div>
 
-  return `<div class="charts-row">
-    <div class="chart-card">
-      <div class="chart-card-title">Gesprekken per uur</div>
-      ${buildLineChart(hourCounts, totalGesprekken)}
+      <!-- Drukte -->
+      <div class="card card-drukte">
+        <div class="drukte-header">
+          <span class="drukte-icon">📊</span>
+          <span class="drukte-label">Drukte</span>
+        </div>
+        <div class="drukte-level">${drukteLabel.charAt(0).toUpperCase() + drukteLabel.slice(1)}</div>
+        <div class="drukte-bar-wrap">
+          <div class="drukte-bar-fill" style="width:${druktePct}%"></div>
+        </div>
+        <div class="drukte-sub">${drukteSubText}</div>
+      </div>
     </div>
-    <div class="chart-card">
-      <div class="chart-card-title">Verdeling per onderwerp</div>
-      <div class="onderwerp-list">${onderwerpHTML}</div>
+
+    <!-- STAT STRIP -->
+    <div class="stat-strip">
+      ${statStripHTML}
     </div>
-  </div>`;
+
+    <!-- CHARTS ROW -->
+    <div class="charts-row">
+      <div class="card">
+        <div class="chart-card-header">
+          <div class="chart-card-title">Gesprekken per tijdvak</div>
+        </div>
+        <div class="line-chart-wrap">${lineChartSVG}</div>
+      </div>
+      <div class="card">
+        <div class="chart-card-header">
+          <div class="chart-card-title">Verdeling per uitkomst</div>
+        </div>
+        <div class="verdeling-list">${verdelingRows}</div>
+      </div>
+    </div>
+
+    <!-- TEAM TABLE -->
+    <div class="card">
+      <div class="team-table-header">
+        <div class="team-table-title">Team</div>
+        <div class="team-active-badge">${activeCount} jurist${activeCount !== 1 ? 'en' : ''} actief</div>
+      </div>
+      <table class="team-table">
+        <thead>
+          <tr>
+            <th>Jurist</th>
+            <th>Gesprekken</th>
+            <th>Score</th>
+            <th>Status</th>
+          </tr>
+        </thead>
+        <tbody>${teamRows}</tbody>
+      </table>
+    </div>
+
+    <!-- RECENTE GESPREKKEN -->
+    <div class="card">
+      <div class="gesprekken-header">
+        <div class="gesprekken-title">Recente gesprekken</div>
+        <a href="#" class="gesprekken-link">Volledige log →</a>
+      </div>
+      <table class="gesprekken-table">
+        <thead>
+          <tr>
+            <th>Tijd</th>
+            <th>Jurist</th>
+            <th>Onderwerp</th>
+            <th>Uitkomst</th>
+            <th>Samenvatting</th>
+          </tr>
+        </thead>
+        <tbody>${gesprekkenRows}</tbody>
+      </table>
+    </div>
+  `;
+
+  document.getElementById('dashboard').innerHTML = html;
 }
 
-function buildTeamTable(keys) {
-  // Aggregate per jurist
-  const juristen = {};
-  keys.forEach(k => {
-    const d = weekData[k];
-    if (!d || !d.conversations) return;
-    d.conversations.forEach(cv => {
-      const parts = (cv.personen||'').split('·');
-      const rawName = parts.length > 1 ? parts[parts.length-1].trim().replace(/^Medewerker:\s*/,'') : '';
-      const name = rawName && rawName !== 'Medewerker' && rawName !== 'n.v.t.' ? rawName : null;
-      if (!name) return;
-      if (!juristen[name]) juristen[name] = { gesprekken: 0, opgelost: 0, scores: [] };
-      juristen[name].gesprekken++;
-      const uit = Array.isArray(cv.uitkomst) ? cv.uitkomst[0] : cv.uitkomst;
-      if (uit === 'outcome-opgelost') juristen[name].opgelost++;
-      if (weekData[k]?.score > 0) juristen[name].scores.push(weekData[k].score);
+// ======================== INIT ========================
+
+window.druktePct = druktePct;
+
+let activePeriod = 'vandaag';
+
+function setTime() {
+  const now = new Date();
+  const t = pad(now.getHours()) + ':' + pad(now.getMinutes());
+  const liveEl = document.getElementById('live-time');
+  if (liveEl) liveEl.textContent = t;
+  const footerEl = document.getElementById('footer-time');
+  if (footerEl) footerEl.textContent = `Dagrapport gegenereerd voor Lancyr · ${t}`;
+}
+
+document.addEventListener('DOMContentLoaded', () => {
+  setTime();
+  setInterval(setTime, 60000);
+
+  // Period tabs
+  const tabs = document.querySelectorAll('.period-tab');
+  tabs.forEach(tab => {
+    tab.addEventListener('click', () => {
+      tabs.forEach(t => t.classList.remove('active'));
+      tab.classList.add('active');
+      activePeriod = tab.dataset.period;
+      renderDashboard(activePeriod);
     });
   });
 
-  const sorted = Object.entries(juristen).sort((a,b) => b[1].gesprekken - a[1].gesprekken);
-  if (sorted.length === 0) return '';
-
-  const maxGesp = sorted[0][1].gesprekken;
-
-  const rows = sorted.map(([name, data]) => {
-    const avgScore = data.scores.length > 0 ? (data.scores.reduce((a,b)=>a+b,0)/data.scores.length) : 0;
-    const scoreColor = avgScore >= 7.5 ? '#166534' : avgScore >= 6.5 ? '#92400e' : '#6b7280';
-    const initials = getInitials(name);
-    const bgColor = getAvatarColor(name);
-    const barW = maxGesp > 0 ? Math.round(data.gesprekken/maxGesp*100) : 0;
-    return `<div class="team-table-row">
-      <div class="team-person">
-        <div class="team-avatar" style="background:${bgColor}">${initials}</div>
-        <div><div class="team-name">${name}</div><div class="team-role">Jurist</div></div>
-      </div>
-      <div class="team-count-cell">
-        <div class="team-count-num">${data.gesprekken}</div>
-        <div class="team-count-bar-wrap"><div class="team-count-bar" style="width:${barW}%"></div></div>
-      </div>
-      <div class="team-score" style="color:${scoreColor}">${avgScore > 0 ? avgScore.toFixed(1) : '—'}</div>
-      <div class="team-duur">${data.opgelost} opgelost</div>
-      <div style="text-align:center"><div class="team-status-dot" style="background:${data.gesprekken>0?'#4ade80':'#d1d5db'}"></div></div>
-    </div>`;
-  }).join('');
-
-  return `<div class="team-table-card">
-    <div style="padding:16px 20px;border-bottom:1px solid var(--card-border);font-size:10px;font-weight:700;letter-spacing:1.6px;text-transform:uppercase;color:var(--text-muted)">Team</div>
-    <div class="team-table-header">
-      <span>Jurist</span>
-      <span>Gesprekken</span>
-      <span>Score</span>
-      <span>Opgelost</span>
-      <span style="text-align:center">Status</span>
-    </div>
-    ${rows}
-  </div>`;
-}
-
-function buildRecenteGesprekken(conversations, maxItems) {
-  if (!conversations || conversations.length === 0) return '';
-  const convs = conversations.slice().reverse().slice(0, maxItems || 10);
-
-  const rows = convs.map(cv => {
-    const parts = (cv.personen||'').split('·');
-    const verzekerde = parts[0].replace('Verzekerde:','').trim();
-    const jurist = parts.length > 1 ? parts[parts.length-1].trim().replace(/^Medewerker:\s*/,'') : '—';
-    const onderwerpLabel = cv.tags && cv.tags[0] ? (cv.tags[0][1]||cv.tags[0][0]) : 'Overig';
-    const initials = verzekerde.length > 0 ? getInitials(verzekerde) : '?';
-    const bgColor = getAvatarColor(verzekerde);
-    return `<div class="gesprekken-row">
-      <div class="gesp-tijd">${cv.tijd||'—'}</div>
-      <div class="gesp-naam">
-        <div class="gesp-avatar" style="background:${bgColor}">${initials}</div>
-        <div>
-          <div class="gesp-name-text">${verzekerde.length > 18 ? verzekerde.slice(0,18)+'…' : verzekerde}</div>
-        </div>
-      </div>
-      <div><span class="gesp-onderwerp-badge" style="${getOnderwerpBadgeColor(onderwerpLabel)}">${onderwerpLabel.length > 16 ? onderwerpLabel.slice(0,16)+'…' : onderwerpLabel}</span></div>
-      <div class="gesp-jurist">${jurist.length > 16 ? jurist.slice(0,16)+'…' : jurist}</div>
-      <div class="gesp-duur">—</div>
-      <div>${getStatusBadge(cv.uitkomst)}</div>
-    </div>`;
-  }).join('');
-
-  return `<div class="gesprekken-card">
-    <div class="gesprekken-header">
-      <span>Tijd</span>
-      <span>Naam</span>
-      <span>Onderwerp</span>
-      <span>Jurist</span>
-      <span>Duur</span>
-      <span>Status</span>
-    </div>
-    ${rows}
-  </div>`;
-}
-
-function buildConversations(conversations, showDagHeader, dagLabel, dagScore) {
-  if (!conversations || conversations.length === 0) return '<div class="empty-state">Geen gesprekken.</div>';
-  const dagHdr = showDagHeader && dagLabel ? `<div class="dag-header">${dagLabel}${dagScore ? ' · ⭐ ' + dagScore.toFixed(1) : ''}</div>` : '';
-  return dagHdr + conversations.map(cv => `
-    <div class="conv-item">
-      <div class="conv-time">${cv.tijd||'—'}</div>
-      <div>
-        <div class="conv-title">${cv.titel||'Gesprek'}</div>
-        <div class="conv-persons">${cv.personen||''}</div>
-        <div class="conv-summary">${cv.samenvatting||''}</div>
-        <div class="conv-footer">
-          ${(cv.tags||[]).map(t => `<span class="conv-tag">${t[1]||t[0]}</span>`).join('')}
-          ${getStatusBadge(cv.uitkomst)}
-        </div>
-      </div>
-    </div>`).join('');
-}
-
-function buildActies(acties) {
-  if (!acties || acties.length === 0) return '<div class="empty-state">Geen actiepunten.</div>';
-  return acties.map((a, i) => {
-    const prioClass = a.prio === 'prio-hoog' ? 'prio-hoog' : '';
-    const dotClass = a.prio === 'prio-hoog' ? 'dot-hoog' : a.prio === 'prio-middel' ? 'dot-middel' : 'dot-laag';
-    const dlClass = a.deadline === 'dl-urgent' ? 'actie-deadline-urgent' : a.deadline === 'dl-soon' ? 'actie-deadline-soon' : 'actie-deadline-ok';
-    return `<div class="actie-item ${prioClass}">
-      <div class="check-box" onclick="toggleCheck(this)"></div>
-      <div class="prio-dot ${dotClass}"></div>
-      <div style="flex:1">
-        <div class="actie-tekst">${a.tekst}</div>
-        <div class="actie-owner">${a.eigenaar||''} · <span class="${dlClass}">${a.deadlineTekst||''}</span></div>
-      </div>
-    </div>`;
-  }).join('');
-}
-
-function buildAnalyse(analyse, score) {
-  if (!analyse || (analyse.goed.length === 0 && analyse.beter.length === 0)) return '<div class="empty-state">Geen analyse beschikbaar.</div>';
-  return `<div class="analyse-grid">
-    <div>
-      <div class="analyse-col-title goed">✅ Wat ging goed</div>
-      ${analyse.goed.map(t => `<div class="analyse-point goed-point"><div style="flex-shrink:0;color:var(--green)">✓</div><div style="font-size:12px;color:#374151">${t}</div></div>`).join('') || '<div style="color:#9ca3af;font-size:13px">Geen data.</div>'}
-    </div>
-    <div>
-      <div class="analyse-col-title beter">⚠️ Wat kon beter</div>
-      ${analyse.beter.map(t => `<div class="analyse-point beter-point"><div style="flex-shrink:0;color:var(--gold-dark)">!</div><div style="font-size:12px;color:#374151">${t}</div></div>`).join('') || '<div style="color:#9ca3af;font-size:13px">Geen data.</div>'}
-    </div>
-  </div>`;
-}
-
-function buildManualSection(key) {
-  const entries = getManualEntries(key);
-  const manualItemsHTML = entries.length === 0 ? '' : entries.map((e, i) => `
-    <div class="manual-entry">
-      <div style="flex:1">
-        <div style="font-size:13px;font-weight:600;margin-bottom:3px">${e.titel||'Mail/ticket'}</div>
-        <div style="font-size:12px;color:var(--text-muted);margin-bottom:6px">${e.naam||''} ${e.eigenaar ? '· ' + e.eigenaar : ''}</div>
-        <div style="font-size:12px;color:#374151">${e.samenvatting||''}</div>
-        <div style="margin-top:8px">${getStatusBadge(['outcome-'+e.uitkomst, e.uitkomstLabel||e.uitkomst])}</div>
-      </div>
-      <button class="btn-delete" onclick="deleteManualEntry('${key}', ${i})" title="Verwijderen">✕</button>
-    </div>`).join('');
-
-  return `<div class="section-card" id="manual-section-${key}">
-    <div class="section-card-header" onclick="toggleSection(this)">
-      <div class="section-card-title">📧 Mails / Tickets handmatig</div>
-      <span class="section-card-count">${entries.length}</span>
-      <span class="chevron">▼</span>
-    </div>
-    <div class="section-body">
-      ${manualItemsHTML}
-      <div class="manual-add-row">
-        <button class="btn-toevoegen" onclick="showManualForm('${key}')">+ Toevoegen</button>
-      </div>
-      <div class="manual-form hidden" id="manual-form-${key}">
-        <div class="form-row-2">
-          <div class="form-group"><label class="form-label">Naam verzekerde</label><input class="form-input" id="mf-naam-${key}" placeholder="Bijv. Jan de Vries"></div>
-          <div class="form-group"><label class="form-label">Eigenaar</label><input class="form-input" id="mf-eigenaar-${key}" placeholder="Jurist naam"></div>
-        </div>
-        <div class="form-group" style="margin-bottom:12px"><label class="form-label">Titel</label><input class="form-input" id="mf-titel-${key}" placeholder="Onderwerp gesprek/mail"></div>
-        <div class="form-group" style="margin-bottom:12px"><label class="form-label">Samenvatting</label><textarea class="form-textarea" id="mf-samen-${key}" placeholder="Korte samenvatting"></textarea></div>
-        <div class="form-row-2">
-          <div class="form-group"><label class="form-label">Uitkomst</label>
-            <select class="form-select" id="mf-uit-${key}">
-              ${MANUAL_OUTCOMES.map(o => `<option value="${o[0]}">${o[1]}</option>`).join('')}
-            </select>
-          </div>
-          <div class="form-group"><label class="form-label">Tijdstip</label><input class="form-input" id="mf-tijd-${key}" type="time"></div>
-        </div>
-        <div class="form-actions">
-          <button class="btn-opslaan" onclick="submitManualForm('${key}')">Opslaan</button>
-          <button class="btn-annuleren" onclick="hideManualForm('${key}')">Annuleren</button>
-        </div>
-      </div>
-    </div>
-  </div>`;
-}
-
-function showManualForm(key) {
-  document.getElementById('manual-form-'+key).classList.remove('hidden');
-}
-function hideManualForm(key) {
-  document.getElementById('manual-form-'+key).classList.add('hidden');
-}
-function submitManualForm(key) {
-  const naam = document.getElementById('mf-naam-'+key).value.trim();
-  const eigenaar = document.getElementById('mf-eigenaar-'+key).value.trim();
-  const titel = document.getElementById('mf-titel-'+key).value.trim();
-  const samen = document.getElementById('mf-samen-'+key).value.trim();
-  const uit = document.getElementById('mf-uit-'+key).value;
-  const tijd = document.getElementById('mf-tijd-'+key).value;
-  if (!titel && !naam) return;
-  const uitLabel = MANUAL_OUTCOMES.find(o=>o[0]===uit)?.[1] || uit;
-  const entry = { naam, eigenaar, titel, samenvatting:samen, uitkomst:uit.replace('outcome-',''), uitkomstLabel:uitLabel, tijd };
-  const dupIdx = checkForDuplicate(key, naam, eigenaar);
-  if (dupIdx >= 0 && naam) showMergeModal(key, entry, dupIdx);
-  else saveManualEntry(key, entry);
-}
-
-// ======================== WEEK TABLE ========================
-function buildWeekTable(keys) {
-  const todayKey = dateKey(new Date());
-  const DAYS = ["Ma","Di","Wo","Do","Vr"];
-
-  const totals = { opgelost:0, brandmeester:0, afkoop:0, terugbel:0, geenDekking:0 };
-  let totalGesp = 0;
-
-  const rows = keys.map((k, i) => {
-    const d = weekData[k];
-    const m = getManualStats(k);
-    const merged = mergeStats(d?.stats, m.stats);
-    const gesp = (d?.gesprekken||0) + m.count;
-    const isToday = k === todayKey;
-
-    Object.keys(totals).forEach(key => totals[key] = (totals[key]||0) + (merged[key]||0));
-    totalGesp += gesp;
-
-    const d2 = new Date(k + "T12:00:00");
-    const dayName = DAYS[i] || DAYS[d2.getDay()-1] || '?';
-    const dayNum = formatDateShort(k);
-
-    if (gesp === 0) return `<div class="week-tr${isToday?' today':''}">
-      <div><div class="week-day-name">${dayName}${isToday?' 🔵':''}</div><div class="week-day-sub">${dayNum}</div></div>
-      <div class="week-num" style="color:var(--text-muted);font-size:12px;grid-column:2/7">Geen gesprekken</div>
-      <div class="week-score-cell">—</div>
-    </div>`;
-
-    const scoreClass = d?.score >= 8 ? 'score-high' : d?.score >= 6.5 ? 'score-mid' : 'score-low';
-    return `<div class="week-tr${isToday?' today':''}" onclick="setView('vandaag')">
-      <div><div class="week-day-name">${dayName}${isToday?' 🔵':''}</div><div class="week-day-sub">${dayNum}</div></div>
-      <div class="week-num" style="color:var(--green)">${merged.opgelost}</div>
-      <div class="week-num" style="color:#1d4ed8">${merged.brandmeester}</div>
-      <div class="week-num" style="color:#7c3aed">${merged.afkoop}</div>
-      <div class="week-num" style="color:#c2410c">${merged.terugbel}</div>
-      <div class="week-num" style="color:#9ca3af">${merged.geenDekking}</div>
-      <div class="week-score-cell ${scoreClass}">${d?.score > 0 ? d.score.toFixed(1) : '—'}</div>
-    </div>`;
-  }).join('');
-
-  return `<div class="week-table-card">
-    <div class="week-th">
-      <span>Dag</span>
-      <span style="text-align:center;color:var(--green)">Opgelost</span>
-      <span style="text-align:center;color:#1d4ed8">Doorv.</span>
-      <span style="text-align:center;color:#7c3aed">Afkoop</span>
-      <span style="text-align:center;color:#c2410c">Terug</span>
-      <span style="text-align:center;color:#9ca3af">Geen</span>
-      <span style="text-align:right">Score</span>
-    </div>
-    ${rows}
-    <div class="week-tf">
-      <span>Totaal</span>
-      <span style="text-align:center;color:var(--green)">${totals.opgelost}</span>
-      <span style="text-align:center;color:#1d4ed8">${totals.brandmeester}</span>
-      <span style="text-align:center;color:#7c3aed">${totals.afkoop}</span>
-      <span style="text-align:center;color:#c2410c">${totals.terugbel}</span>
-      <span style="text-align:center;color:#9ca3af">${totals.geenDekking}</span>
-      <span style="text-align:right">—</span>
-    </div>
-  </div>`;
-}
-
-// ======================== RENDER FUNCTIONS ========================
-function renderDay(key, label) {
-  const d = weekData[key];
-  const m = getManualStats(key);
-  const merged = mergeStats(d?.stats, m.stats);
-  const kpis = computeKPIs(key);
-  const totalGesp = (d?.gesprekken||0) + m.count;
-
-  document.getElementById('header-date').textContent = label;
-
-  const app = document.getElementById('app');
-  app.innerHTML = `
-    ${buildKpiHero(key, merged, kpis, d?.drukte || 'rustig')}
-    ${buildStatStrip(merged, d?.gesprekken||0, m.count)}
-    ${buildChartsRow(kpis, key)}
-    ${buildRecenteGesprekken(d?.conversations, 10)}
-    ${buildTeamTable([key])}
-    <div class="section-card">
-      <div class="section-card-header" onclick="toggleSection(this)">
-        <div class="section-card-title">💬 Alle gesprekken</div>
-        <span class="section-card-count">${d?.gesprekken||0}</span>
-        <span class="chevron">▼</span>
-      </div>
-      <div class="section-body">${buildConversations(d?.conversations)}</div>
-    </div>
-    ${buildManualSection(key)}
-    <div class="section-card">
-      <div class="section-card-header" onclick="toggleSection(this)">
-        <div class="section-card-title">✅ Actiepunten</div>
-        <span class="section-card-count">${d?.acties?.length||0}</span>
-        <span class="chevron">▼</span>
-      </div>
-      <div class="section-body">${buildActies(d?.acties)}</div>
-    </div>
-    <div class="section-card">
-      <div class="section-card-header" onclick="toggleSection(this)">
-        <div class="section-card-title">📊 Kwaliteitsanalyse</div>
-        <span class="chevron">▼</span>
-      </div>
-      <div class="section-body">${buildAnalyse(d?.analyse, d?.score)}</div>
-    </div>
-    ${buildFooter()}
-  `;
-  _collapseAllExceptFirst(app);
-}
-
-function renderWeek(keysOverride, label) {
-  const keys = keysOverride || getWeekKeys();
-  const labelStr = label || 'Deze week';
-  document.getElementById('header-date').textContent = labelStr;
-
-  const totals = { opgelost:0, brandmeester:0, afkoop:0, terugbel:0, geenDekking:0 };
-  let totalGesp = 0, scoreSum = 0, scoreDays = 0;
-  keys.forEach(k => {
-    const d = weekData[k]; const m = getManualStats(k);
-    const merged = mergeStats(d?.stats, m.stats);
-    const gesp = (d?.gesprekken||0)+m.count;
-    Object.keys(totals).forEach(key => totals[key] = (totals[key]||0)+(merged[key]||0));
-    totalGesp += gesp;
-    if (d?.score > 0) { scoreSum += d.score; scoreDays++; }
-  });
-  const avgScore = scoreDays > 0 ? scoreSum/scoreDays : 0;
-  const kpis = computeWeekKPIs(keys);
-
-  const allConvs = keys.flatMap(k => {
-    const d = weekData[k];
-    return d?.conversations?.length > 0 ? [{key: k, convs: d.conversations, score: d.score}] : [];
-  });
-
-  const allActies = keys.flatMap(k => weekData[k]?.acties||[]);
-  const allAnalyse = buildWeekAnalyseBlock(keys);
-
-  const app = document.getElementById('app');
-  app.innerHTML = `
-    ${buildKpiHeroWeek(keys, totals, avgScore, kpis)}
-    ${buildStatStrip(totals, totalGesp, 0)}
-    ${buildChartsRow(kpis, keys)}
-    ${buildWeekTable(keys)}
-    ${buildTeamTable(keys)}
-    <div class="section-card">
-      <div class="section-card-header" onclick="toggleSection(this)">
-        <div class="section-card-title">💬 Alle gesprekken</div>
-        <span class="section-card-count">${keys.reduce((a,k)=>(weekData[k]?.gesprekken||0)+a,0)}</span>
-        <span class="chevron">▼</span>
-      </div>
-      <div class="section-body">
-        ${allConvs.length > 0
-          ? allConvs.map(({key, convs, score}) => buildConversations(convs, true, formatDate(key), score)).join('')
-          : '<div class="empty-state">Geen gesprekken deze week.</div>'}
-      </div>
-    </div>
-    <div class="section-card">
-      <div class="section-card-header" onclick="toggleSection(this)">
-        <div class="section-card-title">✅ Openstaande acties</div>
-        <span class="section-card-count">${allActies.length}</span>
-        <span class="chevron">▼</span>
-      </div>
-      <div class="section-body">${buildActies(allActies)}</div>
-    </div>
-    ${allAnalyse}
-    ${buildFooter()}
-  `;
-  _collapseAllExceptFirst(app);
-}
-
-function buildWeekAnalyseBlock(keys) {
-  const allGoed = [], allBeter = [];
-  keys.forEach(k => {
-    const d = weekData[k]; if (!d?.analyse) return;
-    const dag = formatDate(k);
-    d.analyse.goed.forEach(t => allGoed.push({dag, t}));
-    d.analyse.beter.forEach(t => allBeter.push({dag, t}));
-  });
-  if (allGoed.length === 0 && allBeter.length === 0) return '';
-  return `<div class="section-card">
-    <div class="section-card-header" onclick="toggleSection(this)">
-      <div class="section-card-title">📊 Kwaliteitsanalyse — week</div>
-      <span class="chevron">▼</span>
-    </div>
-    <div class="section-body">
-      <div class="analyse-grid">
-        <div>
-          <div class="analyse-col-title goed">✅ Wat ging goed</div>
-          ${allGoed.map(({dag,t}) => `<div class="analyse-point goed-point"><div style="flex-shrink:0;color:var(--green)">✓</div><div style="font-size:12px;color:#374151"><span style="font-size:11px;color:#6b7280;font-weight:500">${dag}:</span> ${t}</div></div>`).join('')}
-        </div>
-        <div>
-          <div class="analyse-col-title beter">⚠️ Wat kon beter</div>
-          ${allBeter.map(({dag,t}) => `<div class="analyse-point beter-point"><div style="flex-shrink:0;color:var(--gold-dark)">!</div><div style="font-size:12px;color:#374151"><span style="font-size:11px;color:#6b7280;font-weight:500">${dag}:</span> ${t}</div></div>`).join('')}
-        </div>
-      </div>
-    </div>
-  </div>`;
-}
-
-function renderTeam() {
-  document.getElementById('header-date').textContent = 'Team overzicht';
-  const todayKey = dateKey(new Date());
-  const yearStr = new Date().getFullYear().toString();
-  const monthStr = new Date().toISOString().slice(0,7);
-  const weekKeys = getWeekKeys();
-
-  let weekStats = {opgelost:0,brandmeester:0,afkoop:0,terugbel:0,geenDekking:0};
-  let weekGesp = 0, weekScore = 0, weekScoreDays = 0;
-  let monthStats = {opgelost:0,brandmeester:0,afkoop:0,terugbel:0,geenDekking:0};
-  let monthGesp = 0;
-  let yearStats = {opgelost:0,brandmeester:0,afkoop:0,terugbel:0,geenDekking:0};
-  let yearGesp = 0, yearAfkoop = 0;
-
-  Object.entries(weekData).forEach(([k,d]) => {
-    if (!d?.stats) return;
-    const s = d.stats; const g = d.gesprekken||0;
-    if (k.startsWith(yearStr)) {
-      Object.keys(yearStats).forEach(key => yearStats[key] = (yearStats[key]||0)+(s[key]||0));
-      yearGesp += g;
-      (d.conversations||[]).forEach(cv => {
-        const uit = Array.isArray(cv.uitkomst)?cv.uitkomst[0]:cv.uitkomst;
-        if (uit==='outcome-afkoop') { const mm=(cv.samenvatting||'').match(/€\s*([\d.,]+)/); if(mm){const amt=parseFloat(mm[1].replace(',','.')); if(!isNaN(amt)&&amt<10000) yearAfkoop+=amt;} }
-      });
-    }
-    if (k.startsWith(monthStr)) { Object.keys(monthStats).forEach(key => monthStats[key]=(monthStats[key]||0)+(s[key]||0)); monthGesp+=g; }
-    if (weekKeys.includes(k)) { Object.keys(weekStats).forEach(key=>weekStats[key]=(weekStats[key]||0)+(s[key]||0)); weekGesp+=g; if(d.score>0){weekScore+=d.score;weekScoreDays++;} }
-  });
-
-  const avgWeekScore = weekScoreDays > 0 ? (weekScore/weekScoreDays).toFixed(1) : '—';
-  const budgetPct = Math.min(100, Math.round(yearAfkoop/40000*100));
-  const budgetColor = budgetPct < 50 ? 'var(--green)' : budgetPct < 80 ? '#c2410c' : '#b91c1c';
-  const opgelostPct = yearGesp > 0 ? Math.round(yearStats.opgelost/yearGesp*100) : 0;
-  const brandPct = yearGesp > 0 ? Math.round(yearStats.brandmeester/yearGesp*100) : 0;
-  const allKeys = Object.keys(weekData);
-
-  const app = document.getElementById('app');
-  app.innerHTML = `
-    <div style="background:#fef9c3;border:1.5px solid #fde68a;border-radius:16px;padding:12px 18px;margin-bottom:16px;font-size:12px;color:#92400e;display:flex;gap:10px;align-items:flex-start">
-      <span style="font-size:15px;flex-shrink:0">⚠️</span>
-      <span><strong>Let op:</strong> tickets worden nog niet automatisch opgehaald uit Zoho Desk. Data is gebaseerd op Granola-gesprekken en handmatig toegevoegde tickets.</span>
-    </div>
-    <div class="kpi-hero-row">
-      <div class="kpi-hero-card dark">
-        <div class="brandmeester-gold-bar"></div>
-        <div class="kpi-hero-label">Deze week</div>
-        <div class="brandmeester-name">${weekGesp}</div>
-        <div class="brandmeester-count">gesprekken afgehandeld</div>
-      </div>
-      <div class="kpi-hero-card light">
-        <div class="kpi-hero-label">Gem. score deze week</div>
-        <div><span class="score-big">${avgWeekScore}</span>${weekScoreDays>0?'<span class="score-denom">/10</span>':''}</div>
-        <div class="score-stars" style="color:var(--gold)">${parseFloat(avgWeekScore)>0?starsHTML(parseFloat(avgWeekScore)):'<span style="color:#d1d5db">☆☆☆☆☆</span>'}</div>
-      </div>
-      <div class="kpi-hero-card light">
-        <div class="kpi-hero-label">Afkoopbudget ${yearStr}</div>
-        <div><span class="score-big" style="color:${budgetColor}">€${Math.round(yearAfkoop).toLocaleString('nl-NL')}</span></div>
-        <div class="drukte-bar-wrap" style="margin-top:10px">
-          <div class="drukte-bar" style="width:${budgetPct}%;background:${budgetColor}"></div>
-        </div>
-        <div style="font-size:11px;color:var(--text-muted);margin-top:6px">${budgetPct}% van €40.000 jaarbudget</div>
-      </div>
-    </div>
-    ${buildStatStrip(weekStats, weekGesp, 0)}
-    ${buildTeamTable(allKeys)}
-    <div style="background:var(--white);border:1px solid var(--card-border);border-radius:var(--radius-card);padding:22px;margin-bottom:16px;box-shadow:0 1px 4px rgba(0,0,0,0.04)">
-      <div style="font-size:10px;font-weight:700;letter-spacing:1.6px;text-transform:uppercase;color:var(--text-muted);margin-bottom:16px">Heel jaar ${yearStr} — ${yearGesp} gesprekken</div>
-      <div style="display:flex;flex-direction:column;gap:14px">
-        <div>
-          <div style="display:flex;justify-content:space-between;font-size:12px;margin-bottom:5px"><span style="color:var(--green);font-weight:600">✅ Opgelost</span><span style="font-weight:700">${yearStats.opgelost} (${opgelostPct}%)</span></div>
-          <div style="background:var(--bg);border-radius:999px;height:6px;overflow:hidden"><div style="height:6px;background:var(--green);width:${opgelostPct}%;border-radius:999px"></div></div>
-        </div>
-        <div>
-          <div style="display:flex;justify-content:space-between;font-size:12px;margin-bottom:5px"><span style="color:#1d4ed8;font-weight:600">⚖ Doorverwezen Brandmeester</span><span style="font-weight:700">${yearStats.brandmeester} (${brandPct}%)</span></div>
-          <div style="background:var(--bg);border-radius:999px;height:6px;overflow:hidden"><div style="height:6px;background:#1d4ed8;width:${brandPct}%;border-radius:999px"></div></div>
-        </div>
-        <div style="display:flex;gap:20px;flex-wrap:wrap">
-          <div style="text-align:center"><div style="font-size:22px;font-weight:800;color:#7c3aed">${yearStats.afkoop}</div><div style="font-size:11px;color:var(--text-muted)">Afkoop</div></div>
-          <div style="text-align:center"><div style="font-size:22px;font-weight:800;color:#c2410c">${yearStats.terugbel}</div><div style="font-size:11px;color:var(--text-muted)">Terugbellen</div></div>
-          <div style="text-align:center"><div style="font-size:22px;font-weight:800;color:#9ca3af">${yearStats.geenDekking}</div><div style="font-size:11px;color:var(--text-muted)">Geen dekking</div></div>
-        </div>
-      </div>
-    </div>
-    ${buildFooter()}
-  `;
-}
-
-function buildFooter() {
-  return `<div class="dashboard-footer">
-    <div class="footer-logo">HTJZ</div>
-    <div class="footer-right">Dagrapport gegenereerd voor Lancyr</div>
-  </div>`;
-}
-
-// ======================== SECTION TOGGLE ========================
-function toggleSection(header) {
-  const body = header.nextElementSibling;
-  const isOpen = body.style.display !== 'none';
-  body.style.display = isOpen ? 'none' : '';
-  header.parentElement.classList.toggle('collapsed', isOpen);
-}
-
-function _collapseAllExceptFirst(container) {
-  let first = true;
-  (container || document).querySelectorAll('.section-card').forEach(s => {
-    const body = s.querySelector('.section-body');
-    if (body) {
-      if (first) { body.style.display = ''; s.classList.remove('collapsed'); first = false; }
-      else { body.style.display = 'none'; s.classList.add('collapsed'); }
-    }
-  });
-}
-
-function toggleCheck(el) {
-  el.classList.toggle('done');
-  el.textContent = el.classList.contains('done') ? '✓' : '';
-  const txt = el.closest('.actie-item')?.querySelector('.actie-tekst');
-  if (txt) txt.style.textDecoration = el.classList.contains('done') ? 'line-through' : '';
-}
-
-// ======================== NAV ========================
-let currentView = 'vandaag';
-
-function setView(v) {
-  if (v !== currentView) activeFilter = null;
-  currentView = v;
-  ['vandaag','gisteren','week','vorige-week','team'].forEach(x => {
-    const el = document.getElementById('btn-'+x);
-    if (el) el.classList.toggle('active', x===v);
-  });
-  const today = new Date(); today.setHours(12,0,0,0);
-  const yesterday = new Date(today); yesterday.setDate(today.getDate()-1);
-  if (v==='vandaag') renderDay(dateKey(today), 'Vandaag — ' + formatDate(dateKey(today)));
-  else if (v==='gisteren') renderDay(dateKey(yesterday), 'Gisteren — ' + formatDate(dateKey(yesterday)));
-  else if (v==='vorige-week') renderWeek(getWeekKeys(7), 'Vorige week');
-  else if (v==='team') renderTeam();
-  else renderWeek();
-}
-
-let activeFilter = null;
-
-function refresh() { _ghLoad(); }
-setInterval(() => _ghLoad(), 3 * 60 * 1000);
-_ghLoad();
-setView('vandaag');
+  // Initial render
+  renderDashboard(activePeriod);
+});
 </script>
-
-<!-- Merge modal -->
-<div class="merge-modal-overlay hidden" id="mergeModal">
-  <div class="merge-modal">
-    <div class="merge-modal-title">Zelfde persoon?</div>
-    <div class="merge-modal-body" id="mergeModalBody"></div>
-    <div class="merge-modal-actions">
-      <button class="btn-annuleren" onclick="closeMergeModal()">Annuleren</button>
-      <button class="btn-toevoegen" onclick="confirmSeparate()">Nee, apart toevoegen</button>
-      <button class="btn-opslaan" onclick="confirmMerge()">Ja, samenvoegen</button>
-    </div>
-  </div>
-</div>
-
 </body>
 </html>
