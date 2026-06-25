@@ -4,6 +4,122 @@
   "name": "Lancyr Dagrapport",
   "schemaVersion": 1
 }
+
+// ======================== WEEK CONTEXT ========================
+const WEEK_NORM_BRANDMEESTER = 9;
+const WEEK_NORM_GESPREKKEN = 35;
+
+function buildWeekContext() {
+  const now = new Date();
+  const mon = getMonday(now);
+  const keys = [];
+  for (let i = 0; i < 5; i++) {
+    const d = new Date(mon);
+    d.setDate(mon.getDate() + i);
+    if (d > now) break;
+    keys.push(dateKey(d));
+  }
+  let weekGesprekken = 0, weekBrandmeester = 0, weekOpgelost = 0, weekAfkoop = 0, weekTerugbel = 0;
+  keys.forEach(k => {
+    const d = weekData[k];
+    if (!d) return;
+    weekGesprekken   += d.gesprekken || 0;
+    weekOpgelost     += (d.stats && d.stats.opgelost)     || 0;
+    weekBrandmeester += (d.stats && d.stats.brandmeester) || 0;
+    weekAfkoop       += (d.stats && d.stats.afkoop)       || 0;
+    weekTerugbel     += (d.stats && d.stats.terugbel)     || 0;
+  });
+  const dagvdWeek = now.getDay();
+  const werkdagenGehad = Math.max(1, Math.min(dagvdWeek === 0 ? 5 : dagvdWeek, 5));
+  const bmNormTotNu    = Math.round(WEEK_NORM_BRANDMEESTER * werkdagenGehad / 5);
+  const gespNormTotNu  = Math.round(WEEK_NORM_GESPREKKEN   * werkdagenGehad / 5);
+
+  function badge(actual, norm) {
+    const pct = norm > 0 ? actual / norm : 0;
+    if (pct >= 0.80 && pct <= 1.20) return '<span class="wc-badge op-schema">✓ Op schema</span>';
+    if (pct > 1.20) return '<span class="wc-badge boven-norm">↑ Boven norm</span>';
+    return '<span class="wc-badge onder-norm">↓ Onder norm</span>';
+  }
+  function progress(actual, norm) {
+    const pct = Math.min(100, norm > 0 ? Math.round(actual / norm * 100) : 0);
+    return `<div class="wc-progress-wrap"><div class="wc-progress-fill" style="width:${pct}%"></div></div>`;
+  }
+
+  const html = `
+    <div class="wc-item">
+      <div class="wc-label">Gesprekken deze week</div>
+      <div class="wc-value">${weekGesprekken}</div>
+      <div class="wc-sub">norm: ~${gespNormTotNu} t/m vandaag</div>
+      ${badge(weekGesprekken, gespNormTotNu)}
+      ${progress(weekGesprekken, WEEK_NORM_GESPREKKEN)}
+    </div>
+    <div class="wc-item">
+      <div class="wc-label">Naar Brandmeester</div>
+      <div class="wc-value">${weekBrandmeester}</div>
+      <div class="wc-sub">norm: ~${bmNormTotNu} t/m vandaag</div>
+      ${badge(weekBrandmeester, bmNormTotNu)}
+      ${progress(weekBrandmeester, WEEK_NORM_BRANDMEESTER)}
+    </div>
+    <div class="wc-item">
+      <div class="wc-label">Eerstelijns opgelost</div>
+      <div class="wc-value">${weekOpgelost}</div>
+      <div class="wc-sub">totaal deze week</div>
+    </div>
+    <div class="wc-item">
+      <div class="wc-label">Terugbellen</div>
+      <div class="wc-value">${weekTerugbel}</div>
+      <div class="wc-sub">verzoeken ingepland</div>
+    </div>
+    <div class="wc-item">
+      <div class="wc-label">Afkoop</div>
+      <div class="wc-value">${weekAfkoop}</div>
+      <div class="wc-sub">minnelijke regelingen</div>
+    </div>
+  `;
+  const el = document.getElementById('week-context-bar');
+  if (el) el.innerHTML = html;
+}
+
+// ======================== MODAL ========================
+function openGesprekModal(idx) {
+  const c = (window._modalConvos || [])[idx];
+  if (!c) return;
+  const jurist = juristFromPersoon(c.personen) || '—';
+  const uitKey = c.uitkomst ? c.uitkomst[0] : '';
+  const uitLabel = c.uitkomst ? c.uitkomst[1] : 'Onbekend';
+  const uClass = uitkomstClass(uitKey);
+  const tags = (c.tags || []).map(t => `<span class="topic-badge">${t[1] || t[0]}</span>`).join(' ');
+
+  document.getElementById('gm-titel').textContent = c.titel || '—';
+  document.getElementById('gm-meta').innerHTML = `
+    <span class="gm-tijd-badge">${c.tijd || ''}</span>
+    <div class="gm-jurist-badge">
+      <div class="gm-av">${initials(jurist)}</div>
+      ${jurist}
+    </div>
+    <span class="uitkomst-badge ${uClass}">${uitLabel}</span>
+  `;
+  document.getElementById('gm-samenvatting').textContent = c.samenvatting || 'Geen samenvatting beschikbaar.';
+  const footerParts = [];
+  if (tags) footerParts.push(`<div style="display:flex;gap:6px;flex-wrap:wrap">${tags}</div>`);
+  if (c.personen) footerParts.push(`<span style="font-size:11px;color:var(--ink-30)">${c.personen}</span>`);
+  document.getElementById('gm-footer').innerHTML = footerParts.join('');
+  document.getElementById('gesprek-modal').classList.add('open');
+  document.body.style.overflow = 'hidden';
+}
+
+function closeGesprekModal(e) {
+  if (e.target === document.getElementById('gesprek-modal')) closeGesprekModalDirect();
+}
+
+function closeGesprekModalDirect() {
+  document.getElementById('gesprek-modal').classList.remove('open');
+  document.body.style.overflow = '';
+}
+
+document.addEventListener('keydown', function(e) {
+  if (e.key === 'Escape') closeGesprekModalDirect();
+});
 </script>
 <html lang="nl">
 <head>
@@ -459,8 +575,8 @@ body {
 /* ── STAT STRIP ── */
 .stat-strip {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 20px;
+  grid-template-columns: repeat(6, 1fr);
+  gap: 14px;
 }
 
 .stat-card {
@@ -818,17 +934,186 @@ body {
   .header-band { padding: 16px; flex-direction: column; align-items: flex-start; gap: 12px; }
   .main { padding: 16px; gap: 16px; }
   .kpi-row { grid-template-columns: 1fr; }
-  .stat-strip { grid-template-columns: repeat(2, 1fr); }
+  .stat-strip { grid-template-columns: repeat(3, 1fr); }
   .charts-row { grid-template-columns: 1fr; }
   .header-left h1 { font-size: 28px; }
   .avatar-stack { display: none; }
 }
 
 @media (max-width: 600px) {
-  .stat-strip { grid-template-columns: 1fr 1fr; }
+  .stat-strip { grid-template-columns: repeat(2, 1fr); }
   .gs-samenvatting { display: none; }
   .topbar-opdracht { display: none; }
 }
+
+/* ── WEEK-CONTEXT BANNER ── */
+.week-context-card {
+  display: flex;
+  align-items: stretch;
+  gap: 0;
+  overflow: hidden;
+  padding: 0;
+}
+.wc-item {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+  flex: 1;
+  padding: 18px 20px;
+}
+.wc-item:not(:last-child) { border-right: 1px solid var(--line); }
+.wc-label {
+  font-size: 10px;
+  font-weight: 700;
+  color: var(--ink-30);
+  text-transform: uppercase;
+  letter-spacing: 0.8px;
+}
+.wc-value {
+  font-size: 26px;
+  font-weight: 700;
+  color: var(--navy);
+  line-height: 1;
+}
+.wc-sub { font-size: 11px; color: var(--ink-50); margin-top: 1px; }
+.wc-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 3px;
+  padding: 2px 8px;
+  border-radius: var(--radius-pill);
+  font-size: 10px;
+  font-weight: 700;
+  margin-top: 3px;
+  width: fit-content;
+}
+.wc-badge.op-schema  { background: var(--green-bg); color: var(--green); }
+.wc-badge.boven-norm { background: rgba(174,152,111,0.15); color: var(--gold-dark); }
+.wc-badge.onder-norm { background: var(--red-bg); color: var(--red); }
+.wc-progress-wrap {
+  background: var(--gold-10);
+  border-radius: var(--radius-pill);
+  height: 4px;
+  margin-top: 6px;
+  overflow: hidden;
+  width: 100%;
+}
+.wc-progress-fill {
+  height: 100%;
+  background: var(--gold);
+  border-radius: var(--radius-pill);
+  transition: width 0.6s ease;
+}
+
+/* ── GESPREK DETAIL MODAL ── */
+.gesprek-modal-overlay {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: rgba(13,31,46,0.45);
+  z-index: 500;
+  align-items: center;
+  justify-content: center;
+  padding: 24px;
+  backdrop-filter: blur(2px);
+}
+.gesprek-modal-overlay.open { display: flex; }
+.gesprek-modal {
+  background: var(--white);
+  border-radius: var(--radius-card);
+  padding: 32px;
+  max-width: 640px;
+  width: 100%;
+  max-height: 82vh;
+  overflow-y: auto;
+  position: relative;
+  box-shadow: 0 24px 64px rgba(13,31,46,0.22);
+}
+.gm-header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 16px;
+  margin-bottom: 16px;
+}
+.gm-titel {
+  font-size: 17px;
+  font-weight: 700;
+  color: var(--navy);
+  line-height: 1.35;
+  flex: 1;
+}
+.gm-close {
+  width: 32px;
+  height: 32px;
+  border: none;
+  background: var(--bg);
+  border-radius: 50%;
+  cursor: pointer;
+  font-size: 18px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  color: var(--ink-50);
+}
+.gm-close:hover { background: var(--line); }
+.gm-meta {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 20px;
+  flex-wrap: wrap;
+}
+.gm-tijd-badge {
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--ink-50);
+  background: var(--bg);
+  padding: 3px 10px;
+  border-radius: var(--radius-pill);
+  font-variant-numeric: tabular-nums;
+}
+.gm-jurist-badge {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 12px;
+  color: var(--ink-50);
+  font-weight: 500;
+}
+.gm-av {
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  background: var(--gold-10);
+  color: var(--gold-dark);
+  font-size: 8px;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.gm-section { margin-bottom: 18px; }
+.gm-section-label {
+  font-size: 10px;
+  font-weight: 700;
+  color: var(--ink-30);
+  text-transform: uppercase;
+  letter-spacing: 0.8px;
+  margin-bottom: 8px;
+}
+.gm-samenvatting { font-size: 14px; color: var(--ink); line-height: 1.65; }
+.gm-footer {
+  margin-top: 20px;
+  padding-top: 16px;
+  border-top: 1px solid var(--line);
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+.gesprekken-table tbody tr { cursor: pointer; }
 </style>
 </head>
 <body>
@@ -1973,14 +2258,15 @@ function renderDashboard(period) {
 
   // Recent conversations (last 10)
   const recentConvos = [...allConversations].reverse().slice(0,10);
-  const gesprekkenRows = recentConvos.map(c => {
+  window._modalConvos = recentConvos;
+  const gesprekkenRows = recentConvos.map((c, idx) => {
     const jurist = juristFromPersoon(c.personen) || '—';
     const topic = c.tags && c.tags.length > 0 ? c.tags[0][1] : 'Overig';
     const uitKey = c.uitkomst ? c.uitkomst[0] : '';
     const uitLabel = c.uitkomst ? c.uitkomst[1] : 'Onbekend';
     const uClass = uitkomstClass(uitKey);
     const summary = c.samenvatting || '';
-    return `<tr>
+    return `<tr onclick="openGesprekModal(${idx})" title="Klik voor details">
       <td class="gs-tijd">${c.tijd || ''}</td>
       <td>
         <div class="gs-person">
@@ -1998,6 +2284,8 @@ function renderDashboard(period) {
   const stats4 = [
     { label: 'Totaal gesprekken', value: totalGesprekken, delta: null },
     { label: 'Eerstelijns opgelost', value: totalOpgelost, delta: null },
+    { label: 'Naar Brandmeester', value: totalBrandmeester, delta: null },
+    { label: 'Afkoop', value: totalAfkoop, delta: null },
     { label: 'Terugbellen', value: totalTerugbel, delta: null },
     { label: 'Geen dekking', value: totalGeenDekking, delta: null },
   ];
@@ -2063,6 +2351,8 @@ function renderDashboard(period) {
       ${statStripHTML}
     </div>
 
+    <!-- WEEK CONTEXT -->
+    <div class="card week-context-card" id="week-context-bar"></div>
     <!-- CHARTS ROW -->
     <div class="charts-row">
       <div class="card">
@@ -2191,6 +2481,7 @@ document.addEventListener('DOMContentLoaded', async () => {
   setInterval(setTime, 60000);
 
   await loadLiveToday();
+  buildWeekContext();
 
   const tabs = document.querySelectorAll('.period-tab');
   tabs.forEach(tab => {
@@ -2205,5 +2496,21 @@ document.addEventListener('DOMContentLoaded', async () => {
   renderDashboard(activePeriod);
 });
 </script>
+
+<!-- GESPREK DETAIL MODAL -->
+<div class="gesprek-modal-overlay" id="gesprek-modal" onclick="closeGesprekModal(event)">
+  <div class="gesprek-modal" id="gesprek-modal-inner">
+    <div class="gm-header">
+      <div class="gm-titel" id="gm-titel">—</div>
+      <button class="gm-close" onclick="closeGesprekModalDirect()">&times;</button>
+    </div>
+    <div class="gm-meta" id="gm-meta"></div>
+    <div class="gm-section">
+      <div class="gm-section-label">Samenvatting</div>
+      <div class="gm-samenvatting" id="gm-samenvatting">—</div>
+    </div>
+    <div class="gm-footer" id="gm-footer"></div>
+  </div>
+</div>
 </body>
 </html>
