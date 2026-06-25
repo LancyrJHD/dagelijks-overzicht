@@ -2137,11 +2137,61 @@ function setTime() {
   if (footerEl) footerEl.textContent = `Dagrapport gegenereerd voor Lancyr · ${t}`;
 }
 
-document.addEventListener('DOMContentLoaded', () => {
+// ======================== LIVE DATA (GitHub Actions) ========================
+
+function convertLiveToday(live) {
+  const entries = live.entries || [];
+  const uitkomstMap = {
+    'telefonisch-opgelost': ['outcome-opgelost',    'Telefonisch opgelost'],
+    'terugbellen':          ['outcome-terugbel',     'Terugbellen'],
+    'geen-dekking':         ['outcome-geendekking',  'Geen dekking'],
+    'doorverbonden':        ['outcome-brandmeester', 'Doorverwezen naar Brandmeester'],
+  };
+  const conversations = entries.map(e => ({
+    tijd:         e.tijdstip,
+    titel:        e.titel || e.naam || '—',
+    personen:     'Verzekerde: anoniem · ' + (e.medewerker || 'Jackie Stam'),
+    samenvatting: e.notitie || '',
+    tags:         [],
+    uitkomst:     uitkomstMap[e.uitkomst] || ['outcome-opgelost', 'Telefonisch opgelost'],
+  }));
+  const opgelost     = entries.filter(e => e.uitkomst === 'telefonisch-opgelost').length;
+  const terugbel     = entries.filter(e => e.uitkomst === 'terugbellen').length;
+  const geenDekking  = entries.filter(e => e.uitkomst === 'geen-dekking').length;
+  const brandmeester = entries.filter(e => e.uitkomst === 'doorverbonden').length;
+  const total        = entries.length;
+  let drukte = 'rustig';
+  if (total >= 10) drukte = 'druk';
+  else if (total >= 6) drukte = 'normaal';
+  else if (total >= 3) drukte = 'matig';
+  return {
+    drukte, gesprekken: total,
+    stats: { opgelost, brandmeester, afkoop: 0, terugbel, geenDekking },
+    score: 0, conversations, acties: [], analyse: { goed: [], beter: [] },
+  };
+}
+
+async function loadLiveToday() {
+  try {
+    const resp = await fetch('data/today.json?t=' + Date.now());
+    if (!resp.ok) return;
+    const live = await resp.json();
+    const todayStr = new Date().toLocaleDateString('sv-SE'); // YYYY-MM-DD
+    if (live.date === todayStr && Array.isArray(live.entries) && live.entries.length > 0) {
+      weekData[todayStr] = convertLiveToday(live);
+      console.log('[LiveData] Geladen: ' + live.entries.length + ' gesprekken van ' + todayStr);
+    }
+  } catch (e) {
+    console.log('[LiveData] Niet beschikbaar, val terug op weekData');
+  }
+}
+
+document.addEventListener('DOMContentLoaded', async () => {
   setTime();
   setInterval(setTime, 60000);
 
-  // Period tabs
+  await loadLiveToday();
+
   const tabs = document.querySelectorAll('.period-tab');
   tabs.forEach(tab => {
     tab.addEventListener('click', () => {
@@ -2152,7 +2202,6 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 
-  // Initial render
   renderDashboard(activePeriod);
 });
 </script>

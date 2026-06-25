@@ -1,0 +1,40 @@
+name: Update Lancyr Dagrapport
+
+on:
+  schedule:
+    # Elk uur op werkdagen tussen 07:00 en 18:00 Amsterdam (05:00-16:00 UTC)
+    - cron: '0 5,6,7,8,9,10,11,12,13,14,15,16 * * 1-5'
+  workflow_dispatch:   # Handmatig triggeren vanuit GitHub
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write   # Nodig om te kunnen committen en pushen
+
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v4
+
+      - name: Set up Python 3.11
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Install dependencies
+        run: pip install requests
+
+      - name: Fetch Granola data
+        env:
+          GRANOLA_API_KEY: ${{ secrets.GRANOLA_API_KEY }}
+        run: python scripts/fetch_granola.py
+
+      - name: Commit en push data/today.json
+        run: |
+          git config user.name  "Lancyr Bot"
+          git config user.email "bot@htjz.nl"
+          git add data/today.json
+          # Alleen committen als er iets veranderd is
+          git diff --staged --quiet && echo "Geen wijzigingen" || \
+            git commit -m "auto: lancyr dagrapport $(date -u '+%Y-%m-%d %H:%M UTC')" && \
+            git push
