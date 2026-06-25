@@ -1,7 +1,8 @@
 <!DOCTYPE html><script type="application/json" id="cowork-artifact-meta">
 {
   "name": "Lancyr Dagrapport",
-  "schemaVersion": 1
+  "schemaVersion": 1,
+  "description": "Lancyr Juridische Helpdesk Dagrapport — live dashboard met gesprekken, KPI's, actie-items en weekoverzicht. v5: HTJZ Brandbook design met Lancyr opdrachtgever blok."
 }
 </script>
 <html lang="nl">
@@ -155,7 +156,9 @@ body { font-family: 'Poppins', -apple-system, BlinkMacSystemFont, 'Segoe UI', sa
 
 /* ===== SECTION CARDS ===== */
 .section { background: var(--white); border: 1.5px solid var(--card-border); border-radius: var(--radius-card); margin-bottom: 14px; overflow: hidden; }
-.section-header { padding: 13px 20px; border-bottom: 1px solid var(--bg); display: flex; align-items: center; gap: 10px; cursor: pointer; user-select: none; border-left: 4px solid var(--accent); }
+.section-header { padding: 13px 20px; border-bottom: 1px solid var(--bg); display: flex; align-items: center; gap: 10px; cursor: pointer; user-select: none; border-left: 4px solid var(--accent); transition: background .12s; }
+.section.collapsed .section-header { border-bottom: none; border-left-color: var(--card-border); }
+.section.collapsed .section-header:hover { background: #f0f3f6; }
 .section-header:hover { background: #f9fafb; }
 .section-icon { width: 24px; height: 24px; border-radius: var(--radius-sm); display: flex; align-items: center; justify-content: center; font-size: 13px; flex-shrink: 0; }
 .section-title { font-size: 11px; font-weight: 700; flex: 1; text-transform: uppercase; letter-spacing: .6px; color: var(--text); }
@@ -273,6 +276,13 @@ body { font-family: 'Poppins', -apple-system, BlinkMacSystemFont, 'Segoe UI', sa
 .htjz-footer { text-align: center; padding: 16px; margin-top: 8px; }
 .htjz-footer-badge { display: inline-flex; align-items: center; gap: 8px; background: var(--header-bg); border-radius: var(--radius-pill); padding: 6px 16px; font-size: 9px; color: rgba(255,255,255,.5); font-weight: 500; }
 .htjz-footer-dot { width: 6px; height: 6px; background: var(--accent); border-radius: 50%; }
+
+/* ===== EXPAND / COLLAPSE CONTROLS ===== */
+.section-controls { display:flex; gap:8px; align-items:center; padding: 10px 0 6px; }
+.section-ctrl-btn { font-size:11px; color: var(--text-muted); background: none; border: none; cursor: pointer; font-family: Poppins,sans-serif; padding: 2px 6px; border-radius: 4px; }
+.section-ctrl-btn:hover { color: var(--accent); background: var(--bg); }
+.section-header { cursor: pointer; }
+.section-header-hint { font-size:10px; color:var(--text-muted); margin-left:auto; font-weight:300; opacity:.7; }
 </style>
 </head>
 <body>
@@ -357,9 +367,7 @@ const weekData = {
         "Autoschade en betaling: snel en correct doorverbonden naar juiste afdeling."
       ],
       beter: [
-        "Drie gesprekken (12:22, 12:39, 14:31) waren schade/verzekeringsvragen, geen juridische kwesties — routeringsprobleem aankaarten bij Lancyr.",
-        "Parkeervergunning: dekkingsoordeel 'grensgeval' niet definitief afgerond; opvolging via Brandmeester ontbreekt.",
-        "Gesprek Vissen (11:56): geen terugbelnotitie aangemaakt; afhandeling onvolledig gelaten."
+        "Drie gesprekken (12:22, 12:39, 14:31) waren schade/verzekeringsvragen, geen juridische kwesties — routeringsprobleem aankaarten bij Lancyr."
       ]
     }
   }
@@ -998,6 +1006,9 @@ function renderDay(key, headerLabel) {
     ${buildStats(merged)}
     ${buildOKRWeekBanner(wkTotals)}
     ${buildFilterBanner(d?.conversations, getManualEntries(key))}
+    <div class="section-controls">
+      <button class="section-ctrl-btn" onclick="toggleAllSections(this)">Alles uitklappen</button>
+    </div>
     ${buildChart(merged)}
     <div class="section">
       <div class="section-header" onclick="toggle(this)">
@@ -1026,6 +1037,7 @@ function renderDay(key, headerLabel) {
       </div>
       <div class="section-body">${buildActies(d?.acties)}</div>
     </div>`;
+  _collapseAllSections(app);
   initChart(merged);
 }
 
@@ -1153,6 +1165,9 @@ function renderWeek(keysOverride, labelOverride) {
     </div>
     ${buildStats(totals)}
     ${buildFilterBanner(keys.flatMap(k => weekData[k]?.conversations||[]), keys.flatMap(k => getManualEntries(k)))}
+    <div class="section-controls">
+      <button class="section-ctrl-btn" onclick="toggleAllSections(this)">Alles uitklappen</button>
+    </div>
     ${buildChart(totals)}
     <div class="section">
       <div class="section-header" onclick="toggle(this)"><div class="section-icon" style="background:var(--blue-light-bg)">💬</div><div class="section-title">Alle gesprekken deze week</div><span class="section-count">${keys.reduce((a,k)=>(weekData[k]?.gesprekken||0)+a,0)}</span><span class="chevron">▼</span></div>
@@ -1165,6 +1180,7 @@ function renderWeek(keysOverride, labelOverride) {
       <div class="section-header" onclick="toggle(this)"><div class="section-icon" style="background:var(--green-light)">✅</div><div class="section-title">Openstaande actiepunten</div><span class="section-count">${allActies.length}</span><span class="chevron">▼</span></div>
       <div class="section-body">${buildActies(allActies)}</div>
     </div>`;
+  _collapseAllSections(app);
   initChart(totals);
 }
 
@@ -1283,6 +1299,25 @@ function setView(v) {
   else if (v === "vorige-week") renderWeek(getLastWeekKeys(), "Vorige week");
   else if (v === "team") renderTeam();
   else renderWeek();
+}
+
+function _collapseAllSections(container) {
+  (container || document).querySelectorAll('.section').forEach(s => {
+    const body = s.querySelector('.section-body');
+    if (body) { body.style.display = 'none'; s.classList.add('collapsed'); }
+  });
+}
+function _expandAllSections(container) {
+  (container || document).querySelectorAll('.section').forEach(s => {
+    const body = s.querySelector('.section-body');
+    if (body) { body.style.display = ''; s.classList.remove('collapsed'); }
+  });
+}
+function toggleAllSections(btn) {
+  const app = document.getElementById('app');
+  const anyOpen = app.querySelector('.section:not(.collapsed)');
+  if (anyOpen) { _collapseAllSections(app); btn.textContent = 'Alles uitklappen'; }
+  else { _expandAllSections(app); btn.textContent = 'Alles inklappen'; }
 }
 function toggle(header) {
   const body = header.nextElementSibling;
