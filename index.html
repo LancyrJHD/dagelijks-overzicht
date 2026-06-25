@@ -5,121 +5,6 @@
   "schemaVersion": 1
 }
 
-// ======================== WEEK CONTEXT ========================
-const WEEK_NORM_BRANDMEESTER = 9;
-const WEEK_NORM_GESPREKKEN = 35;
-
-function buildWeekContext() {
-  const now = new Date();
-  const mon = getMonday(now);
-  const keys = [];
-  for (let i = 0; i < 5; i++) {
-    const d = new Date(mon);
-    d.setDate(mon.getDate() + i);
-    if (d > now) break;
-    keys.push(dateKey(d));
-  }
-  let weekGesprekken = 0, weekBrandmeester = 0, weekOpgelost = 0, weekAfkoop = 0, weekTerugbel = 0;
-  keys.forEach(k => {
-    const d = weekData[k];
-    if (!d) return;
-    weekGesprekken   += d.gesprekken || 0;
-    weekOpgelost     += (d.stats && d.stats.opgelost)     || 0;
-    weekBrandmeester += (d.stats && d.stats.brandmeester) || 0;
-    weekAfkoop       += (d.stats && d.stats.afkoop)       || 0;
-    weekTerugbel     += (d.stats && d.stats.terugbel)     || 0;
-  });
-  const dagvdWeek = now.getDay();
-  const werkdagenGehad = Math.max(1, Math.min(dagvdWeek === 0 ? 5 : dagvdWeek, 5));
-  const bmNormTotNu    = Math.round(WEEK_NORM_BRANDMEESTER * werkdagenGehad / 5);
-  const gespNormTotNu  = Math.round(WEEK_NORM_GESPREKKEN   * werkdagenGehad / 5);
-
-  function badge(actual, norm) {
-    const pct = norm > 0 ? actual / norm : 0;
-    if (pct >= 0.80 && pct <= 1.20) return '<span class="wc-badge op-schema">✓ Op schema</span>';
-    if (pct > 1.20) return '<span class="wc-badge boven-norm">↑ Boven norm</span>';
-    return '<span class="wc-badge onder-norm">↓ Onder norm</span>';
-  }
-  function progress(actual, norm) {
-    const pct = Math.min(100, norm > 0 ? Math.round(actual / norm * 100) : 0);
-    return `<div class="wc-progress-wrap"><div class="wc-progress-fill" style="width:${pct}%"></div></div>`;
-  }
-
-  const html = `
-    <div class="wc-item">
-      <div class="wc-label">Gesprekken deze week</div>
-      <div class="wc-value">${weekGesprekken}</div>
-      <div class="wc-sub">norm: ~${gespNormTotNu} t/m vandaag</div>
-      ${badge(weekGesprekken, gespNormTotNu)}
-      ${progress(weekGesprekken, WEEK_NORM_GESPREKKEN)}
-    </div>
-    <div class="wc-item">
-      <div class="wc-label">Naar Brandmeester</div>
-      <div class="wc-value">${weekBrandmeester}</div>
-      <div class="wc-sub">norm: ~${bmNormTotNu} t/m vandaag</div>
-      ${badge(weekBrandmeester, bmNormTotNu)}
-      ${progress(weekBrandmeester, WEEK_NORM_BRANDMEESTER)}
-    </div>
-    <div class="wc-item">
-      <div class="wc-label">Eerstelijns opgelost</div>
-      <div class="wc-value">${weekOpgelost}</div>
-      <div class="wc-sub">totaal deze week</div>
-    </div>
-    <div class="wc-item">
-      <div class="wc-label">Terugbellen</div>
-      <div class="wc-value">${weekTerugbel}</div>
-      <div class="wc-sub">verzoeken ingepland</div>
-    </div>
-    <div class="wc-item">
-      <div class="wc-label">Afkoop</div>
-      <div class="wc-value">${weekAfkoop}</div>
-      <div class="wc-sub">minnelijke regelingen</div>
-    </div>
-  `;
-  const el = document.getElementById('week-context-bar');
-  if (el) el.innerHTML = html;
-}
-
-// ======================== MODAL ========================
-function openGesprekModal(idx) {
-  const c = (window._modalConvos || [])[idx];
-  if (!c) return;
-  const jurist = juristFromPersoon(c.personen) || '—';
-  const uitKey = c.uitkomst ? c.uitkomst[0] : '';
-  const uitLabel = c.uitkomst ? c.uitkomst[1] : 'Onbekend';
-  const uClass = uitkomstClass(uitKey);
-  const tags = (c.tags || []).map(t => `<span class="topic-badge">${t[1] || t[0]}</span>`).join(' ');
-
-  document.getElementById('gm-titel').textContent = c.titel || '—';
-  document.getElementById('gm-meta').innerHTML = `
-    <span class="gm-tijd-badge">${c.tijd || ''}</span>
-    <div class="gm-jurist-badge">
-      <div class="gm-av">${initials(jurist)}</div>
-      ${jurist}
-    </div>
-    <span class="uitkomst-badge ${uClass}">${uitLabel}</span>
-  `;
-  document.getElementById('gm-samenvatting').textContent = c.samenvatting || 'Geen samenvatting beschikbaar.';
-  const footerParts = [];
-  if (tags) footerParts.push(`<div style="display:flex;gap:6px;flex-wrap:wrap">${tags}</div>`);
-  if (c.personen) footerParts.push(`<span style="font-size:11px;color:var(--ink-30)">${c.personen}</span>`);
-  document.getElementById('gm-footer').innerHTML = footerParts.join('');
-  document.getElementById('gesprek-modal').classList.add('open');
-  document.body.style.overflow = 'hidden';
-}
-
-function closeGesprekModal(e) {
-  if (e.target === document.getElementById('gesprek-modal')) closeGesprekModalDirect();
-}
-
-function closeGesprekModalDirect() {
-  document.getElementById('gesprek-modal').classList.remove('open');
-  document.body.style.overflow = '';
-}
-
-document.addEventListener('keydown', function(e) {
-  if (e.key === 'Escape') closeGesprekModalDirect();
-});
 </script>
 <html lang="nl">
 <head>
@@ -2494,6 +2379,122 @@ document.addEventListener('DOMContentLoaded', async () => {
   });
 
   renderDashboard(activePeriod);
+});
+
+// ======================== WEEK CONTEXT ========================
+const WEEK_NORM_BRANDMEESTER = 9;
+const WEEK_NORM_GESPREKKEN = 35;
+
+function buildWeekContext() {
+  const now = new Date();
+  const mon = getMonday(now);
+  const keys = [];
+  for (let i = 0; i < 5; i++) {
+    const d = new Date(mon);
+    d.setDate(mon.getDate() + i);
+    if (d > now) break;
+    keys.push(dateKey(d));
+  }
+  let weekGesprekken = 0, weekBrandmeester = 0, weekOpgelost = 0, weekAfkoop = 0, weekTerugbel = 0;
+  keys.forEach(k => {
+    const d = weekData[k];
+    if (!d) return;
+    weekGesprekken   += d.gesprekken || 0;
+    weekOpgelost     += (d.stats && d.stats.opgelost)     || 0;
+    weekBrandmeester += (d.stats && d.stats.brandmeester) || 0;
+    weekAfkoop       += (d.stats && d.stats.afkoop)       || 0;
+    weekTerugbel     += (d.stats && d.stats.terugbel)     || 0;
+  });
+  const dagvdWeek = now.getDay();
+  const werkdagenGehad = Math.max(1, Math.min(dagvdWeek === 0 ? 5 : dagvdWeek, 5));
+  const bmNormTotNu    = Math.round(WEEK_NORM_BRANDMEESTER * werkdagenGehad / 5);
+  const gespNormTotNu  = Math.round(WEEK_NORM_GESPREKKEN   * werkdagenGehad / 5);
+
+  function badge(actual, norm) {
+    const pct = norm > 0 ? actual / norm : 0;
+    if (pct >= 0.80 && pct <= 1.20) return '<span class="wc-badge op-schema">✓ Op schema</span>';
+    if (pct > 1.20) return '<span class="wc-badge boven-norm">↑ Boven norm</span>';
+    return '<span class="wc-badge onder-norm">↓ Onder norm</span>';
+  }
+  function progress(actual, norm) {
+    const pct = Math.min(100, norm > 0 ? Math.round(actual / norm * 100) : 0);
+    return `<div class="wc-progress-wrap"><div class="wc-progress-fill" style="width:${pct}%"></div></div>`;
+  }
+
+  const html = `
+    <div class="wc-item">
+      <div class="wc-label">Gesprekken deze week</div>
+      <div class="wc-value">${weekGesprekken}</div>
+      <div class="wc-sub">norm: ~${gespNormTotNu} t/m vandaag</div>
+      ${badge(weekGesprekken, gespNormTotNu)}
+      ${progress(weekGesprekken, WEEK_NORM_GESPREKKEN)}
+    </div>
+    <div class="wc-item">
+      <div class="wc-label">Naar Brandmeester</div>
+      <div class="wc-value">${weekBrandmeester}</div>
+      <div class="wc-sub">norm: ~${bmNormTotNu} t/m vandaag</div>
+      ${badge(weekBrandmeester, bmNormTotNu)}
+      ${progress(weekBrandmeester, WEEK_NORM_BRANDMEESTER)}
+    </div>
+    <div class="wc-item">
+      <div class="wc-label">Eerstelijns opgelost</div>
+      <div class="wc-value">${weekOpgelost}</div>
+      <div class="wc-sub">totaal deze week</div>
+    </div>
+    <div class="wc-item">
+      <div class="wc-label">Terugbellen</div>
+      <div class="wc-value">${weekTerugbel}</div>
+      <div class="wc-sub">verzoeken ingepland</div>
+    </div>
+    <div class="wc-item">
+      <div class="wc-label">Afkoop</div>
+      <div class="wc-value">${weekAfkoop}</div>
+      <div class="wc-sub">minnelijke regelingen</div>
+    </div>
+  `;
+  const el = document.getElementById('week-context-bar');
+  if (el) el.innerHTML = html;
+}
+
+// ======================== MODAL ========================
+function openGesprekModal(idx) {
+  const c = (window._modalConvos || [])[idx];
+  if (!c) return;
+  const jurist = juristFromPersoon(c.personen) || '—';
+  const uitKey = c.uitkomst ? c.uitkomst[0] : '';
+  const uitLabel = c.uitkomst ? c.uitkomst[1] : 'Onbekend';
+  const uClass = uitkomstClass(uitKey);
+  const tags = (c.tags || []).map(t => `<span class="topic-badge">${t[1] || t[0]}</span>`).join(' ');
+
+  document.getElementById('gm-titel').textContent = c.titel || '—';
+  document.getElementById('gm-meta').innerHTML = `
+    <span class="gm-tijd-badge">${c.tijd || ''}</span>
+    <div class="gm-jurist-badge">
+      <div class="gm-av">${initials(jurist)}</div>
+      ${jurist}
+    </div>
+    <span class="uitkomst-badge ${uClass}">${uitLabel}</span>
+  `;
+  document.getElementById('gm-samenvatting').textContent = c.samenvatting || 'Geen samenvatting beschikbaar.';
+  const footerParts = [];
+  if (tags) footerParts.push(`<div style="display:flex;gap:6px;flex-wrap:wrap">${tags}</div>`);
+  if (c.personen) footerParts.push(`<span style="font-size:11px;color:var(--ink-30)">${c.personen}</span>`);
+  document.getElementById('gm-footer').innerHTML = footerParts.join('');
+  document.getElementById('gesprek-modal').classList.add('open');
+  document.body.style.overflow = 'hidden';
+}
+
+function closeGesprekModal(e) {
+  if (e.target === document.getElementById('gesprek-modal')) closeGesprekModalDirect();
+}
+
+function closeGesprekModalDirect() {
+  document.getElementById('gesprek-modal').classList.remove('open');
+  document.body.style.overflow = '';
+}
+
+document.addEventListener('keydown', function(e) {
+  if (e.key === 'Escape') closeGesprekModalDirect();
 });
 </script>
 
