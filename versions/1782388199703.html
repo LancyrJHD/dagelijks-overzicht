@@ -13,114 +13,258 @@
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 <script src="https://cdn.jsdelivr.net/npm/chart.js@4.5.0/dist/chart.umd.js" integrity="sha384-iU8HYtnGQ8Cy4zl7gbNMOhsDTTKX02BTXptVP/vqAWIaTfM7isw76iyZCsjL2eVi" crossorigin="anonymous"></script>
 <style>
-/* === LANCYR DAGRAPPORT v5 — HTJZ Brandbook + Lancyr opdrachtgever === */
 :root {
   --bg: #F3F5F7;
   --header-bg: #0D1F2E;
-  --nav-bg: #162d40;
   --accent: #AE986F;
   --accent-dark: #9a8560;
   --green: #436436;
-  --green-light: #f1f7f1;
+  --green-light: #e8f2e6;
   --blue-light: #B4D2E7;
-  --blue-light-bg: #f0f6fa;
+  --blue-light-bg: #eaf4fb;
   --text: #0D1F2E;
-  --text-muted: #8a96a0;
+  --text-muted: #6b7280;
   --text-light: #9ca3af;
   --white: #ffffff;
-  --card-border: #e8eaed;
+  --card-border: #e5e7eb;
   --radius-pill: 9999px;
   --radius-card: 10px;
   --radius-sm: 5px;
   color-scheme: light;
 }
 * { box-sizing: border-box; margin: 0; padding: 0; }
-body { font-family: 'Poppins', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; background: var(--bg); color: var(--text); font-size: 14px; line-height: 1.5; font-weight: 300; }
+body {
+  font-family: 'Poppins', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  font-size: 14px;
+  line-height: 1.5;
+  font-weight: 300;
+}
 
-/* ===== HEADER WRAPPER (sticky) ===== */
-.header-wrapper { position: sticky; top: 0; z-index: 10; }
+/* ===== HEADER ===== */
+.header {
+  background: var(--header-bg);
+  padding: 12px 28px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  border-bottom: 3px solid var(--accent);
+}
+.header-left { display: flex; align-items: center; gap: 14px; }
 
-/* ===== HEADER TOP ===== */
-.header-top { background: var(--header-bg); display: flex; align-items: stretch; border-bottom: 1px solid rgba(174,152,111,.3); }
-.lancyr-block { background: #470054; padding: 10px 16px; display: flex; flex-direction: column; justify-content: center; border-right: 2px solid var(--accent); min-width: 130px; flex-shrink: 0; }
-.lancyr-sub { color: rgba(255,255,255,0.55); font-size: 9px; font-weight: 300; letter-spacing: .5px; margin-bottom: 2px; }
-.lancyr-name { color: #FFC745; font-size: 13px; font-weight: 700; letter-spacing: 1px; text-transform: uppercase; }
-.header-body { padding: 10px 16px; flex: 1; }
-.header-body h1 { font-size: 13px; font-weight: 600; color: rgba(255,255,255,.9); letter-spacing: .3px; }
-.header-subtitle { font-size: 11px; color: var(--accent); font-weight: 500; letter-spacing: .5px; text-transform: uppercase; margin-top: 2px; }
-.header-reload { display: flex; align-items: center; padding: 0 16px; }
+/* Lancyr inline SVG logo area */
+.lancyr-logo {
+  display: flex;
+  align-items: center;
+  gap: 0;
+  flex-shrink: 0;
+}
 
-/* ===== NAV BAR ===== */
-.nav-bar { background: var(--nav-bg); border-bottom: 3px solid var(--accent); display: flex; align-items: center; gap: 2px; padding-left: 130px; }
-.nav-btn { display: inline-block; padding: 9px 16px; font-family: Poppins, sans-serif; font-size: 11px; font-weight: 500; color: rgba(255,255,255,.72) !important; background: transparent; border: none; border-bottom: 3px solid transparent; margin-bottom: -3px; cursor: pointer; white-space: nowrap; }
-.nav-btn:hover { color: #fff !important; }
-.nav-btn.active { color: var(--accent) !important; font-weight: 700; border-bottom-color: var(--accent); }
+.header-title-block { display: flex; flex-direction: column; }
+.header-title-block h1 {
+  font-size: 13px;
+  font-weight: 500;
+  color: rgba(255,255,255,0.9);
+  letter-spacing: 0.3px;
+}
+.header-subtitle {
+  font-size: 11px;
+  color: var(--accent);
+  font-weight: 500;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+}
+.header-right { display: flex; align-items: center; gap: 6px; }
 
-/* ===== LEGACY .header (hidden — nav buttons now in nav-bar) ===== */
-.header { display: none; }
-
-/* ===== OKR STRIP ===== */
-.okr-strip { background: var(--white); border-bottom: 1px solid var(--card-border); padding: 10px 20px; display: flex; align-items: center; gap: 10px; flex-wrap: wrap; position: sticky; top: 95px; z-index: 9; }
-.okr-strip-label { font-size: 10px; font-weight: 700; color: var(--text-muted); text-transform: uppercase; letter-spacing: .6px; margin-right: 4px; }
-.okr-pill { display: inline-flex; align-items: center; gap: 6px; padding: 5px 14px; border-radius: var(--radius-pill); font-size: 12px; font-weight: 600; border: 1.5px solid transparent; cursor: default; }
-.okr-pill.green { background: var(--green-light); color: var(--green); border-color: var(--green); }
-.okr-pill.orange { background: #fdf9f4; color: #7a6a4a; border-color: var(--accent); }
-.okr-pill.red { background: #fdf9f4; color: #7a6a4a; border-color: var(--accent); }
-.okr-pill.neutral { background: var(--bg); color: var(--text-muted); border-color: var(--card-border); }
-.okr-pill.blue { background: var(--blue-light-bg); color: #1a5c8a; border-color: var(--blue-light); }
-
-/* ===== BUTTONS ===== */
-.btn { background: rgba(255,255,255,.08); border: 1px solid rgba(255,255,255,.15); border-radius: var(--radius-pill); padding: 5px 14px; font-size: 11px; cursor: pointer; color: rgba(255,255,255,.8) !important; font-weight: 400; font-family: Poppins, sans-serif; }
-.btn:hover { background: rgba(255,255,255,.15); color: #fff !important; }
-.btn.active { background: var(--accent); color: var(--header-bg) !important; border-color: var(--accent); font-weight: 600; }
-.btn-refresh { background: var(--accent); color: var(--header-bg) !important; border: 1px solid var(--accent); border-radius: var(--radius-pill); font-weight: 700; padding: 5px 14px; font-size: 11px; font-family: Poppins, sans-serif; cursor: pointer; }
+/* Pill buttons */
+.btn {
+  background: rgba(255,255,255,0.08);
+  border: 1px solid rgba(255,255,255,0.15);
+  border-radius: var(--radius-pill);
+  padding: 5px 16px;
+  font-size: 11px;
+  cursor: pointer;
+  color: rgba(255,255,255,0.8);
+  font-weight: 400;
+  transition: background .15s, color .15s;
+  font-family: Poppins, sans-serif;
+  letter-spacing: 0.2px;
+}
+.btn:hover { background: rgba(255,255,255,0.15); color: #fff; }
+.btn.active {
+  background: var(--accent);
+  color: var(--header-bg);
+  border-color: var(--accent);
+  font-weight: 600;
+}
+.btn-refresh {
+  background: var(--accent);
+  color: var(--header-bg);
+  margin-left: 4px;
+  border: 1px solid var(--accent);
+  border-radius: var(--radius-pill);
+  font-weight: 700;
+  padding: 5px 14px;
+}
 .btn-refresh:hover { background: var(--accent-dark); border-color: var(--accent-dark); }
-.btn-toevoegen { background: var(--accent); color: var(--header-bg) !important; font-size: 12px; font-weight: 600; padding: 7px 18px; border-radius: var(--radius-pill); border: 1px solid var(--accent); cursor: pointer; font-family: Poppins, sans-serif; }
-.btn-toevoegen:hover { background: var(--accent-dark); }
-.btn-opslaan { background: var(--header-bg); color: #fff !important; padding: 7px 20px; border-radius: var(--radius-pill); border: none; font-size: 12px; font-weight: 600; cursor: pointer; font-family: Poppins, sans-serif; }
+.btn-toevoegen {
+  background: var(--accent);
+  color: var(--header-bg);
+  font-size: 12px;
+  font-weight: 600;
+  padding: 7px 18px;
+  border-radius: var(--radius-pill);
+  border: 1px solid var(--accent);
+  cursor: pointer;
+  font-family: Poppins, sans-serif;
+}
+.btn-toevoegen:hover { background: var(--accent-dark); border-color: var(--accent-dark); }
+.btn-opslaan {
+  background: var(--header-bg);
+  color: #fff;
+  padding: 7px 20px;
+  border-radius: var(--radius-pill);
+  border: none;
+  font-size: 12px;
+  font-weight: 600;
+  cursor: pointer;
+  font-family: Poppins, sans-serif;
+}
 .btn-opslaan:hover { opacity: .85; }
-.btn-annuleren { background: var(--bg); color: var(--text-muted) !important; padding: 7px 16px; border-radius: var(--radius-pill); border: 1px solid var(--card-border); font-size: 12px; cursor: pointer; font-family: Poppins, sans-serif; }
+.btn-annuleren {
+  background: var(--bg);
+  color: var(--text-muted);
+  padding: 7px 16px;
+  border-radius: var(--radius-pill);
+  border: 1px solid var(--card-border);
+  font-size: 12px;
+  cursor: pointer;
+  font-family: Poppins, sans-serif;
+}
 .btn-annuleren:hover { background: #e5e7eb; }
-.btn-delete { background: transparent; border: none; color: #d1d5db; cursor: pointer; font-size: 12px; padding: 2px 6px; flex-shrink: 0; line-height: 1; border-radius: var(--radius-sm); }
+.btn-delete {
+  background: transparent;
+  border: none;
+  color: #d1d5db;
+  cursor: pointer;
+  font-size: 12px;
+  padding: 2px 6px;
+  flex-shrink: 0;
+  line-height: 1;
+  border-radius: var(--radius-sm);
+}
 .btn-delete:hover { color: #ef4444; background: #fee2e2; }
 
+/* ===== OKR STRIP (always visible below header) ===== */
+.okr-strip {
+  background: var(--white);
+  border-bottom: 3px solid var(--accent);
+  padding: 10px 28px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-wrap: wrap;
+  position: sticky;
+  top: 57px;
+  z-index: 9;
+}
+.okr-strip-label {
+  font-size: 10px;
+  font-weight: 700;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.6px;
+  margin-right: 4px;
+}
+.okr-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 5px 16px;
+  border-radius: var(--radius-pill);
+  font-size: 12px;
+  font-weight: 600;
+  border: 1.5px solid transparent;
+  cursor: default;
+}
+.okr-pill.green { background: var(--green-light); color: var(--green); border-color: var(--green); }
+.okr-pill.orange { background: #fff7ed; color: #c2410c; border-color: #fb923c; }
+.okr-pill.red { background: #fef2f2; color: #b91c1c; border-color: #f87171; }
+.okr-pill.neutral { background: var(--bg); color: var(--text-muted); border-color: var(--card-border); }
+.okr-pill.blue { background: var(--blue-light-bg); color: #1e6091; border-color: var(--blue-light); }
+
 /* ===== LAYOUT ===== */
-.container { max-width: 960px; margin: 0 auto; padding: 20px; }
+.container { max-width: 960px; margin: 0 auto; padding: 28px 20px; }
 
 /* ===== DRUKTE BANNER ===== */
-.drukte-banner { border-radius: var(--radius-card); padding: 14px 20px; margin-bottom: 16px; display: flex; align-items: center; gap: 14px; border: 1.5px solid transparent; }
-.drukte-banner.druk { background: #fdf9f4; border-color: var(--accent); }
-.drukte-banner.matig { background: #fdf9f4; border-color: var(--accent); }
+.drukte-banner {
+  border-radius: var(--radius-card);
+  padding: 14px 20px;
+  margin-bottom: 16px;
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  border: 1.5px solid transparent;
+}
+.drukte-banner.druk { background: #fef2f2; border-color: #fca5a5; }
+.drukte-banner.matig { background: #fff7ed; border-color: #fdba74; }
 .drukte-banner.rustig { background: var(--green-light); border-color: #86efac; }
 .drukte-icon { font-size: 24px; }
 .drukte-label { font-size: 15px; font-weight: 700; }
 .drukte-sub { font-size: 12px; opacity: .75; margin-top: 1px; font-weight: 300; }
-.drukte-banner.druk .drukte-label { color: var(--accent); }
-.drukte-banner.matig .drukte-label { color: var(--accent); }
+.drukte-banner.druk .drukte-label { color: #b91c1c; }
+.drukte-banner.matig .drukte-label { color: #c2410c; }
 .drukte-banner.rustig .drukte-label { color: var(--green); }
 
-/* ===== KPI STAT CARDS — HTJZ palet ===== */
-.stats-grid { display: grid; grid-template-columns: repeat(5, 1fr); gap: 10px; margin-bottom: 16px; }
-.stat-card { background: var(--white); border: 1.5px solid var(--card-border); border-top: 4px solid var(--card-border); border-radius: var(--radius-card); padding: 16px 12px; text-align: center; cursor: pointer; transition: border-color .15s; }
+/* ===== KPI STAT CARDS ===== */
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 10px;
+  margin-bottom: 16px;
+}
+.stat-card {
+  background: var(--white);
+  border: 1.5px solid var(--card-border);
+  border-top: 3px solid var(--card-border);
+  border-radius: var(--radius-card);
+  padding: 16px 12px;
+  text-align: center;
+  cursor: pointer;
+  transition: border-color .15s;
+}
 .stat-card:hover { border-top-color: var(--accent); border-color: var(--accent); }
 .stat-card.filter-active { border-top-color: var(--accent) !important; border-color: var(--accent); }
-.stat-card .number { font-size: 34px; font-weight: 700; line-height: 1.1; }
+.stat-card .number { font-size: 36px; font-weight: 700; line-height: 1.1; color: var(--text); }
 .stat-card .label { font-size: 11px; color: var(--text-muted); margin-top: 4px; font-weight: 400; }
 .stat-card.opgelost .number { color: var(--green); }
 .stat-card.opgelost { border-top-color: var(--green); }
-.stat-card.brandmeester .number { color: var(--accent); }
-.stat-card.brandmeester { border-top-color: var(--accent); }
-.stat-card.afkoop .number { color: #1a5c8a; }
-.stat-card.afkoop { border-top-color: var(--blue-light); }
-.stat-card.terugbel .number { color: var(--text); }
-.stat-card.terugbel { border-top-color: var(--text); }
+.stat-card.brandmeester .number { color: #1d4ed8; }
+.stat-card.brandmeester { border-top-color: #93c5fd; }
+.stat-card.afkoop .number { color: #7c3aed; }
+.stat-card.afkoop { border-top-color: #c4b5fd; }
+.stat-card.terugbel .number { color: #c2410c; }
+.stat-card.terugbel { border-top-color: #fdba74; }
 .stat-card.geen-dekking .number { color: var(--text-muted); }
-.stat-card.geen-dekking { border-top-color: var(--text-muted); }
-.stat-card.stam .number { color: #8a6540; }
-.stat-card.stam { border-top-color: #c4a96a; }
+.stat-card.geen-dekking { border-top-color: #d1d5db; }
+.stat-card.stam .number { color: #92400e; }
+.stat-card.stam { border-top-color: #fcd34d; }
 
 /* ===== CHART ROW ===== */
-.chart-row { background: var(--white); border: 1.5px solid var(--card-border); border-radius: var(--radius-card); padding: 18px 22px; margin-bottom: 16px; display: flex; align-items: center; gap: 28px; }
+.chart-row {
+  background: var(--white);
+  border: 1.5px solid var(--card-border);
+  border-radius: var(--radius-card);
+  padding: 18px 22px;
+  margin-bottom: 16px;
+  display: flex;
+  align-items: center;
+  gap: 28px;
+}
 .chart-wrap { width: 140px; height: 140px; flex-shrink: 0; }
 .chart-legend { flex: 1; display: flex; flex-direction: column; gap: 9px; }
 .legend-item { display: flex; align-items: center; gap: 8px; }
@@ -128,176 +272,408 @@ body { font-family: 'Poppins', -apple-system, BlinkMacSystemFont, 'Segoe UI', sa
 .legend-name { font-size: 12px; flex: 1; font-weight: 300; }
 .legend-bar-wrap { width: 90px; background: var(--bg); border-radius: var(--radius-sm); height: 5px; }
 .legend-bar { height: 5px; border-radius: var(--radius-sm); transition: width .4s ease; }
-.legend-count { font-size: 12px; font-weight: 600; min-width: 20px; text-align: right; }
-.chart-title { font-size: 12px; font-weight: 600; margin-bottom: 14px; text-transform: uppercase; letter-spacing: .5px; color: var(--text-muted); }
+.legend-count { font-size: 12px; font-weight: 600; min-width: 20px; text-align: right; color: var(--text); }
+.chart-title { font-size: 12px; font-weight: 600; margin-bottom: 14px; text-transform: uppercase; letter-spacing: 0.5px; color: var(--text-muted); }
 
 /* ===== WEEK TABLE ===== */
-.week-table { background: var(--white); border: 1.5px solid var(--card-border); border-radius: var(--radius-card); margin-bottom: 16px; overflow: hidden; }
-.week-table-header { display: grid; grid-template-columns: 120px repeat(5, 1fr) 60px; padding: 10px 18px; border-bottom: 1px solid var(--bg); font-size: 11px; font-weight: 700; color: var(--text-muted); text-transform: uppercase; letter-spacing: .5px; background: var(--bg); }
-.week-row { display: grid; grid-template-columns: 120px repeat(5, 1fr) 60px; padding: 11px 18px; border-bottom: 1px solid var(--bg); align-items: center; font-size: 13px; cursor: pointer; transition: background .1s; }
+.week-table {
+  background: var(--white);
+  border: 1.5px solid var(--card-border);
+  border-radius: var(--radius-card);
+  margin-bottom: 16px;
+  overflow: hidden;
+}
+.week-table-header {
+  display: grid;
+  grid-template-columns: 120px repeat(5, 1fr) 60px;
+  padding: 10px 18px;
+  border-bottom: 1px solid var(--bg);
+  font-size: 11px;
+  font-weight: 700;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: .5px;
+  background: var(--bg);
+}
+.week-row {
+  display: grid;
+  grid-template-columns: 120px repeat(5, 1fr) 60px;
+  padding: 11px 18px;
+  border-bottom: 1px solid var(--bg);
+  align-items: center;
+  font-size: 13px;
+  cursor: pointer;
+  transition: background .1s;
+}
 .week-row:last-child { border-bottom: none; }
 .week-row:hover { background: #f9fafb; }
-.week-row.today { background: #f0f6fa; border-left: 3px solid var(--accent); }
+.week-row.today { background: #eaf4fb; }
 .week-day { font-weight: 600; font-size: 13px; }
 .week-day .date-sub { font-size: 11px; color: var(--text-muted); font-weight: 300; }
 .week-num { text-align: center; font-weight: 600; font-size: 13px; }
 .week-num.green { color: var(--green); }
-.week-num.blue { color: var(--accent); }
-.week-num.purple { color: #1a5c8a; }
-.week-num.orange { color: var(--text); }
+.week-num.blue { color: #1d4ed8; }
+.week-num.purple { color: #7c3aed; }
+.week-num.orange { color: #c2410c; }
 .week-num.gray { color: var(--text-light); }
 .week-score { text-align: right; font-weight: 700; font-size: 12px; }
 .week-score.high { color: var(--green); }
-.week-score.mid { color: var(--accent); }
-.week-score.low { color: var(--text-muted); }
+.week-score.mid { color: #c2410c; }
+.week-score.low { color: #b91c1c; }
 .week-empty { color: var(--text-light); font-size: 12px; font-style: italic; font-weight: 300; }
-.week-totals { display: grid; grid-template-columns: 120px repeat(5, 1fr) 60px; padding: 11px 18px; border-top: 2px solid var(--card-border); background: var(--bg); font-size: 12px; font-weight: 700; }
+.week-totals {
+  display: grid;
+  grid-template-columns: 120px repeat(5, 1fr) 60px;
+  padding: 11px 18px;
+  border-top: 2px solid var(--card-border);
+  background: var(--bg);
+  font-size: 12px;
+  font-weight: 700;
+}
 
 /* ===== SECTION CARDS ===== */
-.section { background: var(--white); border: 1.5px solid var(--card-border); border-radius: var(--radius-card); margin-bottom: 14px; overflow: hidden; }
-.section-header { padding: 13px 20px; border-bottom: 1px solid var(--bg); display: flex; align-items: center; gap: 10px; cursor: pointer; user-select: none; border-left: 4px solid var(--accent); }
+.section {
+  background: var(--white);
+  border: 1.5px solid var(--card-border);
+  border-radius: var(--radius-card);
+  margin-bottom: 14px;
+  overflow: hidden;
+}
+.section-header {
+  padding: 13px 20px;
+  border-bottom: 1px solid var(--bg);
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  cursor: pointer;
+  user-select: none;
+  border-left: 4px solid var(--accent);
+}
 .section-header:hover { background: #f9fafb; }
-.section-icon { width: 24px; height: 24px; border-radius: var(--radius-sm); display: flex; align-items: center; justify-content: center; font-size: 13px; flex-shrink: 0; }
-.section-title { font-size: 11px; font-weight: 700; flex: 1; text-transform: uppercase; letter-spacing: .6px; color: var(--text); }
-.section-count { background: var(--bg); border-radius: var(--radius-pill); padding: 2px 10px; font-size: 11px; font-weight: 600; color: var(--text-muted); border: 1px solid var(--card-border); }
+.section-icon {
+  width: 24px;
+  height: 24px;
+  border-radius: var(--radius-sm);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 13px;
+  flex-shrink: 0;
+}
+.section-title {
+  font-size: 11px;
+  font-weight: 700;
+  flex: 1;
+  text-transform: uppercase;
+  letter-spacing: .6px;
+  color: var(--text);
+}
+.section-count {
+  background: var(--bg);
+  border-radius: var(--radius-pill);
+  padding: 2px 10px;
+  font-size: 11px;
+  font-weight: 600;
+  color: var(--text-muted);
+  border: 1px solid var(--card-border);
+}
 .chevron { font-size: 10px; color: var(--text-light); transition: transform .2s; }
 .collapsed .chevron { transform: rotate(-90deg); }
 
 /* ===== DAG HEADER ===== */
-.dag-header { padding: 10px 20px; background: var(--bg); border-bottom: 1px solid var(--card-border); font-size: 11px; font-weight: 700; color: var(--text-muted); text-transform: uppercase; letter-spacing: .5px; display: flex; justify-content: space-between; align-items: center; }
+.dag-header {
+  padding: 10px 20px;
+  background: var(--bg);
+  border-bottom: 1px solid var(--card-border);
+  font-size: 11px;
+  font-weight: 700;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: .5px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
 .dag-header .dag-score { font-weight: 700; color: var(--text); }
 
 /* ===== CONVERSATION ITEMS ===== */
-.conv-item { padding: 16px 20px; border-bottom: 1px solid #f3f4f6; display: grid; grid-template-columns: 52px 1fr; gap: 14px; }
+.conv-item {
+  padding: 16px 20px;
+  border-bottom: 1px solid #f3f4f6;
+  display: grid;
+  grid-template-columns: 52px 1fr;
+  gap: 14px;
+}
 .conv-item:last-child { border-bottom: none; }
-.conv-time { font-size: 12px; color: var(--accent); padding-top: 1px; font-variant-numeric: tabular-nums; font-weight: 600; }
+.conv-time { font-size: 12px; color: var(--text); padding-top: 1px; font-variant-numeric: tabular-nums; font-weight: 600; }
 .conv-title { font-size: 14px; font-weight: 600; margin-bottom: 3px; color: var(--text); }
 .conv-persons { font-size: 12px; color: var(--text-muted); margin-bottom: 7px; font-weight: 300; }
 .conv-summary { font-size: 13px; color: #374151; line-height: 1.6; margin-bottom: 10px; font-weight: 300; }
 .conv-footer { display: flex; flex-wrap: wrap; align-items: center; gap: 6px; }
 
 /* ===== TAGS ===== */
-.tag { display: inline-block; padding: 2px 9px; border-radius: var(--radius-sm); font-size: 11px; font-weight: 500; background: var(--bg); color: var(--text); border: 1px solid var(--card-border); }
-.tag-consument { background: var(--bg); color: var(--text); }
-.tag-bestuursrecht { background: var(--bg); color: var(--text); }
+.tag {
+  display: inline-block;
+  padding: 2px 9px;
+  border-radius: var(--radius-pill);
+  font-size: 11px;
+  font-weight: 500;
+}
+.tag-consument { background: #fce7f3; color: #9d174d; }
+.tag-bestuursrecht { background: #ede9fe; color: #5b21b6; }
 .tag-overig { background: var(--bg); color: var(--text-muted); }
-.tag-arbeidsrecht { background: var(--blue-light-bg); color: #1a5c8a; }
-.tag-huur { background: var(--green-light); color: var(--green); }
-.tag-bouw { background: var(--bg); color: var(--text); }
+.tag-arbeidsrecht { background: var(--blue-light-bg); color: #1e6091; }
+.tag-huur { background: #ecfdf5; color: #065f46; }
+.tag-bouw { background: #fff7ed; color: #92400e; }
 .tag-contract { background: var(--green-light); color: var(--green); }
-.tag-avg { background: var(--bg); color: var(--text); }
+.tag-avg { background: #f3e8ff; color: #6b21a8; }
 .tag-schadenr { background: var(--green-light); color: #14532d; font-family: monospace; font-size: 11px; }
 
 /* ===== OUTCOME BADGES ===== */
-.outcome-badge { display: inline-flex; align-items: center; gap: 4px; padding: 3px 11px; border-radius: var(--radius-sm); font-size: 11px; font-weight: 600; margin-left: auto; border: 1px solid transparent; cursor: pointer; user-select: none; }
-.outcome-opgelost { background: var(--green-light); color: var(--green); border-color: var(--green); }
-.outcome-brandmeester { background: #fdf9f4; color: #7a6a4a; border-color: var(--accent); }
-.outcome-afkoop { background: var(--blue-light-bg); color: #1a5c8a; border-color: var(--blue-light); }
-.outcome-terugbel { background: var(--bg); color: var(--text); border-color: var(--text); }
-.outcome-geen-dekking { background: var(--bg); color: var(--text-muted); border-color: var(--text-muted); }
-.outcome-stam { background: #fdf9f4; color: #8a6540; border-color: #c4a96a; }
-.outcome-verkeerd { background: var(--bg); color: var(--text-muted); border-color: var(--card-border); }
-.conv-det { display: none; margin-top: 8px; padding: 10px 14px; background: var(--bg); border-left: 4px solid var(--accent); border-radius: 0 var(--radius-sm) var(--radius-sm) 0; font-size: 12px; color: #374151; line-height: 1.65; font-weight: 300; }
+.outcome-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  padding: 3px 11px;
+  border-radius: var(--radius-pill);
+  font-size: 11px;
+  font-weight: 600;
+  margin-left: auto;
+}
+.outcome-opgelost { background: var(--green-light); color: var(--green); }
+.outcome-brandmeester { background: var(--blue-light-bg); color: #1e6091; }
+.outcome-afkoop { background: #f3e8ff; color: #6b21a8; }
+.outcome-terugbel { background: #fff7ed; color: #c2410c; }
+.outcome-geen-dekking { background: var(--bg); color: var(--text-muted); }
+.outcome-stam { background: #fef9c3; color: #92400e; }
+.outcome-verkeerd { background: var(--bg); color: var(--text-muted); }
+.outcome-badge { cursor: pointer; user-select: none; }
+.conv-det {
+  display: none;
+  margin-top: 8px;
+  padding: 10px 14px;
+  background: var(--bg);
+  border-left: 4px solid var(--accent);
+  border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
+  font-size: 12px;
+  color: #374151;
+  line-height: 1.65;
+  font-weight: 300;
+}
 
 /* ===== ACTION ITEMS ===== */
-.action-item { padding: 13px 20px; border-bottom: 1px solid #f3f4f6; display: flex; align-items: flex-start; gap: 12px; }
+.action-item {
+  padding: 13px 20px;
+  border-bottom: 1px solid #f3f4f6;
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+}
 .action-item:last-child { border-bottom: none; }
-.action-item:has(.prio-hoog) { background: #fdf9f4; border-left: 4px solid var(--accent); padding-left: 16px; }
+.action-item:has(.prio-hoog) { background: #fff8f8; border-left: 3px solid #ef4444; padding-left: 17px; }
 .prio-dot { width: 8px; height: 8px; border-radius: 50%; flex-shrink: 0; margin-top: 5px; }
-.prio-hoog { background: var(--accent); }
-.prio-middel { background: var(--green); }
-.prio-laag { background: var(--text-muted); }
-.check-box { width: 16px; height: 16px; border: 2px solid var(--card-border); border-radius: 4px; flex-shrink: 0; margin-top: 1px; cursor: pointer; transition: all .15s; display: flex; align-items: center; justify-content: center; font-size: 9px; }
+.prio-hoog { background: #ef4444; }
+.prio-middel { background: #f97316; }
+.prio-laag { background: #d1d5db; }
+.check-box {
+  width: 16px;
+  height: 16px;
+  border: 2px solid var(--card-border);
+  border-radius: 4px;
+  flex-shrink: 0;
+  margin-top: 1px;
+  cursor: pointer;
+  transition: all .15s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 9px;
+}
 .check-box:hover { border-color: var(--accent); }
 .check-box.done { background: var(--green); border-color: var(--green); color: #fff; }
 .action-text { font-size: 13px; flex: 1; font-weight: 400; }
 .action-text.done-text { text-decoration: line-through; color: var(--text-light); }
 .action-meta { display: flex; gap: 10px; margin-top: 3px; }
 .action-owner { font-size: 11px; color: var(--text-muted); font-weight: 300; }
-.dl-urgent { font-size: 11px; font-weight: 700; color: var(--accent); }
-.dl-soon { font-size: 11px; font-weight: 600; color: var(--green); }
-.dl-ok { font-size: 11px; font-weight: 500; color: var(--text-muted); }
+.dl-urgent { font-size: 11px; font-weight: 600; color: #b91c1c; }
+.dl-soon { font-size: 11px; font-weight: 600; color: #c2410c; }
+.dl-ok { font-size: 11px; font-weight: 600; color: var(--green); }
 
 /* ===== ANALYSE ===== */
-.analyse-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; padding: 18px 20px; }
-.analyse-col-title { font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: .6px; margin-bottom: 12px; display: flex; align-items: center; gap: 6px; }
+.analyse-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+  padding: 18px 20px;
+}
+.analyse-col-title {
+  font-size: 11px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: .6px;
+  margin-bottom: 12px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
 .analyse-col-title.goed { color: var(--green); }
-.analyse-col-title.beter { color: var(--accent); }
-.analyse-point { display: flex; gap: 10px; margin-bottom: 10px; font-size: 13px; line-height: 1.55; padding: 8px 12px; border-radius: var(--radius-sm); }
+.analyse-col-title.beter { color: #b91c1c; }
+.analyse-point {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 10px;
+  font-size: 13px;
+  line-height: 1.55;
+  padding: 8px 12px;
+  border-radius: var(--radius-sm);
+}
 .analyse-point.goed-point { background: var(--green-light); border-left: 3px solid var(--green); }
-.analyse-point.beter-point { background: #fdf9f4; border-left: 3px solid var(--accent); }
+.analyse-point.beter-point { background: #fff7ed; border-left: 3px solid #f97316; }
 .analyse-icon { flex-shrink: 0; margin-top: 1px; font-size: 12px; }
 .analyse-text { color: #374151; font-weight: 300; }
 .analyse-divider { height: 1px; background: var(--bg); margin: 0 20px 16px; }
-.analyse-score { padding: 16px 20px; display: flex; align-items: center; gap: 14px; background: var(--bg); border-bottom: 1px solid var(--card-border); }
+.analyse-score {
+  padding: 16px 20px;
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  background: var(--bg);
+  border-bottom: 1px solid var(--card-border);
+}
 .score-label { font-size: 12px; color: var(--text-muted); font-weight: 500; white-space: nowrap; }
 .score-bar-wrap { flex: 1; height: 6px; background: #e5e7eb; border-radius: var(--radius-pill); overflow: hidden; }
 .score-bar { height: 6px; border-radius: var(--radius-pill); background: linear-gradient(90deg, var(--green), #5a9a48); }
 .score-num { font-size: 14px; font-weight: 700; color: var(--green); min-width: 50px; text-align: right; }
 
 /* ===== MANUAL ENTRY FORM ===== */
-.manual-entry { padding: 14px 20px; border-bottom: 1px solid #f3f4f6; display: flex; align-items: flex-start; gap: 12px; }
+.manual-entry {
+  padding: 14px 20px;
+  border-bottom: 1px solid #f3f4f6;
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+}
 .manual-entry:last-of-type { border-bottom: none; }
-.manual-form { background: var(--bg); border-top: 1px solid var(--card-border); padding: 18px 20px; }
+.manual-form {
+  background: var(--bg);
+  border-top: 1px solid var(--card-border);
+  padding: 18px 20px;
+}
 .form-row-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-bottom: 12px; }
 .form-row-3 { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 12px; margin-bottom: 12px; }
 .form-group { display: flex; flex-direction: column; gap: 5px; }
 .form-label { font-size: 10px; font-weight: 700; color: var(--text-muted); text-transform: uppercase; letter-spacing: .6px; }
-.form-input, .form-select, .form-textarea { border: 1.5px solid var(--card-border); border-radius: var(--radius-sm); padding: 8px 12px; font-size: 13px; background: var(--white); font-family: inherit; color: var(--text); font-weight: 300; }
-.form-input:focus, .form-select:focus, .form-textarea:focus { outline: none; border-color: var(--accent); }
+.form-input, .form-select, .form-textarea {
+  border: 1.5px solid var(--card-border);
+  border-radius: var(--radius-sm);
+  padding: 8px 12px;
+  font-size: 13px;
+  background: var(--white);
+  font-family: inherit;
+  color: var(--text);
+  font-weight: 300;
+}
+.form-input:focus, .form-select:focus, .form-textarea:focus {
+  outline: none;
+  border-color: var(--accent);
+}
 .form-textarea { min-height: 64px; resize: vertical; }
 .form-actions { display: flex; gap: 8px; margin-top: 6px; }
 .manual-add-row { padding: 12px 20px; border-top: 1px solid #f3f4f6; }
 
-/* ===== OKR WEEK BANNER ===== */
-.okr-week-banner { display: flex; gap: 10px; flex-wrap: wrap; margin-bottom: 16px; }
-.okr-week-card { background: var(--white); border: 1.5px solid var(--card-border); border-radius: var(--radius-card); padding: 14px 18px; flex: 1; min-width: 160px; cursor: pointer; border-left: 4px solid var(--accent); }
+/* ===== OKR WEEK BANNER (in-page) ===== */
+.okr-week-banner {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  margin-bottom: 16px;
+}
+.okr-week-card {
+  background: var(--white);
+  border: 1.5px solid var(--card-border);
+  border-radius: var(--radius-card);
+  padding: 14px 18px;
+  flex: 1;
+  min-width: 160px;
+  cursor: pointer;
+}
 .okr-week-card:hover { border-color: var(--accent); }
 
 /* ===== FILTER BANNER ===== */
-.filter-banner { background: var(--white); border: 2px solid var(--accent); border-radius: var(--radius-card); margin-bottom: 16px; overflow: hidden; }
-.filter-banner-header { background: var(--header-bg); padding: 12px 20px; display: flex; align-items: center; justify-content: space-between; }
+.filter-banner {
+  background: var(--white);
+  border: 2px solid var(--accent);
+  border-radius: var(--radius-card);
+  margin-bottom: 16px;
+  overflow: hidden;
+}
+.filter-banner-header {
+  background: var(--header-bg);
+  padding: 12px 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
 
 /* ===== MERGE MODAL ===== */
 .hidden { display: none !important; }
-.merge-modal-overlay { position: fixed; inset: 0; background: rgba(13,31,46,.55); z-index: 1000; display: flex; align-items: center; justify-content: center; }
-.merge-modal { background: var(--white); border-radius: var(--radius-card); padding: 28px 28px 22px; max-width: 440px; width: calc(100% - 40px); border-top: 3px solid var(--accent); }
-.merge-modal-title { font-size: 15px; font-weight: 700; margin-bottom: 8px; }
+.merge-modal-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(13,31,46,.55);
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.merge-modal {
+  background: var(--white);
+  border-radius: var(--radius-card);
+  padding: 28px 28px 22px;
+  max-width: 440px;
+  width: calc(100% - 40px);
+  border-top: 3px solid var(--accent);
+}
+.merge-modal-title { font-size: 15px; font-weight: 700; margin-bottom: 8px; color: var(--text); }
 .merge-modal-body { font-size: 13px; color: #374151; line-height: 1.55; margin-bottom: 20px; font-weight: 300; }
-.merge-modal-name { font-weight: 600; }
-.merge-modal-conv { background: var(--bg); border-radius: var(--radius-sm); padding: 10px 14px; margin: 10px 0; font-size: 12px; color: #374151; border-left: 4px solid var(--accent); }
+.merge-modal-name { font-weight: 600; color: var(--text); }
+.merge-modal-conv {
+  background: var(--bg);
+  border-radius: var(--radius-sm);
+  padding: 10px 14px;
+  margin: 10px 0;
+  font-size: 12px;
+  color: #374151;
+  border-left: 4px solid var(--accent);
+}
 .merge-modal-conv strong { display: block; font-size: 13px; margin-bottom: 2px; }
 .merge-modal-actions { display: flex; gap: 8px; justify-content: flex-end; }
-
-/* ===== HTJZ FOOTER ===== */
-.htjz-footer { text-align: center; padding: 16px; margin-top: 8px; }
-.htjz-footer-badge { display: inline-flex; align-items: center; gap: 8px; background: var(--header-bg); border-radius: var(--radius-pill); padding: 6px 16px; font-size: 9px; color: rgba(255,255,255,.5); font-weight: 500; }
-.htjz-footer-dot { width: 6px; height: 6px; background: var(--accent); border-radius: 50%; }
 </style>
 </head>
 <body>
 
-<!-- HEADER v5: HTJZ Brandbook + Lancyr opdrachtgever -->
-<div class="header-wrapper">
-  <div class="header-top">
-    <div class="lancyr-block">
-      <div class="lancyr-sub">in opdracht van</div>
-      <div class="lancyr-name">Lancyr</div>
+<!-- HEADER -->
+<div class="header">
+  <div class="header-left">
+    <div class="lancyr-logo">
+      <svg width="110" height="30" viewBox="0 0 110 30" xmlns="http://www.w3.org/2000/svg">
+        <rect width="110" height="30" rx="4" fill="#470054"/>
+        <rect width="8" height="30" rx="0" fill="#FFC745"/>
+        <text x="18" y="21" font-family="Poppins, sans-serif" font-weight="700" font-size="13" fill="#ffffff" letter-spacing="1.5">LANCYR</text>
+      </svg>
     </div>
-    <div class="header-body">
+    <div class="header-title-block">
       <h1>Juridische Helpdesk Dagrapport</h1>
       <div class="header-subtitle" id="header-date">Dashboard</div>
     </div>
-    <div class="header-reload">
-      <button class="btn-refresh" onclick="refresh()">↻ Vernieuwen</button>
-    </div>
   </div>
-  <div class="nav-bar">
-    <button class="nav-btn" id="btn-vorige-week" onclick="setView('vorige-week')" style="color:rgba(255,255,255,.72)!important">Vorige week</button>
-    <button class="nav-btn" id="btn-week" onclick="setView('week')" style="color:rgba(255,255,255,.72)!important">Deze week</button>
-    <button class="nav-btn" id="btn-gisteren" onclick="setView('gisteren')" style="color:rgba(255,255,255,.72)!important">Gisteren</button>
-    <button class="nav-btn active" id="btn-vandaag" onclick="setView('vandaag')" style="color:#AE986F!important">Vandaag</button>
-    <button class="nav-btn" id="btn-team" onclick="setView('team')" style="color:rgba(255,255,255,.72)!important">👥 Team</button>
+  <div class="header-right">
+    <button class="btn" id="btn-vorige-week" onclick="setView('vorige-week')">Vorige week</button>
+    <button class="btn" id="btn-week" onclick="setView('week')">Deze week</button>
+    <button class="btn" id="btn-gisteren" onclick="setView('gisteren')">Gisteren</button>
+    <button class="btn active" id="btn-vandaag" onclick="setView('vandaag')">Vandaag</button>
+    <button class="btn" id="btn-team" onclick="setView('team')" style="margin-left:4px;border-color:rgba(174,152,111,.4)">👥 Team</button>
+    <button class="btn btn-refresh" onclick="refresh()">↻</button>
   </div>
 </div>
 
@@ -332,34 +708,30 @@ const weekData = {
   "2026-06-22": { drukte:"druk", gesprekken:9, stats:{opgelost:5,brandmeester:3,afkoop:1,terugbel:0,geenDekking:0}, score:7.0, conversations:[{tijd:"09:46",titel:"Borgvordering herstelwerkzaamheden — afkoopregeling €500 Wedselaar",personen:"Verzekerde: meneer Wedselaar · Senne Duifhuis",samenvatting:"Verhuurder hield €4.400 borg in. Na sommatie geen reactie. Twee opties besproken: Brandmeester of afkoop €500. Wedselaar kiest afkoop mits schriftelijke bevestiging premie ongewijzigd.",tags:[["tag-huur","Huurrecht"],["tag-consument","Consumentenrecht"]],uitkomst:["outcome-afkoop","Afgehandeld / afkoop"]},{tijd:"10:08",titel:"WMO-urgentieverklaring geweigerd door woningbouw — René",personen:"Verzekerde: René · Senne Duifhuis",samenvatting:"WMO-urgentieverklaring aanwezig maar woningbouw weigert zonder duidelijke reden. Zaak doorgestuurd Brandmeester.",tags:[["tag-bestuursrecht","Bestuursrecht"],["tag-huur","Huurrecht"]],uitkomst:["outcome-brandmeester","Doorverwezen naar Brandmeester"]},{tijd:"10:43",titel:"Motorfiets aangereden gemeente Amsterdam — Steven Wendel",personen:"Verzekerde: Steven Wendel · Senne Duifhuis",samenvatting:"Aangereden door gemeentevoertuig; Centraal Beheer kan niets meer. Schadenummer aangevraagd; Brandmeester (Tessa) belt terug voor 24 juni.",tags:[["tag-overig","Verkeersrecht"]],uitkomst:["outcome-brandmeester","Doorverwezen naar Brandmeester"]},{tijd:"12:01",titel:"Inbraak en bedreiging — mevrouw Klink",personen:"Verzekerde: mevrouw Klink · Senne Duifhuis",samenvatting:"Reeks incidenten: inbraak, beroving, bedreigingen, sabotage camera's. Buiten bereik helpdesk; advies: politie bellen, alles op rij.",tags:[["tag-overig","Strafrecht"]],uitkomst:["outcome-opgelost","Telefonisch opgelost"]},{tijd:"13:29",titel:"Beheersvereniging Drenthe — stemming buiten ALV",personen:"Verzekerde: anoniem · Senne Duifhuis",samenvatting:"Bestuur wil buiten ALV schriftelijk stemmen (budget €150.000). Statuten staan dit niet toe. Dekkingsspanning art. 10.3.2 vs 10.8.1. Doorgestuurd Brandmeester.",tags:[["tag-bestuursrecht","Verenigingsrecht"]],uitkomst:["outcome-brandmeester","Doorverwezen naar Brandmeester"]},{tijd:"14:50",titel:"Ouderenmisbruik vader — testament gewijzigd",personen:"Verzekerde: anoniem · Senne Duifhuis",samenvatting:"Kennis dringt vader onder druk, testament gewijzigd naar zichzelf. Bewijs aanwezig. Advies: aangifte chantage/beïnvloeding.",tags:[["tag-overig","Erfrecht"]],uitkomst:["outcome-opgelost","Telefonisch opgelost"]},{tijd:"15:16",titel:"Autoschadeclaim — verkeerd kanaal",personen:"Verzekerde: anoniem · Senne Duifhuis",samenvatting:"Aanrijding met kind; GPS-data aanwezig. Verkeerd doorverbonden; doorverwezen autoverzekering.",tags:[["tag-overig","Routering"]],uitkomst:["outcome-opgelost","Telefonisch opgelost"]},{tijd:"15:34",titel:"Verkeerd nummer — autoverzekering",personen:"Verzekerde: anoniem · Senne Duifhuis",samenvatting:"Verkeerde afdeling; doorverwezen.",tags:[["tag-overig","Routering"]],uitkomst:["outcome-opgelost","Telefonisch opgelost"]},{tijd:"16:34",titel:"Fietsongeval inhaalmanoeuvre — mevrouw Boalhoe",personen:"Verzekerde: echtgenoot Boalhoe · Senne Duifhuis",samenvatting:"Mevrouw haalde in op e-bakfiets; wederpartij stelt haar aansprakelijk. Advies: aansprakelijkheid ligt primair bij inhaler; gesprek opnemen. Dossiernotitie toegevoegd.",tags:[["tag-overig","Verkeersrecht"]],uitkomst:["outcome-opgelost","Telefonisch opgelost"]}], acties:[{prio:"prio-hoog",tekst:"Bevestigingsmail Wedselaar: afkoop €500 heeft geen invloed op premie/polis",eigenaar:"Senne Duifhuis",deadline:"dl-urgent",deadlineTekst:"Uiterlijk 23 juni"},{prio:"prio-hoog",tekst:"Bevestigingsmail Steven Wendel met schadenummer en overdracht wettelijke bevoegdheid",eigenaar:"Senne Duifhuis",deadline:"dl-urgent",deadlineTekst:"Vandaag of 23 juni"},{prio:"prio-middel",tekst:"René WMO: dossier doorsturen Brandmeester met overdrachtsmail",eigenaar:"Senne Duifhuis",deadline:"dl-soon",deadlineTekst:"Zo snel mogelijk"},{prio:"prio-middel",tekst:"Beheersvereniging Drenthe: dekkingsoordeel Brandmeester (10.3.2 vs. 10.8.1)",eigenaar:"Senne Duifhuis",deadline:"dl-soon",deadlineTekst:"Zo snel mogelijk"}], analyse:{goed:["Afkoop Wedselaar: beide opties helder, verzekerde weloverwogen keuze.","Ouderenmisbruik: emotioneel complex gesprek goed begeleid.","Fietsongeval Boalhoe: juridisch correct + dossiernotitie geborgd."],beter:["Twee routeringsgesprekken zonder aantekeningen — ook korte calls altijd minimaal vastleggen.","Beheersvereniging: verwachtingsmanagement Brandmeester-termijn explicieter benoemen."]}},
   "2026-06-23": { drukte:"druk", gesprekken:12, stats:{opgelost:8,brandmeester:2,afkoop:0,terugbel:2,geenDekking:0}, score:7.0, conversations:[{tijd:"09:37",titel:"VSO-controle arbeidsrecht — Ingrid Eigeraan",personen:"Verzekerde: Ingrid Eigeraan · Roelof van Beijnum",samenvatting:"Marketingafdeling opgeheven; VSO ontvangen met 7-dagendeadline voor tekenbonusf. Roelof biedt twee opties: Brandmeester (5 dgn wachttijd) of extern arbeidsrechtadvocaat (€1.000, gedekt via VSO-bijstandsvergoeding). Ingrid kiest advocatenkantoor vanwege urgentie. Dossier doorgezet.",tags:[["tag-arbeidsrecht","Arbeidsrecht"]],uitkomst:["outcome-opgelost","Telefonisch opgelost"]},{tijd:"09:38",titel:"Allianz Direct auto-schadeclaim — verkeerde afdeling",personen:"Verzekerde: Ralph van de Zondag · Senne Duifhuis",samenvatting:"Geparkeerde auto reed weg en raakte andere auto. Heeft Allianz Direct rechtsbijstand (niet Lancyr). Doorverwezen naar lancyr.nl auto-verzekering.",tags:[["tag-overig","Routering"]],uitkomst:["outcome-opgelost","Telefonisch opgelost"]},{tijd:"09:43",titel:"Telefonische hulp auto-verzekering — routering Paula Isaac",personen:"Verzekerde: Paula Isaac · Senne Duifhuis",samenvatting:"Belde over autoverzekering maar verkeerd verbonden naar juridische helpdesk. Uitgelegd dat ze 088-020 4525 moet bellen en even afwachten voor keuzemenu.",tags:[["tag-overig","Routering"]],uitkomst:["outcome-opgelost","Telefonisch opgelost"]},{tijd:"10:06",titel:"Rechtsbijstand aanvraag — vrije advocaatkeuze Bart van Beek",personen:"Verzekerde: Bart van Beek · Senne Duifhuis",samenvatting:"Medische kwestie; zorg overweegt tuchtprocedure. Wil externe advocaat. Polischeck: extern max €7.500, eigen bijdrage €250. Doorverwezen Brandmeester voor aanvraag vrije advocaatkeuze.",tags:[["tag-overig","Verzekeringsrecht"]],uitkomst:["outcome-brandmeester","Doorverwezen naar Brandmeester"]},{tijd:"10:19",titel:"Follow-up Brandmeester-dossier — Bart van der Beek (ticket 2344)",personen:"Verzekerde: Bart van der Beek · Roelof van Beijnum",samenvatting:"Zelfde dossier als 10:06 (Senne). Bart belde terug omdat Brandmeester hem doorstuurde zonder actief dossier. Roelof legt uit: schadenummer aangevraagd, dossier volgt, Bart wordt in cc meegenomen. Statusupdate — geen nieuwe doorverwijzing.",tags:[["tag-overig","Verzekeringsrecht"]],uitkomst:["outcome-opgelost","Telefonisch opgelost"]},{tijd:"10:24",titel:"Dossier Vegter — wachten op onderbouwing",personen:"Verzekerde: dhr. Vegter · Roelof van Beijnum",samenvatting:"Outbound call: Vegter nog bezig met onderbouwing. Dossier open gehouden; mail verwacht.",tags:[["tag-overig","Overig"]],uitkomst:["outcome-terugbel","Terugbellen"]},{tijd:"11:15",titel:"Verzekeringsclaim — verkeerd doorverbonden Arjan Hulst",personen:"Verzekerde: Arjan Hulst · Roelof van Beijnum",samenvatting:"Beller zoekt verzekeringsafdeling voor acceptatievraag — geen juridisch geschil. Uitgelegd en doorverwezen naar juiste afdeling.",tags:[["tag-overig","Routering"]],uitkomst:["outcome-opgelost","Telefonisch opgelost"]},{tijd:"11:30",titel:"Perceel splitsen — 3 broers, één weigert medewerking",personen:"Verzekerde: mevr. Inna Braun-Speed · Roelof van Beijnum",samenvatting:"Onverdeeld perceel ~1.200 m²; één broer weigert splitsing. Juridisch complex (eigendomsrecht). Schadenummer aangevraagd; Brandmeester neemt binnen 5 dgn contact op per mail.",tags:[["tag-bouw","Burenrecht / Vastgoedrecht"]],uitkomst:["outcome-brandmeester","Doorverwezen naar Brandmeester"]},{tijd:"11:36",titel:"Factuurcorrectie en abonnementsvragen — Margier",personen:"Verzekerde: Margier · Senne Duifhuis",samenvatting:"Verkeerde naam op factuur (Elk Koster → Bert Beijerd). Vraagt om uitleg Platinum-abonnement en vaste contactpersoon. Naam doorgegeven aan IT; collega mailt uitleg + contactgegevens.",tags:[["tag-overig","Klantenservice"]],uitkomst:["outcome-terugbel","Terugbellen"]},{tijd:"14:40",titel:"Familieruzie — ongewenste fotografie door neef",personen:"Verzekerde: mevr. Evi Start · Roelof van Beijnum",samenvatting:"Neef (13 jr, ADHD) fotografeert herhaaldelijk heimelijk door raam — AVG-schending. Advies: niet-formele brief/mail aan zus, camerabeelden bewaren. Politie en contactverbod als escalatieoptie voor later.",tags:[["tag-avg","Privacy / AVG"],["tag-overig","Familierecht"]],uitkomst:["outcome-opgelost","Telefonisch opgelost"]},{tijd:"16:07",titel:"Fietsongeval — herziening aansprakelijkheid en conceptmail",personen:"Verzekerde: anoniem · Roelof van Beijnum",samenvatting:"Verzekerde ontevreden over eerder gesprek (Senne concludeerde schuld bij haar). Roelof herbeoordeelt: volledige aansprakelijkheid wederpartij niet haalbaar bij inhalende partij. Advies: gedeelde schaderegeling per mail. Roelof stelt conceptmail op.",tags:[["tag-overig","Verkeersrecht"]],uitkomst:["outcome-opgelost","Telefonisch opgelost"]},{tijd:"16:52",titel:"Auto inruilvoorstel — Van Rooijmans (ticket 2156)",personen:"Verzekerde: van Rooijmans · Roelof van Beijnum",samenvatting:"Garage biedt: (1) directe inruil voor €13.000 of (2) laatste reparatiepoging + daarna inruil. Auto €15.000 gekocht, 13.000 km gereden. Advies: optie 2 accepteren, afspraken zwart op wit laten zetten.",tags:[["tag-consument","Consumentenrecht"]],uitkomst:["outcome-opgelost","Telefonisch opgelost"]}], acties:[{prio:"prio-hoog",tekst:"VSO Ingrid Eigeraan doorzetten naar arbeidsrechtadvocaat — 7-dagendeadline, intern vastleggen als uitzondering op Brandmeester-protocol",eigenaar:"Roelof van Beijnum",deadline:"dl-urgent",deadlineTekst:"Zo snel mogelijk"},{prio:"prio-hoog",tekst:"Conceptmail fietsongeval opstellen: gedeelde schaderegeling voorstellen aan wederpartij bakfiets",eigenaar:"Roelof van Beijnum",deadline:"dl-urgent",deadlineTekst:"Vandaag nog"},{prio:"prio-hoog",tekst:"Margier terugmailen: abonnementsinformatie Platinum + directe contactpersoon aanwijzen",eigenaar:"Senne Duifhuis",deadline:"dl-urgent",deadlineTekst:"Vandaag nog"},{prio:"prio-middel",tekst:"Bart van der Beek (ticket 2344): schadenummer ontvangen en doorsturen Brandmeester met Bart in cc",eigenaar:"Roelof van Beijnum",deadline:"dl-soon",deadlineTekst:"Zo snel mogelijk"},{prio:"prio-middel",tekst:"Bart van Beek (vrije advocaatkeuze): bevestiging Brandmeester-doorverwijzing; eigen bijdrage €250 communiceren",eigenaar:"Senne Duifhuis",deadline:"dl-soon",deadlineTekst:"Zo snel mogelijk"},{prio:"prio-middel",tekst:"Van Rooijmans (ticket 2156): controleer morgen of garage afspraken zwart op wit heeft vastgelegd",eigenaar:"Roelof van Beijnum",deadline:"dl-soon",deadlineTekst:"Morgen"},{prio:"prio-laag",tekst:"Dossier Vegter open houden; mail verwacht van Vegter",eigenaar:"Roelof van Beijnum",deadline:"dl-ok",deadlineTekst:"Wachten op mail Vegter"}], analyse:{goed:["Service recovery fietsongeval: Roelof nam ontevreden klant serieus, gaf uitgebreide juridische heroverweging en bood concrete actie (conceptmail) — uitstekend klantcontact.","AVG/familieruzie: correcte analyse, proportioneel advies (brief eerst, politie/contactverbod als last resort).","Vrije advocaatkeuze Bart van Beek: polischeck grondig — extern max €7.500 en eigen bijdrage €250 correct gecommuniceerd."],beter:["VSO Ingrid is formeel een arbeidsconflict (protocol: ALTIJD Brandmeester). Keuze extern advocaat zonder Brandmeester-goedkeuring is een procesuizondering — dit intern documenteren en bespreken in team.","Margier-bereikbaarheidsprobleem herhaalt zich: klant al eerder niet teruggebeld, opnieuw belofte zonder duidelijke eigenaar — patroon doorbreken.","Vier routeringsgesprekken in één dag (Allianz Direct, Paula, Arjan Hulst + één intern): routeringsknelpunt intern signaleren aan systeembeheer."]}},
     "2026-06-25": {
-    drukte: "druk",
-    gesprekken: 6,
-    stats: {opgelost:4, brandmeester:0, afkoop:0, terugbel:1, geenDekking:1},
-    score: 7.5,
+    drukte: "matig",
+    gesprekken: 4,
+    stats: {opgelost:2, brandmeester:0, afkoop:0, terugbel:1, geenDekking:1},
+    score: 7.0,
     conversations: [
       {tijd:"09:40", titel:"iPhone-inruil PostNL geschil — Paterse Gentry", personen:"Verzekerde: Paterse Gentry · Jackie Stam", samenvatting:"Polisverificatie: ASR Schadeverzekering NV, polisnummer 5607-817-1936 gevonden in systeem. iPhone (€249) aangetekend opgestuurd voor inruil via Lightwise/Vodafone; ontvanger ontkent ontvangst; PostNL wil onderzoek maar eist bevestiging ontvangende partij. Advies: schriftelijke klacht bij PostNL o.b.v. vervoersovereenkomst (ontvangende partij niet verplicht bevestiging te geven), parallel aanschrijven Lightwise en Vodafone, en geschillencommissie PostNL als laagdrempelig gratis alternatief. Franchise €250: schade €249 valt net buiten dekking voor formeel rechtsbijstandtraject.", tags:[["tag-consument","Consumentenrecht"],["tag-overig","Aansprakelijkheidsrecht"]], uitkomst:["outcome-geen-dekking","Geen dekking"]},
       {tijd:"11:56", titel:"Poliswijziging — WA beperkt naar WA voor meneer Vissen", personen:"Beller namens verzekerde: Vissen · Jackie Stam", samenvatting:"Beller belt namens meneer Vissen om verzekering te wijzigen van WA beperkt naar gewone WA. Dit is een verzekeringsproductvraag, geen juridische kwestie. Beller hing abrupt op en gaf aan dat meneer Vissen zelf zou terugbellen.", tags:[["tag-overig","Verzekeringsrecht"]], uitkomst:["outcome-terugbel","Terugbellen"]},
       {tijd:"12:22", titel:"Schadeclaim advies — niet ondertekenen zonder bewijs", personen:"Beller namens vriend · Jackie Stam", samenvatting:"Vriend beschuldigd van het aanrichten van autoschade; wederpartij heeft geen concreet bewijs (alleen een getuige die riep dat hij in de buurt was). Identiteitsverificatie via postcode gedaan. Advies: schadaformulier niet tekenen (erkenning van feiten), incident melden bij eigen WA-verzekeraar, bewijs verzamelen. Doorverbonden naar verzekeringsexpert.", tags:[["tag-overig","Aansprakelijkheidsrecht"],["tag-consument","Verzekeringsrecht"]], uitkomst:["outcome-opgelost","Telefonisch opgelost"]},
-      {tijd:"12:39", titel:"Autoschade doorverwijzing naar verzekeringsexpert", personen:"Verzekerde: Hendrik Nico · Jackie Stam", samenvatting:"Verzekerde belde over autoschade van 14 juni, al ingediend via Mobiel Schade Melder. Had verkeerde lijn gebeld (juridische helpdesk i.p.v. schadeafdeling). Identiteitsverificatie via postcode en naam gedaan. Doorverbonden naar verzekeringsexpert via keuzemenu 3→1.", tags:[["tag-overig","Routering"]], uitkomst:["outcome-opgelost","Telefonisch opgelost"]},
-      {tijd:"13:25", titel:"Parkeervergunning gemeente — bezwaar betaald parkeren Hoorn", personen:"Verzekerde: JoostKaag · Jackie Stam", samenvatting:"Gemeente Hoorn introduceert per 1 juli betaald parkeren in wijk; bewoners kregen één dag van tevoren bericht. Besluit al in december genomen maar bewust niet gecommuniceerd ('politieke keuze'). Dekking grensgeval: polis dekt conflicten met overheid over gebruik eigen woning, maar parkeervergunning is geen eigendom. Advies: officielebekendmakingen.nl checken voor publicatiedatum en bezwaartermijn, bezwaar indienen (bij voorkeur gezamenlijk als buurt), bij verstreken termijn verzoek om herziening, politieke weg via gemeenteraad. Mailtje toegezegd.", tags:[["tag-bestuursrecht","Bestuursrecht"],["tag-overig","Gemeenterecht"]], uitkomst:["outcome-opgelost","Telefonisch opgelost"]},
-      {tijd:"14:31", titel:"Helpdesk doorverbinding — betaling en premies", personen:"Verzekerde: anoniem · Jackie Stam", samenvatting:"Beller zag onverwachte afschrijving op rekening en wist niet waarvoor. Geen juridische kwestie. Uitgelegd dat dit de juridische helpdesk is; doorverbonden naar verzekering/premies afdeling via keuzemenu (optie 3 dan 1).", tags:[["tag-overig","Routering"]], uitkomst:["outcome-opgelost","Telefonisch opgelost"]}
+      {tijd:"12:39", titel:"Autoschade doorverwijzing naar verzekeringsexpert", personen:"Verzekerde: Hendrik Nico · Jackie Stam", samenvatting:"Verzekerde belde over autoschade van 14 juni, al ingediend via Mobiel Schade Melder. Had verkeerde lijn gebeld (juridische helpdesk i.p.v. schadeafdeling). Identiteitsverificatie via postcode en naam gedaan. Doorverbonden naar verzekeringsexpert via keuzemenu 3→1.", tags:[["tag-overig","Routering"]], uitkomst:["outcome-opgelost","Telefonisch opgelost"]}
     ],
     acties: [
-      {prio:"prio-hoog", tekst:"Adviesmail sturen aan Paterse Gentry (s.turen.sylvia@wiel.com) met stappen: PostNL klacht o.b.v. vervoersovereenkomst, aanschrijven Lightwise en Vodafone, en verwijzing naar geschillencommissie PostNL", eigenaar:"Jackie Stam", deadline:"dl-urgent", deadlineTekst:"Vandaag nog"},
-      {prio:"prio-hoog", tekst:"Adviesmail sturen aan JoostKaag@gmail.com: officielebekendmakingen.nl checken, bezwaar indienen met buurt, verzoek om herziening indien termijn verstreken, politieke weg gemeenteraad", eigenaar:"Jackie Stam", deadline:"dl-urgent", deadlineTekst:"Vandaag nog"},
+      {prio:"prio-hoog", tekst:"Adviesmail sturen aan Paterse Gentry met stappen: PostNL klacht o.b.v. vervoersovereenkomst, aanschrijven Lightwise en Vodafone, en verwijzing naar geschillencommissie PostNL", eigenaar:"Jackie Stam", deadline:"dl-urgent", deadlineTekst:"Vandaag nog"},
       {prio:"prio-laag", tekst:"Terugbelnotitie Vissen: poliswijziging WA beperkt → WA gewoon klaarstaan zodra verzekerde terugbelt", eigenaar:"Jackie Stam", deadline:"dl-ok", deadlineTekst:"Wachten op terugbelverzoek Vissen"}
     ],
     analyse: {
       goed: [
         "iPhone/PostNL: uitstekend juridisch advies ondanks franchise-probleem — verwijzing naar vervoersovereenkomst en geschillencommissie PostNL correct en waardevol.",
         "Schadeclaim: juist advies om schadaformulier niet te tekenen (erkenning van feiten); identiteitsverificatie correct.",
-        "Parkeervergunning: solide bestuursrechtadvies met concrete stappen (officielebekendmakingen.nl, gezamenlijk bezwaar, verzoek om herziening, gemeenteraad als politieke route).",
-        "Autoschade en betaling: snel en correct doorverbonden naar juiste afdeling."
+        "Autoschade doorverwijzing snel en correct afgehandeld."
       ],
       beter: [
-        "Drie gesprekken (12:22, 12:39, 14:31) waren schade/verzekeringsvragen, geen juridische kwesties — routeringsprobleem aankaarten bij Lancyr.",
-        "Parkeervergunning: dekkingsoordeel 'grensgeval' niet definitief afgerond; opvolging via Brandmeester ontbreekt.",
-        "Gesprek Vissen (11:56): geen terugbelnotitie aangemaakt; afhandeling onvolledig gelaten."
+        "Twee gesprekken (12:22 + 12:39) waren schade/verzekeringsvragen, geen juridische kwesties — routeringsprobleem aankaarten bij Lancyr.",
+        "Gesprek Vissen (11:56): geen terugbelnotitie aangemaakt; afhandeling onvolledig gelaten.",
+        "Franchise-check bij schadeclaim (12:22) niet expliciet gedocumenteerd."
       ]
     }
   }
@@ -610,7 +982,7 @@ function buildManualSection(key) {
 // ===================== DISPLAY HELPERS =====================
 const DAYS_NL = ["zondag","maandag","dinsdag","woensdag","donderdag","vrijdag","zaterdag"];
 const MONTHS_NL = ["januari","februari","maart","april","mei","juni","juli","augustus","september","oktober","november","december"];
-const COLORS = { opgelost:"#436436", brandmeester:"#AE986F", stam:"#8a6540", afkoop:"#1a5c8a", terugbel:"#0D1F2E", geenDekking:"#8a96a0" };
+const COLORS = { opgelost:"#436436", brandmeester:"#1d4ed8", stam:"#92400e", afkoop:"#7c3aed", terugbel:"#c2410c", geenDekking:"#9ca3af" };
 
 function dateKey(d) { return d.toISOString().slice(0,10); }
 function formatDate(key) {
@@ -738,7 +1110,7 @@ function buildChart(stats) {
   return `<div class="chart-row">
     <div><div class="chart-title">Uitkomsten verdeling</div><div class="chart-wrap"><canvas id="uitkomstenChart"></canvas></div></div>
     <div class="chart-legend">
-      ${[["#436436","Eerstelijns opgelost",stats.opgelost],["#AE986F","→ Brandmeester",stats.brandmeester],["#1a5c8a","Afkoop",stats.afkoop],["#0D1F2E","Terugbellen",stats.terugbel],["#8a96a0","Geen dekking",stats.geenDekking],["#8a6540","→ Stam (VSO)",stats.stam]].map(([col,name,n]) => `
+      ${[["#436436","Eerstelijns opgelost",stats.opgelost],["#1d4ed8","→ Brandmeester",stats.brandmeester],["#7c3aed","Afkoop",stats.afkoop],["#c2410c","Terugbellen",stats.terugbel],["#9ca3af","Geen dekking",stats.geenDekking],["#92400e","→ Stam (VSO)",stats.stam]].map(([col,name,n]) => `
         <div class="legend-item">
           <div class="legend-dot" style="background:${col}"></div>
           <div class="legend-name">${name}</div>
@@ -1085,9 +1457,9 @@ function buildBrandmeesterRedenen(keys) {
       <span class="chevron">▼</span>
     </div>
     <div class="section-body" style="padding:16px 20px">
-      ${brandRedenen.length > 0 ? `<div style="font-size:11px;font-weight:700;color:var(--accent);text-transform:uppercase;letter-spacing:.5px;margin-bottom:10px">→ Brandmeester</div>
+      ${brandRedenen.length > 0 ? `<div style="font-size:11px;font-weight:700;color:#1d4ed8;text-transform:uppercase;letter-spacing:.5px;margin-bottom:10px">→ Brandmeester</div>
       ${brandRedenen.map(r => `<div style="display:flex;gap:10px;margin-bottom:9px;font-size:13px"><span style="color:#6b7280;font-size:11px;min-width:90px;flex-shrink:0;padding-top:1px;font-weight:300">${r.dag}</span><span style="color:#374151;font-weight:300">${r.titel}</span></div>`).join('')}` : ''}
-      ${afkoopRedenen.length > 0 ? `<div style="font-size:11px;font-weight:700;color:#1a5c8a;text-transform:uppercase;letter-spacing:.5px;margin:${brandRedenen.length>0?'16px':0} 0 10px">🤝 Afkoop</div>
+      ${afkoopRedenen.length > 0 ? `<div style="font-size:11px;font-weight:700;color:#7c3aed;text-transform:uppercase;letter-spacing:.5px;margin:${brandRedenen.length>0?'16px':0} 0 10px">🤝 Afkoop</div>
       ${afkoopRedenen.map(r => `<div style="display:flex;gap:10px;margin-bottom:9px;font-size:13px"><span style="color:#6b7280;font-size:11px;min-width:90px;flex-shrink:0;padding-top:1px;font-weight:300">${r.dag}</span><span style="color:#374151;font-weight:300">${r.titel}<br><span style="font-size:12px;color:#9ca3af">${r.reden}</span></span></div>`).join('')}` : ''}
     </div>
   </div>`;
@@ -1147,7 +1519,7 @@ function renderWeek(keysOverride, labelOverride) {
     </div>
     ${buildOKRWeekBanner(totals)}
     <div class="week-table">
-      <div class="week-table-header"><div>Dag</div><div style="text-align:center;color:var(--green)">✅ Opgelost</div><div style="text-align:center;color:var(--accent)">⚖️ Brandm.</div><div style="text-align:center;color:#1a5c8a">🤝 Afkoop</div><div style="text-align:center;color:var(--text)">📞 Terug</div><div style="text-align:center;color:var(--text-muted)">🚫 Geen</div><div style="text-align:right">Score</div></div>
+      <div class="week-table-header"><div>Dag</div><div style="text-align:center;color:var(--green)">✅ Opgelost</div><div style="text-align:center;color:#1d4ed8">⚖️ Brandm.</div><div style="text-align:center;color:#7c3aed">🤝 Afkoop</div><div style="text-align:center;color:#c2410c">📞 Terug</div><div style="text-align:center;color:#9ca3af">🚫 Geen</div><div style="text-align:right">Score</div></div>
       ${tableRows}
       <div class="week-totals"><div>Totaal</div><div style="text-align:center;color:var(--green)">${totals.opgelost}</div><div style="text-align:center;color:#1d4ed8">${totals.brandmeester}</div><div style="text-align:center;color:#7c3aed">${totals.afkoop}</div><div style="text-align:center;color:#c2410c">${totals.terugbel}</div><div style="text-align:center;color:#9ca3af">${totals.geenDekking}</div><div style="text-align:right">${avgScore !== null ? avgScore.toFixed(1) : "—"}</div></div>
     </div>
@@ -1314,6 +1686,5 @@ setView("vandaag");
     </div>
   </div>
 </div>
-<div class="htjz-footer"><div class="htjz-footer-badge"><div class="htjz-footer-dot"></div>Uitgevoerd door HTJZ — Het Team Juridische Zaken</div></div>
 </body>
 </html>

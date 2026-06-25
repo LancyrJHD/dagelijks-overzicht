@@ -1,0 +1,691 @@
+<!DOCTYPE html>
+<script type="application/json" id="cowork-artifact-meta">
+{
+  "name": "Lancyr Dagrapport",
+  "schemaVersion": 1,
+  "description": "Dagelijks overzicht van gesprekken en actiepunten uit de Lancyr Juridische Helpdesk, gevuld vanuit Granola via de scheduled task.",
+  "mcpTools": [],
+  "mcpServerNames": []
+}
+</script>
+<html lang="nl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Lancyr Juridische Helpdesk — Dagrapport</title>
+<style>
+  :root { color-scheme: light; }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    background: #f5f5f7;
+    color: #1d1d1f;
+    font-size: 14px;
+    line-height: 1.5;
+  }
+
+  .header {
+    background: #fff;
+    border-bottom: 1px solid #e5e5e5;
+    padding: 18px 24px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: sticky;
+    top: 0;
+    z-index: 10;
+  }
+
+  .header-left {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+
+  .logo {
+    width: 32px;
+    height: 32px;
+    background: #1a1a2e;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    font-weight: 700;
+    font-size: 13px;
+    letter-spacing: -0.5px;
+  }
+
+  .header h1 {
+    font-size: 15px;
+    font-weight: 600;
+    color: #1d1d1f;
+  }
+
+  .header-date {
+    font-size: 13px;
+    color: #6e6e73;
+  }
+
+  .date-nav {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+
+  .date-nav button {
+    background: #f5f5f7;
+    border: 1px solid #e5e5e5;
+    border-radius: 6px;
+    padding: 5px 10px;
+    font-size: 13px;
+    cursor: pointer;
+    color: #1d1d1f;
+    transition: background 0.15s;
+  }
+
+  .date-nav button:hover { background: #e8e8ed; }
+  .date-nav button.active {
+    background: #1a1a2e;
+    color: #fff;
+    border-color: #1a1a2e;
+  }
+
+  .container {
+    max-width: 860px;
+    margin: 0 auto;
+    padding: 24px 20px;
+  }
+
+  /* Summary bar */
+  .summary-bar {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 12px;
+    margin-bottom: 20px;
+  }
+
+  .stat-card {
+    background: #fff;
+    border: 1px solid #e5e5e5;
+    border-radius: 10px;
+    padding: 14px 16px;
+    text-align: center;
+  }
+
+  .stat-card .number {
+    font-size: 26px;
+    font-weight: 700;
+    color: #1a1a2e;
+    line-height: 1.2;
+  }
+
+  .stat-card .label {
+    font-size: 12px;
+    color: #6e6e73;
+    margin-top: 2px;
+  }
+
+  /* Section */
+  .section {
+    background: #fff;
+    border: 1px solid #e5e5e5;
+    border-radius: 10px;
+    margin-bottom: 16px;
+    overflow: hidden;
+  }
+
+  .section-header {
+    padding: 14px 18px;
+    border-bottom: 1px solid #f0f0f0;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    cursor: pointer;
+    user-select: none;
+  }
+
+  .section-header:hover { background: #fafafa; }
+
+  .section-icon {
+    width: 24px;
+    height: 24px;
+    border-radius: 6px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 13px;
+    flex-shrink: 0;
+  }
+
+  .section-title {
+    font-size: 13px;
+    font-weight: 600;
+    flex: 1;
+  }
+
+  .section-count {
+    background: #f0f0f3;
+    border-radius: 20px;
+    padding: 2px 8px;
+    font-size: 11px;
+    font-weight: 600;
+    color: #6e6e73;
+  }
+
+  .chevron {
+    font-size: 11px;
+    color: #aeaeb2;
+    transition: transform 0.2s;
+  }
+
+  .section-body { padding: 0; }
+
+  /* Gesprekken */
+  .conversation-item {
+    padding: 14px 18px;
+    border-bottom: 1px solid #f0f0f0;
+    display: grid;
+    grid-template-columns: 60px 1fr auto;
+    gap: 12px;
+    align-items: start;
+  }
+
+  .conversation-item:last-child { border-bottom: none; }
+
+  .conv-time {
+    font-size: 12px;
+    color: #6e6e73;
+    font-variant-numeric: tabular-nums;
+    padding-top: 1px;
+  }
+
+  .conv-main {}
+
+  .conv-title {
+    font-size: 13px;
+    font-weight: 600;
+    margin-bottom: 3px;
+  }
+
+  .conv-participants {
+    font-size: 12px;
+    color: #6e6e73;
+    margin-bottom: 6px;
+  }
+
+  .conv-summary {
+    font-size: 13px;
+    color: #3a3a3c;
+    line-height: 1.5;
+  }
+
+  .tag {
+    display: inline-block;
+    padding: 2px 8px;
+    border-radius: 20px;
+    font-size: 11px;
+    font-weight: 500;
+    margin-right: 4px;
+    margin-top: 6px;
+  }
+
+  .tag-arbeidsrecht { background: #e8f4fd; color: #0066cc; }
+  .tag-contract { background: #f0f9f0; color: #1a7a1a; }
+  .tag-avg { background: #fff3e0; color: #e65100; }
+  .tag-geschil { background: #fce4ec; color: #c62828; }
+  .tag-hr { background: #f3e5f5; color: #7b1fa2; }
+
+  /* Actiepunten */
+  .action-item {
+    padding: 12px 18px;
+    border-bottom: 1px solid #f0f0f0;
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+  }
+
+  .action-item:last-child { border-bottom: none; }
+
+  .action-check {
+    width: 16px;
+    height: 16px;
+    border: 2px solid #d1d1d6;
+    border-radius: 4px;
+    flex-shrink: 0;
+    margin-top: 1px;
+    cursor: pointer;
+    transition: all 0.15s;
+  }
+
+  .action-check:hover {
+    border-color: #1a1a2e;
+  }
+
+  .action-check.done {
+    background: #1a1a2e;
+    border-color: #1a1a2e;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 10px;
+  }
+
+  .action-content { flex: 1; }
+  .action-text { font-size: 13px; }
+  .action-meta {
+    display: flex;
+    gap: 10px;
+    margin-top: 3px;
+  }
+
+  .action-owner {
+    font-size: 11px;
+    color: #6e6e73;
+  }
+
+  .action-deadline {
+    font-size: 11px;
+    font-weight: 500;
+  }
+
+  .deadline-urgent { color: #c62828; }
+  .deadline-soon { color: #e65100; }
+  .deadline-normal { color: #1a7a1a; }
+
+  .priority-dot {
+    width: 7px;
+    height: 7px;
+    border-radius: 50%;
+    flex-shrink: 0;
+    margin-top: 5px;
+  }
+
+  .priority-hoog { background: #c62828; }
+  .priority-middel { background: #e65100; }
+  .priority-laag { background: #aeaeb2; }
+
+  /* Urgente zaken */
+  .urgent-item {
+    padding: 14px 18px;
+    border-bottom: 1px solid #f0f0f0;
+    border-left: 3px solid transparent;
+  }
+
+  .urgent-item:last-child { border-bottom: none; }
+  .urgent-item.rood { border-left-color: #c62828; }
+  .urgent-item.oranje { border-left-color: #e65100; }
+
+  .urgent-title {
+    font-size: 13px;
+    font-weight: 600;
+    margin-bottom: 3px;
+  }
+
+  .urgent-desc { font-size: 13px; color: #3a3a3c; }
+
+  .badge {
+    display: inline-flex;
+    align-items: center;
+    padding: 2px 8px;
+    border-radius: 20px;
+    font-size: 11px;
+    font-weight: 600;
+    margin-left: 6px;
+  }
+
+  .badge-rood { background: #fce4ec; color: #c62828; }
+  .badge-oranje { background: #fff3e0; color: #e65100; }
+
+  /* Samenvatting */
+  .samenvatting-text {
+    padding: 16px 18px;
+    font-size: 13px;
+    line-height: 1.7;
+    color: #3a3a3c;
+  }
+
+  /* Lege staat */
+  .empty-state {
+    padding: 40px 18px;
+    text-align: center;
+    color: #6e6e73;
+    font-size: 13px;
+  }
+
+  .empty-icon { font-size: 28px; margin-bottom: 8px; }
+
+  /* Demo badge */
+  .demo-banner {
+    background: #fff8e1;
+    border: 1px solid #ffe082;
+    border-radius: 8px;
+    padding: 10px 16px;
+    font-size: 12px;
+    color: #795548;
+    margin-bottom: 16px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+
+  .refresh-btn {
+    background: #1a1a2e;
+    color: #fff;
+    border: none;
+    border-radius: 6px;
+    padding: 6px 14px;
+    font-size: 12px;
+    cursor: pointer;
+    font-weight: 500;
+    transition: opacity 0.15s;
+  }
+
+  .refresh-btn:hover { opacity: 0.85; }
+
+  .spinner {
+    display: none;
+    width: 14px;
+    height: 14px;
+    border: 2px solid #e5e5e5;
+    border-top-color: #1a1a2e;
+    border-radius: 50%;
+    animation: spin 0.6s linear infinite;
+  }
+
+  @keyframes spin { to { transform: rotate(360deg); } }
+
+  .loading-state {
+    display: none;
+    padding: 30px 18px;
+    text-align: center;
+    color: #6e6e73;
+    font-size: 13px;
+  }
+
+  .loading-state .spinner {
+    display: inline-block;
+    margin: 0 auto 10px;
+  }
+</style>
+</head>
+<body>
+
+<div class="header">
+  <div class="header-left">
+    <div class="logo">L</div>
+    <div>
+      <h1>Lancyr Juridische Helpdesk</h1>
+      <div class="header-date" id="header-date">Dagrapport</div>
+    </div>
+  </div>
+  <div class="date-nav">
+    <button id="btn-gisteren">Gisteren</button>
+    <button id="btn-vandaag" class="active">Vandaag</button>
+    <button class="refresh-btn" id="refresh-btn" onclick="loadData()">↻ Vernieuwen</button>
+  </div>
+</div>
+
+<div class="container">
+
+  <div class="demo-banner">
+    ⚠️ <span>Dit is een <strong>voorbeeldweergave</strong> met demodata. Zodra de scheduled task draait, verschijnt hier automatisch de echte data van die dag.</span>
+  </div>
+
+  <!-- Stats -->
+  <div class="summary-bar">
+    <div class="stat-card">
+      <div class="number" id="stat-gesprekken">4</div>
+      <div class="label">Gesprekken</div>
+    </div>
+    <div class="stat-card">
+      <div class="number" id="stat-acties">6</div>
+      <div class="label">Actiepunten</div>
+    </div>
+    <div class="stat-card">
+      <div class="number" id="stat-urgent">2</div>
+      <div class="label">Urgent</div>
+    </div>
+    <div class="stat-card">
+      <div class="number" id="stat-themas">3</div>
+      <div class="label">Thema's</div>
+    </div>
+  </div>
+
+  <!-- Samenvatting -->
+  <div class="section">
+    <div class="section-header" onclick="toggle(this)">
+      <div class="section-icon" style="background:#f0f0f3;">📋</div>
+      <div class="section-title">Samenvatting van de dag</div>
+      <span class="chevron">▼</span>
+    </div>
+    <div class="section-body">
+      <div class="samenvatting-text">
+        Drukke dag met vier gesprekken verdeeld over de ochtend en middag. De focus lag op arbeidsrechtelijke vragen rondom een reorganisatie bij een klant, een contractreview voor een leveranciersovereenkomst, en een AVG-vraagstuk over persoonsgegevens van oud-medewerkers. Twee zaken vereisen opvolging op korte termijn. Er zijn in totaal zes actiepunten uitgezet, waarvan twee urgent.
+      </div>
+    </div>
+  </div>
+
+  <!-- Gesprekken -->
+  <div class="section">
+    <div class="section-header" onclick="toggle(this)">
+      <div class="section-icon" style="background:#e8f4fd;">💬</div>
+      <div class="section-title">Gesprekken vandaag</div>
+      <span class="section-count">4</span>
+      <span class="chevron">▼</span>
+    </div>
+    <div class="section-body">
+
+      <div class="conversation-item">
+        <div class="conv-time">09:15</div>
+        <div class="conv-main">
+          <div class="conv-title">Reorganisatie — ontslagprocedure medewerker</div>
+          <div class="conv-participants">Deelnemers: Sarah de Vries, Tom Bakker (Lancyr HR)</div>
+          <div class="conv-summary">Vraag over de juiste procedure voor ontslag bij reorganisatie. Besproken: UWV-route vs. kantonrechter, transitievergoeding berekening, en verplichte herplaatsingsinspanning. Klant kiest voor UWV-route. Concept ontslagbrief opstellen als volgende stap.</div>
+          <span class="tag tag-arbeidsrecht">Arbeidsrecht</span>
+          <span class="tag tag-hr">HR</span>
+        </div>
+      </div>
+
+      <div class="conversation-item">
+        <div class="conv-time">10:45</div>
+        <div class="conv-main">
+          <div class="conv-title">Contractreview leveranciersovereenkomst IT</div>
+          <div class="conv-participants">Deelnemers: Mark Jansen (Lancyr Inkoop)</div>
+          <div class="conv-summary">Review van een meerjarig IT-contract (SaaS). Aandachtspunten: ontbrekende SLA-bepalingen, onduidelijke aansprakelijkheidslimiet, en automatische verlenging zonder opzegtermijn. Drie concrete redlines geformuleerd en teruggestuurd aan klant.</div>
+          <span class="tag tag-contract">Contract</span>
+        </div>
+      </div>
+
+      <div class="conversation-item">
+        <div class="conv-time">13:30</div>
+        <div class="conv-main">
+          <div class="conv-title">AVG — bewaartermijn persoonsgegevens ex-medewerkers</div>
+          <div class="conv-participants">Deelnemers: Linda Smit (Lancyr Privacy Officer)</div>
+          <div class="conv-summary">Vraag of salarisstroken van oud-medewerkers na 5 jaar verwijderd moeten worden. Uitgelegd dat fiscale bewaarplicht 7 jaar geldt (art. 52 AWR), waarna verwijdering verplicht is tenzij lopend geschil. Klant had gegevens al 8 jaar bewaard — actie vereist.</div>
+          <span class="tag tag-avg">AVG</span>
+        </div>
+      </div>
+
+      <div class="conversation-item">
+        <div class="conv-time">15:00</div>
+        <div class="conv-main">
+          <div class="conv-title">Geschil met klant over geleverde diensten</div>
+          <div class="conv-participants">Deelnemers: Peter van Dam, Roos Hendriks (Lancyr Directie)</div>
+          <div class="conv-summary">Klant dreigt met rechtsvordering wegens gestelde wanprestatie. Besproken: inhoud van de vordering, kans van slagen, en of een minnelijke regeling haalbaar is. Aangeraden om eerst schriftelijk te reageren en een mediationtraject voor te stellen. Stam Advocaten inschakelen als escalatie nodig is.</div>
+          <span class="tag tag-geschil">Geschil</span>
+          <span class="tag tag-contract">Aansprakelijkheid</span>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- Actiepunten -->
+  <div class="section">
+    <div class="section-header" onclick="toggle(this)">
+      <div class="section-icon" style="background:#f0f9f0;">✅</div>
+      <div class="section-title">Actiepunten</div>
+      <span class="section-count">6</span>
+      <span class="chevron">▼</span>
+    </div>
+    <div class="section-body">
+
+      <div class="action-item">
+        <div class="priority-dot priority-hoog"></div>
+        <div class="action-check" onclick="toggleCheck(this)"></div>
+        <div class="action-content">
+          <div class="action-text">Concept ontslagbrief opstellen voor UWV-procedure (reorganisatie)</div>
+          <div class="action-meta">
+            <span class="action-owner">👤 Jackie</span>
+            <span class="action-deadline deadline-urgent">⏰ Morgen</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="action-item">
+        <div class="priority-dot priority-hoog"></div>
+        <div class="action-check" onclick="toggleCheck(this)"></div>
+        <div class="action-content">
+          <div class="action-text">Lancyr informeren over verwijderplicht persoonsgegevens oud-medewerkers (AVG)</div>
+          <div class="action-meta">
+            <span class="action-owner">👤 Jackie</span>
+            <span class="action-deadline deadline-urgent">⏰ Morgen</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="action-item">
+        <div class="priority-dot priority-middel"></div>
+        <div class="action-check" onclick="toggleCheck(this)"></div>
+        <div class="action-content">
+          <div class="action-text">Schriftelijke reactie opstellen op dreigende rechtsvordering klant</div>
+          <div class="action-meta">
+            <span class="action-owner">👤 Jackie</span>
+            <span class="action-deadline deadline-soon">⏰ 3 juni</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="action-item">
+        <div class="priority-dot priority-middel"></div>
+        <div class="action-check" onclick="toggleCheck(this)"></div>
+        <div class="action-content">
+          <div class="action-text">Redlines IT-contract terugsturen aan leverancier</div>
+          <div class="action-meta">
+            <span class="action-owner">👤 Mark Jansen</span>
+            <span class="action-deadline deadline-soon">⏰ 4 juni</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="action-item">
+        <div class="priority-dot priority-laag"></div>
+        <div class="action-check" onclick="toggleCheck(this)"></div>
+        <div class="action-content">
+          <div class="action-text">Transitievergoeding berekening controleren en doorsturen</div>
+          <div class="action-meta">
+            <span class="action-owner">👤 Jackie</span>
+            <span class="action-deadline deadline-normal">⏰ 6 juni</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="action-item">
+        <div class="priority-dot priority-laag"></div>
+        <div class="action-check" onclick="toggleCheck(this)"></div>
+        <div class="action-content">
+          <div class="action-text">Mediationaanbod formuleren voor geschil — optioneel Stam Advocaten inschakelen</div>
+          <div class="action-meta">
+            <span class="action-owner">👤 Peter van Dam</span>
+            <span class="action-deadline deadline-normal">⏰ 9 juni</span>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- Urgente zaken -->
+  <div class="section">
+    <div class="section-header" onclick="toggle(this)">
+      <div class="section-icon" style="background:#fce4ec;">🚨</div>
+      <div class="section-title">Urgente zaken</div>
+      <span class="section-count">2</span>
+      <span class="chevron">▼</span>
+    </div>
+    <div class="section-body">
+
+      <div class="urgent-item rood">
+        <div class="urgent-title">AVG-overtreding: persoonsgegevens te lang bewaard <span class="badge badge-rood">Actie vereist</span></div>
+        <div class="urgent-desc">Lancyr bewaart salarisgegevens van ex-medewerkers al 8 jaar, terwijl de maximale bewaartermijn 7 jaar is (art. 52 AWR). Directe actie nodig: gegevens verwijderen en proces aanpassen. Risico op AP-boete bij inspectie.</div>
+      </div>
+
+      <div class="urgent-item oranje">
+        <div class="urgent-title">Dreigende rechtsvordering klant wegens wanprestatie <span class="badge badge-oranje">Opvolging nodig</span></div>
+        <div class="urgent-desc">Klant heeft een formele brief gestuurd met aankondiging van rechtsvordering. Reactietermijn loopt af op 3 juni. Schriftelijke reactie en mediationvoorstel moeten voor die datum klaar zijn.</div>
+      </div>
+
+    </div>
+  </div>
+
+</div>
+
+<script>
+  // Datum instellen
+  const now = new Date();
+  const opties = { weekday: 'long', day: 'numeric', month: 'long', year: 'numeric' };
+  document.getElementById('header-date').textContent = now.toLocaleDateString('nl-NL', opties);
+
+  // Toggle secties
+  function toggle(header) {
+    const body = header.nextElementSibling;
+    const chevron = header.querySelector('.chevron');
+    const isOpen = body.style.display !== 'none';
+    body.style.display = isOpen ? 'none' : '';
+    chevron.style.transform = isOpen ? 'rotate(-90deg)' : '';
+  }
+
+  // Check actiepunten
+  function toggleCheck(el) {
+    el.classList.toggle('done');
+    if (el.classList.contains('done')) {
+      el.innerHTML = '✓';
+      el.closest('.action-item').querySelector('.action-text').style.textDecoration = 'line-through';
+      el.closest('.action-item').querySelector('.action-text').style.color = '#aeaeb2';
+    } else {
+      el.innerHTML = '';
+      el.closest('.action-item').querySelector('.action-text').style.textDecoration = '';
+      el.closest('.action-item').querySelector('.action-text').style.color = '';
+    }
+  }
+
+  // Dag-navigatie
+  document.getElementById('btn-vandaag').addEventListener('click', function() {
+    this.classList.add('active');
+    document.getElementById('btn-gisteren').classList.remove('active');
+    document.getElementById('header-date').textContent = now.toLocaleDateString('nl-NL', opties);
+  });
+
+  document.getElementById('btn-gisteren').addEventListener('click', function() {
+    this.classList.add('active');
+    document.getElementById('btn-vandaag').classList.remove('active');
+    const gisteren = new Date(now);
+    gisteren.setDate(gisteren.getDate() - 1);
+    document.getElementById('header-date').textContent = gisteren.toLocaleDateString('nl-NL', opties);
+  });
+
+  function loadData() {
+    const btn = document.getElementById('refresh-btn');
+    btn.textContent = '↻ Bezig...';
+    btn.disabled = true;
+    setTimeout(() => {
+      btn.textContent = '↻ Vernieuwen';
+      btn.disabled = false;
+    }, 1500);
+  }
+</script>
+</body>
+</html>

@@ -1,0 +1,563 @@
+<!DOCTYPE html><script type="application/json" id="cowork-artifact-meta">
+{
+  "name": "Lancyr Dagrapport",
+  "schemaVersion": 1,
+  "description": "Dagelijks overzicht van gesprekken, uitkomsten en kwaliteitsanalyse voor de Lancyr Juridische Helpdesk, gevuld vanuit Granola via de scheduled task.",
+  "mcpTools": [],
+  "mcpServerNames": []
+}
+</script>
+<html lang="nl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Lancyr Juridische Helpdesk — Dagrapport</title>
+<script src="https://cdn.jsdelivr.net/npm/chart.js@4.5.0/dist/chart.umd.js" integrity="sha384-iU8HYtnGQ8Cy4zl7gbNMOhsDTTKX02BTXptVP/vqAWIaTfM7isw76iyZCsjL2eVi" crossorigin="anonymous"></script>
+<style>
+  :root { color-scheme: light; }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    background: #f5f5f7;
+    color: #1d1d1f;
+    font-size: 14px;
+    line-height: 1.5;
+  }
+
+  /* HEADER */
+  .header {
+    background: #fff;
+    border-bottom: 1px solid #e5e5e5;
+    padding: 14px 24px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: sticky;
+    top: 0;
+    z-index: 10;
+  }
+  .header-left { display: flex; align-items: center; gap: 10px; }
+  .logo {
+    width: 30px; height: 30px;
+    background: #1a1a2e;
+    border-radius: 7px;
+    display: flex; align-items: center; justify-content: center;
+    color: #fff; font-weight: 700; font-size: 13px;
+  }
+  .header h1 { font-size: 14px; font-weight: 600; }
+  .header-date { font-size: 12px; color: #6e6e73; }
+  .header-right { display: flex; align-items: center; gap: 8px; }
+  .btn { background: #f0f0f3; border: none; border-radius: 6px; padding: 5px 12px; font-size: 12px; cursor: pointer; color: #1d1d1f; font-weight: 500; transition: background .15s; }
+  .btn:hover { background: #e0e0e5; }
+  .btn.active { background: #1a1a2e; color: #fff; }
+  .btn-refresh { background: #1a1a2e; color: #fff; }
+  .btn-refresh:hover { opacity: .85; background: #1a1a2e; }
+
+  /* CONTAINER */
+  .container { max-width: 900px; margin: 0 auto; padding: 20px; }
+
+  /* DRUKTE BANNER */
+  .drukte-banner {
+    border-radius: 10px;
+    padding: 14px 20px;
+    margin-bottom: 16px;
+    display: flex;
+    align-items: center;
+    gap: 14px;
+  }
+  .drukte-banner.druk { background: #fde8e8; border: 1px solid #f5c6c6; }
+  .drukte-banner.matig { background: #fff8e1; border: 1px solid #ffe082; }
+  .drukte-banner.rustig { background: #e8f5e9; border: 1px solid #a5d6a7; }
+
+  .drukte-icon { font-size: 24px; }
+  .drukte-label { font-size: 16px; font-weight: 700; }
+  .drukte-sub { font-size: 12px; opacity: .75; margin-top: 1px; }
+  .drukte-banner.druk .drukte-label { color: #c62828; }
+  .drukte-banner.matig .drukte-label { color: #e65100; }
+  .drukte-banner.rustig .drukte-label { color: #2e7d32; }
+
+  /* STATS GRID */
+  .stats-grid {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 10px;
+    margin-bottom: 16px;
+  }
+  .stat-card {
+    background: #fff;
+    border: 1px solid #e5e5e5;
+    border-radius: 10px;
+    padding: 12px 14px;
+    text-align: center;
+  }
+  .stat-card .number { font-size: 24px; font-weight: 700; line-height: 1.2; }
+  .stat-card .label { font-size: 11px; color: #6e6e73; margin-top: 2px; }
+  .stat-card.opgelost .number { color: #2e7d32; }
+  .stat-card.brandmeester .number { color: #1565c0; }
+  .stat-card.afkoop .number { color: #7b1fa2; }
+  .stat-card.terugbel .number { color: #e65100; }
+  .stat-card.geen-dekking .number { color: #6e6e73; }
+
+  /* UITKOMSTEN CHART ROW */
+  .chart-row {
+    background: #fff;
+    border: 1px solid #e5e5e5;
+    border-radius: 10px;
+    padding: 16px 20px;
+    margin-bottom: 16px;
+    display: flex;
+    align-items: center;
+    gap: 24px;
+  }
+  .chart-wrap { width: 140px; height: 140px; flex-shrink: 0; }
+  .chart-legend { flex: 1; display: flex; flex-direction: column; gap: 8px; }
+  .legend-item { display: flex; align-items: center; gap: 8px; }
+  .legend-dot { width: 10px; height: 10px; border-radius: 50%; flex-shrink: 0; }
+  .legend-name { font-size: 12px; flex: 1; }
+  .legend-bar-wrap { width: 100px; background: #f0f0f3; border-radius: 4px; height: 6px; }
+  .legend-bar { height: 6px; border-radius: 4px; }
+  .legend-count { font-size: 12px; font-weight: 600; min-width: 20px; text-align: right; }
+  .chart-title { font-size: 13px; font-weight: 600; margin-bottom: 12px; }
+
+  /* SECTIONS */
+  .section {
+    background: #fff;
+    border: 1px solid #e5e5e5;
+    border-radius: 10px;
+    margin-bottom: 14px;
+    overflow: hidden;
+  }
+  .section-header {
+    padding: 13px 18px;
+    border-bottom: 1px solid #f0f0f0;
+    display: flex; align-items: center; gap: 8px;
+    cursor: pointer; user-select: none;
+  }
+  .section-header:hover { background: #fafafa; }
+  .section-icon { width: 22px; height: 22px; border-radius: 6px; display: flex; align-items: center; justify-content: center; font-size: 12px; flex-shrink: 0; }
+  .section-title { font-size: 13px; font-weight: 600; flex: 1; }
+  .section-count { background: #f0f0f3; border-radius: 20px; padding: 2px 8px; font-size: 11px; font-weight: 600; color: #6e6e73; }
+  .chevron { font-size: 10px; color: #aeaeb2; transition: transform .2s; }
+  .collapsed .chevron { transform: rotate(-90deg); }
+
+  /* GESPREKKEN */
+  .conv-item {
+    padding: 14px 18px;
+    border-bottom: 1px solid #f5f5f7;
+    display: grid;
+    grid-template-columns: 56px 1fr;
+    gap: 12px;
+  }
+  .conv-item:last-child { border-bottom: none; }
+  .conv-time { font-size: 12px; color: #6e6e73; padding-top: 1px; font-variant-numeric: tabular-nums; }
+  .conv-title { font-size: 13px; font-weight: 600; margin-bottom: 2px; }
+  .conv-persons { font-size: 12px; color: #6e6e73; margin-bottom: 6px; }
+  .conv-summary { font-size: 13px; color: #3a3a3c; line-height: 1.55; margin-bottom: 8px; }
+  .conv-footer { display: flex; flex-wrap: wrap; align-items: center; gap: 6px; }
+
+  .tag {
+    display: inline-block; padding: 2px 8px; border-radius: 20px;
+    font-size: 11px; font-weight: 500;
+  }
+  .tag-arbeidsrecht { background: #e3f2fd; color: #1565c0; }
+  .tag-consument { background: #fce4ec; color: #c62828; }
+  .tag-bouw { background: #fff3e0; color: #e65100; }
+  .tag-contract { background: #e8f5e9; color: #2e7d32; }
+  .tag-avg { background: #f3e5f5; color: #7b1fa2; }
+  .tag-geschil { background: #fbe9e7; color: #bf360c; }
+  .tag-huur { background: #e0f7fa; color: #006064; }
+  .tag-bestuursrecht { background: #e8eaf6; color: #283593; }
+  .tag-polis { background: #f9fbe7; color: #558b2f; }
+
+  .outcome-badge {
+    display: inline-flex; align-items: center; gap: 4px;
+    padding: 3px 10px; border-radius: 20px;
+    font-size: 11px; font-weight: 600;
+    margin-left: auto;
+  }
+  .outcome-opgelost { background: #e8f5e9; color: #2e7d32; }
+  .outcome-brandmeester { background: #e3f2fd; color: #1565c0; }
+  .outcome-afkoop { background: #f3e5f5; color: #7b1fa2; }
+  .outcome-terugbel { background: #fff3e0; color: #e65100; }
+  .outcome-geen-dekking { background: #f5f5f5; color: #6e6e73; }
+
+  /* ACTIEPUNTEN */
+  .action-item {
+    padding: 11px 18px;
+    border-bottom: 1px solid #f5f5f7;
+    display: flex; align-items: flex-start; gap: 10px;
+  }
+  .action-item:last-child { border-bottom: none; }
+  .prio-dot { width: 7px; height: 7px; border-radius: 50%; flex-shrink: 0; margin-top: 5px; }
+  .prio-hoog { background: #c62828; }
+  .prio-middel { background: #e65100; }
+  .prio-laag { background: #aeaeb2; }
+  .check-box {
+    width: 15px; height: 15px; border: 2px solid #d1d1d6; border-radius: 4px;
+    flex-shrink: 0; margin-top: 1px; cursor: pointer; transition: all .15s;
+    display: flex; align-items: center; justify-content: center; font-size: 9px;
+  }
+  .check-box:hover { border-color: #1a1a2e; }
+  .check-box.done { background: #1a1a2e; border-color: #1a1a2e; color: #fff; }
+  .action-text { font-size: 13px; flex: 1; }
+  .action-text.done-text { text-decoration: line-through; color: #aeaeb2; }
+  .action-meta { display: flex; gap: 10px; margin-top: 2px; }
+  .action-owner { font-size: 11px; color: #6e6e73; }
+  .dl-urgent { font-size: 11px; font-weight: 500; color: #c62828; }
+  .dl-soon { font-size: 11px; font-weight: 500; color: #e65100; }
+  .dl-ok { font-size: 11px; font-weight: 500; color: #2e7d32; }
+
+  /* ANALYSE */
+  .analyse-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+    padding: 16px 18px;
+  }
+  .analyse-col { }
+  .analyse-col-title {
+    font-size: 12px; font-weight: 700; text-transform: uppercase;
+    letter-spacing: .5px; margin-bottom: 10px;
+    display: flex; align-items: center; gap: 6px;
+  }
+  .analyse-col-title.goed { color: #2e7d32; }
+  .analyse-col-title.beter { color: #c62828; }
+  .analyse-point {
+    display: flex; gap: 8px; margin-bottom: 9px; font-size: 13px; line-height: 1.5;
+  }
+  .analyse-icon { flex-shrink: 0; margin-top: 1px; }
+  .analyse-text { color: #3a3a3c; }
+  .analyse-divider {
+    height: 1px; background: #f0f0f0;
+    margin: 0 18px 16px;
+  }
+  .analyse-score {
+    padding: 0 18px 16px;
+    display: flex; align-items: center; gap: 10px;
+  }
+  .score-label { font-size: 12px; color: #6e6e73; }
+  .score-bar-wrap { flex: 1; height: 8px; background: #f0f0f3; border-radius: 4px; overflow: hidden; }
+  .score-bar { height: 8px; border-radius: 4px; background: linear-gradient(90deg, #2e7d32, #66bb6a); }
+  .score-num { font-size: 13px; font-weight: 700; color: #2e7d32; min-width: 32px; text-align: right; }
+</style>
+</head>
+<body>
+
+<div class="header">
+  <div class="header-left">
+    <div class="logo">L</div>
+    <div>
+      <h1>Lancyr Juridische Helpdesk</h1>
+      <div class="header-date" id="header-date">Dagrapport — donderdag 28 mei 2026</div>
+    </div>
+  </div>
+  <div class="header-right">
+    <button class="btn" id="btn-gisteren" onclick="switchDay('gisteren')">Gisteren</button>
+    <button class="btn active" id="btn-vandaag" onclick="switchDay('vandaag')">Vandaag</button>
+    <button class="btn btn-refresh" onclick="refresh()">↻ Vernieuwen</button>
+  </div>
+</div>
+
+<div class="container">
+
+  <!-- DRUKTE INDICATOR -->
+  <div class="drukte-banner rustig" id="drukte-banner">
+    <div class="drukte-icon">🟢</div>
+    <div>
+      <div class="drukte-label" id="drukte-label">Rustige dag</div>
+      <div class="drukte-sub" id="drukte-sub">3 gesprekken — onder de norm van 4</div>
+    </div>
+  </div>
+
+  <!-- STATS -->
+  <div class="stats-grid">
+    <div class="stat-card opgelost">
+      <div class="number">1</div>
+      <div class="label">Telefonisch opgelost</div>
+    </div>
+    <div class="stat-card brandmeester">
+      <div class="number">0</div>
+      <div class="label">→ Brandmeester</div>
+    </div>
+    <div class="stat-card afkoop">
+      <div class="number">0</div>
+      <div class="label">Afgehandeld / afkoop</div>
+    </div>
+    <div class="stat-card terugbel">
+      <div class="number">2</div>
+      <div class="label">Terugbellen</div>
+    </div>
+    <div class="stat-card geen-dekking">
+      <div class="number">0</div>
+      <div class="label">Geen dekking</div>
+    </div>
+  </div>
+
+  <!-- UITKOMSTEN CHART -->
+  <div class="chart-row">
+    <div>
+      <div class="chart-title">Uitkomsten verdeling</div>
+      <div class="chart-wrap">
+        <canvas id="uitkomstenChart"></canvas>
+      </div>
+    </div>
+    <div class="chart-legend">
+      <div class="legend-item">
+        <div class="legend-dot" style="background:#2e7d32"></div>
+        <div class="legend-name">Telefonisch opgelost</div>
+        <div class="legend-bar-wrap"><div class="legend-bar" style="width:33%;background:#2e7d32"></div></div>
+        <div class="legend-count">1</div>
+      </div>
+      <div class="legend-item">
+        <div class="legend-dot" style="background:#1565c0"></div>
+        <div class="legend-name">→ Brandmeester</div>
+        <div class="legend-bar-wrap"><div class="legend-bar" style="width:0%;background:#1565c0"></div></div>
+        <div class="legend-count">0</div>
+      </div>
+      <div class="legend-item">
+        <div class="legend-dot" style="background:#7b1fa2"></div>
+        <div class="legend-name">Afgehandeld / afkoop</div>
+        <div class="legend-bar-wrap"><div class="legend-bar" style="width:0%;background:#7b1fa2"></div></div>
+        <div class="legend-count">0</div>
+      </div>
+      <div class="legend-item">
+        <div class="legend-dot" style="background:#e65100"></div>
+        <div class="legend-name">Terugbellen</div>
+        <div class="legend-bar-wrap"><div class="legend-bar" style="width:66%;background:#e65100"></div></div>
+        <div class="legend-count">2</div>
+      </div>
+      <div class="legend-item">
+        <div class="legend-dot" style="background:#aeaeb2"></div>
+        <div class="legend-name">Geen dekking</div>
+        <div class="legend-bar-wrap"><div class="legend-bar" style="width:0%;background:#aeaeb2"></div></div>
+        <div class="legend-count">0</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- GESPREKKEN -->
+  <div class="section">
+    <div class="section-header" onclick="toggle(this)">
+      <div class="section-icon" style="background:#e3f2fd;">💬</div>
+      <div class="section-title">Gesprekken vandaag</div>
+      <span class="section-count">3</span>
+      <span class="chevron">▼</span>
+    </div>
+    <div class="section-body">
+
+      <div class="conv-item">
+        <div class="conv-time">13:25</div>
+        <div>
+          <div class="conv-title">Mutsy kinderwagen — non-conformiteit, ingebrekestelling</div>
+          <div class="conv-persons">Verzekerde: niet bij naam genoemd · Polis: niet expliciet geverifieerd in transcript</div>
+          <div class="conv-summary">Verzekerde heeft een Mutsy kinderwagen gekocht voor ca. €450. Het linkerwiel blokkeert — hetzelfde probleem had een eerdere (tweedehands) wagen ook. Mutsy reageerde na beeldmateriaalverzoek (19 mrt) niet meer op vervolgmails van 25 mrt, 20 apr en 2 mei. Franchise-check correct: €450 > €250, dekking aanwezig. Advies: aangetekende ingebrekestelling sturen via juridisch loket-sjabloon, termijn 7 werkdagen, primair reparatieverzoek, subsidiair terugbetaling. Adres Mutsy opzoeken via KvK. Terugbellen als geen reactie binnen termijn.</div>
+          <div class="conv-footer">
+            <span class="tag tag-consument">Consumentenrecht</span>
+            <span class="outcome-badge outcome-opgelost">Telefonisch opgelost</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="conv-item">
+        <div class="conv-time">13:48</div>
+        <div>
+          <div class="conv-title">Parkeervergunning bezwaar — stallingsplaats vs. straatvergunning (Fernando)</div>
+          <div class="conv-persons">Verzekerde: Rowan / Fernando · Polis: niet geverifieerd in transcript</div>
+          <div class="conv-summary">Rowan belt kort maar heeft een overleg; vraagt terugbelafspraak om 16:00. Vervolggesprek met Fernando (of dezelfde verzekerde): gemeente weigert parkeervergunning voor de straat omdat zijn stallingsplaats als parkeervergunning wordt aangemerkt. Hij heeft één auto; vorige eigenaren hadden twee auto's en twee vergunningen. Wouter legt uit dat de situaties niet vergelijkbaar zijn (één vs. twee voertuigen) en dat het gelijkheidsbeginsel niet opgaat. Zaak wordt niet kansrijk geacht voor een procedure. Fernando wordt gevraagd per mail te bevestigen of zijn stallingsplaats voldoet aan de wettelijke afmetingen (≥2,35m breed, ≥5m lang), zodat Wouter de zaak kan beoordelen en eventueel terugbelt.</div>
+          <div class="conv-footer">
+            <span class="tag tag-bestuursrecht">Bestuursrecht</span>
+            <span class="outcome-badge outcome-terugbel">Terugbellen</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="conv-item">
+        <div class="conv-time">14:31</div>
+        <div>
+          <div class="conv-title">VCO review en gezinssamenstelling — Balmeese</div>
+          <div class="conv-persons">Verzekerde: Balmeese · Polis: polischeck lopend conform protocol</div>
+          <div class="conv-summary">VCO wordt doorgestuurd; jurist van Balmeese controleert niet mee. Wouter bevestigt dat de zaak in principe gedekt is, maar de formele polischeck loopt nog. Als die akkoord is, wordt de verzekerde verder geholpen; kosten worden altijd vooraf besproken. Verzekerde meldt tevens dat de gezinssamenstelling in het systeem nog op "alleenstaand" staat, maar dat dit niet meer klopt. Wouter geeft aan dat hij dit als juridisch medewerker niet zelf kan aanpassen en verwijst door naar de website of per mail.</div>
+          <div class="conv-footer">
+            <span class="tag tag-polis">Polischeck</span>
+            <span class="outcome-badge outcome-terugbel">Terugbellen</span>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- ACTIEPUNTEN -->
+  <div class="section">
+    <div class="section-header" onclick="toggle(this)">
+      <div class="section-icon" style="background:#e8f5e9;">✅</div>
+      <div class="section-title">Actiepunten</div>
+      <span class="section-count">3</span>
+      <span class="chevron">▼</span>
+    </div>
+    <div class="section-body">
+
+      <div class="action-item">
+        <div class="prio-dot prio-hoog"></div>
+        <div class="check-box" onclick="toggleCheck(this)"></div>
+        <div class="action-content">
+          <div class="action-text">Terugbellen Fernando zodra mail binnenkomt met bevestiging stallingsplaatsmaten — beoordelen of bezwaarprocedure kansrijk is</div>
+          <div class="action-meta">
+            <span class="action-owner">👤 Wouter</span>
+            <span class="dl-soon">⏰ Zodra mail ontvangen</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="action-item">
+        <div class="prio-dot prio-middel"></div>
+        <div class="check-box" onclick="toggleCheck(this)"></div>
+        <div class="action-content">
+          <div class="action-text">Mutsy-zaak: terugbellen verzekerde als geen reactie na 7 werkdagen op ingebrekestelling — dan vervolgstappen bepalen</div>
+          <div class="action-meta">
+            <span class="action-owner">👤 Wouter</span>
+            <span class="dl-ok">⏰ ~10 juni (7 werkdagen na versturen)</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="action-item">
+        <div class="prio-dot prio-laag"></div>
+        <div class="check-box" onclick="toggleCheck(this)"></div>
+        <div class="action-content">
+          <div class="action-text">Balmeese: afwachten uitkomst polischeck — contact volgt vanuit juridisch team als check gereed is</div>
+          <div class="action-meta">
+            <span class="action-owner">👤 Juridisch team</span>
+            <span class="dl-ok">⏰ In behandeling</span>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- KWALITEITSANALYSE -->
+  <div class="section">
+    <div class="section-header" onclick="toggle(this)">
+      <div class="section-icon" style="background:#f3e5f5;">📊</div>
+      <div class="section-title">Kwaliteitsanalyse</div>
+      <span class="chevron">▼</span>
+    </div>
+    <div class="section-body">
+
+      <div class="analyse-score">
+        <div class="score-label">Dagkwaliteit</div>
+        <div class="score-bar-wrap">
+          <div class="score-bar" style="width: 72%"></div>
+        </div>
+        <div class="score-num">7.2 / 10</div>
+      </div>
+
+      <div class="analyse-divider"></div>
+
+      <div class="analyse-grid">
+        <div class="analyse-col">
+          <div class="analyse-col-title goed">✅ Wat ging goed</div>
+          <div class="analyse-point">
+            <div class="analyse-icon">✓</div>
+            <div class="analyse-text">Franchise-check correct uitgevoerd bij Mutsy-zaak (€450 &gt; €250) — dekking terecht aanwezig gesteld.</div>
+          </div>
+          <div class="analyse-point">
+            <div class="analyse-icon">✓</div>
+            <div class="analyse-text">Concrete deadline benoemd bij Mutsy: 7 werkdagen termijn in de ingebrekestelling — conform kwaliteitsnorm.</div>
+          </div>
+          <div class="analyse-point">
+            <div class="analyse-icon">✓</div>
+            <div class="analyse-text">Praktisch advies bij Mutsy: doorverwezen naar juridisch loket-sjabloon en KvK voor bedrijfsadres — oplossingsgericht.</div>
+          </div>
+          <div class="analyse-point">
+            <div class="analyse-icon">✓</div>
+            <div class="analyse-text">Parkeervergunningszaak eerlijk en duidelijk gecommuniceerd: geen valse hoop gewekt, juridisch onderbouwd uitgelegd waarom procedure niet kansrijk is.</div>
+          </div>
+        </div>
+        <div class="analyse-col">
+          <div class="analyse-col-title beter">⚠️ Wat kon beter</div>
+          <div class="analyse-point">
+            <div class="analyse-icon">!</div>
+            <div class="analyse-text">Polisverificatie (polis + identiteit) niet expliciet hoorbaar in de transcripten van Mutsy en parkeervergunning — dit is een verplichte eerste stap en moet altijd worden genoteerd.</div>
+          </div>
+          <div class="analyse-point">
+            <div class="analyse-icon">!</div>
+            <div class="analyse-text">Parkeervergunning: onduidelijk of bestuursrechtelijk bezwaar überhaupt onder de Lancyr-polis valt — dekkingscontrole had eerder in het gesprek moeten plaatsvinden.</div>
+          </div>
+          <div class="analyse-point">
+            <div class="analyse-icon">!</div>
+            <div class="analyse-text">Terugbelafspraak Rowan (16:00) niet teruggevonden als definitief gesprek in Granola — controleren of dit gesprek heeft plaatsgevonden en zo ja, dossier aanvullen.</div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+</div>
+
+<script>
+  // Datum
+  const now = new Date();
+  const opties = { weekday: 'long', day: 'numeric', month: 'long', year: 'numeric' };
+  document.getElementById('header-date').textContent = 'Dagrapport — ' + now.toLocaleDateString('nl-NL', opties);
+
+  // Dag switch
+  function switchDay(dag) {
+    document.getElementById('btn-vandaag').classList.toggle('active', dag === 'vandaag');
+    document.getElementById('btn-gisteren').classList.toggle('active', dag === 'gisteren');
+    const d = new Date(now);
+    if (dag === 'gisteren') d.setDate(d.getDate() - 1);
+    document.getElementById('header-date').textContent = 'Dagrapport — ' + d.toLocaleDateString('nl-NL', opties);
+  }
+
+  // Toggle secties
+  function toggle(header) {
+    const body = header.nextElementSibling;
+    const isOpen = body.style.display !== 'none';
+    body.style.display = isOpen ? 'none' : '';
+    header.parentElement.classList.toggle('collapsed', isOpen);
+  }
+
+  // Check
+  function toggleCheck(el) {
+    el.classList.toggle('done');
+    el.textContent = el.classList.contains('done') ? '✓' : '';
+    const txt = el.closest('.action-item').querySelector('.action-text');
+    txt.classList.toggle('done-text', el.classList.contains('done'));
+  }
+
+  // Refresh
+  function refresh() {
+    const btn = event.target;
+    btn.textContent = '↻ Bezig...';
+    btn.disabled = true;
+    setTimeout(() => { btn.textContent = '↻ Vernieuwen'; btn.disabled = false; }, 1500);
+  }
+
+  // Donut chart
+  const ctx = document.getElementById('uitkomstenChart').getContext('2d');
+  new Chart(ctx, {
+    type: 'doughnut',
+    data: {
+      labels: ['Opgelost', '→ Brandmeester', 'Afkoop', 'Terugbellen', 'Geen dekking'],
+      datasets: [{
+        data: [1, 0, 0, 2, 0],
+        backgroundColor: ['#2e7d32', '#1565c0', '#7b1fa2', '#e65100', '#aeaeb2'],
+        borderWidth: 2,
+        borderColor: '#fff'
+      }]
+    },
+    options: {
+      cutout: '68%',
+      plugins: { legend: { display: false }, tooltip: { callbacks: {
+        label: ctx => ` ${ctx.label}: ${ctx.raw}`
+      }}},
+      animation: { animateRotate: true }
+    }
+  });
+</script>
+</body>
+</html>

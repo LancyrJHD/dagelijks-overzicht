@@ -1,0 +1,352 @@
+<!DOCTYPE html><script type="application/json" id="cowork-artifact-meta">
+{
+  "name": "Lancyr Dagrapport",
+  "schemaVersion": 1,
+  "description": "Dagelijks overzicht van gesprekken, uitkomsten en kwaliteitsanalyse voor de Lancyr Juridische Helpdesk, gevuld vanuit Granola via de scheduled task.",
+  "mcpTools": [],
+  "mcpServerNames": []
+}
+</script>
+<html lang="nl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Lancyr Juridische Helpdesk — Dagrapport</title>
+<script src="https://cdn.jsdelivr.net/npm/chart.js@4.5.0/dist/chart.umd.js" integrity="sha384-iU8HYtnGQ8Cy4zl7gbNMOhsDTTKX02BTXptVP/vqAWIaTfM7isw76iyZCsjL2eVi" crossorigin="anonymous"></script>
+<style>
+  :root { color-scheme: light; }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    background: #f5f5f7;
+    color: #1d1d1f;
+    font-size: 14px;
+    line-height: 1.5;
+  }
+
+  /* HEADER */
+  .header {
+    background: #fff;
+    border-bottom: 1px solid #e5e5e5;
+    padding: 14px 24px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: sticky;
+    top: 0;
+    z-index: 10;
+  }
+  .header-left { display: flex; align-items: center; gap: 10px; }
+  .logo {
+    width: 30px; height: 30px;
+    background: #1a1a2e;
+    border-radius: 7px;
+    display: flex; align-items: center; justify-content: center;
+    color: #fff; font-weight: 700; font-size: 13px;
+  }
+  .header h1 { font-size: 14px; font-weight: 600; }
+  .header-date { font-size: 12px; color: #6e6e73; }
+  .header-right { display: flex; align-items: center; gap: 8px; }
+  .btn { background: #f0f0f3; border: none; border-radius: 6px; padding: 5px 12px; font-size: 12px; cursor: pointer; color: #1d1d1f; font-weight: 500; transition: background .15s; }
+  .btn:hover { background: #e0e0e5; }
+  .btn.active { background: #1a1a2e; color: #fff; }
+  .btn-refresh { background: #1a1a2e; color: #fff; }
+  .btn-refresh:hover { opacity: .85; background: #1a1a2e; }
+
+  /* CONTAINER */
+  .container { max-width: 900px; margin: 0 auto; padding: 20px; }
+
+  /* DRUKTE BANNER */
+  .drukte-banner {
+    border-radius: 10px;
+    padding: 14px 20px;
+    margin-bottom: 16px;
+    display: flex;
+    align-items: center;
+    gap: 14px;
+  }
+  .drukte-banner.druk { background: #fde8e8; border: 1px solid #f5c6c6; }
+  .drukte-banner.matig { background: #fff8e1; border: 1px solid #ffe082; }
+  .drukte-banner.rustig { background: #e8f5e9; border: 1px solid #a5d6a7; }
+
+  .drukte-icon { font-size: 24px; }
+  .drukte-label { font-size: 16px; font-weight: 700; }
+  .drukte-sub { font-size: 12px; opacity: .75; margin-top: 1px; }
+  .drukte-banner.druk .drukte-label { color: #c62828; }
+  .drukte-banner.matig .drukte-label { color: #e65100; }
+  .drukte-banner.rustig .drukte-label { color: #2e7d32; }
+
+  /* STATS GRID */
+  .stats-grid {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 10px;
+    margin-bottom: 16px;
+  }
+  .stat-card {
+    background: #fff;
+    border: 1px solid #e5e5e5;
+    border-radius: 10px;
+    padding: 12px 14px;
+    text-align: center;
+  }
+  .stat-card .number { font-size: 24px; font-weight: 700; line-height: 1.2; }
+  .stat-card .label { font-size: 11px; color: #6e6e73; margin-top: 2px; }
+  .stat-card.opgelost .number { color: #2e7d32; }
+  .stat-card.brandmeester .number { color: #1565c0; }
+  .stat-card.afkoop .number { color: #7b1fa2; }
+  .stat-card.terugbel .number { color: #e65100; }
+  .stat-card.geen-dekking .number { color: #6e6e73; }
+
+  /* UITKOMSTEN CHART ROW */
+  .chart-row {
+    background: #fff;
+    border: 1px solid #e5e5e5;
+    border-radius: 10px;
+    padding: 16px 20px;
+    margin-bottom: 16px;
+    display: flex;
+    align-items: center;
+    gap: 24px;
+  }
+  .chart-wrap { width: 140px; height: 140px; flex-shrink: 0; }
+  .chart-legend { flex: 1; display: flex; flex-direction: column; gap: 8px; }
+  .legend-item { display: flex; align-items: center; gap: 8px; }
+  .legend-dot { width: 10px; height: 10px; border-radius: 50%; flex-shrink: 0; }
+  .legend-name { font-size: 12px; flex: 1; }
+  .legend-bar-wrap { width: 100px; background: #f0f0f3; border-radius: 4px; height: 6px; }
+  .legend-bar { height: 6px; border-radius: 4px; }
+  .legend-count { font-size: 12px; font-weight: 600; min-width: 20px; text-align: right; }
+  .chart-title { font-size: 13px; font-weight: 600; margin-bottom: 12px; }
+
+  /* SECTIONS */
+  .section {
+    background: #fff;
+    border: 1px solid #e5e5e5;
+    border-radius: 10px;
+    margin-bottom: 14px;
+    overflow: hidden;
+  }
+  .section-header {
+    padding: 13px 18px;
+    border-bottom: 1px solid #f0f0f0;
+    display: flex; align-items: center; gap: 8px;
+    cursor: pointer; user-select: none;
+  }
+  .section-header:hover { background: #fafafa; }
+  .section-icon { width: 22px; height: 22px; border-radius: 6px; display: flex; align-items: center; justify-content: center; font-size: 12px; flex-shrink: 0; }
+  .section-title { font-size: 13px; font-weight: 600; flex: 1; }
+  .section-count { background: #f0f0f3; border-radius: 20px; padding: 2px 8px; font-size: 11px; font-weight: 600; color: #6e6e73; }
+  .chevron { font-size: 10px; color: #aeaeb2; transition: transform .2s; }
+  .collapsed .chevron { transform: rotate(-90deg); }
+
+  /* LEEG */
+  .empty-state {
+    padding: 40px 20px;
+    text-align: center;
+    color: #6e6e73;
+  }
+  .empty-icon { font-size: 36px; margin-bottom: 10px; }
+  .empty-title { font-size: 15px; font-weight: 600; color: #3a3a3c; margin-bottom: 4px; }
+  .empty-sub { font-size: 13px; }
+</style>
+</head>
+<body>
+
+<div class="header">
+  <div class="header-left">
+    <div class="logo">L</div>
+    <div>
+      <h1>Lancyr Juridische Helpdesk</h1>
+      <div class="header-date" id="header-date">Dagrapport — zondag 31 mei 2026</div>
+    </div>
+  </div>
+  <div class="header-right">
+    <button class="btn" id="btn-gisteren" onclick="switchDay('gisteren')">Gisteren</button>
+    <button class="btn active" id="btn-vandaag" onclick="switchDay('vandaag')">Vandaag</button>
+    <button class="btn btn-refresh" onclick="refresh()">↻ Vernieuwen</button>
+  </div>
+</div>
+
+<div class="container">
+
+  <!-- DRUKTE INDICATOR -->
+  <div class="drukte-banner rustig" id="drukte-banner">
+    <div class="drukte-icon">🟢</div>
+    <div>
+      <div class="drukte-label">Rustige dag</div>
+      <div class="drukte-sub">0 gesprekken — geen Granola-notities gevonden voor vandaag</div>
+    </div>
+  </div>
+
+  <!-- STATS -->
+  <div class="stats-grid">
+    <div class="stat-card opgelost">
+      <div class="number">0</div>
+      <div class="label">Telefonisch opgelost</div>
+    </div>
+    <div class="stat-card brandmeester">
+      <div class="number">0</div>
+      <div class="label">→ Brandmeester</div>
+    </div>
+    <div class="stat-card afkoop">
+      <div class="number">0</div>
+      <div class="label">Afgehandeld / afkoop</div>
+    </div>
+    <div class="stat-card terugbel">
+      <div class="number">0</div>
+      <div class="label">Terugbellen</div>
+    </div>
+    <div class="stat-card geen-dekking">
+      <div class="number">0</div>
+      <div class="label">Geen dekking</div>
+    </div>
+  </div>
+
+  <!-- UITKOMSTEN CHART -->
+  <div class="chart-row">
+    <div>
+      <div class="chart-title">Uitkomsten verdeling</div>
+      <div class="chart-wrap">
+        <canvas id="uitkomstenChart"></canvas>
+      </div>
+    </div>
+    <div class="chart-legend">
+      <div class="legend-item">
+        <div class="legend-dot" style="background:#2e7d32"></div>
+        <div class="legend-name">Telefonisch opgelost</div>
+        <div class="legend-bar-wrap"><div class="legend-bar" style="width:0%;background:#2e7d32"></div></div>
+        <div class="legend-count">0</div>
+      </div>
+      <div class="legend-item">
+        <div class="legend-dot" style="background:#1565c0"></div>
+        <div class="legend-name">→ Brandmeester</div>
+        <div class="legend-bar-wrap"><div class="legend-bar" style="width:0%;background:#1565c0"></div></div>
+        <div class="legend-count">0</div>
+      </div>
+      <div class="legend-item">
+        <div class="legend-dot" style="background:#7b1fa2"></div>
+        <div class="legend-name">Afgehandeld / afkoop</div>
+        <div class="legend-bar-wrap"><div class="legend-bar" style="width:0%;background:#7b1fa2"></div></div>
+        <div class="legend-count">0</div>
+      </div>
+      <div class="legend-item">
+        <div class="legend-dot" style="background:#e65100"></div>
+        <div class="legend-name">Terugbellen</div>
+        <div class="legend-bar-wrap"><div class="legend-bar" style="width:0%;background:#e65100"></div></div>
+        <div class="legend-count">0</div>
+      </div>
+      <div class="legend-item">
+        <div class="legend-dot" style="background:#aeaeb2"></div>
+        <div class="legend-name">Geen dekking</div>
+        <div class="legend-bar-wrap"><div class="legend-bar" style="width:0%;background:#aeaeb2"></div></div>
+        <div class="legend-count">0</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- GESPREKKEN -->
+  <div class="section">
+    <div class="section-header" onclick="toggle(this)">
+      <div class="section-icon" style="background:#e3f2fd;">💬</div>
+      <div class="section-title">Gesprekken vandaag</div>
+      <span class="section-count">0</span>
+      <span class="chevron">▼</span>
+    </div>
+    <div class="section-body">
+      <div class="empty-state">
+        <div class="empty-icon">📭</div>
+        <div class="empty-title">Geen gesprekken vandaag</div>
+        <div class="empty-sub">Er zijn geen Granola-notities gevonden voor zondag 31 mei 2026.</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ACTIEPUNTEN -->
+  <div class="section">
+    <div class="section-header" onclick="toggle(this)">
+      <div class="section-icon" style="background:#fde8e8;">✅</div>
+      <div class="section-title">Actiepunten</div>
+      <span class="section-count">0</span>
+      <span class="chevron">▼</span>
+    </div>
+    <div class="section-body">
+      <div class="empty-state">
+        <div class="empty-icon">✅</div>
+        <div class="empty-title">Geen openstaande actiepunten</div>
+        <div class="empty-sub">Geen gesprekken, geen actiepunten.</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- KWALITEITSANALYSE -->
+  <div class="section">
+    <div class="section-header" onclick="toggle(this)">
+      <div class="section-icon" style="background:#f3e5f5;">📊</div>
+      <div class="section-title">Kwaliteitsanalyse</div>
+      <span class="chevron">▼</span>
+    </div>
+    <div class="section-body">
+      <div class="empty-state">
+        <div class="empty-icon">📊</div>
+        <div class="empty-title">Geen analyse beschikbaar</div>
+        <div class="empty-sub">Geen gesprekken vandaag — kwaliteitsanalyse niet van toepassing.</div>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<script>
+  // Datum
+  const now = new Date();
+  const opties = { weekday: 'long', day: 'numeric', month: 'long', year: 'numeric' };
+  document.getElementById('header-date').textContent = 'Dagrapport — ' + now.toLocaleDateString('nl-NL', opties);
+
+  // Dag switch
+  function switchDay(dag) {
+    document.getElementById('btn-vandaag').classList.toggle('active', dag === 'vandaag');
+    document.getElementById('btn-gisteren').classList.toggle('active', dag === 'gisteren');
+    const d = new Date(now);
+    if (dag === 'gisteren') d.setDate(d.getDate() - 1);
+    document.getElementById('header-date').textContent = 'Dagrapport — ' + d.toLocaleDateString('nl-NL', opties);
+  }
+
+  // Toggle secties
+  function toggle(header) {
+    const body = header.nextElementSibling;
+    const isOpen = body.style.display !== 'none';
+    body.style.display = isOpen ? 'none' : '';
+    header.parentElement.classList.toggle('collapsed', isOpen);
+  }
+
+  // Refresh
+  function refresh() {
+    const btn = event.target;
+    btn.textContent = '↻ Bezig...';
+    btn.disabled = true;
+    setTimeout(() => { btn.textContent = '↻ Vernieuwen'; btn.disabled = false; }, 1500);
+  }
+
+  // Donut chart — lege staat
+  const ctx = document.getElementById('uitkomstenChart').getContext('2d');
+  new Chart(ctx, {
+    type: 'doughnut',
+    data: {
+      labels: ['Geen gesprekken'],
+      datasets: [{
+        data: [1],
+        backgroundColor: ['#e5e5e5'],
+        borderWidth: 0
+      }]
+    },
+    options: {
+      cutout: '68%',
+      plugins: { legend: { display: false }, tooltip: { enabled: false } },
+      animation: { animateRotate: false }
+    }
+  });
+</script>
+</body>
+</html>

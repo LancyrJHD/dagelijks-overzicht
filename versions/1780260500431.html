@@ -1,0 +1,593 @@
+<!DOCTYPE html><script type="application/json" id="cowork-artifact-meta">
+{
+  "name": "Lancyr Dagrapport",
+  "schemaVersion": 1,
+  "description": "Dagelijks overzicht van gesprekken, uitkomsten en kwaliteitsanalyse voor de Lancyr Juridische Helpdesk, gevuld vanuit Granola via de scheduled task.",
+  "mcpTools": [],
+  "mcpServerNames": []
+}
+</script>
+<html lang="nl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Lancyr Juridische Helpdesk — Dagrapport</title>
+<script src="https://cdn.jsdelivr.net/npm/chart.js@4.5.0/dist/chart.umd.js" integrity="sha384-iU8HYtnGQ8Cy4zl7gbNMOhsDTTKX02BTXptVP/vqAWIaTfM7isw76iyZCsjL2eVi" crossorigin="anonymous"></script>
+<style>
+  :root { color-scheme: light; }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; background: #f5f5f7; color: #1d1d1f; font-size: 14px; line-height: 1.5; }
+
+  .header { background: #fff; border-bottom: 1px solid #e5e5e5; padding: 14px 24px; display: flex; align-items: center; justify-content: space-between; position: sticky; top: 0; z-index: 10; }
+  .header-left { display: flex; align-items: center; gap: 10px; }
+  .logo { width: 30px; height: 30px; background: #1a1a2e; border-radius: 7px; display: flex; align-items: center; justify-content: center; color: #fff; font-weight: 700; font-size: 13px; }
+  .header h1 { font-size: 14px; font-weight: 600; }
+  .header-date { font-size: 12px; color: #6e6e73; }
+  .header-right { display: flex; align-items: center; gap: 6px; }
+  .btn { background: #f0f0f3; border: none; border-radius: 6px; padding: 5px 12px; font-size: 12px; cursor: pointer; color: #1d1d1f; font-weight: 500; transition: background .15s; }
+  .btn:hover { background: #e0e0e5; }
+  .btn.active { background: #1a1a2e; color: #fff; }
+  .btn-refresh { background: #1a1a2e; color: #fff; margin-left: 6px; }
+  .btn-refresh:hover { opacity: .85; }
+
+  .container { max-width: 920px; margin: 0 auto; padding: 20px; }
+
+  /* DRUKTE */
+  .drukte-banner { border-radius: 10px; padding: 14px 20px; margin-bottom: 16px; display: flex; align-items: center; gap: 14px; }
+  .drukte-banner.druk { background: #fde8e8; border: 1px solid #f5c6c6; }
+  .drukte-banner.matig { background: #fff8e1; border: 1px solid #ffe082; }
+  .drukte-banner.rustig { background: #e8f5e9; border: 1px solid #a5d6a7; }
+  .drukte-icon { font-size: 24px; }
+  .drukte-label { font-size: 16px; font-weight: 700; }
+  .drukte-sub { font-size: 12px; opacity: .75; margin-top: 1px; }
+  .drukte-banner.druk .drukte-label { color: #c62828; }
+  .drukte-banner.matig .drukte-label { color: #e65100; }
+  .drukte-banner.rustig .drukte-label { color: #2e7d32; }
+
+  /* STATS */
+  .stats-grid { display: grid; grid-template-columns: repeat(5, 1fr); gap: 10px; margin-bottom: 16px; }
+  .stat-card { background: #fff; border: 1px solid #e5e5e5; border-radius: 10px; padding: 12px 14px; text-align: center; }
+  .stat-card .number { font-size: 24px; font-weight: 700; line-height: 1.2; }
+  .stat-card .label { font-size: 11px; color: #6e6e73; margin-top: 2px; }
+  .stat-card.opgelost .number { color: #2e7d32; }
+  .stat-card.brandmeester .number { color: #1565c0; }
+  .stat-card.afkoop .number { color: #7b1fa2; }
+  .stat-card.terugbel .number { color: #e65100; }
+  .stat-card.geen-dekking .number { color: #6e6e73; }
+
+  /* CHART */
+  .chart-row { background: #fff; border: 1px solid #e5e5e5; border-radius: 10px; padding: 16px 20px; margin-bottom: 16px; display: flex; align-items: center; gap: 24px; }
+  .chart-wrap { width: 140px; height: 140px; flex-shrink: 0; }
+  .chart-legend { flex: 1; display: flex; flex-direction: column; gap: 8px; }
+  .legend-item { display: flex; align-items: center; gap: 8px; }
+  .legend-dot { width: 10px; height: 10px; border-radius: 50%; flex-shrink: 0; }
+  .legend-name { font-size: 12px; flex: 1; }
+  .legend-bar-wrap { width: 100px; background: #f0f0f3; border-radius: 4px; height: 6px; }
+  .legend-bar { height: 6px; border-radius: 4px; transition: width .4s ease; }
+  .legend-count { font-size: 12px; font-weight: 600; min-width: 20px; text-align: right; }
+  .chart-title { font-size: 13px; font-weight: 600; margin-bottom: 12px; }
+
+  /* WEEK TABEL */
+  .week-table { background: #fff; border: 1px solid #e5e5e5; border-radius: 10px; margin-bottom: 16px; overflow: hidden; }
+  .week-table-header { display: grid; grid-template-columns: 120px repeat(5, 1fr) 60px; padding: 10px 16px; border-bottom: 1px solid #f0f0f0; font-size: 11px; font-weight: 700; color: #6e6e73; text-transform: uppercase; letter-spacing: .4px; }
+  .week-row { display: grid; grid-template-columns: 120px repeat(5, 1fr) 60px; padding: 10px 16px; border-bottom: 1px solid #f5f5f7; align-items: center; font-size: 13px; cursor: pointer; transition: background .1s; }
+  .week-row:last-child { border-bottom: none; }
+  .week-row:hover { background: #fafafa; }
+  .week-row.today { background: #f0f4ff; }
+  .week-day { font-weight: 600; }
+  .week-day .date-sub { font-size: 11px; color: #6e6e73; font-weight: 400; }
+  .week-num { text-align: center; font-weight: 600; }
+  .week-num.green { color: #2e7d32; }
+  .week-num.blue { color: #1565c0; }
+  .week-num.purple { color: #7b1fa2; }
+  .week-num.orange { color: #e65100; }
+  .week-num.gray { color: #aeaeb2; }
+  .week-score { text-align: right; font-weight: 700; font-size: 12px; }
+  .week-score.high { color: #2e7d32; }
+  .week-score.mid { color: #e65100; }
+  .week-score.low { color: #c62828; }
+  .week-empty { color: #aeaeb2; font-size: 12px; font-style: italic; }
+  .week-totals { display: grid; grid-template-columns: 120px repeat(5, 1fr) 60px; padding: 10px 16px; border-top: 2px solid #e5e5e5; background: #fafafa; font-size: 12px; font-weight: 700; }
+
+  /* SECTIONS */
+  .section { background: #fff; border: 1px solid #e5e5e5; border-radius: 10px; margin-bottom: 14px; overflow: hidden; }
+  .section-header { padding: 13px 18px; border-bottom: 1px solid #f0f0f0; display: flex; align-items: center; gap: 8px; cursor: pointer; user-select: none; }
+  .section-header:hover { background: #fafafa; }
+  .section-icon { width: 22px; height: 22px; border-radius: 6px; display: flex; align-items: center; justify-content: center; font-size: 12px; flex-shrink: 0; }
+  .section-title { font-size: 13px; font-weight: 600; flex: 1; }
+  .section-count { background: #f0f0f3; border-radius: 20px; padding: 2px 8px; font-size: 11px; font-weight: 600; color: #6e6e73; }
+  .chevron { font-size: 10px; color: #aeaeb2; transition: transform .2s; }
+  .collapsed .chevron { transform: rotate(-90deg); }
+
+  /* DAG HEADER in weekoverzicht */
+  .dag-header { padding: 10px 18px; background: #f5f5f7; border-bottom: 1px solid #eeeeee; font-size: 12px; font-weight: 700; color: #6e6e73; text-transform: uppercase; letter-spacing: .4px; display: flex; justify-content: space-between; align-items: center; }
+  .dag-header .dag-score { font-weight: 700; color: #1d1d1f; }
+
+  /* GESPREKKEN */
+  .conv-item { padding: 14px 18px; border-bottom: 1px solid #f5f5f7; display: grid; grid-template-columns: 56px 1fr; gap: 12px; }
+  .conv-item:last-child { border-bottom: none; }
+  .conv-time { font-size: 12px; color: #6e6e73; padding-top: 1px; font-variant-numeric: tabular-nums; }
+  .conv-title { font-size: 13px; font-weight: 600; margin-bottom: 2px; }
+  .conv-persons { font-size: 12px; color: #6e6e73; margin-bottom: 6px; }
+  .conv-summary { font-size: 13px; color: #3a3a3c; line-height: 1.55; margin-bottom: 8px; }
+  .conv-footer { display: flex; flex-wrap: wrap; align-items: center; gap: 6px; }
+  .tag { display: inline-block; padding: 2px 8px; border-radius: 20px; font-size: 11px; font-weight: 500; }
+  .tag-consument { background: #fce4ec; color: #c62828; }
+  .tag-bestuursrecht { background: #e8eaf6; color: #283593; }
+  .tag-overig { background: #f5f5f5; color: #6e6e73; }
+  .tag-arbeidsrecht { background: #e3f2fd; color: #1565c0; }
+  .tag-huur { background: #e0f7fa; color: #006064; }
+  .tag-bouw { background: #fff3e0; color: #e65100; }
+  .tag-contract { background: #e8f5e9; color: #2e7d32; }
+  .tag-avg { background: #f3e5f5; color: #7b1fa2; }
+  .outcome-badge { display: inline-flex; align-items: center; gap: 4px; padding: 3px 10px; border-radius: 20px; font-size: 11px; font-weight: 600; margin-left: auto; }
+  .outcome-opgelost { background: #e8f5e9; color: #2e7d32; }
+  .outcome-brandmeester { background: #e3f2fd; color: #1565c0; }
+  .outcome-afkoop { background: #f3e5f5; color: #7b1fa2; }
+  .outcome-terugbel { background: #fff3e0; color: #e65100; }
+  .outcome-geen-dekking { background: #f5f5f5; color: #6e6e73; }
+
+  /* ACTIEPUNTEN */
+  .action-item { padding: 11px 18px; border-bottom: 1px solid #f5f5f7; display: flex; align-items: flex-start; gap: 10px; }
+  .action-item:last-child { border-bottom: none; }
+  .prio-dot { width: 7px; height: 7px; border-radius: 50%; flex-shrink: 0; margin-top: 5px; }
+  .prio-hoog { background: #c62828; } .prio-middel { background: #e65100; } .prio-laag { background: #aeaeb2; }
+  .check-box { width: 15px; height: 15px; border: 2px solid #d1d1d6; border-radius: 4px; flex-shrink: 0; margin-top: 1px; cursor: pointer; transition: all .15s; display: flex; align-items: center; justify-content: center; font-size: 9px; }
+  .check-box:hover { border-color: #1a1a2e; }
+  .check-box.done { background: #1a1a2e; border-color: #1a1a2e; color: #fff; }
+  .action-text { font-size: 13px; flex: 1; }
+  .action-text.done-text { text-decoration: line-through; color: #aeaeb2; }
+  .action-meta { display: flex; gap: 10px; margin-top: 2px; }
+  .action-owner { font-size: 11px; color: #6e6e73; }
+  .dl-urgent { font-size: 11px; font-weight: 500; color: #c62828; }
+  .dl-soon { font-size: 11px; font-weight: 500; color: #e65100; }
+  .dl-ok { font-size: 11px; font-weight: 500; color: #2e7d32; }
+
+  /* ANALYSE */
+  .analyse-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; padding: 16px 18px; }
+  .analyse-col-title { font-size: 12px; font-weight: 700; text-transform: uppercase; letter-spacing: .5px; margin-bottom: 10px; display: flex; align-items: center; gap: 6px; }
+  .analyse-col-title.goed { color: #2e7d32; } .analyse-col-title.beter { color: #c62828; }
+  .analyse-point { display: flex; gap: 8px; margin-bottom: 9px; font-size: 13px; line-height: 1.5; }
+  .analyse-icon { flex-shrink: 0; margin-top: 1px; }
+  .analyse-text { color: #3a3a3c; }
+  .analyse-divider { height: 1px; background: #f0f0f0; margin: 0 18px 16px; }
+  .analyse-score { padding: 0 18px 16px; display: flex; align-items: center; gap: 10px; }
+  .score-label { font-size: 12px; color: #6e6e73; }
+  .score-bar-wrap { flex: 1; height: 8px; background: #f0f0f3; border-radius: 4px; overflow: hidden; }
+  .score-bar { height: 8px; border-radius: 4px; background: linear-gradient(90deg, #2e7d32, #66bb6a); }
+  .score-num { font-size: 13px; font-weight: 700; color: #2e7d32; min-width: 32px; text-align: right; }
+
+  .hidden { display: none !important; }
+</style>
+</head>
+<body>
+
+<div class="header">
+  <div class="header-left">
+    <div class="logo">L</div>
+    <div>
+      <h1>Lancyr Juridische Helpdesk</h1>
+      <div class="header-date" id="header-date">Dagrapport</div>
+    </div>
+  </div>
+  <div class="header-right">
+    <button class="btn" id="btn-week" onclick="setView('week')">Deze week</button>
+    <button class="btn" id="btn-gisteren" onclick="setView('gisteren')">Gisteren</button>
+    <button class="btn active" id="btn-vandaag" onclick="setView('vandaag')">Vandaag</button>
+    <button class="btn btn-refresh" onclick="refresh()">↻</button>
+  </div>
+</div>
+
+<div class="container" id="app"></div>
+
+<script>
+// ─── DATA ────────────────────────────────────────────────────────────────────
+const weekData = {
+  "2026-05-28": {
+    drukte: "rustig",
+    gesprekken: 3,
+    stats: { opgelost: 2, brandmeester: 0, afkoop: 0, terugbel: 1, geenDekking: 0 },
+    score: 7.0,
+    conversations: [
+      {
+        tijd: "13:25",
+        titel: "Kinderwagen defect — non-conformiteit Mutsy, linker wiel blokkeert",
+        personen: "Verzekerde: anoniem · Wouter Toonen",
+        samenvatting: "Verzekerde heeft kinderwagen van ~€450 gekocht bij Mutsy. Linker wiel blokkeert gevaarlijk. Meerdere mails gestuurd (feb–mei), Mutsy reageert niet meer. Schade €450 > franchise €250, dekking aanwezig. Advies: aangetekende ingebrekestelling via juridisch loket (7 werkdagen), primair reparatie, subsidiair terugbetaling. KVK voor postadres.",
+        tags: [["tag-consument","Consumentenrecht"]],
+        uitkomst: ["outcome-opgelost","Telefonisch opgelost"]
+      },
+      {
+        tijd: "13:48",
+        titel: "Parkeervergunning — stallingsplaats telt als vergunning, bezwaar niet kansrijk",
+        personen: "Verzekerde: Fernando · Wouter Toonen",
+        samenvatting: "Fernando heeft één auto maar stallingsplaats voldoet aan gemeentelijke afmetingen (≥2,35m × 5m) en telt als parkeervergunning. Geen extra straatvergunning mogelijk. Gelijkheidsbeginsel gaat niet op: vorige eigenaar had twee auto's. Conclusie: procedure niet kansrijk. Fernando stuurt bevestiging stallingsplaats-maten per mail voor definitieve beoordeling.",
+        tags: [["tag-bestuursrecht","Bestuursrecht"]],
+        uitkomst: ["outcome-terugbel","Terugbellen"]
+      },
+      {
+        tijd: "14:31",
+        titel: "VCO-procedure + gezinssamenstelling update — Balmeese",
+        personen: "Verzekerde: Balmeese · Wouter Toonen",
+        samenvatting: "VCO-aanvraag wordt doorgestuurd naar de verzekeraar; polischeck loopt nog. Bijkomend: gezinssamenstelling staat als 'alleenstaand' maar is veranderd. Wouter legt uit dat aanpassing via website of mail moet — juridische afdeling kan dit niet direct wijzigen.",
+        tags: [["tag-overig","Verzekeringsrecht"]],
+        uitkomst: ["outcome-opgelost","Telefonisch opgelost"]
+      }
+    ],
+    acties: [
+      { prio: "prio-middel", tekst: "Terugbellen Fernando zodra hij bevestiging stallingsplaats-afmetingen + 1 auto per mail stuurt", eigenaar: "Wouter Toonen", deadline: "dl-soon", deadlineTekst: "Wachten op mail Fernando" },
+      { prio: "prio-laag", tekst: "Controleren of Balmeese gezinssamenstelling via portal heeft bijgewerkt (optioneel follow-up)", eigenaar: "Wouter Toonen", deadline: "dl-ok", deadlineTekst: "Geen harde deadline" }
+    ],
+    analyse: {
+      goed: [
+        "Franchise correct gecheckt bij kinderwagenzaak (€450 > €250) — dekking terecht vastgesteld.",
+        "Concreet stappenplan bij non-conformiteit: ingebrekestelling met 7 werkdagen, aangetekend, KVK voor adres.",
+        "Parkeervergunning Fernando juridisch correct beoordeeld: gelijkheidsbeginsel niet van toepassing, stallingsplaats-logica helder toegelicht."
+      ],
+      beter: [
+        "Parkeervergunning Fernando: gesprek duurde lang voor een conclusie die uiteindelijk 'niet kansrijk' was — eerder koers zetten richting afsluiting had efficiënter geweest.",
+        "VCO Balmeese: franchise en polisdekking niet expliciet gedocumenteerd — altijd dekkingscontrole bevestigen voor het archief.",
+        "Kinderwagenzaak: niet gevraagd of verzekerde de correspondentie met Mutsy beschikbaar heeft voor het dossier."
+      ]
+    }
+  },
+  "2026-05-31": {
+    drukte: "rustig",
+    gesprekken: 0,
+    stats: { opgelost: 0, brandmeester: 0, afkoop: 0, terugbel: 0, geenDekking: 0 },
+    score: 0,
+    conversations: [],
+    acties: [],
+    analyse: {
+      goed: [],
+      beter: []
+    }
+  }
+  // Volgende dagen worden hier toegevoegd door de scheduled task
+};
+
+// ─── HELPERS ─────────────────────────────────────────────────────────────────
+const DAYS_NL = ["zondag","maandag","dinsdag","woensdag","donderdag","vrijdag","zaterdag"];
+const MONTHS_NL = ["januari","februari","maart","april","mei","juni","juli","augustus","september","oktober","november","december"];
+const COLORS = { opgelost:"#2e7d32", brandmeester:"#1565c0", afkoop:"#7b1fa2", terugbel:"#e65100", geenDekking:"#aeaeb2" };
+
+function dateKey(d) {
+  return d.toISOString().slice(0,10);
+}
+function formatDate(key) {
+  const d = new Date(key + "T12:00:00");
+  return `${DAYS_NL[d.getDay()]} ${d.getDate()} ${MONTHS_NL[d.getMonth()]}`;
+}
+function getWeekKeys() {
+  const today = new Date(); today.setHours(12,0,0,0);
+  const dow = today.getDay(); // 0=zo
+  const monday = new Date(today); monday.setDate(today.getDate() - (dow === 0 ? 6 : dow - 1));
+  const keys = [];
+  for (let i = 0; i < 7; i++) {
+    const d = new Date(monday); d.setDate(monday.getDate() + i);
+    if (d <= today) keys.push(dateKey(d));
+  }
+  return keys;
+}
+
+let chart = null;
+
+function drukteBadge(d) {
+  if (!d) return { cls: "rustig", icon: "—", label: "Geen data", sub: "" };
+  if (d.gesprekken === 0) return { cls: "rustig", icon: "😴", label: "Geen gesprekken", sub: "Geen Granola-gesprekken gevonden voor vandaag." };
+  if (d.drukte === "druk")   return { cls: "druk",   icon: "🔥", label: "Drukke dag",    sub: `${d.gesprekken} gesprekken — boven de norm van 6` };
+  if (d.drukte === "matig")  return { cls: "matig",  icon: "🟡", label: "Gemiddelde dag", sub: `${d.gesprekken} gesprekken` };
+  return                            { cls: "rustig", icon: "🟢", label: "Rustige dag",    sub: `${d.gesprekken} gesprekken — onder de norm van 4` };
+}
+
+function buildStats(stats) {
+  return `
+  <div class="stats-grid">
+    <div class="stat-card opgelost"><div class="number">${stats.opgelost}</div><div class="label">Telefonisch opgelost</div></div>
+    <div class="stat-card brandmeester"><div class="number">${stats.brandmeester}</div><div class="label">→ Brandmeester</div></div>
+    <div class="stat-card afkoop"><div class="number">${stats.afkoop}</div><div class="label">Afgehandeld / afkoop</div></div>
+    <div class="stat-card terugbel"><div class="number">${stats.terugbel}</div><div class="label">Terugbellen</div></div>
+    <div class="stat-card geen-dekking"><div class="number">${stats.geenDekking}</div><div class="label">Geen dekking</div></div>
+  </div>`;
+}
+
+function buildChart(stats) {
+  const total = Object.values(stats).reduce((a,b) => a+b, 0) || 1;
+  const pct = (n) => Math.round(n/total*100);
+  return `
+  <div class="chart-row">
+    <div>
+      <div class="chart-title">Uitkomsten verdeling</div>
+      <div class="chart-wrap"><canvas id="uitkomstenChart"></canvas></div>
+    </div>
+    <div class="chart-legend">
+      ${[
+        ["#2e7d32","Telefonisch opgelost",stats.opgelost],
+        ["#1565c0","→ Brandmeester",stats.brandmeester],
+        ["#7b1fa2","Afgehandeld / afkoop",stats.afkoop],
+        ["#e65100","Terugbellen",stats.terugbel],
+        ["#aeaeb2","Geen dekking",stats.geenDekking]
+      ].map(([col,name,n]) => `
+        <div class="legend-item">
+          <div class="legend-dot" style="background:${col}"></div>
+          <div class="legend-name">${name}</div>
+          <div class="legend-bar-wrap"><div class="legend-bar" style="width:${pct(n)}%;background:${col}"></div></div>
+          <div class="legend-count">${n}</div>
+        </div>`).join("")}
+    </div>
+  </div>`;
+}
+
+function initChart(stats) {
+  const canvas = document.getElementById("uitkomstenChart");
+  if (!canvas) return;
+  if (chart) { chart.destroy(); chart = null; }
+  chart = new Chart(canvas.getContext("2d"), {
+    type: "doughnut",
+    data: {
+      labels: ["Opgelost","→ Brandmeester","Afkoop","Terugbellen","Geen dekking"],
+      datasets: [{ data: [stats.opgelost,stats.brandmeester,stats.afkoop,stats.terugbel,stats.geenDekking], backgroundColor: Object.values(COLORS), borderWidth: 2, borderColor: "#fff" }]
+    },
+    options: { cutout: "68%", plugins: { legend: { display: false }, tooltip: { callbacks: { label: c => ` ${c.label}: ${c.raw}` }}}, animation: { animateRotate: true }}
+  });
+}
+
+function buildConversations(convs, showDagHeader = false, dagLabel = "", dagScore = null) {
+  if (!convs || convs.length === 0) return `<div style="padding:16px 18px;color:#aeaeb2;font-size:13px;">Geen gesprekken geregistreerd.</div>`;
+  let html = "";
+  if (showDagHeader) {
+    html += `<div class="dag-header"><span>${dagLabel}</span>${dagScore !== null ? `<span class="dag-score">⭐ ${dagScore.toFixed(1)}/10</span>` : ""}</div>`;
+  }
+  html += convs.map(c => `
+    <div class="conv-item">
+      <div class="conv-time">${c.tijd}</div>
+      <div>
+        <div class="conv-title">${c.titel}</div>
+        <div class="conv-persons">${c.personen}</div>
+        <div class="conv-summary">${c.samenvatting}</div>
+        <div class="conv-footer">
+          ${c.tags.map(([cls,lbl]) => `<span class="tag ${cls}">${lbl}</span>`).join("")}
+          <span class="outcome-badge ${c.uitkomst[0]}">${c.uitkomst[1]}</span>
+        </div>
+      </div>
+    </div>`).join("");
+  return html;
+}
+
+function buildActies(acties) {
+  if (!acties || acties.length === 0) return `<div style="padding:16px 18px;color:#aeaeb2;font-size:13px;">Geen openstaande actiepunten.</div>`;
+  return acties.map((a,i) => `
+    <div class="action-item">
+      <div class="prio-dot ${a.prio}"></div>
+      <div class="check-box" onclick="toggleCheck(this)" id="chk-${i}"></div>
+      <div class="action-content">
+        <div class="action-text">${a.tekst}</div>
+        <div class="action-meta">
+          <span class="action-owner">👤 ${a.eigenaar}</span>
+          <span class="${a.deadline}">⏰ ${a.deadlineTekst}</span>
+        </div>
+      </div>
+    </div>`).join("");
+}
+
+function buildAnalyse(analyse, score) {
+  return `
+    <div class="analyse-score">
+      <div class="score-label">Dagkwaliteit</div>
+      <div class="score-bar-wrap"><div class="score-bar" style="width:${score*10}%"></div></div>
+      <div class="score-num">${score > 0 ? score.toFixed(1) + ' / 10' : '—'}</div>
+    </div>
+    <div class="analyse-divider"></div>
+    <div class="analyse-grid">
+      <div class="analyse-col">
+        <div class="analyse-col-title goed">✅ Wat ging goed</div>
+        ${analyse.goed.length ? analyse.goed.map(t => `<div class="analyse-point"><div class="analyse-icon">✓</div><div class="analyse-text">${t}</div></div>`).join("") : '<div style="color:#aeaeb2;font-size:13px;">Geen data.</div>'}
+      </div>
+      <div class="analyse-col">
+        <div class="analyse-col-title beter">⚠️ Wat kon beter</div>
+        ${analyse.beter.length ? analyse.beter.map(t => `<div class="analyse-point"><div class="analyse-icon">!</div><div class="analyse-text">${t}</div></div>`).join("") : '<div style="color:#aeaeb2;font-size:13px;">Geen data.</div>'}
+      </div>
+    </div>`;
+}
+
+// ─── VIEWS ───────────────────────────────────────────────────────────────────
+function renderDay(key, headerLabel) {
+  const d = weekData[key];
+  const app = document.getElementById("app");
+  document.getElementById("header-date").textContent = headerLabel;
+
+  if (!d) {
+    app.innerHTML = `<div style="padding:40px;text-align:center;color:#aeaeb2;font-size:13px;">Geen data beschikbaar voor ${formatDate(key)}.</div>`;
+    return;
+  }
+
+  const db = drukteBadge(d);
+  app.innerHTML = `
+    <div class="drukte-banner ${db.cls}">
+      <div class="drukte-icon">${db.icon}</div>
+      <div><div class="drukte-label">${db.label}</div><div class="drukte-sub">${db.sub}</div></div>
+    </div>
+    ${buildStats(d.stats)}
+    ${buildChart(d.stats)}
+    <div class="section">
+      <div class="section-header" onclick="toggle(this)">
+        <div class="section-icon" style="background:#e3f2fd;">💬</div>
+        <div class="section-title">Gesprekken</div>
+        <span class="section-count">${d.gesprekken}</span>
+        <span class="chevron">▼</span>
+      </div>
+      <div class="section-body">${buildConversations(d.conversations)}</div>
+    </div>
+    <div class="section">
+      <div class="section-header" onclick="toggle(this)">
+        <div class="section-icon" style="background:#e8f5e9;">✅</div>
+        <div class="section-title">Actiepunten</div>
+        <span class="section-count">${d.acties.length}</span>
+        <span class="chevron">▼</span>
+      </div>
+      <div class="section-body">${buildActies(d.acties)}</div>
+    </div>
+    <div class="section">
+      <div class="section-header" onclick="toggle(this)">
+        <div class="section-icon" style="background:#f3e5f5;">📊</div>
+        <div class="section-title">Kwaliteitsanalyse</div>
+        <span class="chevron">▼</span>
+      </div>
+      <div class="section-body">${buildAnalyse(d.analyse, d.score)}</div>
+    </div>`;
+
+  initChart(d.stats);
+}
+
+function renderWeek() {
+  document.getElementById("header-date").textContent = "Weekoverzicht";
+  const keys = getWeekKeys();
+  const todayKey = dateKey(new Date());
+
+  // Bereken totalen
+  const totals = { opgelost:0, brandmeester:0, afkoop:0, terugbel:0, geenDekking:0 };
+  let totalGesprekken = 0, scoreSum = 0, scoreDays = 0;
+  keys.forEach(k => {
+    const d = weekData[k];
+    if (d && d.gesprekken > 0) {
+      totals.opgelost += d.stats.opgelost; totals.brandmeester += d.stats.brandmeester;
+      totals.afkoop += d.stats.afkoop; totals.terugbel += d.stats.terugbel; totals.geenDekking += d.stats.geenDekking;
+      totalGesprekken += d.gesprekken; scoreSum += d.score; scoreDays++;
+    }
+  });
+  const avgScore = scoreDays > 0 ? (scoreSum / scoreDays) : null;
+
+  // Weekoverzicht tabel
+  const DAGNAMEN = ["Ma","Di","Wo","Do","Vr","Za","Zo"];
+  const tableRows = keys.map(k => {
+    const d = weekData[k];
+    const dateObj = new Date(k + "T12:00:00");
+    const dagNaam = DAGNAMEN[dateObj.getDay() === 0 ? 6 : dateObj.getDay() - 1];
+    const dagNum = `${dateObj.getDate()} ${MONTHS_NL[dateObj.getMonth()]}`;
+    const isToday = k === todayKey;
+    if (!d || d.gesprekken === 0) return `<div class="week-row${isToday?" today":""}">
+      <div class="week-day">${dagNaam}${isToday?" 🔵":""}<div class="date-sub">${dagNum}</div></div>
+      <div class="week-empty" style="grid-column:2/8">${d ? "Geen gesprekken" : "Geen data"}</div>
+    </div>`;
+    const scoreClass = d.score >= 8 ? "high" : d.score >= 6.5 ? "mid" : "low";
+    return `<div class="week-row${isToday?" today":""}">
+      <div class="week-day">${dagNaam}${isToday?" 🔵":""}<div class="date-sub">${dagNum}</div></div>
+      <div class="week-num green">${d.stats.opgelost}</div>
+      <div class="week-num blue">${d.stats.brandmeester}</div>
+      <div class="week-num purple">${d.stats.afkoop}</div>
+      <div class="week-num orange">${d.stats.terugbel}</div>
+      <div class="week-num gray">${d.stats.geenDekking}</div>
+      <div class="week-score ${scoreClass}">${d.score.toFixed(1)}</div>
+    </div>`;
+  }).join("");
+
+  // Alle gesprekken per dag
+  const allConvs = keys.map(k => {
+    const d = weekData[k];
+    if (!d || !d.conversations || d.conversations.length === 0) return "";
+    return buildConversations(d.conversations, true, formatDate(k), d.score);
+  }).join("");
+
+  // Alle openstaande acties
+  const allActies = keys.flatMap(k => weekData[k]?.acties || []);
+
+  const app = document.getElementById("app");
+  app.innerHTML = `
+    <div class="drukte-banner rustig" style="background:#e8f0fe;border-color:#c5d8fd;">
+      <div class="drukte-icon">📅</div>
+      <div>
+        <div class="drukte-label" style="color:#1a1a2e;">Week totaal — ${totalGesprekken} gesprekken</div>
+        <div class="drukte-sub">${keys.length} dagen · ${scoreDays} dag(en) met data${avgScore !== null ? ` · gem. score ${avgScore.toFixed(1)}/10` : ""}</div>
+      </div>
+    </div>
+
+    <!-- WEEK TABEL -->
+    <div class="week-table">
+      <div class="week-table-header">
+        <div>Dag</div>
+        <div style="text-align:center;color:#2e7d32">✅ Opgelost</div>
+        <div style="text-align:center;color:#1565c0">⚖️ Brandm.</div>
+        <div style="text-align:center;color:#7b1fa2">🤝 Afkoop</div>
+        <div style="text-align:center;color:#e65100">📞 Terug</div>
+        <div style="text-align:center;color:#aeaeb2">🚫 Geen</div>
+        <div style="text-align:right">Score</div>
+      </div>
+      ${tableRows}
+      <div class="week-totals">
+        <div>Totaal</div>
+        <div style="text-align:center;color:#2e7d32">${totals.opgelost}</div>
+        <div style="text-align:center;color:#1565c0">${totals.brandmeester}</div>
+        <div style="text-align:center;color:#7b1fa2">${totals.afkoop}</div>
+        <div style="text-align:center;color:#e65100">${totals.terugbel}</div>
+        <div style="text-align:center;color:#aeaeb2">${totals.geenDekking}</div>
+        <div style="text-align:right">${avgScore !== null ? avgScore.toFixed(1) : "—"}</div>
+      </div>
+    </div>
+
+    ${buildStats(totals)}
+    ${buildChart(totals)}
+
+    <div class="section">
+      <div class="section-header" onclick="toggle(this)">
+        <div class="section-icon" style="background:#e3f2fd;">💬</div>
+        <div class="section-title">Alle gesprekken deze week</div>
+        <span class="section-count">${totalGesprekken}</span>
+        <span class="chevron">▼</span>
+      </div>
+      <div class="section-body">${allConvs || '<div style="padding:16px 18px;color:#aeaeb2;font-size:13px;">Nog geen gesprekken deze week.</div>'}</div>
+    </div>
+
+    <div class="section">
+      <div class="section-header" onclick="toggle(this)">
+        <div class="section-icon" style="background:#e8f5e9;">✅</div>
+        <div class="section-title">Openstaande actiepunten</div>
+        <span class="section-count">${allActies.length}</span>
+        <span class="chevron">▼</span>
+      </div>
+      <div class="section-body">${buildActies(allActies)}</div>
+    </div>`;
+
+  initChart(totals);
+}
+
+// ─── NAVIGATIE ───────────────────────────────────────────────────────────────
+let currentView = "vandaag";
+
+function setView(v) {
+  currentView = v;
+  ["vandaag","gisteren","week"].forEach(x => document.getElementById("btn-"+x).classList.toggle("active", x===v));
+  const today = new Date(); today.setHours(12,0,0,0);
+  const yesterday = new Date(today); yesterday.setDate(today.getDate() - 1);
+
+  if (v === "vandaag") {
+    renderDay(dateKey(today), "Vandaag — " + formatDate(dateKey(today)));
+  } else if (v === "gisteren") {
+    renderDay(dateKey(yesterday), "Gisteren — " + formatDate(dateKey(yesterday)));
+  } else {
+    renderWeek();
+  }
+}
+
+function toggle(header) {
+  const body = header.nextElementSibling;
+  const isOpen = body.style.display !== "none";
+  body.style.display = isOpen ? "none" : "";
+  header.parentElement.classList.toggle("collapsed", isOpen);
+}
+
+function toggleCheck(el) {
+  el.classList.toggle("done");
+  el.textContent = el.classList.contains("done") ? "✓" : "";
+  const txt = el.closest(".action-item").querySelector(".action-text");
+  if (txt) txt.classList.toggle("done-text", el.classList.contains("done"));
+}
+
+function refresh() {
+  setView(currentView);
+}
+
+// Init
+setView("vandaag");
+</script>
+</body>
+</html>

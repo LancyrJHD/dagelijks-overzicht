@@ -1,0 +1,1034 @@
+<!DOCTYPE html><script type="application/json" id="cowork-artifact-meta">
+{
+  "name": "Lancyr Dagrapport",
+  "schemaVersion": 1,
+  "description": "Dagelijks overzicht van gesprekken, uitkomsten en kwaliteitsanalyse voor de Lancyr Juridische Helpdesk, gevuld vanuit Granola via de scheduled task.",
+  "mcpTools": [],
+  "mcpServerNames": []
+}
+</script>
+<html lang="nl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Lancyr Juridische Helpdesk — Dagrapport</title>
+<script src="https://cdn.jsdelivr.net/npm/chart.js@4.5.0/dist/chart.umd.js" integrity="sha384-iU8HYtnGQ8Cy4zl7gbNMOhsDTTKX02BTXptVP/vqAWIaTfM7isw76iyZCsjL2eVi" crossorigin="anonymous"></script>
+<style>
+  :root { color-scheme: light; }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; background: #f5f5f7; color: #1d1d1f; font-size: 14px; line-height: 1.5; }
+
+  .header { background: #fff; border-bottom: 1px solid #e5e5e5; padding: 14px 24px; display: flex; align-items: center; justify-content: space-between; position: sticky; top: 0; z-index: 10; }
+  .header-left { display: flex; align-items: center; gap: 10px; }
+  .logo { width: 30px; height: 30px; background: #1a1a2e; border-radius: 7px; display: flex; align-items: center; justify-content: center; color: #fff; font-weight: 700; font-size: 13px; }
+  .header h1 { font-size: 14px; font-weight: 600; }
+  .header-date { font-size: 12px; color: #6e6e73; }
+  .header-right { display: flex; align-items: center; gap: 6px; }
+  .btn { background: #f0f0f3; border: none; border-radius: 6px; padding: 5px 12px; font-size: 12px; cursor: pointer; color: #1d1d1f; font-weight: 500; transition: background .15s; }
+  .btn:hover { background: #e0e0e5; }
+  .btn.active { background: #1a1a2e; color: #fff; }
+  .btn-refresh { background: #1a1a2e; color: #fff; margin-left: 6px; }
+  .btn-refresh:hover { opacity: .85; }
+
+  .container { max-width: 920px; margin: 0 auto; padding: 20px; }
+
+  .drukte-banner { border-radius: 10px; padding: 14px 20px; margin-bottom: 16px; display: flex; align-items: center; gap: 14px; }
+  .drukte-banner.druk { background: #fde8e8; border: 1px solid #f5c6c6; }
+  .drukte-banner.matig { background: #fff8e1; border: 1px solid #ffe082; }
+  .drukte-banner.rustig { background: #e8f5e9; border: 1px solid #a5d6a7; }
+  .drukte-icon { font-size: 24px; }
+  .drukte-label { font-size: 16px; font-weight: 700; }
+  .drukte-sub { font-size: 12px; opacity: .75; margin-top: 1px; }
+  .drukte-banner.druk .drukte-label { color: #c62828; }
+  .drukte-banner.matig .drukte-label { color: #e65100; }
+  .drukte-banner.rustig .drukte-label { color: #2e7d32; }
+
+  .stats-grid { display: grid; grid-template-columns: repeat(5, 1fr); gap: 10px; margin-bottom: 16px; }
+  .stat-card { background: #fff; border: 1px solid #e5e5e5; border-radius: 10px; padding: 12px 14px; text-align: center; }
+  .stat-card .number { font-size: 24px; font-weight: 700; line-height: 1.2; }
+  .stat-card .label { font-size: 11px; color: #6e6e73; margin-top: 2px; }
+  .stat-card.opgelost .number { color: #2e7d32; }
+  .stat-card.brandmeester .number { color: #1565c0; }
+  .stat-card.afkoop .number { color: #7b1fa2; }
+  .stat-card.terugbel .number { color: #e65100; }
+  .stat-card.geen-dekking .number { color: #6e6e73; }
+
+  .chart-row { background: #fff; border: 1px solid #e5e5e5; border-radius: 10px; padding: 16px 20px; margin-bottom: 16px; display: flex; align-items: center; gap: 24px; }
+  .chart-wrap { width: 140px; height: 140px; flex-shrink: 0; }
+  .chart-legend { flex: 1; display: flex; flex-direction: column; gap: 8px; }
+  .legend-item { display: flex; align-items: center; gap: 8px; }
+  .legend-dot { width: 10px; height: 10px; border-radius: 50%; flex-shrink: 0; }
+  .legend-name { font-size: 12px; flex: 1; }
+  .legend-bar-wrap { width: 100px; background: #f0f0f3; border-radius: 4px; height: 6px; }
+  .legend-bar { height: 6px; border-radius: 4px; transition: width .4s ease; }
+  .legend-count { font-size: 12px; font-weight: 600; min-width: 20px; text-align: right; }
+  .chart-title { font-size: 13px; font-weight: 600; margin-bottom: 12px; }
+
+  .week-table { background: #fff; border: 1px solid #e5e5e5; border-radius: 10px; margin-bottom: 16px; overflow: hidden; }
+  .week-table-header { display: grid; grid-template-columns: 120px repeat(5, 1fr) 60px; padding: 10px 16px; border-bottom: 1px solid #f0f0f0; font-size: 11px; font-weight: 700; color: #6e6e73; text-transform: uppercase; letter-spacing: .4px; }
+  .week-row { display: grid; grid-template-columns: 120px repeat(5, 1fr) 60px; padding: 10px 16px; border-bottom: 1px solid #f5f5f7; align-items: center; font-size: 13px; cursor: pointer; transition: background .1s; }
+  .week-row:last-child { border-bottom: none; }
+  .week-row:hover { background: #fafafa; }
+  .week-row.today { background: #f0f4ff; }
+  .week-day { font-weight: 600; }
+  .week-day .date-sub { font-size: 11px; color: #6e6e73; font-weight: 400; }
+  .week-num { text-align: center; font-weight: 600; }
+  .week-num.green { color: #2e7d32; }
+  .week-num.blue { color: #1565c0; }
+  .week-num.purple { color: #7b1fa2; }
+  .week-num.orange { color: #e65100; }
+  .week-num.gray { color: #aeaeb2; }
+  .week-score { text-align: right; font-weight: 700; font-size: 12px; }
+  .week-score.high { color: #2e7d32; }
+  .week-score.mid { color: #e65100; }
+  .week-score.low { color: #c62828; }
+  .week-empty { color: #aeaeb2; font-size: 12px; font-style: italic; }
+  .week-totals { display: grid; grid-template-columns: 120px repeat(5, 1fr) 60px; padding: 10px 16px; border-top: 2px solid #e5e5e5; background: #fafafa; font-size: 12px; font-weight: 700; }
+
+  .section { background: #fff; border: 1px solid #e5e5e5; border-radius: 10px; margin-bottom: 14px; overflow: hidden; }
+  .section-header { padding: 13px 18px; border-bottom: 1px solid #f0f0f0; display: flex; align-items: center; gap: 8px; cursor: pointer; user-select: none; }
+  .section-header:hover { background: #fafafa; }
+  .section-icon { width: 22px; height: 22px; border-radius: 6px; display: flex; align-items: center; justify-content: center; font-size: 12px; flex-shrink: 0; }
+  .section-title { font-size: 13px; font-weight: 600; flex: 1; }
+  .section-count { background: #f0f0f3; border-radius: 20px; padding: 2px 8px; font-size: 11px; font-weight: 600; color: #6e6e73; }
+  .chevron { font-size: 10px; color: #aeaeb2; transition: transform .2s; }
+  .collapsed .chevron { transform: rotate(-90deg); }
+
+  .dag-header { padding: 10px 18px; background: #f5f5f7; border-bottom: 1px solid #eeeeee; font-size: 12px; font-weight: 700; color: #6e6e73; text-transform: uppercase; letter-spacing: .4px; display: flex; justify-content: space-between; align-items: center; }
+  .dag-header .dag-score { font-weight: 700; color: #1d1d1f; }
+
+  .conv-item { padding: 14px 18px; border-bottom: 1px solid #f5f5f7; display: grid; grid-template-columns: 56px 1fr; gap: 12px; }
+  .conv-item:last-child { border-bottom: none; }
+  .conv-time { font-size: 12px; color: #6e6e73; padding-top: 1px; font-variant-numeric: tabular-nums; }
+  .conv-title { font-size: 13px; font-weight: 600; margin-bottom: 2px; }
+  .conv-persons { font-size: 12px; color: #6e6e73; margin-bottom: 6px; }
+  .conv-summary { font-size: 13px; color: #3a3a3c; line-height: 1.55; margin-bottom: 8px; }
+  .conv-footer { display: flex; flex-wrap: wrap; align-items: center; gap: 6px; }
+  .tag { display: inline-block; padding: 2px 8px; border-radius: 20px; font-size: 11px; font-weight: 500; }
+  .tag-consument { background: #fce4ec; color: #c62828; }
+  .tag-bestuursrecht { background: #e8eaf6; color: #283593; }
+  .tag-overig { background: #f5f5f5; color: #6e6e73; }
+  .tag-arbeidsrecht { background: #e3f2fd; color: #1565c0; }
+  .tag-huur { background: #e0f7fa; color: #006064; }
+  .tag-bouw { background: #fff3e0; color: #e65100; }
+  .tag-contract { background: #e8f5e9; color: #2e7d32; }
+  .tag-avg { background: #f3e5f5; color: #7b1fa2; }
+  .outcome-badge { display: inline-flex; align-items: center; gap: 4px; padding: 3px 10px; border-radius: 20px; font-size: 11px; font-weight: 600; margin-left: auto; }
+  .outcome-opgelost { background: #e8f5e9; color: #2e7d32; }
+  .outcome-brandmeester { background: #e3f2fd; color: #1565c0; }
+  .outcome-afkoop { background: #f3e5f5; color: #7b1fa2; }
+  .outcome-terugbel { background: #fff3e0; color: #e65100; }
+  .outcome-geen-dekking { background: #f5f5f5; color: #6e6e73; }
+
+  .action-item { padding: 11px 18px; border-bottom: 1px solid #f5f5f7; display: flex; align-items: flex-start; gap: 10px; }
+  .action-item:last-child { border-bottom: none; }
+  .prio-dot { width: 7px; height: 7px; border-radius: 50%; flex-shrink: 0; margin-top: 5px; }
+  .prio-hoog { background: #c62828; } .prio-middel { background: #e65100; } .prio-laag { background: #aeaeb2; }
+  .check-box { width: 15px; height: 15px; border: 2px solid #d1d1d6; border-radius: 4px; flex-shrink: 0; margin-top: 1px; cursor: pointer; transition: all .15s; display: flex; align-items: center; justify-content: center; font-size: 9px; }
+  .check-box:hover { border-color: #1a1a2e; }
+  .check-box.done { background: #1a1a2e; border-color: #1a1a2e; color: #fff; }
+  .action-text { font-size: 13px; flex: 1; }
+  .action-text.done-text { text-decoration: line-through; color: #aeaeb2; }
+  .action-meta { display: flex; gap: 10px; margin-top: 2px; }
+  .action-owner { font-size: 11px; color: #6e6e73; }
+  .dl-urgent { font-size: 11px; font-weight: 500; color: #c62828; }
+  .dl-soon { font-size: 11px; font-weight: 500; color: #e65100; }
+  .dl-ok { font-size: 11px; font-weight: 500; color: #2e7d32; }
+
+  .analyse-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; padding: 16px 18px; }
+  .analyse-col-title { font-size: 12px; font-weight: 700; text-transform: uppercase; letter-spacing: .5px; margin-bottom: 10px; display: flex; align-items: center; gap: 6px; }
+  .analyse-col-title.goed { color: #2e7d32; } .analyse-col-title.beter { color: #c62828; }
+  .analyse-point { display: flex; gap: 8px; margin-bottom: 9px; font-size: 13px; line-height: 1.5; }
+  .analyse-icon { flex-shrink: 0; margin-top: 1px; }
+  .analyse-text { color: #3a3a3c; }
+  .analyse-divider { height: 1px; background: #f0f0f0; margin: 0 18px 16px; }
+  .analyse-score { padding: 0 18px 16px; display: flex; align-items: center; gap: 10px; }
+  .score-label { font-size: 12px; color: #6e6e73; }
+  .score-bar-wrap { flex: 1; height: 8px; background: #f0f0f3; border-radius: 4px; overflow: hidden; }
+  .score-bar { height: 8px; border-radius: 4px; background: linear-gradient(90deg, #2e7d32, #66bb6a); }
+  .score-num { font-size: 13px; font-weight: 700; color: #2e7d32; min-width: 32px; text-align: right; }
+
+  .hidden { display: none !important; }
+</style>
+</head>
+<body>
+
+<div class="header">
+  <div class="header-left">
+    <div class="logo">L</div>
+    <div>
+      <h1>Lancyr Juridische Helpdesk</h1>
+      <div class="header-date" id="header-date">Dagrapport</div>
+    </div>
+  </div>
+  <div class="header-right">
+    <button class="btn" id="btn-week" onclick="setView('week')">Deze week</button>
+    <button class="btn" id="btn-gisteren" onclick="setView('gisteren')">Gisteren</button>
+    <button class="btn active" id="btn-vandaag" onclick="setView('vandaag')">Vandaag</button>
+    <button class="btn btn-refresh" onclick="refresh()">↻</button>
+  </div>
+</div>
+
+<div class="container" id="app"></div>
+
+<script>
+const weekData = {
+  "2026-05-28": {
+    drukte: "rustig",
+    gesprekken: 3,
+    stats: { opgelost: 2, brandmeester: 0, afkoop: 0, terugbel: 1, geenDekking: 0 },
+    score: 7.0,
+    conversations: [
+      {
+        tijd: "13:25",
+        titel: "Kinderwagen defect — non-conformiteit Mutsy, linker wiel blokkeert",
+        personen: "Verzekerde: anoniem · Wouter Toonen",
+        samenvatting: "Verzekerde heeft kinderwagen van ~€450 gekocht bij Mutsy. Linker wiel blokkeert gevaarlijk. Meerdere mails gestuurd (feb–mei), Mutsy reageert niet meer. Schade €450 > franchise €250, dekking aanwezig. Advies: aangetekende ingebrekestelling via juridisch loket (7 werkdagen), primair reparatie, subsidiair terugbetaling. KVK voor postadres.",
+        tags: [["tag-consument","Consumentenrecht"]],
+        uitkomst: ["outcome-opgelost","Telefonisch opgelost"]
+      },
+      {
+        tijd: "13:48",
+        titel: "Parkeervergunning — stallingsplaats telt als vergunning, bezwaar niet kansrijk",
+        personen: "Verzekerde: Fernando · Wouter Toonen",
+        samenvatting: "Fernando heeft één auto maar stallingsplaats voldoet aan gemeentelijke afmetingen (≥2,35m × 5m) en telt als parkeervergunning. Geen extra straatvergunning mogelijk. Gelijkheidsbeginsel gaat niet op: vorige eigenaar had twee auto's. Conclusie: procedure niet kansrijk. Fernando stuurt bevestiging stallingsplaats-maten per mail voor definitieve beoordeling.",
+        tags: [["tag-bestuursrecht","Bestuursrecht"]],
+        uitkomst: ["outcome-terugbel","Terugbellen"]
+      },
+      {
+        tijd: "14:31",
+        titel: "VCO-procedure + gezinssamenstelling update — Balmeese",
+        personen: "Verzekerde: Balmeese · Wouter Toonen",
+        samenvatting: "VCO-aanvraag wordt doorgestuurd naar de verzekeraar; polischeck loopt nog. Bijkomend: gezinssamenstelling staat als 'alleenstaand' maar is veranderd. Wouter legt uit dat aanpassing via website of mail moet — juridische afdeling kan dit niet direct wijzigen.",
+        tags: [["tag-overig","Verzekeringsrecht"]],
+        uitkomst: ["outcome-opgelost","Telefonisch opgelost"]
+      }
+    ],
+    acties: [
+      { prio: "prio-middel", tekst: "Terugbellen Fernando zodra hij bevestiging stallingsplaats-afmetingen + 1 auto per mail stuurt", eigenaar: "Wouter Toonen", deadline: "dl-soon", deadlineTekst: "Wachten op mail Fernando" },
+      { prio: "prio-laag", tekst: "Controleren of Balmeese gezinssamenstelling via portal heeft bijgewerkt (optioneel follow-up)", eigenaar: "Wouter Toonen", deadline: "dl-ok", deadlineTekst: "Geen harde deadline" }
+    ],
+    analyse: {
+      goed: [
+        "Franchise correct gecheckt bij kinderwagenzaak (€450 > €250) — dekking terecht vastgesteld.",
+        "Concreet stappenplan bij non-conformiteit: ingebrekestelling met 7 werkdagen, aangetekend, KVK voor adres.",
+        "Parkeervergunning Fernando juridisch correct beoordeeld: gelijkheidsbeginsel niet van toepassing, stallingsplaats-logica helder toegelicht."
+      ],
+      beter: [
+        "Parkeervergunning Fernando: gesprek duurde lang voor een conclusie die uiteindelijk 'niet kansrijk' was — eerder koers zetten richting afsluiting had efficiënter geweest.",
+        "VCO Balmeese: franchise en polisdekking niet expliciet gedocumenteerd — altijd dekkingscontrole bevestigen voor het archief.",
+        "Kinderwagenzaak: niet gevraagd of verzekerde de correspondentie met Mutsy beschikbaar heeft voor het dossier."
+      ]
+    }
+  },
+  "2026-05-31": {
+    drukte: "rustig",
+    gesprekken: 0,
+    stats: { opgelost: 0, brandmeester: 0, afkoop: 0, terugbel: 0, geenDekking: 0 },
+    score: 0,
+    conversations: [],
+    acties: [],
+    analyse: { goed: [], beter: [] }
+  },
+  "2026-06-01": {
+    drukte: "rustig",
+    gesprekken: 3,
+    stats: { opgelost: 0, brandmeester: 1, afkoop: 0, terugbel: 2, geenDekking: 0 },
+    score: 7.0,
+    conversations: [
+      {
+        tijd: "09:28",
+        titel: "Rechtsbijstandsverzekering — badkamerrenovatie en meerwerk met Sylvia",
+        personen: "Verzekerde: Sylvia Vos Knappen · Senne Duifhuis",
+        samenvatting: "Badkamerverbouwing gestart 1 april, zou 2,5–3 weken duren maar is in week 9 nog niet klaar. Aannemer dreigt met meerwerkfacturen waarvoor geen voorafgaand overleg was. Polis niet gevonden in systeem (vermoedelijk overgang NN→Lancyr). Medewerker stuurt intern mail om polisblad te verifiëren; advies: meerwerk schriftelijk onderbouwd laten opleveren vóór akkoord.",
+        tags: [["tag-consument","Consumentenrecht"],["tag-bouw","Bouwrecht"]],
+        uitkomst: ["outcome-terugbel","Terugbellen"]
+      },
+      {
+        tijd: "09:42",
+        titel: "Autoverzekering en rechtsbijstand — schadeclaim en polisgegevens",
+        personen: "Verzekerde: mevr. Priest · Senne Duifhuis",
+        samenvatting: "Mevrouw heeft schade aan haar auto door een derde en wil dit verhalen via rechtsbijstand. Rechtsbijstandsverzekering niet gevonden in systeem; alleen autoverzekering zichtbaar. Advies: eerst via autoverzekering proberen; collega gevraagd om polisblad te sturen voor definitieve check.",
+        tags: [["tag-overig","Verkeersrecht"]],
+        uitkomst: ["outcome-terugbel","Terugbellen"]
+      },
+      {
+        tijd: "10:32",
+        titel: "Schadeclaim dijk — dijkverzwaring en huisschade HNK/Beans",
+        personen: "Verzekerde: Frank van Hemert · Senne Duifhuis",
+        samenvatting: "Dijkverzwaring door Hoogheemraadschap Hollands Noorderkwartier en aannemer Beans veroorzaakte huisschade (scheuren + verzakte vloer, offerte €13.000). Deelschadevergoed (€11.000), vloer afgewezen wegens 'inklinking'. Zaak officieel gesloten door wederpartij. Schadenummer aangevraagd; doorverwezen naar Brandmeester conform protocol bouwzaak >€5.000.",
+        tags: [["tag-bouw","Bouwrecht"],["tag-overig","Aansprakelijkheidsrecht"]],
+        uitkomst: ["outcome-brandmeester","Doorverwezen naar Brandmeester"]
+      }
+    ],
+    acties: [
+      { prio: "prio-hoog", tekst: "Intern polisblad Sylvia Vos Knappen verifiëren (overgang NN→Lancyr) en terugkoppelen of bouwzaak meerwerk gedekt is", eigenaar: "Senne Duifhuis", deadline: "dl-urgent", deadlineTekst: "Vandaag nog" },
+      { prio: "prio-middel", tekst: "Polisblad mevr. Priest via collega opvragen en controleren of rechtsbijstand van toepassing is op autoschade", eigenaar: "Senne Duifhuis", deadline: "dl-soon", deadlineTekst: "Binnen 24 uur" },
+      { prio: "prio-middel", tekst: "Schadenummer Van Hemert doorsturen en Brandmeester inlichten over dossier (correspondentie HNK/Beans meesturen)", eigenaar: "Senne Duifhuis", deadline: "dl-soon", deadlineTekst: "Binnen 24 uur na ontvangst schadenummer" }
+    ],
+    analyse: {
+      goed: [
+        "Dijkschadezaak correct herkend als bouwzaak >€5.000 en conform protocol doorverwezen naar Brandmeester met schadenummer.",
+        "Advies Sylvia Vos Knappen praktisch en juridisch juist: meerwerk schriftelijk onderbouwd laten opleveren vóór akkoord.",
+        "Toon professioneel en empathisch in het moeilijke gesprek met Van Hemert (twee jaar geschil, zieke partner)."
+      ],
+      beter: [
+        "Twee van drie verzekerden niet teruggevonden in systeem — mogelijke NN→Lancyr synchronisatiefout. Intern escaleren zodat dit structureel opgelost wordt.",
+        "Gesprek mevr. Priest kende taalbarrière (meerdere talen door elkaar); advies kon niet altijd helder worden overgebracht en eindigde onbeslist.",
+        "Franchise-check ontbreekt bij badkamerzaak Sylvia: bij consumentenzaken altijd de €250-norm vastleggen in het gesprek, ook als polis nog niet bevestigd is."
+      ]
+    }
+  },
+  "2026-06-02": {
+    drukte: "rustig",
+    gesprekken: 2,
+    stats: { opgelost: 1, brandmeester: 1, afkoop: 0, terugbel: 0, geenDekking: 0 },
+    score: 7.5,
+    conversations: [
+      {
+        tijd: "16:06",
+        titel: "Doorverwijzing naar collega — verzekering rekening verkeerd kanaal",
+        personen: "Verzekerde: onbekend · Jackie Stam",
+        samenvatting: "Verzekerde belde juridische helpdesk met een vraag over een rekening van zijn verzekering — geen juridische kwestie. Correct uitgelegd dat dit het verkeerde kanaal is en doorverwezen via keuzemenu (3 → 1) naar de juiste afdeling.",
+        tags: [["tag-overig","Overig"]],
+        uitkomst: ["outcome-opgelost","Telefonisch opgelost"]
+      },
+      {
+        tijd: "16:21",
+        titel: "Arbeidsconflict — functiewijziging zonder overleg, WIA-aanvraag en HR-brief",
+        personen: "Verzekerde: anoniem (langdurig ziek) · Jackie Stam",
+        samenvatting: "Verzekerde is langdurig ziek (chronische ziekte) en keerde terug voor 32 uur; WIA-aanvraag loopt als vangnet op advies bedrijfsarts. Na bedrijfsuitje bleek functie gewijzigd naar 'general support' zonder overleg. HR-brief ontvangen ter ondertekening na gesprek waarbij ook leaseauto werd afgenomen. Advies: niet tekenen onder druk, onderscheid voor gezien/voor akkoord uitgelegd. Doorverwezen naar Brandmeester conform arbeidsconflict-protocol.",
+        tags: [["tag-arbeidsrecht","Arbeidsrecht"]],
+        uitkomst: ["outcome-brandmeester","Doorverwezen naar Brandmeester"]
+      }
+    ],
+    acties: [
+      { prio: "prio-hoog", tekst: "Bevestigingsmail sturen naar verzekerde met doorverwijzing naar Brandmeester (binnen 24 uur contact)", eigenaar: "Jackie Stam", deadline: "dl-urgent", deadlineTekst: "Vandaag nog" }
+    ],
+    analyse: {
+      goed: [
+        "Arbeidsconflict direct herkend en conform protocol doorverwezen naar Brandmeester.",
+        "Verzekerde goed geïnformeerd over het verschil tussen 'tekenen voor gezien' en 'tekenen voor akkoord' — praktisch en waardevol advies.",
+        "Empathische toon in een emotioneel gesprek met een zieke verzekerde die onder druk werd gezet."
+      ],
+      beter: [
+        "Polisverificatie (identiteit + polisnummer) niet duidelijk hoorbaar aan het begin van het arbeidsconflict-gesprek — altijd eerst volledig verifiëren.",
+        "Gesprek met de verkeerd doorverbonden verzekerde was kort maar het keuzemenu-instructie (3 → 1) kon wat helderder worden uitgelegd.",
+        "Geen expliciete deadline besproken voor wanneer Brandmeester contact opneemt (5 werkdagen); dit altijd noemen zodat verzekerde weet wat te verwachten."
+      ]
+    }
+  },
+  "2026-06-05": {
+    drukte: "druk",
+    gesprekken: 9,
+    stats: { opgelost: 3, brandmeester: 4, afkoop: 0, terugbel: 2, geenDekking: 0 },
+    score: 7.0,
+    conversations: [
+      {
+        tijd: "09:09",
+        titel: "Huurwoning stopcontact niet aangesloten — woningbouw aansprakelijk",
+        personen: "Verzekerde: anoniem · Wouter Toonen",
+        samenvatting: "Verzekerde huurt woning bij woningbouwcorporatie; buitenstopcontact is niet aangesloten na verbouwing van gas naar zonnepanelen. Corporatie stelt dat het 'zelf aangebracht' is, maar verzekerde heeft niets gedaan. Juridisch advies: woningbouw is verantwoordelijk voor deugdelijke oplevering. Advies: ingebrekestelling met termijn 5–7 werkdagen; bij geen reactie terugbellen voor juridisch traject.",
+        tags: [["tag-huur","Huurrecht"]],
+        uitkomst: ["outcome-opgelost","Telefonisch opgelost"]
+      },
+      {
+        tijd: "09:48",
+        titel: "Schademelding doorsturen naar Brandmeester — volmacht Dijkstra",
+        personen: "Medewerker volmacht: Dijkstra · Wouter Toonen",
+        samenvatting: "Beller is medewerker van de Lancyr-volmacht en wil een lopende zaak met bijbehorend schadenummer doorsturen naar Brandmeester. Contactgegevens en e-mailadres vastgelegd; schadenummer 26-025-71 geregistreerd. E-mail met doorstuurverzoek wordt verzonden.",
+        tags: [["tag-overig","Schadezaken"]],
+        uitkomst: ["outcome-brandmeester","Doorverwezen naar Brandmeester"]
+      },
+      {
+        tijd: "10:22",
+        titel: "Autoverzekering — verkeerd kanaal gebeld",
+        personen: "Verzekerde: Maher · Edgar Stam",
+        samenvatting: "Beller wil een schadegeval melden waarbij zijn geleende auto betrokken was; heeft stukken opgestuurd maar nog geen reactie ontvangen. Blijkt verkeerde afdeling: dit is de juridische helpdesk. Doorverwezen naar de juiste afdeling (autoverzekering).",
+        tags: [["tag-overig","Overig"]],
+        uitkomst: ["outcome-opgelost","Telefonisch opgelost"]
+      },
+      {
+        tijd: "12:04",
+        titel: "Koelkast garantie — omruilvoorstel niet conform garantievoorwaarden met Joyce Visser",
+        personen: "Verzekerde: Joyce Visser · Edgar Stam",
+        samenvatting: "Joyce Visser heeft koelkast met 8 jaar verlengde garantie (sinds 2020). Technisch defect vastgesteld door monteur (niet reparabel). Omruilvoorstel van leverancier: 21% korting op dagwaarde, plus bijbetaling van €1.500 voor een model van €2.400. Klopt niet met garantieaanspraken. Franchise >€250 aanwezig. Aangemeld bij Brandmeester; stukken worden per mail aangeleverd.",
+        tags: [["tag-consument","Consumentenrecht"]],
+        uitkomst: ["outcome-brandmeester","Doorverwezen naar Brandmeester"]
+      },
+      {
+        tijd: "13:35",
+        titel: "Autoschade — verkeerde afdeling gebeld",
+        personen: "Verzekerde: Christian Spretius · Wouter Toonen",
+        samenvatting: "Verzekerde is aangereden en wil weten hoe hij zijn schade meldt en of Lancyr een expert inschakelt. Dit is de juridische helpdesk (verkeerde afdeling). Advies: schadeformulier online invullen via lancyr.nl; voor vragen over verzekeringsexpert doorverwezen naar algemeen nummer.",
+        tags: [["tag-overig","Overig"]],
+        uitkomst: ["outcome-opgelost","Telefonisch opgelost"]
+      },
+      {
+        tijd: "15:27",
+        titel: "Dakopbouw buurman — bezwaarstrategie Sabine Hoevers, Vlissingen",
+        personen: "Verzekerde: Sabine Hoevers · Wouter Toonen",
+        samenvatting: "Buurman heeft opnieuw dezelfde vergunningaanvraag ingediend als in 2009–2010 (zelfde tekeningen), voor dakopbouw van 7 meter hoog. Bezwaartermijn van 6 weken is nog niet gestart. 13 omwonenden betrokken; Sabine gaat 4–6 weken naar Portugal. Dossier aangemaakt. Advies: houd gemeenteblad in de gaten, terugbellen zodra bezwaartermijn ingaat.",
+        tags: [["tag-bouw","Bouwrecht"],["tag-bestuursrecht","Omgevingsrecht"]],
+        uitkomst: ["outcome-terugbel","Terugbellen"]
+      },
+      {
+        tijd: "15:47",
+        titel: "Salarisverlaging en arbeidsconflict — aanmelding Brandmeester",
+        personen: "Verzekerde: partner namens verzekerde · Edgar Stam",
+        samenvatting: "Verzekerde kreeg salaris met ~€1.000/maand gekort (terugwerkend kracht maart) en contract niet verlengd na zorgverlof voor moeder met darmkanker. Eerder bij DAS gemeld maar niet verzekerd. Stukken beschikbaar. Arbeidsconflict conform protocol doorverwezen naar Brandmeester; e-mail met stukken volgt vandaag.",
+        tags: [["tag-arbeidsrecht","Arbeidsrecht"]],
+        uitkomst: ["outcome-brandmeester","Doorverwezen naar Brandmeester"]
+      },
+      {
+        tijd: "16:02",
+        titel: "Advocatenkosten — dagvaarding €6.000 extra na al betaalde €6.000",
+        personen: "Verzekerde: anoniem · Wouter Toonen",
+        samenvatting: "Verzekerde heeft dagvaarding ontvangen van advocatenkantoor (Groningen) voor €6.000, bovenop al betaalde €6.000, terwijl opdracht initieel ~€1.000 betrof. Interne klachtenregeling doorlopen maar kantoor dagvaardt toch. Transcript is abrupt afgebroken — gesprek lijkt niet volledig afgerond. Status en uitkomst onzeker.",
+        tags: [["tag-consument","Consumentenrecht"]],
+        uitkomst: ["outcome-terugbel","Terugbellen"]
+      },
+      {
+        tijd: "16:27",
+        titel: "Bouwvergunning bezwaar — buurman bouwt boven maximale hoogte",
+        personen: "Verzekerde: anoniem · Wouter Toonen",
+        samenvatting: "Buurman heeft vergunning gekregen voor overkapping die boven maximale bouwhoogte uitkomt (omgevingsplan + Odijmond-rapport staan dit niet toe). Pro-forma bezwaar ingediend; stukken ontvangen; nog 4–5 weken bezwaartermijn. Verzekerde twijfelt of procedure kansrijk is vanwege slechte verhouding met buurman. Doorgestuurd naar rechtsbijstandverzekeraar.",
+        tags: [["tag-bouw","Bouwrecht"],["tag-bestuursrecht","Omgevingsrecht"]],
+        uitkomst: ["outcome-brandmeester","Doorverwezen naar Brandmeester"]
+      }
+    ],
+    acties: [
+      { prio: "prio-hoog", tekst: "Opvolgen gesprek advocatenkosten dagvaarding (16:02) — transcript afgebroken, status onduidelijk. Verzekerde terugbellen om uitkomst te verifiëren en eventueel dossier aanmaken.", eigenaar: "Wouter Toonen", deadline: "dl-urgent", deadlineTekst: "Zo snel mogelijk — vandaag of maandagochtend" },
+      { prio: "prio-middel", tekst: "E-mail sturen naar Joyce Visser met aanmelding Brandmeester (koelkast garantie); stukken (garantievoorwaarden + correspondentie) per antwoord terugontvangen.", eigenaar: "Edgar Stam", deadline: "dl-soon", deadlineTekst: "Einde middag of maandagochtend" },
+      { prio: "prio-middel", tekst: "Salarisverlaging: e-mail sturen, stukken ophalen en aanmelden bij Brandmeester. Partner stuurt alles door zodra mail ontvangen.", eigenaar: "Edgar Stam", deadline: "dl-soon", deadlineTekst: "Einde middag of maandagochtend" },
+      { prio: "prio-laag", tekst: "Dossier Sabine Hoevers (dakopbouw) gereedmaken voor terugbelmoment zodra bezwaartermijn ingaat. Sabine belt vanuit Portugal.", eigenaar: "Wouter Toonen", deadline: "dl-ok", deadlineTekst: "Geen harde deadline — wachten op terugbelverzoek" }
+    ],
+    analyse: {
+      goed: [
+        "Arbeidsconflict salarisverlaging direct herkend en conform protocol doorverwezen naar Brandmeester; intake volledig gedaan inclusief stukkenverzoek.",
+        "Huurrecht stopcontact: juridisch correcte analyse (woningbouw aansprakelijk voor deugdelijke oplevering) met concreet advies (ingebrekestelling, termijn 5–7 werkdagen).",
+        "Dossier Sabine Hoevers proactief aangemaakt ook al loopt bezwaartermijn nog niet — borgt continuïteit bij terugbelmoment vanuit Portugal."
+      ],
+      beter: [
+        "Gesprek advocatenkosten dagvaarding (16:02) is abrupt afgebroken zonder duidelijke afronding — dringend terugbellen, status is onbekend.",
+        "Twee gesprekken waren verkeerde afdeling (autoverzekering/autoschade). Duidt op routeringsprobleem; intern aankaarten zodat bellers beter worden doorgeschakeld.",
+        "Bouwvergunning bezwaar (16:27): medewerker meerdere keren onzeker over gemeentelijke procedures en objectiviteit adviescommissie — eerder grenzen van telefonisch advies aangeven en doorverwijzen."
+      ]
+    }
+  },
+  "2026-06-07": {
+    drukte: "rustig",
+    gesprekken: 0,
+    stats: { opgelost: 0, brandmeester: 0, afkoop: 0, terugbel: 0, geenDekking: 0 },
+    score: 0,
+    conversations: [],
+    acties: [],
+    analyse: { goed: [], beter: [] }
+  },
+  "2026-06-08": {
+    drukte: "rustig",
+    gesprekken: 1,
+    stats: { opgelost: 0, brandmeester: 0, afkoop: 0, terugbel: 0, geenDekking: 0 },
+    score: 7.0,
+    conversations: [
+      {
+        tijd: "10:06",
+        titel: "Weekplanning en ticketafhandeling — call-volume en klantbegeleiding",
+        personen: "Dewi Verver (HTJZ) · Lancyr-contact",
+        samenvatting: "Intern weekoverleg tussen HTJZ en Lancyr. Vorige week 9 tickets doorgestuurd naar Brandmeester (iets boven norm). Bellers zonder actueel conflict worden correct gefilterd en telefonisch begeleid zonder onnodige doorverwijzing. Automatisering dagrapport door Jackie Stam in uitvoering; terugkoppeling op vragen vorige week van Lancyr nog uitstaand.",
+        tags: [["tag-overig","Intern overleg"]],
+        uitkomst: ["outcome-opgelost","Intern overleg afgerond"]
+      }
+    ],
+    acties: [
+      { prio: "prio-middel", tekst: "Terugkoppeling op vragen vorige week opvragen bij Lancyr-contact — staat nog uit", eigenaar: "Dewi Verver", deadline: "dl-soon", deadlineTekst: "Zodra terugkoppeling binnen is" },
+      { prio: "prio-laag", tekst: "Stand van zaken automatisering dagrapport navragen bij Jackie Stam (werkt morgen)", eigenaar: "Dewi Verver", deadline: "dl-ok", deadlineTekst: "Morgen (9 juni)" }
+    ],
+    analyse: {
+      goed: [
+        "Correcte filtering van bellers zonder actueel conflict — telefonisch begeleid en teruggestuurd zonder onnodige Brandmeester-doorverwijzing.",
+        "Doorverwijzingskanaal naar Brandmeester loopt uitsluitend via HTJZ — Lancyr bevestigt dit als de gewenste routing."
+      ],
+      beter: [
+        "9 Brandmeester-tickets vorige week is iets boven de norm — bewaking van de doorverwijzingsdrempel verdient aandacht.",
+        "Terugkoppeling op vragen vorige week nog niet ontvangen van Lancyr — proactief navragen."
+      ]
+    }
+  },
+  "2026-06-09": {
+    drukte: "druk",
+    gesprekken: 8,
+    stats: { opgelost: 3, brandmeester: 3, afkoop: 0, terugbel: 1, geenDekking: 1 },
+    score: 7.5,
+    conversations: [
+      {
+        tijd: "09:08",
+        titel: "Verkeersongeval Zwolle — schadeclaim en rechtsbijstand",
+        personen: "Verzekerde: Pascal Hansen · Edgar Stam",
+        samenvatting: "Pascal Hansen werd aangereden bij een brug in Zwolle (invoegstrook-situatie); spiegel eraf, schuld onduidelijk. Medewerker legt uit dat schuld formeel vastgesteld moet worden, adviseert aanmelden bij rechtsbijstand. Foto's nog te sturen; aanmelding Brandmeester in gang gezet.",
+        tags: [["tag-overig","Verkeersrecht"],["tag-overig","Aansprakelijkheidsrecht"]],
+        uitkomst: ["outcome-brandmeester","Doorverwezen naar Brandmeester"]
+      },
+      {
+        tijd: "09:48",
+        titel: "Arbeidsgeschil — VSO tekenen deze vrijdag, werkgever beschuldigt van klantenpakking",
+        personen: "Verzekerde: Brozius · Senne Duifhuis",
+        samenvatting: "Verzekerde heeft arbeidsconflict; werkgever stuurde vrijdagavond laat een VSO die komende vrijdag getekend moet worden. Werkgever beschuldigt verzekerde van klantenpakking. Medewerker vraagt VSO door te sturen; gesprek eindigt zonder definitieve afronding of doorverwijzing naar Brandmeester.",
+        tags: [["tag-arbeidsrecht","Arbeidsrecht"]],
+        uitkomst: ["outcome-terugbel","Terugbellen"]
+      },
+      {
+        tijd: "10:15",
+        titel: "Auto van naam verwijderen — verkeerd kanaal gebeld",
+        personen: "Verzekerde: Tom Horn · Senne Duifhuis",
+        samenvatting: "Tom Horn wil een verkochte auto van zijn naam verwijderen. Had meerdere malen gemaild naar info@lancyr.nl zonder reactie. Belde per ongeluk juridische helpdesk in plaats van autoverzekering. Doorverwezen naar correct nummer (088-020 4525).",
+        tags: [["tag-overig","Routering"]],
+        uitkomst: ["outcome-opgelost","Telefonisch opgelost"]
+      },
+      {
+        tijd: "10:29",
+        titel: "Autoprobleem tweedehands — geen BOVAG, geen rechtsbijstandsdekking (polis 8.2.2)",
+        personen: "Verzekerde: Martin Ozinga Dukas, Tilburg · Senne Duifhuis",
+        samenvatting: "Martin kocht tweedehands auto met dashboardproblemen; auto staat al 2 maanden bij garage zonder communicatie en garage weigert locatie te delen. Geen BOVAG garantie: geen dekking conform polis 8.2.2. Medewerker adviseert ingebrekestelling (14 dagen), juridisch loket en bellen bij autoverzekering voor aanvullende opties.",
+        tags: [["tag-consument","Consumentenrecht"]],
+        uitkomst: ["outcome-geen-dekking","Geen dekking"]
+      },
+      {
+        tijd: "10:42",
+        titel: "Postcode niet gevonden — routering naar autoverzekering",
+        personen: "Verzekerde: onbekend · Senne Duifhuis",
+        samenvatting: "Beller met gebrekkig Nederlands wil iets regelen voor autoverzekering maar komt bij rechtsbijstand uit. Postcode (4940 KH) niet gevonden in systeem. Snel doorverwezen naar juist telefoonnummer.",
+        tags: [["tag-overig","Routering"]],
+        uitkomst: ["outcome-opgelost","Telefonisch opgelost"]
+      },
+      {
+        tijd: "11:08",
+        titel: "Fietsongeval — aansprakelijkheid scooterrijder, materiële en immateriële schade",
+        personen: "Verzekerde: Van Wakenbeschoot · Senne Duifhuis",
+        samenvatting: "Van Wakenbeschoot werd vorige week op de fiets frontaal aangereden door een scooter; fiets vernield, materiële en immateriële schade. Wederpartij stelt verzekerde ten onrechte aansprakelijk. Ticket aangemaakt, schadernummer aangevraagd; doorverwezen naar Brandmeester met intake-mail.",
+        tags: [["tag-overig","Verkeersrecht"],["tag-overig","Letselschade"]],
+        uitkomst: ["outcome-brandmeester","Doorverwezen naar Brandmeester"]
+      },
+      {
+        tijd: "14:04",
+        titel: "Onverschuldigde premiebetaling — ingebrekestelling en consumentenbescherming",
+        personen: "Verzekerde: onbekend · Wouter Toonen",
+        samenvatting: "Verzekerde betaalde dubbele premie terwijl mondeling was afgesproken dat eigen verzekering gold; verzekeraar heeft nooit teruggekoppeld op de afspraak. Medewerker adviseert eerst bellen met verzekeraar, daarna ingebrekestelling op basis van onverschuldigde betaling. Consumentenbescherming van toepassing.",
+        tags: [["tag-consument","Consumentenrecht"],["tag-overig","Verzekeringsrecht"]],
+        uitkomst: ["outcome-opgelost","Telefonisch opgelost"]
+      },
+      {
+        tijd: "14:49",
+        titel: "Goedkeuring rechtsbijstand — conflict kleine organisatie, vrije advocaatkeuze",
+        personen: "Verzekerde: onbekend · Wouter Toonen",
+        samenvatting: "Verzekerde heeft conflict in kleine organisatie (samenwerking onder druk gekomen); wil gebruik maken van vrije rechtshulpverlener via polis. Medewerker legt correct uit dat eerst goedkeuring Brandmeester vereist is vóór kosten worden gemaakt. Zaak doorgestuurd; verwachte doorlooptijd 1–2 werkdagen.",
+        tags: [["tag-arbeidsrecht","Organisatieconflict"]],
+        uitkomst: ["outcome-brandmeester","Doorverwezen naar Brandmeester"]
+      }
+    ],
+    acties: [
+      { prio: "prio-hoog", tekst: "Arbeidsgeschil Brozius: VSO opvangen zodra doorgestuurd en direct doorverwijzen naar Brandmeester — tekendatum is vrijdag 12 juni", eigenaar: "Senne Duifhuis", deadline: "dl-urgent", deadlineTekst: "Vrijdag 12 juni (tekendatum VSO)" },
+      { prio: "prio-middel", tekst: "Verkeersongeval Pascal Hansen: foto's ophalen en aanmelding bij Brandmeester afronden", eigenaar: "Edgar Stam", deadline: "dl-soon", deadlineTekst: "Binnen 24 uur" },
+      { prio: "prio-middel", tekst: "Fietsongeval Van Wakenbeschoot: schadernummer opvragen en intake-mail sturen naar Brandmeester", eigenaar: "Senne Duifhuis", deadline: "dl-soon", deadlineTekst: "Binnen 24 uur" },
+      { prio: "prio-laag", tekst: "Signaleren intern: info@lancyr.nl reageert niet op mails van verzekerden (melding Tom Horn) — mailkanaal controleren", eigenaar: "Senne Duifhuis", deadline: "dl-ok", deadlineTekst: "Deze week" },
+      { prio: "prio-laag", tekst: "Goedkeuring rechtsbijstand organisatieconflict: cc-mail verzekerde sturen zodra Brandmeester-verzoek is ingediend", eigenaar: "Wouter Toonen", deadline: "dl-ok", deadlineTekst: "1–2 werkdagen" }
+    ],
+    analyse: {
+      goed: [
+        "BOVAG-clausule (polis 8.2.2) correct en helder uitgelegd bij autoprobleem Martin — inclusief concreet alternatief advies (ingebrekestelling 14 dagen, juridisch loket).",
+        "Twee misdirected calls snel en vriendelijk afgehandeld; juiste telefoonnummer meegegeven.",
+        "Fietsongeval correct afgewikkeld: ticket aangemaakt, schadernummer aangevraagd, Brandmeester-routing conform protocol."
+      ],
+      beter: [
+        "Arbeidsgeschil Brozius (09:48): gesprek eindigde zonder doorverwijzing naar Brandmeester — arbeidsconflicten moeten direct worden doorverwezen, niet eerst VSO afwachten. Deadline is urgent (vrijdag).",
+        "Insurance claim (14:04): transcript begint midden in gesprek — polis- en identiteitsverificatie niet vastgelegd. Verificatie altijd als eerste stap uitvoeren én registreren.",
+        "Info@lancyr.nl reageert niet op mails van verzekerden (Tom Horn) — intern signaleren zodat dit mailkanaal gecontroleerd wordt."
+      ]
+    }
+  },
+  "2026-06-10": {
+    drukte: "rustig",
+    gesprekken: 0,
+    stats: { opgelost: 0, brandmeester: 0, afkoop: 0, terugbel: 0, geenDekking: 0 },
+    score: 0,
+    conversations: [],
+    acties: [],
+    analyse: { goed: [], beter: [] }
+  },
+  "2026-06-11": {
+    drukte: "rustig",
+    gesprekken: 2,
+    stats: { opgelost: 1, brandmeester: 1, afkoop: 0, terugbel: 0, geenDekking: 0 },
+    score: 6.5,
+    conversations: [
+      {
+        tijd: "09:02",
+        titel: "Arbeidsconflict — intern mailtje verkeerd gestuurd, doorverwijzing Brandmeester",
+        personen: "Verzekerde: Lucia Clemens · Jackie Stam",
+        samenvatting: "Lucia Clemens had vrijdag al een aanvraag ingediend voor een eigen advocaat bij een arbeidsconflict (VSO waarschijnlijk niet van toepassing; zaak gaat vermoedelijk naar kantonrechter). Zij ontving een intern bedoeld mailtje (schadenummer-verzoek) per ongeluk. Jackie herkende de fout, bevestigde dat goedkeuring voor eigen advocaat intern was verleend en stuurde het dossier direct door naar Brandmeester. Verwachte doorverwijzing binnen 24 uur.",
+        tags: [["tag-arbeidsrecht","Arbeidsrecht"]],
+        uitkomst: ["outcome-brandmeester","Doorverwezen naar Brandmeester"]
+      },
+      {
+        tijd: "09:53",
+        titel: "Verzekeringsclaimoverdracht — autoschade verkeerde afdeling",
+        personen: "Verzekerde: Caletta (New Lancer) · Jackie Stam",
+        samenvatting: "Caletta belde de juridische helpdesk over een auto-ongeluk van afgelopen zaterdag. Jackie herkende snel dat het een autoverzekeringsvraag betrof (geen juridische kwestie) en verbond door naar de juiste afdeling via keuzemenu (eerst 3, dan 1).",
+        tags: [["tag-overig","Verzekeringsrecht"]],
+        uitkomst: ["outcome-opgelost","Telefonisch opgelost"]
+      }
+    ],
+    acties: [
+      { prio: "prio-hoog", tekst: "Bevestigen bij Brandmeester dat dossier Lucia Clemens is doorgestuurd — eigen advocaat aanvraag al intern goedgekeurd door leidinggevende", eigenaar: "Jackie Stam", deadline: "dl-urgent", deadlineTekst: "Uiterlijk 12 juni" },
+      { prio: "prio-middel", tekst: "Intern mailproces aanscherpen: schadenummer-verzoeken mogen niet per ongeluk naar externe adressen worden gestuurd", eigenaar: "Team", deadline: "dl-soon", deadlineTekst: "Zo snel mogelijk" }
+    ],
+    analyse: {
+      goed: [
+        "Intern communicatiefout (verkeerd verstuurd mailtje aan Lucia Clemens) direct herkend en transparant gecorrigeerd — klant correct geïnformeerd over verwachte doorlooptijd.",
+        "Dossier Lucia Clemens: goedkeuring eigen advocaat door leidinggevende correct geverifieerd in systeem vóór doorsturen naar Brandmeester.",
+        "Caletta: razendsnel herkend als geen juridische zaak; doorverbinding efficiënt geregeld inclusief keuzemenu-instructie."
+      ],
+      beter: [
+        "Intern mailproces lekte: schadenummer-verzoek ging per ongeluk naar externe klant. Structureel aanscherpen door intern cc-adres te verplichten en dubbele check in te bouwen.",
+        "Polisverificatie en identiteitscheck niet expliciet vastgelegd in beide gesprekken — altijd als eerste stap uitvoeren en documenteren conform protocol."
+      ]
+    }
+  },
+  "2026-06-12": {
+    drukte: "rustig",
+    gesprekken: 3,
+    stats: { opgelost: 1, brandmeester: 0, afkoop: 1, terugbel: 1, geenDekking: 0 },
+    score: 7.0,
+    conversations: [
+      {
+        tijd: "10:21",
+        titel: "Stoelzaak procedure — rechtsbijstand timing en wachten op verdediging",
+        personen: "Verzekerde: onbekend · Wouter Toonen",
+        samenvatting: "Verzekerde heeft al een gerechtelijke procedure gestart tegen leverancier (stoel, deels Duits) en griffierkosten betaald. Vraagt of Brandmeester nu nuttig is. Wouter adviseert af te wachten tot verdediging wederpartij is ingediend — doorsturen nu heeft geen zin omdat de jurist dan ook nog niets kan doen.",
+        tags: [["tag-consument","Consumentenrecht"]],
+        uitkomst: ["outcome-opgelost","Telefonisch opgelost"]
+      },
+      {
+        tijd: "10:41",
+        titel: "Stoelaankoop annulering en fietsongeluk — twee vragen, polis navragen",
+        personen: "Verzekerde: Ibeen (AL38-22 DN) · Wouter Toonen",
+        samenvatting: "Twee vragen: (1) Twee stoelen gekocht via social media voor €4.250, wil annuleren binnen 14 dagen herroepingstermijn — verkoper reageert niet. Rechtsbijstandsdekking niet zichtbaar in systeem; Wouter vraagt polisblad op bij collega en belt terug. (2) Fietsongeluk 1 mei (bril, schoenen, jas kapot); dit is verzekeringsafdeling — doorverwezen naar algemene lijn.",
+        tags: [["tag-consument","Consumentenrecht"]],
+        uitkomst: ["outcome-terugbel","Terugbellen"]
+      },
+      {
+        tijd: "14:13",
+        titel: "Fietsongeluk kind — minnelijke regeling €300 Lancyr + €200 wederpartij",
+        personen: "Verzekerde: onbekend · Wouter Toonen",
+        samenvatting: "Kind van verzekerde aangereden op e-bike; reparatiekosten €400, wederpartij biedt slechts €200. Correspondentie aanwezig. Wouter stelt voor: verzekerde gaat akkoord met €200 van wederpartij én Lancyr vergoedt aanvullend €300. Verzekerde akkoord — minnelijke regeling bereikt.",
+        tags: [["tag-overig","Aansprakelijkheidsrecht"],["tag-overig","Verkeersrecht"]],
+        uitkomst: ["outcome-afkoop","Afgehandeld / afkoop"]
+      }
+    ],
+    acties: [
+      { prio: "prio-hoog", tekst: "Polisblad Ibeen opvragen bij collega en terugbellen zodra rechtsbijstandsdekking stoelaankoop €4.250 is bevestigd", eigenaar: "Wouter Toonen", deadline: "dl-urgent", deadlineTekst: "Zo snel mogelijk — binnen 24 uur" },
+      { prio: "prio-middel", tekst: "Correspondentie fietsongeluk kind ophalen van verzekerde en Lancyr-vergoeding €300 verwerken", eigenaar: "Wouter Toonen", deadline: "dl-soon", deadlineTekst: "Zodra stukken zijn ontvangen" }
+    ],
+    analyse: {
+      goed: [
+        "Identiteitsverificatie correct en volledig uitgevoerd bij gesprek Ibeen (code AL38-22 DN) — conform protocol.",
+        "Creatieve minnelijke regeling bij fietsongeluk: Lancyr €300 aanvullend zodat verzekerde snel van de zaak af is — praktisch en klantvriendelijk.",
+        "Heldere tijdlijn-uitleg stoelzaak: doorsturen naar Brandmeester heeft nu geen zin — jurist kan ook niets doen zolang wederpartij zich nog niet heeft verdedigd."
+      ],
+      beter: [
+        "Gesprekken 1 en 3: polisverificatie / identiteitscheck niet hoorbaar in transcripts — altijd als allereerste stap uitvoeren en documenteren.",
+        "Franchise-check (€250 norm) niet expliciet gedocumenteerd bij stoelaankoop Ibeen (€4.250 > franchise, gedekt) — altijd vastleggen conform protocol.",
+        "Rechtsbijstandsdekking Ibeen niet direct in systeem gevonden — zelfde terugkerend synchronisatieprobleem als eerder. Intern escaleren voor structurele oplossing."
+      ]
+    }
+  },
+  "2026-06-13": {
+    drukte: "rustig",
+    gesprekken: 0,
+    stats: { opgelost: 0, brandmeester: 0, afkoop: 0, terugbel: 0, geenDekking: 0 },
+    score: 0,
+    conversations: [],
+    acties: [],
+    analyse: { goed: [], beter: [] }
+  },
+  "2026-06-14": {
+    drukte: "rustig",
+    gesprekken: 0,
+    stats: { opgelost: 0, brandmeester: 0, afkoop: 0, terugbel: 0, geenDekking: 0 },
+    score: 0,
+    conversations: [],
+    acties: [],
+    analyse: { goed: [], beter: [] }
+  },
+  "2026-06-15": {
+    drukte: "rustig",
+    gesprekken: 0,
+    stats: { opgelost: 0, brandmeester: 0, afkoop: 0, terugbel: 0, geenDekking: 0 },
+    score: 0,
+    conversations: [],
+    acties: [],
+    analyse: { goed: [], beter: [] }
+  },
+  "2026-06-18": {
+    drukte: "druk",
+    gesprekken: 9,
+    stats: { opgelost: 5, brandmeester: 1, afkoop: 1, terugbel: 2, geenDekking: 0 },
+    score: 7.0,
+    conversations: [
+      {
+        tijd: "10:31",
+        titel: "Toiletpot en vloerverwarming — juridische geschillen met aannemer",
+        personen: "Verzekerde: Wilhelm Kester · Roelof van Beijnum",
+        samenvatting: "Wilhelm Kester belde met twee kwesties: (1) eerdere ingebrekestelling bij aannemer over toiletinstallatie; nieuwe installateur bevestigt dat het aan het installatiewerk lag — factuur beschikbaar. (2) NCG-vloerverwarming in aardbevingsgebied: claim van €5.000 afgewezen, bezwaartermijn 6 weken loopt; offerte gevonden met 'aanbrengen vloerverwarming'. Advies: factuur + stukken NCG-dossier per mail sturen naar helpdesk voor beoordeling.",
+        tags: [["tag-bouw","Bouwrecht"],["tag-bestuursrecht","Bestuursrecht"]],
+        uitkomst: ["outcome-terugbel","Terugbellen"]
+      },
+      {
+        tijd: "12:37",
+        titel: "Rechtsbijstandsverzekering — acceptatievraag en e-mailbevestiging",
+        personen: "Verzekerde: anoniem · Jackie Stam",
+        samenvatting: "Verzekerde sloot via Independer een rechtsbijstandsverzekering bij Lancyr af, maar liep vast bij de acceptatievraag over eerdere arbeidsconflicten. Heeft al arbeidsrechtsbijstand via FNV; wilde weten of eerdere arbeidsconflicten de nieuwe (niet-arbeids-)polis zouden blokkeren. Jackie verwees door naar verzekeringsexpert (menu 3→1). Verzekerde vroeg om schriftelijke bevestiging; e-mailadres info@lancyr.nl meegegeven.",
+        tags: [["tag-overig","Verzekeringsrecht"]],
+        uitkomst: ["outcome-opgelost","Telefonisch opgelost"]
+      },
+      {
+        tijd: "13:07",
+        titel: "Autoverzekering opzeggen — verkeerd kanaal, polis al opgezegd",
+        personen: "Verzekerde: Tushar Bengali · Roelof van Beijnum",
+        samenvatting: "Tushar Bengali belde om zijn autoverzekering op te zeggen. Roelof legde uit dat de juridische helpdesk niet het juiste kanaal is. In het systeem bleek de verzekering al op 1 maart 2026 te zijn opgezegd — goed nieuws voor de verzekerde. Doorverwezen naar juiste afdeling voor eventuele verdere vragen.",
+        tags: [["tag-overig","Routering"]],
+        uitkomst: ["outcome-opgelost","Telefonisch opgelost"]
+      },
+      {
+        tijd: "13:29",
+        titel: "Aangetekende brief kinderwagen — hernieuwd versturen per post en e-mail",
+        personen: "Verzekerde: anoniem · Jackie Stam",
+        samenvatting: "Belafspraak nagekomen. Eerder verstuurde aangetekende brief niet aangenomen door tegenpartij. Jackie legt uit: aanbieding volstaat als bewijs, tegenpartij kan rechtsgevolgen niet ontlopen door weigering. Advies: brief opnieuw sturen per gewone post én e-mail als herhaling van ingebrekestelling, met nieuwe termijn van 14 dagen.",
+        tags: [["tag-consument","Consumentenrecht"]],
+        uitkomst: ["outcome-opgelost","Telefonisch opgelost"]
+      },
+      {
+        tijd: "13:37",
+        titel: "Schadeclaim Goudse verzekering — schikkingsvoorstel afgewezen, dossier gemeld",
+        personen: "Verzekerde: meneer van den Guchten · Roelof van Beijnum",
+        samenvatting: "Meneer van den Guchten heeft vochtschade in zijn woning (lekkageschade). Goudse biedt 3/5 van vastgestelde schade aan als coulanceregeling — verzekerde niet akkoord omdat koppeling tussen oorzaken en kosten ontbreekt. Notitie aangemaakt; verzekerde belt terug zodra Goudse reageert op zijn bezwaar. Rechtsbijstandsverzekering opgezegd in 2017; uitloopperiode nog te beoordelen.",
+        tags: [["tag-overig","Verzekeringsrecht"],["tag-overig","Aansprakelijkheidsrecht"]],
+        uitkomst: ["outcome-terugbel","Terugbellen"]
+      },
+      {
+        tijd: "13:38",
+        titel: "Fietsongeluk — schadeclaim en aansprakelijkheidsstelling",
+        personen: "Verzekerde: anoniem (elektrische fiets) · Jackie Stam",
+        samenvatting: "Verzekerde betrokken bij fietsongeluk (elektrische fiets vs. bakfiets), 4 weken geleden. Letselschade én fietschade; tegenpartij wil geen schadeformulier invullen. Politierapport al aanwezig. Jackie geeft volledig stappenplan: aangifte doen, bewijs verzamelen, aansprakelijkheidsstelling sturen (14 dagen termijn), getuigenverklaring opvragen, schadeomvang documenteren. Concept-aansprakelijkheidsstelling per mail verstuurd.",
+        tags: [["tag-overig","Verkeersrecht"],["tag-overig","Letselschade"]],
+        uitkomst: ["outcome-opgelost","Telefonisch opgelost"]
+      },
+      {
+        tijd: "14:22",
+        titel: "WIA-uitkering en arbeidsovereenkomst — doorverwijzing Brandmeester",
+        personen: "Verzekerde: mevrouw Smiet · Roelof van Beijnum",
+        samenvatting: "Mevrouw Smiet werkt bij gemeente Amsterdam (34 uur), langdurig ziek, WIA-uitkering. Derde ontslagverbod vervalt 1 november. Werkgever komt met voorstel voor nieuw contract op 12 uur (WIA-uren), terwijl ze al 15 uur werkt. Wil de arbeidsovereenkomst juridisch laten toetsen vóór het een conflict wordt. Doorverwezen naar Brandmeester; schadenummer wordt aangemaakt.",
+        tags: [["tag-arbeidsrecht","Arbeidsrecht"]],
+        uitkomst: ["outcome-brandmeester","Doorverwezen naar Brandmeester"]
+      },
+      {
+        tijd: "14:40",
+        titel: "Toiletklus Zoofy — kostendispuut opgelost via afkoopvoorstel €125",
+        personen: "Verzekerde: meneer Hamelinck · Roelof van Beijnum",
+        samenvatting: "Meneer Hamelinck was niet akkoord met rekening van €256 voor een spoedklus via Zoofy (toiletreservoir; klus onvolledig uitgevoerd). Na intern overleg deed Roelof een afkoopvoorstel van €125 — klant akkoord. Mail volgt met verzoek om factuur en akkoordbevestiging, waarna bedrag wordt overgemaakt.",
+        tags: [["tag-consument","Consumentenrecht"]],
+        uitkomst: ["outcome-afkoop","Afgehandeld / afkoop"]
+      },
+      {
+        tijd: "16:26",
+        titel: "Bumperschade — doorverwezen naar garage voor kostenschatting",
+        personen: "Verzekerde: mevrouw Susi-Jack · Roelof van Beijnum",
+        samenvatting: "Mevrouw Susi-Jack belde over bumperschade na een botsing. Ze vroeg wat de herstelkosten zouden zijn. Roelof legde uit dat de juridische helpdesk geen autobedrijf is en kosten niet kan inschatten. Advies: garage raadplegen. Polischeck en franchisecheck bleven achterwege.",
+        tags: [["tag-overig","Verkeersrecht"]],
+        uitkomst: ["outcome-opgelost","Telefonisch opgelost"]
+      }
+    ],
+    acties: [
+      { prio: "prio-hoog", tekst: "Schadenummer aanmaken en dossier mevrouw Smiet (WIA/arbeidsovereenkomst gemeente Amsterdam) doorsturen naar Brandmeester", eigenaar: "Roelof van Beijnum", deadline: "dl-urgent", deadlineTekst: "Vandaag nog" },
+      { prio: "prio-hoog", tekst: "Afkoopvoorstel €125 meneer Hamelinck per mail bevestigen en factuur Zoofy + akkoordbevestiging opvragen", eigenaar: "Roelof van Beijnum", deadline: "dl-urgent", deadlineTekst: "Vandaag nog" },
+      { prio: "prio-middel", tekst: "Concept aansprakelijkheidsstelling fietsongeluk (elektrische fiets) per mail sturen naar verzekerde — binnen kwartier toegezegd", eigenaar: "Jackie Stam", deadline: "dl-soon", deadlineTekst: "Zo snel mogelijk" },
+      { prio: "prio-middel", tekst: "Stukken Wilhelm Kester ontvangen (toiletpot-factuur + NCG-bezwaar offerte) en beoordelen; bezwaartermijn van 6 weken loopt", eigenaar: "Roelof van Beijnum", deadline: "dl-soon", deadlineTekst: "Zo snel mogelijk — termijn loopt" },
+      { prio: "prio-laag", tekst: "Meneer van den Guchten (Goudse schadeclaim) terugbellen zodra reactie op bezwaar ontvangen; uitloopperiode rechtsbijstand (opgezegd 2017) vooraf controleren", eigenaar: "Roelof van Beijnum", deadline: "dl-ok", deadlineTekst: "Wachten op reactie Goudse" }
+    ],
+    analyse: {
+      goed: [
+        "Toiletklus Zoofy: proactief intern overlegd en direct afkoopvoorstel gedaan (€125) — klant akkoord, probleem efficiënt opgelost zonder langdurige procedure.",
+        "Aangetekende brief kinderwagen: correcte juridische uitleg over bewijspositie bij aangetekend sturen — aanbieding volstaat, tegenpartij kan rechtsgevolgen niet ontlopen door weigering.",
+        "Fietsongeluk Jackie: volledig stappenplan gegeven (aangifte, bewijs, aansprakelijkheidsstelling, getuigen, schadeomvang) inclusief concept-brief — concrete en volledige begeleiding."
+      ],
+      beter: [
+        "Bumperschade (16:26): franchise- en polischeck ontbreken. Verzekerde heeft rechtsbijstand maar er is niet nagegaan of verhaal op tegenpartij mogelijk was — mogelijk dekking gemist.",
+        "Fietsongeluk (13:38): tegenstrijdige polisuitleg ('valt niet onder polis want geen motor' én 'kan het vaag eronder schuiven') — onzekerheid bij verzekerde gewekt. Duidelijkere keuze maken.",
+        "Goudse schadeclaim (13:37): rechtsbijstandsverzekering opgezegd in 2017; uitloopperiode niet expliciet beoordeeld. Polisgeldigheid altijd als eerste vaststellen vóór dossier openen."
+      ]
+    }
+  },
+  "2026-06-21": {
+    drukte: "rustig",
+    gesprekken: 0,
+    stats: { opgelost: 0, brandmeester: 0, afkoop: 0, terugbel: 0, geenDekking: 0 },
+    score: 0,
+    conversations: [],
+    acties: [],
+    analyse: { goed: [], beter: [] }
+  },
+  "2026-06-22": {
+    drukte: "rustig",
+    gesprekken: 0,
+    stats: { opgelost: 0, brandmeester: 0, afkoop: 0, terugbel: 0, geenDekking: 0 },
+    score: 0,
+    conversations: [],
+    acties: [],
+    analyse: { goed: [], beter: [] }
+  }
+  // Volgende dagen worden hier toegevoegd door de scheduled task
+};
+
+const DAYS_NL = ["zondag","maandag","dinsdag","woensdag","donderdag","vrijdag","zaterdag"];
+const MONTHS_NL = ["januari","februari","maart","april","mei","juni","juli","augustus","september","oktober","november","december"];
+const COLORS = { opgelost:"#2e7d32", brandmeester:"#1565c0", afkoop:"#7b1fa2", terugbel:"#e65100", geenDekking:"#aeaeb2" };
+
+function dateKey(d) { return d.toISOString().slice(0,10); }
+function formatDate(key) {
+  const d = new Date(key + "T12:00:00");
+  return `${DAYS_NL[d.getDay()]} ${d.getDate()} ${MONTHS_NL[d.getMonth()]}`;
+}
+function getWeekKeys() {
+  const today = new Date(); today.setHours(12,0,0,0);
+  const dow = today.getDay();
+  const monday = new Date(today); monday.setDate(today.getDate() - (dow === 0 ? 6 : dow - 1));
+  const keys = [];
+  for (let i = 0; i < 7; i++) {
+    const d = new Date(monday); d.setDate(monday.getDate() + i);
+    if (d <= today) keys.push(dateKey(d));
+  }
+  return keys;
+}
+
+let chart = null;
+
+function drukteBadge(d) {
+  if (!d) return { cls: "rustig", icon: "—", label: "Geen data", sub: "" };
+  if (d.gesprekken === 0) return { cls: "rustig", icon: "😴", label: "Geen gesprekken", sub: "Geen Granola-gesprekken gevonden voor vandaag." };
+  if (d.drukte === "druk")   return { cls: "druk",   icon: "🔥", label: "Drukke dag",    sub: `${d.gesprekken} gesprekken — boven de norm van 6` };
+  if (d.drukte === "matig")  return { cls: "matig",  icon: "🟡", label: "Gemiddelde dag", sub: `${d.gesprekken} gesprekken` };
+  return                            { cls: "rustig", icon: "🟢", label: "Rustige dag",    sub: `${d.gesprekken} gesprekken — onder de norm van 4` };
+}
+
+function buildStats(stats) {
+  return `<div class="stats-grid">
+    <div class="stat-card opgelost"><div class="number">${stats.opgelost}</div><div class="label">Telefonisch opgelost</div></div>
+    <div class="stat-card brandmeester"><div class="number">${stats.brandmeester}</div><div class="label">→ Brandmeester</div></div>
+    <div class="stat-card afkoop"><div class="number">${stats.afkoop}</div><div class="label">Afgehandeld / afkoop</div></div>
+    <div class="stat-card terugbel"><div class="number">${stats.terugbel}</div><div class="label">Terugbellen</div></div>
+    <div class="stat-card geen-dekking"><div class="number">${stats.geenDekking}</div><div class="label">Geen dekking</div></div>
+  </div>`;
+}
+
+function buildChart(stats) {
+  const total = Object.values(stats).reduce((a,b) => a+b, 0) || 1;
+  const pct = (n) => Math.round(n/total*100);
+  return `<div class="chart-row">
+    <div><div class="chart-title">Uitkomsten verdeling</div><div class="chart-wrap"><canvas id="uitkomstenChart"></canvas></div></div>
+    <div class="chart-legend">
+      ${[["#2e7d32","Telefonisch opgelost",stats.opgelost],["#1565c0","→ Brandmeester",stats.brandmeester],["#7b1fa2","Afgehandeld / afkoop",stats.afkoop],["#e65100","Terugbellen",stats.terugbel],["#aeaeb2","Geen dekking",stats.geenDekking]].map(([col,name,n]) => `
+        <div class="legend-item">
+          <div class="legend-dot" style="background:${col}"></div>
+          <div class="legend-name">${name}</div>
+          <div class="legend-bar-wrap"><div class="legend-bar" style="width:${pct(n)}%;background:${col}"></div></div>
+          <div class="legend-count">${n}</div>
+        </div>`).join("")}
+    </div>
+  </div>`;
+}
+
+function initChart(stats) {
+  const canvas = document.getElementById("uitkomstenChart");
+  if (!canvas) return;
+  if (chart) { chart.destroy(); chart = null; }
+  chart = new Chart(canvas.getContext("2d"), {
+    type: "doughnut",
+    data: { labels: ["Opgelost","→ Brandmeester","Afkoop","Terugbellen","Geen dekking"], datasets: [{ data: [stats.opgelost,stats.brandmeester,stats.afkoop,stats.terugbel,stats.geenDekking], backgroundColor: Object.values(COLORS), borderWidth: 2, borderColor: "#fff" }] },
+    options: { cutout: "68%", plugins: { legend: { display: false }, tooltip: { callbacks: { label: c => ` ${c.label}: ${c.raw}` }}}, animation: { animateRotate: true }}
+  });
+}
+
+function buildConversations(convs, showDagHeader = false, dagLabel = "", dagScore = null) {
+  if (!convs || convs.length === 0) return `<div style="padding:16px 18px;color:#aeaeb2;font-size:13px;">Geen gesprekken geregistreerd.</div>`;
+  let html = "";
+  if (showDagHeader) html += `<div class="dag-header"><span>${dagLabel}</span>${dagScore !== null ? `<span class="dag-score">⭐ ${dagScore.toFixed(1)}/10</span>` : ""}</div>`;
+  html += convs.map(c => `
+    <div class="conv-item">
+      <div class="conv-time">${c.tijd}</div>
+      <div>
+        <div class="conv-title">${c.titel}</div>
+        <div class="conv-persons">${c.personen}</div>
+        <div class="conv-summary">${c.samenvatting}</div>
+        <div class="conv-footer">
+          ${c.tags.map(([cls,lbl]) => `<span class="tag ${cls}">${lbl}</span>`).join("")}
+          <span class="outcome-badge ${c.uitkomst[0]}">${c.uitkomst[1]}</span>
+        </div>
+      </div>
+    </div>`).join("");
+  return html;
+}
+
+function buildActies(acties) {
+  if (!acties || acties.length === 0) return `<div style="padding:16px 18px;color:#aeaeb2;font-size:13px;">Geen openstaande actiepunten.</div>`;
+  return acties.map((a,i) => `
+    <div class="action-item">
+      <div class="prio-dot ${a.prio}"></div>
+      <div class="check-box" onclick="toggleCheck(this)" id="chk-${i}"></div>
+      <div class="action-content">
+        <div class="action-text">${a.tekst}</div>
+        <div class="action-meta"><span class="action-owner">👤 ${a.eigenaar}</span><span class="${a.deadline}">⏰ ${a.deadlineTekst}</span></div>
+      </div>
+    </div>`).join("");
+}
+
+function buildAnalyse(analyse, score) {
+  return `
+    <div class="analyse-score">
+      <div class="score-label">Dagkwaliteit</div>
+      <div class="score-bar-wrap"><div class="score-bar" style="width:${score*10}%"></div></div>
+      <div class="score-num">${score > 0 ? score.toFixed(1) + ' / 10' : '—'}</div>
+    </div>
+    <div class="analyse-divider"></div>
+    <div class="analyse-grid">
+      <div class="analyse-col">
+        <div class="analyse-col-title goed">✅ Wat ging goed</div>
+        ${analyse.goed.length ? analyse.goed.map(t => `<div class="analyse-point"><div class="analyse-icon">✓</div><div class="analyse-text">${t}</div></div>`).join("") : '<div style="color:#aeaeb2;font-size:13px;">Geen data.</div>'}
+      </div>
+      <div class="analyse-col">
+        <div class="analyse-col-title beter">⚠️ Wat kon beter</div>
+        ${analyse.beter.length ? analyse.beter.map(t => `<div class="analyse-point"><div class="analyse-icon">!</div><div class="analyse-text">${t}</div></div>`).join("") : '<div style="color:#aeaeb2;font-size:13px;">Geen data.</div>'}
+      </div>
+    </div>`;
+}
+
+function renderDay(key, headerLabel) {
+  const d = weekData[key];
+  const app = document.getElementById("app");
+  document.getElementById("header-date").textContent = headerLabel;
+  if (!d) { app.innerHTML = `<div style="padding:40px;text-align:center;color:#aeaeb2;font-size:13px;">Geen data beschikbaar voor ${formatDate(key)}.</div>`; return; }
+  const db = drukteBadge(d);
+  app.innerHTML = `
+    <div class="drukte-banner ${db.cls}">
+      <div class="drukte-icon">${db.icon}</div>
+      <div><div class="drukte-label">${db.label}</div><div class="drukte-sub">${db.sub}</div></div>
+    </div>
+    ${buildStats(d.stats)}
+    ${buildChart(d.stats)}
+    <div class="section">
+      <div class="section-header" onclick="toggle(this)">
+        <div class="section-icon" style="background:#e3f2fd;">💬</div>
+        <div class="section-title">Gesprekken</div>
+        <span class="section-count">${d.gesprekken}</span>
+        <span class="chevron">▼</span>
+      </div>
+      <div class="section-body">${buildConversations(d.conversations)}</div>
+    </div>
+    <div class="section">
+      <div class="section-header" onclick="toggle(this)">
+        <div class="section-icon" style="background:#e8f5e9;">✅</div>
+        <div class="section-title">Actiepunten</div>
+        <span class="section-count">${d.acties.length}</span>
+        <span class="chevron">▼</span>
+      </div>
+      <div class="section-body">${buildActies(d.acties)}</div>
+    </div>
+    <div class="section">
+      <div class="section-header" onclick="toggle(this)">
+        <div class="section-icon" style="background:#f3e5f5;">📊</div>
+        <div class="section-title">Kwaliteitsanalyse</div>
+        <span class="chevron">▼</span>
+      </div>
+      <div class="section-body">${buildAnalyse(d.analyse, d.score)}</div>
+    </div>`;
+  initChart(d.stats);
+}
+
+function renderWeek() {
+  document.getElementById("header-date").textContent = "Weekoverzicht";
+  const keys = getWeekKeys();
+  const todayKey = dateKey(new Date());
+  const totals = { opgelost:0, brandmeester:0, afkoop:0, terugbel:0, geenDekking:0 };
+  let totalGesprekken = 0, scoreSum = 0, scoreDays = 0;
+  keys.forEach(k => {
+    const d = weekData[k];
+    if (d && d.gesprekken > 0) {
+      totals.opgelost += d.stats.opgelost; totals.brandmeester += d.stats.brandmeester;
+      totals.afkoop += d.stats.afkoop; totals.terugbel += d.stats.terugbel; totals.geenDekking += d.stats.geenDekking;
+      totalGesprekken += d.gesprekken; scoreSum += d.score; scoreDays++;
+    }
+  });
+  const avgScore = scoreDays > 0 ? (scoreSum / scoreDays) : null;
+  const DAGNAMEN = ["Ma","Di","Wo","Do","Vr","Za","Zo"];
+  const tableRows = keys.map(k => {
+    const d = weekData[k];
+    const dateObj = new Date(k + "T12:00:00");
+    const dagNaam = DAGNAMEN[dateObj.getDay() === 0 ? 6 : dateObj.getDay() - 1];
+    const dagNum = `${dateObj.getDate()} ${MONTHS_NL[dateObj.getMonth()]}`;
+    const isToday = k === todayKey;
+    if (!d || d.gesprekken === 0) return `<div class="week-row${isToday?" today":""}"><div class="week-day">${dagNaam}${isToday?" 🔵":""}<div class="date-sub">${dagNum}</div></div><div class="week-empty" style="grid-column:2/8">${d ? "Geen gesprekken" : "Geen data"}</div></div>`;
+    const scoreClass = d.score >= 8 ? "high" : d.score >= 6.5 ? "mid" : "low";
+    return `<div class="week-row${isToday?" today":""}"><div class="week-day">${dagNaam}${isToday?" 🔵":""}<div class="date-sub">${dagNum}</div></div><div class="week-num green">${d.stats.opgelost}</div><div class="week-num blue">${d.stats.brandmeester}</div><div class="week-num purple">${d.stats.afkoop}</div><div class="week-num orange">${d.stats.terugbel}</div><div class="week-num gray">${d.stats.geenDekking}</div><div class="week-score ${scoreClass}">${d.score.toFixed(1)}</div></div>`;
+  }).join("");
+  const allConvs = keys.map(k => { const d = weekData[k]; if (!d || !d.conversations || d.conversations.length === 0) return ""; return buildConversations(d.conversations, true, formatDate(k), d.score); }).join("");
+  const allActies = keys.flatMap(k => weekData[k]?.acties || []);
+  const app = document.getElementById("app");
+  app.innerHTML = `
+    <div class="drukte-banner rustig" style="background:#e8f0fe;border-color:#c5d8fd;">
+      <div class="drukte-icon">📅</div>
+      <div><div class="drukte-label" style="color:#1a1a2e;">Week totaal — ${totalGesprekken} gesprekken</div><div class="drukte-sub">${keys.length} dagen · ${scoreDays} dag(en) met data${avgScore !== null ? ` · gem. score ${avgScore.toFixed(1)}/10` : ""}</div></div>
+    </div>
+    <div class="week-table">
+      <div class="week-table-header"><div>Dag</div><div style="text-align:center;color:#2e7d32">✅ Opgelost</div><div style="text-align:center;color:#1565c0">⚖️ Brandm.</div><div style="text-align:center;color:#7b1fa2">🤝 Afkoop</div><div style="text-align:center;color:#e65100">📞 Terug</div><div style="text-align:center;color:#aeaeb2">🚫 Geen</div><div style="text-align:right">Score</div></div>
+      ${tableRows}
+      <div class="week-totals"><div>Totaal</div><div style="text-align:center;color:#2e7d32">${totals.opgelost}</div><div style="text-align:center;color:#1565c0">${totals.brandmeester}</div><div style="text-align:center;color:#7b1fa2">${totals.afkoop}</div><div style="text-align:center;color:#e65100">${totals.terugbel}</div><div style="text-align:center;color:#aeaeb2">${totals.geenDekking}</div><div style="text-align:right">${avgScore !== null ? avgScore.toFixed(1) : "—"}</div></div>
+    </div>
+    ${buildStats(totals)}
+    ${buildChart(totals)}
+    <div class="section">
+      <div class="section-header" onclick="toggle(this)"><div class="section-icon" style="background:#e3f2fd;">💬</div><div class="section-title">Alle gesprekken deze week</div><span class="section-count">${totalGesprekken}</span><span class="chevron">▼</span></div>
+      <div class="section-body">${allConvs || '<div style="padding:16px 18px;color:#aeaeb2;font-size:13px;">Nog geen gesprekken deze week.</div>'}</div>
+    </div>
+    <div class="section">
+      <div class="section-header" onclick="toggle(this)"><div class="section-icon" style="background:#e8f5e9;">✅</div><div class="section-title">Openstaande actiepunten</div><span class="section-count">${allActies.length}</span><span class="chevron">▼</span></div>
+      <div class="section-body">${buildActies(allActies)}</div>
+    </div>`;
+  initChart(totals);
+}
+
+let currentView = "vandaag";
+function setView(v) {
+  currentView = v;
+  ["vandaag","gisteren","week"].forEach(x => document.getElementById("btn-"+x).classList.toggle("active", x===v));
+  const today = new Date(); today.setHours(12,0,0,0);
+  const yesterday = new Date(today); yesterday.setDate(today.getDate() - 1);
+  if (v === "vandaag") renderDay(dateKey(today), "Vandaag — " + formatDate(dateKey(today)));
+  else if (v === "gisteren") renderDay(dateKey(yesterday), "Gisteren — " + formatDate(dateKey(yesterday)));
+  else renderWeek();
+}
+function toggle(header) {
+  const body = header.nextElementSibling;
+  const isOpen = body.style.display !== "none";
+  body.style.display = isOpen ? "none" : "";
+  header.parentElement.classList.toggle("collapsed", isOpen);
+}
+function toggleCheck(el) {
+  el.classList.toggle("done");
+  el.textContent = el.classList.contains("done") ? "✓" : "";
+  const txt = el.closest(".action-item").querySelector(".action-text");
+  if (txt) txt.classList.toggle("done-text", el.classList.contains("done"));
+}
+function refresh() { setView(currentView); }
+setView("vandaag");
+</script>
+</body>
+</html>
