@@ -2366,7 +2366,6 @@ document.addEventListener('DOMContentLoaded', async () => {
   setInterval(setTime, 60000);
 
   await loadLiveToday();
-  buildWeekContext();
 
   const tabs = document.querySelectorAll('.period-tab');
   tabs.forEach(tab => {
@@ -2379,6 +2378,7 @@ document.addEventListener('DOMContentLoaded', async () => {
   });
 
   renderDashboard(activePeriod);
+  try { buildWeekContext(); } catch(e) { console.log("weekContext:", e.message); }
 });
 
 // ======================== WEEK CONTEXT ========================
