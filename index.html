@@ -1080,28 +1080,34 @@ body {
 }
 .auth-overlay.hidden { display: none; }
 
-.auth-logo {
+.auth-card-logo {
   display: flex;
   align-items: center;
-  gap: 16px;
-  margin-bottom: 32px;
+  gap: 14px;
+  padding: 20px 0 18px;
 }
-.auth-logo-divider {
+.auth-card-logo-divider {
   width: 1px;
-  height: 32px;
-  background: rgba(255,255,255,0.25);
+  height: 36px;
+  background: rgba(13,27,52,0.15);
+  flex-shrink: 0;
 }
-.auth-logo-opdracht {
+.auth-card-logo-right {
   display: flex;
   flex-direction: column;
-  gap: 4px;
+  gap: 3px;
 }
-.auth-logo-label {
+.auth-card-logo-label {
   font-size: 8px;
   font-weight: 700;
-  color: rgba(255,255,255,0.45);
+  color: rgba(13,27,52,0.4);
   text-transform: uppercase;
   letter-spacing: 1px;
+}
+.auth-card-logo-border {
+  height: 1px;
+  background: rgba(13,27,52,0.08);
+  margin: 0 0 28px;
 }
 
 .auth-card {
@@ -2912,27 +2918,27 @@ async function checkAuth() {
 
 <!-- AUTH OVERLAY -->
 <div class="auth-overlay hidden" id="auth-overlay">
-  <div class="auth-logo">
-    <!-- HTJZ badge logo -->
-    <svg viewBox="0 0 58 58" width="52" height="52" xmlns="http://www.w3.org/2000/svg">
-      <circle cx="29" cy="29" r="27" fill="none" stroke="#A07C35" stroke-width="1.5"/>
-      <rect x="7" y="11" width="44" height="36" rx="2" fill="none" stroke="#A07C35" stroke-width="1"/>
-      <text x="29" y="21" text-anchor="middle" fill="#A07C35" font-size="6.5" font-weight="600" font-family="Poppins,sans-serif">Het</text>
-      <text x="29" y="31" text-anchor="middle" fill="#A07C35" font-size="10" font-weight="700" font-family="Poppins,sans-serif">Team</text>
-      <text x="29" y="39" text-anchor="middle" fill="#A07C35" font-size="5.2" font-weight="700" font-family="Poppins,sans-serif" letter-spacing="0.3">JURIDISCHE</text>
-      <text x="29" y="45.5" text-anchor="middle" fill="#A07C35" font-size="5.2" font-weight="700" font-family="Poppins,sans-serif" letter-spacing="0.3">ZAKEN</text>
-    </svg>
-    <div class="auth-logo-divider"></div>
-    <div class="auth-logo-opdracht">
-      <span class="auth-logo-label">In opdracht van</span>
-      <!-- Lancyr wordmark logo -->
-      <svg viewBox="0 0 130 32" width="118" height="29" xmlns="http://www.w3.org/2000/svg">
-        <text x="0" y="26" fill="#2D1760" font-size="27" font-weight="800" font-family="Poppins,sans-serif" letter-spacing="-0.5">LANCYR</text>
-        <text x="103" y="26" fill="#8C6FBD" font-size="24" font-weight="700" font-family="Poppins,sans-serif">+</text>
-      </svg>
-    </div>
-  </div>
   <div class="auth-card">
+    <!-- Logo header: in witte kaart = goed leesbaar -->
+    <div class="auth-card-logo">
+      <svg viewBox="0 0 58 58" width="44" height="44" xmlns="http://www.w3.org/2000/svg">
+        <circle cx="29" cy="29" r="27" fill="none" stroke="#A07C35" stroke-width="1.8"/>
+        <rect x="7" y="11" width="44" height="36" rx="2" fill="none" stroke="#A07C35" stroke-width="1.1"/>
+        <text x="29" y="21" text-anchor="middle" fill="#A07C35" font-size="6.5" font-weight="600" font-family="Poppins,sans-serif">Het</text>
+        <text x="29" y="31" text-anchor="middle" fill="#A07C35" font-size="10" font-weight="700" font-family="Poppins,sans-serif">Team</text>
+        <text x="29" y="39" text-anchor="middle" fill="#A07C35" font-size="5.2" font-weight="700" font-family="Poppins,sans-serif" letter-spacing="0.3">JURIDISCHE</text>
+        <text x="29" y="45.5" text-anchor="middle" fill="#A07C35" font-size="5.2" font-weight="700" font-family="Poppins,sans-serif" letter-spacing="0.3">ZAKEN</text>
+      </svg>
+      <div class="auth-card-logo-divider"></div>
+      <div class="auth-card-logo-right">
+        <span class="auth-card-logo-label">In opdracht van</span>
+        <svg viewBox="0 0 130 32" width="105" height="26" xmlns="http://www.w3.org/2000/svg">
+          <text x="0" y="26" fill="#2D1760" font-size="27" font-weight="800" font-family="Poppins,sans-serif" letter-spacing="-0.5">LANCYR</text>
+          <text x="103" y="26" fill="#8C6FBD" font-size="24" font-weight="700" font-family="Poppins,sans-serif">+</text>
+        </svg>
+      </div>
+    </div>
+    <div class="auth-card-logo-border"></div>
 
     <!-- LOGIN SCHERM -->
     <div class="auth-screen active" id="auth-login-screen">
