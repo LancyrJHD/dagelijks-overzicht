@@ -2636,9 +2636,9 @@ async function loadLiveToday() {
     if (!resp.ok) return;
     const live = await resp.json();
     const todayStr = new Date().toLocaleDateString('sv-SE'); // YYYY-MM-DD
-    if (live.date === todayStr && Array.isArray(live.entries) && live.entries.length > 0) {
-      weekData[todayStr] = convertLiveToday(live);
-      console.log('[LiveData] Geladen: ' + live.entries.length + ' gesprekken van ' + todayStr);
+    if (live.date && Array.isArray(live.entries) && live.entries.length > 0) {
+      weekData[live.date] = convertLiveToday(live);
+      console.log('[LiveData] Geladen: ' + live.entries.length + ' gesprekken van ' + live.date);
     }
   } catch (e) {
     console.log('[LiveData] Niet beschikbaar, val terug op weekData');
