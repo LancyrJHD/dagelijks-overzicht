@@ -1851,26 +1851,34 @@ const weekData = {
     }
   },
   "2026-06-26": {
-    drukte: "rustig",
-    gesprekken: 3,
-    stats: {opgelost:2, brandmeester:0, afkoop:0, terugbel:1, geenDekking:0},
-    score: 6.5,
+    drukte: "druk",
+    gesprekken: 7,
+    stats: {opgelost:3, brandmeester:1, afkoop:0, terugbel:3, geenDekking:0},
+    score: 7.0,
     conversations: [
-      {tijd:"09:17", titel:"Sensor reparatie geschil — bewijspositie en minnelijke oplossing", personen:"Verzekerde: dhr. Van Ekelen · Roelof van Beijnum", samenvatting:"Bedrijf stelt dat verzekerde sensor beschadigde door instellingswijziging, vraagt €100 voor reparatie. Roelof besprak de bewijspositie (lastig) en adviseerde telefonisch contact voor minnelijke oplossing. Franchise-check (€100 < €250 consumentenfranchise) werd niet uitgevoerd in het gesprek.", tags:[["tag-consument","Consumentenrecht"]], uitkomst:["outcome-terugbel","Terugbellen"]},
-      {tijd:"10:45", titel:"Verkeerde afdeling — verzekeringscode doorverwijzing", personen:"Verzekerde: anoniem · Roelof van Beijnum", samenvatting:"Beller wilde autoverzekering overstappen naar goedkopere aanbieder en had een verzekeringscode nodig. Geen juridische kwestie. Snel en vriendelijk doorverwezen naar het hoofdnummer.", tags:[["tag-overig","Routering"]], uitkomst:["outcome-opgelost","Telefonisch opgelost"]},
-      {tijd:"10:56", titel:"Thuisbatterij-installatie — schadevergoeding en opbrengstgarantie", personen:"Verzekerde: Merel Stink · Roelof van Beijnum", samenvatting:"Thuisbatterij foutief geïnstalleerd; zonnepanelen 23 april t/m 15 juni uitgevallen, schade ca. €500. Leverancier weigert o.b.v. AV maar deed eerder mondelinge toezegging. Advies: opbrengstberekening opsturen, beroep op mondelinge toezegging, minnelijke schikking nastreven i.p.v. rechtsbijstand.", tags:[["tag-consument","Consumentenrecht"],["tag-overig","Productaansprakelijkheid"]], uitkomst:["outcome-opgelost","Telefonisch opgelost"]}
+      {tijd:"09:17", titel:"Sensor reparatie geschil — bewijspositie en minnelijke oplossing", personen:"Verzekerde: dhr. Van Ekelen · Roelof van Beijnum", samenvatting:"Sensor beschadigd door instellingswijziging (€100 reparatie); bedrijf weigert kosteloos te herstellen. Roelof besprak bewijspositie (lastig) en adviseerde telefonisch contact voor minnelijke schikking. Franchise-check (€100 < €250) werd niet expliciet uitgevoerd.", tags:[["tag-consument","Consumentenrecht"]], uitkomst:["outcome-terugbel","Terugbellen"]},
+      {tijd:"10:04", titel:"Qatar-vluchtannulering — ticket heropend en vervolgstappen", personen:"Verzekerde: Peter Rijdsma · Senne Duifhuis", samenvatting:"Ticket was voor de tweede keer gesloten zonder oplossing; klant ontevreden. Senne heropende ticket, erkende communicatiefout. Afgesproken: klant belt Qatar uiterlijk maandag, daarna terugbellen voor vervolgstap.", tags:[["tag-consument","Consumentenrecht"]], uitkomst:["outcome-terugbel","Terugbellen"]},
+      {tijd:"10:42", titel:"Rechtsbijstand en gezagswijziging — school en familierecht", personen:"Verzekerde: Sabine Mekel · Senne Duifhuis", samenvatting:"Twee vragen: (1) zoon meeverzekerd na late bijschrijving? → intern geëscaleerd, terugkoppeling volgt. (2) Gezagswijziging voor schoolkeuze Curaçao → uitgeclausuleerd (art. 14.2.2 polis). Adresgegevens 9 jaar oud; identiteitsverificatie via polisnummer gedaan.", tags:[["tag-overig","Familierecht"]], uitkomst:["outcome-terugbel","Terugbellen"]},
+      {tijd:"10:45", titel:"Verkeerde afdeling — verzekeringscode doorverwijzing", personen:"Verzekerde: anoniem · Roelof van Beijnum", samenvatting:"Beller wilde autoverzekering overstappen; had verzekeringscode nodig. Geen juridische kwestie. Snel doorverwezen naar het juiste nummer op de Lancyr-website.", tags:[["tag-overig","Routering"]], uitkomst:["outcome-opgelost","Telefonisch opgelost"]},
+      {tijd:"10:56", titel:"Thuisbatterij-installatie — opbrengstgarantie en minnelijke schikking", personen:"Verzekerde: Merel Stink · Roelof van Beijnum", samenvatting:"Thuisbatterij foutief geïnstalleerd (23 apr–15 jun); ~€500 misgelopen opbrengst, opbrengstgarantie zonnepanelen vervallen. Leverancier weigert o.b.v. AV maar deed eerder mondelinge toezegging (opgenomen gesprek). Advies: berekening opsturen, beroep op toezegging, minnelijke schikking nastreven.", tags:[["tag-consument","Consumentenrecht"]], uitkomst:["outcome-opgelost","Telefonisch opgelost"]},
+      {tijd:"12:32", titel:"Burengeschil schutting — juridische hulp Joyce Fisser", personen:"Verzekerde: Joyce Fisser · Senne Duifhuis", samenvatting:"Buurman verwijdert eigenmachtig schutting op erfgrens zonder toestemming. Senne verifieert dekking (10.8.1 burenrecht: gedekt). Ticket aangemaakt, schadenummer aangevraagd, doorverwezen naar rechtsbijstand.", tags:[["tag-overig","Burenrecht"]], uitkomst:["outcome-brandmeester","Doorverwezen naar Brandmeester"]},
+      {tijd:"14:29", titel:"Verzekeringsgegevens — contactgegevens voor klant in Duitsland", personen:"Verzekerde: anoniem · Senne Duifhuis", samenvatting:"Eerder ingepland gesprek. Klant woont in Duitsland, werkt in Nederland. Polis snel niet te vinden. Senne verwees door naar info@lancierverzekeringen.nl voor inhoudelijke policycheck.", tags:[["tag-overig","Internationaal"]], uitkomst:["outcome-opgelost","Telefonisch opgelost"]}
     ],
     acties: [
-      {prio:"prio-middel", tekst:"Sensor-zaak Van Ekelen: bij terugbellen alsnog franchise-check uitvoeren — €100 schade < €250 consumentenfranchise → geen dekking", eigenaar:"Roelof van Beijnum", deadline:"dl-soon", deadlineTekst:"Bij volgend contact"}
+      {prio:"prio-hoog", tekst:"Qatar Rijdsma: terugbellen maandag 29 juni na contact met Qatar — vervolgstap klaarstaan (rechtsbijstand als refund uitblijft)", eigenaar:"Senne Duifhuis", deadline:"dl-urgent", deadlineTekst:"Maandag 29 juni"},
+      {prio:"prio-hoog", tekst:"Sabine Mekel: terugkoppeling intern (coulance zoon meeverzekerd?) — zo snel mogelijk vandaag of maandag", eigenaar:"Senne Duifhuis", deadline:"dl-urgent", deadlineTekst:"Vandaag of maandag 29 juni"},
+      {prio:"prio-middel", tekst:"Sensor Van Ekelen: bij terugbellen franchise-check uitvoeren — €100 < €250 consumentenfranchise → geen dekking", eigenaar:"Roelof van Beijnum", deadline:"dl-soon", deadlineTekst:"Bij volgend contact"}
     ],
     analyse: {
       goed: [
-        "Verkeerde afdeling direct herkend en vriendelijk doorverwezen — kort en efficiënt.",
-        "Thuisbatterij: realistisch verwachtingsmanagement; AV-positie leverancier correct ingeschat, beroep op mondelinge toezegging als slimste route aangewezen."
+        "Burengeschil Fisser: dekkingscheck correct uitgevoerd (10.8.1), protocol gevolgd, ticket aangemaakt en doorverwezen.",
+        "Thuisbatterij: realistisch advies over AV-positie leverancier; beroep op opgenomen mondelinge toezegging als slimste route aangewezen.",
+        "Gezagswijziging Mekel: polis correct opgezocht (art. 14.2.2), uitsluiting helder uitgelegd en toch doorverwezen voor de primaire vraag."
       ],
       beter: [
-        "Sensor-zaak: franchise-check NIET uitgevoerd. Schade €100 valt ruim onder consumentenfranchise €250 — dit had direct geen dekking moeten zijn. Roelof gaf merits-advies zonder dekkingscheck, wat een seriöuze procesfout is.",
-        "Thuisbatterij: polisverificatie en identiteitscheck niet hoorbaar aan het begin van het gesprek — structureel aandachtspunt."
+        "Qatar-ticket twee keer gesloten zonder oplossing — klant onnodig gefrustreerd. Ticketbeheer intern aankaarten.",
+        "Sensor Van Ekelen: franchise-check ontbrak. Schade €100 < €250 drempel; had direct geen dekking moeten zijn in plaats van merits-advies.",
+        "Sabine Mekel: adres 9 jaar niet bijgewerkt in systeem. Identiteitsverificatie liep moeizaam — adresupdate bij contact vastleggen."
       ]
     }
   }
