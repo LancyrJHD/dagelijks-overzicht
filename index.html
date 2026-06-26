@@ -1,10 +1,8 @@
-<!DOCTYPE html>
-<script type="application/json" id="cowork-artifact-meta">
+<!DOCTYPE html><script type="application/json" id="cowork-artifact-meta">
 {
   "name": "Lancyr Dagrapport",
   "schemaVersion": 1
 }
-
 </script>
 <html lang="nl">
 <head>
@@ -1849,6 +1847,29 @@ const weekData = {
         "Vier gesprekken (12:22, 12:39, 14:31 + Vissen 11:56) waren schade/verzekerings- of productvragen, geen juridische kwesties — structureel routeringsprobleem intern aankaarten bij Lancyr.",
         "Terugbelpoging 15:48 ging naar voicemail — opvolging bewaken; belafspraakmaken.nl is correct doorverwezen.",
         "Van Der Ree afkoopzaak: intern communicatiepad onduidelijk (wie approvet de afkoop?); Sione’s rol in Zoho-tickets helderder vastleggen."
+      ]
+    }
+  },
+  "2026-06-26": {
+    drukte: "rustig",
+    gesprekken: 3,
+    stats: {opgelost:2, brandmeester:0, afkoop:0, terugbel:0, geenDekking:1},
+    score: 7.0,
+    conversations: [
+      {tijd:"09:17", titel:"Sensor reparatie geschil — franchise onder drempel", personen:"Verzekerde: anoniem · Roelof van Beijnum", samenvatting:"Sensor ter reparatie aangeboden; bedrijf stelt dat verzekerde schade veroorzaakte door instellingswijziging en vraagt €100. Franchise consument €250: schade €100 valt onder drempel → geen dekking. Advies: telefonisch overleg met bedrijf nastreven voor minnelijke oplossing; bij mislukken terugbellen.", tags:[["tag-consument","Consumentenrecht"]], uitkomst:["outcome-geen-dekking","Geen dekking / niet kunnen helpen"]},
+      {tijd:"10:45", titel:"Verkeerde afdeling — verzekeringscode doorverwijzing", personen:"Verzekerde: anoniem · Roelof van Beijnum", samenvatting:"Beller belde juridische helpdesk voor vraag over goedkopere autoverzekering. Geen juridische kwestie. Vriendelijk doorverwezen naar keuzemenu hoofdnummer.", tags:[["tag-overig","Routering"]], uitkomst:["outcome-opgelost","Telefonisch opgelost"]},
+      {tijd:"10:56", titel:"Thuisbatterij-installatie — schadevergoeding en opbrengstgarantie", personen:"Verzekerde: anoniem · Roelof van Beijnum", samenvatting:"Thuisbatterij foutief geïnstalleerd; zonnepanelen 23 april t/m 15 juni uitgevallen, ca. €500 schade. Leverancier weigert o.b.v. AV maar deed eerder mondelinge toezegging. Advies: leverancier aanschrijven met opbrengstberekening, beroep op mondelinge toezegging, minnelijke schikking nastreven.", tags:[["tag-overig","Productaansprakelijkheid"]], uitkomst:["outcome-opgelost","Telefonisch opgelost"]}
+    ],
+    acties: [],
+    analyse: {
+      goed: [
+        "Sensor reparatie: franchise correct vastgesteld (€100 < €250) — geen dekking terecht geconcludeerd, toch praktisch advies gegeven.",
+        "Thuisbatterij: verwachtingsmanagement goed gedaan; kans via procedure realistisch ingeschat gezien sterke positie leverancier in AV.",
+        "Verkeerde afdeling: snel en vriendelijk afgehandeld, beller correct doorverwezen."
+      ],
+      beter: [
+        "Thuisbatterij: mondelinge toezegging leverancier is de kern — ideaal had Roelof geadviseerd dit direct schriftelijk te bevestigen richting leverancier.",
+        "Dekkingsstatus thuisbatterij bleef op twijfel staan — intern signaleren of dekkingsbeoordeling afronden."
       ]
     }
   }
