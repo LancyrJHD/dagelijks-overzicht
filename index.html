@@ -2776,7 +2776,7 @@ const SUPABASE_ANON_KEY = 'sb_publishable_Yub_Wyg9Z6arQZR9_zLZHw_SFwU0Dj7';  // 
 let _supabase = null;
 function getSupabase() {
   if (!_supabase && typeof supabase !== 'undefined') {
-    _supabase = supabase.createClient(SUPABASE_URL, SUPABASE_ANON_KEY, { auth: { detectSessionInUrl: false } });
+    _supabase = supabase.createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
   }
   return _supabase;
 }
@@ -2922,7 +2922,7 @@ async function authForgotPassword() {
   btn.disabled = true; btn.textContent = 'Bezig…';
   clearAuthMessages();
   const { error } = await sb.auth.resetPasswordForEmail(email, {
-    redirectTo: 'https://lancyrjhd.github.io/dagelijks-overzicht'
+    redirectTo: 'https://lancyrjhd.github.io/dagelijks-overzicht/?type=recovery'
   });
   if (error) { b2.disabled=false; b2.textContent='Herstelmail sturen'; showAuthError('forgot-error',vertaalAuthFout(error.message)); return; }
   const suc=document.getElementById('forgot-success');
@@ -2970,47 +2970,39 @@ async function checkAuth() {
   const sb = getSupabase();
   if (!sb) { showAuthOverlay(); return false; }
 
-  // Registreer listener altijd als eerste
-  sb.auth.onAuthStateChange((ev, _s) => {
-    if (ev === 'PASSWORD_RECOVERY') {
-      _recoveryMode = true;
-      showAuthOverlay();
-      showReset();
-    }
-  });
-
-  // Implicit flow: type=recovery in hash
+  const urlParams  = new URLSearchParams(window.location.search);
   const hashParams = new URLSearchParams(window.location.hash.replace('#',''));
-  if (hashParams.get('type') === 'recovery') {
-    _recoveryMode = true;
-    showAuthOverlay();
-    showReset();
-    window.history.replaceState({}, '', window.location.pathname);
-    return false;
-  }
 
-  // PKCE flow: wissel ?code= handmatig uit (detectSessionInUrl is uitgeschakeld)
-  const urlParams = new URLSearchParams(window.location.search);
-  if (urlParams.has('code')) {
+  // PKCE recovery: Supabase redirecteert naar ?type=recovery&code=XXX
+  if (urlParams.get('type') === 'recovery' && urlParams.has('code')) {
     const code = urlParams.get('code');
     window.history.replaceState({}, '', window.location.pathname);
     try {
       await sb.auth.exchangeCodeForSession(code);
     } catch(e) {
-      console.error('[Auth] code exchange fout:', e);
+      console.error('[Auth] recovery exchange fout:', e);
       showAuthOverlay();
       return false;
     }
-    // Geef de onAuthStateChange callback tijd om te verwerken
-    await new Promise(r => setTimeout(r, 100));
-    if (_recoveryMode) { return false; }
-    const { data } = await sb.auth.getSession();
-    if (data?.session) { hideAuthOverlay(); return true; }
+    _recoveryMode = true;
     showAuthOverlay();
+    showReset();
+    return false;
+  }
+
+  // Implicit flow fallback: type=recovery in hash
+  if (hashParams.get('type') === 'recovery') {
+    _recoveryMode = true;
+    window.history.replaceState({}, '', window.location.pathname);
+    showAuthOverlay();
+    showReset();
     return false;
   }
 
   // Normale flow
+  sb.auth.onAuthStateChange((ev, _s) => {
+    if (ev === 'PASSWORD_RECOVERY') { _recoveryMode = true; showAuthOverlay(); showReset(); }
+  });
   let session = null;
   try {
     const resp = await sb.auth.getSession();
