@@ -2831,7 +2831,7 @@ function showAuthError(id, msg) {
   el.classList.add('visible');
 }
 function clearAuthMessages() {
-  ['login-error','register-error','register-success'].forEach(id => {
+  ['login-error','register-error','register-success','forgot-error','forgot-success'].forEach(id => {
     const el = document.getElementById(id);
     if (el) { el.textContent = ''; el.classList.remove('visible'); }
   });
@@ -2871,6 +2871,25 @@ async function authRegister() {
   if (error) { showAuthError('register-error', vertaalAuthFout(error.message)); return; }
   const suc = document.getElementById('register-success');
   suc.textContent = 'Account aangemaakt! Controleer je e-mail om te bevestigen.';
+  suc.classList.add('visible');
+}
+
+// ── Wachtwoord vergeten ──
+async function authForgotPassword() {
+  const sb = getSupabase();
+  if (!sb) { showAuthError('forgot-error', 'Supabase niet geconfigureerd.'); return; }
+  const email = document.getElementById('forgot-email').value.trim();
+  if (!email) { showAuthError('forgot-error', 'Vul je e-mailadres in.'); return; }
+  const btn = document.getElementById('forgot-btn');
+  btn.disabled = true; btn.textContent = 'Bezig…';
+  clearAuthMessages();
+  const { error } = await sb.auth.resetPasswordForEmail(email, {
+    redirectTo: 'https://lancyrjhd.github.io/dagelijks-overzicht'
+  });
+  btn.disabled = false; btn.textContent = 'Herstelmail sturen';
+  if (error) { showAuthError('forgot-error', vertaalAuthFout(error.message)); return; }
+  const suc = document.getElementById('forgot-success');
+  suc.textContent = 'Herstelmail verstuurd! Controleer je inbox.';
   suc.classList.add('visible');
 }
 
