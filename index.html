@@ -2963,14 +2963,51 @@ document.addEventListener('keydown', function(e) {
 
 // ── Auth check bij init (wordt aangeroepen vanuit DOMContentLoaded) ──
 async function checkAuth() {
-  // Als Supabase nog niet geconfigureerd is, sla over (dev-mode)
   if (SUPABASE_URL === 'JOUW_SUPABASE_URL') {
-    console.warn('[Auth] Supabase niet geconfigureerd — auth overgeslagen in dev-mode');
-    return true; // toegang verlenen zodat dashboard zichtbaar blijft tijdens development
+    console.warn('[Auth] dev-mode');
+    return true;
   }
   const sb = getSupabase();
   if (!sb) { showAuthOverlay(); return false; }
-  sb.auth.onAuthStateChange((ev,_s)=>{ if(ev==='PASSWORD_RECOVERY'){_recoveryMode=true;showAuthOverlay();showReset();} });
+
+  // Implicit flow: type=recovery zit in de hash (#access_token=...&type=recovery)
+  const hashParams = new URLSearchParams(window.location.hash.replace('#',''));
+  if (hashParams.get('type') === 'recovery') {
+    _recoveryMode = true;
+    showAuthOverlay();
+    showReset();
+    window.history.replaceState({}, '', window.location.pathname);
+    return false;
+  }
+
+  // PKCE flow: Supabase stuurt ?code=... door → wacht op PASSWORD_RECOVERY event
+  const urlParams = new URLSearchParams(window.location.search);
+  if (urlParams.has('code')) {
+    return new Promise((resolve) => {
+      const timer = setTimeout(() => { showAuthOverlay(); resolve(false); }, 6000);
+      sb.auth.onAuthStateChange((ev, session) => {
+        clearTimeout(timer);
+        if (ev === 'PASSWORD_RECOVERY') {
+          _recoveryMode = true;
+          showAuthOverlay();
+          showReset();
+          window.history.replaceState({}, '', window.location.pathname);
+          resolve(false);
+        } else if (session) {
+          hideAuthOverlay();
+          resolve(true);
+        } else {
+          showAuthOverlay();
+          resolve(false);
+        }
+      });
+    });
+  }
+
+  // Normale flow
+  sb.auth.onAuthStateChange((ev, _s) => {
+    if (ev === 'PASSWORD_RECOVERY') { _recoveryMode = true; showAuthOverlay(); showReset(); }
+  });
   let session = null;
   try {
     const resp = await sb.auth.getSession();
@@ -2981,13 +3018,9 @@ async function checkAuth() {
     return false;
   }
   if (_recoveryMode) { return false; }
-  if (session) {
-    hideAuthOverlay();
-    return true;
-  } else {
-    showAuthOverlay();
-    return false;
-  }
+  if (session) { hideAuthOverlay(); return true; }
+  showAuthOverlay();
+  return false;
 }
 </script>
 
