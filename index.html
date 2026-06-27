@@ -2857,16 +2857,17 @@ async function authLogin() {
 async function authRegister() {
   const sb = getSupabase();
   if (!sb) { showAuthError('register-error', 'Supabase niet geconfigureerd.'); return; }
+  const naam  = document.getElementById('register-naam').value.trim();
   const email = document.getElementById('register-email').value.trim();
   const pw1   = document.getElementById('register-password').value;
   const pw2   = document.getElementById('register-password2').value;
-  if (!email || !pw1) { showAuthError('register-error', 'Vul alle velden in.'); return; }
+  if (!naam || !email || !pw1) { showAuthError('register-error', 'Vul alle velden in.'); return; }
   if (pw1 !== pw2)    { showAuthError('register-error', 'Wachtwoorden komen niet overeen.'); return; }
   if (pw1.length < 8) { showAuthError('register-error', 'Wachtwoord moet minimaal 8 tekens zijn.'); return; }
   const btn = document.getElementById('register-btn');
   btn.disabled = true; btn.textContent = 'Bezig…';
   clearAuthMessages();
-  const { error } = await sb.auth.signUp({ email, password: pw1 });
+  const { error } = await sb.auth.signUp({ email, password: pw1, options: { data: { name: naam } } });
   btn.disabled = false; btn.textContent = 'Account aanmaken';
   if (error) { showAuthError('register-error', vertaalAuthFout(error.message)); return; }
   const suc = document.getElementById('register-success');
@@ -3003,6 +3004,10 @@ async function checkAuth() {
       <div class="auth-subtitle" style="margin-top:6px;font-size:12px;color:var(--ink-40)">Na registratie ontvang je een bevestigingsmail. Controleer ook je spam- of junkmap.</div>
       <div class="auth-error" id="register-error"></div>
       <div class="auth-success" id="register-success"></div>
+      <div class="auth-field">
+        <label class="auth-label">Naam</label>
+        <input class="auth-input" id="register-naam" type="text" placeholder="Jouw naam" autocomplete="given-name" />
+      </div>
       <div class="auth-field">
         <label class="auth-label">E-mailadres</label>
         <input class="auth-input" id="register-email" type="email" placeholder="jouw@email.nl" autocomplete="email" />
