@@ -2653,11 +2653,6 @@ async function loadLiveToday() {
 }
 
 async function initDashboard() {  await loadLiveToday();  const todayStr = new Date().toLocaleDateString('sv-SE');  if (!weekData[todayStr] && Object.keys(weekData).length > 0) {    activePeriod = 'gisteren';  }  const tabs = document.querySelectorAll('.period-tab');  tabs.forEach(tab => {    tab.addEventListener('click', () => {      tabs.forEach(t => t.classList.remove('active'));      tab.classList.add('active');      activePeriod = tab.dataset.period;      renderDashboard(activePeriod);    });  });  tabs.forEach(t => t.classList.toggle('active', t.dataset.period === activePeriod));  renderDashboard(activePeriod);  try { buildWeekContext(); } catch(e) { console.log('weekContext:', e.message); }}document.addEventListener('DOMContentLoaded', async () => {  try {    setTime();    setInterval(setTime, 60000);    const authed = await checkAuth();    if (!authed) return;    await initDashboard();  } catch(e) {    console.error('[Init] fout:', e);    try { showAuthOverlay(); } catch(_) {}  }});
-  });
-
-  renderDashboard(activePeriod);
-  try { buildWeekContext(); } catch(e) { console.log("weekContext:", e.message); }
-});
 
 // ======================== WEEK CONTEXT ========================
 const WEEK_NORM_BRANDMEESTER = 9;
