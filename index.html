@@ -2352,6 +2352,7 @@ function uitkomstClass(uitkomstKey) {
 }
 
 function renderDashboard(period) {
+  try {
   const pd = getPeriodData(period);
   const agg = aggregateEntries(pd.entries);
   const { totalGesprekken, totalOpgelost, totalBrandmeester, totalTerugbel, totalGeenDekking, totalAfkoop, allConversations, avgScore, drukte } = agg;
@@ -2579,6 +2580,11 @@ function renderDashboard(period) {
   `;
 
   document.getElementById('dashboard').innerHTML = html;
+  } catch(err) {
+    console.error('[renderDashboard] Fout:', err);
+    const el = document.getElementById('dashboard');
+    if (el) el.innerHTML = '<div style=\"padding:48px;text-align:center\">FOUT: ' + err.message + '</div>';
+  }
 }
 
 // ======================== INIT ========================
@@ -2639,6 +2645,10 @@ async function loadLiveToday() {
     if (live.date && Array.isArray(live.entries) && live.entries.length > 0) {
       weekData[live.date] = convertLiveToday(live);
       console.log('[LiveData] Geladen: ' + live.entries.length + ' gesprekken van ' + live.date);
+      if (live.date !== todayStr) {
+        activePeriod = 'gisteren';
+        document.querySelectorAll('.period-tab').forEach(t => t.classList.toggle('active', t.dataset.period === 'gisteren'));
+      }
     }
   } catch (e) {
     console.log('[LiveData] Niet beschikbaar, val terug op weekData');
