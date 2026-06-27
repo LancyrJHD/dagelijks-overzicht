@@ -2903,6 +2903,7 @@ async function authLogout() {
 
 // ── Foutmeldingen vertalen ──
 function vertaalAuthFout(msg) {
+  if (!msg || typeof msg !== 'string') return 'Er ging iets mis. Probeer het opnieuw.';
   if (msg.includes('Invalid login')) return 'E-mail of wachtwoord klopt niet.';
   if (msg.includes('Email not confirmed')) return 'Bevestig eerst je e-mail.';
   if (msg.includes('already registered')) return 'Dit e-mailadres is al in gebruik.';
