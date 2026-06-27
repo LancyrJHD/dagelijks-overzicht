@@ -2867,7 +2867,7 @@ async function authRegister() {
   const btn = document.getElementById('register-btn');
   btn.disabled = true; btn.textContent = 'Bezig…';
   clearAuthMessages();
-  const { error } = await sb.auth.signUp({ email, password: pw1, options: { data: { name: naam } } });
+  const { error } = await sb.auth.signUp({ email, password: pw1, options: { data: { name: naam }, emailRedirectTo: 'https://lancyrjhd.github.io/dagelijks-overzicht/' } });
   btn.disabled = false; btn.textContent = 'Account aanmaken';
   if (error) { showAuthError('register-error', vertaalAuthFout(error.message)); return; }
   const suc = document.getElementById('register-success');
