@@ -2862,7 +2862,9 @@ async function authLogin() {
 
 // ── Team Presence ──
 let _presenceChannel = null;
-let _teamStatuses = {}; // { email: { naam, actief, email } }
+let _teamStatuses = {};
+let _myEmail = '';
+let _myNaam = '';
 
 async function initPresence() {
   const sb = getSupabase();
@@ -2870,10 +2872,11 @@ async function initPresence() {
   const { data: { user } } = await sb.auth.getUser();
   if (!user) return;
 
-  const naam = user.user_metadata?.naam || user.email.split('@')[0];
-  const savedActief = localStorage.getItem('lancyr_actief') !== 'false'; // default true
+  _myEmail = user.email;
+  _myNaam = user.user_metadata?.naam || user.email.split('@')[0];
+  const savedActief = localStorage.getItem('lancyr_actief') !== 'false';
 
-  _presenceChannel = sb.channel('team-status', { config: { presence: { key: user.email } } });
+  _presenceChannel = sb.channel('team-status', { config: { presence: { key: _myEmail } } });
 
   _presenceChannel
     .on('presence', { event: 'sync' }, () => {
@@ -2881,14 +2884,14 @@ async function initPresence() {
       _teamStatuses = {};
       Object.values(state).forEach(presences => {
         presences.forEach(p => {
-          _teamStatuses[p.email] = { naam: p.naam, actief: p.actief, email: p.email };
+          if (p.email) _teamStatuses[p.email] = { naam: p.naam, actief: p.actief, email: p.email };
         });
       });
       updatePresenceUI();
     })
     .subscribe(async (status) => {
       if (status === 'SUBSCRIBED') {
-        await _presenceChannel.track({ email: user.email, naam, actief: savedActief });
+        await _presenceChannel.track({ email: _myEmail, naam: _myNaam, actief: savedActief });
         updateStatusToggle(savedActief);
       }
     });
@@ -2897,9 +2900,9 @@ async function initPresence() {
 async function toggleActief() {
   if (!_presenceChannel) return;
   const btn = document.getElementById('status-toggle-btn');
-  const actief = btn?.dataset.actief !== 'true'; // flip
+  const actief = btn?.dataset.actief !== 'true';
   localStorage.setItem('lancyr_actief', actief ? 'true' : 'false');
-  await _presenceChannel.track({ ..._presenceChannel.presenceState()[Object.keys(_presenceChannel.presenceState())[0]]?.[0], actief });
+  try { await _presenceChannel.track({ email: _myEmail, naam: _myNaam, actief }); } catch(e) { console.error('track fout:', e); }
   updateStatusToggle(actief);
 }
 
