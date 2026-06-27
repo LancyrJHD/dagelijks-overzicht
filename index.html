@@ -2352,7 +2352,6 @@ function uitkomstClass(uitkomstKey) {
 }
 
 function renderDashboard(period) {
-  try {
   const pd = getPeriodData(period);
   const agg = aggregateEntries(pd.entries);
   const { totalGesprekken, totalOpgelost, totalBrandmeester, totalTerugbel, totalGeenDekking, totalAfkoop, allConversations, avgScore, drukte } = agg;
@@ -2580,8 +2579,6 @@ function renderDashboard(period) {
   `;
 
   document.getElementById('dashboard').innerHTML = html;
-}
-
 }
 
 // ======================== INIT ========================
