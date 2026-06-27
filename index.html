@@ -2926,9 +2926,9 @@ async function authForgotPassword() {
   });
   if (error) { b2.disabled=false; b2.textContent='Herstelmail sturen'; showAuthError('forgot-error',vertaalAuthFout(error.message)); return; }
   const suc=document.getElementById('forgot-success');
-  suc.textContent='Herstelmail verstuurd! Controleer je inbox.';
+  suc.innerHTML='✓ Mail verstuurd! Controleer je inbox (ook spam).<br><small style="color:var(--ink-50)">Niks ontvangen? Wacht even en probeer opnieuw.</small>';
   suc.classList.add('visible');
-  startCooldown('forgot-btn',30,'Herstelmail sturen');
+  startCooldown('forgot-btn', 30, 'Herstelmail sturen', 'Opnieuw versturen');
 }
 
 async function authResetPassword() {  const sb = getSupabase();  if (!sb) { showAuthError('reset-error', 'Supabase niet geconfigureerd.'); return; }  const pw1 = document.getElementById('reset-password').value;  const pw2 = document.getElementById('reset-password2').value;  if (!pw1) { showAuthError('reset-error', 'Vul een nieuw wachtwoord in.'); return; }  if (pw1 !== pw2) { showAuthError('reset-error', 'Wachtwoorden komen niet overeen.'); return; }  if (pw1.length < 8) { showAuthError('reset-error', 'Wachtwoord moet minimaal 8 tekens zijn.'); return; }  const btn = document.getElementById('reset-btn');  btn.disabled = true; btn.textContent = 'Bezig…';  clearAuthMessages();  const { error } = await sb.auth.updateUser({ password: pw1 });  btn.disabled = false; btn.textContent = 'Wachtwoord instellen';  if (error) { showAuthError('reset-error', vertaalAuthFout(error.message)); return; }  const suc = document.getElementById('reset-success');  suc.textContent = 'Wachtwoord succesvol gewijzigd! Je kunt nu inloggen.';  suc.classList.add('visible');  const sbr2 = getSupabase(); if (sbr2) sbr2.auth.signOut(); setTimeout(() => { _recoveryMode = false; showAuthOverlay(); showLogin(); }, 2500);}// ── Logout ──
