@@ -2948,8 +2948,9 @@ async function checkAuth() {
   }
   const sb = getSupabase();
   if (!sb) return false;
-  sb.auth.onAuthStateChange((ev,_s)=>{ if(ev==='PASSWORD_RECOVERY'){showAuthOverlay();showReset();} });
+  sb.auth.onAuthStateChange((ev,_s)=>{ if(ev==='PASSWORD_RECOVERY'){_recoveryMode=true;showAuthOverlay();showReset();} });
   const { data: { session } } = await sb.auth.getSession();
+  if (_recoveryMode) { return false; }
   if (session) {
     hideAuthOverlay();
     return true;
