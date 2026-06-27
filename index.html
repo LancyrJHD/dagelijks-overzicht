@@ -2794,18 +2794,21 @@ function showLogin() {
   document.getElementById('auth-login-screen').classList.add('active');
   document.getElementById('auth-register-screen').classList.remove('active');
   document.getElementById('auth-forgot-screen').classList.remove('active');
+  document.getElementById('auth-reset-screen').classList.remove('active');
   clearAuthMessages();
 }
 function showRegister() {
   document.getElementById('auth-register-screen').classList.add('active');
   document.getElementById('auth-login-screen').classList.remove('active');
   document.getElementById('auth-forgot-screen').classList.remove('active');
+  document.getElementById('auth-reset-screen').classList.remove('active');
   clearAuthMessages();
 }
 function showForgot() {
   document.getElementById('auth-forgot-screen').classList.add('active');
   document.getElementById('auth-login-screen').classList.remove('active');
   document.getElementById('auth-register-screen').classList.remove('active');
+  document.getElementById('auth-reset-screen').classList.remove('active');
   clearAuthMessages();
 }
 
@@ -2931,7 +2934,11 @@ async function authForgotPassword() {
   startCooldown('forgot-btn', 30, 'Herstelmail sturen', 'Opnieuw versturen');
 }
 
-async function authResetPassword() {  const sb = getSupabase();  if (!sb) { showAuthError('reset-error', 'Supabase niet geconfigureerd.'); return; }  const pw1 = document.getElementById('reset-password').value;  const pw2 = document.getElementById('reset-password2').value;  if (!pw1) { showAuthError('reset-error', 'Vul een nieuw wachtwoord in.'); return; }  if (pw1 !== pw2) { showAuthError('reset-error', 'Wachtwoorden komen niet overeen.'); return; }  if (pw1.length < 8) { showAuthError('reset-error', 'Wachtwoord moet minimaal 8 tekens zijn.'); return; }  const btn = document.getElementById('reset-btn');  btn.disabled = true; btn.textContent = 'Bezig…';  clearAuthMessages();  const { error } = await sb.auth.updateUser({ password: pw1 });  btn.disabled = false; btn.textContent = 'Wachtwoord instellen';  if (error) { showAuthError('reset-error', vertaalAuthFout(error.message)); return; }  const suc = document.getElementById('reset-success');  suc.textContent = 'Wachtwoord succesvol gewijzigd! Je kunt nu inloggen.';  suc.classList.add('visible');  const sbr2 = getSupabase(); if (sbr2) sbr2.auth.signOut(); setTimeout(() => { _recoveryMode = false; showAuthOverlay(); showLogin(); }, 2500);}// ── Logout ──
+async function authResetPassword() {  const sb = getSupabase();  if (!sb) { showAuthError('reset-error', 'Supabase niet geconfigureerd.'); return; }  const pw1 = document.getElementById('reset-password').value;  const pw2 = document.getElementById('reset-password2').value;  if (!pw1) { showAuthError('reset-error', 'Vul een nieuw wachtwoord in.'); return; }  if (pw1 !== pw2) { showAuthError('reset-error', 'Wachtwoorden komen niet overeen.'); return; }  if (pw1.length < 8) { showAuthError('reset-error', 'Wachtwoord moet minimaal 8 tekens zijn.'); return; }  const btn = document.getElementById('reset-btn');  btn.disabled = true; btn.textContent = 'Bezig…';  clearAuthMessages();  const { error } = await sb.auth.updateUser({ password: pw1 });  btn.disabled = false; btn.textContent = 'Wachtwoord instellen';  if (error) { showAuthError('reset-error', vertaalAuthFout(error.message)); return; }
+  const suc = document.getElementById('reset-success');
+  suc.innerHTML = '✓ Wachtwoord succesvol gewijzigd!<br><button style="margin-top:12px;background:var(--gold);color:#fff;border:none;border-radius:50px;padding:10px 24px;cursor:pointer;font-size:14px;font-family:inherit;font-weight:600" onclick="_recoveryMode=false;showLogin()">Opnieuw inloggen →</button>';
+  suc.classList.add('visible');
+  const sbr2 = getSupabase(); if (sbr2) sbr2.auth.signOut();}// ── Logout ──
 async function authLogout() {
   const sb = getSupabase();
   if (sb) await sb.auth.signOut();
