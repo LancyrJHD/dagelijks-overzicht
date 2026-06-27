@@ -2845,13 +2845,48 @@ async function authLogin() {
   await initDashboard();
 }
 
+// ── Cooldown helper ──
+function startCooldown(btnId, seconds, labelReset) {
+  const btn = document.getElementById(btnId);
+  if (!btn) return;
+  btn.disabled = true;
+  let remaining = seconds;
+  btn.textContent = `Wacht ${remaining}s`;
+  const iv = setInterval(() => {
+    remaining--;
+    if (remaining <= 0) {
+      clearInterval(iv);
+      btn.disabled = false;
+      btn.textContent = labelReset;
+    } else {
+      btn.textContent = `Wacht ${remaining}s`;
+    }
+  }, 1000);
+}
+
 // ── Register ──
 async function resendConfirmation() {
   const sb = getSupabase(); if (!sb) return;
+  const btn = document.getElementById('resend-btn');
   const email = document.getElementById('register-email').value.trim();
   if (!email) { showAuthError('register-error', 'E-mailadres niet gevonden.'); return; }
+  if (btn) { btn.disabled = true; btn.textContent = 'Bezig…'; }
   const { error } = await sb.auth.resend({ type: 'signup', email, options: { emailRedirectTo: 'https://lancyrjhd.github.io/dagelijks-overzicht/' } });
-  if (!error) startCooldown('resend-btn', 30, 'Opnieuw versturen');
+  if (error) {
+    showAuthError('register-error', vertaalAuthFout(error.message));
+    if (btn) { btn.disabled = false; btn.textContent = 'Opnieuw versturen'; }
+  } else {
+    startCooldown('resend-btn', 30, 'Opnieuw versturen');
+    const suc = document.getElementById('register-success');
+    if (suc && !suc.querySelector('#resend-sent-msg')) {
+      const msg = document.createElement('span');
+      msg.id = 'resend-sent-msg';
+      msg.style.cssText = 'display:block;font-size:12px;color:#436436;margin-top:4px';
+      msg.textContent = '✓ Bevestigingsmail verstuurd!';
+      suc.appendChild(msg);
+      setTimeout(() => msg.remove(), 5000);
+    }
+  }
 }
 async function authRegister() {
   const sb = getSupabase();
