@@ -1273,6 +1273,7 @@ body {
       <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="23 4 23 10 17 10"></polyline><path d="M20.49 15a9 9 0 1 1-2.12-9.36L23 10"></path></svg>
       Vernieuwen
     </button>
+    <button id="status-toggle-btn" onclick="toggleActief()" style="display:none;border:none;border-radius:50px;padding:6px 14px;cursor:pointer;font-size:12px;font-weight:600;font-family:inherit;margin-right:8px;background:var(--green-bg);color:var(--green)" data-actief="true">🟢 Ik ben actief</button>
     <button class="logout-btn" id="logout-btn" onclick="authLogout()" style="display:none">Uitloggen</button>
     <div class="avatar-stack">
       <div class="av" title="Jackie Stam">JS</div>
@@ -2401,9 +2402,18 @@ function renderDashboard(period) {
   const teamRows = Object.entries(juristCounts)
     .sort((a,b) => b[1]-a[1])
     .map(([name, count], idx) => {
-      const statuses = ['available','available','busy','offline'];
-      const statusLabels = ['Beschikbaar','Beschikbaar','Bezig','Offline'];
-      const si = Math.min(idx, statuses.length-1);
+      const emailMap = {
+        'Wouter Toonen': 'woutertoonen@htjz.nl',
+        'Dewi Verver': 'dewiverver@htjz.nl',
+        'Jackie Stam': 'jackiestam@htjz.nl',
+        'Edgar Stam': 'edgarstam@htjz.nl',
+        'Senne Duifhuis': 'senneduifhuis@htjz.nl',
+        'Roelof van Beijnum': 'roelofvanbeijnum@htjz.nl',
+      };
+      const email = emailMap[name] || '';
+      const ps = email && _teamStatuses[email];
+      const dotClass = !email ? 'offline' : (ps ? (ps.actief ? 'available' : 'busy') : 'offline');
+      const dotLabel = !email ? 'Offline' : (ps ? (ps.actief ? 'Actief' : 'Niet actief') : 'Offline');
       return `<tr>
         <td>
           <div class="team-person">
@@ -2419,7 +2429,7 @@ function renderDashboard(period) {
           <div class="mini-gold-bar-wrap"><div class="mini-gold-bar-fill" style="width:${(count/maxJC*100).toFixed(0)}%"></div></div>
         </td>
         <td style="font-size:13px;color:var(--navy);font-weight:600">${avgScore > 0 ? avgScore.toFixed(1) : '—'}<span style="font-size:11px;color:var(--ink-30)">/10</span></td>
-        <td><span class="status-dot ${statuses[si]}"></span><span style="font-size:12px;color:var(--ink-50)">${statusLabels[si]}</span></td>
+        <td data-presence-email="${email}"><span class="status-dot ${dotClass}"></span><span class="status-label" style="font-size:12px;color:var(--ink-50)">${dotLabel}</span></td>
       </tr>`;
     }).join('') || '<tr><td colspan="4" style="text-align:center;padding:24px;color:var(--ink-30);font-size:13px">Geen teamdata beschikbaar</td></tr>';
 
@@ -2649,7 +2659,7 @@ async function loadLiveToday() {
   }
 }
 
-async function initDashboard() {  await loadLiveToday();  const todayStr = new Date().toLocaleDateString('sv-SE');  if (!weekData[todayStr] && Object.keys(weekData).length > 0) {    activePeriod = 'gisteren';  }  const tabs = document.querySelectorAll('.period-tab');  tabs.forEach(tab => {    tab.addEventListener('click', () => {      tabs.forEach(t => t.classList.remove('active'));      tab.classList.add('active');      activePeriod = tab.dataset.period;      renderDashboard(activePeriod);    });  });  tabs.forEach(t => t.classList.toggle('active', t.dataset.period === activePeriod));  renderDashboard(activePeriod);  try { buildWeekContext(); } catch(e) { console.log('weekContext:', e.message); }}document.addEventListener('DOMContentLoaded', async () => {  try {    setTime();    setInterval(setTime, 60000);    const authed = await checkAuth();    if (!authed) return;    await initDashboard();  } catch(e) {    console.error('[Init] fout:', e);    try { showAuthOverlay(); } catch(_) {}  }});
+async function initDashboard() {  await loadLiveToday();  const todayStr = new Date().toLocaleDateString('sv-SE');  if (!weekData[todayStr] && Object.keys(weekData).length > 0) {    activePeriod = 'gisteren';  }  const tabs = document.querySelectorAll('.period-tab');  tabs.forEach(tab => {    tab.addEventListener('click', () => {      tabs.forEach(t => t.classList.remove('active'));      tab.classList.add('active');      activePeriod = tab.dataset.period;      renderDashboard(activePeriod);    });  });  tabs.forEach(t => t.classList.toggle('active', t.dataset.period === activePeriod));  renderDashboard(activePeriod);  try { buildWeekContext(); } catch(e) { console.log('weekContext:', e.message); }}document.addEventListener('DOMContentLoaded', async () => {  try {    setTime();    setInterval(setTime, 60000);    const authed = await checkAuth();    if (!authed) return;    await initDashboard(); initPresence();  } catch(e) {    console.error('[Init] fout:', e);    try { showAuthOverlay(); } catch(_) {}  }});
 
 // ======================== WEEK CONTEXT ========================
 const WEEK_NORM_BRANDMEESTER = 9;
@@ -2785,10 +2795,12 @@ function getSupabase() {
 function showAuthOverlay() {
   document.getElementById('auth-overlay').classList.remove('hidden');
   document.getElementById('logout-btn').style.display = 'none';
+  document.getElementById('status-toggle-btn').style.display = 'none';
 }
 function hideAuthOverlay() {
   document.getElementById('auth-overlay').classList.add('hidden');
   document.getElementById('logout-btn').style.display = '';
+  document.getElementById('status-toggle-btn').style.display = '';
 }
 function showLogin() {
   document.getElementById('auth-login-screen').classList.add('active');
@@ -2846,6 +2858,86 @@ async function authLogin() {
   if (error) { showAuthError('login-error', vertaalAuthFout(error.message)); return; }
   hideAuthOverlay();
   await initDashboard();
+}
+
+// ── Team Presence ──
+let _presenceChannel = null;
+let _teamStatuses = {}; // { email: { naam, actief, email } }
+
+async function initPresence() {
+  const sb = getSupabase();
+  if (!sb) return;
+  const { data: { user } } = await sb.auth.getUser();
+  if (!user) return;
+
+  const naam = user.user_metadata?.naam || user.email.split('@')[0];
+  const savedActief = localStorage.getItem('lancyr_actief') !== 'false'; // default true
+
+  _presenceChannel = sb.channel('team-status', { config: { presence: { key: user.email } } });
+
+  _presenceChannel
+    .on('presence', { event: 'sync' }, () => {
+      const state = _presenceChannel.presenceState();
+      _teamStatuses = {};
+      Object.values(state).forEach(presences => {
+        presences.forEach(p => {
+          _teamStatuses[p.email] = { naam: p.naam, actief: p.actief, email: p.email };
+        });
+      });
+      updatePresenceUI();
+    })
+    .subscribe(async (status) => {
+      if (status === 'SUBSCRIBED') {
+        await _presenceChannel.track({ email: user.email, naam, actief: savedActief });
+        updateStatusToggle(savedActief);
+      }
+    });
+}
+
+async function toggleActief() {
+  if (!_presenceChannel) return;
+  const btn = document.getElementById('status-toggle-btn');
+  const actief = btn?.dataset.actief !== 'true'; // flip
+  localStorage.setItem('lancyr_actief', actief ? 'true' : 'false');
+  await _presenceChannel.track({ ..._presenceChannel.presenceState()[Object.keys(_presenceChannel.presenceState())[0]]?.[0], actief });
+  updateStatusToggle(actief);
+}
+
+function updateStatusToggle(actief) {
+  const btn = document.getElementById('status-toggle-btn');
+  if (!btn) return;
+  btn.dataset.actief = actief ? 'true' : 'false';
+  btn.textContent = actief ? '🟢 Ik ben actief' : '⚫ Ik ben niet actief';
+  btn.style.background = actief ? 'var(--green-bg)' : 'var(--gold-10)';
+  btn.style.color = actief ? 'var(--green)' : 'var(--ink-50)';
+}
+
+function updatePresenceUI() {
+  // Update team tabel statussen
+  document.querySelectorAll('[data-presence-email]').forEach(el => {
+    const email = el.dataset.presenceEmail;
+    const status = _teamStatuses[email];
+    const dot = el.querySelector('.status-dot');
+    const label = el.querySelector('.status-label');
+    if (dot && label) {
+      if (!status) {
+        dot.className = 'status-dot offline';
+        label.textContent = 'Offline';
+      } else if (status.actief) {
+        dot.className = 'status-dot available';
+        label.textContent = 'Actief';
+      } else {
+        dot.className = 'status-dot busy';
+        label.textContent = 'Niet actief';
+      }
+    }
+  });
+
+  // Update actief-badge
+  const activeCount = Object.values(_teamStatuses).filter(s => s.actief).length;
+  document.querySelectorAll('.team-active-badge').forEach(b => {
+    b.textContent = `${activeCount} jurist${activeCount !== 1 ? 'en' : ''} actief`;
+  });
 }
 
 // ── Cooldown helper ──
