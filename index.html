@@ -2580,11 +2580,8 @@ function renderDashboard(period) {
   `;
 
   document.getElementById('dashboard').innerHTML = html;
-  } catch(err) {
-    console.error('[renderDashboard] Fout:', err);
-    const el = document.getElementById('dashboard');
-    if (el) el.innerHTML = '<div style=\"padding:48px;text-align:center\">FOUT: ' + err.message + '</div>';
-  }
+}
+
 }
 
 // ======================== INIT ========================
@@ -2655,23 +2652,7 @@ async function loadLiveToday() {
   }
 }
 
-document.addEventListener('DOMContentLoaded', async () => {
-  setTime();
-  setInterval(setTime, 60000);
-
-  const authed = await checkAuth();
-  if (!authed) return;
-
-  await loadLiveToday();
-
-  const tabs = document.querySelectorAll('.period-tab');
-  tabs.forEach(tab => {
-    tab.addEventListener('click', () => {
-      tabs.forEach(t => t.classList.remove('active'));
-      tab.classList.add('active');
-      activePeriod = tab.dataset.period;
-      renderDashboard(activePeriod);
-    });
+async function initDashboard() {  await loadLiveToday();  const todayStr = new Date().toLocaleDateString('sv-SE');  if (!weekData[todayStr] && Object.keys(weekData).length > 0) {    activePeriod = 'gisteren';  }  const tabs = document.querySelectorAll('.period-tab');  tabs.forEach(tab => {    tab.addEventListener('click', () => {      tabs.forEach(t => t.classList.remove('active'));      tab.classList.add('active');      activePeriod = tab.dataset.period;      renderDashboard(activePeriod);    });  });  tabs.forEach(t => t.classList.toggle('active', t.dataset.period === activePeriod));  renderDashboard(activePeriod);  try { buildWeekContext(); } catch(e) { console.log('weekContext:', e.message); }}document.addEventListener('DOMContentLoaded', async () => {  setTime();  setInterval(setTime, 60000);  const authed = await checkAuth();  if (!authed) return;  await initDashboard();});
   });
 
   renderDashboard(activePeriod);
