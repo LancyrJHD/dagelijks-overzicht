@@ -2846,12 +2846,13 @@ async function authLogin() {
 }
 
 // ── Cooldown helper ──
-function startCooldown(btnId, seconds, labelReset) {
+function startCooldown(btnId, seconds, labelReset, labelDuring) {
   const btn = document.getElementById(btnId);
   if (!btn) return;
   btn.disabled = true;
   let remaining = seconds;
-  btn.textContent = `Wacht ${remaining}s`;
+  const prefix = labelDuring || labelReset;
+  btn.textContent = `${prefix} (${remaining}s)`;
   const iv = setInterval(() => {
     remaining--;
     if (remaining <= 0) {
@@ -2859,7 +2860,7 @@ function startCooldown(btnId, seconds, labelReset) {
       btn.disabled = false;
       btn.textContent = labelReset;
     } else {
-      btn.textContent = `Wacht ${remaining}s`;
+      btn.textContent = `${prefix} (${remaining}s)`;
     }
   }, 1000);
 }
@@ -2876,16 +2877,18 @@ async function resendConfirmation() {
     showAuthError('register-error', vertaalAuthFout(error.message));
     if (btn) { btn.disabled = false; btn.textContent = 'Opnieuw versturen'; }
   } else {
-    startCooldown('resend-btn', 30, 'Opnieuw versturen');
     const suc = document.getElementById('register-success');
-    if (suc && !suc.querySelector('#resend-sent-msg')) {
-      const msg = document.createElement('span');
-      msg.id = 'resend-sent-msg';
-      msg.style.cssText = 'display:block;font-size:12px;color:#436436;margin-top:4px';
-      msg.textContent = '✓ Bevestigingsmail verstuurd!';
-      suc.appendChild(msg);
-      setTimeout(() => msg.remove(), 5000);
+    if (suc) {
+      let msg = suc.querySelector('#resend-sent-msg');
+      if (!msg) {
+        msg = document.createElement('span');
+        msg.id = 'resend-sent-msg';
+        msg.style.cssText = 'display:block;font-size:12px;color:#436436;margin-top:6px';
+        suc.appendChild(msg);
+      }
+      msg.textContent = '✓ Mail verstuurd! Controleer je inbox (ook spam).';
     }
+    startCooldown('resend-btn', 30, 'Opnieuw versturen', 'Opnieuw versturen');
   }
 }
 async function authRegister() {
