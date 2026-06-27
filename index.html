@@ -2862,6 +2862,13 @@ async function authLogin() {
 }
 
 // ── Register ──
+async function resendConfirmation() {
+  const sb = getSupabase(); if (!sb) return;
+  const email = document.getElementById('register-email').value.trim();
+  if (!email) { showAuthError('register-error', 'E-mailadres niet gevonden.'); return; }
+  const { error } = await sb.auth.resend({ type: 'signup', email, options: { emailRedirectTo: 'https://lancyrjhd.github.io/dagelijks-overzicht/' } });
+  if (!error) startCooldown('resend-btn', 30, 'Opnieuw versturen');
+}
 async function authRegister() {
   const sb = getSupabase();
   if (!sb) { showAuthError('register-error', 'Supabase niet geconfigureerd.'); return; }
@@ -2879,7 +2886,7 @@ async function authRegister() {
   btn.disabled = false; btn.textContent = 'Account aanmaken';
   if (error) { showAuthError('register-error', vertaalAuthFout(error.message)); return; }
   const suc = document.getElementById('register-success');
-  suc.textContent = 'Account aangemaakt! Controleer je e-mail om te bevestigen.';
+  suc.innerHTML = 'Account aangemaakt! Controleer je e-mail om te bevestigen.<br><button id="resend-btn" onclick="resendConfirmation()" style="margin-top:10px;background:none;border:1px solid #AE986F;color:#AE986F;border-radius:50px;padding:6px 16px;cursor:pointer;font-size:13px">Opnieuw versturen</button>';
   suc.classList.add('visible');
 }
 
