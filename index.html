@@ -2776,7 +2776,7 @@ const SUPABASE_ANON_KEY = 'sb_publishable_Yub_Wyg9Z6arQZR9_zLZHw_SFwU0Dj7';  // 
 let _supabase = null;
 function getSupabase() {
   if (!_supabase && typeof supabase !== 'undefined') {
-    _supabase = supabase.createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
+    _supabase = supabase.createClient(SUPABASE_URL, SUPABASE_ANON_KEY, { auth: { flowType: 'implicit' } });
   }
   return _supabase;
 }
@@ -2922,7 +2922,7 @@ async function authForgotPassword() {
   btn.disabled = true; btn.textContent = 'Bezig…';
   clearAuthMessages();
   const { error } = await sb.auth.resetPasswordForEmail(email, {
-    redirectTo: 'https://lancyrjhd.github.io/dagelijks-overzicht/?type=recovery'
+    redirectTo: 'https://lancyrjhd.github.io/dagelijks-overzicht/'
   });
   if (error) { b2.disabled=false; b2.textContent='Herstelmail sturen'; showAuthError('forgot-error',vertaalAuthFout(error.message)); return; }
   const suc=document.getElementById('forgot-success');
@@ -2970,36 +2970,29 @@ async function checkAuth() {
   const sb = getSupabase();
   if (!sb) { showAuthOverlay(); return false; }
 
-  const urlParams  = new URLSearchParams(window.location.search);
-  const hashParams = new URLSearchParams(window.location.hash.replace('#',''));
+  // Implicit flow: tokens zitten in de hash
+  // Recovery: #access_token=...&type=recovery
+  const hash = window.location.hash.replace('#', '');
+  if (hash) {
+    const hashParams = new URLSearchParams(hash);
+    const type = hashParams.get('type');
+    const accessToken = hashParams.get('access_token');
+    const refreshToken = hashParams.get('refresh_token');
 
-  // PKCE recovery: Supabase redirecteert naar ?type=recovery&code=XXX
-  if (urlParams.get('type') === 'recovery' && urlParams.has('code')) {
-    const code = urlParams.get('code');
-    window.history.replaceState({}, '', window.location.pathname);
-    try {
-      await sb.auth.exchangeCodeForSession(code);
-    } catch(e) {
-      console.error('[Auth] recovery exchange fout:', e);
+    if (type === 'recovery' && accessToken) {
+      // Zet sessie in en toon reset form
+      window.history.replaceState({}, '', window.location.pathname);
+      try {
+        await sb.auth.setSession({ access_token: accessToken, refresh_token: refreshToken || '' });
+      } catch(e) { console.error('[Auth] setSession fout:', e); }
+      _recoveryMode = true;
       showAuthOverlay();
+      showReset();
       return false;
     }
-    _recoveryMode = true;
-    showAuthOverlay();
-    showReset();
-    return false;
   }
 
-  // Implicit flow fallback: type=recovery in hash
-  if (hashParams.get('type') === 'recovery') {
-    _recoveryMode = true;
-    window.history.replaceState({}, '', window.location.pathname);
-    showAuthOverlay();
-    showReset();
-    return false;
-  }
-
-  // Normale flow
+  // Normale flow: controleer bestaande sessie
   sb.auth.onAuthStateChange((ev, _s) => {
     if (ev === 'PASSWORD_RECOVERY') { _recoveryMode = true; showAuthOverlay(); showReset(); }
   });
