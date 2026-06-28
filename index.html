@@ -2898,12 +2898,16 @@ async function initPresence() {
 }
 
 async function toggleActief() {
-  if (!_presenceChannel) return;
   const btn = document.getElementById('status-toggle-btn');
   const actief = btn?.dataset.actief !== 'true';
   localStorage.setItem('lancyr_actief', actief ? 'true' : 'false');
-  try { await _presenceChannel.track({ email: _myEmail, naam: _myNaam, actief }); } catch(e) { console.error('track fout:', e); }
   updateStatusToggle(actief);
+  if (_presenceChannel) {
+    try { await _presenceChannel.track({ email: _myEmail, naam: _myNaam, actief }); } catch(e) { console.error('track fout:', e); }
+  } else {
+    // Probeer presence opnieuw te initialiseren
+    await initPresence();
+  }
 }
 
 function updateStatusToggle(actief) {
