@@ -1,36 +1,132 @@
 {
-  "date": "2026-06-26",
-  "generated_at": "2026-06-26T13:33:49Z",
+  "date": "2026-06-29",
+  "generated_at": "2026-06-29T17:00:00Z",
   "entries": [
     {
-      "id": "5f3f8b9f-cc2e-4204-82ce-7109d52594a5",
-      "tijdstip": "09:17",
-      "titel": "Sensor reparatie geschil — kostenbesparing en escalatie met klant",
-      "uitkomst": "telefonisch-opgelost",
-      "duur": 15,
-      "medewerker": "Roelof van Beijnum",
-      "notitie": "Sensor ter reparatie aangeboden; bedrijf stelt dat verzekerde instellingen heeft gewijzigd. Schade 100 euro, onder franchise 250 euro — geen dekking. Advies: zelf bellen en schikking zoeken; bij escalatie terugkomen voor Brandmeester.",
-      "terugbel": false
-    },
-    {
-      "id": "45f372a2-1114-46ca-8140-7d15fd9e7d3a",
-      "tijdstip": "10:45",
-      "titel": "Verkeerde afdeling — verzekeringscode doorverwijzing",
-      "uitkomst": "telefonisch-opgelost",
+      "id": "conv-0929-001",
+      "tijdstip": "09:45",
+      "titel": "Politie Groningen — verkeerd verbonden zoekverzoek",
+      "uitkomst": "opgelost",
       "duur": 5,
-      "medewerker": "Roelof van Beijnum",
-      "notitie": "Autoverzekering vraag (overstappen 2 autos, besparing circa 20 euro). Juridische helpdesk niet juiste afdeling; doorverwezen naar keuzemenu verzekeringslijn.",
-      "terugbel": false
+      "medewerker": "Senne",
+      "notitie": "Verkeerd verbonden, doorverwezen naar juiste afdeling."
     },
     {
-      "id": "bf26e2fc-e1d7-4d94-9bc7-6c1d0a1da72e",
-      "tijdstip": "10:56",
-      "titel": "Thuisbatterij-installatie — schadevergoeding en opbrengstgarantie",
-      "uitkomst": "terugbellen",
-      "duur": 20,
-      "medewerker": "Roelof van Beijnum",
-      "notitie": "Installatiefout thuisbatterij; uitval zonnepanelen 23 april-15 juni, ca. 500 euro schade. Leverancier weigert vergoeding o.b.v. AV maar deed mondelinge toezegging. Advies: stuur opbrengstgarantie + beroep op toezegging; schikking proberen. Belt terug indien nodig.",
-      "terugbel": true
+      "id": "conv-1003-002",
+      "tijdstip": "10:03",
+      "titel": "Snelheidsovertreding — geen dekking polis art. 7.3.2",
+      "uitkomst": "opgelost",
+      "duur": 8,
+      "medewerker": "Senne",
+      "notitie": "Verkeersboetes expliciet uitgesloten art. 7.3.2. Advies gegeven."
+    },
+    {
+      "id": "conv-1012-003",
+      "tijdstip": "10:12",
+      "titel": "Qatar Airways — 96u wachten, ingebrekestelling voorbereiden",
+      "uitkomst": "terugbel",
+      "duur": 12,
+      "medewerker": "Senne",
+      "notitie": "Verzekerde wacht al 96u op Qatar Airways. Ingebrekestelling nodig. Terugbellen na opstellen."
+    },
+    {
+      "id": "conv-1224-004",
+      "tijdstip": "12:24",
+      "titel": "Transavia-vluchtvertraging — EU-compensatie en overmacht",
+      "uitkomst": "opgelost",
+      "duur": 10,
+      "medewerker": "Senne",
+      "notitie": "EU 261/2004 uitgelegd. Transavia beroept zich op overmacht. Advies: bezwaar indienen."
+    },
+    {
+      "id": "conv-1236-005",
+      "tijdstip": "12:36",
+      "titel": "Zaak Vechter vs. NCG — doorverwijzing Brandmeester met urgentie",
+      "uitkomst": "doorverbonden",
+      "duur": 15,
+      "medewerker": "Senne",
+      "notitie": "NCG-zaak met urgentie. Doorverwezen naar Brandmeester, schadenummer aangevraagd."
+    },
+    {
+      "id": "conv-1253-006",
+      "tijdstip": "12:53",
+      "titel": "Tuchtklacht jeugdzorg + adreswijziging — doorverwijzing Brandmeester",
+      "uitkomst": "doorverbonden",
+      "duur": 18,
+      "medewerker": "Senne",
+      "notitie": "Tuchtklacht tegen jeugdzorg arts. Adreswijziging nodig. Doorverwezen Brandmeester."
+    },
+    {
+      "id": "conv-1422-007",
+      "tijdstip": "14:22",
+      "titel": "Mira NCG-uitstel — advies Brandmeester bellen over griffiekosten",
+      "uitkomst": "opgelost",
+      "duur": 8,
+      "medewerker": "Senne",
+      "notitie": "Griffiekosten NCG-zaak. Advies: Brandmeester bellen voor dekking griffierecht."
+    },
+    {
+      "id": "conv-1432-008",
+      "tijdstip": "14:32",
+      "titel": "Afspraakbevestiging Annemarie — belafspraak woensdag",
+      "uitkomst": "opgelost",
+      "duur": 3,
+      "medewerker": "Senne",
+      "notitie": "Belafspraak woensdag bevestigd."
+    },
+    {
+      "id": "conv-1445-009",
+      "tijdstip": "14:45",
+      "titel": "Caravanbezekering schadevergoeding — advies reminder mail Dion",
+      "uitkomst": "opgelost",
+      "duur": 7,
+      "medewerker": "Senne",
+      "notitie": "Schade aan caravan. Verzekeraar reageert niet. Advies: reminder mail sturen."
+    },
+    {
+      "id": "conv-1602-010",
+      "tijdstip": "16:02",
+      "titel": "Verzekeringsdekking na bankoverstap — doorverwijzing klantenservice",
+      "uitkomst": "opgelost",
+      "duur": 6,
+      "medewerker": "Senne",
+      "notitie": "Na overstap bank onduidelijkheid over dekking. Doorverwezen naar klantenservice Lancyr."
+    },
+    {
+      "id": "conv-drop-001",
+      "tijdstip": "11:15",
+      "titel": "Verbroken verbinding",
+      "uitkomst": "opgelost",
+      "duur": 1,
+      "medewerker": "Senne",
+      "notitie": "Gesprek verbroken bij aanvang."
+    },
+    {
+      "id": "conv-drop-002",
+      "tijdstip": "13:40",
+      "titel": "Verbroken verbinding",
+      "uitkomst": "opgelost",
+      "duur": 1,
+      "medewerker": "Senne",
+      "notitie": "Gesprek verbroken bij aanvang."
+    },
+    {
+      "id": "conv-intern-001",
+      "tijdstip": "08:30",
+      "titel": "Daily Huddle",
+      "uitkomst": "opgelost",
+      "duur": 10,
+      "medewerker": "Senne",
+      "notitie": "Intern dagelijks overleg team."
+    },
+    {
+      "id": "conv-intern-002",
+      "tijdstip": "09:00",
+      "titel": "Persoonlijke afspraken",
+      "uitkomst": "opgelost",
+      "duur": 5,
+      "medewerker": "Senne",
+      "notitie": "Interne planning en afspraken."
     }
   ]
 }
