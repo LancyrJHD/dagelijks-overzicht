@@ -1892,15 +1892,31 @@ const weekData = {
 ,
   "2026-06-29": {
   drukte: "druk",
-  gesprekken: 11,
-  stats: { opgelost: 7, brandmeester: 2, afkoop: 0, terugbel: 1, geenDekking: 1 },
-  score: 7.0,
+  gesprekken: 17,
+  stats: { opgelost: 14, brandmeester: 2, afkoop: 0, terugbel: 1, geenDekking: 0 },
+  score: 7.2,
   conversations: [
     {
+      tijd: "09:02",
+      titel: "Daily Huddle — intern teamoverleg",
+      personen: "Team · Senne",
+      samenvatting: "Dagelijks intern teamoverleg. Geen klantgesprek.",
+      tags: [["tag-overig", "Intern overleg"]],
+      uitkomst: ["outcome-opgelost", "Eerstelijns opgelost"]
+    },
+    {
+      tijd: "09:21",
+      titel: "Verbroken verbinding",
+      personen: "Verzekerde: anoniem · Senne",
+      samenvatting: "Gesprek direct verbroken bij aanvang. Geen inhoudelijke vraag behandeld.",
+      tags: [["tag-overig", "Routering"]],
+      uitkomst: ["outcome-opgelost", "Eerstelijns opgelost"]
+    },
+    {
       tijd: "09:45",
-      titel: "Politie Groningen — verificatie contactpersoon juridische helpdesk",
-      personen: "Robert van Bijleveld (politie) · Senne",
-      samenvatting: "Agent van politie Groningen zocht collega Allison Wester. Niet gevonden bij juridische helpdesk; doorverwezen naar klantenservice via hetzelfde nummer met andere keuze in het menu.",
+      titel: "Politie Groningen — verkeerd verbonden zoekverzoek",
+      personen: "Verzekerde: Robert van Bijleveld (politie) · Senne",
+      samenvatting: "Beller was verkeerd verbonden en zocht een specifiek contactpersoon bij de juridische helpdesk. Doorverwezen naar de juiste afdeling.",
       tags: [["tag-overig", "Routering"]],
       uitkomst: ["outcome-opgelost", "Eerstelijns opgelost"]
     },
@@ -1908,23 +1924,31 @@ const weekData = {
       tijd: "10:03",
       titel: "Snelheidsovertreding — geen dekking polis art. 7.3.2",
       personen: "Verzekerde: Leland Smith · Senne",
-      samenvatting: "Verzekerde reed te hard in lease-auto en ontving brief van OM. Polischeck: art. 7.3.2 lid 5 sluit snelheidsovertredingen expliciet uit. Advies: schakel zelf strafrechtadvocaat in. Polis op lancyr.nl uitgelegd met verwijzing naar juiste clausule.",
+      samenvatting: "Verzekerde ontving een snelheidsboete en vroeg of de rechtsbijstandsverzekering dekking biedt. Senne controleerde de polis: art. 7.3.2 sluit verkeersboetes expliciet uit. Advies: boete zelf betalen of bezwaar maken zonder rechtsbijstand.",
       tags: [["tag-overig", "Verkeersrecht"]],
-      uitkomst: ["outcome-geen-dekking", "Geen dekking"]
+      uitkomst: ["outcome-opgelost", "Eerstelijns opgelost"]
     },
     {
       tijd: "10:12",
       titel: "Qatar Airways — 96u wachten, ingebrekestelling voorbereiden",
       personen: "Verzekerde: Peter Rijdsma · Senne",
-      samenvatting: "Opvolggesprek: Rijdsma belde Qatar opnieuw (vrijdag); customer relations neemt nu 96 uur. Gesprek opgenomen als bewijs. Advies: ingebrekenstelling opstellen via ChatGPT, naar alle Qatar e-mailadressen sturen, 14 dagen termijn. Terugkoppeling maandag.",
+      samenvatting: "Verzekerde wacht al 96 uur op reactie van Qatar Airways na een klacht. Senne adviseerde een formele ingebrekestelling op te stellen en maakte een terugbelafspraak voor maandag 29 juni.",
       tags: [["tag-consument", "Consumentenrecht"]],
       uitkomst: ["outcome-terugbel", "Terugbellen"]
     },
     {
+      tijd: "11:21",
+      titel: "Persoonlijke afspraken — intern",
+      personen: "Team · Senne",
+      samenvatting: "Interne planning en persoonlijke afspraken. Geen klantgesprek.",
+      tags: [["tag-overig", "Intern"]],
+      uitkomst: ["outcome-opgelost", "Eerstelijns opgelost"]
+    },
+    {
       tijd: "12:24",
-      titel: "Transavia-vluchtvertraging — EU-compensatie en overmacht",
+      titel: "Transavia-vluchtvertraging — EU-compensatie en overmachtbeoordeling",
       personen: "Verzekerde: mevr. Wenschoten · Senne",
-      samenvatting: "Bijna 12 uur vertraging Griekenland→NL; Transavia claimt vogel in vleugel als overmacht. Uitleg EU-verordening 261/2004: vogel als overmacht twijfelachtig; traag inzetten vervangingsvliegtuig (pas 16:30 vanuit Amsterdam) is verzwarend. Advies: claim indienen via Transavia-formulier en afwachten.",
+      samenvatting: "Verzekerde had een vertraagde Transavia-vlucht en vroeg om EU 261/2004-compensatie. Transavia beroept zich op overmacht. Senne legde uit wanneer overmacht opgaat en adviseerde een formeel bezwaar in te dienen.",
       tags: [["tag-consument", "Consumentenrecht"]],
       uitkomst: ["outcome-opgelost", "Eerstelijns opgelost"]
     },
@@ -1932,23 +1956,31 @@ const weekData = {
       tijd: "12:36",
       titel: "Zaak Vechter vs. NCG — doorverwijzing Brandmeester met urgentie",
       personen: "Verzekerde: meneer Vechter · Senne",
-      samenvatting: "Complex NCG-conflict (aardbevingsschade Groningen); deadline 6 weken. Te complex voor eerstelijns helpdesk. Dossier doorgestuurd naar Brandmeester met urgentiemelding. Verzekerde gevraagd zelf uitstelverzoek bij NCG in te dienen met e-mailbevestiging.",
-      tags: [["tag-bestuursrecht", "Bestuursrecht"], ["tag-bouw", "Bouwrecht"]],
+      samenvatting: "Verzekerde heeft een lopende NCG-zaak en heeft dringend juridische ondersteuning nodig. Senne heeft de zaak met spoed doorverwezen naar de Brandmeester en een schadenummer aangevraagd.",
+      tags: [["tag-bestuursrecht", "Bestuursrecht"]],
       uitkomst: ["outcome-brandmeester", "Doorverwezen naar Brandmeester"]
+    },
+    {
+      tijd: "12:44",
+      titel: "Verbroken verbinding",
+      personen: "Verzekerde: anoniem · Senne",
+      samenvatting: "Gesprek direct verbroken bij aanvang. Geen inhoudelijke vraag behandeld.",
+      tags: [["tag-overig", "Routering"]],
+      uitkomst: ["outcome-opgelost", "Eerstelijns opgelost"]
     },
     {
       tijd: "12:53",
       titel: "Tuchtklacht jeugdzorg + adreswijziging — doorverwijzing Brandmeester",
       personen: "Verzekerde: anoniem (arts) · Senne",
-      samenvatting: "Twee kwesties: (1) adreswijziging direct in CRM bijgewerkt na eerdere mislukte pogingen. (2) Tuchtklacht tegen jeugdzorginstelling en individuele zorgverlener; verzekerde is arts en wil juridische bijstand. Doorverwezen naar Brandmeester; vrije advocaatkeuze als optie uitgelegd.",
+      samenvatting: "Een arts wil een tuchtklacht indienen tegen een jeugdzorginstelling. Senne verwerkte een adreswijziging en verwees de zaak door naar de Brandmeester, waarbij ook vrije advocaatkeuze als optie werd uitgelegd.",
       tags: [["tag-overig", "Medisch tuchtrecht"]],
       uitkomst: ["outcome-brandmeester", "Doorverwezen naar Brandmeester"]
     },
     {
       tijd: "14:22",
-      titel: "Mira NCG-uitstel — advies Brandmeester over griffiekosten",
+      titel: "Mira NCG-uitstel — advies Brandmeester bellen over griffiekosten",
       personen: "Verzekerde: Mira · Senne",
-      samenvatting: "Mira belde terug na voicemails over NCG-kwestie. NCG stelt dat uitstelverzoek via rechtbank moet, inclusief griffiekosten. Advies: Brandmeester bellen om haalbaarheid en kosten te bespreken.",
+      samenvatting: "Mira heeft een NCG-zaak waarbij griffiekosten speelden en vroeg om uitstel. Senne adviseerde de Brandmeester te bellen om dekking van griffierecht te bespreken.",
       tags: [["tag-bestuursrecht", "Bestuursrecht"]],
       uitkomst: ["outcome-opgelost", "Eerstelijns opgelost"]
     },
@@ -1956,15 +1988,15 @@ const weekData = {
       tijd: "14:32",
       titel: "Afspraakbevestiging Annemarie — belafspraak woensdag",
       personen: "Verzekerde: Annemarie · Senne",
-      samenvatting: "Teruggebeld na voicemail. Annemarie had al zelf een afspraak gemaakt via belafspraken.nl voor woensdagochtend. Bevestigd en afgerond.",
+      samenvatting: "Kort gesprek ter bevestiging van een belafspraak op woensdagochtend. Geen inhoudelijke juridische vraag.",
       tags: [["tag-overig", "Routering"]],
       uitkomst: ["outcome-opgelost", "Eerstelijns opgelost"]
     },
     {
       tijd: "14:45",
-      titel: "Caravanbezekering schadevergoeding — advies reminder mail Dion",
+      titel: "Caravanbezekering schadevergoeding — advies reminder mail aan Dion",
       personen: "Verzekerde: Dion Langveld · Senne",
-      samenvatting: "Caravan afgebrand; verzekeraar wil uitkeren op verkoopwaarde i.p.v. vervangingswaarde (polis: gelijkwaardig object voor recreatie op zelfde plek). Ingebrekenstelling eerder verstuurd, geen reactie. Advies: reminder sturen zonder wettelijke bepalingen; vragen naar specifieke polisclausule achter afwijzing; vervolgstappen aankondigen.",
+      samenvatting: "Dion heeft schade aan zijn caravan ingediend maar de verzekeraar reageert niet. Senne adviseerde een reminder-mail te sturen en legde vervolgstappen uit als de verzekeraar blijft zwijgen.",
       tags: [["tag-overig", "Verzekeringsrecht"]],
       uitkomst: ["outcome-opgelost", "Eerstelijns opgelost"]
     },
@@ -1972,60 +2004,78 @@ const weekData = {
       tijd: "16:02",
       titel: "Verzekeringsdekking na bankoverstap — doorverwijzing klantenservice",
       personen: "Verzekerde: mevr. Mobajen · Senne",
-      samenvatting: "Premie stopgezet bij overstap ABN naar ASN via overstapservice; dekking verloren zonder dat verzekerde het wist. Dekkingsvraag valt buiten bevoegdheid juridische helpdesk. Doorverwezen naar klantenservice (088-020 4525).",
+      samenvatting: "Betaling stopgezet bij overstap ABN naar ASN, waardoor dekking verloren ging. Dekkingsvraag valt buiten bevoegdheid juridische helpdesk. Doorverwezen naar klantenservice Lancyr (088-020 4525).",
       tags: [["tag-overig", "Verzekeringsrecht"]],
       uitkomst: ["outcome-opgelost", "Eerstelijns opgelost"]
     },
     {
       tijd: "16:24",
-      titel: "Erfscheiding en erker — inzageverzoek buren afwijzen",
-      personen: "Verzekerde: echtpaar (nr. 52) · Senne",
-      samenvatting: "Belterugafspraak over langlopend burenconflict rond erker. Bouwkundig bureau heeft mondeling verklaard dat erker zelfstandig hersteld kan worden; dit staat niet zwart-op-wit in rapport. Advies: inzageverzoek buren vriendelijk maar duidelijk afwijzen; communicatief blijven met buurman om passieve houding te voorkomen.",
-      tags: [["tag-bouw", "Bouwrecht"], ["tag-overig", "Burenrecht"]],
+      titel: "Erfscheiding erker — inzageverzoek buren afwijzen",
+      personen: "Verzekerde: anoniem (echtpaar) · Senne",
+      samenvatting: "Buren vragen inzage in bouwkundig rapport over erker aan erfscheiding. Senne adviseerde het inzageverzoek af te wijzen (geen wettelijke verplichting), schriftelijk te bevestigen dat de erker constructief zelfstandig hersteld kan worden, maar toch enigszins communicatief te blijven richting buren.",
+      tags: [["tag-bouw", "Bouwrecht"]],
+      uitkomst: ["outcome-opgelost", "Eerstelijns opgelost"]
+    },
+    {
+      tijd: "16:47",
+      titel: "Omgevingsvergunning — gemeente stelt steeds nieuwe rioolvoorwaarden",
+      personen: "Verzekerde: Inge van der Eschof · Senne",
+      samenvatting: "Gemeente stelt al 8 weken steeds nieuwe voorwaarden voor de anterior overeenkomst bij een omgevingsvergunning, met ook tegenstrijdige informatie (eerst 5, nu 3 huizen op één riool). Senne adviseerde gemeente schriftelijk te verzoeken alle voorwaarden in één keer te leveren en te wijzen op de eerdere tegenstrijdige mededeling. Bij bezwaar door buurman na vrijdag: opnieuw contact opnemen.",
+      tags: [["tag-bestuursrecht", "Bestuursrecht"]],
+      uitkomst: ["outcome-opgelost", "Eerstelijns opgelost"]
+    },
+    {
+      tijd: "16:54",
+      titel: "Terugbetaling aannemer — ingebrekestelling na 8 weken uitblijven",
+      personen: "Verzekerde: mevr. Ramdin · Senne",
+      samenvatting: "Mevrouw Ramdin betaalde €3.200 aanbetaling aan een aannemer voor een veranda, maar na het stoppen van het werk betaalt de aannemer het geld al 8 weken niet terug en wil nu €1.200 inhouden. Senne adviseerde bewijs te verzamelen (WhatsApp exporteren, screenshots) en een formele ingebrekestelling te sturen met een termijn van 2 weken.",
+      tags: [["tag-consument", "Consumentenrecht"]],
       uitkomst: ["outcome-opgelost", "Eerstelijns opgelost"]
     }
   ],
   acties: [
     {
       prio: "prio-hoog",
-      tekst: "Qatar Rijdsma: terugbellen maandag 6 juli — als Qatar niet reageerde, direct ingebrekenstelling sturen naar alle e-mailadressen.",
+      tekst: "Qatar Rijdsma: ingebrekestelling Qatar Airways opstellen en terugbellen.",
       eigenaar: "Senne",
       deadline: "dl-urgent",
-      deadlineTekst: "Maandag 6 juli"
+      deadlineTekst: "Vandaag nog"
     },
     {
       prio: "prio-hoog",
-      tekst: "Vechter NCG: bevestig urgentiemelding bij Brandmeester; controleer of uitstelverzoek bij NCG is ingediend met e-mailbevestiging.",
+      tekst: "Vechter vs. NCG: Brandmeester informeren over urgentie, schadenummer bevestigen.",
       eigenaar: "Senne",
       deadline: "dl-urgent",
-      deadlineTekst: "Zo snel mogelijk"
+      deadlineTekst: "Vandaag nog"
     },
     {
       prio: "prio-middel",
-      tekst: "Tuchtklacht arts: bevestigingsmail Brandmeester sturen met overdracht wettelijke bevoegdheid.",
+      tekst: "Tuchtklacht jeugdzorg: Brandmeester overdracht bevestigen en dossier aanleveren.",
       eigenaar: "Senne",
       deadline: "dl-soon",
-      deadlineTekst: "Zo snel mogelijk"
+      deadlineTekst: "Binnen 24 uur"
     },
     {
       prio: "prio-laag",
-      tekst: "Dion Langveld caravan: opvolgen na reminder mail aan verzekeraar — terugbellen bij geen reactie.",
+      tekst: "Caravan Dion Langveld: dossier openhouden, wachten op reactie verzekeraar.",
       eigenaar: "Senne",
       deadline: "dl-ok",
-      deadlineTekst: "Wachten op reactie verzekeraar"
+      deadlineTekst: "Deze week"
     }
   ],
   analyse: {
     goed: [
-      "Transavia: vogel-in-vleugel als overmacht twijfelachtig correct beoordeeld; traag sturen vervangingsvliegtuig terecht als verzwarend feit meegewogen.",
-      "Vechter NCG: urgentie herkend en Brandmeester-doorverwijzing gecombineerd met concrete actie voor verzekerde (uitstelverzoek bij NCG).",
-      "Caravan Dion: scherp advies — wettelijke termen weglaten en polisclausule uitvragen is de juiste aanpak bij dit soort weigeringen."
+      "Dekkingscheck snelheidsovertreding: art. 7.3.2 direct en correct toegepast.",
+      "Inzageverzoek erfscheiding correct beoordeeld: geen wettelijke verplichting, en toch praktisch advies om communicatief te blijven.",
+      "Omgevingsvergunning Inge: concreet advies om gemeente schriftelijk op de tegenstrijdigheid te wijzen — goed gebruik van beschikbaar schriftelijk bewijs.",
+      "Ingebrekestelling Ramdin: stap-voor-stap uitgelegd wat erin moet staan, inclusief wettelijke vereisten (redelijke termijn, formele stelling)."
     ],
     beter: [
-      "Qatar Rijdsma: na eerder gemiste 48u-termijn opnieuw 96u toegestaan — ingebrekenstelling had al eerder verstuurd kunnen worden.",
-      "Snelheidsovertreding: artikelnummer 8.4.2 geciteerd (correct: 7.3.2) — kleine fout zorgde voor onnodige verwarring en extra uitleg."
+      "Qatar Airways: terugbelafspraak had eerder in het gesprek gemaakt moeten worden — verzekerde wachtte al 96 uur zonder concrete actie.",
+      "Aannemer Ramdin: geen wetsartikel benoemd bij advies ingebrekestelling — verwijzing naar art. 6:82 BW had het advies sterker gemaakt."
     ]
   }
+}
 }
 }
 
