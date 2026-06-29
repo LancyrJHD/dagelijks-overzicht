@@ -2807,6 +2807,7 @@ function showLogin() {
   document.getElementById('auth-register-screen').classList.remove('active');
   document.getElementById('auth-forgot-screen').classList.remove('active');
   document.getElementById('auth-reset-screen').classList.remove('active');
+  document.getElementById('auth-confirm-screen').classList.remove('active');
   clearAuthMessages();
 }
 function showRegister() {
@@ -2814,6 +2815,7 @@ function showRegister() {
   document.getElementById('auth-login-screen').classList.remove('active');
   document.getElementById('auth-forgot-screen').classList.remove('active');
   document.getElementById('auth-reset-screen').classList.remove('active');
+  document.getElementById('auth-confirm-screen').classList.remove('active');
   clearAuthMessages();
 }
 function showForgot() {
@@ -2821,6 +2823,7 @@ function showForgot() {
   document.getElementById('auth-login-screen').classList.remove('active');
   document.getElementById('auth-register-screen').classList.remove('active');
   document.getElementById('auth-reset-screen').classList.remove('active');
+  document.getElementById('auth-confirm-screen').classList.remove('active');
   clearAuthMessages();
 }
 
@@ -2829,8 +2832,25 @@ function showReset() {
   document.getElementById('auth-login-screen').classList.remove('active');
   document.getElementById('auth-register-screen').classList.remove('active');
   document.getElementById('auth-forgot-screen').classList.remove('active');
+  document.getElementById('auth-confirm-screen').classList.remove('active');
   clearAuthMessages();
 }
+let _pendingConfirmEmail = '';
+function showConfirm(email) {
+  _pendingConfirmEmail = email;
+  document.getElementById('confirm-email-display').textContent = email;
+  document.getElementById('auth-confirm-screen').classList.add('active');
+  document.getElementById('auth-register-screen').classList.remove('active');
+  document.getElementById('auth-login-screen').classList.remove('active');
+  document.getElementById('auth-forgot-screen').classList.remove('active');
+  clearAuthMessages();
+}
+async function resendFromConfirm() {
+  const sb = getSupabase(); if (!sb || !_pendingConfirmEmail) return;
+  const { error } = await sb.auth.resend({ type: 'signup', email: _pendingConfirmEmail, options: { emailRedirectTo: 'https://lancyrjhd.github.io/dagelijks-overzicht/' } });
+  if (!error) startCooldown('confirm-resend-btn', 30, 'Opnieuw versturen');
+}
+
 function showAuthError(id, msg) {
   const el = document.getElementById(id);
   el.textContent = msg;
@@ -2855,7 +2875,23 @@ async function authLogin() {
   clearAuthMessages();
   const { error } = await sb.auth.signInWithPassword({ email, password });
   btn.disabled = false; btn.textContent = 'Aanmelden';
-  if (error) { showAuthError('login-error', vertaalAuthFout(error.message)); return; }
+  if (error) {
+    if (error.message && error.message.includes('Invalid login')) {
+      const { error: otpErr } = await sb.auth.signInWithOtp({ email, options: { shouldCreateUser: false } });
+      const noAccount = otpErr && (
+        otpErr.message.includes('not found') ||
+        otpErr.message.includes('user_not_found') ||
+        otpErr.message.includes('User not found') ||
+        (otpErr.status === 422)
+      );
+      showAuthError('login-error', noAccount
+        ? 'Er bestaat geen account met dit e-mailadres.'
+        : 'E-mail of wachtwoord klopt niet.');
+    } else {
+      showAuthError('login-error', vertaalAuthFout(error.message));
+    }
+    return;
+  }
   hideAuthOverlay();
   await initDashboard();
 }
@@ -3009,9 +3045,7 @@ async function authRegister() {
   const { error } = await sb.auth.signUp({ email, password: pw1, options: { data: { name: naam }, emailRedirectTo: 'https://lancyrjhd.github.io/dagelijks-overzicht/' } });
   btn.disabled = false; btn.textContent = 'Account aanmaken';
   if (error) { showAuthError('register-error', vertaalAuthFout(error.message)); return; }
-  const suc = document.getElementById('register-success');
-  suc.innerHTML = 'Account aangemaakt! Controleer je e-mail om te bevestigen.<br><button id="resend-btn" onclick="resendConfirmation()" style="margin-top:10px;background:none;border:1px solid #AE986F;color:#AE986F;border-radius:50px;padding:6px 16px;cursor:pointer;font-size:13px">Opnieuw versturen</button>';
-  suc.classList.add('visible');
+  showConfirm(email);
 }
 
 // ── Wachtwoord vergeten ──
@@ -3213,6 +3247,22 @@ async function checkAuth() {
         <input class="auth-input" id="reset-password2" type="password" placeholder="Herhaal wachtwoord" autocomplete="new-password" />
       </div>
       <button class="auth-btn" id="reset-btn" onclick="authResetPassword()">Wachtwoord instellen</button>
+    </div>
+
+    <!-- ACCOUNT BEVESTIGEN SCHERM -->
+    <div class="auth-screen" id="auth-confirm-screen">
+      <div class="auth-eyebrow">Juridische Helpdesk</div>
+      <div class="auth-title">Account aangemaakt!</div>
+      <div class="auth-subtitle">Controleer je inbox om je account te bevestigen.</div>
+      <div style="margin:24px 0;padding:16px;background:rgba(174,152,111,0.12);border-radius:12px;text-align:center;">
+        <div style="font-size:13px;color:var(--ink-50);margin-bottom:6px;">Bevestigingsmail verstuurd naar</div>
+        <div style="font-size:15px;font-weight:600;color:var(--ink-80)" id="confirm-email-display">&mdash;</div>
+      </div>
+      <div style="font-size:13px;color:var(--ink-50);text-align:center;margin-bottom:20px;line-height:1.6">
+        Klik op de link in de mail om je account te activeren.<br>Daarna kun je hier inloggen.
+      </div>
+      <button class="auth-btn" id="confirm-resend-btn" onclick="resendFromConfirm()">Opnieuw versturen</button>
+      <div class="auth-switch" style="margin-top:12px"><a onclick="showLogin()">&#8592; Terug naar inloggen</a></div>
     </div>
 
   </div>
