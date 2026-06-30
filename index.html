@@ -2075,6 +2075,56 @@ const weekData = {
       "Snelheidsovertreding: verkeerd artikelnummer geciteerd (8.4.2 gecorrigeerd naar 7.3.2); poliskennis versterken.",
       "Qatar Rijdsma: na eerder gemiste 48u-termijn, opnieuw 96u toegestaan. Ingebrekenstelling had eerder verstuurd kunnen worden."
     ]
+  },
+  "2026-06-30": {
+  drukte: "rustig",
+  gesprekken: 3,
+  stats: { opgelost: 2, brandmeester: 0, afkoop: 0, terugbel: 1, geenDekking: 0 },
+  score: 6.5,
+  conversations: [
+    {
+      tijd: "10:43",
+      titel: "Autoschade melding — doorverwijzing naar schadeteam",
+      personen: "Verzekerde: Erdo Petri · Roelof van Beijnum",
+      samenvatting: "Petri meldt hagelschade aan auto, maar belt de juridische helpdesk. Medewerker legt uit dat dit de verkeerde afdeling is en verwijst door naar schadeteam via online schadeformulier en keuze 2 in het keuzemenu.",
+      tags: [["tag-overig", "Schadeafhandeling"]],
+      uitkomst: ["outcome-opgelost", "Telefonisch opgelost"]
+    },
+    {
+      tijd: "10:53",
+      titel: "Levensverzekering schadegeschil — stukken opvragen en intern navragen",
+      personen: "Verzekerde: Hank van de Grove · Roelof van Beijnum",
+      samenvatting: "Lopende zaak (ticket 2323) over schadeclaim bij De Goudse via tussenpersoon. Per 1 juli beëindigt dekking. Stukken gevraagd (expertiserapport, aannemersverklaring, mails verzekeraar). Roelof gaat intern navragen of claim na beëindiging dekking nog behandeld kan worden en belt terug.",
+      tags: [["tag-overig", "Verzekeringsrecht"]],
+      uitkomst: ["outcome-terugbel", "Terugbellen"]
+    },
+    {
+      tijd: "12:08",
+      titel: "Autoverzekeringsclaim — doorverwijzing naar schadeteam Lancyr",
+      personen: "Verzekerde: anoniem · Roelof van Beijnum",
+      samenvatting: "Verzekerde heeft schadeformulier ingediend via site en vraagt of dit correct was. Medewerker legt uit dat de juridische helpdesk voor juridische vragen is; schadeteam Lancyr afhandelt via 088 020 4525 (keuze 2).",
+      tags: [["tag-overig", "Schadeafhandeling"]],
+      uitkomst: ["outcome-opgelost", "Telefonisch opgelost"]
+    }
+  ],
+  acties: [
+    {
+      prio: "prio-hoog",
+      tekst: "Hank van de Grove terugbellen — per 1 juli niet meer verzekerd. Intern navragen of lopende claim (ticket 2323) toch behandeld kan worden na beëindiging. Stukken naar juridischhelpdesk@lancyr.nl uitvragen.",
+      eigenaar: "Roelof van Beijnum",
+      deadline: "dl-urgent",
+      deadlineTekst: "Vandaag nog — deadline 1 juli"
+    }
+  ],
+  analyse: {
+    goed: [
+      "Alle drie misdirected calls correct geïdentificeerd en doelgericht doorverwezen naar schadeteam.",
+      "Bij Hank van de Grove proactief stukken uitgevraagd en intern nagevraagd over lopende claim."
+    ],
+    beter: [
+      "Poliscontrole en identiteitsverificatie niet hoorbaar in transcripten — standaard verificatiestap documenteren.",
+      "Bij Hank van de Grove: urgentie van 1 juli-deadline niet expliciet benoemd; terugbelafspraak zonder concrete tijdsindicatie."
+    ]
   }
 }
 }
