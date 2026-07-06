@@ -2278,9 +2278,9 @@ const weekData = {
 },
 "2026-07-06": {
   drukte: "druk",
-  gesprekken: 12,
-  stats: { opgelost: 8, brandmeester: 0, afkoop: 0, terugbel: 1, geenDekking: 3 },
-  score: 6.5,
+  gesprekken: 18,
+  stats: { opgelost: 12, brandmeester: 1, afkoop: 0, terugbel: 2, geenDekking: 3 },
+  score: 6.8,
   conversations: [
     {
       tijd: "09:29",
@@ -2377,6 +2377,54 @@ const weekData = {
       samenvatting: "Verzekerde kreeg na bezwaar alsnog een uitwegvergunning toegekend, maar de gemeente stelt nu een aanvullende BOPA-vergunning verplicht terwijl buren met vergelijkbare parkeersituaties dat niet hoefden aan te vragen. Medewerker adviseerde eerst de BOPA-vergunning aan te vragen en pas bij weigering een beroep te doen op het gelijkheidsbeginsel, en raadde af het lopende bezwaar in te trekken zoals de gemeente vroeg.",
       tags: [["tag-bestuursrecht","Bestuursrecht"]],
       uitkomst: ["outcome-opgelost","Eerstelijns opgelost"]
+    },
+    {
+      tijd: "15:59",
+      titel: "Verzekeringspolis niet gevonden — verkeerd doorverbonden (dhr. Roemer)",
+      personen: "Verzekerde: dhr. Roemer · Senne Duifhuis",
+      samenvatting: "Verzekerde wilde een adreswijziging op zijn autoverzekering laten verwerken, maar de polis kon niet worden teruggevonden op postcode, naam, e-mailadres of het opgegeven polisnummer (Lansier-polissen beginnen doorgaans met 5607, niet met het opgegeven nummer). Medewerker constateerde dat dit een autoverzekeringsvraag betreft en verwees door naar Lansier Autoverzekeringen.",
+      tags: [["tag-overig","Routering"]],
+      uitkomst: ["outcome-opgelost","Eerstelijns opgelost"]
+    },
+    {
+      tijd: "16:09",
+      titel: "Ingebrekestelling badkamervloer — verweer via koopcontract (Alma Zeijlos)",
+      personen: "Verzekerde: Alma Zeijlos · Senne Duifhuis",
+      samenvatting: "Verzekerde werd door de koper van haar voormalige woning in gebreke gesteld wegens onvoldoende afwatering van de badkamervloer, terwijl de bouwkundige keuring destijds positief was en zij eerder al een oplossing had aangeboden die de koper weigerde. Medewerker vond samen met haar artikel 30 van de koopovereenkomst over bewoning en gebruiksverantwoordelijkheid en adviseerde dit artikel als verweer te gebruiken in reactie op de ingebrekestelling.",
+      tags: [["tag-consument","Consumentenrecht"]],
+      uitkomst: ["outcome-opgelost","Eerstelijns opgelost"]
+    },
+    {
+      tijd: "16:20",
+      titel: "Buurconflict — bezwaar tegen uitbouw en toekomstige terrasuitbreiding (dhr. Schuurs)",
+      personen: "Verzekerde: dhr. Schuurs · Senne Duifhuis",
+      samenvatting: "Verzekerde overweegt zijn bezwaar tegen de uitbouw van de buren in te trekken, maar vreest dat de bovenburen dan hun terras mogen uitbreiden met inkijk in zijn woning. Medewerker kon geen kansinschatting geven vanwege de aansprakelijkheidsbeperking, maar legde uit dat inkijk in beginsel een geldige bezwaargrond is en adviseerde het bezwaar aan te houden zolang de terrasafspraak in de andere VvE bestaat, of dit vooraf in de VvE te laten vastleggen.",
+      tags: [["tag-bestuursrecht","Bestuursrecht"],["tag-bouw","Bouwrecht"]],
+      uitkomst: ["outcome-opgelost","Eerstelijns opgelost"]
+    },
+    {
+      tijd: "16:30",
+      titel: "Vervolgafspraak niet bereikbaar — meneer Rijdsmaar",
+      personen: "Verzekerde: dhr. Rijdsmaar · Senne Duifhuis",
+      samenvatting: "Uitgaand vervolggesprek naar aanleiding van een eerder gemaakte belafspraak; meneer Rijdsmaar was niet bereikbaar voor een volledig gesprek. Medewerker verzocht om vandaag terug te bellen of anders een nieuwe afspraak met een collega in te plannen.",
+      tags: [["tag-overig","Overig"]],
+      uitkomst: ["outcome-terugbel","Terugbellen"]
+    },
+    {
+      tijd: "16:36",
+      titel: "Testament aangevochten door erkende kinderen — doorverwezen naar Brandmeester (mevr. De Wijs)",
+      personen: "Verzekerde: mevr. De Wijs · Senne Duifhuis",
+      samenvatting: "Na het overlijden van haar partner vechten diens, na negen jaar opgedoken, erkende kinderen het testament aan en eisen zij hun legitieme portie op, inclusief optelling van giften over meerdere jaren; verzekerde krijgt bovendien rekeningen van notaris en advocaat zonder haar toestemming. De rechtsbijstandverzekering (module Personen en Familie) is van toepassing; medewerker vraagt een schadenummer aan en stuurt de zaak door naar Brandmeester voor de definitieve dekkingsbeoordeling.",
+      tags: [["tag-overig","Erfrecht"]],
+      uitkomst: ["outcome-brandmeester","Doorverwezen naar Brandmeester"]
+    },
+    {
+      tijd: "16:54",
+      titel: "Verkeerd doorverbonden — adreswijziging autoverzekering",
+      personen: "Verzekerde: anoniem · Senne Duifhuis",
+      samenvatting: "Beller wilde een adreswijziging doorgeven voor zijn autoverzekering, maar kwam via de juridische helpdesk terecht. Medewerker legde uit dat doorverbinden niet mogelijk is en sloot het gesprek vriendelijk af.",
+      tags: [["tag-overig","Routering"]],
+      uitkomst: ["outcome-opgelost","Eerstelijns opgelost"]
     }
   ],
   acties: [
@@ -2386,6 +2434,13 @@ const weekData = {
       eigenaar: "Senne Duifhuis / teamleider helpdesk",
       deadline: "dl-urgent",
       deadlineTekst: "Vandaag nog"
+    },
+    {
+      prio: "prio-hoog",
+      tekst: "Schadenummer aanvragen voor mevrouw De Wijs (testament/erfrechtzaak) en dossier met haar in de cc doorsturen naar Brandmeester",
+      eigenaar: "Senne Duifhuis",
+      deadline: "dl-urgent",
+      deadlineTekst: "Morgen (7 juli) — schadenummer verwacht"
     },
     {
       prio: "prio-middel",
@@ -2414,6 +2469,13 @@ const weekData = {
       eigenaar: "Senne Duifhuis",
       deadline: "dl-ok",
       deadlineTekst: "Geen harde deadline"
+    },
+    {
+      prio: "prio-laag",
+      tekst: "Doorgestuurde koopovereenkomst van Alma Zeijlos ontvangen en artikel 30 beoordelen ter onderbouwing van het verweer",
+      eigenaar: "Senne Duifhuis",
+      deadline: "dl-soon",
+      deadlineTekst: "Zodra mail binnen is"
     }
   ],
   analyse: {
@@ -2421,13 +2483,16 @@ const weekData = {
       "Consequente identiteits- en polischeck aan het begin van vrijwel elk gesprek (postcode en naam), inclusief het herkennen dat een polis nog niet in het systeem stond bij de CEVA-zaak.",
       "Sterke, uitgebreide eerstelijns advisering bij de auto-aankoopzaak (gebreken/ontbinding): concreet stappenplan met ingebrekestelling, termijnen en kostenverdeling, inclusief correctie van een onjuiste aanname van de verzekerde over ontbindingsrecht.",
       "Dekkingschecks werden expliciet onderbouwd met concrete polisartikelen (7.3.2 verkeersboetes, 8.2.2 BOVAG, 10.3.2 kraken), wat de uitleg aan verzekerden navolgbaar en professioneel maakt.",
-      "Duidelijke grenzen bewaakt bij vragen die buiten de rechtsbijstandsdekking of de scope van de helpdesk vallen (container-aanrijding, DAS-dossier), zonder ten onrechte zelf een oordeel te vellen over aansprakelijkheid."
+      "Duidelijke grenzen bewaakt bij vragen die buiten de rechtsbijstandsdekking of de scope van de helpdesk vallen (container-aanrijding, DAS-dossier), zonder ten onrechte zelf een oordeel te vellen over aansprakelijkheid.",
+      "Erfrechtzaak (testament aangevochten door erkende kinderen) correct herkend als Brandmeester-materie; toepasselijke module (Personen en Familie) juist benoemd en proactief een schadenummer aangevraagd.",
+      "Verweer bij het badkamervloer-geschil (Alma Zeijlos) concreet onderbouwd met een specifiek artikel uit de koopovereenkomst in plaats van een algemene inschatting."
     ],
     beter: [
       "Ernstige protocolafwijking: het gesprek over het nul-urencontract en de loonvordering na ontslag betreft een arbeidsconflict en had zonder uitzondering moeten worden doorverwezen naar Brandmeester. In plaats daarvan is inhoudelijk advies gegeven over cao-bepalingen en loonvordering.",
       "Een ingeplande belafspraak is gemist ('had ik over het hoofd gezien'), waardoor de verzekerde alsnog moest worden teruggebeld zonder dat het gesprek kon plaatsvinden.",
       "Bij de schadeclaim/reparatiezaak (waarborgfonds) bleek de verzekerde al meer dan een week zonder auto te zitten door tegenstrijdige communicatie tussen autoverzekering en rechtsbijstand; dit vraagt om betere interne afstemming.",
-      "Bij de scooterboete-zaak werd een aanname over de specialisatie van Stam Advocaten gedeeld zonder honderd procent zekerheid; dit soort toezeggingen kan beter eerst geverifieerd worden."
+      "Bij de scooterboete-zaak werd een aanname over de specialisatie van Stam Advocaten gedeeld zonder honderd procent zekerheid; dit soort toezeggingen kan beter eerst geverifieerd worden.",
+      "Opvallend veel gesprekken (drie op één dag) betroffen verkeerd doorverbonden bellers met vragen voor de autoverzekering in plaats van de juridische helpdesk — dit patroon wijst mogelijk op een onduidelijk keuzemenu bij Lansier dat structureel aandacht verdient."
     ]
   }
 }
