@@ -2709,7 +2709,63 @@ const weekData = {
   }
 },
 "2026-07-14": { drukte: "rustig", gesprekken: 0, stats: { opgelost: 0, brandmeester: 0, afkoop: 0, terugbel: 0, geenDekking: 0 }, score: 0, conversations: [], acties: [], analyse: { goed: [], beter: [] } },
-"2026-07-15": { drukte: "rustig", gesprekken: 0, stats: { opgelost: 0, brandmeester: 0, afkoop: 0, terugbel: 0, geenDekking: 0 }, score: 0, conversations: [], acties: [], analyse: { goed: [], beter: [] } }
+"2026-07-15": {
+  drukte: "rustig",
+  gesprekken: 2,
+  stats: { opgelost: 0, brandmeester: 2, afkoop: 0, terugbel: 0, geenDekking: 0 },
+  score: 7.5,
+  conversations: [
+    {
+      tijd: "09:02",
+      titel: "Ontbrekende ontvangstbevestiging dossier — mevrouw Smeet",
+      personen: "Verzekerde: Anne Marie Smeet · Medewerker: naam niet genoemd",
+      samenvatting: "Verzekerde belde omdat een eerder toegezegde ontvangstbevestiging van haar dossiernummer uitbleef. Oorzaak: haar rechtsbijstandpolis stond nog op een oud adres. Het schadenummer was inmiddels binnengekomen en het dossier is tijdens het gesprek direct doorgestuurd naar Brandmeester, die binnen 4 à 5 werkdagen contact opneemt.",
+      tags: [["tag-overig", "Verzekeringsrecht"]],
+      uitkomst: ["outcome-brandmeester", "Doorverwezen naar Brandmeester"]
+    },
+    {
+      tijd: "09:15",
+      titel: "Aanbetaling niet terugbetaald door aannemer — ticket heropend",
+      personen: "Verzekerde: anoniem · Medewerker: Davy (\"DD\")",
+      samenvatting: "Aannemer beëindigde zelf de samenwerking en beloofde mondeling volledige terugbetaling van de aanbetaling, maar sinds half mei is er niets ontvangen. Eerder ticket (2364) bleek gesloten na verzending van een ingebrekestelling, wat verwarring gaf bij de verzekerde; het ticket is heropend. Verzekerde is doorverwezen naar Brandmeester (partijjuristen), met haarzelf in cc, contact binnen 5 werkdagen.",
+      tags: [["tag-bouw", "Bouwrecht"], ["tag-consument", "Consumentenrecht"]],
+      uitkomst: ["outcome-brandmeester", "Doorverwezen naar Brandmeester"]
+    }
+  ],
+  acties: [
+    {
+      prio: "prio-middel",
+      tekst: "Nagaan of dossier mevrouw Smeet daadwerkelijk bij Brandmeester is aangekomen en zij binnen 4-5 werkdagen is teruggebeld.",
+      eigenaar: "Lancyr helpdesk",
+      deadline: "dl-soon",
+      deadlineTekst: "Rond 22 juli controleren"
+    },
+    {
+      prio: "prio-middel",
+      tekst: "Ticket 2364 (aannemer-aanbetaling) opvolgen — nagaan of Brandmeester binnen 5 werkdagen contact heeft opgenomen.",
+      eigenaar: "Davy",
+      deadline: "dl-soon",
+      deadlineTekst: "Rond 22 juli controleren"
+    },
+    {
+      prio: "prio-laag",
+      tekst: "Intern proces verscherpen: klant informeren wanneer een ticket wordt gesloten na een telefonische afspraak, om verwarring zoals bij ticket 2364 te voorkomen.",
+      eigenaar: "Teamlead Lancyr helpdesk",
+      deadline: "dl-ok",
+      deadlineTekst: "Geen harde deadline"
+    }
+  ],
+  analyse: {
+    goed: [
+      "Adresprobleem (oud adres op rechtsbijstandpolis) snel gevonden, schadenummerproces correct gevolgd en dossier direct doorgestuurd naar Brandmeester.",
+      "Bij de aannemerszaak is de mondelinge toezegging van de aannemer (volledige terugbetaling) leidend genomen ten faveure van de verzekerde, ondanks dat de aannemer daar nu op terugkomt."
+    ],
+    beter: [
+      "Verwarring door ticket 2364: het sluiten van het ticket na de telefonische afspraak werd niet aan de klant gecommuniceerd, waardoor zij dacht dat er niets gebeurde.",
+      "Bij geen van beide gesprekken werd de identiteit/polis volledig geverifieerd voordat inhoudelijk advies werd gegeven (bij gesprek 1 alleen postcode gecontroleerd)."
+    ]
+  }
+}
 }
 
 const MANUAL_OUTCOMES = [
