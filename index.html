@@ -2769,9 +2769,9 @@ const weekData = {
 "2026-07-16": { drukte: "rustig", gesprekken: 0, stats: { opgelost: 0, brandmeester: 0, afkoop: 0, terugbel: 0, geenDekking: 0 }, score: 0, conversations: [], acties: [], analyse: { goed: [], beter: [] } },
   "2026-07-20": {
   drukte: "druk",
-  gesprekken: 17,
-  stats: { opgelost: 7, brandmeester: 3, afkoop: 0, terugbel: 5, geenDekking: 2 },
-  score: 7.0,
+  gesprekken: 20,
+  stats: { opgelost: 8, brandmeester: 3, afkoop: 0, terugbel: 7, geenDekking: 2 },
+  score: 6.5,
   conversations: [
     {
       tijd: "09:33",
@@ -2908,26 +2908,57 @@ const weekData = {
       samenvatting: "Beller met een sterke taalbarrière (mengeling Duits/Spaans/Engels) zocht de autoverzekering maar kwam bij de juridische helpdesk terecht. Senne probeert de postcode te verifiëren maar moet uiteindelijk uitleggen dat de verkeerde keuze in het keuzemenu is gemaakt.",
       tags: [["tag-overig", "Overig"]],
       uitkomst: ["outcome-opgelost", "Telefonisch opgelost"]
+    },
+    {
+      tijd: "15:38",
+      titel: "Stacaravan-vakantie geweigerd — ingebrekestelling reisorganisatie Rowan",
+      personen: "Verzekerde: onbekend (echtpaar) · Senne Duifhuis",
+      samenvatting: "Boekte een stacaravan met voorkeursplaats via Rowan voor vertrek op 29 augustus, maar Rowan wist al sinds april dat die specifieke caravan niet meer beschikbaar was en meldde dit pas vorige week. Het aangeboden alternatief ligt aan de rand van de camping, wat door de chronische pijnklachten van de partner onacceptabel is. Senne onderbouwt met ANVR-artikel 5.2 en 5.7 dat bij een niet-aanvaard alternatief recht bestaat op volledige terugbetaling, en adviseert een ingebrekestelling met een hersteltermijn van 14 dagen.",
+      tags: [["tag-consument", "Consumentenrecht"]],
+      uitkomst: ["outcome-terugbel", "Terugbellen"]
+    },
+    {
+      tijd: "15:54",
+      titel: "Betonlevering mislukt — ingebrekestelling na geannuleerde bestelling",
+      personen: "Verzekerde: dhr. Yu · Senne Duifhuis",
+      samenvatting: "Bestelde beton (circa €1.000, vooruitbetaald) met een voorkeurstijd in de middag, maar de leverancier wijzigde eenzijdig naar de ochtend en annuleerde de bestelling toen dat niet uitkwam. Senne beoordeelt de rechtspositie als zwak omdat een voorkeurstijd geen garantie is, maar adviseert alsnog een ingebrekestelling te sturen met een verzoek om een concreet kortingsbedrag voor een nieuwe levering.",
+      tags: [["tag-consument", "Consumentenrecht"]],
+      uitkomst: ["outcome-terugbel", "Terugbellen"]
+    },
+    {
+      tijd: "16:20",
+      titel: "Bezwaar tegen schoolbouw (BOPA) — ondanks gemiste terugbelafspraak collega",
+      personen: "Verzekerde: dhr. Bulte · Senne Duifhuis",
+      samenvatting: "Wil bezwaar maken tegen een BOPA-procedure van de gemeente voor schoolbouw in de buurt, nadat een collega vorige week een toegezegde terugbelafspraak niet nakwam. Senne legt uit dat bezwaar zelf ingediend kan worden omdat een jurist in die fase beperkte meerwaarde heeft, en dat pas bij een eventueel beroep na afwijzing juridische ondersteuning zinvol wordt. Daarnaast bleek dat er al een schadenummer was aangevraagd zonder dat de klant hiervan op de hoogte was.",
+      tags: [["tag-bestuursrecht", "Bestuursrecht"]],
+      uitkomst: ["outcome-opgelost", "Telefonisch opgelost"]
     }
   ],
   acties: [
     {
       prio: "prio-hoog",
-      tekst: "Schilderwerkzaak mevr. van Kouterik alsnog doorverwijzen naar Brandmeester — schade (~€50.000) overschrijdt de €5.000-grens voor bouwzaken",
+      tekst: "Schilderwerkzaak mevr. Van Kouterik (schade ca. €50.000 aan gevelpanelen) alsnog doorverwijzen naar Brandmeester — bouwzaken boven de €5.000-grens vereisen dit verplicht, en dit is nog niet gebeurd",
       eigenaar: "Senne Duifhuis",
       deadline: "dl-urgent",
       deadlineTekst: "Bij vervolgafspraak vandaag 16:30"
     },
     {
-      prio: "prio-middel",
-      tekst: "Klacht over collega (gemiste terugbelafspraken, onbeantwoorde mails bij mevr. van Kouterik) escaleren naar manager",
+      prio: "prio-hoog",
+      tekst: "Twee aparte meldingen vandaag van gemiste terugbelafspraken door collega's (bij mevr. Van Kouterik en bij dhr. Bulte) — patroon onderzoeken en escaleren naar manager",
       eigenaar: "Senne Duifhuis",
       deadline: "dl-soon",
       deadlineTekst: "Deze week"
     },
     {
       prio: "prio-middel",
-      tekst: "Structureel IVR/keuzemenu-probleem melden — 7 van de 17 gesprekken vandaag betroffen bellers die abusievelijk bij de juridische helpdesk uitkwamen in plaats van de autoverzekering",
+      tekst: "Bij dhr. Bulte is buiten zijn medeweten al een schadenummer aangevraagd — nagaan hoe dit kon gebeuren en klant alsnog actief informeren",
+      eigenaar: "Senne Duifhuis",
+      deadline: "dl-soon",
+      deadlineTekst: "Op korte termijn"
+    },
+    {
+      prio: "prio-middel",
+      tekst: "Structureel IVR/keuzemenu-probleem melden bij Lancier — 5 van de 20 gesprekken vandaag (25%) betroffen bellers die abusievelijk bij de juridische helpdesk uitkwamen in plaats van bij autoverzekeringen",
       eigenaar: "IT / Lancier",
       deadline: "dl-soon",
       deadlineTekst: "Op korte termijn"
@@ -2942,16 +2973,16 @@ const weekData = {
   ],
   analyse: {
     goed: [
+      "Sterke juridische onderbouwing bij de consumentenzaken: ANVR-artikelen 5.2 en 5.7 correct toegepast bij het reisgeschil, en een scherp onderscheid tussen aansluitgarantie en productgarantie bij de wasmachinezaak.",
       "Dekkingscontrole correct uitgevoerd en vastgelegd bij zowel de fiscale zaak (geen module belasting) als de ASR-zaak (verkeerde maatschappij).",
-      "Scherpe juridische analyse bij de wasmachinezaak: onderscheid tussen de verlopen aansluitgarantie en de geldende productgarantie op de slang gaf de klant een bruikbaar vervolgadvies.",
-      "Rustig en professioneel gebleven bij meerdere emotionele, herhaaldelijk onderbrekende bellers (belastingzaak, ASR-zaak).",
+      "Rustig en professioneel gebleven bij meerdere emotionele of taalbarrière-bellers.",
       "Correcte doorverwijzingen naar Brandmeester bij het huurconflict, het aannemersgeschil en de Qatar-claim."
     ],
     beter: [
-      "De schilderwerkzaak met een geschatte schade van €50.000 is nog niet doorverwezen naar Brandmeester, terwijl de norm bij bouwzaken >€5.000 verplichte doorverwijzing voorschrijft — dit moet bij de vervolgafspraak alsnog gebeuren.",
-      "7 van de 17 gesprekken vandaag (ruim 40%) betroffen bellers die via een verkeerd gekozen keuzemenu-optie bij de juridische helpdesk uitkwamen — dit wijst op een structureel IVR-probleem dat onnodig capaciteit kost.",
-      "Bij de ASR-zaak zat bijna twee weken tussen het intern navragen en het teruggeven van het antwoord aan de klant, wat tot terechte klantonvrede leidde.",
-      "De klacht over een collega (gemiste terugbelafspraken, onbeantwoorde mails) wijst op een intern opvolgingsprobleem dat verder onderzocht moet worden."
+      "De schilderwerkzaak met een geschatte schade van €50.000 is nog niet doorverwezen naar Brandmeester, terwijl de norm bij bouwzaken >€5.000 verplichte doorverwijzing voorschrijft — dit moet bij de vervolgafspraak van 16:30 alsnog gebeuren.",
+      "5 van de 20 gesprekken vandaag (25%) betroffen bellers die via een verkeerd gekozen keuzemenu-optie bij de juridische helpdesk uitkwamen in plaats van bij autoverzekeringen — structureel IVR-probleem dat onnodig capaciteit kost.",
+      "Twee keer vandaag bleek een collega een toegezegde terugbelafspraak niet te zijn nagekomen (bij mevr. Van Kouterik en bij dhr. Bulte); bij dhr. Bulte was bovendien buiten zijn medeweten al een schadenummer aangevraagd.",
+      "Bij de ASR-zaak zat bijna twee weken tussen het intern navragen en het teruggeven van het antwoord aan de klant, wat tot terechte klantonvrede leidde."
     ]
   }
 }
