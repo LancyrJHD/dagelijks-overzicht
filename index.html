@@ -3782,7 +3782,103 @@ async function loadLiveToday() {
   }
 }
 
-async function initDashboard() {  await loadLiveToday();  const todayStr = new Date().toLocaleDateString('sv-SE');  if (!weekData[todayStr] && Object.keys(weekData).length > 0) {    activePeriod = 'gisteren';  }  const tabs = document.querySelectorAll('.period-tab');  tabs.forEach(tab => {    tab.addEventListener('click', () => {      tabs.forEach(t => t.classList.remove('active'));      tab.classList.add('active');      activePeriod = tab.dataset.period;      renderDashboard(activePeriod);    });  });  tabs.forEach(t => t.classList.toggle('active', t.dataset.period === activePeriod));  renderDashboard(activePeriod);  try { buildWeekContext(); } catch(e) { console.log('weekContext:', e.message); }}document.addEventListener('DOMContentLoaded', async () => {  try {    setTime();    setInterval(setTime, 60000);    const authed = await checkAuth();    if (!authed) return;    await initDashboard(); initPresence();  } catch(e) {    console.error('[Init] fout:', e);    try { showAuthOverlay(); } catch(_) {}  }});
+async function initDashboard() {
+  await loadLiveToday();
+  const todayStr = new Date().toLocaleDateString('sv-SE');
+  if (!weekData[todayStr] && Object.keys(weekData).length > 0) {
+    activePeriod = 'gisteren';
+  }
+  const tabs = document.querySelectorAll('.period-tab');
+  tabs.forEach(tab => {
+    tab.addEventListener('click', () => {
+      tabs.forEach(t => t.classList.remove('active'));
+      tab.classList.add('active');
+      activePeriod = tab.dataset.period;
+      renderDashboard(activePeriod);
+    });
+  });
+  tabs.forEach(t => t.classList.toggle('active', t.dataset.period === activePeriod));
+  renderDashboard(activePeriod);
+  try { buildWeekContext(); } catch(e) { console.log('weekContext:', e.message); }
+}
+
+// -- Boot resilience: nooit meer een stille, lege pagina --
+// Root cause (4 aug 2026): checkAuth() kon tot 30s blijven hangen doordat de
+// Supabase auth-API traag/onbereikbaar was (503 op token-refresh, daarna
+// "Failed to fetch" na interne retries). Zonder timeout of laadindicator
+// bleef de pagina dan onbeperkt lang leeg, zonder enige feedback aan de
+// gebruiker. Deze wrapper garandeert dat de gebruiker altijd binnen enkele
+// seconden ofwel het dagrapport, ofwel het inlogscherm, ofwel een duidelijke
+// foutmelding met "opnieuw laden"-knop ziet -- nooit meer een kale pagina.
+function withTimeout(promise, ms, timeoutValue) {
+  return new Promise((resolve) => {
+    let done = false;
+    const timer = setTimeout(() => { if (!done) { done = true; resolve(timeoutValue); } }, ms);
+    Promise.resolve(promise).then((v) => {
+      if (!done) { done = true; clearTimeout(timer); resolve(v); }
+    }).catch((err) => {
+      if (!done) { done = true; clearTimeout(timer); console.error('[Init] fout in promise:', err); resolve(timeoutValue); }
+    });
+  });
+}
+
+function showBootLoading() {
+  const dash = document.getElementById('dashboard');
+  if (dash && !dash.querySelector('.boot-error')) {
+    dash.innerHTML = '<div class="boot-loading" style="display:flex;flex-direction:column;align-items:center;justify-content:center;width:100%;padding:80px 20px;color:#64748b;font-size:14px;gap:10px;">'
+      + '<div style="width:22px;height:22px;border:3px solid #dbe3ee;border-top-color:#1e2a3a;border-radius:50%;animation:boot-spin 0.8s linear infinite;"></div>'
+      + '<div>Dagrapport wordt geladen&hellip;</div></div>'
+      + '<style>@keyframes boot-spin{to{transform:rotate(360deg)}}</style>';
+  }
+}
+
+function showBootError(msg) {
+  const dash = document.getElementById('dashboard');
+  if (!dash) return;
+  dash.innerHTML = '<div class="boot-error" style="display:flex;flex-direction:column;align-items:center;justify-content:center;width:100%;padding:80px 20px;gap:14px;text-align:center;">'
+    + '<div style="color:#b42318;font-weight:600;max-width:420px;">' + msg + '</div>'
+    + '<button onclick="location.reload()" style="background:#1e2a3a;color:#fff;border:none;border-radius:8px;padding:10px 20px;font-weight:600;cursor:pointer;">Opnieuw laden</button>'
+    + '</div>';
+}
+
+// Watchdog: als er, om welke reden dan ook, na 20s nog steeds niets is
+// gerenderd (geen dashboard-inhoud, geen overlay), toon dan alsnog een
+// foutmelding in plaats van een oneindig lege pagina.
+setTimeout(() => {
+  const dash = document.getElementById('dashboard');
+  const overlay = document.getElementById('auth-overlay');
+  const overlayShown = overlay && !overlay.classList.contains('hidden');
+  if (!overlayShown && dash && dash.querySelector('.boot-loading')) {
+    console.error('[Init] watchdog: nog geen inhoud na 20s, val terug op foutmelding');
+    showBootError('Laden duurt ongewoon lang, mogelijk een storing in de inlogservice. Probeer het opnieuw.');
+  }
+}, 20000);
+
+document.addEventListener('DOMContentLoaded', async () => {
+  showBootLoading();
+  try {
+    setTime();
+    setInterval(setTime, 60000);
+    const authed = await withTimeout(checkAuth(), 8000, 'TIMEOUT');
+    if (authed === 'TIMEOUT') {
+      console.error('[Init] checkAuth timeout na 8s -- inlogservice reageert niet');
+      showBootError('De inlogservice reageert niet binnen 8 seconden. Probeer het opnieuw.');
+      return;
+    }
+    if (!authed) return;
+    const dashResult = await withTimeout(initDashboard(), 12000, 'TIMEOUT');
+    if (dashResult === 'TIMEOUT') {
+      console.error('[Init] initDashboard timeout na 12s');
+      showBootError('Het laden van het dagrapport duurt te lang. Probeer het opnieuw.');
+      return;
+    }
+    initPresence();
+  } catch(e) {
+    console.error('[Init] fout:', e);
+    showBootError('Er ging iets mis bij het laden van het dagrapport. Probeer het opnieuw.');
+    try { showAuthOverlay(); } catch(_) {}
+  }
+});
 
 // ======================== WEEK CONTEXT ========================
 const WEEK_NORM_BRANDMEESTER = 9;
@@ -3907,6 +4003,13 @@ const SUPABASE_URL      = 'https://xqnektwpnnbwirmdidbd.supabase.co';       // b
 const SUPABASE_ANON_KEY = 'sb_publishable_Yub_Wyg9Z6arQZR9_zLZHw_SFwU0Dj7';  // begint met eyJ...
 
 let _supabase = null;
+// Bugfix (4 aug 2026): _recoveryMode werd nergens gedeclareerd, alleen
+// toegewezen binnen de wachtwoord-herstel-tak. Bij een normale paginalaad
+// (geen #access_token in de URL) werd die tak nooit uitgevoerd, waardoor
+// de latere check 'if (_recoveryMode)' in checkAuth() een
+// ReferenceError gooide -- op ELKE normale laadbeurt, niet alleen bij een
+// trage Supabase-verbinding. Dit was de kernoorzaak van de lege pagina.
+let _recoveryMode = false;
 function getSupabase() {
   if (!_supabase && typeof supabase !== 'undefined') {
     _supabase = supabase.createClient(SUPABASE_URL, SUPABASE_ANON_KEY, { auth: { flowType: 'implicit' } });
