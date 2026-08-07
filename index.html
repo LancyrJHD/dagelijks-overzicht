@@ -3104,7 +3104,7 @@ function _jargonFilter(t) {
 }
 
 // ======================== MANUAL ENTRIES (GitHub-synced) ========================
-const _GH_TOKEN = '6769746875625f7061745f31314347544e5147493074733868517269706c5334675f63774550507461447a4e6878524e41345f314f5958494535596e364c5a71527a6e72434c4148';
+const _GH_TOKEN = ''; // Verwijderd 2026-08-07: het vorige token stond hex-gedecodeerd leesbaar in deze publieke broncode en was al verlopen (sinds 2026-07-23). Nieuw token NIET hier hardcoden -- dat is een beveiligingslek op een publieke GitHub Pages-site. Regel handmatige invoer voortaan server-side (bv. GitHub Action met repo secret) of via tools/lancyr_safe_update.py.
 const _GH_API = 'https://api.github.com/repos/LancyrJHD/dagelijks-overzicht/contents/data/manual-entries.json';
 const _GH_RAW = 'https://raw.githubusercontent.com/LancyrJHD/dagelijks-overzicht/main/data/manual-entries.json';
 let _ghData = {};
@@ -3115,9 +3115,11 @@ let _ghDirty = false;
 
 async function _ghLoad() {
   try {
+    const ghHeaders = { Accept: 'application/vnd.github+json' };
+    if (_GH_TOKEN) ghHeaders.Authorization = 'Bearer ' + _GH_TOKEN;
     const [raw, meta] = await Promise.all([
       fetch(_GH_RAW + '?t=' + Date.now()).then(r => r.ok ? r.json() : {}),
-      fetch(_GH_API, { headers: { Authorization: 'Bearer ' + _GH_TOKEN, Accept: 'application/vnd.github+json' } }).then(r => r.json())
+      fetch(_GH_API, { headers: ghHeaders }).then(r => r.json())
     ]);
     _ghData = (raw && typeof raw === 'object' && !Array.isArray(raw)) ? raw : {};
     _ghSha = meta.sha || null;
@@ -3137,6 +3139,13 @@ async function _ghLoad() {
 
 async function _ghSave() {
   if (_ghSaving || !_ghLoaded) return;
+  if (!_GH_TOKEN) {
+    console.warn('Handmatig opslaan is uitgeschakeld: geen geldig GitHub-token geconfigureerd. Wijziging is alleen lokaal in deze pagina zichtbaar en gaat verloren bij een herlaad.');
+    _ghDirty = false;
+    const el = document.getElementById('update-time');
+    if (el) el.title = 'Let op: handmatig opslaan is momenteel uitgeschakeld (verlopen token)';
+    return;
+  }
   _ghSaving = true;
   try {
     const body = { message: "Update manual entries", content: btoa(unescape(encodeURIComponent(JSON.stringify(_ghData, null, 2)))), sha: _ghSha };
