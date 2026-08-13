@@ -28,11 +28,13 @@ def get_access_token():
         return json.loads(resp.read())['access_token']
 
 
-def fetch(access_token, sort_by):
+def fetch_page(access_token, from_index, limit=100):
     url = f"{DESK_BASE}/tickets?" + urllib.parse.urlencode({
-        'limit': 5,
-        'sortBy': sort_by,
+        'limit': limit,
+        'from': from_index,
+        'sortBy': 'modifiedTime',  # niet vertrouwd, we sorteren zelf client-side
         'include': 'contacts',
+        'fields': 'ticketNumber,subject,status,modifiedTime,createdTime,webUrl',
     })
     req = urllib.request.Request(url, headers={
         'Authorization': f'Zoho-oauthtoken {access_token}',
@@ -44,26 +46,41 @@ def fetch(access_token, sort_by):
 
 def main():
     token = get_access_token()
-    for sort_by in ('-modifiedTime', '-modifiedDate'):
-        try:
-            tickets = fetch(token, sort_by)
-            print(f"OK met sortBy={sort_by}")
-            for t in tickets:
-                contact = t.get('contact') or {}
-                klant = (contact.get('firstName', '') + ' ' + contact.get('lastName', '')).strip() or t.get('email', 'onbekend')
-                print(json.dumps({
-                    'ticketNumber': t.get('ticketNumber'),
-                    'subject': t.get('subject'),
-                    'klant': klant,
-                    'status': t.get('status'),
-                    'modifiedTime': t.get('modifiedTime'),
-                    'createdTime': t.get('createdTime'),
-                    'webUrl': t.get('webUrl'),
-                }, ensure_ascii=False))
-            return
-        except Exception as e:
-            print(f"FOUT met sortBy={sort_by}: {e}")
-    print("Geen van de sortBy-varianten werkte.")
+    # Haal meerdere pagina's op (tot 300 tickets) en sorteer zelf client-side op
+    # modifiedTime, om niet afhankelijk te zijn van ongedocumenteerd sorteergedrag
+    # van de Zoho-API.
+    all_tickets = []
+    for from_index in (0, 100, 200):
+        page = fetch_page(token, from_index)
+        if not page:
+            break
+        all_tickets.extend(page)
+
+    print(f"Totaal opgehaald: {len(all_tickets)} tickets")
+    missing_modified = [t for t in all_tickets if not t.get('modifiedTime')]
+    print(f"Tickets zonder modifiedTime-veld in response: {len(missing_modified)}")
+
+    with_modified = [t for t in all_tickets if t.get('modifiedTime')]
+    if not with_modified:
+        print("GEEN ENKEL ticket heeft een modifiedTime-waarde gekregen van de API "
+              "(zelfs niet met expliciet fields=modifiedTime). Kan de vraag dus niet "
+              "betrouwbaar beantwoorden via deze route.")
+        return
+
+    with_modified.sort(key=lambda t: t['modifiedTime'], reverse=True)
+    print("Top 5 meest recent gewijzigd (client-side gesorteerd):")
+    for t in with_modified[:5]:
+        contact = t.get('contact') or {}
+        klant = (contact.get('firstName', '') + ' ' + contact.get('lastName', '')).strip() or t.get('email', 'onbekend')
+        print(json.dumps({
+            'ticketNumber': t.get('ticketNumber'),
+            'subject': t.get('subject'),
+            'klant': klant,
+            'status': t.get('status'),
+            'modifiedTime': t.get('modifiedTime'),
+            'createdTime': t.get('createdTime'),
+            'webUrl': t.get('webUrl'),
+        }, ensure_ascii=False))
 
 
 if __name__ == '__main__':
