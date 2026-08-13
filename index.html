@@ -3799,6 +3799,40 @@ function renderDashboard(period) {
         <tbody>${gesprekkenRows}</tbody>
       </table>
     </div>
+
+    ${period === 'vandaag' ? `
+    <!-- ZOHO DESK TICKETS -->
+    <div class="card">
+      <div class="gesprekken-header">
+        <div class="gesprekken-title">Zoho Desk tickets vandaag</div>
+      </div>
+      <table class="gesprekken-table">
+        <thead>
+          <tr>
+            <th>Tijd</th>
+            <th>Ticket</th>
+            <th>Klant</th>
+            <th>Onderwerp</th>
+            <th>Status</th>
+            <th>Prioriteit</th>
+          </tr>
+        </thead>
+        <tbody>${
+          zohoTicketsToday.length > 0
+            ? zohoTicketsToday.map(t => `
+              <tr>
+                <td>${escapeHtml(t.tijd)}</td>
+                <td>${t.webUrl ? `<a href="${escapeHtml(t.webUrl)}" target="_blank" rel="noopener">#${escapeHtml(t.ticketNumber)}</a>` : '#' + escapeHtml(t.ticketNumber)}</td>
+                <td>${escapeHtml(t.klant)}</td>
+                <td>${escapeHtml(t.titel)}</td>
+                <td>${escapeHtml(t.status)}</td>
+                <td>${escapeHtml(t.prioriteit)}</td>
+              </tr>`).join('')
+            : `<tr><td colspan="6" style="text-align:center;color:#94a3b8;">Geen tickets vandaag</td></tr>`
+        }</tbody>
+      </table>
+    </div>
+    ` : ''}
   `;
 
   document.getElementById('dashboard').innerHTML = html;
@@ -3826,7 +3860,7 @@ function convertLiveToday(live) {
   const uitkomstMap = {
     'telefonisch-opgelost': ['outcome-opgelost',    'Telefonisch opgelost'],
     'terugbellen':          ['outcome-terugbel',     'Terugbellen'],
-    'geen-dekking':         ['outcome-geendekking',  'Geen dekking'],
+    'geen-dekking':         ['outcome-geen-dekking',  'Geen dekking'],
     'doorverbonden':        ['outcome-brandmeester', 'Doorverwezen naar Brandmeester'],
   };
   const conversations = entries.map(e => ({
@@ -3853,15 +3887,42 @@ function convertLiveToday(live) {
   };
 }
 
+function escapeHtml(str) {
+  if (str === null || str === undefined) return '';
+  return String(str)
+    .replace(/&/g, '&amp;')
+    .replace(/</g, '&lt;')
+    .replace(/>/g, '&gt;')
+    .replace(/"/g, '&quot;');
+}
+
 async function loadLiveToday() {
   try {
     const resp = await fetch('data/today.json?t=' + Date.now());
     if (!resp.ok) return;
     const live = await resp.json();
     const todayStr = new Date().toLocaleDateString('sv-SE'); // YYYY-MM-DD
-    if (live.date && Array.isArray(live.entries) && live.entries.length > 0) {
+    if (live.date && Array.isArray(live.conversations) && live.conversations.length > 0) {
+      // Nieuw, rijk formaat: server-side AI-analyse via GitHub Actions
+      // (scripts/analyze_granola_ai.py) — geen conversie meer nodig.
+      weekData[live.date] = {
+        drukte: live.drukte || 'rustig',
+        gesprekken: live.gesprekken || live.conversations.length,
+        stats: live.stats || {opgelost:0,brandmeester:0,afkoop:0,terugbel:0,geenDekking:0},
+        score: live.score || 0,
+        conversations: live.conversations,
+        acties: live.acties || [],
+        analyse: live.analyse || {goed:[],beter:[]},
+      };
+      console.log('[LiveData] Geladen: ' + live.conversations.length + ' gesprekken van ' + live.date);
+      if (live.date !== todayStr) {
+        activePeriod = 'gisteren';
+        document.querySelectorAll('.period-tab').forEach(t => t.classList.toggle('active', t.dataset.period === 'gisteren'));
+      }
+    } else if (live.date && Array.isArray(live.entries) && live.entries.length > 0) {
+      // Oud, eenvoudig formaat (legacy fallback)
       weekData[live.date] = convertLiveToday(live);
-      console.log('[LiveData] Geladen: ' + live.entries.length + ' gesprekken van ' + live.date);
+      console.log('[LiveData] Geladen (legacy): ' + live.entries.length + ' gesprekken van ' + live.date);
       if (live.date !== todayStr) {
         activePeriod = 'gisteren';
         document.querySelectorAll('.period-tab').forEach(t => t.classList.toggle('active', t.dataset.period === 'gisteren'));
@@ -3872,8 +3933,21 @@ async function loadLiveToday() {
   }
 }
 
+let zohoTicketsToday = [];
+async function loadZohoTickets() {
+  try {
+    const resp = await fetch('data/zoho-tickets.json?t=' + Date.now());
+    if (!resp.ok) return;
+    const live = await resp.json();
+    if (Array.isArray(live.tickets)) zohoTicketsToday = live.tickets;
+  } catch (e) {
+    console.log('[ZohoTickets] Niet beschikbaar');
+  }
+}
+
 async function initDashboard() {
   await loadLiveToday();
+  await loadZohoTickets();
   const todayStr = new Date().toLocaleDateString('sv-SE');
   if (!weekData[todayStr] && Object.keys(weekData).length > 0) {
     activePeriod = 'gisteren';
