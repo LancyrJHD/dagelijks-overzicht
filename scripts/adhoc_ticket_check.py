@@ -4,6 +4,8 @@ Gebruikt dezelfde Zoho self-client credentials als fetch_zoho_tickets.py.
 Wordt na gebruik weer verwijderd (geen onderdeel van de vaste pipeline)."""
 import os
 import json
+import time
+import urllib.error
 import urllib.request
 import urllib.parse
 
@@ -41,28 +43,35 @@ def fetch_page(access_token, from_index, limit=100):
         'orgId': ORG_ID,
     })
     with urllib.request.urlopen(req, timeout=30) as resp:
-        return json.loads(resp.read()).get('data', [])
+        raw = resp.read()
+        if not raw.strip():
+            return None  # lege body = stop-signaal, geen crash
+        return json.loads(raw).get('data', [])
 
 
 def main():
     token = get_access_token()
     # Haal ALLE tickets op (niet slechts de eerste N) en sorteer zelf client-side
     # op modifiedTime, om niet afhankelijk te zijn van ongedocumenteerd
-    # sorteergedrag van de Zoho-API. Loop tot een lege pagina, met een
+    # sorteergedrag van de Zoho-API. Loop tot een lege pagina/fout, met een
     # veiligheidslimiet zodat dit nooit oneindig door kan lopen.
     all_tickets = []
     from_index = 0
-    hit_safety_cap = True
+    stop_reason = "veiligheidslimiet (50 paginas) geraakt"
     for _ in range(50):  # 50 x 100 = 5000 tickets max
-        page = fetch_page(token, from_index)
-        if not page:
-            hit_safety_cap = False
+        try:
+            page = fetch_page(token, from_index)
+        except (urllib.error.HTTPError, urllib.error.URLError, json.JSONDecodeError) as e:
+            stop_reason = f"fout/rate-limit bij from={from_index}: {e}"
+            break
+        if page is None or not page:
+            stop_reason = f"lege pagina bereikt bij from={from_index} (alles opgehaald)"
             break
         all_tickets.extend(page)
         from_index += 100
+        time.sleep(0.3)  # niet te snel achter elkaar, rate-limit vermijden
 
-    print(f"Totaal opgehaald: {len(all_tickets)} tickets "
-          f"({'VEILIGHEIDSLIMIET GERAAKT, niet alles opgehaald!' if hit_safety_cap else 'volledig, lege pagina bereikt'})")
+    print(f"Totaal opgehaald: {len(all_tickets)} tickets. Stopreden: {stop_reason}")
     missing_modified = [t for t in all_tickets if not t.get('modifiedTime')]
     print(f"Tickets zonder modifiedTime-veld in response: {len(missing_modified)}")
 
