@@ -24,12 +24,6 @@ jobs:
       - name: Install dependencies
         run: pip install requests
 
-      - name: Analyseer Granola-gesprekken met AI
-        env:
-          GRANOLA_API_KEY: ${{ secrets.GRANOLA_API_KEY }}
-          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
-        run: python scripts/analyze_granola_ai.py
-
       - name: Haal Zoho Desk-tickets op
         env:
           ZOHO_CLIENT_ID: ${{ secrets.ZOHO_CLIENT_ID }}
@@ -38,6 +32,14 @@ jobs:
           ZOHO_ORG_ID: ${{ secrets.ZOHO_ORG_ID }}
         run: python scripts/fetch_zoho_tickets.py
         continue-on-error: true  # Zoho-storing mag de Granola-update niet blokkeren
+        # Draait bewust VOOR de Granola-AI-analyse: die gebruikt de Zoho-tickets
+        # om te zien of een beller automatisch is herkend op telefoonnummer.
+
+      - name: Analyseer Granola-gesprekken met AI
+        env:
+          GRANOLA_API_KEY: ${{ secrets.GRANOLA_API_KEY }}
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+        run: python scripts/analyze_granola_ai.py
 
       - name: Commit en push data/*.json
         run: |

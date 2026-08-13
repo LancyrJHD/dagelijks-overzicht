@@ -67,18 +67,22 @@ Bepaal ook drie extra booleans, ONAFHANKELIJK van de uitkomst hierboven:
 - "verkeerd_verbonden": true ALLEEN als de beller iets zoekt dat helemaal niet bij een juridische helpdesk hoort (bijv. een autoverzekeringsvraag, een schadeclaim-callcenter, of een compleet verkeerd doorverbonden nummer) EN dit ook zo in het gesprek wordt vastgesteld. Bij twijfel: false.
 - "rechtsbijstand_verwijzing": true ALLEEN als de medewerker de beller expliciet doorverwijst naar de rechtsbijstandsafdeling/rechtsbijstandsverzekering voor verdere behandeling van de zaak (dus niet zomaar "u heeft rechtsbijstand", maar een daadwerkelijke doorverwijzing/overdracht). Bij twijfel: false.
 - "advies_gegeven": true ALLEEN als de medewerker daadwerkelijk inhoudelijk juridisch advies of een concrete juridische uitleg heeft gegeven over de zaak. BELANGRIJK: als de medewerker de beller NIET kon verifieren (niet gevonden in het systeem op naam/adres/polisnummer) en daarom bewust GEEN advies heeft gegeven maar in plaats daarvan om verificatiedocumenten heeft gevraagd en een vervolgcontact heeft afgesproken, is dit false -- en dat is GEEN fout maar juist correct, voorzichtig handelen. Zet dit niet automatisch op true alleen omdat er een juridisch onderwerp is besproken.
+- "identiteit_geverifieerd": true als de medewerker de beller op enig moment tijdens het gesprek heeft gevonden/bevestigd in het systeem (bijvoorbeeld via postcode, huisnummer, adres, polisnummer of naam) -- ook als dat pas halverwege het gesprek gebeurt, vroeg in het gesprek gebeurt is voldoende, het hoeft niet aan het begin te zijn. BELANGRIJK: als onderaan dit bericht "Systeeminfo" staat met een gekoppelde Zoho-contactpersoon, betekent dit dat het systeem de beller AUTOMATISCH heeft herkend op telefoonnummer (koppeling met polis/klantdossier) -- zet dan identiteit_geverifieerd op true, OOK ALS dit nergens expliciet in het transcript wordt besproken. Zet identiteit_geverifieerd alleen op false als er geen Zoho-contactmatch is EN er ook in het transcript geen enkele verificatiepoging (naam/adres/postcode/polisnummer) is gedaan. Let op: "dekkingscontrole" / franchise-controle (EUR 250) is alleen relevant bij zaken met een concreet schadebedrag (bijv. schadeclaims). Bij geschillen over rechten, hinder of gebruik zonder schadebedrag (bijv. burenrecht, onrechtmatige hinder, huurrecht) is de franchise NIET van toepassing en mag dit niet als ontbrekend kwaliteitspunt worden genoemd.
 
 Geef ALLEEN geldige JSON terug, geen andere tekst, in dit exacte formaat:
-{"samenvatting": "max 3 zinnen, feitelijk en concreet, en vermeld expliciet of er wel of geen inhoudelijk advies is gegeven", "tags": [["tag-x","Label"]], "uitkomst": ["outcome-x","Label"], "terugbel": true of false, "verkeerd_verbonden": true of false, "rechtsbijstand_verwijzing": true of false, "advies_gegeven": true of false}
+{"samenvatting": "max 3 zinnen, feitelijk en concreet, en vermeld expliciet of en wanneer de beller is geverifieerd en of er wel of geen inhoudelijk advies is gegeven", "tags": [["tag-x","Label"]], "uitkomst": ["outcome-x","Label"], "terugbel": true of false, "verkeerd_verbonden": true of false, "rechtsbijstand_verwijzing": true of false, "advies_gegeven": true of false, "identiteit_geverifieerd": true of false}
 """
 
 DAY_SYSTEM_PROMPT = """Je bent een juridische kwaliteitsanalist voor de Lancyr Juridische Helpdesk van HTJZ.
 
 Kwaliteitsnormen: altijd polis+identiteit verifieren, dekkingscontrole (franchise EUR 250) vastleggen, deadlines altijd concreet benoemen, let op herhaalcontact (klant belt vandaag al eerder over hetzelfde onderwerp).
 
-Je krijgt een lijst van alle gesprekken van vandaag (tijd, titel, samenvatting, uitkomst, advies_gegeven). Beoordeel de dag als geheel en verwijs in elk punt naar het specifieke gesprek (tijdstip + onderwerp).
+Je krijgt een lijst van alle gesprekken van vandaag (tijd, titel, samenvatting, uitkomst, advies_gegeven, identiteit_geverifieerd). Beoordeel de dag als geheel en verwijs in elk punt naar het specifieke gesprek (tijdstip + onderwerp).
 
-BELANGRIJKE CORRECTIE: als "advies_gegeven" false is voor een gesprek, betekent dit dat de medewerker de beller niet kon verifieren in het systeem en daarom TERECHT geen advies heeft gegeven, maar om verificatiedocumenten heeft gevraagd en een vervolgcontact heeft afgesproken. Beoordeel dit NIET als een verificatiefout ("polis/identiteit niet gecontroleerd voordat advies werd gegeven") -- dat is een contradictie, er is immers geen advies gegeven. Beoordeel in dat geval alleen of de medewerker een duidelijk vervolgplan en waar mogelijk een concrete deadline heeft afgesproken voor het gesprek zelf.
+BELANGRIJKE CORRECTIES:
+1. Als "advies_gegeven" false is voor een gesprek, betekent dit dat de medewerker de beller niet kon verifieren in het systeem en daarom TERECHT geen advies heeft gegeven, maar om verificatiedocumenten heeft gevraagd en een vervolgcontact heeft afgesproken. Beoordeel dit NIET als een verificatiefout ("polis/identiteit niet gecontroleerd voordat advies werd gegeven") -- dat is een contradictie, er is immers geen advies gegeven. Beoordeel in dat geval alleen of de medewerker een duidelijk vervolgplan en waar mogelijk een concrete deadline heeft afgesproken voor het gesprek zelf.
+2. Als "identiteit_geverifieerd" true is, is de beller door de medewerker gevonden/bevestigd in het systeem -- noem dan NIET als kritiekpunt dat polis/identiteit niet gecontroleerd zou zijn, ook niet als dat verderop in het gesprek gebeurde in plaats van meteen aan het begin.
+3. De "dekkingscontrole" / franchise-norm (EUR 250) geldt alleen bij zaken met een concreet schadebedrag (schadeclaims). Noem dit NIET als ontbrekend kwaliteitspunt bij geschillen over rechten, hinder of gebruik zonder schadebedrag (bijv. burenrecht, onrechtmatige hinder, huurrecht).
 
 Geef ALLEEN geldige JSON terug in dit exacte formaat:
 {"score": 7.2, "goed": ["...", "..."], "beter": ["...", "..."]}
@@ -205,7 +209,8 @@ def heuristic_extra_flags(title, summary_md, summary_text):
         'verificatiedocument', 'polisblad', 'polis op te sturen', 'op te mailen',
     ])
     advies_gegeven = not (niet_gevonden and vraagt_verificatie)
-    return verkeerd_verbonden, rechtsbijstand_verwijzing, advies_gegeven
+    identiteit_geverifieerd = not niet_gevonden
+    return verkeerd_verbonden, rechtsbijstand_verwijzing, advies_gegeven, identiteit_geverifieerd
 
 
 def extract_transcript_text(detail):
@@ -217,6 +222,59 @@ def extract_transcript_text(detail):
         if text:
             lines.append(f"{speaker}: {text}".strip())
     return "\n".join(lines)
+
+
+ZOHO_TICKETS_PATH = 'data/zoho-tickets.json'
+
+
+def load_zoho_tickets():
+    """Leest data/zoho-tickets.json als dat al bestaat (wordt in de workflow
+    v\u00f3\u00f3r deze stap gegenereerd door fetch_zoho_tickets.py). Geeft een lege
+    lijst terug als het bestand nog niet bestaat of niet leesbaar is -- dit mag
+    de Granola-analyse nooit blokkeren."""
+    try:
+        with open(ZOHO_TICKETS_PATH, encoding='utf-8') as f:
+            data = json.load(f)
+        return data.get('tickets', [])
+    except Exception:
+        return []
+
+
+def is_real_klant_naam(klant):
+    """Onbekend/e-mailadres-fallback telt niet als een echte systeemmatch."""
+    if not klant or klant == 'Onbekend':
+        return False
+    if '@' in klant:
+        return False
+    return True
+
+
+def find_zoho_match(tijdstip, zoho_tickets, window_minutes=25):
+    """Matcht een Granola-gesprek aan een Zoho-ticket op basis van tijdsnabijheid
+    (zelfde dag, binnen window_minutes). Geeft de klantnaam terug als er een
+    ticket met een echte (niet-"Onbekend") contactnaam binnen het venster valt,
+    anders None. Bewust een ruim venster: het ticket wordt vaak na afloop van
+    het gesprek aangemaakt/bijgewerkt."""
+    try:
+        target = int(tijdstip[:2]) * 60 + int(tijdstip[3:5])
+    except Exception:
+        return None
+    best = None
+    best_diff = window_minutes + 1
+    for t in zoho_tickets:
+        klant = t.get('klant', '')
+        if not is_real_klant_naam(klant):
+            continue
+        try:
+            tt = t.get('tijd', '')
+            ticket_minutes = int(tt[:2]) * 60 + int(tt[3:5])
+        except Exception:
+            continue
+        diff = abs(ticket_minutes - target)
+        if diff <= window_minutes and diff < best_diff:
+            best = klant
+            best_diff = diff
+    return best
 
 
 def main():
@@ -231,6 +289,11 @@ def main():
     today_str = today_ams.isoformat()
 
     notes = get_all_today_notes()
+    zoho_tickets = load_zoho_tickets()
+    if zoho_tickets:
+        print(f"  -> {len(zoho_tickets)} Zoho-tickets van vandaag geladen voor contextmatching")
+    else:
+        print("  -> Geen Zoho-tickets beschikbaar voor contextmatching (nog niet gegenereerd of leeg)")
     conversations = []
 
     for note in notes:
@@ -268,6 +331,12 @@ def main():
         else:
             user_content += f"Samenvatting (geen transcript beschikbaar):\n{summary_md or summary_text}"
 
+        zoho_match = find_zoho_match(tijdstip, zoho_tickets)
+        if zoho_match:
+            user_content += f"\n\nSysteeminfo: dit gesprek is in Zoho Desk gekoppeld aan contactpersoon '{zoho_match}' (automatisch herkend op telefoonnummer, polis/klantdossier bekend)."
+        else:
+            user_content += "\n\nSysteeminfo: geen Zoho-contactmatch gevonden voor dit tijdstip."
+
         ai_result = anthropic_call(ANALYZE_SYSTEM_PROMPT, user_content, max_tokens=600)
 
         if ai_result and ai_result.get("uitkomst") and ai_result["uitkomst"][0] in VALID_OUTCOMES:
@@ -278,13 +347,16 @@ def main():
             verkeerd_verbonden = bool(ai_result.get("verkeerd_verbonden", False))
             rechtsbijstand_verwijzing = bool(ai_result.get("rechtsbijstand_verwijzing", False))
             advies_gegeven = bool(ai_result.get("advies_gegeven", True))
+            identiteit_geverifieerd = bool(ai_result.get("identiteit_geverifieerd", False))
         else:
             print(f"  Fallback (heuristiek) voor: {title}")
             samenvatting = (summary_md or summary_text or '')[:300]
             tags = [["tag-overig", "Overig"]]
             uitkomst = heuristic_uitkomst(title, summary_md, summary_text)
             terugbel = uitkomst[0] == "outcome-terugbel"
-            verkeerd_verbonden, rechtsbijstand_verwijzing, advies_gegeven = heuristic_extra_flags(title, summary_md, summary_text)
+            verkeerd_verbonden, rechtsbijstand_verwijzing, advies_gegeven, identiteit_geverifieerd = heuristic_extra_flags(title, summary_md, summary_text)
+            if zoho_match:
+                identiteit_geverifieerd = True
 
         conversations.append({
             "tijd": tijdstip,
@@ -297,6 +369,7 @@ def main():
             "verkeerdVerbonden": verkeerd_verbonden,
             "rechtsbijstandVerwijzing": rechtsbijstand_verwijzing,
             "adviesGegeven": advies_gegeven,
+            "identiteitGeverifieerd": identiteit_geverifieerd,
         })
         print(f"  OK {tijdstip} | {uitkomst[1]:30s} | {title[:50]}")
 
@@ -344,7 +417,7 @@ def main():
     goed, beter = [], []
     if conversations:
         day_input = json.dumps([
-            {"tijd": c["tijd"], "titel": c["titel"], "samenvatting": c["samenvatting"], "uitkomst": c["uitkomst"][1], "advies_gegeven": c["adviesGegeven"]}
+            {"tijd": c["tijd"], "titel": c["titel"], "samenvatting": c["samenvatting"], "uitkomst": c["uitkomst"][1], "advies_gegeven": c["adviesGegeven"], "identiteit_geverifieerd": c["identiteitGeverifieerd"]}
             for c in conversations
         ], ensure_ascii=False)
         day_result = anthropic_call(DAY_SYSTEM_PROMPT, day_input, max_tokens=1200)
