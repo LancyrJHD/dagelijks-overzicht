@@ -3583,6 +3583,15 @@ function uitkomstClass(uitkomstKey) {
   return 'overig';
 }
 
+function toggleScoreReden() {
+  const panel = document.getElementById('score-reden-card');
+  const arrow = document.getElementById('score-reden-arrow');
+  if (!panel) return;
+  const isHidden = panel.style.display === 'none';
+  panel.style.display = isHidden ? '' : 'none';
+  if (arrow) arrow.innerHTML = isHidden ? '&#9652;' : '&#9662;';
+}
+
 function renderDashboard(period) {
   const pd = getPeriodData(period);
   const agg = aggregateEntries(pd.entries);
@@ -3751,8 +3760,14 @@ function renderDashboard(period) {
   const dayAnalyse = pd.entries.length === 1 ? (pd.entries[0].data.analyse || null) : null;
   const dayAnalyseGoed = (dayAnalyse && dayAnalyse.goed) || [];
   const dayAnalyseBeter = (dayAnalyse && dayAnalyse.beter) || [];
-  const scoreRedenHTML = (dayAnalyseGoed.length || dayAnalyseBeter.length) ? `
-    <div class="card" id="score-reden-card">
+  const hasScoreReden = dayAnalyseGoed.length || dayAnalyseBeter.length;
+  const scoreRedenToggleHTML = hasScoreReden ? `
+    <button type="button" class="score-reden-toggle" id="score-reden-toggle" onclick="toggleScoreReden()" style="background:none;border:none;padding:0;margin-top:6px;font-size:12px;font-weight:600;color:var(--ink-50);cursor:pointer;text-decoration:underline;text-underline-offset:2px">
+      Waarom dit cijfer? <span id="score-reden-arrow">&#9662;</span>
+    </button>
+  ` : '';
+  const scoreRedenHTML = hasScoreReden ? `
+    <div class="card" id="score-reden-card" style="display:none">
       <div class="chart-card-header">
         <div class="chart-card-title">Waarom dit cijfer? &middot; ${escapeHtml(pd.label)}</div>
       </div>
@@ -3785,6 +3800,7 @@ function renderDashboard(period) {
         </div>
         <div class="stars">${starsHTML}</div>
         ${avgScore > 0 ? '<span class="delta-badge neutral" style="margin-top:4px;width:fit-content">Geen vergelijking beschikbaar</span>' : ''}
+        ${scoreRedenToggleHTML}
       </div>
 
       <!-- Drukte -->
@@ -3801,12 +3817,12 @@ function renderDashboard(period) {
       </div>
     </div>
 
+    ${scoreRedenHTML}
+
     <!-- STAT STRIP -->
     <div class="stat-strip">
       ${statStripHTML}
     </div>
-
-    ${scoreRedenHTML}
 
     ${period === 'vandaag' ? `
     <!-- KANAALVERDELING (Zoho Desk, alleen vandaag) -->
