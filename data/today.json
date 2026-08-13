@@ -1,6 +1,6 @@
 {
   "date": "2026-08-13",
-  "generated_at": "2026-08-13T13:58:52Z",
+  "generated_at": "2026-08-13T13:59:00Z",
   "drukte": "rustig",
   "gesprekken": 2,
   "stats": {
@@ -10,13 +10,13 @@
     "terugbel": 2,
     "geenDekking": 0
   },
-  "score": 5.8,
+  "score": 3.1,
   "conversations": [
     {
       "tijd": "12:37",
       "titel": "Inbound call — ruitsschade autoverzekering met Mario Bleuken",
       "personen": "Verzekerde: anoniem · Jackie Stam | Juridisch Medewerker",
-      "samenvatting": "Beller Mario Bleuken belt met vraag over ruitsschade aan auto (autoverzekering). Medewerker Jackie stelt vast dat dit niet bij de juridische helpdesk hoort en verwijst beller door naar de juiste afdeling (autoverzekering/schadeclaim).",
+      "samenvatting": "Mario Bleuken belde met vragen over ruitsschade aan zijn auto onder de autoverzekering. De medewerker erkende dat dit buiten de scope van de juridische helpdesk valt en verwees de beller door naar de juiste afdeling (autoverzekering) via het keuzemenusysteem.",
       "tags": [
         [
           "tag-overig",
@@ -25,17 +25,15 @@
       ],
       "uitkomst": [
         "outcome-terugbel",
-        "Terugbellen"
+        "Doorverwezen naar andere afdeling"
       ],
-      "terugbel": false,
-      "verkeerdVerbonden": true,
-      "rechtsbijstandVerwijzing": false
+      "terugbel": false
     },
     {
       "tijd": "13:36",
       "titel": "Artikel 3.4 restbijstand – tweedehands auto en conflicttoetsing",
       "personen": "Verzekerde: anoniem · Jackie Stam | Juridisch Medewerker",
-      "samenvatting": "Beller belt over artikel 3.4 (restbijstand/conflicttoetsing) in zijn zaak rond de terugkoop van een tweedehands auto. De rechtsbijstand (Brandmeester) heeft de zaak stilgelegd vanwege twijfel over het bestaan van een conflict. Medewerker legt uit dat artikel 3.4 betekent dat juridische hulp alleen beschikbaar is als er een reëel conflict bestaat, en belooft via mail uitleg te sturen.",
+      "samenvatting": "Klant belt over artikel 3.4 restbijstand in zijn zaak over koop tweedehands auto. Rechtsbijstand (Brandmeester) stelt dat artikel 3.4 van toepassing is, wat betekent dat zij twijfelen of er een conflict bestaat. Juridisch medewerker verklaart dat artikel 3.4 inhoudt dat juridische hulp alleen kan worden gegeven als zeker een conflict bestaat, niet als daar twijfel over is.",
       "tags": [
         [
           "tag-consument",
@@ -46,37 +44,19 @@
         "outcome-terugbel",
         "Terugbellen"
       ],
-      "terugbel": true,
-      "verkeerdVerbonden": false,
-      "rechtsbijstandVerwijzing": false
+      "terugbel": true
     }
   ],
   "acties": [],
   "analyse": {
     "goed": [
-      "12:37 Ruitsschade:Correcte routering naar autoverzekering (niet juridische helpdesk); beller niet onnodig belast",
-      "13:36 Artikel 3.4: Medewerker geeft inhoudelijke uitleg over conflicttoetsing en belooft schriftelijke opvolging"
+      "12:37 Ruitsschade autoverzekering: correcte herkenning dat onderwerp buiten juridische helpdesk valt en juiste doorverwijzing naar autoverzekeringafdeling"
     ],
     "beter": [
-      "12:37 Ruitsschade: Geen verificatie van polis/identiteit vastgelegd voordat doorverwezen werd; onduidelijk of beller voorkant al gescreend is",
-      "13:36 Artikel 3.4: Geen concrete deadline genoemd voor de mailuitleg; geen controlemoment ingesteld of beller zelf contact opneemt met Brandmeester",
-      "13:36 Artikel 3.4: Dekkingscontrole (franchise EUR 250) niet expliciet besproken; geen duidelijke vervolgafspraken vastgelegd",
-      "Algemeen: Beide calls eindigen op 'terugbellen' zonder concrete vervolgdatum; onduidelijk wie belt terug en wanneer"
+      "12:37 Ruitsschade autoverzekering: polis- en identiteitsverificatie niet gedocumenteerd voordat doorverwijzing plaatsvond",
+      "13:36 Artikel 3.4 restbijstand: kwaliteitscontrole onvolledig - geen vermelding van polis/identiteitsverificatie, geen concrete deadline vastgesteld voor terugbellen, geen dekkingscontrole (franchise EUR 250) opgenomen",
+      "13:36 Artikel 3.4 restbijstand: juridische analyse geleverd zonder volledig dossier te hebben gevalideerd - clarificatie artikel 3.4 is begeleiding richting rechtsbijstand, niet advies van helpdesk",
+      "Geen alertering voor mogelijk herhaalcontact: controleer of beide bellers dezelfde klant zijn of dezelfde zaak betreffen"
     ]
-  },
-  "verkeerdVerbonden": {
-    "aantal": 1,
-    "percentage": 50.0
-  },
-  "rechtsbijstandVerwijzingen": 0,
-  "categorieen": [
-    [
-      "Autoverzekering",
-      1
-    ],
-    [
-      "Consumentenrecht",
-      1
-    ]
-  ]
+  }
 }
