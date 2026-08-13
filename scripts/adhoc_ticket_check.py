@@ -46,17 +46,23 @@ def fetch_page(access_token, from_index, limit=100):
 
 def main():
     token = get_access_token()
-    # Haal meerdere pagina's op (tot 300 tickets) en sorteer zelf client-side op
-    # modifiedTime, om niet afhankelijk te zijn van ongedocumenteerd sorteergedrag
-    # van de Zoho-API.
+    # Haal ALLE tickets op (niet slechts de eerste N) en sorteer zelf client-side
+    # op modifiedTime, om niet afhankelijk te zijn van ongedocumenteerd
+    # sorteergedrag van de Zoho-API. Loop tot een lege pagina, met een
+    # veiligheidslimiet zodat dit nooit oneindig door kan lopen.
     all_tickets = []
-    for from_index in (0, 100, 200):
+    from_index = 0
+    hit_safety_cap = True
+    for _ in range(50):  # 50 x 100 = 5000 tickets max
         page = fetch_page(token, from_index)
         if not page:
+            hit_safety_cap = False
             break
         all_tickets.extend(page)
+        from_index += 100
 
-    print(f"Totaal opgehaald: {len(all_tickets)} tickets")
+    print(f"Totaal opgehaald: {len(all_tickets)} tickets "
+          f"({'VEILIGHEIDSLIMIET GERAAKT, niet alles opgehaald!' if hit_safety_cap else 'volledig, lege pagina bereikt'})")
     missing_modified = [t for t in all_tickets if not t.get('modifiedTime')]
     print(f"Tickets zonder modifiedTime-veld in response: {len(missing_modified)}")
 
