@@ -1,14 +1,14 @@
 {
   "date": "2026-08-13",
-  "generated_at": "2026-08-13T15:41:27Z",
+  "generated_at": "2026-08-13T16:25:47Z",
   "drukte": "matig",
   "gesprekken": 4,
   "stats": {
-    "opgelost": 1,
+    "opgelost": 0,
     "brandmeester": 0,
     "afkoop": 0,
     "terugbel": 3,
-    "geenDekking": 0
+    "geenDekking": 1
   },
   "score": 5.8,
   "conversations": [
@@ -16,7 +16,7 @@
       "tijd": "12:37",
       "titel": "Inbound call — ruitsschade autoverzekering met Mario Bleuken",
       "personen": "Verzekerde: anoniem · Jackie Stam | Juridisch Medewerker",
-      "samenvatting": "Mario Bleuken belt de Lancyr Juridische Helpdesk met een vraag over ruitsschade aan zijn auto. De medewerker stelt vast dat dit een autoverzekeringszaak betreft en verwijst de beller door naar de juiste afdeling (schadeclaim/autoverzekering).",
+      "samenvatting": "Beller Mario Bleuken belt met een vraag over ruitsschade aan zijn auto onder zijn autoverzekering. De medewerker Jackie erkent dat dit niet binnen de juridische helpdesk valt en verwijst de beller door naar de juiste afdeling (autoverzekeringsclaim). Geen inhoudelijk juridisch advies gegeven.",
       "tags": [
         [
           "tag-overig",
@@ -24,18 +24,19 @@
         ]
       ],
       "uitkomst": [
-        "outcome-opgelost",
-        "Telefonisch opgelost"
+        "outcome-geen-dekking",
+        "Geen dekking"
       ],
       "terugbel": false,
       "verkeerdVerbonden": true,
-      "rechtsbijstandVerwijzing": false
+      "rechtsbijstandVerwijzing": false,
+      "adviesGegeven": false
     },
     {
       "tijd": "13:15",
       "titel": "Claim afwijzing en rechtszaak — juridisch advies met Rocío Rodríguez",
       "personen": "Verzekerde: anoniem · Jackie Stam | Juridisch Medewerker",
-      "samenvatting": "Rocío Rodríguez heeft een verkeersongeval gehad in België waarbij haar auto total loss is. De claim werd door Lancyr afgewezen omdat de tegenpartij niet kon worden geïdentificeerd, maar inmiddels is er een rechtszaak gestart waarin zij als eiseres optreedt. De medewerker kan de beller niet in het systeem vinden en biedt aan om collega's te raadplegen en terug te bellen.",
+      "samenvatting": "Rocío Rodríguez heeft een verkeersongeval in België gehad waarbij haar auto total loss is. Lancyr wees de claim af omdat de tegenpartij niet kon worden geïdentificeerd, maar inmiddels is er een rechtszaak gestart waarbij zij als getuige is opgeroepen. De medewerker kon de beller niet verifiëren in het systeem (naam/adres/polisnummer klopten niet) en heeft daarom geen inhoudelijk juridisch advies gegeven, maar in plaats daarvan intern overleg afgesproken met terugbellen.",
       "tags": [
         [
           "tag-consument",
@@ -48,13 +49,14 @@
       ],
       "terugbel": true,
       "verkeerdVerbonden": false,
-      "rechtsbijstandVerwijzing": false
+      "rechtsbijstandVerwijzing": false,
+      "adviesGegeven": false
     },
     {
       "tijd": "13:36",
       "titel": "Artikel 3.4 restbijstand – tweedehands auto en conflicttoetsing",
       "personen": "Verzekerde: anoniem · Jackie Stam | Juridisch Medewerker",
-      "samenvatting": "Beller belt over artikel 3.4 restbijstand in zijn zaak over terugsturen van een tweedehands auto. De rechtsbijstand (Brandmeester) stopt de behandeling op basis van artikel 3.4, stellende dat er twijfel bestaat over een conflict. De medewerker legt uit dat artikel 3.4 betekent dat juridische hulp alleen kan worden gegeven als er zeker een conflict bestaat, en belooft de beller per mail verduidelijking toe te sturen.",
+      "samenvatting": "Beller belt over een tweedehands autokoop waarbij de rechtsbijstand (Brandmeester) de zaak heeft gestaakt op basis van artikel 3.4 (geen conflict/twijfel over conflict). De medewerker geeft uitleg dat artikel 3.4 betekent dat juridische hulp alleen kan worden gegeven als er een zeker conflict bestaat, en belooft per mail verdere toelichting te sturen. Er is inhoudelijk advies gegeven over de toepassing van artikel 3.4.",
       "tags": [
         [
           "tag-consument",
@@ -67,17 +69,22 @@
       ],
       "terugbel": true,
       "verkeerdVerbonden": false,
-      "rechtsbijstandVerwijzing": false
+      "rechtsbijstandVerwijzing": false,
+      "adviesGegeven": true
     },
     {
       "tijd": "16:30",
       "titel": "Burenconflict — stank, geluid, en grondgebruik",
       "personen": "Verzekerde: anoniem · Jackie Stam | Juridisch Medewerker",
-      "samenvatting": "Beller heeft burenconflict met naastgelegen restaurantbedrijf: lastgevallen door stank en geluid van afzuiging, mogelijk oneigenlijk grondgebruik, en afval op het perceel. Medewerker geeft oriënterend advies over vergunningen, onrechtmatig hinder en mogelijkheid tot sommatie voor verwijdering van voorwerpen. Zaak vereist vervolgstappen naar gemeente en mogelijk juridische bijstand.",
+      "samenvatting": "Beller heeft burenconflict met naastgelegen bedrijf (vroeger zorginstelling, nu restaurant) vanwege stank, geluid van afvoerpijpen, afval op zijn grond en mogelijk grondgebruik. Medewerker Jackie heeft inhoudelijk advies gegeven over vergunningen, onrechtmatig gehinder, normen uit het activiteitenbesluit, en de mogelijkheid om spullen op het perceel via een sommatie te laten verwijderen. Verificatie is gestart (adres/postcode), maar gesprek is onvolledig afgesloten.",
       "tags": [
         [
-          "tag-huurrecht",
-          "Huurrecht / Erfrecht"
+          "tag-bestuursrecht",
+          "Bestuursrecht"
+        ],
+        [
+          "tag-overig",
+          "Burenrecht / Erfdienstbaarheden"
         ]
       ],
       "uitkomst": [
@@ -86,21 +93,22 @@
       ],
       "terugbel": true,
       "verkeerdVerbonden": false,
-      "rechtsbijstandVerwijzing": false
+      "rechtsbijstandVerwijzing": false,
+      "adviesGegeven": true
     }
   ],
   "acties": [],
   "analyse": {
     "goed": [
-      "12:37 ruitsschade: correcte doorverwijzing naar bevoegde afdeling (schadeclaim/autoverzekering)",
-      "13:36 artikel 3.4: helder juridisch advies gegeven over restbijstand en conflict-vereiste met schriftelijke vervolgbelofte",
-      "16:30 burenconflict: grondige oriëntatie gegeven (vergunningen, hinder, sommatie) met heldere vervolgstappen"
+      "12:37 Ruitsschade: juiste doorverwijzing naar autoverzekeringsclaim-afdeling (niet-juridisch)",
+      "13:15 Rocío Rodríguez: correct protocol gevolgd — verificatie mislukt, daarom terecht geen advies gegeven en intern overleg met terugbelafspraak",
+      "13:36 Artikel 3.4: inhoudelijk advies gegeven over conflict-vereiste voor rechtsbijstand, vervolgcommunicatie (mail) afgesproken"
     ],
     "beter": [
-      "13:15 Rocío Rodríguez: KRITIEK — polis en identiteit niet geverifieerd voordat advies werd gegeven; klant niet in systeem gevonden maar geen details over poging tot opzoeking. Geen concrete deadline voor terugbellen vastgesteld.",
-      "13:36 artikel 3.4: geen vermelding van franchise EUR 250 gecontroleerd; geen concrete deadline voor mail met verduidelijking benoemd",
-      "16:30 burenconflict: geen polisverficatie of dekkingscontrole (franchise) vastgelegd; geen concrete deadline voor terugbellen afgesproken; vervolgstappen (gemeente, juridische bijstand) niet duidelijk getaxeerd qua timing",
-      "Geen controle op herhaalcontacten: onduidelijk of 13:15 (Rocío) of 16:30 (burenconflict) eerder vandaag al zijn gediagnostriceerd"
+      "13:36 Artikel 3.4: geen concrete deadline voor e-mailtoezending genoemd; vervolgcontact zou ook telefonisch kunnen besproken zijn",
+      "16:30 Burenconflict: KRITISCH — advies gegeven (verhuurcontract, onrechtmatige hinder, activiteitenbesluit, sommatie) zonder volledige verificatie af te ronden. Polis en volledige identiteit moeten vóór inhoudelijk advies gecontroleerd zijn. Gesprek is 'onvolledig afgesloten' — geen concrete vervolgdeadline genoemd",
+      "16:30 Burenconflict: geen dekkingscontrole (franchise EUR 250) vastgelegd ondanks complexe geschilkwestie",
+      "Algemeen: bij 13:15 (Rocío) en 16:30 (buren) ontbreekt specifieke deadline voor terugbellen (welke dag/tijd?)"
     ]
   },
   "verkeerdVerbonden": {
@@ -118,7 +126,11 @@
       1
     ],
     [
-      "Huurrecht / Erfrecht",
+      "Bestuursrecht",
+      1
+    ],
+    [
+      "Burenrecht / Erfdienstbaarheden",
       1
     ]
   ]
