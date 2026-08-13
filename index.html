@@ -259,9 +259,16 @@ body {
 /* ── KPI HERO ROW ── */
 .kpi-row {
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-columns: 1fr 1fr;
   gap: 20px;
 }
+.bm-mini {
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--ink-50);
+  margin-top: 6px;
+}
+.bm-mini strong { color: var(--navy); }
 
 /* Brandmeester card – dark navy */
 .card-brandmeester {
@@ -1286,6 +1293,7 @@ body {
       Vernieuwen
     </button>
     <button id="status-toggle-btn" onclick="toggleActief()" style="display:none;border:none;border-radius:50px;padding:6px 14px;cursor:pointer;font-size:12px;font-weight:600;font-family:inherit;margin-right:8px;background:var(--green-bg);color:var(--green)" data-actief="true">🟢 Ik ben actief</button>
+    <button id="management-toggle-btn" onclick="toggleManagementView()" style="display:none;border:1px solid var(--navy);border-radius:50px;padding:6px 14px;cursor:pointer;font-size:12px;font-weight:600;font-family:inherit;margin-right:8px;background:#fff;color:var(--navy)">📊 Managementweergave</button>
     <button class="logout-btn" id="logout-btn" onclick="authLogout()" style="display:none">Uitloggen</button>
     <div class="avatar-stack">
       <div class="av" title="Jackie Stam">JS</div>
@@ -1301,6 +1309,7 @@ body {
     <div class="header-eyebrow">Juridische helpdesk &middot; dagrapport</div>
     <h1>Dagrapport</h1>
     <div class="header-date" id="header-date"></div>
+    <div class="bm-mini" id="bm-mini"></div>
   </div>
   <div class="period-tabs" id="period-tabs">
     <button class="period-tab active" data-period="vandaag">Vandaag</button>
@@ -3696,28 +3705,46 @@ function renderDashboard(period) {
   // Line chart
   const lineChartSVG = buildLineChart(pd.entries, period);
 
+  const bmMiniEl = document.getElementById('bm-mini');
+  if (bmMiniEl) {
+    bmMiniEl.innerHTML = totalGesprekken > 0
+      ? `🔥 Brandmeester van de dag: <strong>${bmName}</strong> &middot; ${bm.count || 0} gesprekken`
+      : '';
+  }
+
+  // Management-only aggregaties — afgeleid uit allConversations, dus ook
+  // correct voor 'deze week'/'vorige week', niet alleen 'vandaag'.
+  const verkeerdVerbondenCount = allConversations.filter(c => c.verkeerdVerbonden).length;
+  const rechtsbijstandCount = allConversations.filter(c => c.rechtsbijstandVerwijzing).length;
+  const verkeerdVerbondenPct = totalGesprekken > 0 ? (100 * verkeerdVerbondenCount / totalGesprekken).toFixed(1) : '0.0';
+  const categorieCounts = {};
+  allConversations.forEach(c => (c.tags || []).forEach(([, label]) => {
+    if (label) categorieCounts[label] = (categorieCounts[label] || 0) + 1;
+  }));
+  const categorieRows = Object.entries(categorieCounts)
+    .sort((a, b) => b[1] - a[1])
+    .slice(0, 8)
+    .map(([label, count]) => `
+      <div class="verdeling-item">
+        <div class="verdeling-row">
+          <span class="verdeling-name">${escapeHtml(label)}</span>
+          <span class="verdeling-count">${count}</span>
+        </div>
+      </div>`).join('') || '<p style="color:var(--ink-30);font-size:12px;padding:12px 0">Geen data</p>';
+
+  const kanaalRows = Object.entries(zohoChannelCounts)
+    .sort((a, b) => b[1] - a[1])
+    .map(([kanaal, count]) => `
+      <div class="verdeling-item">
+        <div class="verdeling-row">
+          <span class="verdeling-name">${escapeHtml(kanaalLabel(kanaal))}</span>
+          <span class="verdeling-count">${count}</span>
+        </div>
+      </div>`).join('') || '<p style="color:var(--ink-30);font-size:12px;padding:12px 0">Geen Zoho-tickets vandaag</p>';
+
   const html = `
     <!-- KPI HERO -->
     <div class="kpi-row">
-      <!-- Brandmeester -->
-      <div class="card-brandmeester">
-        <div class="bm-label">
-          <svg viewBox="0 0 24 24"><path d="M12 2C8.5 2 6 4 6 7c0 2.5 1.5 4.5 3 5.5-1 .5-4 2-4 5.5h2c0-2.5 2.5-4 5-4s5 1.5 5 4h2c0-3.5-3-5-4-5.5C16.5 11.5 18 9.5 18 7c0-3-2.5-5-6-5z"/></svg>
-          Brandmeester van de dag
-        </div>
-        <div class="bm-person">
-          <div class="bm-avatar">${bmInits}</div>
-          <div class="bm-info">
-            <div class="bm-name">${bmName}</div>
-            <div class="bm-role">Jurist</div>
-          </div>
-        </div>
-        <div class="bm-stat">
-          <div class="bm-count">${bm.count || 0}</div>
-          <div class="bm-stat-label">gesprekken behandeld</div>
-        </div>
-      </div>
-
       <!-- Score -->
       <div class="card card-score">
         <div class="score-label">Gem. klanttevredenheid</div>
@@ -3747,6 +3774,42 @@ function renderDashboard(period) {
     <div class="stat-strip">
       ${statStripHTML}
     </div>
+
+    ${period === 'vandaag' ? `
+    <!-- KANAALVERDELING (Zoho Desk, alleen vandaag) -->
+    <div class="card">
+      <div class="chart-card-header">
+        <div class="chart-card-title">Kanaalverdeling (Zoho Desk, vandaag)</div>
+      </div>
+      <div class="verdeling-list">${kanaalRows}</div>
+    </div>
+    ` : ''}
+
+    ${managementViewActive ? `
+    <!-- MANAGEMENT-WEERGAVE: extra kaarten -->
+    <div class="charts-row">
+      <div class="card">
+        <div class="chart-card-header">
+          <div class="chart-card-title">Verkeerd verbonden</div>
+        </div>
+        <div style="font-size:32px;font-weight:700;color:var(--navy)">${verkeerdVerbondenPct}%</div>
+        <div style="color:var(--ink-50);font-size:12px;margin-top:4px">${verkeerdVerbondenCount} van ${totalGesprekken} gesprekken &middot; AI-inschatting</div>
+      </div>
+      <div class="card">
+        <div class="chart-card-header">
+          <div class="chart-card-title">Doorverwijzingen rechtsbijstand</div>
+        </div>
+        <div style="font-size:32px;font-weight:700;color:var(--navy)">${rechtsbijstandCount}</div>
+        <div style="color:var(--ink-50);font-size:12px;margin-top:4px">van ${totalGesprekken} gesprekken &middot; AI-inschatting</div>
+      </div>
+    </div>
+    <div class="card">
+      <div class="chart-card-header">
+        <div class="chart-card-title">Onderwerpen (rechtsgebied)</div>
+      </div>
+      <div class="verdeling-list">${categorieRows}</div>
+    </div>
+    ` : ''}
 
     <!-- WEEK CONTEXT -->
     <div class="card week-context-card" id="week-context-bar"></div>
@@ -3945,6 +4008,7 @@ async function loadZohoTickets() {
     if (!resp.ok) return;
     const live = await resp.json();
     if (Array.isArray(live.tickets)) zohoTicketsToday = live.tickets;
+    if (live.channelCounts && typeof live.channelCounts === 'object') zohoChannelCounts = live.channelCounts;
   } catch (e) {
     console.log('[ZohoTickets] Niet beschikbaar');
   }
@@ -4035,6 +4099,7 @@ document.addEventListener('DOMContentLoaded', async () => {
       return;
     }
     if (!authed) return;
+    await checkManagementAccess();
     const dashResult = await withTimeout(initDashboard(), 12000, 'TIMEOUT');
     if (dashResult === 'TIMEOUT') {
       console.error('[Init] initDashboard timeout na 12s');
@@ -4179,6 +4244,43 @@ let _supabase = null;
 // ReferenceError gooide -- op ELKE normale laadbeurt, niet alleen bij een
 // trage Supabase-verbinding. Dit was de kernoorzaak van de lege pagina.
 let _recoveryMode = false;
+
+// ── Managementweergave (rolgebaseerd op e-mailadres) ──
+const MANAGEMENT_EMAILS = ['jackiestam@htjz.nl', 'edgarstam@htjz.nl', 'monikaboomgaard@htjz.nl'];
+let isManagement = false;
+let managementViewActive = false;
+let zohoChannelCounts = {};
+
+function kanaalLabel(raw) {
+  const map = {
+    EMAIL: 'E-mail', PHONECALL: 'Telefonisch', PHONE: 'Telefonisch', WEB: 'Webformulier',
+    CHAT: 'Chat', FEEDBACKWIDGET: 'Widget', FACEBOOK: 'Facebook', TWITTER: 'Twitter/X',
+    WHATSAPP: 'WhatsApp', ONBEKEND: 'Onbekend',
+  };
+  return map[String(raw).toUpperCase()] || raw;
+}
+
+async function checkManagementAccess() {
+  try {
+    const sb = getSupabase();
+    if (!sb) return;
+    const { data: { user } } = await sb.auth.getUser();
+    isManagement = !!(user && user.email && MANAGEMENT_EMAILS.includes(user.email.toLowerCase()));
+  } catch (e) {
+    console.log('[Management] kon rol niet bepalen:', e);
+    isManagement = false;
+  }
+  const btn = document.getElementById('management-toggle-btn');
+  if (btn) btn.style.display = isManagement ? '' : 'none';
+}
+
+function toggleManagementView() {
+  managementViewActive = !managementViewActive;
+  const btn = document.getElementById('management-toggle-btn');
+  if (btn) btn.textContent = managementViewActive ? '👤 Medewerkerweergave' : '📊 Managementweergave';
+  renderDashboard(activePeriod);
+}
+
 function getSupabase() {
   if (!_supabase && typeof supabase !== 'undefined') {
     _supabase = supabase.createClient(SUPABASE_URL, SUPABASE_ANON_KEY, { auth: { flowType: 'implicit' } });
@@ -4191,6 +4293,8 @@ function showAuthOverlay() {
   document.getElementById('auth-overlay').classList.remove('hidden');
   document.getElementById('logout-btn').style.display = 'none';
   document.getElementById('status-toggle-btn').style.display = 'none';
+  const mgmtBtn = document.getElementById('management-toggle-btn');
+  if (mgmtBtn) mgmtBtn.style.display = 'none';
 }
 function hideAuthOverlay() {
   document.getElementById('auth-overlay').classList.add('hidden');
