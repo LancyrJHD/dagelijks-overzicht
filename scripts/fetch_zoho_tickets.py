@@ -84,7 +84,7 @@ def main():
             continue
 
         contact = t.get('contact') or {}
-        klant = (contact.get('firstName', '') + ' ' + contact.get('lastName', '')).strip()
+        klant = ((contact.get('firstName') or '') + ' ' + (contact.get('lastName') or '')).strip()
         if not klant:
             klant = t.get('email') or 'Onbekend'
 
