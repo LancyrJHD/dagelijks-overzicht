@@ -3746,6 +3746,33 @@ function renderDashboard(period) {
         </div>
       </div>`).join('') || '<p style="color:var(--ink-30);font-size:12px;padding:12px 0">Geen Zoho-tickets vandaag</p>';
 
+  // "Waarom dit cijfer?" -- alleen zinvol per losse dag (vandaag/gisteren),
+  // niet voor week-periodes waarin meerdere dagen samen worden aangeleverd.
+  const dayAnalyse = pd.entries.length === 1 ? (pd.entries[0].data.analyse || null) : null;
+  const dayAnalyseGoed = (dayAnalyse && dayAnalyse.goed) || [];
+  const dayAnalyseBeter = (dayAnalyse && dayAnalyse.beter) || [];
+  const scoreRedenHTML = (dayAnalyseGoed.length || dayAnalyseBeter.length) ? `
+    <div class="card" id="score-reden-card">
+      <div class="chart-card-header">
+        <div class="chart-card-title">Waarom dit cijfer? &middot; ${escapeHtml(pd.label)}</div>
+      </div>
+      ${dayAnalyseGoed.length ? `
+      <div style="margin-bottom:${dayAnalyseBeter.length ? '14px' : '0'}">
+        <div style="font-size:11px;font-weight:700;color:var(--green);text-transform:uppercase;letter-spacing:.03em;margin-bottom:6px">Goed</div>
+        <ul style="margin:0;padding-left:18px;font-size:13px;color:var(--ink-70);line-height:1.55">
+          ${dayAnalyseGoed.map(g => `<li style="margin-bottom:4px">${escapeHtml(g)}</li>`).join('')}
+        </ul>
+      </div>` : ''}
+      ${dayAnalyseBeter.length ? `
+      <div>
+        <div style="font-size:11px;font-weight:700;color:#b45309;text-transform:uppercase;letter-spacing:.03em;margin-bottom:6px">Kan beter</div>
+        <ul style="margin:0;padding-left:18px;font-size:13px;color:var(--ink-70);line-height:1.55">
+          ${dayAnalyseBeter.map(b => `<li style="margin-bottom:4px">${escapeHtml(b)}</li>`).join('')}
+        </ul>
+      </div>` : ''}
+    </div>
+  ` : '';
+
   const html = `
     <!-- KPI HERO -->
     <div class="kpi-row">
@@ -3778,6 +3805,8 @@ function renderDashboard(period) {
     <div class="stat-strip">
       ${statStripHTML}
     </div>
+
+    ${scoreRedenHTML}
 
     ${period === 'vandaag' ? `
     <!-- KANAALVERDELING (Zoho Desk, alleen vandaag) -->
