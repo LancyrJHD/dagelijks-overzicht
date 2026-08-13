@@ -1,13 +1,13 @@
 {
   "date": "2026-08-13",
-  "generated_at": "2026-08-13T15:04:25Z",
-  "drukte": "rustig",
-  "gesprekken": 3,
+  "generated_at": "2026-08-13T15:41:27Z",
+  "drukte": "matig",
+  "gesprekken": 4,
   "stats": {
     "opgelost": 1,
     "brandmeester": 0,
     "afkoop": 0,
-    "terugbel": 2,
+    "terugbel": 3,
     "geenDekking": 0
   },
   "score": 5.8,
@@ -16,7 +16,7 @@
       "tijd": "12:37",
       "titel": "Inbound call — ruitsschade autoverzekering met Mario Bleuken",
       "personen": "Verzekerde: anoniem · Jackie Stam | Juridisch Medewerker",
-      "samenvatting": "Beller Mario Bleuken belt voor ruitsschade aan zijn auto, wat een autoverzekeringszaak is. De medewerker erkent dat dit niet bij de juridische helpdesk hoort en verwijst hem door naar de juiste afdeling (autoverzekering).",
+      "samenvatting": "Mario Bleuken belt de Lancyr Juridische Helpdesk met een vraag over ruitsschade aan zijn auto. De medewerker stelt vast dat dit een autoverzekeringszaak betreft en verwijst de beller door naar de juiste afdeling (schadeclaim/autoverzekering).",
       "tags": [
         [
           "tag-overig",
@@ -32,10 +32,29 @@
       "rechtsbijstandVerwijzing": false
     },
     {
+      "tijd": "13:15",
+      "titel": "Claim afwijzing en rechtszaak — juridisch advies met Rocío Rodríguez",
+      "personen": "Verzekerde: anoniem · Jackie Stam | Juridisch Medewerker",
+      "samenvatting": "Rocío Rodríguez heeft een verkeersongeval gehad in België waarbij haar auto total loss is. De claim werd door Lancyr afgewezen omdat de tegenpartij niet kon worden geïdentificeerd, maar inmiddels is er een rechtszaak gestart waarin zij als eiseres optreedt. De medewerker kan de beller niet in het systeem vinden en biedt aan om collega's te raadplegen en terug te bellen.",
+      "tags": [
+        [
+          "tag-consument",
+          "Consumentenrecht"
+        ]
+      ],
+      "uitkomst": [
+        "outcome-terugbel",
+        "Terugbellen"
+      ],
+      "terugbel": true,
+      "verkeerdVerbonden": false,
+      "rechtsbijstandVerwijzing": false
+    },
+    {
       "tijd": "13:36",
       "titel": "Artikel 3.4 restbijstand – tweedehands auto en conflicttoetsing",
       "personen": "Verzekerde: anoniem · Jackie Stam | Juridisch Medewerker",
-      "samenvatting": "Beller vraagt om uitleg over artikel 3.4 (restbijstand/conflict-toetsing) in zijn zaak over terugzending van een tweedehands auto. De medewerker legt uit dat artikel 3.4 betekent dat juridische hulp alleen beschikbaar is als er een concreet conflict bestaat, niet bij twijfel daarover. De medewerker belooft per e-mail nadere uitleg te sturen.",
+      "samenvatting": "Beller belt over artikel 3.4 restbijstand in zijn zaak over terugsturen van een tweedehands auto. De rechtsbijstand (Brandmeester) stopt de behandeling op basis van artikel 3.4, stellende dat er twijfel bestaat over een conflict. De medewerker legt uit dat artikel 3.4 betekent dat juridische hulp alleen kan worden gegeven als er zeker een conflict bestaat, en belooft de beller per mail verduidelijking toe te sturen.",
       "tags": [
         [
           "tag-consument",
@@ -54,15 +73,11 @@
       "tijd": "16:30",
       "titel": "Burenconflict — stank, geluid, en grondgebruik",
       "personen": "Verzekerde: anoniem · Jackie Stam | Juridisch Medewerker",
-      "samenvatting": "Beller heeft burenconflict met nabijgelegen restaurant/catering bedrijf vanwege stank, geluid, afvoerpijpen dicht bij erfgrens en afval op zijn grond. Medewerker geeft algemeen advies over vergunningen, onrechtmatige hinder en mogelijkheid tot sommatie voor verwijdering van spullen. Geen duidelijke doorverwijzing of opgelost gesteld.",
+      "samenvatting": "Beller heeft burenconflict met naastgelegen restaurantbedrijf: lastgevallen door stank en geluid van afzuiging, mogelijk oneigenlijk grondgebruik, en afval op het perceel. Medewerker geeft oriënterend advies over vergunningen, onrechtmatig hinder en mogelijkheid tot sommatie voor verwijdering van voorwerpen. Zaak vereist vervolgstappen naar gemeente en mogelijk juridische bijstand.",
       "tags": [
         [
-          "tag-bestuursrecht",
-          "Bestuursrecht"
-        ],
-        [
-          "tag-overig",
-          "Burenrecht/Erfrecht"
+          "tag-huurrecht",
+          "Huurrecht / Erfrecht"
         ]
       ],
       "uitkomst": [
@@ -77,35 +92,33 @@
   "acties": [],
   "analyse": {
     "goed": [
-      "12:37 Ruitsschade autoverzekering: Correcte herkenning dat dit buiten juridische helpdesk valt en adequate doorverwijzing naar autoverzekeringafdeling",
-      "13:36 Artikel 3.4 restbijstand: Helder begrip van dekkingsbeperking (conflict-toetsing) en proactieve toezegging van vervolgcommunicatie per e-mail"
+      "12:37 ruitsschade: correcte doorverwijzing naar bevoegde afdeling (schadeclaim/autoverzekering)",
+      "13:36 artikel 3.4: helder juridisch advies gegeven over restbijstand en conflict-vereiste met schriftelijke vervolgbelofte",
+      "16:30 burenconflict: grondige oriëntatie gegeven (vergunningen, hinder, sommatie) met heldere vervolgstappen"
     ],
     "beter": [
-      "13:36 Artikel 3.4 restbijstand: Ontbreekt concrete deadline voor e-mailtoezeggging (wanneer exact?). Geen verificatie van polis+identiteit vastgelegd in samenvatting",
-      "16:30 Burenconflict: KRITISCH — geen polis- of identiteitsverificatie vermeld. Geen dekkingscontrole (franchise EUR 250) uitgevoerd. Geen concrete deadline vastgelegd voor vervolgstappen. Onduidelijke afsluiting ('terugbellen') zonder duidelijk plan of vervolgafspraak. Onvoldoende juridische structurering (onderscheid tussen civiel recht, bestuursrecht vergunning en mogelijke schadevergoeding)",
-      "Dagrapportage: Geen controle op herhaalcontacten — onbekend of bellers vandaag al eerder hebben gebeld over dezelfde onderwerpen"
+      "13:15 Rocío Rodríguez: KRITIEK — polis en identiteit niet geverifieerd voordat advies werd gegeven; klant niet in systeem gevonden maar geen details over poging tot opzoeking. Geen concrete deadline voor terugbellen vastgesteld.",
+      "13:36 artikel 3.4: geen vermelding van franchise EUR 250 gecontroleerd; geen concrete deadline voor mail met verduidelijking benoemd",
+      "16:30 burenconflict: geen polisverficatie of dekkingscontrole (franchise) vastgelegd; geen concrete deadline voor terugbellen afgesproken; vervolgstappen (gemeente, juridische bijstand) niet duidelijk getaxeerd qua timing",
+      "Geen controle op herhaalcontacten: onduidelijk of 13:15 (Rocío) of 16:30 (burenconflict) eerder vandaag al zijn gediagnostriceerd"
     ]
   },
   "verkeerdVerbonden": {
     "aantal": 1,
-    "percentage": 33.3
+    "percentage": 25.0
   },
   "rechtsbijstandVerwijzingen": 0,
   "categorieen": [
+    [
+      "Consumentenrecht",
+      2
+    ],
     [
       "Autoverzekering",
       1
     ],
     [
-      "Consumentenrecht",
-      1
-    ],
-    [
-      "Bestuursrecht",
-      1
-    ],
-    [
-      "Burenrecht/Erfrecht",
+      "Huurrecht / Erfrecht",
       1
     ]
   ]
