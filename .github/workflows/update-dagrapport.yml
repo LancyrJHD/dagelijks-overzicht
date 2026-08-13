@@ -24,16 +24,26 @@ jobs:
       - name: Install dependencies
         run: pip install requests
 
-      - name: Fetch Granola data
+      - name: Analyseer Granola-gesprekken met AI
         env:
           GRANOLA_API_KEY: ${{ secrets.GRANOLA_API_KEY }}
-        run: python scripts/fetch_granola.py
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+        run: python scripts/analyze_granola_ai.py
 
-      - name: Commit en push data/today.json
+      - name: Haal Zoho Desk-tickets op
+        env:
+          ZOHO_CLIENT_ID: ${{ secrets.ZOHO_CLIENT_ID }}
+          ZOHO_CLIENT_SECRET: ${{ secrets.ZOHO_CLIENT_SECRET }}
+          ZOHO_REFRESH_TOKEN: ${{ secrets.ZOHO_REFRESH_TOKEN }}
+          ZOHO_ORG_ID: ${{ secrets.ZOHO_ORG_ID }}
+        run: python scripts/fetch_zoho_tickets.py
+        continue-on-error: true  # Zoho-storing mag de Granola-update niet blokkeren
+
+      - name: Commit en push data/*.json
         run: |
           git config user.name  "Lancyr Bot"
           git config user.email "bot@htjz.nl"
-          git add data/today.json
+          git add data/today.json data/zoho-tickets.json
           # Alleen committen als er iets veranderd is
           git diff --staged --quiet && echo "Geen wijzigingen" || \
             git commit -m "auto: lancyr dagrapport $(date -u '+%Y-%m-%d %H:%M UTC')" && \

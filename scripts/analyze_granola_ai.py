@@ -1,0 +1,325 @@
+#!/usr/bin/env python3
+"""
+Fetch Lancyr Juridische Helpdesk meetings from Granola API, analyze each
+conversation with the Anthropic API, and generate the full data/today.json
+for the dagrapport dashboard (matching the rich weekData schema).
+
+Requires: GRANOLA_API_KEY, ANTHROPIC_API_KEY environment variables.
+
+Design notes / resilience:
+- If a single conversation fails to analyze via the AI, we fall back to a
+  simple heuristic classification for THAT conversation only, so one bad
+  API response never blocks the whole run.
+- If the day-level synthesis (score/goed/beter) call fails, we ship the
+  conversations with score 0 and empty analyse rather than fail the job.
+- This script is used by .github/workflows/update-dagrapport.yml and runs
+  entirely on GitHub's servers (no dependency on any local machine).
+"""
+import os
+import json
+import time
+import urllib.request
+import urllib.error
+import urllib.parse
+from datetime import datetime, timezone, timedelta
+
+GRANOLA_TOKEN = os.environ.get('GRANOLA_API_KEY', '')
+ANTHROPIC_KEY = os.environ.get('ANTHROPIC_API_KEY', '')
+LANCYR_FOLDER_NAME = 'Lancyr Juridische Helpdesk'
+GRANOLA_BASE = 'https://public-api.granola.ai/v1'
+ANTHROPIC_MODEL = 'claude-haiku-4-5-20251001'
+OUTPUT_PATH = 'data/today.json'
+
+AMS_OFFSET = timedelta(hours=2)  # CEST — goed genoeg voor kantooruren
+
+GRANOLA_HEADERS = {
+    'Authorization': f'Bearer {GRANOLA_TOKEN}',
+    'Content-Type': 'application/json',
+}
+
+# Canonieke uitkomst-paren — MOET exact overeenkomen met MANUAL_OUTCOMES in index.html
+VALID_OUTCOMES = {
+    "outcome-opgelost": "Telefonisch opgelost",
+    "outcome-terugbel": "Terugbellen",
+    "outcome-brandmeester": "Doorverwezen naar Brandmeester",
+    "outcome-afkoop": "Afkoop",
+    "outcome-geen-dekking": "Geen dekking",
+}
+
+ANALYZE_SYSTEM_PROMPT = """Je bent een juridische kwaliteitsanalist voor de Lancyr Juridische Helpdesk van HTJZ.
+
+Achtergrond:
+- Eerstelijns telefonisch juridisch advies voor verzekerden van Lancyr.
+- Altijd eerst polis + identiteit verifieren.
+- Bij consumentenzaken: franchise EUR 250 - schade <= EUR 250 = geen dekking.
+- Bouwzaken met grote schade (>EUR 5.000) -> verplicht doorverwijzen naar Brandmeester.
+- Arbeidsconflicten -> altijd doorverwijzen naar Brandmeester.
+
+Categoriseer het gesprek in EXACT een van deze 5 paren (class, label):
+["outcome-opgelost","Telefonisch opgelost"]
+["outcome-terugbel","Terugbellen"]
+["outcome-brandmeester","Doorverwezen naar Brandmeester"]
+["outcome-afkoop","Afkoop"]
+["outcome-geen-dekking","Geen dekking"]
+
+Tags (rechtsgebied): gebruik ["tag-arbeidsrecht","Arbeidsrecht"], ["tag-consument","Consumentenrecht"], ["tag-bouw","Bouwrecht"], ["tag-huur","Huurrecht"], ["tag-bestuursrecht","Bestuursrecht"], of ["tag-overig","<specifiek rechtsgebied>"] als geen van de vaste categorieen past.
+
+Geef ALLEEN geldige JSON terug, geen andere tekst, in dit exacte formaat:
+{"samenvatting": "max 3 zinnen, feitelijk en concreet", "tags": [["tag-x","Label"]], "uitkomst": ["outcome-x","Label"], "terugbel": true of false}
+"""
+
+DAY_SYSTEM_PROMPT = """Je bent een juridische kwaliteitsanalist voor de Lancyr Juridische Helpdesk van HTJZ.
+Kwaliteitsnormen: altijd polis+identiteit verifieren, dekkingscontrole (franchise EUR 250) vastleggen, deadlines altijd concreet benoemen, let op herhaalcontact (klant belt vandaag al eerder over hetzelfde onderwerp).
+
+Je krijgt een lijst van alle gesprekken van vandaag (tijd, titel, samenvatting, uitkomst). Beoordeel de dag als geheel en verwijs in elk punt naar het specifieke gesprek (tijdstip + onderwerp).
+
+Geef ALLEEN geldige JSON terug in dit exacte formaat:
+{"score": 7.2, "goed": ["...", "..."], "beter": ["...", "..."]}
+"""
+
+
+def anthropic_call(system, user_content, max_tokens=800, retries=2):
+    body = json.dumps({
+        "model": ANTHROPIC_MODEL,
+        "max_tokens": max_tokens,
+        "system": system,
+        "messages": [{"role": "user", "content": user_content}],
+    }).encode('utf-8')
+    req = urllib.request.Request(
+        "https://api.anthropic.com/v1/messages",
+        data=body,
+        headers={
+            "x-api-key": ANTHROPIC_KEY,
+            "anthropic-version": "2023-06-01",
+            "content-type": "application/json",
+        },
+    )
+    last_err = None
+    for attempt in range(retries + 1):
+        try:
+            with urllib.request.urlopen(req, timeout=60) as resp:
+                result = json.loads(resp.read())
+                text = result["content"][0]["text"].strip()
+                if text.startswith("```"):
+                    text = text.split("```")[1]
+                    if text.startswith("json"):
+                        text = text[4:]
+                return json.loads(text.strip())
+        except Exception as e:
+            last_err = e
+            time.sleep(2 * (attempt + 1))
+    print(f"  WAARSCHUWING: Anthropic-aanroep mislukt na retries: {last_err}")
+    return None
+
+
+def get_all_today_notes():
+    today_ams = (datetime.now(timezone.utc) + AMS_OFFSET).date()
+    today_str = today_ams.isoformat()
+    print(f"Fetching notes for {today_str} (Amsterdam)...")
+
+    notes = []
+    cursor = None
+    while True:
+        params = {'page_size': 30, 'created_after': today_str}
+        if cursor:
+            params['cursor'] = cursor
+        qs = urllib.parse.urlencode(params)
+        req = urllib.request.Request(f"{GRANOLA_BASE}/notes?{qs}", headers=GRANOLA_HEADERS)
+        with urllib.request.urlopen(req, timeout=30) as resp:
+            data = json.loads(resp.read())
+        notes.extend(data.get('notes', []))
+        if not data.get('hasMore'):
+            break
+        cursor = data.get('cursor')
+
+    print(f"  -> {len(notes)} total notes today")
+    return notes
+
+
+def get_note_detail(note_id):
+    req = urllib.request.Request(
+        f"{GRANOLA_BASE}/notes/{note_id}?include=transcript",
+        headers=GRANOLA_HEADERS,
+    )
+    try:
+        with urllib.request.urlopen(req, timeout=30) as resp:
+            return json.loads(resp.read())
+    except urllib.error.HTTPError as e:
+        if e.code == 404:
+            return None
+        raise
+
+
+def is_lancyr_note(detail):
+    for folder in (detail.get('folder_membership') or []):
+        if LANCYR_FOLDER_NAME in folder.get('name', ''):
+            return True
+    return False
+
+
+def is_failed_call(title):
+    skip_keywords = ['vm uitgeschakeld', 'voicemail', 'geen gehoor', 'niet opgenomen',
+                      'gebeld maar', 'vm in', 'bericht ingesproken']
+    t = title.lower()
+    return any(k in t for k in skip_keywords)
+
+
+def heuristic_uitkomst(title, summary_md, summary_text):
+    """Fallback als de AI-aanroep voor dit gesprek mislukt."""
+    text = ((title or '') + ' ' + (summary_md or '') + ' ' + (summary_text or '')).lower()
+    if 'geen dekking' in text or 'niet gedekt' in text or 'buiten de dekking' in text:
+        return ["outcome-geen-dekking", "Geen dekking"]
+    if 'brandmeester' in text:
+        return ["outcome-brandmeester", "Doorverwezen naar Brandmeester"]
+    if 'afkoop' in text:
+        return ["outcome-afkoop", "Afkoop"]
+    if 'terugbel' in text or 'belt terug' in text or 'callback' in text:
+        return ["outcome-terugbel", "Terugbellen"]
+    return ["outcome-opgelost", "Telefonisch opgelost"]
+
+
+def extract_transcript_text(detail):
+    transcript = detail.get('transcript') or []
+    lines = []
+    for seg in transcript:
+        speaker = seg.get('source') or seg.get('speaker') or ''
+        text = seg.get('text') or ''
+        if text:
+            lines.append(f"{speaker}: {text}".strip())
+    return "\n".join(lines)
+
+
+def main():
+    if not GRANOLA_TOKEN:
+        print("ERROR: GRANOLA_API_KEY not set")
+        raise SystemExit(1)
+    if not ANTHROPIC_KEY:
+        print("ERROR: ANTHROPIC_API_KEY not set")
+        raise SystemExit(1)
+
+    today_ams = (datetime.now(timezone.utc) + AMS_OFFSET).date()
+    today_str = today_ams.isoformat()
+
+    notes = get_all_today_notes()
+    conversations = []
+
+    for note in notes:
+        note_id = note.get('id', '')
+        title = note.get('title') or ''
+        created_at = note.get('created_at', '')
+
+        if is_failed_call(title):
+            print(f"  SKIP (failed call): {title}")
+            continue
+
+        detail = get_note_detail(note_id)
+        if not detail:
+            print(f"  SKIP (404): {title}")
+            continue
+        if not is_lancyr_note(detail):
+            continue
+
+        summary_md = detail.get('summary_markdown') or ''
+        summary_text = detail.get('summary_text') or ''
+        transcript_text = extract_transcript_text(detail)
+
+        owner = detail.get('owner') or {}
+        medewerker = owner.get('name') or 'Jackie Stam'
+
+        try:
+            dt_utc = datetime.fromisoformat(created_at.replace('Z', '+00:00'))
+            dt_ams = dt_utc + AMS_OFFSET
+            tijdstip = dt_ams.strftime('%H:%M')
+        except Exception:
+            tijdstip = '00:00'
+
+        user_content = f"Titel: {title}\n\n"
+        if transcript_text:
+            user_content += f"Transcript:\n{transcript_text[:12000]}"
+        else:
+            user_content += f"Samenvatting (geen transcript beschikbaar):\n{summary_md or summary_text}"
+
+        ai_result = anthropic_call(ANALYZE_SYSTEM_PROMPT, user_content, max_tokens=600)
+
+        if ai_result and ai_result.get("uitkomst") and ai_result["uitkomst"][0] in VALID_OUTCOMES:
+            samenvatting = ai_result.get("samenvatting", "")
+            tags = ai_result.get("tags", [["tag-overig", "Overig"]])
+            uitkomst = ai_result["uitkomst"]
+            terugbel = bool(ai_result.get("terugbel", uitkomst[0] == "outcome-terugbel"))
+        else:
+            print(f"  Fallback (heuristiek) voor: {title}")
+            samenvatting = (summary_md or summary_text or '')[:300]
+            tags = [["tag-overig", "Overig"]]
+            uitkomst = heuristic_uitkomst(title, summary_md, summary_text)
+            terugbel = uitkomst[0] == "outcome-terugbel"
+
+        conversations.append({
+            "tijd": tijdstip,
+            "titel": title,
+            "personen": f"Verzekerde: anoniem · {medewerker}",
+            "samenvatting": samenvatting,
+            "tags": tags,
+            "uitkomst": uitkomst,
+            "terugbel": terugbel,
+        })
+        print(f"  OK {tijdstip} | {uitkomst[1]:30s} | {title[:50]}")
+
+    conversations.sort(key=lambda c: c["tijd"])
+
+    stats = {"opgelost": 0, "brandmeester": 0, "afkoop": 0, "terugbel": 0, "geenDekking": 0}
+    key_map = {
+        "outcome-opgelost": "opgelost",
+        "outcome-brandmeester": "brandmeester",
+        "outcome-afkoop": "afkoop",
+        "outcome-terugbel": "terugbel",
+        "outcome-geen-dekking": "geenDekking",
+    }
+    for c in conversations:
+        k = key_map.get(c["uitkomst"][0])
+        if k:
+            stats[k] += 1
+
+    total = len(conversations)
+    if total >= 6:
+        drukte = "druk"
+    elif total >= 4:
+        drukte = "matig"
+    else:
+        drukte = "rustig"
+
+    score = 0
+    goed, beter = [], []
+    if conversations:
+        day_input = json.dumps([
+            {"tijd": c["tijd"], "titel": c["titel"], "samenvatting": c["samenvatting"], "uitkomst": c["uitkomst"][1]}
+            for c in conversations
+        ], ensure_ascii=False)
+        day_result = anthropic_call(DAY_SYSTEM_PROMPT, day_input, max_tokens=1200)
+        if day_result:
+            score = day_result.get("score", 0)
+            goed = day_result.get("goed", [])
+            beter = day_result.get("beter", [])
+        else:
+            print("  WAARSCHUWING: dag-analyse mislukt, score/analyse blijven leeg")
+
+    result = {
+        "date": today_str,
+        "generated_at": datetime.now(timezone.utc).strftime('%Y-%m-%dT%H:%M:%SZ'),
+        "drukte": drukte,
+        "gesprekken": total,
+        "stats": stats,
+        "score": score,
+        "conversations": conversations,
+        "acties": [],
+        "analyse": {"goed": goed, "beter": beter},
+    }
+
+    os.makedirs('data', exist_ok=True)
+    with open(OUTPUT_PATH, 'w', encoding='utf-8') as f:
+        json.dump(result, f, ensure_ascii=False, indent=2)
+
+    print(f"\nSaved {len(conversations)} Lancyr entries (score {score}) to {OUTPUT_PATH}")
+
+
+if __name__ == '__main__':
+    main()
