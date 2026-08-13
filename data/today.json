@@ -1,43 +1,63 @@
 {
   "date": "2026-08-13",
-  "generated_at": "2026-08-13T11:03:00Z",
+  "generated_at": "2026-08-13T12:11:01Z",
   "drukte": "rustig",
-  "gesprekken": 1,
+  "gesprekken": 2,
   "stats": {
     "opgelost": 0,
     "brandmeester": 0,
     "afkoop": 0,
-    "terugbel": 1,
+    "terugbel": 2,
     "geenDekking": 0
   },
-  "score": 7.5,
+  "score": 4.1,
   "conversations": [
     {
       "tijd": "12:37",
       "titel": "Inbound call — ruitsschade autoverzekering met Mario Bleuken",
       "personen": "Verzekerde: anoniem · Jackie Stam | Juridisch Medewerker",
-      "samenvatting": "Mario Bleuken belt in met een vraag over ruitsschade aan zijn auto onder de autoverzekering. Jackie erkent dat dit buiten het werkterrein van de Juridische Helpdesk valt en verwijst de beller door naar de juiste afdeling voor autoverzekering.",
+      "samenvatting": "Mario Bleuken belt voor juridisch advies over ruitsschade aan zijn auto. De medewerker herkent dat dit een autoverzekeringskwestie betreft en verwijst de klant door naar de juiste afdeling.",
       "tags": [
         [
           "tag-overig",
-          "Autoverzekeringszaak"
+          "Autoverzekering"
         ]
       ],
       "uitkomst": [
         "outcome-terugbel",
         "Terugbellen"
       ],
-      "terugbel": false
+      "terugbel": true
+    },
+    {
+      "tijd": "13:36",
+      "titel": "Artikel 3.4 restbijstand – tweedehands auto en conflicttoetsing",
+      "personen": "Verzekerde: anoniem · Jackie Stam | Juridisch Medewerker",
+      "samenvatting": "Beller heeft een tweedehands auto gekocht met gebreken en wil deze retourneren. Brandmeester (rechtsbijstand) handelt de zaak af maar past artikel 3.4 toe omdat twijfel bestaat over het bestaan van een conflict. Jackie legt uit dat artikel 3.4 betekent dat juridische hulp alleen gegeven wordt als zeker een conflict bestaat, en belooft per mail verduidelijking te sturen.",
+      "tags": [
+        [
+          "tag-consument",
+          "Consumentenrecht"
+        ]
+      ],
+      "uitkomst": [
+        "outcome-terugbel",
+        "Terugbellen"
+      ],
+      "terugbel": true
     }
   ],
   "acties": [],
   "analyse": {
     "goed": [
-      "12:37 Ruitsschade autoverzekering: Juiste routering uitgevoerd - Jackie herkende correct dat technische verzekeringsvragen buiten het juridische mandaat vallen en verwees door naar de juiste afdeling"
+      "12:37 ruitsschade autoverzekering: Correcte herkenning dat dit buiten de juridische hulpdesk valt en doorgeleiding naar juiste afdeling"
     ],
     "beter": [
-      "12:37 Ruitsschade autoverzekering: Geen documentatie van polisverificatie of identiteitscontrole voordat werd doorverwezen - dit had eerst moeten gebeuren volgens kwaliteitsnormen",
-      "12:37 Ruitsschade autoverzekering: Geen concrete terugbeldeadline vastgelegd voor de beller - 'terugbellen' is onvoldoende specifiek (welke afdeling, wanneer?"
+      "12:37 ruitsschade autoverzekering: Geen verificatie van polis en identiteit vastgelegd voordat doorverwezen werd",
+      "13:36 tweedehands auto artikel 3.4: Geen concrete deadline meegegeven voor de beloofde mailtoezending met verduidelijking",
+      "13:36 tweedehands auto artikel 3.4: Dekkingscontrole (franchise EUR 250) niet vastgelegd in dossier",
+      "13:36 tweedehands auto artikel 3.4: Onvoldoende duidelijkheid gegeven over wanneer klant teruggebeld wordt en op welke basis artikel 3.4 precies toepasbaar is",
+      "Beide gesprekken: Status 'Terugbellen' zonder concrete afspraken inroosteren verhoogt risico op herhaalcontact"
     ]
   }
 }
