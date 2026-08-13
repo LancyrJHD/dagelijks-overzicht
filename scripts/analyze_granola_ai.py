@@ -63,19 +63,22 @@ Categoriseer het gesprek in EXACT een van deze 5 paren (class, label):
 
 Tags (rechtsgebied): gebruik ["tag-arbeidsrecht","Arbeidsrecht"], ["tag-consument","Consumentenrecht"], ["tag-bouw","Bouwrecht"], ["tag-huur","Huurrecht"], ["tag-bestuursrecht","Bestuursrecht"], of ["tag-overig","<specifiek rechtsgebied>"] als geen van de vaste categorieen past.
 
-Bepaal ook twee extra booleans, ONAFHANKELIJK van de uitkomst hierboven:
+Bepaal ook drie extra booleans, ONAFHANKELIJK van de uitkomst hierboven:
 - "verkeerd_verbonden": true ALLEEN als de beller iets zoekt dat helemaal niet bij een juridische helpdesk hoort (bijv. een autoverzekeringsvraag, een schadeclaim-callcenter, of een compleet verkeerd doorverbonden nummer) EN dit ook zo in het gesprek wordt vastgesteld. Bij twijfel: false.
 - "rechtsbijstand_verwijzing": true ALLEEN als de medewerker de beller expliciet doorverwijst naar de rechtsbijstandsafdeling/rechtsbijstandsverzekering voor verdere behandeling van de zaak (dus niet zomaar "u heeft rechtsbijstand", maar een daadwerkelijke doorverwijzing/overdracht). Bij twijfel: false.
+- "advies_gegeven": true ALLEEN als de medewerker daadwerkelijk inhoudelijk juridisch advies of een concrete juridische uitleg heeft gegeven over de zaak. BELANGRIJK: als de medewerker de beller NIET kon verifieren (niet gevonden in het systeem op naam/adres/polisnummer) en daarom bewust GEEN advies heeft gegeven maar in plaats daarvan om verificatiedocumenten heeft gevraagd en een vervolgcontact heeft afgesproken, is dit false -- en dat is GEEN fout maar juist correct, voorzichtig handelen. Zet dit niet automatisch op true alleen omdat er een juridisch onderwerp is besproken.
 
 Geef ALLEEN geldige JSON terug, geen andere tekst, in dit exacte formaat:
-{"samenvatting": "max 3 zinnen, feitelijk en concreet", "tags": [["tag-x","Label"]], "uitkomst": ["outcome-x","Label"], "terugbel": true of false, "verkeerd_verbonden": true of false, "rechtsbijstand_verwijzing": true of false}
+{"samenvatting": "max 3 zinnen, feitelijk en concreet, en vermeld expliciet of er wel of geen inhoudelijk advies is gegeven", "tags": [["tag-x","Label"]], "uitkomst": ["outcome-x","Label"], "terugbel": true of false, "verkeerd_verbonden": true of false, "rechtsbijstand_verwijzing": true of false, "advies_gegeven": true of false}
 """
 
 DAY_SYSTEM_PROMPT = """Je bent een juridische kwaliteitsanalist voor de Lancyr Juridische Helpdesk van HTJZ.
 
 Kwaliteitsnormen: altijd polis+identiteit verifieren, dekkingscontrole (franchise EUR 250) vastleggen, deadlines altijd concreet benoemen, let op herhaalcontact (klant belt vandaag al eerder over hetzelfde onderwerp).
 
-Je krijgt een lijst van alle gesprekken van vandaag (tijd, titel, samenvatting, uitkomst). Beoordeel de dag als geheel en verwijs in elk punt naar het specifieke gesprek (tijdstip + onderwerp).
+Je krijgt een lijst van alle gesprekken van vandaag (tijd, titel, samenvatting, uitkomst, advies_gegeven). Beoordeel de dag als geheel en verwijs in elk punt naar het specifieke gesprek (tijdstip + onderwerp).
+
+BELANGRIJKE CORRECTIE: als "advies_gegeven" false is voor een gesprek, betekent dit dat de medewerker de beller niet kon verifieren in het systeem en daarom TERECHT geen advies heeft gegeven, maar om verificatiedocumenten heeft gevraagd en een vervolgcontact heeft afgesproken. Beoordeel dit NIET als een verificatiefout ("polis/identiteit niet gecontroleerd voordat advies werd gegeven") -- dat is een contradictie, er is immers geen advies gegeven. Beoordeel in dat geval alleen of de medewerker een duidelijk vervolgplan en waar mogelijk een concrete deadline heeft afgesproken voor het gesprek zelf.
 
 Geef ALLEEN geldige JSON terug in dit exacte formaat:
 {"score": 7.2, "goed": ["...", "..."], "beter": ["...", "..."]}
@@ -181,9 +184,11 @@ def heuristic_uitkomst(title, summary_md, summary_text):
 
 
 def heuristic_extra_flags(title, summary_md, summary_text):
-    """Fallback voor de twee nieuwe booleans als de AI-aanroep mislukt.
-    Bewust conservatief (default false) — bij twijfel liever niet meetellen
-    dan een fout-positief signaal geven."""
+    """Fallback voor de vier nieuwe booleans als de AI-aanroep mislukt.
+    Bewust conservatief -- bij twijfel liever niet meetellen dan een
+    fout-positief signaal geven (behalve advies_gegeven, waar we bij twijfel
+    de voorzichtige aanname 'wel advies gegeven' maken zodat kwaliteitschecks
+    niet stilzwijgend worden overgeslagen)."""
     text = ((title or '') + ' ' + (summary_md or '') + ' ' + (summary_text or '')).lower()
     verkeerd_verbonden = any(k in text for k in [
         'verkeerd verbonden', 'verkeerd nummer', 'autoverzekering', 'niet de juiste afdeling',
@@ -192,7 +197,15 @@ def heuristic_extra_flags(title, summary_md, summary_text):
     rechtsbijstand_verwijzing = 'rechtsbijstand' in text and (
         'verwijs' in text or 'doorverwijs' in text or 'overgedragen' in text
     )
-    return verkeerd_verbonden, rechtsbijstand_verwijzing
+    niet_gevonden = any(k in text for k in [
+        'niet in het systeem', 'niet gevonden', 'kan ik niet vinden', 'kon niet vinden',
+        'niet terugvinden', 'niet te vinden',
+    ])
+    vraagt_verificatie = any(k in text for k in [
+        'verificatiedocument', 'polisblad', 'polis op te sturen', 'op te mailen',
+    ])
+    advies_gegeven = not (niet_gevonden and vraagt_verificatie)
+    return verkeerd_verbonden, rechtsbijstand_verwijzing, advies_gegeven
 
 
 def extract_transcript_text(detail):
@@ -264,13 +277,14 @@ def main():
             terugbel = bool(ai_result.get("terugbel", uitkomst[0] == "outcome-terugbel"))
             verkeerd_verbonden = bool(ai_result.get("verkeerd_verbonden", False))
             rechtsbijstand_verwijzing = bool(ai_result.get("rechtsbijstand_verwijzing", False))
+            advies_gegeven = bool(ai_result.get("advies_gegeven", True))
         else:
             print(f"  Fallback (heuristiek) voor: {title}")
             samenvatting = (summary_md or summary_text or '')[:300]
             tags = [["tag-overig", "Overig"]]
             uitkomst = heuristic_uitkomst(title, summary_md, summary_text)
             terugbel = uitkomst[0] == "outcome-terugbel"
-            verkeerd_verbonden, rechtsbijstand_verwijzing = heuristic_extra_flags(title, summary_md, summary_text)
+            verkeerd_verbonden, rechtsbijstand_verwijzing, advies_gegeven = heuristic_extra_flags(title, summary_md, summary_text)
 
         conversations.append({
             "tijd": tijdstip,
@@ -282,6 +296,7 @@ def main():
             "terugbel": terugbel,
             "verkeerdVerbonden": verkeerd_verbonden,
             "rechtsbijstandVerwijzing": rechtsbijstand_verwijzing,
+            "adviesGegeven": advies_gegeven,
         })
         print(f"  OK {tijdstip} | {uitkomst[1]:30s} | {title[:50]}")
 
@@ -329,7 +344,7 @@ def main():
     goed, beter = [], []
     if conversations:
         day_input = json.dumps([
-            {"tijd": c["tijd"], "titel": c["titel"], "samenvatting": c["samenvatting"], "uitkomst": c["uitkomst"][1]}
+            {"tijd": c["tijd"], "titel": c["titel"], "samenvatting": c["samenvatting"], "uitkomst": c["uitkomst"][1], "advies_gegeven": c["adviesGegeven"]}
             for c in conversations
         ], ensure_ascii=False)
         day_result = anthropic_call(DAY_SYSTEM_PROMPT, day_input, max_tokens=1200)
