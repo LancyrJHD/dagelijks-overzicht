@@ -1,11 +1,11 @@
 {
   "date": "2026-08-13",
-  "generated_at": "2026-08-13T15:07:29Z",
+  "generated_at": "2026-08-13T15:04:25Z",
   "drukte": "rustig",
   "gesprekken": 3,
   "stats": {
-    "opgelost": 0,
-    "brandmeester": 1,
+    "opgelost": 1,
+    "brandmeester": 0,
     "afkoop": 0,
     "terugbel": 2,
     "geenDekking": 0
@@ -16,7 +16,7 @@
       "tijd": "12:37",
       "titel": "Inbound call — ruitsschade autoverzekering met Mario Bleuken",
       "personen": "Verzekerde: anoniem · Jackie Stam | Juridisch Medewerker",
-      "samenvatting": "Mario Bleuken belt de juridische helpdesk met een vraag over ruitsschade aan zijn auto. De medewerker realiseert zich dat dit een autoverzekeringskwestie is die niet onder de juridische helpdesk valt en verwijst de beller door naar de juiste afdeling (autoverzekering).",
+      "samenvatting": "Beller Mario Bleuken belt voor ruitsschade aan zijn auto, wat een autoverzekeringszaak is. De medewerker erkent dat dit niet bij de juridische helpdesk hoort en verwijst hem door naar de juiste afdeling (autoverzekering).",
       "tags": [
         [
           "tag-overig",
@@ -24,16 +24,18 @@
         ]
       ],
       "uitkomst": [
-        "outcome-terugbel",
-        "Doorverwezen naar juiste afdeling"
+        "outcome-opgelost",
+        "Telefonisch opgelost"
       ],
-      "terugbel": false
+      "terugbel": false,
+      "verkeerdVerbonden": true,
+      "rechtsbijstandVerwijzing": false
     },
     {
       "tijd": "13:36",
       "titel": "Artikel 3.4 restbijstand – tweedehands auto en conflicttoetsing",
       "personen": "Verzekerde: anoniem · Jackie Stam | Juridisch Medewerker",
-      "samenvatting": "Klant belt over tweedehands autokoop en vraagt naar toepassing artikel 3.4 restbijstand. Juridische hulp (Brandmeester) weigert verder te gaan vanwege twijfel over conflict-voorwaarde. Helpdesk verklaart dat artikel 3.4 betekent dat hulp alleen gegeven wordt als zeker een conflict bestaat en belooft uitleg per mail.",
+      "samenvatting": "Beller vraagt om uitleg over artikel 3.4 (restbijstand/conflict-toetsing) in zijn zaak over terugzending van een tweedehands auto. De medewerker legt uit dat artikel 3.4 betekent dat juridische hulp alleen beschikbaar is als er een concreet conflict bestaat, niet bij twijfel daarover. De medewerker belooft per e-mail nadere uitleg te sturen.",
       "tags": [
         [
           "tag-consument",
@@ -44,13 +46,15 @@
         "outcome-terugbel",
         "Terugbellen"
       ],
-      "terugbel": true
+      "terugbel": true,
+      "verkeerdVerbonden": false,
+      "rechtsbijstandVerwijzing": false
     },
     {
       "tijd": "16:30",
       "titel": "Burenconflict — stank, geluid, en grondgebruik",
       "personen": "Verzekerde: anoniem · Jackie Stam | Juridisch Medewerker",
-      "samenvatting": "Burenconflict waarbij buren een restaurant/cateringbedrijf starten met afvoerpijpen die stank en geluid naar het perceel van de beller brengen, afval op de bellers grond dumpen, en mogelijk grond van de beller gebruiken. Beller vraagt wat de eerste stap is en of dit mag.",
+      "samenvatting": "Beller heeft burenconflict met nabijgelegen restaurant/catering bedrijf vanwege stank, geluid, afvoerpijpen dicht bij erfgrens en afval op zijn grond. Medewerker geeft algemeen advies over vergunningen, onrechtmatige hinder en mogelijkheid tot sommatie voor verwijdering van spullen. Geen duidelijke doorverwijzing of opgelost gesteld.",
       "tags": [
         [
           "tag-bestuursrecht",
@@ -58,29 +62,51 @@
         ],
         [
           "tag-overig",
-          "Burenrecht"
+          "Burenrecht/Erfrecht"
         ]
       ],
       "uitkomst": [
-        "outcome-brandmeester",
-        "Doorverwezen naar Brandmeester"
+        "outcome-terugbel",
+        "Terugbellen"
       ],
-      "terugbel": true
+      "terugbel": true,
+      "verkeerdVerbonden": false,
+      "rechtsbijstandVerwijzing": false
     }
   ],
   "acties": [],
   "analyse": {
     "goed": [
-      "12:37 Ruitsschade autoverzekering: correct herkend dat dit buiten juridische helpdesk valt en adequaat doorverwezen naar autoverzekering",
-      "16:30 Burenconflict: passende doorverwijzing naar juridisch specialist (Brandmeester) voor complexe burengeschil met meerdere rechtsvragen"
+      "12:37 Ruitsschade autoverzekering: Correcte herkenning dat dit buiten juridische helpdesk valt en adequate doorverwijzing naar autoverzekeringafdeling",
+      "13:36 Artikel 3.4 restbijstand: Helder begrip van dekkingsbeperking (conflict-toetsing) en proactieve toezegging van vervolgcommunicatie per e-mail"
     ],
     "beter": [
-      "13:36 Artikel 3.4 restbijstand: geen verificatie van polis en identiteit vastgelegd voordat juridische beoordeling plaatsvond",
-      "13:36 Artikel 3.4 restbijstand: deadline voor vervolgmail niet concreet benoemd (welke dag/tijd)",
-      "13:36 Artikel 3.4 restbijstand: geen dekkingscontrole (franchise EUR 250) vastgesteld",
-      "13:36 Artikel 3.4 restbijstand: risico op vervolgcontact niet voorkomen door onvoldoende duidelijkheid bij eerste contact",
-      "16:30 Burenconflict: geen concrete deadline gegeven voor vervolgstappen of contactmoment met Brandmeester",
-      "Geen aantekening van herhaalcontacten zichtbaar - monitoring vervolgcontacten ontbreekt"
+      "13:36 Artikel 3.4 restbijstand: Ontbreekt concrete deadline voor e-mailtoezeggging (wanneer exact?). Geen verificatie van polis+identiteit vastgelegd in samenvatting",
+      "16:30 Burenconflict: KRITISCH — geen polis- of identiteitsverificatie vermeld. Geen dekkingscontrole (franchise EUR 250) uitgevoerd. Geen concrete deadline vastgelegd voor vervolgstappen. Onduidelijke afsluiting ('terugbellen') zonder duidelijk plan of vervolgafspraak. Onvoldoende juridische structurering (onderscheid tussen civiel recht, bestuursrecht vergunning en mogelijke schadevergoeding)",
+      "Dagrapportage: Geen controle op herhaalcontacten — onbekend of bellers vandaag al eerder hebben gebeld over dezelfde onderwerpen"
     ]
-  }
+  },
+  "verkeerdVerbonden": {
+    "aantal": 1,
+    "percentage": 33.3
+  },
+  "rechtsbijstandVerwijzingen": 0,
+  "categorieen": [
+    [
+      "Autoverzekering",
+      1
+    ],
+    [
+      "Consumentenrecht",
+      1
+    ],
+    [
+      "Bestuursrecht",
+      1
+    ],
+    [
+      "Burenrecht/Erfrecht",
+      1
+    ]
+  ]
 }

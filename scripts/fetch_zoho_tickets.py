@@ -41,6 +41,9 @@ def fetch_tickets(access_token, limit=100):
         'limit': limit,
         'sortBy': '-createdTime',
         'include': 'contacts',
+        # Expliciet opvragen — net als modifiedTime eerder bleek, geeft Zoho
+        # niet elk veld standaard terug zonder dit expliciet te vragen.
+        'fields': 'ticketNumber,subject,status,priority,createdTime,webUrl,channel,email',
     })
     req = urllib.request.Request(url, headers={
         'Authorization': f'Zoho-oauthtoken {access_token}',
@@ -81,7 +84,7 @@ def main():
             continue
 
         contact = t.get('contact') or {}
-        klant = (contact.get('firstName', '') + ' ' + contact.get('lastName', '')).strip()
+        klant = ((contact.get('firstName') or '') + ' ' + (contact.get('lastName') or '')).strip()
         if not klant:
             klant = t.get('email') or 'Onbekend'
 
@@ -94,14 +97,23 @@ def main():
             'statusType': t.get('statusType', ''),
             'prioriteit': t.get('priority') or 'Niet ingesteld',
             'webUrl': t.get('webUrl', ''),
+            'channel': t.get('channel') or 'ONBEKEND',
         })
 
     entries.sort(key=lambda e: e['tijd'])
+
+    # Kanaalverdeling (e-mail vs. telefonisch vs. overig) — telkens het
+    # ruwe Zoho-channel-veld, zodat de frontend zelf de labels kan bepalen
+    # en we niets verzinnen over kanalen die we niet kennen.
+    channel_counts = {}
+    for e in entries:
+        channel_counts[e['channel']] = channel_counts.get(e['channel'], 0) + 1
 
     result = {
         'date': today_str,
         'generated_at': datetime.now(timezone.utc).strftime('%Y-%m-%dT%H:%M:%SZ'),
         'tickets': entries,
+        'channelCounts': channel_counts,
     }
 
     os.makedirs('data', exist_ok=True)
