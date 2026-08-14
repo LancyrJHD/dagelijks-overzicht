@@ -1,6 +1,6 @@
 {
   "date": "2026-08-14",
-  "generated_at": "2026-08-14T07:57:40Z",
+  "generated_at": "2026-08-14T09:14:36Z",
   "drukte": "rustig",
   "gesprekken": 1,
   "stats": {
@@ -16,11 +16,11 @@
       "tijd": "09:10",
       "titel": "Wouter van Arnhem",
       "personen": "Verzekerde: anoniem · Edgar Stam",
-      "samenvatting": "Beller Wouter van Arnhem werd gisteren verdacht van een zedenzaak met zijn zoontje; politie nam alles in beslag. Medewerker herkende dit als strafrechtelijk probleem buiten het domein van de juridische helpdesk en verwees expliciet door naar de rechtsbijstandsverzekering voor strafrechtelijke bijstand. Beller is automatisch geverifieerd via telefoonnummer (Zoho-koppeling), maar inhoudelijk juridisch advies over de zaak zelf is niet gegeven.",
+      "samenvatting": "Beller Wouter van Arnhem (geverifieerd via Zoho-match op telefoonnummer) belt over een strafrechtelijke zaak: hij wordt verdacht van een zedendelict met betrekking tot zijn zoontje, gisteren is zijn woning doorzocht en spullen in beslag genomen. De medewerker heeft erkend dat dit een strafzaak is waarvoor strafrechtelijke bijstand nodig is en heeft aangekondigd dit door te zetten naar de rechtsbijstandsverzekering. Geen inhoudelijk juridisch advies is gegeven; de focus lag op doorverwijzing naar de rechtsbijstandsafdeling.",
       "tags": [
         [
-          "tag-overig",
-          "Strafrecht"
+          "tag-bestuursrecht",
+          "Strafrecht/Strafrechtelijke bijstand"
         ]
       ],
       "uitkomst": [
@@ -37,12 +37,12 @@
   "acties": [],
   "analyse": {
     "goed": [
-      "09:10 Wouter van Arnhem: Identiteit correct geverifieerd via telefoonnummer (Zoho-koppeling)",
-      "09:10 Wouter van Arnhem: Medewerker herkende strafrechtelijk karakter van de zaak en verwees expliciet door naar rechtsbijstandsverzekering/Brandmeester in plaats van ongequalificeerd advies te geven",
-      "09:10 Wouter van Arnhem: Juiste afbakening van helpdesk-domein (civiel recht) versus strafrecht"
+      "09:10 Wouter van Arnhem: Identiteit correct geverifieerd via Zoho-match op telefoonnummer",
+      "09:10 Wouter van Arnhem: Medewerker herkende juist dat dit een strafrechtelijke zaak betrof waarvoor specialistische bijstand nodig is",
+      "09:10 Wouter van Arnhem: Passende doorverwijzing naar rechtsbijstandsafdeling (Brandmeester) zonder ongepast inhoudelijk advies"
     ],
     "beter": [
-      "09:10 Wouter van Arnhem: Geen concrete deadline of vervolgafspraak vastgelegd voor wanneer beller contact opneemt met Brandmeester of wat volgende stappen zijn"
+      "09:10 Wouter van Arnhem: Geen concrete deadline/vervolgmoment vermeld voor contact met rechtsbijstandsafdeling of terugkoppeling naar beller"
     ]
   },
   "verkeerdVerbonden": {
@@ -52,7 +52,7 @@
   "rechtsbijstandVerwijzingen": 1,
   "categorieen": [
     [
-      "Strafrecht",
+      "Strafrecht/Strafrechtelijke bijstand",
       1
     ]
   ]
