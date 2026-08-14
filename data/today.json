@@ -1,11 +1,11 @@
 {
   "date": "2026-08-14",
-  "generated_at": "2026-08-14T14:32:27Z",
+  "generated_at": "2026-08-14T15:56:29Z",
   "drukte": "matig",
   "gesprekken": 4,
   "stats": {
-    "opgelost": 0,
-    "brandmeester": 2,
+    "opgelost": 1,
+    "brandmeester": 1,
     "afkoop": 0,
     "terugbel": 0,
     "geenDekking": 2
@@ -16,11 +16,11 @@
       "tijd": "09:10",
       "titel": "Wouter van Arnhem",
       "personen": "Verzekerde: anoniem · Edgar Stam",
-      "samenvatting": "Beller Wouter van Arnhem belt over een strafrechtelijke zaak waarbij hij verdacht wordt van ontucht met zijn zoontje; politie heeft gisteren zijn spullen in beslag genomen. De medewerker herkent dit als een strafzaak waarvoor rechtsbijstand nodig is en verwijst door naar de rechtsbijstandsverzekeringsafdeling. Identiteit is geverifieerd via automatische systeemherkenning; geen inhoudelijk juridisch advies gegeven, maar correcte doorverwijzing naar rechtsbijstand uitgevoerd.",
+      "samenvatting": "De beller Wouter van Arnhem belt over een strafrechtelijke zaak waarbij hij verdacht wordt van een zedenmisdrijf tegen zijn zoon; gisteren zijn zijn spullen in beslag genomen. De medewerker heeft hem onmiddellijk doorverwezen naar de rechtsbijstandsverzekering voor strafrechtelijke bijstand. De beller is geverifieerd via Zoho-automatische herkenning op telefoonnummer, maar er is geen inhoudelijk juridisch advies gegeven omdat dit een strafzaak is die vereist professionele strafrechtelijke vertegenwoordiging.",
       "tags": [
         [
           "tag-bestuursrecht",
-          "Strafrecht/Bestuursrecht"
+          "Strafrecht/Procedurecht"
         ]
       ],
       "uitkomst": [
@@ -37,13 +37,8 @@
       "tijd": "13:14",
       "titel": "Autoverzkeering",
       "personen": "Verzekerde: anoniem · Edgar Stam",
-      "samenvatting": "Beller beide verkeerd nummer: hij had een autoverzekeringskwestie (schadeclaim na aanrijding), maar bereikt de juridische helpdesk. De medewerker stelde correct vast dat dit geen juridische vraag is en verwees de beller door naar het juiste servicenummer voor autoverzekering. De beller is nooit geverifieerd en geen juridisch advies is gegeven.",
-      "tags": [
-        [
-          "tag-overig",
-          "Autoverzekering (verkeerd kanaal)"
-        ]
-      ],
+      "samenvatting": "Beller belde per ongeluk het juridische helpdesk nummer met een vraag over autoverzekering/schadeclaim voor zijn beschadigde auto. De medewerker stelde vast dat dit niet onder de juridische helpdesk valt, informeerde de beller dat hij het verkeerde nummer had gebeld, en verwees hem door naar het juiste nummer voor autoverzekering. Identiteit is niet geverifieerd; inhoudelijk juridisch advies is niet gegeven.",
+      "tags": [],
       "uitkomst": [
         "outcome-geen-dekking",
         "Geen dekking"
@@ -58,16 +53,16 @@
       "tijd": "15:51",
       "titel": "Verkeerde helpdesk bereikt — doorverwijzing nodig",
       "personen": "Verzekerde: anoniem · Edgar Stam",
-      "samenvatting": "De beller belde de juridische helpdesk met een vraag over autoverzekering (ingangsdatum van een nieuwe autoverzekering wijzigen). De medewerker realiseerde zich direct dat dit een verkeerde helpdesk is en onderbreekt de beller om uit te leggen dat zij de juridische helpdesk is en niet het juiste team voor autoverzekeringskwesties. De medewerker geeft aan niet door te kunnen verbinden en kan daarom geen verdere hulp bieden.",
+      "samenvatting": "De beller belde de juridische helpdesk met een vraag over een autoverzekeringskwestie (ingang verzekering en ophalen auto). De medewerker erkende onmiddellijk dat dit een verkeerde helpdesk was en stelde vast dat de beller via een onjuist doorkiesnummer terecht was gekomen. Er is geen inhoudelijk juridisch advies gegeven omdat dit geen juridische zaak betrof en de medewerker expliciet aangaf hier geen verstand van te hebben en niet door te kunnen verbinden.",
       "tags": [
         [
           "tag-overig",
-          "Autoverzekering (niet-juridisch)"
+          "Verkeerde helpdesk"
         ]
       ],
       "uitkomst": [
         "outcome-geen-dekking",
-        "Verkeerd bereikt – geen juridische zaak"
+        "Geen dekking"
       ],
       "terugbel": false,
       "verkeerdVerbonden": true,
@@ -79,20 +74,20 @@
       "tijd": "15:57",
       "titel": "Kapotte auto – rechtsbijstandverzekering en correspondentie",
       "personen": "Verzekerde: anoniem · Edgar Stam",
-      "samenvatting": "Beller E. Buyuk belt over een kapotte auto die hij gekocht heeft; de verkoper weigert te betalen en de zaak loopt al sinds juli. De medewerker heeft de beller geverifieerd via automatische herkenning op telefoonnummer (Zoho-match) en heeft inhoudelijk advies gegeven: correspondentie/documenten opvragen, een schadernummer aanvragen, en de zaak doorverwijzen naar de rechtsbijstandsverzekering-uitvoerder. Dit is een daadwerkelijke doorverwijzing naar rechtsbijstand voor verdere behandeling.",
+      "samenvatting": "# Kern van het geschil\n\nVerzekerde heeft een kapotte auto gekocht bij een garage. De auto bleek al bij aankoop gebreken te hebben, waarvan de garage op de hoogte was. Verzekerde heeft de garage meerdere malen gewaarschuwd en aangeboden het te schikken (andere auto), maar de garage doet te weinig om ",
       "tags": [
         [
-          "tag-consument",
-          "Consumentenrecht"
+          "tag-overig",
+          "Overig"
         ]
       ],
       "uitkomst": [
-        "outcome-brandmeester",
-        "Doorverwezen naar Brandmeester"
+        "outcome-opgelost",
+        "Telefonisch opgelost"
       ],
       "terugbel": false,
       "verkeerdVerbonden": false,
-      "rechtsbijstandVerwijzing": true,
+      "rechtsbijstandVerwijzing": false,
       "adviesGegeven": true,
       "identiteitGeverifieerd": true
     }
@@ -100,36 +95,33 @@
   "acties": [],
   "analyse": {
     "goed": [
-      "09:10 Wouter van Arnhem: correcte herkenning van strafrechtelijke zaak, juiste doorverwijzing naar rechtsbijstand zonder inhoudelijk advies",
-      "15:57 E. Buyuk: identiteit geverifieerd via Zoho-telefonisch match, inhoudelijk advies gegeven (correspondentie/documenten, schadernummer), doorverwijzing naar rechtsbijstand uitgevoerd",
-      "13:14 Autoverzekering: medewerker herkende correct dat dit geen juridische zaak is en verwees door naar juiste servicenummer",
-      "15:51 Verkeerde helpdesk: medewerker onderbrak correct om uit te leggen dat dit de juridische helpdesk is en verwees af"
+      "09:10 Wouter van Arnhem: Correct herkend dat strafzaak vereist professionele strafrechtelijke bijstand; meteen doorverwezen naar Brandmeester in plaats van ongespecialiseerd advies te geven.",
+      "09:10 Wouter van Arnhem: Identiteit geverifieerd via Zoho-automatische herkenning op telefoonnummer.",
+      "13:14 Autoverzekering: Correct vastgesteld dat autoverzekering buiten het juridische helpdesk-mandaat valt; beller direct doorverwezen naar juiste afdeling.",
+      "15:51 Verkeerde helpdesk bereikt: Medewerker erkende onmiddellijk dat dit verkeerde kanaal was en gaf geen ongefundeerd advies; identiteit geverifieerd.",
+      "15:57 Kapotte auto: Identiteit geverifieerd; zaak telefonisch opgelost."
     ],
     "beter": [
-      "15:57 E. Buyuk: zaak loopt sinds juli — geen concrete deadline voor vervolgstap bij Brandmeester benoemd; bij doorverwijzing naar rechtsbijstand altijd meenemen wanneer beller mag verwachten contact te krijgen",
-      "15:51 Verkeerde helpdesk: medewerker kon niet doorverbinden naar juiste team; zou beter zijn geweest het correcte nummer of contactgegevens voor autoverzekering mee te geven (nu ontbreekt vervolgcontactinfo)"
+      "15:57 Kapotte auto: Samenvatting is incompleet ('waarvan de garage op de hoogte was. Verzekerde heeft de garage meerdere malen gewaarschuwd en aangeboden het te schikken (andere auto), maar de garage doet te weinig om [AFGEBROKEN]'). Onmogelijk te bepalen of dekkingscontrole (franchise EUR 250) en concrete deadlines voor vervolgstappen zijn vastgelegd. Vervolledig rapportage in systeem voor toekomstige controle.",
+      "09:10 Wouter van Arnhem: Hoewel doorverwijzing correct was, ontbreekt een concrete deadline voor vervolgcontact via Brandmeester (bijv. 'U ontvangt morgen contact van Brandmeester')."
     ]
   },
   "verkeerdVerbonden": {
     "aantal": 2,
     "percentage": 50.0
   },
-  "rechtsbijstandVerwijzingen": 2,
+  "rechtsbijstandVerwijzingen": 1,
   "categorieen": [
     [
-      "Strafrecht/Bestuursrecht",
+      "Strafrecht/Procedurecht",
       1
     ],
     [
-      "Autoverzekering (verkeerd kanaal)",
+      "Verkeerde helpdesk",
       1
     ],
     [
-      "Autoverzekering (niet-juridisch)",
-      1
-    ],
-    [
-      "Consumentenrecht",
+      "Overig",
       1
     ]
   ]
