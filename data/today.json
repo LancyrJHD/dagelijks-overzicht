@@ -1,6 +1,6 @@
 {
   "date": "2026-08-14",
-  "generated_at": "2026-08-14T11:48:30Z",
+  "generated_at": "2026-08-14T13:16:35Z",
   "drukte": "rustig",
   "gesprekken": 2,
   "stats": {
@@ -10,17 +10,17 @@
     "terugbel": 0,
     "geenDekking": 1
   },
-  "score": 8.5,
+  "score": 8.8,
   "conversations": [
     {
       "tijd": "09:10",
       "titel": "Wouter van Arnhem",
       "personen": "Verzekerde: anoniem · Edgar Stam",
-      "samenvatting": "Beller Wouter van Arnhem werd gisteren verdacht van een zedenzaak met zijn zoontje; politie nam alles in beslag. De medewerker identificeerde de beller automatisch via het telefoonnummer in Zoho en erkende dit een strafrechtelijke zaak is die buiten de scope van juridische telefonische helpdesk valt. De beller werd expliciet doorverwezen naar de rechtsbijstandsverzekering voor strafrechtelijke bijstand; geen inhoudelijk juridisch advies is gegeven over de zaak zelf.",
+      "samenvatting": "Beller Wouter van Arnhem werd gisteren verdacht van een zedenmisdrijf tegen zijn zoon en heeft huiszoeking ondergaan waarbij apparaten in beslag werden genomen. De medewerker heeft hem onmiddellijk doorverwezen naar de rechtsbijstandsverzekering voor strafrechtelijke bijstand, aangezien dit een strafrechtelijke zaak betreft die buiten het bereik van eerstelijns juridisch advies valt. Beller is via telefoonnummer automatisch geverifieerd in het systeem; inhoudelijk advies is bewust niet gegeven omdat dit om strafrechtelijke bijstand gaat.",
       "tags": [
         [
-          "tag-overig",
-          "Strafrecht"
+          "tag-bestuursrecht",
+          "Strafrecht/Publiekrecht"
         ]
       ],
       "uitkomst": [
@@ -37,7 +37,7 @@
       "tijd": "13:14",
       "titel": "Autoverzkeering",
       "personen": "Verzekerde: anoniem · Edgar Stam",
-      "samenvatting": "Beller belde met een vraag over schadeclaim autoverzekering (geparkeerde auto aangereden). De medewerker stelde vast dat dit een autoverzekeringsvraag betreft en dus niet thuishoort bij de juridische helpdesk (dit is een schadeclaimvraag). De beller werd correct doorverwezen naar het juiste nummer voor autoverzekering. Geen juridisch advies gegeven.",
+      "samenvatting": "Beller belde de juridische helpdesk met een vraag over autoverzekering (schadeclaim na parkeetongeluk). De medewerker stelde correct vast dat dit geen juridische vraag betreft maar een verzekeringszaak, en verwees de beller door naar het juiste nummer voor autoverzekering. Identiteit werd automatisch geverifieerd via telefoonnummer in het systeem, maar geen inhoudelijk juridisch advies werd gegeven omdat de zaak niet tot de taakstelling van de juridische helpdesk behoort.",
       "tags": [
         [
           "tag-overig",
@@ -58,14 +58,14 @@
   "acties": [],
   "analyse": {
     "goed": [
-      "09:10 Wouter van Arnhem: Correct en pro-actief herkend dat strafrechtelijke zaak buiten scope valt; beller werd expliciet doorverwezen naar rechtsbijstandsverzekering voor strafrechtelijke bijstand",
-      "09:10 Wouter van Arnhem: Identiteit correct geverifieerd via telefoonnummer in Zoho",
-      "13:14 Autoverzekering: Juist onderkend dat schadeclaimvraag autoverzekering niet thuishoort bij juridische helpdesk; correcte doorverwijzing naar autoverzekeringsnummer",
-      "13:14 Autoverzekering: Identiteit correct geverifieerd"
+      "09:10 Wouter van Arnhem: Juiste professionele grenzen gesteld — strafrechtelijke zaak correct herkend en direct doorverwezen naar rechtsbijstandsverzekering (Brandmeester), buiten taakstelling eerstelijns juridisch advies.",
+      "09:10 Wouter van Arnhem: Identiteit via telefoonnummer automatisch geverifieerd in systeem — adequaat voor intake.",
+      "13:14 Autoverzekering: Juiste taakafbakening toegepast — verzekeringszaak correct herkend als buiten taakstelling juridische helpdesk en direct doorverwezen naar juiste nummer.",
+      "13:14 Autoverzekering: Identiteit automatisch geverifieerd via telefoonnummer — adequate verificatieprocedure."
     ],
     "beter": [
-      "09:10 Wouter van Arnhem: Geen concrete vervolgdeadline of vervolgplan afgesproken voor eventuele follow-up met rechtsbijstandsverzekering",
-      "13:14 Autoverzekering: Geen concrete vervolgdeadline of vervolginformatie vastgelegd voor het contactmoment met autoverzekering"
+      "09:10 Wouter van Arnhem: Bij doorverwijzing naar rechtsbijstandsverzekering zou goed zijn geweest een concrete deadline af te spreken voor vervolgcontact (bijv. 'belt u vandaag nog met Brandmeester') om escalatie van deze gevoelige strafrechtelijke situatie te monitoren.",
+      "13:14 Autoverzekering: Bij doorverwijzing naar autoverzekeringsnummer zou een concrete deadline of vervolgstap kunnen helpen (bijv. 'u wordt doorverbonden met het verzekeringsnummer' of 'verwachting: contact binnen 24 uur'), hoewel hier sprake is van routering naar juiste afdeling."
     ]
   },
   "verkeerdVerbonden": {
@@ -75,7 +75,7 @@
   "rechtsbijstandVerwijzingen": 1,
   "categorieen": [
     [
-      "Strafrecht",
+      "Strafrecht/Publiekrecht",
       1
     ],
     [
