@@ -1,6 +1,6 @@
 {
   "date": "2026-08-14",
-  "generated_at": "2026-08-14T09:14:36Z",
+  "generated_at": "2026-08-14T10:34:09Z",
   "drukte": "rustig",
   "gesprekken": 1,
   "stats": {
@@ -16,11 +16,11 @@
       "tijd": "09:10",
       "titel": "Wouter van Arnhem",
       "personen": "Verzekerde: anoniem · Edgar Stam",
-      "samenvatting": "Beller Wouter van Arnhem (geverifieerd via Zoho-match op telefoonnummer) belt over een strafrechtelijke zaak: hij wordt verdacht van een zedendelict met betrekking tot zijn zoontje, gisteren is zijn woning doorzocht en spullen in beslag genomen. De medewerker heeft erkend dat dit een strafzaak is waarvoor strafrechtelijke bijstand nodig is en heeft aangekondigd dit door te zetten naar de rechtsbijstandsverzekering. Geen inhoudelijk juridisch advies is gegeven; de focus lag op doorverwijzing naar de rechtsbijstandsafdeling.",
+      "samenvatting": "Beller Wouter van Arnhem belt over een strafrechtelijk onderzoek naar een vermeend zedenmisdrijf tegen zijn zoontje, waarbij gisteren door politie zijn woning is doorzocht en apparatuur in beslag is genomen. De medewerker heeft de beller geverifieerd via automatische systeemkoppeling (telefoonnummer), maar geen inhoudelijk juridisch advies gegeven; in plaats daarvan heeft hij onmiddellijk doorverwezen naar de rechtsbijstandsverzekering voor strafrechtelijke bijstand, omdat dit zaak vereist specialistische strafrecht-ondersteuning.",
       "tags": [
         [
-          "tag-bestuursrecht",
-          "Strafrecht/Strafrechtelijke bijstand"
+          "tag-overig",
+          "Strafrecht"
         ]
       ],
       "uitkomst": [
@@ -37,12 +37,12 @@
   "acties": [],
   "analyse": {
     "goed": [
-      "09:10 Wouter van Arnhem: Identiteit correct geverifieerd via Zoho-match op telefoonnummer",
-      "09:10 Wouter van Arnhem: Medewerker herkende juist dat dit een strafrechtelijke zaak betrof waarvoor specialistische bijstand nodig is",
-      "09:10 Wouter van Arnhem: Passende doorverwijzing naar rechtsbijstandsafdeling (Brandmeester) zonder ongepast inhoudelijk advies"
+      "09:10 Wouter van Arnhem: Identiteit correct geverifieerd via automatische systeemkoppeling (telefoonnummer).",
+      "09:10 Wouter van Arnhem: Medewerker herkende correct dat dit een strafrechtszaak betreft en geen generiek juridisch advies kon geven; passende doorverwijzing naar gespecialiseerde rechtsbijstandsverzekering (Brandmeester) in plaats van ondeskundig advies.",
+      "09:10 Wouter van Arnhem: Gevoelige zaak (vermeend zedenmisdrijf tegen kind) professioneel en empathisch afgehandeld door snelle doorverwijzing naar bevoegd team."
     ],
     "beter": [
-      "09:10 Wouter van Arnhem: Geen concrete deadline/vervolgmoment vermeld voor contact met rechtsbijstandsafdeling of terugkoppeling naar beller"
+      "09:10 Wouter van Arnhem: In dossier opnemen wat het vervolgstappenplan voor de beller precies is en wanneer hij contact mag verwachten van Brandmeester (concrete deadline communiceren voor vervolgcontact)."
     ]
   },
   "verkeerdVerbonden": {
@@ -52,7 +52,7 @@
   "rechtsbijstandVerwijzingen": 1,
   "categorieen": [
     [
-      "Strafrecht/Strafrechtelijke bijstand",
+      "Strafrecht",
       1
     ]
   ]
