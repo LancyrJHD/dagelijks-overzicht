@@ -358,10 +358,16 @@ def main():
             if zoho_match:
                 identiteit_geverifieerd = True
 
+        # Naam van de verzekerde: gebruik NOOIT de Granola/ASR-transcriptie hiervoor
+        # (spraakherkenning verhaspelt namen regelmatig, bijv. "Fletse Noe" i.p.v. de
+        # echte naam). Gebruik in plaats daarvan de naam uit de gematchte Zoho Desk-
+        # ticket (betrouwbaar, want handmatig/systematisch vastgelegd). Zonder match
+        # blijft de naam "anoniem" i.p.v. een mogelijk foutieve gok.
+        klant_naam = zoho_match if zoho_match else "anoniem"
         conversations.append({
             "tijd": tijdstip,
             "titel": title,
-            "personen": f"Verzekerde: anoniem · {medewerker}",
+            "personen": f"Verzekerde: {klant_naam} · {medewerker}",
             "samenvatting": samenvatting,
             "tags": tags,
             "uitkomst": uitkomst,
