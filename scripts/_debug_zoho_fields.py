@@ -1,8 +1,8 @@
 #!/usr/bin/env python3
-"""EENMALIG diagnose-script v2: dumpt de volledige ruwe ticketvelden (incl.
-customFields) van de meest recente tickets in Zoho Desk. v1 gaf een 422 op
-include=customFields -- customFields moet blijkbaar via het fields-park
-worden opgevraagd i.p.v. include. Niet onderdeel van de reguliere pipeline."""
+"""EENMALIG diagnose-script v3: v1/v2 lieten zien dat de tickets-LIJST-endpoint
+geen customFields teruggeeft (ook niet via fields= of include=). Probeer nu
+het losse ticket-detail endpoint (/tickets/{id}) met include=customFields,
+wat volgens de Zoho Desk docs de plek is waar customFields wel verschijnen."""
 import os
 import json
 import urllib.request
@@ -30,47 +30,38 @@ def get_access_token():
         return json.loads(resp.read())['access_token']
 
 
-def try_fetch(access_token, params, label):
-    url = f"{DESK_BASE}/tickets?" + urllib.parse.urlencode(params)
+def get(access_token, url):
     req = urllib.request.Request(url, headers={
         'Authorization': f'Zoho-oauthtoken {access_token}',
         'orgId': ORG_ID,
     })
-    print(f"\n>>> Poging: {label}")
     try:
         with urllib.request.urlopen(req, timeout=30) as resp:
-            return json.loads(resp.read()).get('data', [])
+            return json.loads(resp.read())
     except urllib.error.HTTPError as e:
-        body = e.read().decode(errors='replace')
-        print(f"  FOUT {e.code}: {body[:500]}")
+        print(f"  FOUT {e.code}: {e.read().decode(errors='replace')[:500]}")
         return None
 
 
 def main():
     access_token = get_access_token()
 
-    # Poging A: customFields via 'fields' param
-    tickets = try_fetch(access_token, {
-        'limit': 5,
-        'sortBy': '-createdTime',
-        'include': 'contacts',
-        'fields': 'ticketNumber,subject,status,priority,createdTime,webUrl,channel,email,customFields',
-    }, "fields= ...,customFields")
+    # Recente tickets ophalen om een ticket-ID te pakken
+    list_url = f"{DESK_BASE}/tickets?" + urllib.parse.urlencode({
+        'limit': 5, 'sortBy': '-createdTime',
+    })
+    tickets = (get(access_token, list_url) or {}).get('data', [])
 
-    if not tickets:
-        # Poging B: gewoon alles ophalen zonder fields-restrictie
-        tickets = try_fetch(access_token, {
-            'limit': 5,
-            'sortBy': '-createdTime',
-            'include': 'contacts',
-        }, "geen fields-restrictie (default response)")
-
-    print("\n=== RESULTAAT ===")
-    for t in (tickets or []):
-        print(f"\n--- Ticket {t.get('ticketNumber')} | {t.get('subject')} ---")
-        print("Top-level keys:", sorted(t.keys()))
-        if 'customFields' in t:
-            print("customFields:", json.dumps(t.get('customFields'), ensure_ascii=False, indent=2))
+    for t in tickets:
+        tid = t.get('id')
+        print(f"\n=== Ticket-detail voor {t.get('ticketNumber')} | {t.get('subject')} (id={tid}) ===")
+        detail_url = f"{DESK_BASE}/tickets/{tid}?" + urllib.parse.urlencode({
+            'include': 'customFields',
+        })
+        detail = get(access_token, detail_url)
+        if detail:
+            print("Top-level keys:", sorted(detail.keys()))
+            print("customFields:", json.dumps(detail.get('customFields'), ensure_ascii=False, indent=2))
 
 
 if __name__ == '__main__':
