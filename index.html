@@ -3859,8 +3859,13 @@ function renderDashboard(period) {
         <div class="chart-card-header">
           <div class="chart-card-title">Doorverwijzingen rechtsbijstand</div>
         </div>
-        <div style="font-size:32px;font-weight:700;color:var(--navy)">${rechtsbijstandCount}</div>
-        <div style="color:var(--ink-50);font-size:12px;margin-top:4px">van ${totalGesprekken} gesprekken &middot; AI-inschatting</div>
+        ${period === 'vandaag' ? `
+        <div style="font-size:32px;font-weight:700;color:var(--navy)">${zohoBrandmeesterCount}</div>
+        <div style="color:var(--ink-50);font-size:12px;margin-top:4px">van ${zohoTicketsTodayTotal} Zoho-tickets &middot; "Doorgezet naar BrandMR" (feit, geen inschatting)</div>
+        ` : `
+        <div style="font-size:32px;font-weight:700;color:var(--ink-30)">&mdash;</div>
+        <div style="color:var(--ink-50);font-size:12px;margin-top:4px">Alleen beschikbaar voor vandaag (Zoho-historie niet bewaard)</div>
+        `}
       </div>
     </div>
     <div class="card">
@@ -4069,6 +4074,8 @@ async function loadZohoTickets() {
     const live = await resp.json();
     if (Array.isArray(live.tickets)) zohoTicketsToday = live.tickets;
     if (live.channelCounts && typeof live.channelCounts === 'object') zohoChannelCounts = live.channelCounts;
+    if (typeof live.brandmeesterCount === 'number') zohoBrandmeesterCount = live.brandmeesterCount;
+    zohoTicketsTodayTotal = zohoTicketsToday.length;
   } catch (e) {
     console.log('[ZohoTickets] Niet beschikbaar');
   }
@@ -4310,6 +4317,8 @@ const MANAGEMENT_EMAILS = ['jackiestam@htjz.nl', 'edgarstam@htjz.nl', 'monikaboo
 let isManagement = false;
 let managementViewActive = false;
 let zohoChannelCounts = {};
+let zohoBrandmeesterCount = 0;
+let zohoTicketsTodayTotal = 0;
 
 function kanaalLabel(raw) {
   const map = {

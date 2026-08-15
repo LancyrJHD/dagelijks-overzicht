@@ -36,6 +36,23 @@ def get_access_token():
         return json.loads(resp.read())['access_token']
 
 
+def fetch_ticket_detail(access_token, ticket_id):
+    """Haalt het volledige ticket-detail op (incl. customFields). De
+    tickets-lijst-endpoint geeft customFields niet terug, het detail-endpoint
+    wel, standaard zonder extra include/fields-parameters."""
+    url = f"{DESK_BASE}/tickets/{ticket_id}"
+    req = urllib.request.Request(url, headers={
+        'Authorization': f'Zoho-oauthtoken {access_token}',
+        'orgId': ORG_ID,
+    })
+    try:
+        with urllib.request.urlopen(req, timeout=30) as resp:
+            return json.loads(resp.read())
+    except Exception as e:
+        print(f"  WAARSCHUWING: kon ticket-detail {ticket_id} niet ophalen ({e})")
+        return None
+
+
 def fetch_tickets(access_token, limit=100):
     url = f"{DESK_BASE}/tickets?" + urllib.parse.urlencode({
         'limit': limit,
@@ -88,6 +105,16 @@ def main():
         if not klant:
             klant = t.get('email') or 'Onbekend'
 
+        # "Doorgezet naar BrandMR" is een echt Zoho-veld (custom field op de
+        # ticket) -- dus een FEIT, geen AI-inschatting. Alleen te achterhalen
+        # via het ticket-detail-endpoint (zie fetch_ticket_detail hierboven).
+        doorgezet_brandmeester = False
+        detail = fetch_ticket_detail(access_token, t.get('id'))
+        if detail:
+            cf = detail.get('customFields') or {}
+            raw = cf.get('Doorgezet naar BrandMR')
+            doorgezet_brandmeester = str(raw).strip().lower() == 'true'
+
         entries.append({
             'ticketNumber': t.get('ticketNumber', ''),
             'tijd': dt_ams.strftime('%H:%M'),
@@ -98,6 +125,7 @@ def main():
             'prioriteit': t.get('priority') or 'Niet ingesteld',
             'webUrl': t.get('webUrl', ''),
             'channel': t.get('channel') or 'ONBEKEND',
+            'doorgezetBrandmeester': doorgezet_brandmeester,
         })
 
     entries.sort(key=lambda e: e['tijd'])
@@ -109,11 +137,14 @@ def main():
     for e in entries:
         channel_counts[e['channel']] = channel_counts.get(e['channel'], 0) + 1
 
+    brandmeester_count = sum(1 for e in entries if e.get('doorgezetBrandmeester'))
+
     result = {
         'date': today_str,
         'generated_at': datetime.now(timezone.utc).strftime('%Y-%m-%dT%H:%M:%SZ'),
         'tickets': entries,
         'channelCounts': channel_counts,
+        'brandmeesterCount': brandmeester_count,
     }
 
     os.makedirs('data', exist_ok=True)
