@@ -1,137 +1,26 @@
 {
-  "date": "2026-08-14",
-  "generated_at": "2026-08-14T17:00:42Z",
-  "drukte": "matig",
-  "gesprekken": 4,
+  "date": "2026-08-15",
+  "generated_at": "2026-08-15T04:11:08Z",
+  "drukte": "rustig",
+  "gesprekken": 0,
   "stats": {
     "opgelost": 0,
-    "brandmeester": 2,
+    "brandmeester": 0,
     "afkoop": 0,
     "terugbel": 0,
-    "geenDekking": 2
+    "geenDekking": 0
   },
-  "score": 7.8,
-  "conversations": [
-    {
-      "tijd": "09:10",
-      "titel": "Wouter van Arnhem",
-      "personen": "Verzekerde: anoniem · Edgar Stam",
-      "samenvatting": "Beller Wouter van Arnhem (geverifieerd via Zoho-systeem op telefoonnummer) belt over een strafrechtelijk onderzoek naar verdenking van een zedenmisdrijf involving zijn zoontje, waarop gisteren huiszoeking heeft plaatsgevonden. De medewerker heeft erkend dat dit een strafzaak is waarvoor rechtsbijstand nodig is en heeft de zaak expliciet doorverwezen naar de rechtsbijstandsverzekeraar. Inhoudelijk juridisch advies is niet gegeven; de medewerker heeft alleen vastgesteld dat dit om strafrecht gaat en doorverwezen.",
-      "tags": [
-        [
-          "tag-bestuursrecht",
-          "Strafrecht (strafrechtelijke verdenking)"
-        ]
-      ],
-      "uitkomst": [
-        "outcome-brandmeester",
-        "Doorverwezen naar Brandmeester"
-      ],
-      "terugbel": false,
-      "verkeerdVerbonden": false,
-      "rechtsbijstandVerwijzing": true,
-      "adviesGegeven": false,
-      "identiteitGeverifieerd": true
-    },
-    {
-      "tijd": "13:14",
-      "titel": "Autoverzkeering",
-      "personen": "Verzekerde: anoniem · Edgar Stam",
-      "samenvatting": "Beller belt over een autoverzekeringsclaim (schaderapport na parkeerongeluk). De medewerker stelt vast dat dit een autoverzekeringsvraag is en geen juridische kwestie, en wijst de beller correct door naar de juiste afdeling (auto/verzekeringen). Beller is niet geverifieerd en geen inhoudelijk juridisch advies is gegeven.",
-      "tags": [
-        [
-          "tag-overig",
-          "Autoverzekering (geen juridische helpdesk-materie)"
-        ]
-      ],
-      "uitkomst": [
-        "outcome-geen-dekking",
-        "Verkeerd verbonden / niet competent"
-      ],
-      "terugbel": false,
-      "verkeerdVerbonden": true,
-      "rechtsbijstandVerwijzing": false,
-      "adviesGegeven": false,
-      "identiteitGeverifieerd": false
-    },
-    {
-      "tijd": "15:51",
-      "titel": "Verkeerde helpdesk bereikt — doorverwijzing nodig",
-      "personen": "Verzekerde: anoniem · Edgar Stam",
-      "samenvatting": "De beller belt met een vraag over een autoverzekeringspolis en een verzoek tot wijziging van ingangsdatum. De medewerker stelt correct vast dat dit een autoverzekeringszaak is en geen juridische materie, en meldt dat dit niet bij de juridische helpdesk hoort. De beller wordt niet doorverbonden omdat doorverbinding niet mogelijk is; het gesprek eindigt zonder verdere hulp.",
-      "tags": [
-        [
-          "tag-overig",
-          "Autoverzekering"
-        ]
-      ],
-      "uitkomst": [
-        "outcome-geen-dekking",
-        "Geen dekking"
-      ],
-      "terugbel": false,
-      "verkeerdVerbonden": true,
-      "rechtsbijstandVerwijzing": false,
-      "adviesGegeven": false,
-      "identiteitGeverifieerd": true
-    },
-    {
-      "tijd": "15:57",
-      "titel": "Kapotte auto – rechtsbijstandverzekering en correspondentie",
-      "personen": "Verzekerde: anoniem · Edgar Stam",
-      "samenvatting": "Beller E. Buyuk belt over een kapotte auto die hij heeft gekocht; de verkoper weigert te betalen voor reparatie. Beller is geverifieerd via Zoho-automatische herkenning op telefoonnummer. De medewerker geeft geen inhoudelijk juridisch advies over de zaak zelf, maar verwijst de beller expliciet door naar de rechtsbijstandsuitvoerder via een schadelnummer; eerst vraagt de medewerker om alle correspondentie en documenten per e-mail in te dienen.",
-      "tags": [
-        [
-          "tag-consument",
-          "Consumentenrecht"
-        ]
-      ],
-      "uitkomst": [
-        "outcome-brandmeester",
-        "Doorverwezen naar Brandmeester"
-      ],
-      "terugbel": false,
-      "verkeerdVerbonden": false,
-      "rechtsbijstandVerwijzing": true,
-      "adviesGegeven": false,
-      "identiteitGeverifieerd": true
-    }
-  ],
+  "score": 0,
+  "conversations": [],
   "acties": [],
   "analyse": {
-    "goed": [
-      "09:10 Wouter van Arnhem: Correcte herkenning van strafzaak en snelle, passende doorverwijzing naar rechtsbijstandsverzekeraar zonder inhoudelijk advies.",
-      "09:10 Wouter van Arnhem: Identiteit geverifieerd via Zoho-systeem op telefoonnummer.",
-      "13:14 Autoverzekering: Medewerker herkent terecht dat dit een verzekeringsclaim is, geen juridische kwestie, en verwijst naar juiste afdeling.",
-      "15:57 Kapotte auto: Identiteit geverifieerd via Zoho-automatische herkenning; medewerker vraagt correct om alle correspondentie/documenten in te dienen voordat doorverwijzing naar rechtsbijstandsuitvoerder plaatsvindt.",
-      "15:57 Kapotte auto: Correcte doorverwijzing naar Brandmeester met schadelnummer."
-    ],
-    "beter": [
-      "15:51 Verkeerde helpdesk bereikt: Hoewel correct vastgesteld dat dit geen juridische materie is, eindigt het gesprek zonder alternatieve oplossing. De medewerker zou contactgegevens van de juiste afdeling (auto/verzekeringen) moeten geven of vervolgstappen moeten uitleggen, in plaats van het gesprek af te sluiten.",
-      "13:14 Autoverzekering: Geen vervolgafspraak of duidelijke instructie aan beller gedocumenteerd; onduidelijk of beller echt doorverbonden is of zelf contact moet opnemen."
-    ]
+    "goed": [],
+    "beter": []
   },
   "verkeerdVerbonden": {
-    "aantal": 2,
-    "percentage": 50.0
+    "aantal": 0,
+    "percentage": 0.0
   },
-  "rechtsbijstandVerwijzingen": 2,
-  "categorieen": [
-    [
-      "Strafrecht (strafrechtelijke verdenking)",
-      1
-    ],
-    [
-      "Autoverzekering (geen juridische helpdesk-materie)",
-      1
-    ],
-    [
-      "Autoverzekering",
-      1
-    ],
-    [
-      "Consumentenrecht",
-      1
-    ]
-  ]
+  "rechtsbijstandVerwijzingen": 0,
+  "categorieen": []
 }
