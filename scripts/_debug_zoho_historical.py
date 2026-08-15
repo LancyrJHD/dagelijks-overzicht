@@ -1,10 +1,7 @@
 #!/usr/bin/env python3
-"""EENMALIG diagnose-script: het customFields-vinkje "Doorgezet naar BrandMR"
-blijkt onbetrouwbaar. Het echte signaal is een uitgaande e-mail naar de
-Brandmeester-intake met het vaste template. Test dit op ticket 2594
-(W. vanArnhem, 14 aug) -- een geval waarvan Granola bevestigt dat het is
-doorverwezen naar de Brandmeester -- om te zien hoe dat er in de
-ticket-conversations uitziet."""
+"""EENMALIG diagnose-script: zoek ticket #2542 (A. Zonneveld, "FW: Verzoek tot
+inzage") op -- bevestigd door Jackie als daadwerkelijk doorgezet naar
+Brandmeester -- en dump de volledige threads om het patroon te vinden."""
 import os
 import json
 import urllib.request
@@ -18,12 +15,6 @@ ORG_ID = os.environ.get('ZOHO_ORG_ID', '')
 
 DESK_BASE = 'https://desk.zoho.eu/api/v1'
 ACCOUNTS_URL = 'https://accounts.zoho.eu/oauth/v2/token'
-
-# Ticket-IDs verzameld in eerdere diagnose-rondes.
-TEST_TICKETS = {
-    '2594': '195464000013425284',  # W. vanArnhem, 14 aug -- bekend doorverwezen
-    '2587': '195464000013425xxx',  # placeholder, wordt hieronder alsnog opgezocht indien nodig
-}
 
 
 def get_access_token():
@@ -54,18 +45,35 @@ def get(access_token, url):
 def main():
     access_token = get_access_token()
 
-    ticket_id = '195464000013425284'  # ticket 2594, W. vanArnhem
+    # Zoek ticket op nummer via de search-endpoint.
+    search_url = f"{DESK_BASE}/tickets/search?" + urllib.parse.urlencode({
+        'ticketNumber': '2542',
+    })
+    result = get(access_token, search_url)
+    tickets = (result or {}).get('data', [])
+    if not tickets:
+        print("Niet gevonden via /tickets/search, probeer alternatieve aanpak...")
+        return
+    ticket_id = tickets[0].get('id')
+    print(f"Ticket #2542 gevonden, id={ticket_id}, threadCount={tickets[0].get('threadCount')}")
 
-    # Poging A: threads-endpoint
-    print(">>> /tickets/{id}/threads")
     threads = get(access_token, f"{DESK_BASE}/tickets/{ticket_id}/threads")
     if threads:
-        print(json.dumps(threads, ensure_ascii=False, indent=2)[:6000])
+        for th in threads.get('data', []):
+            print(f"\n--- Thread {th.get('id')} | direction={th.get('direction')} | channel={th.get('channel')} ---")
+            print("  fromEmailAddress:", th.get('fromEmailAddress'))
+            print("  to:", th.get('to'))
+            print("  cc:", th.get('cc'))
+            print("  bcc:", th.get('bcc'))
+            print("  summary:", th.get('summary'))
+            print("  author:", th.get('author'))
+            print("  createdTime:", th.get('createdTime'))
 
-    print("\n>>> /tickets/{id}/conversations")
-    conv = get(access_token, f"{DESK_BASE}/tickets/{ticket_id}/conversations")
-    if conv:
-        print(json.dumps(conv, ensure_ascii=False, indent=2)[:6000])
+            # Volledige content ophalen van deze specifieke thread.
+            detail = get(access_token, f"{DESK_BASE}/tickets/{ticket_id}/threads/{th.get('id')}")
+            if detail:
+                content = detail.get('content') or detail.get('plainText') or ''
+                print("  content (eerste 1500 tekens):", content[:1500])
 
 
 if __name__ == '__main__':
