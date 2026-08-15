@@ -3862,8 +3862,11 @@ function renderDashboard(period) {
         ${period === 'vandaag' ? `
         <div style="font-size:32px;font-weight:700;color:var(--navy)">${zohoBrandmeesterCount}</div>
         <div style="color:var(--ink-50);font-size:12px;margin-top:4px">van ${zohoTicketsTodayTotal} Zoho-tickets &middot; "Doorgezet naar BrandMR" (feit, geen inschatting)</div>
+        ` : (period === 'deze-week' || period === 'vorige-week') ? `
+        <div style="font-size:32px;font-weight:700;color:var(--navy)">${BRANDMR_WEEK_HISTORY[period].brandmeester} / ${BRANDMR_WEEK_HISTORY[period].totaal}</div>
+<div style="color:var(--ink-50);font-size:12px;margin-top:4px">${Math.round(BRANDMR_WEEK_HISTORY[period].brandmeester / BRANDMR_WEEK_HISTORY[period].totaal * 100)}% doorgezet naar BrandMR &middot; Zoho-historie (feit, geen inschatting)</div>
         ` : `
-        <div style="font-size:32px;font-weight:700;color:var(--ink-30)">&mdash;</div>
+<div style="font-size:32px;font-weight:700;color:var(--ink-30)">&mdash;</div>
         <div style="color:var(--ink-50);font-size:12px;margin-top:4px">Alleen beschikbaar voor vandaag (Zoho-historie niet bewaard)</div>
         `}
       </div>
@@ -4319,6 +4322,17 @@ let managementViewActive = false;
 let zohoChannelCounts = {};
 let zohoBrandmeesterCount = 0;
 let zohoTicketsTodayTotal = 0;
+// EENMALIG handmatig ingevoerd op basis van een Zoho Desk-diagnose (14-15 aug 2026).
+// Methode: uitgaande e-mailthread naar intake@brandmr.nl, zie scripts/fetch_zoho_tickets.py
+   NIET het onbetrouwbare customFields-vinkje. Geen live API-call vanuit de browser mogelijk
+// Zoho Desk heeft geen publieke CORS-toegang en de live pipeline bewaart geen historie.
+   TODO Task 15: vervangen zodra de bredere historische Zoho data-pipeline is gebouwd.
+// Let op: 2026-08-12 toont 0 van de 0 tickets, vermoedelijk een Zoho-paginatiegat
+   (normale werkdag), cijfer desondanks overgenomen zoals gerapporteerd door Zoho.
+const BRANDMR_WEEK_HISTORY = {
+  'vorige-week': { brandmeester: 4, totaal: 26 }, // ma 3 t/m vr 7 aug 2026
+  'deze-week': { brandmeester: 3, totaal: 16 }, // ma 10 t/m 15 aug 2026 (lopende week)
+   };
 
 function kanaalLabel(raw) {
   const map = {
