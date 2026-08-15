@@ -4324,11 +4324,11 @@ let zohoBrandmeesterCount = 0;
 let zohoTicketsTodayTotal = 0;
 // EENMALIG handmatig ingevoerd op basis van een Zoho Desk-diagnose (14-15 aug 2026).
 // Methode: uitgaande e-mailthread naar intake@brandmr.nl, zie scripts/fetch_zoho_tickets.py
-   NIET het onbetrouwbare customFields-vinkje. Geen live API-call vanuit de browser mogelijk
+//    NIET het onbetrouwbare customFields-vinkje. Geen live API-call vanuit de browser mogelijk
 // Zoho Desk heeft geen publieke CORS-toegang en de live pipeline bewaart geen historie.
-   TODO Task 15: vervangen zodra de bredere historische Zoho data-pipeline is gebouwd.
+//    TODO Task 15: vervangen zodra de bredere historische Zoho data-pipeline is gebouwd.
 // Let op: 2026-08-12 toont 0 van de 0 tickets, vermoedelijk een Zoho-paginatiegat
-   (normale werkdag), cijfer desondanks overgenomen zoals gerapporteerd door Zoho.
+//    (normale werkdag), cijfer desondanks overgenomen zoals gerapporteerd door Zoho.
 const BRANDMR_WEEK_HISTORY = {
   'vorige-week': { brandmeester: 4, totaal: 26 }, // ma 3 t/m vr 7 aug 2026
   'deze-week': { brandmeester: 3, totaal: 16 }, // ma 10 t/m 15 aug 2026 (lopende week)
