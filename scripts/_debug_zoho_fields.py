@@ -1,8 +1,8 @@
 #!/usr/bin/env python3
-"""EENMALIG diagnose-script v3: v1/v2 lieten zien dat de tickets-LIJST-endpoint
-geen customFields teruggeeft (ook niet via fields= of include=). Probeer nu
-het losse ticket-detail endpoint (/tickets/{id}) met include=customFields,
-wat volgens de Zoho Desk docs de plek is waar customFields wel verschijnen."""
+"""EENMALIG diagnose-script v4: 'include=customFields' gaf een 422 (niet
+toegestane include-waarde). Haal nu het ticket-detail zonder include-param op
+en dump ALLE top-level keys + volledige JSON, om te zien of custom fields
+(bijv. cf_* velden) gewoon standaard aanwezig zijn."""
 import os
 import json
 import urllib.request
@@ -39,29 +39,24 @@ def get(access_token, url):
         with urllib.request.urlopen(req, timeout=30) as resp:
             return json.loads(resp.read())
     except urllib.error.HTTPError as e:
-        print(f"  FOUT {e.code}: {e.read().decode(errors='replace')[:500]}")
+        print(f"  FOUT {e.code}: {e.read().decode(errors='replace')[:800]}")
         return None
 
 
 def main():
     access_token = get_access_token()
 
-    # Recente tickets ophalen om een ticket-ID te pakken
     list_url = f"{DESK_BASE}/tickets?" + urllib.parse.urlencode({
-        'limit': 5, 'sortBy': '-createdTime',
+        'limit': 3, 'sortBy': '-createdTime',
     })
     tickets = (get(access_token, list_url) or {}).get('data', [])
 
     for t in tickets:
         tid = t.get('id')
-        print(f"\n=== Ticket-detail voor {t.get('ticketNumber')} | {t.get('subject')} (id={tid}) ===")
-        detail_url = f"{DESK_BASE}/tickets/{tid}?" + urllib.parse.urlencode({
-            'include': 'customFields',
-        })
-        detail = get(access_token, detail_url)
+        print(f"\n=== Ticket-detail (zonder include) voor {t.get('ticketNumber')} | {t.get('subject')} ===")
+        detail = get(access_token, f"{DESK_BASE}/tickets/{tid}")
         if detail:
-            print("Top-level keys:", sorted(detail.keys()))
-            print("customFields:", json.dumps(detail.get('customFields'), ensure_ascii=False, indent=2))
+            print(json.dumps(detail, ensure_ascii=False, indent=2))
 
 
 if __name__ == '__main__':
