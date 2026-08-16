@@ -1,0 +1,26 @@
+name: Diagnose Zoom call history
+
+on:
+  workflow_dispatch:
+    inputs:
+      date:
+        description: 'Datum (YYYY-MM-DD), leeg = vandaag'
+        required: false
+        default: ''
+
+jobs:
+  diagnose:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Run diagnose script
+        env:
+          ZOOM_ACCOUNT_ID: ${{ secrets.ZOOM_ACCOUNT_ID }}
+          ZOOM_CLIENT_ID: ${{ secrets.ZOOM_CLIENT_ID }}
+          ZOOM_CLIENT_SECRET: ${{ secrets.ZOOM_CLIENT_SECRET }}
+          ZOOM_DATE: ${{ github.event.inputs.date }}
+        run: python scripts/fetch_zoom_calls.py
+        
