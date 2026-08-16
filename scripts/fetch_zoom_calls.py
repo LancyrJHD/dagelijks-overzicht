@@ -13,6 +13,7 @@ import json
 import base64
 import urllib.request
 import urllib.parse
+import urllib.error
 from datetime import datetime, timedelta
 
 ACCOUNT_ID = os.environ.get('ZOOM_ACCOUNT_ID', '')
@@ -32,6 +33,7 @@ MISSED_RESULTS = {'missed', 'no answer', 'no_answer', 'voicemail'}
 
 
 def get_access_token():
+    print(f"Diagnose: ACCOUNT_ID len={len(ACCOUNT_ID)}, CLIENT_ID len={len(CLIENT_ID)}, CLIENT_SECRET len={len(CLIENT_SECRET)}")
     creds = f'{CLIENT_ID}:{CLIENT_SECRET}'.encode()
     basic = base64.b64encode(creds).decode()
     data = urllib.parse.urlencode({
@@ -42,8 +44,13 @@ def get_access_token():
         'Authorization': f'Basic {basic}',
         'Content-Type': 'application/x-www-form-urlencoded',
     })
-    with urllib.request.urlopen(req, timeout=30) as resp:
-        return json.loads(resp.read())['access_token']
+    try:
+        with urllib.request.urlopen(req, timeout=30) as resp:
+            return json.loads(resp.read())['access_token']
+    except urllib.error.HTTPError as e:
+        body = e.read().decode(errors='replace')
+        print(f"Zoom token endpoint gaf HTTP {e.code} terug. Response body: {body}")
+        raise
 
 
 def get_call_history(access_token, date_str):
