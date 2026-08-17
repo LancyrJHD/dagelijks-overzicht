@@ -1,14 +1,14 @@
 {
   "date": "2026-08-17",
-  "generated_at": "2026-08-17T14:32:32Z",
+  "generated_at": "2026-08-17T15:28:52Z",
   "drukte": "rustig",
   "gesprekken": 1,
   "stats": {
-    "opgelost": 1,
+    "opgelost": 0,
     "brandmeester": 0,
     "afkoop": 0,
     "terugbel": 0,
-    "geenDekking": 0
+    "geenDekking": 1
   },
   "score": 8.5,
   "conversations": [
@@ -16,7 +16,7 @@
       "tijd": "09:01",
       "titel": "Daily Huddle",
       "personen": "Verzekerde: anoniem · Senne Duifhuis | Juridisch medewerker",
-      "samenvatting": "Dit is geen juridisch adviesgesprek maar een interne bedrijfsmeeting (daily huddle) van medewerkers van een advocatenkantoor. Het transcript bevat werkplanning, projectupdates en persoonlijke mededelingen, maar geen enkele juridische vraag van een verzekerdenklant. De beller is niet geverifieerd omdat verificatie niet relevant is in deze interne bedrijfscontext.",
+      "samenvatting": "Dit is een interne daily huddle-meeting van een advocatenkantoor (HTJZ/Stan Advocaat), geen telefonisch juridisch adviesgesprek met een verzekerdenklant. Het transcript bevat teamupdates over werkzaken, projecten en personeelsaangelegenheden. Dit is niet relevant voor de Lancyr Juridische Helpdesk.",
       "tags": [
         [
           "tag-overig",
@@ -24,8 +24,8 @@
         ]
       ],
       "uitkomst": [
-        "outcome-opgelost",
-        "Telefonisch opgelost"
+        "outcome-geen-dekking",
+        "Geen dekking"
       ],
       "terugbel": false,
       "verkeerdVerbonden": true,
@@ -37,10 +37,10 @@
   "acties": [],
   "analyse": {
     "goed": [
-      "09:01 Daily Huddle: Dit is correct ingedeeld als interne bedrijfsmeeting zonder klantcontact. Verificatie en juridisch advies zijn niet van toepassing op interne bedrijfscommunicatie."
+      "09:01 Daily Huddle: Correct geïdentificeerd dat dit een interne teammeeting is en niet een klantcontact via de Lancyr Juridische Helpdesk. Deze interne bijeenkomst vereist geen polis- of identiteitsverificatie van verzekerden."
     ],
     "beter": [
-      "Let op: Dit gesprek valt buiten de werkingsfeer van de kwaliteitstoets voor juridische advisering aan verzekerdenklanten. Voor toekomstige verslagen verduidelijken of interne bedrijfsmeetings moeten worden meegeteld in de dagelijkse statistieken."
+      "Dit gesprek valt buiten de scope van de kwaliteitsevaluatie voor de Lancyr Juridische Helpdesk, aangezien het geen klantcontact betreft. Voor toekomstige evaluaties: zorg dat alleen daadwerkelijke klantgesprekken (inkomende vragen van verzekerden) in de beoordelingslijst opgenomen worden."
     ]
   },
   "verkeerdVerbonden": {
