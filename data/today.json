@@ -1,6 +1,6 @@
 {
   "date": "2026-08-17",
-  "generated_at": "2026-08-17T15:28:52Z",
+  "generated_at": "2026-08-17T15:53:03Z",
   "drukte": "rustig",
   "gesprekken": 1,
   "stats": {
@@ -10,19 +10,14 @@
     "terugbel": 0,
     "geenDekking": 1
   },
-  "score": 8.5,
+  "score": 0.0,
   "conversations": [
     {
       "tijd": "09:01",
       "titel": "Daily Huddle",
       "personen": "Verzekerde: anoniem · Senne Duifhuis | Juridisch medewerker",
-      "samenvatting": "Dit is een interne daily huddle-meeting van een advocatenkantoor (HTJZ/Stan Advocaat), geen telefonisch juridisch adviesgesprek met een verzekerdenklant. Het transcript bevat teamupdates over werkzaken, projecten en personeelsaangelegenheden. Dit is niet relevant voor de Lancyr Juridische Helpdesk.",
-      "tags": [
-        [
-          "tag-overig",
-          "Interne bedrijfsmeeting"
-        ]
-      ],
+      "samenvatting": "Dit is geen juridisch adviesgesprek maar een interne bedrijfsmeeting (daily huddle) van medewerkers van een advocatenkantoor/juridische organisatie. De beller is verkeerd verbonden; dit betreft interne werkoverleggen over projecten, meetings en werkzaken, niet een klantcontact van de Lancyr Juridische Helpdesk.",
+      "tags": [],
       "uitkomst": [
         "outcome-geen-dekking",
         "Geen dekking"
@@ -36,11 +31,9 @@
   ],
   "acties": [],
   "analyse": {
-    "goed": [
-      "09:01 Daily Huddle: Correct geïdentificeerd dat dit een interne teammeeting is en niet een klantcontact via de Lancyr Juridische Helpdesk. Deze interne bijeenkomst vereist geen polis- of identiteitsverificatie van verzekerden."
-    ],
+    "goed": [],
     "beter": [
-      "Dit gesprek valt buiten de scope van de kwaliteitsevaluatie voor de Lancyr Juridische Helpdesk, aangezien het geen klantcontact betreft. Voor toekomstige evaluaties: zorg dat alleen daadwerkelijke klantgesprekken (inkomende vragen van verzekerden) in de beoordelingslijst opgenomen worden."
+      "09:01 - Daily Huddle: Dit is geen klantcontact van de Lancyr Juridische Helpdesk, maar een interne bedrijfsmeeting. Dit gesprek mag niet in de kwaliteitsbeoordeling van juridische helpdeskcalls worden opgenomen, omdat het geen juridisch adviesgesprek met een klant betreft. Controleer de callrouting en zorg dat interne meetings niet als klantencontacten worden geregistreerd."
     ]
   },
   "verkeerdVerbonden": {
@@ -48,10 +41,5 @@
     "percentage": 100.0
   },
   "rechtsbijstandVerwijzingen": 0,
-  "categorieen": [
-    [
-      "Interne bedrijfsmeeting",
-      1
-    ]
-  ]
+  "categorieen": []
 }
