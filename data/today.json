@@ -1,6 +1,6 @@
 {
   "date": "2026-08-17",
-  "generated_at": "2026-08-17T15:53:03Z",
+  "generated_at": "2026-08-17T16:32:30Z",
   "drukte": "rustig",
   "gesprekken": 1,
   "stats": {
@@ -10,17 +10,22 @@
     "terugbel": 0,
     "geenDekking": 1
   },
-  "score": 0.0,
+  "score": 8.5,
   "conversations": [
     {
       "tijd": "09:01",
       "titel": "Daily Huddle",
       "personen": "Verzekerde: anoniem · Senne Duifhuis | Juridisch medewerker",
-      "samenvatting": "Dit is geen juridisch adviesgesprek maar een interne bedrijfsmeeting (daily huddle) van medewerkers van een advocatenkantoor/juridische organisatie. De beller is verkeerd verbonden; dit betreft interne werkoverleggen over projecten, meetings en werkzaken, niet een klantcontact van de Lancyr Juridische Helpdesk.",
-      "tags": [],
+      "samenvatting": "Dit transcript is een internal team huddle/standup meeting van een advocatenkantoor of juridisch bureau (HTJZ/Lancyr), niet een telefonisch gesprek met een verzekerde of cliënt van de juridische helpdesk. Er vindt geen cliëntcontact, geen verificatie en geen juridisch advies aan een externe partij plaats.",
+      "tags": [
+        [
+          "tag-overig",
+          "Intern teamoverleg"
+        ]
+      ],
       "uitkomst": [
         "outcome-geen-dekking",
-        "Geen dekking"
+        "Niet van toepassing"
       ],
       "terugbel": false,
       "verkeerdVerbonden": true,
@@ -31,9 +36,11 @@
   ],
   "acties": [],
   "analyse": {
-    "goed": [],
+    "goed": [
+      "09:01 Daily Huddle: Correct herkend dat dit een interne teammeeting is en geen cliëntcontact. Geen verificatie- of adviesvereisten van toepassing."
+    ],
     "beter": [
-      "09:01 - Daily Huddle: Dit is geen klantcontact van de Lancyr Juridische Helpdesk, maar een interne bedrijfsmeeting. Dit gesprek mag niet in de kwaliteitsbeoordeling van juridische helpdeskcalls worden opgenomen, omdat het geen juridisch adviesgesprek met een klant betreft. Controleer de callrouting en zorg dat interne meetings niet als klantencontacten worden geregistreerd."
+      "Dit item valt buiten de kwaliteitsevaluatie voor cliëntgesprekken. De evaluatie is bedoeld voor externe contacten via de juridische helpdesk. Alleen daadwerkelijke cliëntgesprekken beoordelen."
     ]
   },
   "verkeerdVerbonden": {
@@ -41,5 +48,10 @@
     "percentage": 100.0
   },
   "rechtsbijstandVerwijzingen": 0,
-  "categorieen": []
+  "categorieen": [
+    [
+      "Intern teamoverleg",
+      1
+    ]
+  ]
 }
