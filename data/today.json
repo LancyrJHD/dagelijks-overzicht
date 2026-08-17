@@ -1,6 +1,6 @@
 {
   "date": "2026-08-17",
-  "generated_at": "2026-08-17T11:34:06Z",
+  "generated_at": "2026-08-17T12:52:35Z",
   "drukte": "rustig",
   "gesprekken": 1,
   "stats": {
@@ -16,11 +16,11 @@
       "tijd": "09:01",
       "titel": "Daily Huddle",
       "personen": "Verzekerde: anoniem · Senne Duifhuis | Juridisch medewerker",
-      "samenvatting": "Dit is geen juridisch adviesgesprek maar een interne bedrijfsmeeting (daily huddle) van medewerkers van een advocatenkantoor. Het transcript bevat werkafspraken, projectupdates en persoonlijke mededelingen, maar geen juridische hulpvraag van een verzekeringsklant. De beller is niet geverifieerd als klant en er is geen juridisch advies gegeven.",
+      "samenvatting": "Dit is een interne daily huddle-meeting van een juridisch/zakelijk bedrijf waar teamleden hun weekagenda bespreken (billables, projecten, meetings, vluchten). Dit is geen telefonisch juridisch advies aan een verzekerde beller. De identiteit is niet geverifieerd omdat dit geen klantcontact is.",
       "tags": [
         [
           "tag-overig",
-          "Geen juridisch advies"
+          "Intern teammeeting"
         ]
       ],
       "uitkomst": [
@@ -37,10 +37,10 @@
   "acties": [],
   "analyse": {
     "goed": [
-      "09:01 Daily Huddle: Correct onderscheid gemaakt dat dit een interne bedrijfsmeeting is en geen juridisch adviesgesprek met een klant. Geen verificatie en geen advies vereist bij interne communicatie."
+      "09:01 Daily Huddle: Correct herkend dat dit een interne teammeeting is en geen klantcontact. Juist dat identiteitsverificatie niet van toepassing is op interne operationele gesprekken."
     ],
     "beter": [
-      "Let op: dit gesprek valt buiten het kwaliteitskader voor juridische klantcontacten. Voor toekomstige analyses: zorg dat alleen daadwerkelijke klantgesprekken worden opgenomen in de dagelijkse kwaliteitsbeoordeling."
+      "09:01 Daily Huddle: Dit is geen juridisch klantenservice-gesprek en valt buiten de scope van kwaliteitsbeoordeling voor de Lancyr Juridische Helpdesk. Voor toekomstige evaluaties: zorg dat alleen daadwerkelijke klantcontacten in deze lijst worden opgenomen."
     ]
   },
   "verkeerdVerbonden": {
@@ -50,7 +50,7 @@
   "rechtsbijstandVerwijzingen": 0,
   "categorieen": [
     [
-      "Geen juridisch advies",
+      "Intern teammeeting",
       1
     ]
   ]
