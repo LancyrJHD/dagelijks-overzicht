@@ -36,21 +36,36 @@ def get_access_token():
         return json.loads(resp.read())['access_token']
 
 
-def fetch_ticket_detail(access_token, ticket_id):
-    """Haalt het volledige ticket-detail op (incl. customFields). De
-    tickets-lijst-endpoint geeft customFields niet terug, het detail-endpoint
-    wel, standaard zonder extra include/fields-parameters."""
-    url = f"{DESK_BASE}/tickets/{ticket_id}"
+def fetch_ticket_threads(access_token, ticket_id):
+    """Haalt de e-mailthreads van een ticket op. Het customFields-vinkje
+    "Doorgezet naar BrandMR" bleek onbetrouwbaar (0 van 30 gecontroleerde
+    tickets stond op waar, ook een geval dat aantoonbaar wel was doorgezet).
+    Het echte signaal is een uitgaande e-mail naar de BrandMR-intake --
+    bevestigd op ticket #2542 (4 aug 2026): een thread met direction='out'
+    naar intake@brandmr.nl met het vaste sjabloon."""
+    url = f"{DESK_BASE}/tickets/{ticket_id}/threads"
     req = urllib.request.Request(url, headers={
         'Authorization': f'Zoho-oauthtoken {access_token}',
         'orgId': ORG_ID,
     })
     try:
         with urllib.request.urlopen(req, timeout=30) as resp:
-            return json.loads(resp.read())
+            return json.loads(resp.read()).get('data', [])
     except Exception as e:
-        print(f"  WAARSCHUWING: kon ticket-detail {ticket_id} niet ophalen ({e})")
-        return None
+        print(f"  WAARSCHUWING: kon threads voor ticket {ticket_id} niet ophalen ({e})")
+        return []
+
+
+def is_doorgezet_naar_brandmeester(threads):
+    """Feit, geen AI-inschatting: True als er een uitgaande e-mail is naar
+    de BrandMR-intake (bevestigd patroon op ticket #2542)."""
+    for th in threads:
+        if th.get('direction') != 'out':
+            continue
+        to_field = (th.get('to') or '').lower()
+        if 'brandmr.nl' in to_field:
+            return True
+    return False
 
 
 def fetch_tickets(access_token, limit=100):
@@ -105,15 +120,11 @@ def main():
         if not klant:
             klant = t.get('email') or 'Onbekend'
 
-        # "Doorgezet naar BrandMR" is een echt Zoho-veld (custom field op de
-        # ticket) -- dus een FEIT, geen AI-inschatting. Alleen te achterhalen
-        # via het ticket-detail-endpoint (zie fetch_ticket_detail hierboven).
-        doorgezet_brandmeester = False
-        detail = fetch_ticket_detail(access_token, t.get('id'))
-        if detail:
-            cf = detail.get('customFields') or {}
-            raw = cf.get('Doorgezet naar BrandMR')
-            doorgezet_brandmeester = str(raw).strip().lower() == 'true'
+        # "Doorgezet naar BrandMR" is een feit (geen AI-inschatting), maar
+        # NIET via het onbetrouwbare customFields-vinkje -- via de e-mail-
+        # threads van het ticket (zie fetch_ticket_threads hierboven).
+        threads = fetch_ticket_threads(access_token, t.get('id'))
+        doorgezet_brandmeester = is_doorgezet_naar_brandmeester(threads)
 
         entries.append({
             'ticketNumber': t.get('ticketNumber', ''),

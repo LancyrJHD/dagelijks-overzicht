@@ -1,26 +1,55 @@
 {
-  "date": "2026-08-15",
-  "generated_at": "2026-08-15T04:31:28Z",
+  "date": "2026-08-17",
+  "generated_at": "2026-08-17T09:10:25Z",
   "drukte": "rustig",
-  "gesprekken": 0,
+  "gesprekken": 1,
   "stats": {
     "opgelost": 0,
     "brandmeester": 0,
     "afkoop": 0,
     "terugbel": 0,
-    "geenDekking": 0
+    "geenDekking": 1
   },
-  "score": 0,
-  "conversations": [],
+  "score": 0.0,
+  "conversations": [
+    {
+      "tijd": "09:01",
+      "titel": "Daily Huddle",
+      "personen": "Verzekerde: anoniem · Senne Duifhuis | Juridisch medewerker",
+      "samenvatting": "Dit is een intern dagelijkse huddle-meeting van een advocatenkantoor (HTJZ/Stam Advocaat) waar teamleden hun werkzaamheden voor de week bespreken. Het betreft geen klantgesprek met de Lancyr Juridische Helpdesk en geen verzekerdeninformatie wordt verwerkt.",
+      "tags": [
+        [
+          "tag-overig",
+          "Intern teamoverleg"
+        ]
+      ],
+      "uitkomst": [
+        "outcome-geen-dekking",
+        "Geen dekking"
+      ],
+      "terugbel": false,
+      "verkeerdVerbonden": true,
+      "rechtsbijstandVerwijzing": false,
+      "adviesGegeven": false,
+      "identiteitGeverifieerd": false
+    }
+  ],
   "acties": [],
   "analyse": {
     "goed": [],
-    "beter": []
+    "beter": [
+      "Dit is geen klantgesprek met de Lancyr Juridische Helpdesk (09:01 - Daily Huddle), maar een interne teammeeting. Deze mag niet in de kwaliteitsbeoordeling worden opgenomen, omdat de kwaliteitsnormen (polisverificatie, dekkingscontrole, deadlines voor verzekerdenbijstand) alleen van toepassing zijn op daadwerkelijke klantcontacten. Verwijder interne meetings uit de analyselijst."
+    ]
   },
   "verkeerdVerbonden": {
-    "aantal": 0,
-    "percentage": 0.0
+    "aantal": 1,
+    "percentage": 100.0
   },
   "rechtsbijstandVerwijzingen": 0,
-  "categorieen": []
+  "categorieen": [
+    [
+      "Intern teamoverleg",
+      1
+    ]
+  ]
 }
