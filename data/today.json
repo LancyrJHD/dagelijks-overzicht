@@ -1,14 +1,14 @@
 {
   "date": "2026-08-17",
-  "generated_at": "2026-08-17T10:58:17Z",
+  "generated_at": "2026-08-17T11:34:06Z",
   "drukte": "rustig",
   "gesprekken": 1,
   "stats": {
-    "opgelost": 0,
+    "opgelost": 1,
     "brandmeester": 0,
     "afkoop": 0,
     "terugbel": 0,
-    "geenDekking": 1
+    "geenDekking": 0
   },
   "score": 8.5,
   "conversations": [
@@ -16,11 +16,16 @@
       "tijd": "09:01",
       "titel": "Daily Huddle",
       "personen": "Verzekerde: anoniem · Senne Duifhuis | Juridisch medewerker",
-      "samenvatting": "Dit is geen juridisch adviesgesprek maar een interne daily huddle/teammeeting van kantoormedewerkers (waarschijnlijk van een advocatenkantoor/juridische organisatie). De beller is verkeerd verbonden: dit is een interne bedrijfsmeeting over werkzaamheden, projecten en afspraken, geen telefonisch adviesgesprek met een externe verzekeringsklant van Lancyr.",
-      "tags": [],
+      "samenvatting": "Dit is geen juridisch adviesgesprek maar een interne bedrijfsmeeting (daily huddle) van medewerkers van een advocatenkantoor. Het transcript bevat werkafspraken, projectupdates en persoonlijke mededelingen, maar geen juridische hulpvraag van een verzekeringsklant. De beller is niet geverifieerd als klant en er is geen juridisch advies gegeven.",
+      "tags": [
+        [
+          "tag-overig",
+          "Geen juridisch advies"
+        ]
+      ],
       "uitkomst": [
-        "outcome-geen-dekking",
-        "Geen dekking / Verkeerd verbonden"
+        "outcome-opgelost",
+        "Telefonisch opgelost"
       ],
       "terugbel": false,
       "verkeerdVerbonden": true,
@@ -32,10 +37,10 @@
   "acties": [],
   "analyse": {
     "goed": [
-      "09:01 Daily Huddle: Medewerker heeft correct herkend dat dit een interne teammeeting betrof en niet een juridisch adviesgesprek met een externe klant. Geen onnodige verificatiestappen uitgevoerd."
+      "09:01 Daily Huddle: Correct onderscheid gemaakt dat dit een interne bedrijfsmeeting is en geen juridisch adviesgesprek met een klant. Geen verificatie en geen advies vereist bij interne communicatie."
     ],
     "beter": [
-      "09:01 Daily Huddle: Verduidelijking mogelijk hoe deze interne call in het klantengesprekken-logboek is terecht gekomen – dit suggereert mogelijk een routering- of classificatieprobleem in het systeem dat kan worden voorkomen."
+      "Let op: dit gesprek valt buiten het kwaliteitskader voor juridische klantcontacten. Voor toekomstige analyses: zorg dat alleen daadwerkelijke klantgesprekken worden opgenomen in de dagelijkse kwaliteitsbeoordeling."
     ]
   },
   "verkeerdVerbonden": {
@@ -43,5 +48,10 @@
     "percentage": 100.0
   },
   "rechtsbijstandVerwijzingen": 0,
-  "categorieen": []
+  "categorieen": [
+    [
+      "Geen juridisch advies",
+      1
+    ]
+  ]
 }
