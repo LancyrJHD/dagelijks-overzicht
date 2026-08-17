@@ -1,26 +1,57 @@
 {
   "date": "2026-08-17",
-  "generated_at": "2026-08-17T07:03:44Z",
+  "generated_at": "2026-08-17T08:08:08Z",
   "drukte": "rustig",
-  "gesprekken": 0,
+  "gesprekken": 1,
   "stats": {
-    "opgelost": 0,
+    "opgelost": 1,
     "brandmeester": 0,
     "afkoop": 0,
     "terugbel": 0,
     "geenDekking": 0
   },
-  "score": 0,
-  "conversations": [],
+  "score": 9.5,
+  "conversations": [
+    {
+      "tijd": "09:01",
+      "titel": "Daily Huddle",
+      "personen": "Verzekerde: anoniem · Senne Duifhuis | Juridisch medewerker",
+      "samenvatting": "Dit is geen telefonisch juridisch adviesgesprek met een verzekerdevan Lancyr, maar een interne Daily Huddle-meeting van medewerkers van een juridisch kantoor (HTJZ/Stam Advocaat). Er is geen cliënt/verzekerde aan het woord, geen verificatie nodig, en geen juridisch advies aan een externe partij gegeven.",
+      "tags": [
+        [
+          "tag-overig",
+          "Interne bedrijfsmeeting"
+        ]
+      ],
+      "uitkomst": [
+        "outcome-opgelost",
+        "Telefonisch opgelost"
+      ],
+      "terugbel": false,
+      "verkeerdVerbonden": true,
+      "rechtsbijstandVerwijzing": false,
+      "adviesGegeven": false,
+      "identiteitGeverifieerd": false
+    }
+  ],
   "acties": [],
   "analyse": {
-    "goed": [],
-    "beter": []
+    "goed": [
+      "09:01 Daily Huddle: Dit is correct herkend en afgehandeld als interne meeting, niet als klantgesprek. Geen externe cliënt aanwezig, dus verificatie en adviesverlening zijn niet van toepassing. Juiste classificatie van het contacttype."
+    ],
+    "beter": [
+      "Opmerking voor volledigheid: Deze Daily Huddle is geen juridisch klantgesprek en valt daarom buiten de normale kwaliteitsnormen voor Lancyr-klantcontacten (polis- en identiteitsverificatie, dekkingscontrole, advies)."
+    ]
   },
   "verkeerdVerbonden": {
-    "aantal": 0,
-    "percentage": 0.0
+    "aantal": 1,
+    "percentage": 100.0
   },
   "rechtsbijstandVerwijzingen": 0,
-  "categorieen": []
+  "categorieen": [
+    [
+      "Interne bedrijfsmeeting",
+      1
+    ]
+  ]
 }
