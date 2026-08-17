@@ -1,31 +1,31 @@
 {
   "date": "2026-08-17",
-  "generated_at": "2026-08-17T12:52:35Z",
+  "generated_at": "2026-08-17T13:42:09Z",
   "drukte": "rustig",
   "gesprekken": 1,
   "stats": {
-    "opgelost": 1,
+    "opgelost": 0,
     "brandmeester": 0,
     "afkoop": 0,
     "terugbel": 0,
-    "geenDekking": 0
+    "geenDekking": 1
   },
-  "score": 8.5,
+  "score": 10.0,
   "conversations": [
     {
       "tijd": "09:01",
       "titel": "Daily Huddle",
       "personen": "Verzekerde: anoniem · Senne Duifhuis | Juridisch medewerker",
-      "samenvatting": "Dit is een interne daily huddle-meeting van een juridisch/zakelijk bedrijf waar teamleden hun weekagenda bespreken (billables, projecten, meetings, vluchten). Dit is geen telefonisch juridisch advies aan een verzekerde beller. De identiteit is niet geverifieerd omdat dit geen klantcontact is.",
+      "samenvatting": "Dit transcript is een interne daily huddle-meeting van een advocatenkantoor waar teamleden hun weekplannen bespreken. Dit is geen gesprek met een klant of verzekerden van Lancyr en dus niet relevant voor de Lancyr Juridische Helpdesk. De beller is niet geverifieerd omdat dit geen klantgesprek is, en er is geen juridisch advies aan een klant gegeven.",
       "tags": [
         [
           "tag-overig",
-          "Intern teammeeting"
+          "Intern kantoorgesprek"
         ]
       ],
       "uitkomst": [
-        "outcome-opgelost",
-        "Telefonisch opgelost"
+        "outcome-geen-dekking",
+        "Geen dekking"
       ],
       "terugbel": false,
       "verkeerdVerbonden": true,
@@ -37,11 +37,9 @@
   "acties": [],
   "analyse": {
     "goed": [
-      "09:01 Daily Huddle: Correct herkend dat dit een interne teammeeting is en geen klantcontact. Juist dat identiteitsverificatie niet van toepassing is op interne operationele gesprekken."
+      "09:01 Daily Huddle: Dit is geen klantgesprek en valt daarom buiten de beoordelingscriteria voor de Lancyr Juridische Helpdesk. Correct uitsluitend geregistreerd."
     ],
-    "beter": [
-      "09:01 Daily Huddle: Dit is geen juridisch klantenservice-gesprek en valt buiten de scope van kwaliteitsbeoordeling voor de Lancyr Juridische Helpdesk. Voor toekomstige evaluaties: zorg dat alleen daadwerkelijke klantcontacten in deze lijst worden opgenomen."
-    ]
+    "beter": []
   },
   "verkeerdVerbonden": {
     "aantal": 1,
@@ -50,7 +48,7 @@
   "rechtsbijstandVerwijzingen": 0,
   "categorieen": [
     [
-      "Intern teammeeting",
+      "Intern kantoorgesprek",
       1
     ]
   ]
