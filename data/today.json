@@ -1,6 +1,6 @@
 {
   "date": "2026-08-17",
-  "generated_at": "2026-08-17T10:05:47Z",
+  "generated_at": "2026-08-17T10:58:17Z",
   "drukte": "rustig",
   "gesprekken": 1,
   "stats": {
@@ -16,16 +16,11 @@
       "tijd": "09:01",
       "titel": "Daily Huddle",
       "personen": "Verzekerde: anoniem · Senne Duifhuis | Juridisch medewerker",
-      "samenvatting": "Dit is een intern team daily huddle meeting van juridische professionals (lijkt HTJZ kantoor). Dit is GEEN juridisch adviesgesprek met een verzekerde/cliënt, maar een interne bedrijfsmeeting waar teamleden hun werkzaamheden en doelen voor de week bespreken. De beller is niet geverifieerd als cliënt en er is geen juridisch advies gegeven aan een externe partij.",
-      "tags": [
-        [
-          "tag-overig",
-          "Niet van toepassing - interne bedrijfsmeeting"
-        ]
-      ],
+      "samenvatting": "Dit is geen juridisch adviesgesprek maar een interne daily huddle/teammeeting van kantoormedewerkers (waarschijnlijk van een advocatenkantoor/juridische organisatie). De beller is verkeerd verbonden: dit is een interne bedrijfsmeeting over werkzaamheden, projecten en afspraken, geen telefonisch adviesgesprek met een externe verzekeringsklant van Lancyr.",
+      "tags": [],
       "uitkomst": [
         "outcome-geen-dekking",
-        "Geen dekking"
+        "Geen dekking / Verkeerd verbonden"
       ],
       "terugbel": false,
       "verkeerdVerbonden": true,
@@ -37,10 +32,10 @@
   "acties": [],
   "analyse": {
     "goed": [
-      "09:01 Daily Huddle: Correct geïdentificeerd als interne bedrijfsmeeting en niet als cliëntgesprek. Geen verificatie- of adviesnormen van toepassing op interne teamoverleggen."
+      "09:01 Daily Huddle: Medewerker heeft correct herkend dat dit een interne teammeeting betrof en niet een juridisch adviesgesprek met een externe klant. Geen onnodige verificatiestappen uitgevoerd."
     ],
     "beter": [
-      "Opmerking: Deze lijst bevat slechts één item (interne meeting). Voor een volledige kwaliteitsbeoordeling van de juridische helpdesk-dag zijn externe cliëntgesprekken nodig waarop de normen voor verificatie, dekkingscontrole en deadlines van toepassing zijn."
+      "09:01 Daily Huddle: Verduidelijking mogelijk hoe deze interne call in het klantengesprekken-logboek is terecht gekomen – dit suggereert mogelijk een routering- of classificatieprobleem in het systeem dat kan worden voorkomen."
     ]
   },
   "verkeerdVerbonden": {
@@ -48,10 +43,5 @@
     "percentage": 100.0
   },
   "rechtsbijstandVerwijzingen": 0,
-  "categorieen": [
-    [
-      "Niet van toepassing - interne bedrijfsmeeting",
-      1
-    ]
-  ]
+  "categorieen": []
 }
