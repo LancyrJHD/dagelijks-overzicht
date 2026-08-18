@@ -1,57 +1,26 @@
 {
-  "date": "2026-08-17",
-  "generated_at": "2026-08-17T16:32:30Z",
+  "date": "2026-08-18",
+  "generated_at": "2026-08-18T05:33:36Z",
   "drukte": "rustig",
-  "gesprekken": 1,
+  "gesprekken": 0,
   "stats": {
     "opgelost": 0,
     "brandmeester": 0,
     "afkoop": 0,
     "terugbel": 0,
-    "geenDekking": 1
+    "geenDekking": 0
   },
-  "score": 8.5,
-  "conversations": [
-    {
-      "tijd": "09:01",
-      "titel": "Daily Huddle",
-      "personen": "Verzekerde: anoniem · Senne Duifhuis | Juridisch medewerker",
-      "samenvatting": "Dit transcript is een internal team huddle/standup meeting van een advocatenkantoor of juridisch bureau (HTJZ/Lancyr), niet een telefonisch gesprek met een verzekerde of cliënt van de juridische helpdesk. Er vindt geen cliëntcontact, geen verificatie en geen juridisch advies aan een externe partij plaats.",
-      "tags": [
-        [
-          "tag-overig",
-          "Intern teamoverleg"
-        ]
-      ],
-      "uitkomst": [
-        "outcome-geen-dekking",
-        "Niet van toepassing"
-      ],
-      "terugbel": false,
-      "verkeerdVerbonden": true,
-      "rechtsbijstandVerwijzing": false,
-      "adviesGegeven": false,
-      "identiteitGeverifieerd": false
-    }
-  ],
+  "score": 0,
+  "conversations": [],
   "acties": [],
   "analyse": {
-    "goed": [
-      "09:01 Daily Huddle: Correct herkend dat dit een interne teammeeting is en geen cliëntcontact. Geen verificatie- of adviesvereisten van toepassing."
-    ],
-    "beter": [
-      "Dit item valt buiten de kwaliteitsevaluatie voor cliëntgesprekken. De evaluatie is bedoeld voor externe contacten via de juridische helpdesk. Alleen daadwerkelijke cliëntgesprekken beoordelen."
-    ]
+    "goed": [],
+    "beter": []
   },
   "verkeerdVerbonden": {
-    "aantal": 1,
-    "percentage": 100.0
+    "aantal": 0,
+    "percentage": 0.0
   },
   "rechtsbijstandVerwijzingen": 0,
-  "categorieen": [
-    [
-      "Intern teamoverleg",
-      1
-    ]
-  ]
+  "categorieen": []
 }
