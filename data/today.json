@@ -1,26 +1,60 @@
 {
   "date": "2026-08-19",
-  "generated_at": "2026-08-19T07:42:21Z",
+  "generated_at": "2026-08-19T08:42:39Z",
   "drukte": "rustig",
-  "gesprekken": 0,
+  "gesprekken": 1,
   "stats": {
-    "opgelost": 0,
+    "opgelost": 1,
     "brandmeester": 0,
     "afkoop": 0,
     "terugbel": 0,
     "geenDekking": 0
   },
-  "score": 0,
-  "conversations": [],
+  "score": 6.8,
+  "conversations": [
+    {
+      "tijd": "09:32",
+      "titel": "Isolatiecentraal faillissement — betaalde werk, subsidie en vordering bij curator",
+      "personen": "Verzekerde: anoniem · Edgar Stam",
+      "samenvatting": "# Feiten in hoofdlijnen\n\nVerzekerde heeft een overeenkomst gesloten met Isolatiecentraal voor vloerisolatie en gevelimpregnering. Het bedrijf is op 15 juli 2026 failliet verklaard. Verzekerde heeft te veel betaald voor onvolledig uitgevoerd werk en loopt subsidie mis omdat Isolatiecentraal niet meer",
+      "tags": [
+        [
+          "tag-overig",
+          "Overig"
+        ]
+      ],
+      "uitkomst": [
+        "outcome-opgelost",
+        "Telefonisch opgelost"
+      ],
+      "terugbel": false,
+      "verkeerdVerbonden": false,
+      "rechtsbijstandVerwijzing": false,
+      "adviesGegeven": true,
+      "identiteitGeverifieerd": true
+    }
+  ],
   "acties": [],
   "analyse": {
-    "goed": [],
-    "beter": []
+    "goed": [
+      "09:32 Isolatiecentraal: Identiteit correct geverifieerd voordat advies werd gegeven",
+      "09:32 Isolatiecentraal: Complexe zaak (faillissement, vordering, subsidieverlies) telefonisch opgelost — goede ondersteuning geboden"
+    ],
+    "beter": [
+      "09:32 Isolatiecentraal: Samenvatting onvolledig (eindigt abrupt bij 'niet meer') — geen duidelijkheid over welk advies precies is gegeven en welke vervolgstappen voor verzekerde gelden",
+      "09:32 Isolatiecentraal: Geen concrete deadline genoemd voor eventuele vervolgacties (bijv. deadline voor indienen vordering bij curator, vervolgcontact voor monitoring)",
+      "09:32 Isolatiecentraal: Geen dekkingscontrole vastgelegd — onduidelijk of dit een verzekeringszaak is en of franchise (EUR 250) van toepassing is"
+    ]
   },
   "verkeerdVerbonden": {
     "aantal": 0,
     "percentage": 0.0
   },
   "rechtsbijstandVerwijzingen": 0,
-  "categorieen": []
+  "categorieen": [
+    [
+      "Overig",
+      1
+    ]
+  ]
 }
