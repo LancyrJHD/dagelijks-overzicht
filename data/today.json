@@ -1,14 +1,14 @@
 {
   "date": "2026-08-19",
-  "generated_at": "2026-08-19T09:38:30Z",
-  "drukte": "rustig",
-  "gesprekken": 3,
+  "generated_at": "2026-08-19T10:33:20Z",
+  "drukte": "matig",
+  "gesprekken": 4,
   "stats": {
     "opgelost": 0,
     "brandmeester": 2,
     "afkoop": 0,
     "terugbel": 1,
-    "geenDekking": 0
+    "geenDekking": 1
   },
   "score": 6.8,
   "conversations": [
@@ -16,7 +16,7 @@
       "tijd": "09:32",
       "titel": "Isolatiecentraal faillissement — betaalde werk, subsidie en vordering bij curator",
       "personen": "Verzekerde: anoniem · Edgar Stam",
-      "samenvatting": "Beller heeft isolatiewerk laten uitvoeren door Isolatiecentraal: eerste werk (impregnering) volledig betaald, tweede werk (vloerisolatie 130m²) slechts voor 80m² uitgevoerd op 2 juli. Beller betaalde EUR 5.000 maar had naar eigen zeggen slechts EUR 3.500 hoeven betalen (EUR 1.500 teveel). Op 15 juli bleek Isolatiecentraal failliet verklaard. Beller is geverifieerd via postcode/huisnummer/naam en heeft consumentenbijstandsverzekering (basis + verkeer uitgebreid), maar niet onder 'wonen'. De medewerker heeft geen inhoudelijk juridisch advies gegeven over de vordering bij de curator; het gesprek eindigde met controle van de verzekeringsdekkingen.",
+      "samenvatting": "Beller heeft isolatiewerk laten uitvoeren door Isolatiecentraal (130 m² vloerisolatie, waarvan slechts 80 m² afgerond), betaalde EUR 5.000 in plaats van EUR 3.500 omdat bedrijf twee QR-codes aanbood en geen alternatief kon genereren. Bedrijf is op 15 juli failliet verklaard. Beller is geverifieerd via postcode en adres (L.J.A. Kapo, postcode 17-42, huisnummer 5) en heeft rechtsbijstandsverzekering voor consumentenzaken. Inhoudelijk advies is niet gegeven; de medewerker heeft alleen de polis gecontroleerd en vastgesteld dat het bedrijf inderdaad failliet is, maar geen juridische stappen of vervolgacties uitgewerkt.",
       "tags": [
         [
           "tag-consument",
@@ -37,28 +37,7 @@
       "tijd": "10:30",
       "titel": "Arbeidsongeschiktheid en mediation — strategie voor september gesprek met bedrijfsarts",
       "personen": "Verzekerde: I.N. Jansen · Edgar Stam",
-      "samenvatting": "Beller (I.N. Jansen, geverifieerd via Zoho-telefoonnummer) belt over arbeidsconflict: hij is twee maanden arbeidsongeschikt (sinds 4 juni) vanwege verstoorde relatie met leidinggevende. In september moet hij naar bedrijfsarts en wil strategie bepalen voor mediation/eventueel ontslag. Medewerker geeft inhoudelijk juridisch advies over mediation, bedrijfsarts-procedure en mogelijkheid van rechtsbijstand; zaak blijft open voor vervolgstappen.",
-      "tags": [
-        [
-          "tag-arbeidsrecht",
-          "Arbeidsrecht"
-        ]
-      ],
-      "uitkomst": [
-        "outcome-brandmeester",
-        "Doorverwezen naar Brandmeester"
-      ],
-      "terugbel": false,
-      "verkeerdVerbonden": false,
-      "rechtsbijstandVerwijzing": false,
-      "adviesGegeven": true,
-      "identiteitGeverifieerd": true
-    },
-    {
-      "tijd": "10:44",
-      "titel": "Arbeidsziekte en re-integratie – nieuwe casus met Janis Scholt",
-      "personen": "Verzekerde: I.N. Jansen · Edgar Stam",
-      "samenvatting": "Mevrouw Scholt (geverifieerd via postcode/huisnummer en Zoho-match) belt over een arbeidsziekte en re-integratieconflict met haar werkgever, voortkomend uit een eerder arbeidsuurconflict uit april dat al bij Brandmeester in behandeling was. De medewerker heeft inhoudelijk advies gegeven door het conflict te benoemen als arbeidsziekte/re-integratie-zaak, heeft een nieuw casesnummer aangevraagd, en stuurt dit direct door naar Brandmeester met verzoek om Sara als contactpersoon in te stellen.",
+      "samenvatting": "De beller (geverifieerd via Zoho-automatische herkenning) heeft een arbeidsconflict: hij zit twee maanden thuis wegens arbeidsongeschiktheid veroorzaakt door een verstoorde relatie met zijn leidinggevende, en wil strategisch advies voor het september-gesprek met de bedrijfsarts. De medewerker heeft inhoudelijk juridisch advies gegeven over mediation-strategie en het inroepen van rechtsbijstand bij verdere stappen.",
       "tags": [
         [
           "tag-arbeidsrecht",
@@ -74,28 +53,64 @@
       "rechtsbijstandVerwijzing": true,
       "adviesGegeven": true,
       "identiteitGeverifieerd": true
+    },
+    {
+      "tijd": "10:44",
+      "titel": "Arbeidsziekte en re-integratie – nieuwe casus met Janis Scholt",
+      "personen": "Verzekerde: I.N. Jansen · Edgar Stam",
+      "samenvatting": "Janis Scholt belt over een nieuwe arbeidsziekte- en re-integratieconflict met werkgever, voortvloeiend uit eerdere arbeidsconflict uit april. Beller is geverifieerd via postcode/huisnummer en systeem. De medewerker geeft geen inhoudelijk juridisch advies maar documenteert de zaak en verwijst deze direct door naar Brandmeester voor behandeling, zoals vereist bij arbeidsconflicten.",
+      "tags": [
+        [
+          "tag-arbeidsrecht",
+          "Arbeidsrecht"
+        ]
+      ],
+      "uitkomst": [
+        "outcome-brandmeester",
+        "Doorverwezen naar Brandmeester"
+      ],
+      "terugbel": false,
+      "verkeerdVerbonden": false,
+      "rechtsbijstandVerwijzing": false,
+      "adviesGegeven": false,
+      "identiteitGeverifieerd": true
+    },
+    {
+      "tijd": "11:00",
+      "titel": "IT Meeting - Sprint Priorities Planning",
+      "personen": "Verzekerde: H.C. Scholt · Edgar Stam",
+      "samenvatting": "Dit is geen juridisch advies gesprek maar een IT team meeting over sprint priorities en projectmanagement. De deelnemer is automatisch herkend in het systeem (H.C. Scholt), maar er is geen juridische vraag gesteld en geen juridisch advies gegeven.",
+      "tags": [],
+      "uitkomst": [
+        "outcome-geen-dekking",
+        "Geen dekking"
+      ],
+      "terugbel": false,
+      "verkeerdVerbonden": true,
+      "rechtsbijstandVerwijzing": false,
+      "adviesGegeven": false,
+      "identiteitGeverifieerd": true
     }
   ],
   "acties": [],
   "analyse": {
     "goed": [
-      "09:32 Isolatiecentraal: identiteit correct geverifieerd via postcode/huisnummer/naam",
-      "09:32 Isolatiecentraal: verzekeringsdekkingen systematisch gecontroleerd (basis + verkeer uitgebreid, maar niet onder 'wonen')",
-      "10:30 Arbeidsongeschiktheid: identiteit geverifieerd via Zoho-telefoonnummer",
-      "10:30 Arbeidsongeschiktheid: inhoudelijk juridisch advies gegeven over mediation, bedrijfsarts-procedure en rechtsbijstand",
-      "10:44 Arbeidsziekte: identiteit correct geverifieerd via postcode/huisnummer + Zoho-match",
-      "10:44 Arbeidsziekte: inhoudelijk advies gegeven en nieuw casesnummer aangevraagd voor doorverwijzing naar Brandmeester"
+      "09:32 Isolatiecentraal: Identiteit correct geverifieerd via postcode/adres (L.J.A. Kapo, 17-42 huisnummer 5) en polis gecontroleerd voor rechtsbijstandsverzekering consumentenzaken",
+      "09:32 Isolatiecentraal: Vervolgcontact ('Terugbellen') afgesproken voor inhoudelijke behandeling na verificatie",
+      "10:30 Arbeidsongeschiktheid: Beller geverifieerd en inhoudelijk advies gegeven over mediation-strategie voor september-gesprek met bedrijfsarts",
+      "10:30 Arbeidsongeschiktheid: Doelbewuste doorverwijzing naar Brandmeester uitgevoerd",
+      "10:44 Arbeidsziekte & re-integratie: Beller geverifieerd via postcode/huisnummer en systeem, zaak correct doorverwezen naar Brandmeester"
     ],
     "beter": [
-      "09:32 Isolatiecentraal: geen vervolgdatum/deadline benoemd voor terugbellen over vordering bij curator; moment van contact ongespecificeerd",
-      "09:32 Isolatiecentraal: dekkingscontrole franchise EUR 250 niet expliciet vastgelegd voor de EUR 1.500 vordering (schadebedrag is concreet)",
-      "10:30 Arbeidsongeschiktheid: geen concrete deadline gegeven voor september-gesprek met bedrijfsarts of vervolgstappen",
-      "10:44 Arbeidsziekte: geen concrete deadline of vervolgcontactmoment afgesproken voor nazorg bij Brandmeester"
+      "09:32 Isolatiecentraal: Bij vervolgcontact concrete deadline afspreken (bijv. 'Wij bellen u maandag terug' of 'donderdag 10:00 uur'). Nu staat alleen 'Terugbellen' zonder tijdstip",
+      "09:32 Isolatiecentraal: Dekkingscontrole vastleggen — schadebedrag EUR 5.000 betaald (vs EUR 3.500 verwacht): franchise EUR 250 controleren en aan beller communiceren welk bedrag eigen risico is",
+      "10:44 Arbeidsziekte & re-integratie: Notering 'advies_gegeven: false' klopt, maar nagaan of concrete vervolgdeadline aan beller is medegedeeld (bijv. 'Brandmeester belt u woensdag')",
+      "11:00 IT Meeting: Dit is geen juridisch adviesgesprek — terecht geen dekking, maar vraag of dit per ongeluk in de juridische casuslijst is opgenomen in plaats van in IT-logistiek"
     ]
   },
   "verkeerdVerbonden": {
-    "aantal": 0,
-    "percentage": 0.0
+    "aantal": 1,
+    "percentage": 25.0
   },
   "rechtsbijstandVerwijzingen": 1,
   "categorieen": [
