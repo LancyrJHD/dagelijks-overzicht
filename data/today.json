@@ -1,47 +1,26 @@
 {
   "date": "2026-08-19",
-  "generated_at": "2026-08-19T12:56:16Z",
+  "generated_at": "2026-08-19T13:49:39Z",
   "drukte": "druk",
   "gesprekken": 8,
   "stats": {
-    "opgelost": 3,
-    "brandmeester": 1,
+    "opgelost": 2,
+    "brandmeester": 3,
     "afkoop": 0,
     "terugbel": 2,
-    "geenDekking": 2
+    "geenDekking": 1
   },
-  "score": 6.8,
+  "score": 7.1,
   "conversations": [
     {
       "tijd": "09:32",
       "titel": "Isolatiecentraal faillissement — betaalde werk, subsidie en vordering bij curator",
       "personen": "Verzekerde: anoniem · Edgar Stam",
-      "samenvatting": "Beller heeft isolatiewerk laten uitvoeren door Isolatiecentraal en €5.000 betaald voor werk waarvan slechts ~62% (80 van 130 m²) is voltooid; het bedrijf is op 15 juli failliet verklaard. De beller is geverifieerd via postcode en adres en heeft een rechtsbijstandsverzekering (consument basis, verkeer basis/uitgebreid, personen/familie), maar de dekking voor 'wonen' moet nog worden gecontroleerd. Inhoudelijk juridisch advies is nog niet gegeven; de medewerker was nog aan het verifiëren en informatie verzamelen.",
+      "samenvatting": "# Feiten in hoofdlijnen\n\nVerzekerde heeft een overeenkomst gesloten met Isolatiecentraal voor vloerisolatie en gevelimpregnering. Het bedrijf is op 15 juli 2026 failliet verklaard. Verzekerde heeft te veel betaald voor onvolledig uitgevoerd werk en loopt subsidie mis omdat Isolatiecentraal niet meer",
       "tags": [
         [
-          "tag-consument",
-          "Consumentenrecht"
-        ]
-      ],
-      "uitkomst": [
-        "outcome-terugbel",
-        "Terugbellen"
-      ],
-      "terugbel": true,
-      "verkeerdVerbonden": false,
-      "rechtsbijstandVerwijzing": false,
-      "adviesGegeven": false,
-      "identiteitGeverifieerd": true
-    },
-    {
-      "tijd": "10:30",
-      "titel": "Arbeidsongeschiktheid en mediation — strategie voor september gesprek met bedrijfsarts",
-      "personen": "Verzekerde: I.N. Jansen · Edgar Stam",
-      "samenvatting": "De beller (I.N. Jansen, geverifieerd via Zoho) is twee maanden arbeidsongeschikt vanwege een verstoorde relatie met zijn leidinggevende en bereidt zich voor op een september-gesprek met de bedrijfsarts. De medewerker gaf inhoudelijk juridisch advies over de mediation-procedure: het moet ter sprake komen bij de bedrijfsarts, en kan via mediation opgelost worden met inbreng van werkgever/eventueel rechtsbijstandsverzekering. De beller heeft rechtsbijstand beschikbaar en kan eventueel een jurist/advocaat inschakelen.",
-      "tags": [
-        [
-          "tag-arbeidsrecht",
-          "Arbeidsrecht"
+          "tag-overig",
+          "Overig"
         ]
       ],
       "uitkomst": [
@@ -55,10 +34,31 @@
       "identiteitGeverifieerd": true
     },
     {
+      "tijd": "10:30",
+      "titel": "Arbeidsongeschiktheid en mediation — strategie voor september gesprek met bedrijfsarts",
+      "personen": "Verzekerde: I.N. Jansen · Edgar Stam",
+      "samenvatting": "Beller (I.N. Jansen, geverifieerd via Zoho-koppeling) belt over arbeidsongeschiktheid en een verstoorde relatie met zijn leidinggevende. De medewerker geeft inhoudelijk juridisch advies over de strategie voor het september-gesprek met de bedrijfsarts, inclusief het benoemen van 'verstoorde relatie' om mediation uit te lokken en het inzetten van rechtsbijstandsverzekering. Dit is een arbeidsconflict waarbij de medewerker advies heeft gegeven maar niet expliciet doorverwijst naar Brandmeester.",
+      "tags": [
+        [
+          "tag-arbeidsrecht",
+          "Arbeidsrecht"
+        ]
+      ],
+      "uitkomst": [
+        "outcome-brandmeester",
+        "Doorverwezen naar Brandmeester"
+      ],
+      "terugbel": false,
+      "verkeerdVerbonden": false,
+      "rechtsbijstandVerwijzing": false,
+      "adviesGegeven": true,
+      "identiteitGeverifieerd": true
+    },
+    {
       "tijd": "10:44",
       "titel": "Arbeidsziekte en re-integratie – nieuwe casus met Janis Scholt",
       "personen": "Verzekerde: I.N. Jansen · Edgar Stam",
-      "samenvatting": "Janis Scholt belt over een arbeidsziekte- en re-integratieconflict met werkgever. De medewerker verifieerde de beller via postcode/huisnummer, ziet dat het vorige geval (april) naar Brandmeester is doorgestuurd maar de nieuwe zaak daar nog niet is binnengekomen, en stelt voor om nu alsnog een casesnummer aan te vragen en de zaak direct naar Brandmeester door te zetten. Er is geen inhoudelijk juridisch advies gegeven, maar wel probleemverheldering voor doorverwijzing.",
+      "samenvatting": "Janis Scholt belt over een arbeidsziekte- en re-integratieconflict met haar werkgever. De beller is geverifieerd via postcode/huisnummer en was eerder in behandeling bij Brandmeester voor een arbeidsuurconflict (april). De medewerker stelt vast dat de doorverwijzing naar Brandmeester destijds niet heeft plaatsgevonden, neemt nu nieuwe informatie op en verwijst de zaak direct door naar Brandmeester met verzoek om Sara/Zara als vervolgcontactpersoon.",
       "tags": [
         [
           "tag-arbeidsrecht",
@@ -79,7 +79,7 @@
       "tijd": "11:00",
       "titel": "IT Meeting - Sprint Priorities Planning",
       "personen": "Verzekerde: H.C. Scholt · Edgar Stam",
-      "samenvatting": "Dit is een IT-teamvergadering over sprint-prioriteiten planning, geen juridisch advies-gesprek. Het transcript bevat informele conversatie over pepernoten, schermdelingen en IT-projectmanagement. Dit is geen juridische zaak en hoort niet bij de Lancyr Juridische Helpdesk.",
+      "samenvatting": "Dit is geen juridisch adviesgesprek maar een interne IT-teambijeen voor sprint-planning en prioriteiten. Het transcript bevat persoonlijke gesprekken over pepernoten en een bedrijfsmeeting over werkprocessen. De beller is verkeerd verbonden met de Lancyr Juridische Helpdesk.",
       "tags": [],
       "uitkomst": [
         "outcome-geen-dekking",
@@ -95,16 +95,16 @@
       "tijd": "12:53",
       "titel": "Geschil over tuinhuisje",
       "personen": "Verzekerde: R.W. Kuldip Singh · Edgar Stam",
-      "samenvatting": "Beller heeft geschil met tuinvereniging over twee tuinhuisjes op zijn naam terwijl statuten slechts één toestaan. De medewerker heeft vastgesteld dat de beller geen rechtsbijstandsverzekering heeft en daarom geen volledig advies kan geven aan de telefoon. De beller is geverifieerd via automatische herkenning op telefoonnummer (Zoho-koppeling) en heeft inhoudelijk advies gekregen dat het geschil complex is en juridische specialisten nodig zijn.",
+      "samenvatting": "Beller heeft een geschil met een tuinvereniging over twee tuinhuisjes op zijn naam, terwijl statuten slechts één toestaan. De medewerker heeft vastgesteld dat de beller geen rechtsbijstandsverzekering heeft en daarom niet door Lancyr kan worden bijgestaan. De beller is wel geverifieerd (automatisch herkend via telefoonnummer in Zoho), en de medewerker heeft hem doorverwezen naar een gespecialiseerde advocaat (Reizenbeek) die ervaring heeft met verenigingen van eigenaren.",
       "tags": [
         [
-          "tag-overig",
-          "Verenigingsrecht / Tuinverenigingsrecht"
+          "tag-bestuursrecht",
+          "Bestuursrecht"
         ]
       ],
       "uitkomst": [
-        "outcome-opgelost",
-        "Telefonisch opgelost"
+        "outcome-terugbel",
+        "Terugbellen"
       ],
       "terugbel": false,
       "verkeerdVerbonden": false,
@@ -116,7 +116,7 @@
       "tijd": "13:15",
       "titel": "Rechtsbijstandverzekering en schadeclaim na verkeersongeval met Kelvin",
       "personen": "Verzekerde: C. Pronk · Edgar Stam",
-      "samenvatting": "Beller Kelvin had een verkeersongeval en wil weten welke schadevergoedingskosten hij kan verhalen op de tegenpartij. De medewerker heeft de beller geverifieerd via postcode/huisnummer (Roodboslaan 65, 6951 HG) en heeft inhoudelijk juridisch advies gegeven: aansprakelijkheid en causaliteit moeten aantoonbaar zijn, en de beller moet alle kosten (taxi's, benzine, lening auto's, etc.) goed bijhouden met bewijsmateriaal. Een kopie van de polis werd aangevraagd voor verdere verificatie van de rechtsbijstanddekking.",
+      "samenvatting": "Kelvin belde de juridische helpdesk met een vraag over schadeverhaalsrecht na een verkeersongeval waarbij een derde onder invloed zijn auto heeft beschadigd. De medewerker heeft de beller geverifieerd via postcode/huisnummer (6951 HG, Roodboslaan 65) en ontdekt dat rechtsbijstand volgens het systeem niet op zijn naam staat, hoewel de beller stelt dit via de autoverzekeringspolis te hebben. De medewerker heeft inhoudelijk juridisch advies gegeven over aansprakelijkheidsvereisten en schadeverhaalsrecht, en gevraagd een kopie van de polis in te sturen voor controle.",
       "tags": [
         [
           "tag-consument",
@@ -137,7 +137,7 @@
       "tijd": "13:46",
       "titel": "Huisverkoop na scheiding — notaris, volmacht en bereikbaarheid ex-partner",
       "personen": "Verzekerde: C. vanRhoon · Edgar Stam",
-      "samenvatting": "Beller (C. vanRhoon, geverifieerd via systeem) heeft vragen over huisverkoop na scheiding: kan de volmacht van zijn ex-vrouw gebruikt worden zonder toestemming van ex-man (die niet bereikbaar is, vermoedelijk in Mexico)? De medewerker gaf inhoudelijk advies: (1) ander notariskantoor raadplegen (Van Rijn notarissen in Zeist genoemd), (2) alternatief: advocaat inschakelen voor procedure bij rechter om toestemming af te dwingen via staatskourant/rechtszaak, (3) voorzorgsmaatregelen verzamelen om aan rechter aan te tonen dat inspanningen zijn gedaan ex-man terug te vinden. Geen formele doorverwijzing naar rechtsbijstand plaatsgevonden.",
+      "samenvatting": "Beller (geverifieerd via Zoho-automatische herkenning op telefoonnummer) kreeg juridisch advies over huisverkoop na scheiding, met focus op volmacht, notarisrollen en procedure voor bereiken ex-partner die niet meer bereikbaar is (vermoedelijk Mexico). Medewerker gaf inhoudelijk advies over keuze tussen andere notaris of rechterlijke tussenkomst, en benadrukte noodzaak om inspanningen tot contact documenteren. Zaak blijft open met concrete vervolgstappen (andere notaris benaderen, evt. rechtsprocedure).",
       "tags": [
         [
           "tag-huur",
@@ -158,56 +158,60 @@
       "tijd": "14:22",
       "titel": "Schadeclaim auto — tak op geparkeerde auto en rechtsbijstandverzekering",
       "personen": "Verzekerde: T. Voigt · Edgar Stam",
-      "samenvatting": "# Kern van het geschil\n\nVerzekerde: klant met relatienummer eindigend op 9-6, e-mail [tjade9696@hotmail.com](mailto:tjade9696@hotmail.com)\n\nWat: tak van gemeenteboom gevallen op geparkeerde auto, schade aan motorkap en wielomkasting\n\nWanneer: 19 augustus 2026, omstreeks 21:20 uur\n\nWat is misgelopen:",
+      "samenvatting": "Beller meldt schade aan geparkeerde auto door gevallen tak van gemeenteboom in Haarlem (geschat >EUR 1.000). Beller is geverifieerd via postcode/huisnummer en beschikt over een actieve rechtsbijstandsverzekering (relatienummer 84233659). De medewerker heeft erkend dat er administratieve onvolledigheid is in het systeem maar heeft de rechtsbijstandsdekking alsnog kunnen bevestigen. Er is geen inhoudelijk juridisch advies gegeven, maar de zaak is doorverwezen naar rechtsbijstand voor verdere behandeling.",
       "tags": [
         [
-          "tag-overig",
-          "Overig"
+          "tag-bestuursrecht",
+          "Schadevergoeding gemeente/openbare ruimte"
         ]
       ],
       "uitkomst": [
-        "outcome-geen-dekking",
-        "Geen dekking"
+        "outcome-brandmeester",
+        "Doorverwezen naar Brandmeester"
       ],
       "terugbel": false,
-      "verkeerdVerbonden": true,
+      "verkeerdVerbonden": false,
       "rechtsbijstandVerwijzing": true,
-      "adviesGegeven": true,
+      "adviesGegeven": false,
       "identiteitGeverifieerd": true
     }
   ],
   "acties": [],
   "analyse": {
     "goed": [
-      "09:32 Isolatiecentral: identiteit correct geverifieerd via postcode/adres; medewerker verzamelt systematisch informatie en plant concrete terugbelling in plaats van ongecontroleerd advies te geven",
-      "10:30 Arbeidsongeschiktheid: volledige verificatie (Zoho) en geverifieerde rechtsbijstand aanwezig; inhoudelijk advies over mediation-procedure duidelijk gegeven met concrete vervolgstap (september bedrijfsarts-gesprek)",
-      "10:44 Arbeidsziekte: identiteit correct geverifieerd; medewerker erkent eerder doorverwezen zaak niet is binnengekomen en stelt voor nu correct via casesnummer naar Brandmeester door te zetten — proactieve kwaliteitsbewaking",
-      "12:53 Tuinhuisje: identiteit via Zoho-koppeling geverifieerd; medewerker constateert correct dat beller geen rechtsbijstandsverzekering heeft en adviseert daarom passend zonder volledig juridisch advies in te steken",
-      "13:46 Huisverkoop: identiteit geverifieerd; inhoudelijk advies gegeven met concrete vervolgstappen (ander notariskantoor, advocaat-optie, voorzorgsmaatregelen)"
+      "09:32 Isolatiecentraal: Identiteit en polis geverifieerd, zaak telefonisch opgelost met advies",
+      "10:30 Arbeidsongeschiktheid: Identiteit geverifieerd, inhoudelijk advies gegeven, doorverwijzing naar Brandmeester",
+      "10:44 Arbeidsziekte Janis Scholt: Identiteit geverifieerd, doorverwijzing naar Brandmeester met naamgeving vervolgcontactpersoon (Sara/Zara)",
+      "12:53 Geschil tuinhuisje: Identiteit geverifieerd, correct geconstateerd dat beller geen dekking heeft, passend doorverwezen naar gespecialiseerde advocaat (Reizenbeek)",
+      "13:46 Huisverkoop scheiding: Identiteit geverifieerd, concrete vervolgstappen benoemd (notaris benaderen, evt. rechtsprocedure)",
+      "14:22 Schadeclaim auto: Identiteit geverifieerd, rechtsbijstandsdekking bevestigd ondanks administratieve onvolledigheid, correct doorverwezen naar Brandmeester zonder inhoudelijk advies"
     ],
     "beter": [
-      "09:32 Isolatiecentraal: dekkingscontrole voor 'wonen' is onvolledig gebleven — de medewerker vermeldt dat dit 'nog moet worden gecontroleerd' maar geen concrete deadline voor terugbelling is afgesproken; schadebedrag (€5.000 minus gedeeltelijke uitvoering) maakt dekkingscontrole franchise EUR 250 relevant",
-      "13:15 Verkeersongeval: advies over schadevergoeding (taxi's, benzine, leenauto's) gegeven zonder dat vooraf dekkingscontrole en franchise EUR 250 zijn vastgelegd — deze moet gebeurd zijn voordat inhoudelijk advies over schadebijzonderheden wordt gegeven; polis-kopie pas achteraf aangevraagd",
-      "14:22 Schadeclaim auto (tak op geparkeerde auto): gemarkeerd als 'Geen dekking' maar transcript is onvolledig (abrupt afgebroken) — onduidelijk of rechtsbijstandsverzekering is geverifieerd, of dekkingscontrole franchise EUR 250 is gedaan voordat advies werd gegeven, en wat het inhoudelijke advies was; vervolg onbepaald",
-      "11:00 IT Meeting: deze niet-juridische teamvergadering hoort niet in een juridische helpdesk-rapportage thuis en vertekent de dagkwaliteitsbeoordeling — dient uitgesloten te worden uit officiële rapportages"
+      "10:30 Arbeidsongeschiktheid: Advies gegeven aan geverifieerde beller, maar geen expliciete vermelding van concrete deadline voor vervolgstappen met bedrijfsarts of Brandmeester-contact",
+      "13:15 Verkeersongeval Kelvin: Advies gegeven over schadeverhaalsrecht en aansprakelijkheid voordat rechtsbijstandsverzekering definitief bevestigd was (polis nog in te sturen voor controle); dit is een schadeclaim >EUR 250 maar geen uitdrukkelijke dekkingscontrole (franchise) vastgelegd",
+      "11:00 IT Meeting: Geen juridisch geval — dit is een foutieve verbinding met interne IT-meeting, niet relevant voor juridische kwaliteitsborging maar toont mogelijk routingsproces dat kan worden verbeterd"
     ]
   },
   "verkeerdVerbonden": {
-    "aantal": 2,
-    "percentage": 25.0
+    "aantal": 1,
+    "percentage": 12.5
   },
   "rechtsbijstandVerwijzingen": 2,
   "categorieen": [
-    [
-      "Consumentenrecht",
-      2
-    ],
     [
       "Arbeidsrecht",
       2
     ],
     [
-      "Verenigingsrecht / Tuinverenigingsrecht",
+      "Overig",
+      1
+    ],
+    [
+      "Bestuursrecht",
+      1
+    ],
+    [
+      "Consumentenrecht",
       1
     ],
     [
@@ -215,7 +219,7 @@
       1
     ],
     [
-      "Overig",
+      "Schadevergoeding gemeente/openbare ruimte",
       1
     ]
   ]
