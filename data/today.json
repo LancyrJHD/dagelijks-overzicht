@@ -1,26 +1,184 @@
 {
   "date": "2026-08-20",
-  "generated_at": "2026-08-20T13:52:40Z",
-  "drukte": "rustig",
-  "gesprekken": 0,
+  "generated_at": "2026-08-20T14:40:29Z",
+  "drukte": "druk",
+  "gesprekken": 6,
   "stats": {
-    "opgelost": 0,
-    "brandmeester": 0,
+    "opgelost": 1,
+    "brandmeester": 2,
     "afkoop": 0,
-    "terugbel": 0,
-    "geenDekking": 0
+    "terugbel": 2,
+    "geenDekking": 1
   },
-  "score": 0,
-  "conversations": [],
+  "score": 7.8,
+  "conversations": [
+    {
+      "tijd": "13:53",
+      "titel": "Rechtsbijstand gezag en omgangsregeling – Diana Beyer",
+      "personen": "Verzekerde: L.E. Beijer · Dewi Verver | Juridisch Medewerker",
+      "samenvatting": "# Klantidentificatie\n\n- Beller: Diana Beyer\n- Aanvankelijk niet gevonden op postcode 1985 CE of e-mailadres ([liannepuntbeyer@gmail.com](mailto:liannepuntbeyer@gmail.com))\n- Wel gevonden op oud adres: postcode 1972 WX, huisnummer 150\n\n# Verzekeringscheck\n\n- Verzekerd voor module Personen & Familie\n-",
+      "tags": [
+        [
+          "tag-overig",
+          "Overig"
+        ]
+      ],
+      "uitkomst": [
+        "outcome-opgelost",
+        "Telefonisch opgelost"
+      ],
+      "terugbel": false,
+      "verkeerdVerbonden": false,
+      "rechtsbijstandVerwijzing": false,
+      "adviesGegeven": true,
+      "identiteitGeverifieerd": true
+    },
+    {
+      "tijd": "14:03",
+      "titel": "Contractvertraging en commissiebetaling — formeel escaleren bij leidinggevende",
+      "personen": "Verzekerde: L.E. Beijer · Dewi Verver | Juridisch Medewerker",
+      "samenvatting": "Beller (geverifieerd via Zoho-koppeling op telefoonnummer, polis 5607809717, adres Distelvinderweg 14 Diemen) is medewerker bij Londestock Investieringsgroep en dient een arbeidsconflict in: contractvertragingen bij verkoop van producten veroorzaken vertraging in commissiebetalingen. De medewerker heeft advies gegeven om het probleem schriftelijk bij de leidinggevende/werkgever in te dienen en verdere stappen af te wachten, maar geen juridische rechtsbijstand aangeboden.",
+      "tags": [
+        [
+          "tag-arbeidsrecht",
+          "Arbeidsrecht"
+        ]
+      ],
+      "uitkomst": [
+        "outcome-brandmeester",
+        "Doorverwezen naar Brandmeester"
+      ],
+      "terugbel": false,
+      "verkeerdVerbonden": false,
+      "rechtsbijstandVerwijzing": false,
+      "adviesGegeven": true,
+      "identiteitGeverifieerd": true
+    },
+    {
+      "tijd": "14:13",
+      "titel": "Lanceer-verzekering — DAS-overlap, doorverwijzing naar brandmeester, en declaratie kosten",
+      "personen": "Verzekerde: L.E. Beijer · Dewi Verver | Juridisch Medewerker",
+      "samenvatting": "Beller (L.E. Beijer) heeft een lopende juridische zaak met een zitting morgen waarbij al een advocaat is ingeschakeld. Het kernprobleem is overlap tussen DAS (oude partner van Lancyr) en Brandmeester (nieuwe partner): beller wil zekerheid dat vooraf gemaakte advocaatkosten worden vergoed. Medewerker heeft beller geverifieerd via Zoho (automatische herkenning op telefoonnummer), verklaard dat de overlap is gewijzigd van DAS naar Brandmeester, en afgesproken dat beller een mail stuurt naar juridische@lancyr-check.nl waarna medewerker de situatie uitzoekt en terugbelt; geen inhoudelijk juridisch advies gegeven maar wel een onderzoek en vervolgcontact afgesproken.",
+      "tags": [
+        [
+          "tag-overig",
+          "Rechtsbijstandsverzekering / decleratieprocedure"
+        ]
+      ],
+      "uitkomst": [
+        "outcome-terugbel",
+        "Terugbellen"
+      ],
+      "terugbel": true,
+      "verkeerdVerbonden": false,
+      "rechtsbijstandVerwijzing": false,
+      "adviesGegeven": false,
+      "identiteitGeverifieerd": true
+    },
+    {
+      "tijd": "14:52",
+      "titel": "Ticketsluiting en dossieroverdracht naar Brandmeester — verklaring",
+      "personen": "Verzekerde: anoniem · Dewi Verver | Juridisch Medewerker",
+      "samenvatting": "Beller (Walter Ella Mayer, postcode 3331 VS, huisnummer 11 in Zwijndrecht) belt over het sluiten van een arbeidsrechtelijk dossier dat eerder naar Brandmeester was doorverwezen. De beller is ontevreden omdat hij gisteren emails naar advocaten en Brandmeester CC'de om aan te geven dat het dossier nog niet gesloten mag worden, maar vandaag ontving hij toch een ticketsluiting van Lancyr. De medewerker verklaart dat de ticketsluiting bij Lancyr administratief is en Brandmeester het dossier nog oppakt, maar de beller vertrouwt dit niet omdat Brandmeester niet heeft gereageerd. Identiteit is geverifieerd via postcode en adres; inhoudelijk juridisch advies is gegeven (uitleg over de procedurele werkwijze en bevoegdheden), maar dit bleek onvoldoende te stellen.",
+      "tags": [
+        [
+          "tag-arbeidsrecht",
+          "Arbeidsrecht"
+        ]
+      ],
+      "uitkomst": [
+        "outcome-brandmeester",
+        "Doorverwezen naar Brandmeester"
+      ],
+      "terugbel": false,
+      "verkeerdVerbonden": false,
+      "rechtsbijstandVerwijzing": false,
+      "adviesGegeven": true,
+      "identiteitGeverifieerd": true
+    },
+    {
+      "tijd": "15:48",
+      "titel": "Rechtsbijstandsverzekering — ongewenste inschrijving met Soni Bor",
+      "personen": "Verzekerde: anoniem · Dewi Verver | Juridisch Medewerker",
+      "samenvatting": "Soni Bor belt over een ongewenste inschrijving voor rechtsbijstandsverzekering die per 1 september 2026 actief zou worden. De medewerker verificeerde de beller via telefoonnummer en bevestigde dat er inderdaad een actieve polis onder zijn naam staat. Er is geen inhoudelijk juridisch advies gegeven; in plaats daarvan is de beller doorverwezen naar de afdeling die polisbeheer afhandelt via reactie op de ontvangen e-mail.",
+      "tags": [
+        [
+          "tag-overig",
+          "Rechtsbijstandsverzekering / polisbeheer"
+        ]
+      ],
+      "uitkomst": [
+        "outcome-terugbel",
+        "Terugbellen"
+      ],
+      "terugbel": false,
+      "verkeerdVerbonden": false,
+      "rechtsbijstandVerwijzing": false,
+      "adviesGegeven": false,
+      "identiteitGeverifieerd": true
+    },
+    {
+      "tijd": "15:59",
+      "titel": "Verzekeringsschadeclaim – ondersteuning en routering",
+      "personen": "Verzekerde: anoniem · Dewi Verver | Juridisch Medewerker",
+      "samenvatting": "Beller belde met een autoschadeclaim (motorstoring, auto staat aan de kant van de weg). De medewerker erkende dat dit niet onder de juridische helpdesk valt en verwees de beller door naar een ander nummer (088-0204523) voor schadeherstel/roadside assistance. De beller is niet geverifieerd in het systeem en er is geen juridisch advies gegeven.",
+      "tags": [
+        [
+          "tag-overig",
+          "Autoverzekering / Schadeclaim"
+        ]
+      ],
+      "uitkomst": [
+        "outcome-geen-dekking",
+        "Geen dekking"
+      ],
+      "terugbel": false,
+      "verkeerdVerbonden": true,
+      "rechtsbijstandVerwijzing": false,
+      "adviesGegeven": false,
+      "identiteitGeverifieerd": false
+    }
+  ],
   "acties": [],
   "analyse": {
-    "goed": [],
-    "beter": []
+    "goed": [
+      "13:53 Diana Beyer: Identiteit correct geverifieerd via oud adres wanneer nieuw adres niet aansloot; dekkingscheck (Personen & Familie) uitgevoerd; zaak telefonisch opgelost.",
+      "14:03 Contractvertraging Londestock: Beller geverifieerd via Zoho en polis; arbeidsconflict correct herkend als niet onder juridische helpdesk vallend; passend doorverwezen naar Brandmeester.",
+      "14:13 L.E. Beijer DAS-overlap: Identiteit geverifieerd via Zoho; kritieke DAS-naar-Brandmeester overgang correct uitgelegd; vervolgplan duidelijk afgesproken (email naar juridische@lancyr-check.nl en terugbellen) – terecht geen advies gegeven maar wel onderzoek ingezet.",
+      "14:52 Walter Ella Mayer ticketsluiting: Identiteit volledig geverifieerd via postcode en adres; procedurele uitleg gegeven over administratieve sluiting vs. Brandmeester dossieropname; ingewikkelde situatie professioneel afgehandeld.",
+      "15:48 Soni Bor polis: Beller geverifieerd via telefoonnummer; polismisbruik correct herkend en niet als juridische kwestie behandeld; juiste doorverwijzing naar polisbeheer."
+    ],
+    "beter": [
+      "15:59 Autoschadeclaim: Geen verificatie uitgevoerd (terecht, want buiten juridische helpdesk); echter zou nuttig zijn geweest het schadebedrag even te noemen in de samenvatting om context te geven – nu onduidelijk of verzekerde überhaupt klant van Lancyr is.",
+      "14:03 Londestock: Arbeidsconflict is geen onderwerp voor rechtsbijstandsverzekering; medewerker had dit krachtiger moeten afkappen in plaats van advies te geven (zelfs procedureeels) – duidelijker scheidslijn nodig.",
+      "Geen gesprek: Geen herhaalcontactcontrole zichtbaar – check ingebouwd dat vandaag al eerder dezelfde beller belt over hetzelfde onderwerp?"
+    ]
   },
   "verkeerdVerbonden": {
-    "aantal": 0,
-    "percentage": 0.0
+    "aantal": 1,
+    "percentage": 16.7
   },
   "rechtsbijstandVerwijzingen": 0,
-  "categorieen": []
+  "categorieen": [
+    [
+      "Arbeidsrecht",
+      2
+    ],
+    [
+      "Overig",
+      1
+    ],
+    [
+      "Rechtsbijstandsverzekering / decleratieprocedure",
+      1
+    ],
+    [
+      "Rechtsbijstandsverzekering / polisbeheer",
+      1
+    ],
+    [
+      "Autoverzekering / Schadeclaim",
+      1
+    ]
+  ]
 }
