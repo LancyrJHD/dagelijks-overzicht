@@ -1,6 +1,6 @@
 {
   "date": "2026-08-21",
-  "generated_at": "2026-08-21T13:50:26Z",
+  "generated_at": "2026-08-21T14:39:39Z",
   "drukte": "rustig",
   "gesprekken": 2,
   "stats": {
@@ -16,7 +16,7 @@
       "tijd": "14:28",
       "titel": "Transavia-claim afwijzing — settlement en documentatie met Jack Dunst",
       "personen": "Verzekerde: anoniem · Dewi Verver | Juridisch Medewerker",
-      "samenvatting": "Jack Dunst belde over een afgewezen Transavia-claim voor vliegvertraging (€400 geclaimd). De medewerker verificeerde hem via postcode 1349 en adres Leo Endrick 41, en bood een afkoop aan van €500 onder voorwaarde van indiening van het vliegticket. De beller accepteerde dit voorstel; er wordt een e-mail met verdere instructies gestuurd en de zaak wordt via afkoop afgehandeld.",
+      "samenvatting": "Jack Dunst (postcode 1349, adres Leo Endrick 41) belt over een afgewezen Transavia-claim voor vliegvertraging van €400. De medewerker biedt een afkoop aan van €500 onder voorwaarde van indiening van het vliegticket/factuur. De beller gaat akkoord en zal de documentatie per mail toesturen; identiteit is geverifieerd via postcode en adres, en er is inhoudelijk juridisch advies gegeven over de afkoop-mogelijkheid.",
       "tags": [
         [
           "tag-consument",
@@ -37,7 +37,7 @@
       "tijd": "14:56",
       "titel": "Kozijnwerk – herstelling en betalingskwestie met Dori Santana",
       "personen": "Verzekerde: Y. Santana Sanz · Dewi Verver | Juridisch Medewerker",
-      "samenvatting": "Beller Dori Santana heeft een kozijn laten plaatsen dat niet volgens de tekening is gemaakt. De medewerker heeft advies gegeven om de aannemer schriftelijk in gebreke te stellen met een veertien-daagse hersteltermijn per mail, waarbij foto's en tekeningen worden bijgevoegd. Ook is advies gegeven om de factuur volledig te betalen ondanks de gebreken, aangezien werkzaamheden zijn verricht. De beller is automatisch geverifieerd via telefoonnummer (Zoho-koppeling) en heeft daadwerkelijk juridisch advies ontvangen.",
+      "samenvatting": "Beller Dori Santana heeft een kozijn laten plaatsen dat niet volgens tekening is uitgevoerd. De medewerker gaf advies: eerst schriftelijk (per mail) een herstellingsverzoek indienen met een termijn van 14 werkdagen, daarna desnoods terugbellen. Over betaling: de factuur geheel voldoen omdat werkzaamheden zijn uitgevoerd, maar eerst afwachten hoe de aannemer reageert. Beller is automatisch geverifieerd via telefoonnummer (Zoho-match Y. Santana Sanz), inhoudelijk juridisch advies is gegeven.",
       "tags": [
         [
           "tag-bouw",
@@ -58,13 +58,13 @@
   "acties": [],
   "analyse": {
     "goed": [
-      "14:28 Transavia-claim: identiteit volledig geverifieerd (postcode + adres), settlement van €500 aangeboden voor €400-claim, vervolgstap (vliegticket indienen) via e-mail geïnstrueerd",
-      "14:56 Kozijnwerk: identiteit automatisch geverifieerd via Zoho-telefoonnummerkoppeling, concreet juridisch advies gegeven (schriftelijke ingebrekestelling met 14-daagse termijn), procedurele stappen (bijvoeging foto's en tekeningen) duidelijk benoemd",
-      "Beide gesprekken: advies gegeven aan geverifieerde klanten, geen herhaalcontacten gedetecteerd"
+      "14:28 Transavia-claim: identiteit volledig geverifieerd (postcode + adres), advies gegeven over settlement-mogelijkheid, concrete vervolgstap afgesproken (beller stuurt documenten per mail)",
+      "14:56 Kozijnwerk: identiteit automatisch geverifieerd via telefoonnummer (Zoho-match), duidelijke stappen gegeven (schriftelijk herstellingsverzoek met concrete deadline van 14 werkdagen, vervolgbel mogelijk)",
+      "Beide gesprekken: inhoudelijk juridisch advies gegeven en uitkomst bereikt binnen dezelfde dag"
     ],
     "beter": [
-      "14:28 Transavia-claim: geen documentatie van dekkingscontrole (franchise EUR 250) vastgelegd in verslag — bij een schadeclaim van €400 (boven franchise) had dit expliciet moeten worden genoteerd",
-      "14:56 Kozijnwerk: geen concrete deadline voor vervolgstap vermeld — wanneer dient de beller feedback van aannemer/vervolgactie door te geven? Dit had duidelijker afgesproken moeten worden"
+      "14:28 Transavia-claim: geen expliciete deadline genoemd voor indiening van het vliegticket/factuur per mail – hint als 'zo spoedig mogelijk' of concrete datum zou nagelvast zijn",
+      "14:56 Kozijnwerk: geen dekkingscontrole (franchise EUR 250) vastgelegd, maar dit is hier waarschijnlijk niet van toepassing omdat geen concreet schadebedrag in dit stadium speelt (het gaat om geschil over uitvoering, niet om een schadeclaim met bedrag)"
     ]
   },
   "verkeerdVerbonden": {
