@@ -1,6 +1,6 @@
 {
   "date": "2026-08-21",
-  "generated_at": "2026-08-21T15:37:51Z",
+  "generated_at": "2026-08-21T16:39:10Z",
   "drukte": "rustig",
   "gesprekken": 2,
   "stats": {
@@ -16,7 +16,7 @@
       "tijd": "14:28",
       "titel": "Transavia-claim afwijzing — settlement en documentatie met Jack Dunst",
       "personen": "Verzekerde: anoniem · Dewi Verver | Juridisch Medewerker",
-      "samenvatting": "Jack Dunst belde over een afgewezen Transavia-vluchtvertraagingsclaim van €400. De medewerker verificeerde de beller via postcode (1349) en adres (Leo Endrick 41) en stelde een afkoopregeling voor van €500 tegen inlevering van het vliegticket. De beller accepteerde dit voorstel; de medewerker zal een e-mail met verdere informatie sturen, waarna de zaak kan worden afgehandeld.",
+      "samenvatting": "Jack Dunst belt over een afgewezen Transavia-claim voor vliegvertraging (€400 geëist). De medewerker verifieert de beller via postcode en adres en biedt een afkoop van €500 aan, mits de beller de vliegticketfactuur indient per e-mail. De beller gaat hiermee akkoord en zal de documenten binnen twee weken indienen.",
       "tags": [
         [
           "tag-consument",
@@ -37,7 +37,7 @@
       "tijd": "14:56",
       "titel": "Kozijnwerk – herstelling en betalingskwestie met Dori Santana",
       "personen": "Verzekerde: Y. Santana Sanz · Dewi Verver | Juridisch Medewerker",
-      "samenvatting": "Beller Dori Santana heeft een kozijn laten plaatsen dat niet volgens tekening is gemaakt en wil dit hersteld hebben. De medewerker heeft inhoudelijk advies gegeven: schriftelijk (per mail) een herstellingsverzoek indienen met een termijn van 14 werkdagen, en de factuur volledig betalen omdat werkzaamheden zijn uitgevoerd. Identiteit is geverifieerd via automatische Zoho-koppeling op telefoonnummer.",
+      "samenvatting": "Dori Santana belt over een kozijn dat niet volgens tekening is geplaatst en vraagt om herstel en advies over betaling van de factuur. De medewerker geeft advies: eerst een schriftelijke (mail)verzoek sturen met tekeningen en een termijn van veertien werkdagen, en de factuur gewoon betalen omdat werkzaamheden zijn verricht. De beller is automatisch geverifieerd via Zoho-koppeling op telefoonnummer, en er is inhoudelijk juridisch advies gegeven over vorderingsrecht, verzuim en betalingsverplichting.",
       "tags": [
         [
           "tag-consument",
@@ -58,14 +58,15 @@
   "acties": [],
   "analyse": {
     "goed": [
-      "14:28 Transavia-claim: Identiteit correct geverifieerd via postcode en adres voordat advies werd gegeven",
-      "14:28 Transavia-claim: Concrete vervolgstap afgesproken (e-mail met verdere informatie) en acceptable settlement (€500) gerealiseerd",
-      "14:56 Kozijnwerk: Identiteit geverifieerd via Zoho-koppeling op telefoonnummer",
-      "14:56 Kozijnwerk: Duidelijk schriftelijk vervolgplan gegeven (mail indienen met herstellingsverzoek)"
+      "14:28 Transavia-claim: identiteit correct geverifieerd (postcode + adres), concrete deadline vastgesteld (twee weken voor documentatie)",
+      "14:28 Transavia-claim: dekkingscontrole uitgevoerd (€400 claim, settlement €500 aangeboden)",
+      "14:56 Kozijnwerk: identiteit geverifieerd via Zoho-koppeling op telefoonnummer",
+      "14:56 Kozijnwerk: juridisch advies gegeven over vorderingsrecht, verzuim en betalingsverplichting",
+      "14:56 Kozijnwerk: concrete termijn benoemd (veertien werkdagen voor schriftelijk verzoek)"
     ],
     "beter": [
-      "14:28 Transavia-claim: Dekkingscontrole/franchise (EUR 250) niet expliciet gedocumenteerd voor de €400-claim, hoewel afkoop is gesloten",
-      "14:56 Kozijnwerk: Concrete deadline ontbreekt — '14 werkdagen' als termijn voor herstellingsverzoek is genoemd, maar geen expliciete deadline voor vervolgcontact met medewerker afgesproken na versturen van de mail"
+      "14:28 Transavia-claim: bij settlement zou goed zijn geweest expliciet vast te leggen dat de afkoop van €500 het geschil definitief sluit en geen verdere vorderingen meer kunnen worden ingediend",
+      "14:56 Kozijnwerk: geen schadebedrag genoemd in dit geschil, dus dekkingscontrole niet van toepassing, maar wel zou het goed zijn geweest de beller te adviseren om bij mogelijke latere schadeclaims (bijv. vochtschade) die bedragen vast te leggen"
     ]
   },
   "verkeerdVerbonden": {
