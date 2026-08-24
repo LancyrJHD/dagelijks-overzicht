@@ -1,10 +1,10 @@
 {
   "date": "2026-08-24",
-  "generated_at": "2026-08-24T10:11:56Z",
-  "totaalInbound": 6,
-  "totaalGemist": 2,
+  "generated_at": "2026-08-24T11:02:53Z",
+  "totaalInbound": 8,
+  "totaalGemist": 3,
   "terugGebeld": 0,
-  "nietTerugGebeld": 2,
+  "nietTerugGebeld": 3,
   "nietTerugGebeldNummers": [
     {
       "nummer": "+31636293184",
@@ -16,6 +16,12 @@
       "nummer": "+31433514571",
       "naam": "Onbekend",
       "tijd": "10:33",
+      "callResult": "voicemail"
+    },
+    {
+      "nummer": "+319001884",
+      "naam": "Onbekend",
+      "tijd": "12:14",
       "callResult": "voicemail"
     }
   ]
