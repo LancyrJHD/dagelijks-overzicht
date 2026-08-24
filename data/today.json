@@ -1,57 +1,59 @@
 {
   "date": "2026-08-24",
-  "generated_at": "2026-08-24T08:44:24Z",
+  "generated_at": "2026-08-24T08:47:41Z",
   "drukte": "rustig",
   "gesprekken": 1,
   "stats": {
-    "opgelost": 1,
-    "brandmeester": 0,
+    "opgelost": 0,
+    "brandmeester": 1,
     "afkoop": 0,
     "terugbel": 0,
     "geenDekking": 0
   },
-  "score": 8.5,
+  "score": 6.5,
   "conversations": [
     {
       "tijd": "10:00",
       "titel": "Brandmeester-zaak — verzending stukken en rapportage contract",
       "personen": "Verzekerde: anoniem · Dewi Verver | Juridisch Medewerker",
-      "samenvatting": "Dit is een intern werkgesprek tussen twee medewerkers van de juridische helpdesk, niet een klantgesprek. De ene medewerker bespreekt met een collega/manager een Brandmeester-zaak waar stukken niet tijdig zijn doorgestuurd (april en augustus), en daarnaast wordt gesproken over contractafspraken en rapportagemodules. De beller is niet geverifieerd omdat dit geen klantinteractie is, en geen juridisch advies aan een externe klant is gegeven.",
+      "samenvatting": "# Dossier Brandmix: Gemiste Doorsturing\n\n- Klant had zaak in april 2026 al gemeld; doorgestuurd naar Brandmeester, maar aansluitende nieuwe zaak later vergeten door te sturen\n  - Fout erkend: doorsturing is te laat gebeurd\n  - Geen stukken ontvangen van verzekerde, dus niets mee te sturen\n- Telefoni",
       "tags": [
         [
           "tag-overig",
-          "Intern werkoverleg"
+          "Overig"
         ]
       ],
       "uitkomst": [
-        "outcome-opgelost",
-        "Telefonisch opgelost"
+        "outcome-brandmeester",
+        "Doorverwezen naar Brandmeester"
       ],
       "terugbel": false,
-      "verkeerdVerbonden": false,
+      "verkeerdVerbonden": true,
       "rechtsbijstandVerwijzing": false,
-      "adviesGegeven": false,
-      "identiteitGeverifieerd": false
+      "adviesGegeven": true,
+      "identiteitGeverifieerd": true
     }
   ],
   "acties": [],
   "analyse": {
     "goed": [
-      "10:00 Brandmeester-zaak: Correct inzicht dat dit een intern werkgesprek tussen medewerkers is, geen klantcontact — verificatie en adviesstandaarden zijn hier niet van toepassing.",
-      "10:00 Brandmeester-zaak: Telefonisch opgelost geregistreerd, wat aangeeft dat het interne overleg heeft plaatsgevonden."
+      "10:00 Brandmeester-zaak: Identiteit correct geverifieerd voordat advies werd gegeven",
+      "10:00 Brandmeester-zaak: Medewerker erkent fout proactief (te late doorsturing)"
     ],
     "beter": [
-      "10:00 Brandmeester-zaak: Verzending stukken april en augustus niet tijdig uitgevoerd — zorg voor duidelijke vervolgdeadlines en eigenaarschap per stuk om herhaling in toekomst te voorkomen."
+      "10:00 Brandmeester-zaak: Geen concrete deadline genoemd voor vervolgstap of hernieuwde doorsturing naar Brandmeester",
+      "10:00 Brandmeester-zaak: Onduidelijk of klant tijdslijn voor verwachte stukken van verzekerde heeft gekregen (nodig voor vervolgacties)",
+      "10:00 Brandmeester-zaak: Bij doorverwijzing ontbreekt concrete afspraak wanneer klant mag terugbellen/volgen voor statusupdate"
     ]
   },
   "verkeerdVerbonden": {
-    "aantal": 0,
-    "percentage": 0.0
+    "aantal": 1,
+    "percentage": 100.0
   },
   "rechtsbijstandVerwijzingen": 0,
   "categorieen": [
     [
-      "Intern werkoverleg",
+      "Overig",
       1
     ]
   ]
