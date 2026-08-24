@@ -1,6 +1,6 @@
 {
   "date": "2026-08-24",
-  "generated_at": "2026-08-24T08:11:36Z",
+  "generated_at": "2026-08-24T08:36:00Z",
   "drukte": "rustig",
   "gesprekken": 1,
   "stats": {
@@ -16,7 +16,7 @@
       "tijd": "10:00",
       "titel": "Brandmeester-zaak — verzending stukken en rapportage contract",
       "personen": "Verzekerde: anoniem · Dewi Verver | Juridisch Medewerker",
-      "samenvatting": "Dit is een intern werkgesprek tussen twee HTJZ-medewerkers (geen beller/klant), niet een telefonisch juridisch advies aan een verzekerde. De ene medewerker geeft rapportage aan de ander over een eerder doorverwezen Brandmeester-zaak (verzending stukken, contractrapportage, en operationele verbeteringen zoals call-handling). Geen klant is geverifieerd en geen juridisch advies aan een verzekerde is gegeven.",
+      "samenvatting": "Dit is een intern werkgesprek tussen twee medewerkers van de juridische helpdesk over procesmatige kwesties: verzending van stukken naar Brandmeester in een eerder doorverwezen zaak (waarin stukken van de verzekerde ontbraken) en afronden van een contract met daarin rapportagevereisten. Er is geen sprake van een beller/verzekerde; geen identiteitsverificatie nodig en geen inhoudelijk juridisch advies aan een cliënt gegeven.",
       "tags": [
         [
           "tag-overig",
@@ -37,10 +37,11 @@
   "acties": [],
   "analyse": {
     "goed": [
-      "10:00 Brandmeester-zaak: Correct herkend als intern werkgesprek tussen HTJZ-medewerkers, niet als bellers-adviesgesprek. Verificatie- en dekkingsnormen zijn hier niet van toepassing."
+      "10:00 Brandmeester-zaak: Correct geïdentificeerd als intern werkgesprek tussen medewerkers zonder betrokken externe beller — identiteitsverificatie en cliëntadvies waren niet van toepassing",
+      "Procesmatige afhandeling: Verzending van stukken en contractuele rapportagevereisten intern afgestemd en opgelost"
     ],
     "beter": [
-      "Voor toekomstige duidelijkheid: zorg dat intern werkgesprekken duidelijk gescheiden blijven van bellers-adviesgesprekken in logregistratie, zodat kwaliteitsbeoordeling niet wordt verward."
+      "Geen substantiële kwaliteitspunten; dit was een intern administratief gesprek zonder klantencontact"
     ]
   },
   "verkeerdVerbonden": {
