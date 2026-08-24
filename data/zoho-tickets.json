@@ -1,6 +1,6 @@
 {
   "date": "2026-08-24",
-  "generated_at": "2026-08-24T13:01:50Z",
+  "generated_at": "2026-08-24T14:11:38Z",
   "tickets": [
     {
       "ticketNumber": "2635",
@@ -55,7 +55,7 @@
       "tijd": "12:43",
       "titel": "FW: 84202292_Mahabir: Lekkage Siemens wasmachine - Formele klacht en vordering tot restitutie (Factuurnummer: 1406559799 / Service-ordernummer: 3371934134)",
       "klant": "V. Mahabir",
-      "status": "In de wacht",
+      "status": "Gesloten",
       "statusType": "",
       "prioriteit": "Niet ingesteld",
       "webUrl": "https://desk.zoho.eu/support/htjzlancyr/ShowHomePage.do#Cases/dv/195464000013555286",
@@ -79,24 +79,24 @@
       "tijd": "13:46",
       "titel": "Erfenisadvisering — rangorde schulden en rechtsbijstand",
       "klant": "C.J. Demmer",
-      "status": "In de wacht",
+      "status": "Gesloten",
       "statusType": "",
       "prioriteit": "Niet ingesteld",
       "webUrl": "https://desk.zoho.eu/support/htjzlancyr/ShowHomePage.do#Cases/dv/195464000013524093",
       "channel": "Phone",
-      "doorgezetBrandmeester": false
+      "doorgezetBrandmeester": true
     },
     {
       "ticketNumber": "2644",
       "tijd": "13:53",
       "titel": "Juridische helpdesk — exit en VSO begeleiding voor Kwakman",
       "klant": "F. Kwakman",
-      "status": "In de wacht",
+      "status": "Gesloten",
       "statusType": "",
       "prioriteit": "Niet ingesteld",
       "webUrl": "https://desk.zoho.eu/support/htjzlancyr/ShowHomePage.do#Cases/dv/195464000013546231",
       "channel": "Phone",
-      "doorgezetBrandmeester": false
+      "doorgezetBrandmeester": true
     },
     {
       "ticketNumber": "2645",
@@ -127,28 +127,52 @@
       "tijd": "14:43",
       "titel": "VSO-beoordeling en rechtsbijstand met Luis",
       "klant": "J. Boomsma",
-      "status": "Open",
+      "status": "Gesloten",
       "statusType": "",
       "prioriteit": "Niet ingesteld",
       "webUrl": "https://desk.zoho.eu/support/htjzlancyr/ShowHomePage.do#Cases/dv/195464000013536166",
       "channel": "Phone",
-      "doorgezetBrandmeester": false
+      "doorgezetBrandmeester": true
     },
     {
       "ticketNumber": "2648",
       "tijd": "14:49",
       "titel": "Autoongeval Kia — schadeclaim en rechtsbijstand met Erkan",
       "klant": "E. Yavuz",
-      "status": "In de wacht",
+      "status": "Gesloten",
       "statusType": "",
       "prioriteit": "Niet ingesteld",
       "webUrl": "https://desk.zoho.eu/support/htjzlancyr/ShowHomePage.do#Cases/dv/195464000013524173",
+      "channel": "Phone",
+      "doorgezetBrandmeester": true
+    },
+    {
+      "ticketNumber": "2649",
+      "tijd": "15:02",
+      "titel": "Juridische hulp auto-geschil — geschillencommissie versus advocaat",
+      "klant": "E. Dieperink",
+      "status": "Gesloten",
+      "statusType": "",
+      "prioriteit": "Niet ingesteld",
+      "webUrl": "https://desk.zoho.eu/support/htjzlancyr/ShowHomePage.do#Cases/dv/195464000013548118",
+      "channel": "Phone",
+      "doorgezetBrandmeester": false
+    },
+    {
+      "ticketNumber": "2650",
+      "tijd": "15:59",
+      "titel": "Rechtsbijstandsverzekering — doorverwijzing naar correct telefoonnummer",
+      "klant": "C.G.J. Baggen",
+      "status": "Gesloten",
+      "statusType": "",
+      "prioriteit": "Niet ingesteld",
+      "webUrl": "https://desk.zoho.eu/support/htjzlancyr/ShowHomePage.do#Cases/dv/195464000013556024",
       "channel": "Phone",
       "doorgezetBrandmeester": false
     }
   ],
   "channelCounts": {
-    "Phone": 12
+    "Phone": 14
   },
-  "brandmeesterCount": 0
+  "brandmeesterCount": 4
 }
