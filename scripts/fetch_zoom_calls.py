@@ -1,8 +1,9 @@
 #!/usr/bin/env python3
-"""Haalt de gemiste inbound-oproepen van vandaag op uit Zoom Phone call
-history en bepaalt per gemiste oproep of er later diezelfde dag is
-teruggebeld naar hetzelfde nummer. Schrijft data/zoom-calls.json voor het
-dagrapport-dashboard (zelfde patroon als scripts/fetch_zoho_tickets.py).
+"""Haalt de inbound-oproepen van vandaag op uit Zoom Phone call history:
+totaal aantal binnenkomende oproepen, hoeveel daarvan gemist zijn, hoeveel
+er zijn teruggebeld en (met naam/nummer/tijd) wie nog niet is teruggebeld.
+Schrijft data/zoom-calls.json voor het dagrapport-dashboard (zelfde patroon
+als scripts/fetch_zoho_tickets.py).
 
 LET OP -- bekende beperking (bron: Zoom-documentatie "Understand Zoom Phone
 call history"): een top-level call_history-record toont bij doorgeroute
@@ -106,11 +107,14 @@ def main():
 
     missed = []
     outbound_calls = []
+    totaal_inbound = 0
     for log in logs:
         direction = (log.get('direction') or '').lower()
         result = (log.get('call_result') or '').lower()
-        if direction == 'inbound' and result in MISSED_RESULTS:
-            missed.append(log)
+        if direction == 'inbound':
+            totaal_inbound += 1
+            if result in MISSED_RESULTS:
+                missed.append(log)
         elif direction == 'outbound':
             outbound_calls.append(log)
 
@@ -148,6 +152,7 @@ def main():
     result = {
         'date': date_str,
         'generated_at': datetime.now(timezone.utc).strftime('%Y-%m-%dT%H:%M:%SZ'),
+        'totaalInbound': totaal_inbound,
         'totaalGemist': len(missed),
         'terugGebeld': gebeld_count,
         'nietTerugGebeld': len(niet_gebeld),
@@ -156,8 +161,9 @@ def main():
     os.makedirs('data', exist_ok=True)
     with open(OUTPUT_PATH, 'w', encoding='utf-8') as f:
         json.dump(result, f, ensure_ascii=False, indent=2)
-    print(f"Saved: {len(missed)} gemist, {gebeld_count} teruggebeld, "
-          f"{len(niet_gebeld)} niet teruggebeld -> {OUTPUT_PATH}")
+    print(f"Saved: {totaal_inbound} binnenkomend, {len(missed)} gemist, "
+          f"{gebeld_count} teruggebeld, {len(niet_gebeld)} niet teruggebeld "
+          f"-> {OUTPUT_PATH}")
 
 
 if __name__ == '__main__':

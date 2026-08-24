@@ -3980,7 +3980,7 @@ function renderDashboard(period) {
         <div class="gesprekken-title">Gemiste oproepen (Zoom Phone)</div>
       </div>
       <div style="color:var(--ink-50);font-size:12px;margin:-4px 0 4px 0">
-        ${zoomDataAvailable ? `${zoomMissedTotal} gemist vandaag &middot; ${zoomCalledBackTotal} teruggebeld &middot; ${zoomMissedCalls.length} nog niet teruggebeld` : 'Zoom-data nog niet beschikbaar'}
+        ${zoomDataAvailable ? `${zoomTotaalInbound} binnenkomende oproepen vandaag &middot; ${zoomMissedTotal} gemist &middot; ${zoomCalledBackTotal} teruggebeld &middot; ${zoomMissedCalls.length} nog niet teruggebeld` : 'Zoom-data nog niet beschikbaar'}
       </div>
       <div style="color:var(--ink-50);font-size:11px;margin:0 0 12px 0;font-style:italic">
         Beta: gebaseerd op het top-level Zoom-call-resultaat. Bij oproepen via een auto receptionist of wachtrij kan dit gemiste oproepen onderschatten &mdash; controleer bij twijfel de Zoom-telefonielog zelf.
@@ -4129,6 +4129,7 @@ async function loadZoomCalls() {
     if (!resp.ok) return;
     const live = await resp.json();
     if (Array.isArray(live.nietTerugGebeldNummers)) zoomMissedCalls = live.nietTerugGebeldNummers;
+    if (typeof live.totaalInbound === 'number') zoomTotaalInbound = live.totaalInbound;
     if (typeof live.totaalGemist === 'number') zoomMissedTotal = live.totaalGemist;
     if (typeof live.terugGebeld === 'number') zoomCalledBackTotal = live.terugGebeld;
     zoomDataAvailable = true;
@@ -4377,6 +4378,7 @@ let zohoChannelCounts = {};
 let zohoBrandmeesterCount = 0;
 let zohoTicketsTodayTotal = 0;
 let zoomMissedCalls = [];
+let zoomTotaalInbound = 0;
 let zoomMissedTotal = 0;
 let zoomCalledBackTotal = 0;
 let zoomDataAvailable = false;
