@@ -1,26 +1,58 @@
 {
   "date": "2026-08-24",
-  "generated_at": "2026-08-24T07:57:35Z",
+  "generated_at": "2026-08-24T08:36:00Z",
   "drukte": "rustig",
-  "gesprekken": 0,
+  "gesprekken": 1,
   "stats": {
-    "opgelost": 0,
+    "opgelost": 1,
     "brandmeester": 0,
     "afkoop": 0,
     "terugbel": 0,
     "geenDekking": 0
   },
-  "score": 0,
-  "conversations": [],
+  "score": 8.5,
+  "conversations": [
+    {
+      "tijd": "10:00",
+      "titel": "Brandmeester-zaak — verzending stukken en rapportage contract",
+      "personen": "Verzekerde: anoniem · Dewi Verver | Juridisch Medewerker",
+      "samenvatting": "Dit is een intern werkgesprek tussen twee medewerkers van de juridische helpdesk over procesmatige kwesties: verzending van stukken naar Brandmeester in een eerder doorverwezen zaak (waarin stukken van de verzekerde ontbraken) en afronden van een contract met daarin rapportagevereisten. Er is geen sprake van een beller/verzekerde; geen identiteitsverificatie nodig en geen inhoudelijk juridisch advies aan een cliënt gegeven.",
+      "tags": [
+        [
+          "tag-overig",
+          "Intern werkoverleg"
+        ]
+      ],
+      "uitkomst": [
+        "outcome-opgelost",
+        "Telefonisch opgelost"
+      ],
+      "terugbel": false,
+      "verkeerdVerbonden": false,
+      "rechtsbijstandVerwijzing": false,
+      "adviesGegeven": false,
+      "identiteitGeverifieerd": false
+    }
+  ],
   "acties": [],
   "analyse": {
-    "goed": [],
-    "beter": []
+    "goed": [
+      "10:00 Brandmeester-zaak: Correct geïdentificeerd als intern werkgesprek tussen medewerkers zonder betrokken externe beller — identiteitsverificatie en cliëntadvies waren niet van toepassing",
+      "Procesmatige afhandeling: Verzending van stukken en contractuele rapportagevereisten intern afgestemd en opgelost"
+    ],
+    "beter": [
+      "Geen substantiële kwaliteitspunten; dit was een intern administratief gesprek zonder klantencontact"
+    ]
   },
   "verkeerdVerbonden": {
     "aantal": 0,
     "percentage": 0.0
   },
   "rechtsbijstandVerwijzingen": 0,
-  "categorieen": []
+  "categorieen": [
+    [
+      "Intern werkoverleg",
+      1
+    ]
+  ]
 }
