@@ -1,59 +1,132 @@
 {
   "date": "2026-08-24",
-  "generated_at": "2026-08-24T08:47:41Z",
-  "drukte": "rustig",
-  "gesprekken": 1,
+  "generated_at": "2026-08-24T09:25:03Z",
+  "drukte": "matig",
+  "gesprekken": 4,
   "stats": {
-    "opgelost": 0,
-    "brandmeester": 1,
+    "opgelost": 1,
+    "brandmeester": 0,
     "afkoop": 0,
-    "terugbel": 0,
-    "geenDekking": 0
+    "terugbel": 2,
+    "geenDekking": 1
   },
-  "score": 6.5,
+  "score": 7.8,
   "conversations": [
     {
       "tijd": "10:00",
       "titel": "Brandmeester-zaak — verzending stukken en rapportage contract",
       "personen": "Verzekerde: anoniem · Dewi Verver | Juridisch Medewerker",
-      "samenvatting": "# Dossier Brandmix: Gemiste Doorsturing\n\n- Klant had zaak in april 2026 al gemeld; doorgestuurd naar Brandmeester, maar aansluitende nieuwe zaak later vergeten door te sturen\n  - Fout erkend: doorsturing is te laat gebeurd\n  - Geen stukken ontvangen van verzekerde, dus niets mee te sturen\n- Telefoni",
+      "samenvatting": "Dit is een intern gesprek tussen twee medewerkers van de juridische helpdesk, niet een klantgesprek. De medewerkers bespreken een eerdere zaak waarin stukken niet tijdig naar Brandmeester zijn doorgestuurd (in april en later in augustus 2026), contractrapportage-afspraken en operationele verbeteringen zoals telefooncentralebeheer. Er is geen klantverificatie, geen juridisch advies aan een verzekerde gegeven, en geen sprake van een telefonisch klantcontact.",
       "tags": [
         [
           "tag-overig",
-          "Overig"
+          "Intern zakelijk overleg"
         ]
       ],
       "uitkomst": [
-        "outcome-brandmeester",
-        "Doorverwezen naar Brandmeester"
+        "outcome-geen-dekking",
+        "N.v.t. - intern gesprek"
       ],
       "terugbel": false,
-      "verkeerdVerbonden": true,
+      "verkeerdVerbonden": false,
+      "rechtsbijstandVerwijzing": false,
+      "adviesGegeven": false,
+      "identiteitGeverifieerd": false
+    },
+    {
+      "tijd": "10:26",
+      "titel": "Zonnepanelen en thuisbatterij — schadeclaim en ingebrekestelling met Dillessen",
+      "personen": "Verzekerde: H.B.M. Nillesen · Senne Duifhuis | Juridisch medewerker",
+      "samenvatting": "Meneer Dillessen belt over een schadeclaim en geschil met een installateur aangaande defecte zonnepanelen en thuisbatterij. De beller is automatisch geverifieerd via Zoho (H.B.M. Nillesen, telefoonnummer gekoppeld aan polis). De medewerker geeft inhoudelijk advies: zij adviseert dat een ingebrekestelling duidelijk moet vermelden dat het een ingebrekestelling is, en stelt voor de ingebrekestelling naar de helpdesk op te sturen. Vervolgcontact wordt afgesproken voor na ontvangst van de stelling.",
+      "tags": [
+        [
+          "tag-consument",
+          "Consumentenrecht"
+        ]
+      ],
+      "uitkomst": [
+        "outcome-terugbel",
+        "Terugbellen"
+      ],
+      "terugbel": true,
+      "verkeerdVerbonden": false,
       "rechtsbijstandVerwijzing": false,
       "adviesGegeven": true,
+      "identiteitGeverifieerd": true
+    },
+    {
+      "tijd": "10:41",
+      "titel": "Rechtsbijstand – auto aankoop en BOVAG garantie",
+      "personen": "Verzekerde: H.B.M. Nillesen · Senne Duifhuis | Juridisch medewerker",
+      "samenvatting": "Beller (H.B.M. Nillesen) belt over aankoop tweedehandsauto via garage die twee weken later total loss is verklaard. Geschil over BOVAG-garantie: beller stelt deze te hebben, garage ontkent. Identiteit is automatisch geverifieerd via telefoonnummer/Zoho-match. Medewerker geeft advies dat zonder BOVAG-garantie geen rechtsbijstandsdekking mogelijk is, en adviseert een ingebrekenstelling te sturen; geen daadwerkelijke rechtsbijstandsverwijzing plaatsgevonden, gesprek blijft op adviesfase.",
+      "tags": [
+        [
+          "tag-consument",
+          "Consumentenrecht"
+        ]
+      ],
+      "uitkomst": [
+        "outcome-opgelost",
+        "Telefonisch opgelost"
+      ],
+      "terugbel": false,
+      "verkeerdVerbonden": false,
+      "rechtsbijstandVerwijzing": false,
+      "adviesGegeven": true,
+      "identiteitGeverifieerd": true
+    },
+    {
+      "tijd": "11:07",
+      "titel": "Routekeuze en ticketafhandeling met mevrouw Gourdu",
+      "personen": "Verzekerde: M.A.J. vanWanrooij · Senne Duifhuis | Juridisch medewerker",
+      "samenvatting": "Mevrouw Gourdu belt over routekeuze en ticketafhandeling. De medewerker bevestigt ontvangst van ingediende stukken, spreekt af dat het team binnen twee weken reageert, en sluit het ticket tijdelijk (het opent automatisch bij vervolgcontact). De beller is automatisch geverifieerd via Zoho-koppeling, maar er is geen inhoudelijk juridisch advies gegeven – het betreft ticketbeheer en procedurecommunicatie.",
+      "tags": [
+        [
+          "tag-overig",
+          "Ticketbeheer/routering"
+        ]
+      ],
+      "uitkomst": [
+        "outcome-terugbel",
+        "Terugbellen"
+      ],
+      "terugbel": true,
+      "verkeerdVerbonden": false,
+      "rechtsbijstandVerwijzing": false,
+      "adviesGegeven": false,
       "identiteitGeverifieerd": true
     }
   ],
   "acties": [],
   "analyse": {
     "goed": [
-      "10:00 Brandmeester-zaak: Identiteit correct geverifieerd voordat advies werd gegeven",
-      "10:00 Brandmeester-zaak: Medewerker erkent fout proactief (te late doorsturing)"
+      "10:26 Zonnepanelen: identiteit automatisch geverifieerd via Zoho, inhoudelijk advies gegeven over ingebrekestelling, duidelijk vervolgcontact afgesproken",
+      "10:41 Auto BOVAG: identiteit geverifieerd via telefoonnummer-match, advies gegeven over rechtsbijstandsvoorwaarden, concrete stappen voorgesteld",
+      "11:07 Gourdu: identiteit geverifieerd via Zoho-koppeling, concrete deadline gegeven (twee weken reactie)",
+      "Geen kritieke verificatiefouten: alle klantcontacten hebben identiteitsverificatie plaatsgevonden voordat advies werd gegeven"
     ],
     "beter": [
-      "10:00 Brandmeester-zaak: Geen concrete deadline genoemd voor vervolgstap of hernieuwde doorsturing naar Brandmeester",
-      "10:00 Brandmeester-zaak: Onduidelijk of klant tijdslijn voor verwachte stukken van verzekerde heeft gekregen (nodig voor vervolgacties)",
-      "10:00 Brandmeester-zaak: Bij doorverwijzing ontbreekt concrete afspraak wanneer klant mag terugbellen/volgen voor statusupdate"
+      "10:26 Zonnepanelen: bij schadeclaim ontbreekt documentatie van dekkingscontrole/franchise-norm (EUR 250) in de aantekening – dit had expliciet moeten worden vastgelegd gezien het schadebedrag",
+      "10:41 Auto BOVAG: schadebedrag (total loss auto) blijkt relevant, maar dekkingscontrole/franchise is niet gedocumenteerd – deze norm geldt hier wel (concreet schadebedrag aanwezig)",
+      "11:07 Gourdu: deadline 'binnen twee weken' is relatief; een concrete kalenderdatum (bijv. '23 januari 2026') zou professioneler zijn geweest"
     ]
   },
   "verkeerdVerbonden": {
-    "aantal": 1,
-    "percentage": 100.0
+    "aantal": 0,
+    "percentage": 0.0
   },
   "rechtsbijstandVerwijzingen": 0,
   "categorieen": [
     [
-      "Overig",
+      "Consumentenrecht",
+      2
+    ],
+    [
+      "Intern zakelijk overleg",
+      1
+    ],
+    [
+      "Ticketbeheer/routering",
       1
     ]
   ]
