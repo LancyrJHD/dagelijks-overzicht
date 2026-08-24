@@ -3974,6 +3974,39 @@ function renderDashboard(period) {
         }</tbody>
       </table>
     </div>
+    <!-- ZOOM PHONE: GEMISTE OPROEPEN -->
+    <div class="card">
+      <div class="gesprekken-header">
+        <div class="gesprekken-title">Gemiste oproepen (Zoom Phone)</div>
+      </div>
+      <div style="color:var(--ink-50);font-size:12px;margin:-4px 0 4px 0">
+        ${zoomDataAvailable ? `${zoomMissedTotal} gemist vandaag &middot; ${zoomCalledBackTotal} teruggebeld &middot; ${zoomMissedCalls.length} nog niet teruggebeld` : 'Zoom-data nog niet beschikbaar'}
+      </div>
+      <div style="color:var(--ink-50);font-size:11px;margin:0 0 12px 0;font-style:italic">
+        Beta: gebaseerd op het top-level Zoom-call-resultaat. Bij oproepen via een auto receptionist of wachtrij kan dit gemiste oproepen onderschatten &mdash; controleer bij twijfel de Zoom-telefonielog zelf.
+      </div>
+      <table class="gesprekken-table">
+        <thead>
+          <tr>
+            <th>Tijd</th>
+            <th>Nummer</th>
+            <th>Naam</th>
+            <th>Call-resultaat</th>
+          </tr>
+        </thead>
+        <tbody>${
+          zoomMissedCalls.length > 0
+            ? zoomMissedCalls.map(m => `
+              <tr>
+                <td>${escapeHtml(m.tijd)}</td>
+                <td>${escapeHtml(m.nummer)}</td>
+                <td>${escapeHtml(m.naam)}</td>
+                <td>${escapeHtml(m.callResult)}</td>
+              </tr>`).join('')
+            : `<tr><td colspan="4" style="text-align:center;color:#94a3b8;">${zoomDataAvailable ? 'Geen openstaande gemiste oproepen' : 'Geen Zoom-data beschikbaar'}</td></tr>`
+        }</tbody>
+      </table>
+    </div>
     ` : ''}
   `;
 
@@ -4090,9 +4123,24 @@ async function loadZohoTickets() {
   }
 }
 
+async function loadZoomCalls() {
+  try {
+    const resp = await fetch('data/zoom-calls.json?t=' + Date.now());
+    if (!resp.ok) return;
+    const live = await resp.json();
+    if (Array.isArray(live.nietTerugGebeldNummers)) zoomMissedCalls = live.nietTerugGebeldNummers;
+    if (typeof live.totaalGemist === 'number') zoomMissedTotal = live.totaalGemist;
+    if (typeof live.terugGebeld === 'number') zoomCalledBackTotal = live.terugGebeld;
+    zoomDataAvailable = true;
+  } catch (e) {
+    console.log('[ZoomCalls] Niet beschikbaar');
+  }
+}
+
 async function initDashboard() {
   await loadLiveToday();
   await loadZohoTickets();
+  await loadZoomCalls();
   const todayStr = new Date().toLocaleDateString('sv-SE');
   if (!weekData[todayStr] && Object.keys(weekData).length > 0) {
     activePeriod = 'gisteren';
@@ -4328,6 +4376,10 @@ let managementViewActive = false;
 let zohoChannelCounts = {};
 let zohoBrandmeesterCount = 0;
 let zohoTicketsTodayTotal = 0;
+let zoomMissedCalls = [];
+let zoomMissedTotal = 0;
+let zoomCalledBackTotal = 0;
+let zoomDataAvailable = false;
 // EENMALIG handmatig ingevoerd op basis van een Zoho Desk-diagnose (14-15 aug 2026).
 // Methode: uitgaande e-mailthread naar intake@brandmr.nl, zie scripts/fetch_zoho_tickets.py
 //    NIET het onbetrouwbare customFields-vinkje. Geen live API-call vanuit de browser mogelijk

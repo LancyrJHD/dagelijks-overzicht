@@ -11,19 +11,15 @@ jobs:
     runs-on: ubuntu-latest
     permissions:
       contents: write   # Nodig om te kunnen committen en pushen
-
     steps:
       - name: Checkout repo
         uses: actions/checkout@v4
-
       - name: Set up Python 3.11
         uses: actions/setup-python@v5
         with:
           python-version: '3.11'
-
       - name: Install dependencies
         run: pip install requests
-
       - name: Haal Zoho Desk-tickets op
         env:
           ZOHO_CLIENT_ID: ${{ secrets.ZOHO_CLIENT_ID }}
@@ -34,18 +30,28 @@ jobs:
         continue-on-error: true  # Zoho-storing mag de Granola-update niet blokkeren
         # Draait bewust VOOR de Granola-AI-analyse: die gebruikt de Zoho-tickets
         # om te zien of een beller automatisch is herkend op telefoonnummer.
-
+      - name: Haal Zoom Phone gemiste oproepen op
+        env:
+          ZOOM_ACCOUNT_ID: ${{ secrets.ZOOM_ACCOUNT_ID }}
+          ZOOM_CLIENT_ID: ${{ secrets.ZOOM_CLIENT_ID }}
+          ZOOM_CLIENT_SECRET: ${{ secrets.ZOOM_CLIENT_SECRET }}
+        run: python scripts/fetch_zoom_calls.py
+        continue-on-error: true  # Zoom-storing mag de rest van het dagrapport niet blokkeren
       - name: Analyseer Granola-gesprekken met AI
         env:
           GRANOLA_API_KEY: ${{ secrets.GRANOLA_API_KEY }}
           ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
         run: python scripts/analyze_granola_ai.py
-
       - name: Commit en push data/*.json
         run: |
           git config user.name  "Lancyr Bot"
           git config user.email "bot@htjz.nl"
           git add data/today.json data/zoho-tickets.json
+          # data/zoom-calls.json bestaat pas na de eerste geslaagde Zoom-fetch
+          # (script slaat niets op bij ontbrekende secrets) -- guard voorkomt
+          # dat "git add" op een niet-bestaand bestand de hele stap laat falen
+          # onder bash's set -e (GitHub Actions default).
+          if [ -f data/zoom-calls.json ]; then git add data/zoom-calls.json; fi
           # Alleen committen als er iets veranderd is
           git diff --staged --quiet && echo "Geen wijzigingen" || \
             git commit -m "auto: lancyr dagrapport $(date -u '+%Y-%m-%d %H:%M UTC')" && \

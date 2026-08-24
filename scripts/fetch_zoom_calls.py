@@ -1,12 +1,23 @@
 #!/usr/bin/env python3
-"""EENMALIG diagnose-script: haalt Zoom Phone call history op voor vandaag
-(of een opgegeven datum) en bepaalt per gemiste inbound-oproep of er later
-diezelfde dag een outbound-oproep naar hetzelfde nummer is geweest
-(= teruggebeld) of niet. Print een JSON-samenvatting zodat we de echte
-Zoom-datavorm kunnen controleren voordat dit in de hoofdpipeline komt.
+"""Haalt de gemiste inbound-oproepen van vandaag op uit Zoom Phone call
+history en bepaalt per gemiste oproep of er later diezelfde dag is
+teruggebeld naar hetzelfde nummer. Schrijft data/zoom-calls.json voor het
+dagrapport-dashboard (zelfde patroon als scripts/fetch_zoho_tickets.py).
 
-Vereist: ZOOM_ACCOUNT_ID, ZOOM_CLIENT_ID, ZOOM_CLIENT_SECRET (Server-to-Server
-OAuth-app, scope phone:read:list_call_logs:admin).
+LET OP -- bekende beperking (bron: Zoom-documentatie "Understand Zoom Phone
+call history"): een top-level call_history-record toont bij doorgeroute
+gesprekken (auto receptionist / wachtrij) soms alleen het resultaat van het
+EERSTE segment (bv. "answered" door de auto receptionist), niet het
+resultaat bij de uiteindelijke medewerker. Als Lancyr-nummers via een auto
+receptionist of wachtrij binnenkomen, kan dit script gemiste oproepen
+ONDERSCHATTEN. Voor 100% zekerheid zou per call ook de "Get call path"-API
+bevraagd moeten worden (scope phone:read:call_log:admin) -- dat gebeurt in
+deze versie nog niet. Controleer de eerste resultaten steekproefsgewijs
+tegen de Zoom-telefonielog voordat je hierop stuurt.
+
+Vereist: ZOOM_ACCOUNT_ID, ZOOM_CLIENT_ID, ZOOM_CLIENT_SECRET (Server-to-
+Server OAuth-app, scope phone:read:list_call_logs:admin). Optioneel:
+ZOOM_DATE (YYYY-MM-DD) om een andere dag dan vandaag op te halen.
 """
 import os
 import json
@@ -14,7 +25,7 @@ import base64
 import urllib.request
 import urllib.parse
 import urllib.error
-from datetime import datetime, timedelta
+from datetime import datetime, timezone, timedelta
 
 ACCOUNT_ID = os.environ.get('ZOOM_ACCOUNT_ID', '')
 CLIENT_ID = os.environ.get('ZOOM_CLIENT_ID', '')
@@ -22,18 +33,18 @@ CLIENT_SECRET = os.environ.get('ZOOM_CLIENT_SECRET', '')
 
 TOKEN_URL = 'https://zoom.us/oauth/token'
 API_BASE = 'https://api.zoom.us/v2'
+OUTPUT_PATH = 'data/zoom-calls.json'
 AMS_OFFSET = timedelta(hours=2)
 
-# Resultaatwaarden die we als "gemist" beschouwen (nobody heeft live opgenomen).
-# Zoom's call_result kent o.a.: Missed, Voicemail, Call connected, Rejected,
-# Blocked, Busy, Wrong Number, No Answer, Call failed, e.a. We tellen Missed,
-# No Answer en Voicemail mee als "gemist" -- dat is bewust ruim, zodat niets
+# Resultaatwaarden die we als "gemist" beschouwen (niemand heeft live
+# opgenomen). Zoom's call_result kent o.a.: Missed, Voicemail, Call
+# connected, Rejected, Blocked, Busy, Wrong Number, No Answer, Call failed.
+# We tellen Missed, No Answer en Voicemail mee -- bewust ruim, zodat niets
 # dat een terugbelactie verdient over het hoofd wordt gezien.
 MISSED_RESULTS = {'missed', 'no answer', 'no_answer', 'voicemail'}
 
 
 def get_access_token():
-    print(f"Diagnose: ACCOUNT_ID len={len(ACCOUNT_ID)}, CLIENT_ID len={len(CLIENT_ID)}, CLIENT_SECRET len={len(CLIENT_SECRET)}")
     creds = f'{CLIENT_ID}:{CLIENT_SECRET}'.encode()
     basic = base64.b64encode(creds).decode()
     data = urllib.parse.urlencode({
@@ -44,13 +55,8 @@ def get_access_token():
         'Authorization': f'Basic {basic}',
         'Content-Type': 'application/x-www-form-urlencoded',
     })
-    try:
-        with urllib.request.urlopen(req, timeout=30) as resp:
-            return json.loads(resp.read())['access_token']
-    except urllib.error.HTTPError as e:
-        body = e.read().decode(errors='replace')
-        print(f"Zoom token endpoint gaf HTTP {e.code} terug. Response body: {body}")
-        raise
+    with urllib.request.urlopen(req, timeout=30) as resp:
+        return json.loads(resp.read())['access_token']
 
 
 def get_call_history(access_token, date_str):
@@ -80,17 +86,23 @@ def get_call_history(access_token, date_str):
 
 
 def main():
-    today_str = (datetime.utcnow() + AMS_OFFSET).date().isoformat()
+    missing = [n for n, v in [
+        ('ZOOM_ACCOUNT_ID', ACCOUNT_ID), ('ZOOM_CLIENT_ID', CLIENT_ID),
+        ('ZOOM_CLIENT_SECRET', CLIENT_SECRET),
+    ] if not v]
+    if missing:
+        print(f"ERROR: missing env vars: {', '.join(missing)}")
+        raise SystemExit(1)
+
+    today_str = (datetime.now(timezone.utc) + AMS_OFFSET).date().isoformat()
     date_str = os.environ.get('ZOOM_DATE', today_str)
 
     print(f"Ophalen call history voor {date_str}...")
     access_token = get_access_token()
     logs = get_call_history(access_token, date_str)
-    print(f"Totaal opgehaald: {len(logs)} call log records\n")
-
-    # Print een paar ruwe records zodat we de echte veldnamen kunnen zien.
-    for log in logs[:3]:
-        print("VOORBEELDRECORD:", json.dumps(log, indent=2))
+    print(f"Totaal opgehaald: {len(logs)} call log records")
+    if logs:
+        print("Voorbeeldrecord:", json.dumps(logs[0], indent=2, ensure_ascii=False))
 
     missed = []
     outbound_calls = []
@@ -117,25 +129,41 @@ def main():
     for m in missed:
         if called_back(m):
             gebeld_count += 1
-        else:
-            niet_gebeld.append({
-                'nummer': m.get('caller_did_number'),
-                'naam': m.get('caller_name'),
-                'tijd': m.get('start_time'),
-                'call_result': m.get('call_result'),
-            })
+            continue
+        start_raw = m.get('start_time', '') or ''
+        try:
+            dt_utc = datetime.fromisoformat(start_raw.replace('Z', '+00:00'))
+            tijd = (dt_utc + AMS_OFFSET).strftime('%H:%M')
+        except Exception:
+            tijd = start_raw
+        niet_gebeld.append({
+            'nummer': m.get('caller_did_number', '') or '',
+            'naam': m.get('caller_name') or 'Onbekend',
+            'tijd': tijd,
+            'callResult': m.get('call_result', '') or '',
+        })
 
-    summary = {
-        'datum': date_str,
+    niet_gebeld.sort(key=lambda x: x['tijd'])
+
+    result = {
+        'date': date_str,
+        'generated_at': datetime.now(timezone.utc).strftime('%Y-%m-%dT%H:%M:%SZ'),
         'totaalGemist': len(missed),
         'terugGebeld': gebeld_count,
         'nietTerugGebeld': len(niet_gebeld),
         'nietTerugGebeldNummers': niet_gebeld,
     }
-    print("\nSAMENVATTING (JSON):")
-    print(json.dumps(summary, indent=2, ensure_ascii=False))
+    os.makedirs('data', exist_ok=True)
+    with open(OUTPUT_PATH, 'w', encoding='utf-8') as f:
+        json.dump(result, f, ensure_ascii=False, indent=2)
+    print(f"Saved: {len(missed)} gemist, {gebeld_count} teruggebeld, "
+          f"{len(niet_gebeld)} niet teruggebeld -> {OUTPUT_PATH}")
 
 
 if __name__ == '__main__':
-    main()
-  
+    try:
+        main()
+    except urllib.error.HTTPError as e:
+        body = e.read().decode(errors='replace')
+        print(f"ERROR: Zoom API gaf HTTP {e.code} terug. Response body: {body}")
+        raise SystemExit(1)
