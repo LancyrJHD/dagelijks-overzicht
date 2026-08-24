@@ -3813,6 +3813,41 @@ function renderDashboard(period) {
   ` : '';
 
   const html = `
+    ${period === 'vandaag' ? `
+    <!-- ZOOM PHONE: GEMISTE OPROEPEN -->
+    <div class="card">
+      <div class="gesprekken-header">
+        <div class="gesprekken-title">Gemiste oproepen (Zoom Phone)</div>
+      </div>
+      <div style="color:var(--ink-50);font-size:12px;margin:-4px 0 4px 0">
+        ${zoomDataAvailable ? `${zoomTotaalInbound} binnenkomende oproepen vandaag &middot; ${zoomMissedTotal} gemist &middot; ${zoomCalledBackTotal} teruggebeld &middot; ${zoomMissedCalls.length} nog niet teruggebeld` : 'Zoom-data nog niet beschikbaar'}
+      </div>
+      <div style="color:var(--ink-50);font-size:11px;margin:0 0 12px 0;font-style:italic">
+        Beta: gebaseerd op het top-level Zoom-call-resultaat. Bij oproepen via een auto receptionist of wachtrij kan dit gemiste oproepen onderschatten &mdash; controleer bij twijfel de Zoom-telefonielog zelf.
+      </div>
+      <table class="gesprekken-table">
+        <thead>
+          <tr>
+            <th>Tijd</th>
+            <th>Nummer</th>
+            <th>Naam</th>
+            <th>Call-resultaat</th>
+          </tr>
+        </thead>
+        <tbody>${
+          zoomMissedCalls.length > 0
+            ? zoomMissedCalls.map(m => `
+              <tr>
+                <td>${escapeHtml(m.tijd)}</td>
+                <td>${escapeHtml(m.nummer)}</td>
+                <td>${escapeHtml(m.naam)}</td>
+                <td>${escapeHtml(m.callResult)}</td>
+              </tr>`).join('')
+            : `<tr><td colspan="4" style="text-align:center;color:#94a3b8;">${zoomDataAvailable ? 'Geen openstaande gemiste oproepen' : 'Geen Zoom-data beschikbaar'}</td></tr>`
+        }</tbody>
+      </table>
+    </div>
+    ` : ''}
     <!-- KPI HERO -->
     <div class="kpi-row">
       <!-- Score -->
@@ -3978,39 +4013,6 @@ function renderDashboard(period) {
                 <td>${escapeHtml(t.prioriteit)}</td>
               </tr>`).join('')
             : `<tr><td colspan="6" style="text-align:center;color:#94a3b8;">Geen tickets vandaag</td></tr>`
-        }</tbody>
-      </table>
-    </div>
-    <!-- ZOOM PHONE: GEMISTE OPROEPEN -->
-    <div class="card">
-      <div class="gesprekken-header">
-        <div class="gesprekken-title">Gemiste oproepen (Zoom Phone)</div>
-      </div>
-      <div style="color:var(--ink-50);font-size:12px;margin:-4px 0 4px 0">
-        ${zoomDataAvailable ? `${zoomTotaalInbound} binnenkomende oproepen vandaag &middot; ${zoomMissedTotal} gemist &middot; ${zoomCalledBackTotal} teruggebeld &middot; ${zoomMissedCalls.length} nog niet teruggebeld` : 'Zoom-data nog niet beschikbaar'}
-      </div>
-      <div style="color:var(--ink-50);font-size:11px;margin:0 0 12px 0;font-style:italic">
-        Beta: gebaseerd op het top-level Zoom-call-resultaat. Bij oproepen via een auto receptionist of wachtrij kan dit gemiste oproepen onderschatten &mdash; controleer bij twijfel de Zoom-telefonielog zelf.
-      </div>
-      <table class="gesprekken-table">
-        <thead>
-          <tr>
-            <th>Tijd</th>
-            <th>Nummer</th>
-            <th>Naam</th>
-            <th>Call-resultaat</th>
-          </tr>
-        </thead>
-        <tbody>${
-          zoomMissedCalls.length > 0
-            ? zoomMissedCalls.map(m => `
-              <tr>
-                <td>${escapeHtml(m.tijd)}</td>
-                <td>${escapeHtml(m.nummer)}</td>
-                <td>${escapeHtml(m.naam)}</td>
-                <td>${escapeHtml(m.callResult)}</td>
-              </tr>`).join('')
-            : `<tr><td colspan="4" style="text-align:center;color:#94a3b8;">${zoomDataAvailable ? 'Geen openstaande gemiste oproepen' : 'Geen Zoom-data beschikbaar'}</td></tr>`
         }</tbody>
       </table>
     </div>

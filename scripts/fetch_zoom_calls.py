@@ -97,6 +97,20 @@ def get_call_history(access_token, date_str):
     return all_logs
 
 
+def get_call_path(access_token, call_id):
+    """Get call path (phone:read:call_log:admin) -- geeft het volledige
+    routeringspad van een call terug (auto receptionist / wachtrij /
+    medewerker per segment), zodat we kunnen zien of een top-level
+    call_result als 'voicemail'/'abandoned' misleidend is (bv. omdat een
+    medewerker het gesprek elders in het pad wel degelijk heeft gehad)."""
+    url = f"{API_BASE}/phone/call_history/{urllib.parse.quote(call_id, safe='')}"
+    req = urllib.request.Request(url, headers={
+        'Authorization': f'Bearer {access_token}',
+    })
+    with urllib.request.urlopen(req, timeout=30) as resp:
+        return json.loads(resp.read())
+
+
 def main():
     missing = [n for n, v in [
         ('ZOOM_ACCOUNT_ID', ACCOUNT_ID), ('ZOOM_CLIENT_ID', CLIENT_ID),
@@ -170,6 +184,26 @@ def main():
         })
 
     niet_gebeld.sort(key=lambda x: x['tijd'])
+
+    # TIJDELIJKE DIAGNOSE: voor elke als "gemist" geclassificeerde oproep
+    # het volledige call path ophalen, zodat we kunnen verifieren of het
+    # top-level resultaat (bv. "voicemail") klopt of dat een medewerker
+    # het gesprek elders in het pad al wel degelijk heeft gehad.
+    if missed:
+        print(f"--- CALL PATH DIAGNOSE voor {len(missed)} gemiste oproep(en) ---")
+        for m in missed:
+            call_id = m.get('id')
+            print(f"call_id={call_id!r} caller={m.get('caller_did_number')!r} "
+                  f"top_level_result={m.get('call_result')!r} duration={m.get('duration')!r}")
+            try:
+                path = get_call_path(access_token, call_id)
+                print(json.dumps(path, indent=2, ensure_ascii=False))
+            except urllib.error.HTTPError as e:
+                body = e.read().decode(errors='replace')
+                print(f"  (kon call path niet ophalen: HTTP {e.code} -- {body})")
+            except Exception as e:
+                print(f"  (kon call path niet ophalen: {e})")
+        print("--- EINDE CALL PATH DIAGNOSE ---")
 
     result = {
         'date': date_str,
