@@ -9,12 +9,22 @@ LET OP -- bekende beperking (bron: Zoom-documentatie "Understand Zoom Phone
 call history"): een top-level call_history-record toont bij doorgeroute
 gesprekken (auto receptionist / wachtrij) soms alleen het resultaat van het
 EERSTE segment (bv. "answered" door de auto receptionist), niet het
-resultaat bij de uiteindelijke medewerker. Als Lancyr-nummers via een auto
-receptionist of wachtrij binnenkomen, kan dit script gemiste oproepen
-ONDERSCHATTEN. Voor 100% zekerheid zou per call ook de "Get call path"-API
-bevraagd moeten worden (scope phone:read:call_log:admin) -- dat gebeurt in
-deze versie nog niet. Controleer de eerste resultaten steekproefsgewijs
-tegen de Zoom-telefonielog voordat je hierop stuurt.
+resultaat bij de uiteindelijke medewerker. Voor 100% zekerheid zou per call
+ook de "Get call path"-API bevraagd moeten worden (scope
+phone:read:call_log:admin) -- dat gebeurt in deze versie nog niet.
+
+BEVINDING 24 aug 2026: Zoom's call_result kent geen vaste, volledig
+gedocumenteerde lijst met waarden (o.a. "abandoned" -- een call die ophangt
+terwijl die in de wachtrij staat -- ontbreekt zelfs in Zoom's eigen
+supportartikel). Een allowlist van "gemiste" resultaten bleek daardoor
+onbetrouwbaar: een echte gemiste oproep (Zoom-app toonde 'm als "Missed")
+kwam binnen met call_result="abandoned", wat niet in de allowlist stond en
+dus stilzwijgend NIET als gemist werd geteld. Dit script gebruikt daarom nu
+het omgekeerde: een denylist van resultaten die aantoonbaar een mens aan de
+lijn kregen (HANDLED_RESULTS). Alles daarbuiten telt als "gemist / actie
+nodig" -- bewust ruim, zodat een nieuwe/onbekende call_result-waarde nooit
+stilzwijgend wordt genegeerd. Controleer bij twijfel de Zoom-telefonielog
+zelf.
 
 Vereist: ZOOM_ACCOUNT_ID, ZOOM_CLIENT_ID, ZOOM_CLIENT_SECRET (Server-to-
 Server OAuth-app, scope phone:read:list_call_logs:admin). Optioneel:
@@ -37,12 +47,13 @@ API_BASE = 'https://api.zoom.us/v2'
 OUTPUT_PATH = 'data/zoom-calls.json'
 AMS_OFFSET = timedelta(hours=2)
 
-# Resultaatwaarden die we als "gemist" beschouwen (niemand heeft live
-# opgenomen). Zoom's call_result kent o.a.: Missed, Voicemail, Call
-# connected, Rejected, Blocked, Busy, Wrong Number, No Answer, Call failed.
-# We tellen Missed, No Answer en Voicemail mee -- bewust ruim, zodat niets
-# dat een terugbelactie verdient over het hoofd wordt gezien.
-MISSED_RESULTS = {'missed', 'no answer', 'no_answer', 'voicemail'}
+# Resultaatwaarden die aantonen dat een MENS de oproep heeft beantwoord.
+# Alleen deze tellen als "geen actie nodig"; alles wat hier niet in staat
+# (voicemail, abandoned, missed, no_answer, busy, rejected, blocked,
+# wrong_number, call_failed, en elke toekomstige/onbekende waarde) telt als
+# "gemist" en komt in de terugbel-lijst terecht. Zie docstring hierboven
+# voor waarom dit bewust een denylist is i.p.v. een allowlist.
+HANDLED_RESULTS = {'answered', 'connected'}
 
 
 def get_access_token():
@@ -105,22 +116,16 @@ def main():
     if logs:
         print("Voorbeeldrecord:", json.dumps(logs[0], indent=2, ensure_ascii=False))
 
-    # TIJDELIJKE DIAGNOSE (verwijderen zodra de discrepantie met de Zoom-app
-    # is opgehelderd): compacte dump van ALLE opgehaalde records, zodat we
-    # kunnen zien of een oproep die de Zoom-app als "Missed" toont ook echt
-    # in deze API-respons zit, en met welke velden.
-    print(f"--- DIAGNOSE: alle {len(logs)} records ---")
-    for i, log in enumerate(logs):
-        print(
-            f"[{i}] direction={log.get('direction')!r} "
-            f"call_result={log.get('call_result')!r} "
-            f"caller={log.get('caller_did_number')!r} "
-            f"callee={log.get('callee_did_number')!r} "
-            f"callee_ext_type={log.get('callee_ext_type')!r} "
-            f"connect_type={log.get('connect_type')!r} "
-            f"start_time={log.get('start_time')!r}"
-        )
-    print("--- EINDE DIAGNOSE ---")
+    # Lichte, blijvende diagnose: welke call_result-waarden komen vandaag
+    # voor bij inbound gesprekken? Handig om in de Actions-log te zien of er
+    # een nieuwe/onbekende waarde opduikt, zonder elke run alle records
+    # individueel te loggen.
+    result_counts = {}
+    for log in logs:
+        if (log.get('direction') or '').lower() == 'inbound':
+            r = log.get('call_result') or '(leeg)'
+            result_counts[r] = result_counts.get(r, 0) + 1
+    print(f"Inbound call_result-waarden vandaag: {result_counts}")
 
     missed = []
     outbound_calls = []
@@ -130,7 +135,7 @@ def main():
         result = (log.get('call_result') or '').lower()
         if direction == 'inbound':
             totaal_inbound += 1
-            if result in MISSED_RESULTS:
+            if result not in HANDLED_RESULTS:
                 missed.append(log)
         elif direction == 'outbound':
             outbound_calls.append(log)
