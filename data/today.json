@@ -1,26 +1,57 @@
 {
   "date": "2026-08-24",
-  "generated_at": "2026-08-24T07:57:35Z",
+  "generated_at": "2026-08-24T08:11:36Z",
   "drukte": "rustig",
-  "gesprekken": 0,
+  "gesprekken": 1,
   "stats": {
-    "opgelost": 0,
+    "opgelost": 1,
     "brandmeester": 0,
     "afkoop": 0,
     "terugbel": 0,
     "geenDekking": 0
   },
-  "score": 0,
-  "conversations": [],
+  "score": 8.5,
+  "conversations": [
+    {
+      "tijd": "10:00",
+      "titel": "Brandmeester-zaak — verzending stukken en rapportage contract",
+      "personen": "Verzekerde: anoniem · Dewi Verver | Juridisch Medewerker",
+      "samenvatting": "Dit is een intern werkgesprek tussen twee HTJZ-medewerkers (geen beller/klant), niet een telefonisch juridisch advies aan een verzekerde. De ene medewerker geeft rapportage aan de ander over een eerder doorverwezen Brandmeester-zaak (verzending stukken, contractrapportage, en operationele verbeteringen zoals call-handling). Geen klant is geverifieerd en geen juridisch advies aan een verzekerde is gegeven.",
+      "tags": [
+        [
+          "tag-overig",
+          "Intern werkoverleg"
+        ]
+      ],
+      "uitkomst": [
+        "outcome-opgelost",
+        "Telefonisch opgelost"
+      ],
+      "terugbel": false,
+      "verkeerdVerbonden": false,
+      "rechtsbijstandVerwijzing": false,
+      "adviesGegeven": false,
+      "identiteitGeverifieerd": false
+    }
+  ],
   "acties": [],
   "analyse": {
-    "goed": [],
-    "beter": []
+    "goed": [
+      "10:00 Brandmeester-zaak: Correct herkend als intern werkgesprek tussen HTJZ-medewerkers, niet als bellers-adviesgesprek. Verificatie- en dekkingsnormen zijn hier niet van toepassing."
+    ],
+    "beter": [
+      "Voor toekomstige duidelijkheid: zorg dat intern werkgesprekken duidelijk gescheiden blijven van bellers-adviesgesprekken in logregistratie, zodat kwaliteitsbeoordeling niet wordt verward."
+    ]
   },
   "verkeerdVerbonden": {
     "aantal": 0,
     "percentage": 0.0
   },
   "rechtsbijstandVerwijzingen": 0,
-  "categorieen": []
+  "categorieen": [
+    [
+      "Intern werkoverleg",
+      1
+    ]
+  ]
 }
