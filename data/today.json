@@ -1,6 +1,6 @@
 {
   "date": "2026-08-24",
-  "generated_at": "2026-08-24T08:36:00Z",
+  "generated_at": "2026-08-24T08:44:24Z",
   "drukte": "rustig",
   "gesprekken": 1,
   "stats": {
@@ -16,7 +16,7 @@
       "tijd": "10:00",
       "titel": "Brandmeester-zaak — verzending stukken en rapportage contract",
       "personen": "Verzekerde: anoniem · Dewi Verver | Juridisch Medewerker",
-      "samenvatting": "Dit is een intern werkgesprek tussen twee medewerkers van de juridische helpdesk over procesmatige kwesties: verzending van stukken naar Brandmeester in een eerder doorverwezen zaak (waarin stukken van de verzekerde ontbraken) en afronden van een contract met daarin rapportagevereisten. Er is geen sprake van een beller/verzekerde; geen identiteitsverificatie nodig en geen inhoudelijk juridisch advies aan een cliënt gegeven.",
+      "samenvatting": "Dit is een intern werkgesprek tussen twee medewerkers van de juridische helpdesk, niet een klantgesprek. De ene medewerker bespreekt met een collega/manager een Brandmeester-zaak waar stukken niet tijdig zijn doorgestuurd (april en augustus), en daarnaast wordt gesproken over contractafspraken en rapportagemodules. De beller is niet geverifieerd omdat dit geen klantinteractie is, en geen juridisch advies aan een externe klant is gegeven.",
       "tags": [
         [
           "tag-overig",
@@ -37,11 +37,11 @@
   "acties": [],
   "analyse": {
     "goed": [
-      "10:00 Brandmeester-zaak: Correct geïdentificeerd als intern werkgesprek tussen medewerkers zonder betrokken externe beller — identiteitsverificatie en cliëntadvies waren niet van toepassing",
-      "Procesmatige afhandeling: Verzending van stukken en contractuele rapportagevereisten intern afgestemd en opgelost"
+      "10:00 Brandmeester-zaak: Correct inzicht dat dit een intern werkgesprek tussen medewerkers is, geen klantcontact — verificatie en adviesstandaarden zijn hier niet van toepassing.",
+      "10:00 Brandmeester-zaak: Telefonisch opgelost geregistreerd, wat aangeeft dat het interne overleg heeft plaatsgevonden."
     ],
     "beter": [
-      "Geen substantiële kwaliteitspunten; dit was een intern administratief gesprek zonder klantencontact"
+      "10:00 Brandmeester-zaak: Verzending stukken april en augustus niet tijdig uitgevoerd — zorg voor duidelijke vervolgdeadlines en eigenaarschap per stuk om herhaling in toekomst te voorkomen."
     ]
   },
   "verkeerdVerbonden": {
