@@ -105,6 +105,23 @@ def main():
     if logs:
         print("Voorbeeldrecord:", json.dumps(logs[0], indent=2, ensure_ascii=False))
 
+    # TIJDELIJKE DIAGNOSE (verwijderen zodra de discrepantie met de Zoom-app
+    # is opgehelderd): compacte dump van ALLE opgehaalde records, zodat we
+    # kunnen zien of een oproep die de Zoom-app als "Missed" toont ook echt
+    # in deze API-respons zit, en met welke velden.
+    print(f"--- DIAGNOSE: alle {len(logs)} records ---")
+    for i, log in enumerate(logs):
+        print(
+            f"[{i}] direction={log.get('direction')!r} "
+            f"call_result={log.get('call_result')!r} "
+            f"caller={log.get('caller_did_number')!r} "
+            f"callee={log.get('callee_did_number')!r} "
+            f"callee_ext_type={log.get('callee_ext_type')!r} "
+            f"connect_type={log.get('connect_type')!r} "
+            f"start_time={log.get('start_time')!r}"
+        )
+    print("--- EINDE DIAGNOSE ---")
+
     missed = []
     outbound_calls = []
     totaal_inbound = 0
