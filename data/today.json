@@ -1,83 +1,26 @@
 {
-  "date": "2026-08-21",
-  "generated_at": "2026-08-21T16:39:10Z",
+  "date": "2026-08-24",
+  "generated_at": "2026-08-24T05:41:43Z",
   "drukte": "rustig",
-  "gesprekken": 2,
+  "gesprekken": 0,
   "stats": {
-    "opgelost": 1,
+    "opgelost": 0,
     "brandmeester": 0,
-    "afkoop": 1,
+    "afkoop": 0,
     "terugbel": 0,
     "geenDekking": 0
   },
-  "score": 8.1,
-  "conversations": [
-    {
-      "tijd": "14:28",
-      "titel": "Transavia-claim afwijzing — settlement en documentatie met Jack Dunst",
-      "personen": "Verzekerde: anoniem · Dewi Verver | Juridisch Medewerker",
-      "samenvatting": "Jack Dunst belt over een afgewezen Transavia-claim voor vliegvertraging (€400 geëist). De medewerker verifieert de beller via postcode en adres en biedt een afkoop van €500 aan, mits de beller de vliegticketfactuur indient per e-mail. De beller gaat hiermee akkoord en zal de documenten binnen twee weken indienen.",
-      "tags": [
-        [
-          "tag-consument",
-          "Consumentenrecht"
-        ]
-      ],
-      "uitkomst": [
-        "outcome-afkoop",
-        "Afkoop"
-      ],
-      "terugbel": false,
-      "verkeerdVerbonden": false,
-      "rechtsbijstandVerwijzing": false,
-      "adviesGegeven": true,
-      "identiteitGeverifieerd": true
-    },
-    {
-      "tijd": "14:56",
-      "titel": "Kozijnwerk – herstelling en betalingskwestie met Dori Santana",
-      "personen": "Verzekerde: Y. Santana Sanz · Dewi Verver | Juridisch Medewerker",
-      "samenvatting": "Dori Santana belt over een kozijn dat niet volgens tekening is geplaatst en vraagt om herstel en advies over betaling van de factuur. De medewerker geeft advies: eerst een schriftelijke (mail)verzoek sturen met tekeningen en een termijn van veertien werkdagen, en de factuur gewoon betalen omdat werkzaamheden zijn verricht. De beller is automatisch geverifieerd via Zoho-koppeling op telefoonnummer, en er is inhoudelijk juridisch advies gegeven over vorderingsrecht, verzuim en betalingsverplichting.",
-      "tags": [
-        [
-          "tag-consument",
-          "Consumentenrecht"
-        ]
-      ],
-      "uitkomst": [
-        "outcome-opgelost",
-        "Telefonisch opgelost"
-      ],
-      "terugbel": false,
-      "verkeerdVerbonden": false,
-      "rechtsbijstandVerwijzing": false,
-      "adviesGegeven": true,
-      "identiteitGeverifieerd": true
-    }
-  ],
+  "score": 0,
+  "conversations": [],
   "acties": [],
   "analyse": {
-    "goed": [
-      "14:28 Transavia-claim: identiteit correct geverifieerd (postcode + adres), concrete deadline vastgesteld (twee weken voor documentatie)",
-      "14:28 Transavia-claim: dekkingscontrole uitgevoerd (€400 claim, settlement €500 aangeboden)",
-      "14:56 Kozijnwerk: identiteit geverifieerd via Zoho-koppeling op telefoonnummer",
-      "14:56 Kozijnwerk: juridisch advies gegeven over vorderingsrecht, verzuim en betalingsverplichting",
-      "14:56 Kozijnwerk: concrete termijn benoemd (veertien werkdagen voor schriftelijk verzoek)"
-    ],
-    "beter": [
-      "14:28 Transavia-claim: bij settlement zou goed zijn geweest expliciet vast te leggen dat de afkoop van €500 het geschil definitief sluit en geen verdere vorderingen meer kunnen worden ingediend",
-      "14:56 Kozijnwerk: geen schadebedrag genoemd in dit geschil, dus dekkingscontrole niet van toepassing, maar wel zou het goed zijn geweest de beller te adviseren om bij mogelijke latere schadeclaims (bijv. vochtschade) die bedragen vast te leggen"
-    ]
+    "goed": [],
+    "beter": []
   },
   "verkeerdVerbonden": {
     "aantal": 0,
     "percentage": 0.0
   },
   "rechtsbijstandVerwijzingen": 0,
-  "categorieen": [
-    [
-      "Consumentenrecht",
-      2
-    ]
-  ]
+  "categorieen": []
 }
