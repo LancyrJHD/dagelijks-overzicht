@@ -1,13 +1,13 @@
 {
   "date": "2026-08-24",
-  "generated_at": "2026-08-24T11:03:31Z",
+  "generated_at": "2026-08-24T11:56:30Z",
   "drukte": "druk",
   "gesprekken": 6,
   "stats": {
-    "opgelost": 3,
-    "brandmeester": 0,
+    "opgelost": 1,
+    "brandmeester": 1,
     "afkoop": 0,
-    "terugbel": 2,
+    "terugbel": 3,
     "geenDekking": 1
   },
   "score": 7.8,
@@ -16,19 +16,19 @@
       "tijd": "10:00",
       "titel": "Brandmeester-zaak — verzending stukken en rapportage contract",
       "personen": "Verzekerde: anoniem · Dewi Verver | Juridisch Medewerker",
-      "samenvatting": "Dit is een interne werkoverleg tussen twee medewerkers van de juridische helpdesk over procedurekwesties binnen een reeds bij Brandmeester ingediende zaak: het gaat om verzending van stukken naar Brandmeester (toegezegd maar vergeten door te sturen in april/augustus 2026) en afrondingsdetails van een contract met nadruk op rapportageafspraken. De beller is niet geverifieerd (geen Zoho-match, geen verzekerdemeldgegevens uitgewisseld) en er is geen inhoudelijk juridisch advies aan een beller gegeven, omdat dit een intern team-overleg is.",
+      "samenvatting": "Dit is een intern werkgesprek tussen twee medewerkers van de juridische helpdesk over een Brandmeester-zaak. De discussie gaat over verzending van stukken naar Brandmeester (april 2026, later herhaald 21 augustus) en afstemming over contractrapportage. Een klant had op 12 augustus gebeld, maar de medewerker vergat toen door te sturen; dit werd later alsnog gedaan. Er is geen sprake van een gesprek met een verzekeringsklant; geen identiteitsverificatie relevant, geen inhoudelijk juridisch advies gegeven aan een cliënt.",
       "tags": [
         [
-          "tag-overig",
-          "Intern werkoverleg / procedurekwesties"
+          "tag-bouw",
+          "Bouwrecht"
         ]
       ],
       "uitkomst": [
-        "outcome-opgelost",
-        "Telefonisch opgelost"
+        "outcome-brandmeester",
+        "Doorverwezen naar Brandmeester"
       ],
       "terugbel": false,
-      "verkeerdVerbonden": true,
+      "verkeerdVerbonden": false,
       "rechtsbijstandVerwijzing": false,
       "adviesGegeven": false,
       "identiteitGeverifieerd": false
@@ -37,7 +37,7 @@
       "tijd": "10:26",
       "titel": "Zonnepanelen en thuisbatterij — schadeclaim en ingebrekestelling met Dillessen",
       "personen": "Verzekerde: H.B.M. Nillesen · Senne Duifhuis | Juridisch medewerker",
-      "samenvatting": "Meneer Dillessen belt over een schadeclaim en ingebrekestelling tegen een installateur van zonnepanelen en thuisbatterij wegens herhaalde installatieproblemen (defecte onderdelen, onjuiste aansluiting, uitgebrande zekeringen). De medewerker is automatisch geverifieerd via telefoonnummer (Zoho-match) en adviseert de beller om een formele ingebrekestelling naar de helpdesk op te sturen zodat het dossier morgen kan worden behandeld. Inhoudelijk juridisch advies is niet gegeven, maar procedureel advies is verstrekt.",
+      "samenvatting": "Meneer Dillessen belt over een schadeclaim en ingebrekestelling tegen een installateur wegens verkeerd aansloten zonnepanelen en thuisbatterij, wat heeft geleid tot beschadiging van huishoudapparatuur (onder meer kookplaat en eilanden). De identiteit is automatisch geverifieerd via Zoho (telefoonnummer gekoppeld aan polis). De medewerker heeft inhoudelijk advies gegeven: het is cruciaal dat de ingebrekestelling duidelijk als zodanig is gesteld; indien nodig moet de beller een nieuwe ingebrekestelling naar Lancyr opsturen, waarna contact morgen wordt hervat.",
       "tags": [
         [
           "tag-consument",
@@ -51,14 +51,14 @@
       "terugbel": true,
       "verkeerdVerbonden": false,
       "rechtsbijstandVerwijzing": false,
-      "adviesGegeven": false,
+      "adviesGegeven": true,
       "identiteitGeverifieerd": true
     },
     {
       "tijd": "10:41",
       "titel": "Rechtsbijstand – auto aankoop en BOVAG garantie",
       "personen": "Verzekerde: H.B.M. Nillesen · Senne Duifhuis | Juridisch medewerker",
-      "samenvatting": "Beller heeft een tweeduizend euro auto via Marktplaats gekocht die twee weken later total loss is verklaard. Hij stelt dat de garage een BOVAG-garantie heeft toegezegd maar dit nu ontkent; de garage betwist dat zij dit hebben gezegd en het staat nergens op papier. De medewerker geeft advies dat zonder schriftelijk bewijs van BOVAG-garantie de rechtsbijstandsverzekering geen dekking biedt, maar adviseert wel om een ingebrekestelling te sturen. Beller is geverifieerd via automatische telefoonnummerkoppeling, inhoudelijk juridisch advies is gegeven.",
+      "samenvatting": "Beller heeft een tweedehands auto gekocht via Marktplaats/garage voor €2.000, die twee weken later als total loss is verklaard. Beller stelt dat de garage mondeling een BOVAG-garantie heeft toegezegd, maar de garage ontkent dit en het staat nergens op papier. Medewerker heeft beller geverifieerd via postcode en naam (H.B.M. Nillesen in Zoho gekoppeld) en heeft inhoudelijk juridisch advies gegeven: zonder BOVAG-garantie kan rechtsbijstand niet helpen, maar beller kan een ingebrekestelling sturen wegens non-conforme levering (auto is na twee weken total loss).",
       "tags": [
         [
           "tag-consument",
@@ -66,10 +66,10 @@
         ]
       ],
       "uitkomst": [
-        "outcome-opgelost",
-        "Telefonisch opgelost"
+        "outcome-terugbel",
+        "Terugbellen"
       ],
-      "terugbel": false,
+      "terugbel": true,
       "verkeerdVerbonden": false,
       "rechtsbijstandVerwijzing": false,
       "adviesGegeven": true,
@@ -79,11 +79,11 @@
       "tijd": "11:07",
       "titel": "Routekeuze en ticketafhandeling met mevrouw Gourdu",
       "personen": "Verzekerde: M.A.J. vanWanrooij · Senne Duifhuis | Juridisch medewerker",
-      "samenvatting": "Mevrouw Gourdu werd automatisch herkend in het systeem via telefoonnummer (Zoho-koppeling met M.A.J. vanWanrooij). Het gesprek behandelt routekeuze en ticketafhandeling; de medewerker informeerde over ontvangen stukken, bespraken een mailbericht met prijsvermindering, en stelden een termijn van twee weken in voor reactie van LOMZ. Het ticket werd gesloten voor administratieve overzichtelijkheid, maar blijft opnieuw openen bij vervolgcontact. Geen inhoudelijk juridisch advies werd gegeven.",
+      "samenvatting": "Mevrouw Gourdu werd automatisch herkend via telefoonnummer (Zoho-koppeling met M.A.J. vanWanrooij). Het gesprek betrof routekeuze en ticketafhandeling; de medewerker gaf aan dat stukken waren ontvangen en dat de zaak naar een team (LOMZ) wordt doorgestuurd met een termijn van twee weken. Het ticket werd gesloten voor administratieve overzicht, maar blijft openen bij vervolgcontact. Er werd geen inhoudelijk juridisch advies gegeven, slechts procedurele afhandeling.",
       "tags": [
         [
           "tag-overig",
-          "Ticketafhandeling en routekeuze"
+          "Ticketafhandeling/procedurevraag"
         ]
       ],
       "uitkomst": [
@@ -100,7 +100,7 @@
       "tijd": "11:39",
       "titel": "Verkeerde afdeling – doorverwijzing autorisatie",
       "personen": "Verzekerde: anoniem · Senne Duifhuis | Juridisch medewerker",
-      "samenvatting": "Beller heeft zich per ongeluk verbonden met de juridische helpdesk terwijl deze een autoverzekeringsvraag had. De medewerker heeft correct vastgesteld dat dit de verkeerde afdeling is en heeft de beller doorverwezen naar de juiste autoverzekeringslijn via de website. De beller is niet geverifieerd en er is geen juridisch advies gegeven.",
+      "samenvatting": "Beller beide per ongeluk de juridische helpdesk in plaats van de autoverzekeringslijn. De medewerker heeft correct vastgesteld dat dit niet het juiste nummer is, heeft de beller doorverwezen naar de juiste afdeling (autoverzekering via website/kieskeuzemenu) en het gesprek beëindigd. Identiteit is niet geverifieerd en geen juridisch advies is gegeven.",
       "tags": [],
       "uitkomst": [
         "outcome-opgelost",
@@ -116,11 +116,11 @@
       "tijd": "12:40",
       "titel": "Rechtsbijstand — doorverwijzing naar autoverzekering",
       "personen": "Verzekerde: A. Afallah · Senne Duifhuis | Juridisch medewerker",
-      "samenvatting": "De beller had een autoverzekeringsvraag en werd telefonisch bereikt op de Lancyr Rechtsbijstandslijn. De medewerker stelde vast dat de beller geen rechtsbijstandsverzekering maar alleen een autoverzekering heeft, en verwees hem correct door naar de autoverzekeringssectie van Lancyr via de website. De beller is automatisch geverifieerd via telefoonnummer (Zoho-match), maar er is geen inhoudelijk juridisch advies gegeven omdat het onderwerp niet tot de rechtsbijstandsdekking behoort.",
+      "samenvatting": "De beller heeft zich telefonisch gemeld en is automatisch herkend in het systeem (A. Afallah, polis bekend). De medewerker stelt vast dat de beller een autoverzekeringsvraag heeft en geen rechtsbijstandsverzekering, en verwijst hem daarom door naar de autoverzekeringslijn van Lancyr via de website. Geen inhoudelijk juridisch advies is gegeven.",
       "tags": [
         [
           "tag-overig",
-          "Autoverzekering (niet-juridisch)"
+          "Autoverzekering"
         ]
       ],
       "uitkomst": [
@@ -137,20 +137,19 @@
   "acties": [],
   "analyse": {
     "goed": [
-      "10:26 Dillessen-zaak: Identiteit correct geverifieerd via Zoho-telefoonnummerkoppeling; procedureel advies gegeven (ingebrekestelling opsturen); vervolgplan duidelijk (dossier morgen behandelen).",
-      "10:41 Auto BOVAG-zaak: Identiteit geverifieerd via automatische telefoonnummerkoppeling; inhoudelijk juridisch advies gegeven over decking en ingebrekestelling; zaak telefonisch opgelost.",
-      "11:07 Gourdu-zaak: Identiteit correct geverifieerd via Zoho-telefoonnummerkoppeling; concrete termijn ingesteld (twee weken voor reactie LOMZ); ticket administratief afgehandeld.",
-      "11:39 Doorverwijzing autorisatie: Correcte routekeuze geïdentificeerd; beller doelgericht doorverwezen naar juiste afdeling.",
-      "12:40 Autoverzekering doorverwijzing: Identiteit geverifieerd via Zoho; correct vastgesteld dat autoverzekering geen rechtsbijstandsdekking heeft; beller correct doorverwezen naar juiste sectie."
+      "10:26 Zonnepanelen: Identiteit correct geverifieerd via Zoho; dekkingscontrole uitgevoerd (schadeclaim met concrete bedragen: kookplaat, eilanden); inhoudelijk advies gegeven over noodzaak duidelijke ingebrekestelling en vervolgcontact morgen afgesproken.",
+      "10:41 Auto aankoop: Identiteit correct geverifieerd via postcode/naam in Zoho; inhoudelijk juridisch advies gegeven over non-conforme levering als alternatief; duidelijke routeering naar vervolgstap (ingebrekestelling).",
+      "11:07 Mevrouw Gourdu: Identiteit automatisch geverifieerd via telefoonnummer; procedurele afhandeling correct uitgevoerd met concrete termijn van twee weken naar LOMZ-team; duidelijke routeering.",
+      "12:40 Autoverzekering: Identiteit correct geverifieerd in systeem; juiste routeering naar autoverzekeringslijn wanneer geen rechtsbijstandsdekking relevant is.",
+      "11:39 Verkeerde afdeling: Correct afgehandeld met doelgerichte doorverwijzing naar autoverzekeringslijn via website."
     ],
     "beter": [
-      "10:00 Brandmeester-zaak: Dit is een intern teamoverleg zonder klantcontact, daarom geen kwaliteitspunten van toepassing. Wel opmerking: verzending stukken in april/augustus 2026 twee keer vergeten — zorg voor interne checklist om toegezegde vervolgacties niet opnieuw te missen.",
-      "10:41 Auto BOVAG-zaak: Dekkingscontrole ontbreekt — hoewel schade van EUR 2.000 wordt genoemd, is niet vastgelegd of deze onder de franchise van EUR 250 valt en wat de feitelijke dekking zou zijn bij een geldige claim."
+      "10:00 Brandmeester-zaak: Dit is een intern werkgesprek en geen klantcontact, maar toont wel een procesmatig probleem: klant had op 12 augustus gebeld, maar medewerker vergat stukken door te sturen tot 21 augustus. Bij toekomstige klantcontacten duidelijker deadline afspreken en vervolgstap direct bevestigen in plaats van later uit te stellen."
     ]
   },
   "verkeerdVerbonden": {
-    "aantal": 3,
-    "percentage": 50.0
+    "aantal": 2,
+    "percentage": 33.3
   },
   "rechtsbijstandVerwijzingen": 0,
   "categorieen": [
@@ -159,15 +158,15 @@
       2
     ],
     [
-      "Intern werkoverleg / procedurekwesties",
+      "Bouwrecht",
       1
     ],
     [
-      "Ticketafhandeling en routekeuze",
+      "Ticketafhandeling/procedurevraag",
       1
     ],
     [
-      "Autoverzekering (niet-juridisch)",
+      "Autoverzekering",
       1
     ]
   ]
