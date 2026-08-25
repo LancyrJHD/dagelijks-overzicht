@@ -66,6 +66,10 @@ jobs:
           if [ -f data/zoom-calls.json ]; then git add data/zoom-calls.json; fi
           if [ -f data/zoom-history.json ]; then git add data/zoom-history.json; fi
           # Alleen committen als er iets veranderd is
+          # git pull --rebase vlak voor de push voorkomt dat deze stap faalt
+          # wanneer een andere run (bv. handmatig gestart terwijl de geplande
+          # run ook loopt) intussen al heeft gepusht (bevinding 25 aug 2026).
           git diff --staged --quiet && echo "Geen wijzigingen" || \
             git commit -m "auto: lancyr dagrapport $(date -u '+%Y-%m-%d %H:%M UTC')" && \
+            git pull --rebase --autostash -q && \
             git push
