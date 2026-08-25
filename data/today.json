@@ -1,6 +1,6 @@
 {
   "date": "2026-08-25",
-  "generated_at": "2026-08-25T11:39:44Z",
+  "generated_at": "2026-08-25T11:41:21Z",
   "drukte": "rustig",
   "gesprekken": 2,
   "stats": {
@@ -10,13 +10,13 @@
     "terugbel": 0,
     "geenDekking": 0
   },
-  "score": 6.1,
+  "score": 6.8,
   "conversations": [
     {
       "tijd": "09:44",
       "titel": "Verkeersongeval – schadevergoeding en leaseauto-rente met verzekering",
       "personen": "Verzekerde: anoniem · Senne Duifhuis | Juridisch medewerker",
-      "samenvatting": "Beller belt over schadevergoeding na verkeersongeval met leaseauto; verzekering verwijst door naar rechtsbijstand. Beller is geverifieerd via postcode (6925) en e-mailadres. Medewerker geeft advies om extra schadebedrag (leaserenteverlies) direct bij de autoverzekering in te dienen; geen verdere juridische behandeling nodig via helpdesk.",
+      "samenvatting": "Beller belt over schadevergoeding en extra leaseauto-rentekosten na een verkeersongeval. De medewerker verifieert de beller via postcode (6925) en e-mailadres, adviseert dat de extra schade (leaserentekosten) moet worden gemeld bij de autoverzekeringmaatschappij, niet bij de juridische helpdesk, en sluit het ticket met de mogelijkheid dit later weer te openen indien nodig.",
       "tags": [
         [
           "tag-consument",
@@ -37,7 +37,7 @@
       "tijd": "10:04",
       "titel": "Woning verkocht — schadeclaim muurverwarming met Richard van Weert",
       "personen": "Verzekerde: anoniem · Dewi Verver | Juridisch Medewerker",
-      "samenvatting": "Richard van Weert belt over een schadeclaim van de nieuwe eigenares van zijn verkochte woning, die stelt dat hij niet heeft opgemerkt dat er muurverwarming in de wand zit. De medewerker heeft niet geverifieerd wie de beller is (geen Zoho-match, geen naam/adres/polisnummer controle in het gesprek) en heeft geen inhoudelijk juridisch advies gegeven, maar aangegeven dat de zaak naar Brandmeester (rechtsbijstand) zal worden doorgestuurd en dat er een verzoek voor een externe advocaat zal worden ingediend.",
+      "samenvatting": "Richard van Weert belt over een schadeclaim van de nieuwe eigenaar van zijn voormalige woning vanwege beschadigde verwarmingsleidingen in de muur. De medewerker verifieert de beller niet (geen Zoho-match, geen naam/adres/polisnummer controle in transcript), geeft geen inhoudelijk juridisch advies, maar verwijst door naar Brandmeester voor rechtsbijstandsverlening en stelt voor om een verzoek in te dienen voor gebruik van een externe advocaat.",
       "tags": [
         [
           "tag-consument",
@@ -58,13 +58,13 @@
   "acties": [],
   "analyse": {
     "goed": [
-      "09:44 Verkeersongeval: Identiteit correct geverifieerd via postcode en e-mailadres voordat advies werd gegeven",
-      "09:44 Verkeersongeval: Concreet advies gegeven (schadebedrag direct indienen bij autoverzekering) en telefonisch opgelost",
-      "10:04 Muurverwarming: Correct geen juridisch advies gegeven zonder verificatie; medewerker heeft terecht doorverwezen naar Brandmeester (rechtsbijstand)"
+      "09:44 Verkeersongeval: Identiteit correct geverifieerd via postcode en e-mailadres voordat advies werd gegeven.",
+      "09:44 Verkeersongeval: Juiste advies gegeven door schadeclaim terecht door te verwijzen naar autoverzekeringmaatschappij in plaats van juridische helpdesk.",
+      "10:04 Muurverwarming: Medewerker handelde correct door geen advies te geven zonder verificatie, en verwees door naar Brandmeester voor professionele rechtsbijstand."
     ],
     "beter": [
-      "10:04 Muurverwarming: Identiteit van beller (Richard van Weert) niet geverifieerd in Zoho en geen polisnummer/adres/naam vastgesteld voordat doorverwijzing plaatsvond — dit maakt het onmogelijk voor Brandmeester om de zaak correct uit te zoeken",
-      "10:04 Muurverwarming: Geen concrete deadline afgesproken voor vervolgcontact of voor indiening van het verzoek aan de externe advocaat; beller weet niet wanneer hij/zij verder hoort"
+      "10:04 Muurverwarming: Geen concrete deadline afgesproken voor vervolgstap (wanneer dient beller verzoek in bij Brandmeester? Wanneer verwacht terugkoppeling?). Dit maakt het vervolgplan onduidelijk voor de klant.",
+      "10:04 Muurverwarming: Identiteitsverificatie ontbreekt volledig. Ondanks dat geen advies werd gegeven, had de medewerker eerst moeten vaststellen wie de beller is (naam, adres, polisnummer) voordat doorverwijzing plaatsvond, om later contact met Richard van Weert betrouwbaar te kunnen traceren."
     ]
   },
   "verkeerdVerbonden": {

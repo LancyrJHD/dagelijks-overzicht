@@ -7,5 +7,63 @@
     "terugGebeld": 0,
     "totaalGemist": 0,
     "totaalInbound": 9
+  },
+  "2026-08-18": {
+    "date": "2026-08-18",
+    "generated_at": "2026-08-25T11:41:04Z",
+    "nietTerugGebeld": 8,
+    "nietTerugGebeldNummers": [
+      {
+        "callResult": "abandoned",
+        "naam": "Onbekend",
+        "nummer": "+31620525622",
+        "tijd": "10:41"
+      },
+      {
+        "callResult": "abandoned",
+        "naam": "Onbekend",
+        "nummer": "+31638302030",
+        "tijd": "11:06"
+      },
+      {
+        "callResult": "abandoned",
+        "naam": "Onbekend",
+        "nummer": "+31630066895",
+        "tijd": "11:53"
+      },
+      {
+        "callResult": "abandoned",
+        "naam": "Onbekend",
+        "nummer": "+31628748384",
+        "tijd": "14:23"
+      },
+      {
+        "callResult": "abandoned",
+        "naam": "Onbekend",
+        "nummer": "+31612872580",
+        "tijd": "15:23"
+      },
+      {
+        "callResult": "abandoned",
+        "naam": "Onbekend",
+        "nummer": "+31639140021",
+        "tijd": "16:06"
+      },
+      {
+        "callResult": "abandoned",
+        "naam": "Onbekend",
+        "nummer": "+31639140021",
+        "tijd": "16:13"
+      },
+      {
+        "callResult": "abandoned",
+        "naam": "Onbekend",
+        "nummer": "+31629527302",
+        "tijd": "16:38"
+      }
+    ],
+    "terugGebeld": 0,
+    "totaalGemist": 8,
+    "totaalInbound": 19
   }
 }
