@@ -162,11 +162,18 @@
   },
   "2026-08-25": {
     "date": "2026-08-25",
-    "generated_at": "2026-08-25T11:52:04Z",
-    "nietTerugGebeld": 0,
-    "nietTerugGebeldNummers": [],
+    "generated_at": "2026-08-25T12:54:52Z",
+    "nietTerugGebeld": 1,
+    "nietTerugGebeldNummers": [
+      {
+        "callResult": "abandoned",
+        "naam": "Anonymous",
+        "nummer": "Anonymous",
+        "tijd": "14:51"
+      }
+    ],
     "terugGebeld": 0,
-    "totaalGemist": 0,
-    "totaalInbound": 9
+    "totaalGemist": 1,
+    "totaalInbound": 12
   }
 }
