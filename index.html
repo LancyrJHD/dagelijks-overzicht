@@ -1293,7 +1293,10 @@ body {
       Vernieuwen
     </button>
     <button id="status-toggle-btn" onclick="toggleActief()" style="display:none;border:none;border-radius:50px;padding:6px 14px;cursor:pointer;font-size:12px;font-weight:600;font-family:inherit;margin-right:8px;background:var(--green-bg);color:var(--green)" data-actief="true">🟢 Ik ben actief</button>
-    <button id="management-toggle-btn" onclick="toggleManagementView()" style="display:none;border:1px solid var(--navy);border-radius:50px;padding:6px 14px;cursor:pointer;font-size:12px;font-weight:600;font-family:inherit;margin-right:8px;background:#fff;color:var(--navy)">📊 Managementweergave</button>
+    <div id="view-toggle-group" style="display:none;align-items:center;border:1px solid var(--navy);border-radius:50px;overflow:hidden;margin-right:8px;font-family:inherit">
+      <button id="view-btn-medewerker" onclick="setManagementView(false)" style="border:none;cursor:pointer;font:inherit;font-size:12px;font-weight:600;padding:6px 14px;background:var(--navy);color:#fff">&#128100; Medewerker</button>
+      <button id="view-btn-management" onclick="setManagementView(true)" style="border:none;cursor:pointer;font:inherit;font-size:12px;font-weight:600;padding:6px 14px;background:#fff;color:var(--navy)">&#128202; Management</button>
+    </div>
     <button class="logout-btn" id="logout-btn" onclick="authLogout()" style="display:none">Uitloggen</button>
     <div class="avatar-stack">
       <div class="av" title="Jackie Stam">JS</div>
@@ -4529,14 +4532,22 @@ async function checkManagementAccess() {
     console.log('[Management] kon rol niet bepalen:', e);
     isManagement = false;
   }
-  const btn = document.getElementById('management-toggle-btn');
-  if (btn) btn.style.display = isManagement ? '' : 'none';
+  const group = document.getElementById('view-toggle-group');
+  if (group) group.style.display = isManagement ? 'inline-flex' : 'none';
+  // Als toegang wegvalt (bv. uitgelogd) terugvallen op medewerkerweergave.
+  if (!isManagement) setManagementView(false);
 }
 
-function toggleManagementView() {
-  managementViewActive = !managementViewActive;
-  const btn = document.getElementById('management-toggle-btn');
-  if (btn) btn.textContent = managementViewActive ? '👤 Medewerkerweergave' : '📊 Managementweergave';
+function setManagementView(active) {
+  managementViewActive = active;
+  const bWerk = document.getElementById('view-btn-medewerker');
+  const bMgmt = document.getElementById('view-btn-management');
+  if (bWerk && bMgmt) {
+    bWerk.style.background = active ? '#fff' : 'var(--navy)';
+    bWerk.style.color = active ? 'var(--navy)' : '#fff';
+    bMgmt.style.background = active ? 'var(--navy)' : '#fff';
+    bMgmt.style.color = active ? '#fff' : 'var(--navy)';
+  }
   renderDashboard(activePeriod);
 }
 
@@ -4552,8 +4563,8 @@ function showAuthOverlay() {
   document.getElementById('auth-overlay').classList.remove('hidden');
   document.getElementById('logout-btn').style.display = 'none';
   document.getElementById('status-toggle-btn').style.display = 'none';
-  const mgmtBtn = document.getElementById('management-toggle-btn');
-  if (mgmtBtn) mgmtBtn.style.display = 'none';
+  const mgmtGroup = document.getElementById('view-toggle-group');
+  if (mgmtGroup) mgmtGroup.style.display = 'none';
 }
 function hideAuthOverlay() {
   document.getElementById('auth-overlay').classList.add('hidden');
