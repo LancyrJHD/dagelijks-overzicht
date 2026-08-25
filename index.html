@@ -4006,10 +4006,10 @@ function renderDashboard(period) {
         </div>
         ${period === 'vandaag' ? `
         <div style="font-size:32px;font-weight:700;color:var(--navy)">${zohoBrandmeesterCount}</div>
-        <div style="color:var(--ink-50);font-size:12px;margin-top:4px">van ${zohoTicketsTodayTotal} Zoho-tickets &middot; "Doorgezet naar BrandMR" (feit, geen inschatting)</div>
+        <div style="color:var(--ink-50);font-size:12px;margin-top:4px">van ${zohoTicketsTodayTotal} Zoho-tickets &middot; "Doorgezet naar BrandMR"</div>
         ` : (period === 'deze-week' || period === 'vorige-week') ? `
         <div style="font-size:32px;font-weight:700;color:var(--navy)">${BRANDMR_WEEK_HISTORY[period].brandmeester} / ${BRANDMR_WEEK_HISTORY[period].totaal}</div>
-<div style="color:var(--ink-50);font-size:12px;margin-top:4px">${Math.round(BRANDMR_WEEK_HISTORY[period].brandmeester / BRANDMR_WEEK_HISTORY[period].totaal * 100)}% doorgezet naar BrandMR &middot; Zoho-historie (feit, geen inschatting)</div>
+<div style="color:var(--ink-50);font-size:12px;margin-top:4px">${Math.round(BRANDMR_WEEK_HISTORY[period].brandmeester / BRANDMR_WEEK_HISTORY[period].totaal * 100)}% doorgezet naar BrandMR &middot; Zoho-historie</div>
         ` : `
 <div style="font-size:32px;font-weight:700;color:var(--ink-30)">&mdash;</div>
         <div style="color:var(--ink-50);font-size:12px;margin-top:4px">Alleen beschikbaar voor vandaag (Zoho-historie niet bewaard)</div>
