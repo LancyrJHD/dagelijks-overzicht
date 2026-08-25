@@ -99,5 +99,27 @@
     "terugGebeld": 1,
     "totaalGemist": 5,
     "totaalInbound": 15
+  },
+  "2026-08-20": {
+    "date": "2026-08-20",
+    "generated_at": "2026-08-25T11:45:36Z",
+    "nietTerugGebeld": 2,
+    "nietTerugGebeldNummers": [
+      {
+        "callResult": "abandoned",
+        "naam": "Onbekend",
+        "nummer": "+31206517517",
+        "tijd": "13:59"
+      },
+      {
+        "callResult": "abandoned",
+        "naam": "Onbekend",
+        "nummer": "+31681258989",
+        "tijd": "14:05"
+      }
+    ],
+    "terugGebeld": 0,
+    "totaalGemist": 2,
+    "totaalInbound": 17
   }
 }
