@@ -1,57 +1,33 @@
 {
-  "date": "2026-08-18",
-  "generated_at": "2026-08-25T11:41:04Z",
-  "totaalInbound": 19,
-  "totaalGemist": 8,
-  "terugGebeld": 0,
-  "nietTerugGebeld": 8,
+  "date": "2026-08-19",
+  "generated_at": "2026-08-25T11:43:05Z",
+  "totaalInbound": 15,
+  "totaalGemist": 5,
+  "terugGebeld": 1,
+  "nietTerugGebeld": 4,
   "nietTerugGebeldNummers": [
+    {
+      "nummer": "+31630936309",
+      "naam": "Onbekend",
+      "tijd": "09:08",
+      "callResult": "abandoned"
+    },
+    {
+      "nummer": "+31655783322",
+      "naam": "Onbekend",
+      "tijd": "09:24",
+      "callResult": "abandoned"
+    },
     {
       "nummer": "+31620525622",
       "naam": "Onbekend",
-      "tijd": "10:41",
+      "tijd": "10:49",
       "callResult": "abandoned"
     },
     {
-      "nummer": "+31638302030",
+      "nummer": "+31134637012",
       "naam": "Onbekend",
-      "tijd": "11:06",
-      "callResult": "abandoned"
-    },
-    {
-      "nummer": "+31630066895",
-      "naam": "Onbekend",
-      "tijd": "11:53",
-      "callResult": "abandoned"
-    },
-    {
-      "nummer": "+31628748384",
-      "naam": "Onbekend",
-      "tijd": "14:23",
-      "callResult": "abandoned"
-    },
-    {
-      "nummer": "+31612872580",
-      "naam": "Onbekend",
-      "tijd": "15:23",
-      "callResult": "abandoned"
-    },
-    {
-      "nummer": "+31639140021",
-      "naam": "Onbekend",
-      "tijd": "16:06",
-      "callResult": "abandoned"
-    },
-    {
-      "nummer": "+31639140021",
-      "naam": "Onbekend",
-      "tijd": "16:13",
-      "callResult": "abandoned"
-    },
-    {
-      "nummer": "+31629527302",
-      "naam": "Onbekend",
-      "tijd": "16:38",
+      "tijd": "13:45",
       "callResult": "abandoned"
     }
   ]
