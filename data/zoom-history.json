@@ -137,5 +137,27 @@
     "terugGebeld": 1,
     "totaalGemist": 2,
     "totaalInbound": 12
+  },
+  "2026-08-24": {
+    "date": "2026-08-24",
+    "generated_at": "2026-08-25T11:49:47Z",
+    "nietTerugGebeld": 2,
+    "nietTerugGebeldNummers": [
+      {
+        "callResult": "abandoned",
+        "naam": "Onbekend",
+        "nummer": "+31615167885",
+        "tijd": "13:37"
+      },
+      {
+        "callResult": "abandoned",
+        "naam": "Onbekend",
+        "nummer": "+31636293184",
+        "tijd": "14:34"
+      }
+    ],
+    "terugGebeld": 1,
+    "totaalGemist": 3,
+    "totaalInbound": 19
   }
 }
