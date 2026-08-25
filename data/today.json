@@ -1,6 +1,6 @@
 {
   "date": "2026-08-25",
-  "generated_at": "2026-08-25T11:45:52Z",
+  "generated_at": "2026-08-25T11:48:08Z",
   "drukte": "rustig",
   "gesprekken": 2,
   "stats": {
@@ -16,7 +16,7 @@
       "tijd": "09:44",
       "titel": "Verkeersongeval – schadevergoeding en leaseauto-rente met verzekering",
       "personen": "Verzekerde: anoniem · Senne Duifhuis | Juridisch medewerker",
-      "samenvatting": "Beller belt over schadevergoeding na verkeersongeval waarbij wederpartij onder invloed was. Beller heeft leaseauto met rentecomponent en stelt vragen over verhaal van extra kosten (vroegtijdige aflossing lease) bij tegenpartij. Medewerker heeft beller geverifieerd via postcode/huisnummer (6925, huisnummer onvolledig doch opzoekbaar), geeft advies dat extra schade bij verzekeringsmaatschappij moet worden ingediend en niet onder juridische dekking valt, waarna zaak wordt gesloten.",
+      "samenvatting": "Beller belt over schadevergoeding na verkeersongeval waarbij de tegenpartij onder invloed was. Beller heeft een leaseauto met rentekosten en vraagt of de extra kosten (vroegtijdige aflossing door onbruikbaarheid van de auto) kunnen worden verhaald op de tegenpartij. De medewerker heeft de beller geverifieerd via postcode/adres, gegeven dat dit een zaak voor de autoverzekering is en advies gegeven dat de beller de extra schade bij de verzekering moet indienen; het ticket wordt gesloten.",
       "tags": [
         [
           "tag-consument",
@@ -37,7 +37,7 @@
       "tijd": "10:04",
       "titel": "Woning verkocht — schadeclaim muurverwarming met Richard van Weert",
       "personen": "Verzekerde: anoniem · Dewi Verver | Juridisch Medewerker",
-      "samenvatting": "Richard van Weert belt over een schadeclaim van de nieuwe eigenaresse van zijn verkochte woning, die schade aan verwarmingsleidingen claimt nadat zij zelf in de wand heeft geboord. Van Weert stelt dat hij niet wist van muurverwarming en betwijfelt de aansprakelijkheid. De medewerker heeft geen identiteitsverificatie uitgevoerd (geen Zoho-match, geen verificatiegegevens in gesprek) en heeft geen inhoudelijk juridisch advies gegeven, maar direct doorverwezen naar Brandmeester voor verdere behandeling.",
+      "samenvatting": "Richard van Weert belt over een schadeclaim van de nieuwe eigenares van zijn verkochte woning; zij stelt hem aansprakelijk voor schade aan muurverwarmingsleidingen die zij per ongeluk heeft geraakt bij renovatiewerkzaamheden. De medewerker heeft de beller niet geverifieerd (geen Zoho-match, geen verificatiepoging in transcript) en heeft geen inhoudelijk juridisch advies gegeven, maar stuurt de zaak door naar Brandmeester (rechtsbijstandsafdeling) voor verdere behandeling.",
       "tags": [
         [
           "tag-consument",
@@ -58,13 +58,13 @@
   "acties": [],
   "analyse": {
     "goed": [
-      "09:44 Verkeersongeval: Identiteit correct geverifieerd via postcode/huisnummer voordat advies werd gegeven.",
-      "09:44 Verkeersongeval: Advies helder gegeven dat extra schade via verzekeringsmaatschappij moet worden ingediend, niet onder juridische dekking valt.",
-      "10:04 Richard van Weert: Medewerker heeft terecht geen juridisch advies gegeven zonder identiteitsverificatie en heeft zaak professioneel doorverwezen naar Brandmeester voor verdere behandeling."
+      "09:44 Verkeersongeval: identiteit correct geverifieerd via postcode/adres voordat advies werd gegeven",
+      "09:44 Verkeersongeval: passend advies gegeven (zaak naar autoverzekering) en ticket direct gesloten",
+      "10:04 Muurverwarming: juiste handeling om onbekende beller niet in te voeren en zaak naar Brandmeester door te verwijzen in plaats van ongecontroleerd advies te geven"
     ],
     "beter": [
-      "09:44 Verkeersongeval: Dekkingscontrole (franchise EUR 250) is niet expliciet vastgelegd in het gesprek, terwijl hier een schadeclaim van een verkeersongeval speelt.",
-      "10:04 Richard van Weert: Geen concrete deadline of vervolgplan opgenomen voor het vervolgcontact bij Brandmeester (wanneer wordt beller terugverwacht te horen, wie volgt op?)."
+      "09:44 Verkeersongeval: dekkingscontrole ontbreekt — schadebedrag (extra rentekosten leaseauto) is niet vastgelegd of tegen de franchise (EUR 250) getoetst",
+      "10:04 Muurverwarming: geen concrete deadline of vervolgplan benoemd voor wanneer beller van Brandmeester hoort; geen verificatieverzoek (documenten, huisnummer, etc.) gedaan om toekomstig contact vlotter te laten verlopen"
     ]
   },
   "verkeerdVerbonden": {

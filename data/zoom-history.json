@@ -121,5 +121,21 @@
     "terugGebeld": 0,
     "totaalGemist": 2,
     "totaalInbound": 17
+  },
+  "2026-08-21": {
+    "date": "2026-08-21",
+    "generated_at": "2026-08-25T11:47:51Z",
+    "nietTerugGebeld": 1,
+    "nietTerugGebeldNummers": [
+      {
+        "callResult": "abandoned",
+        "naam": "Onbekend",
+        "nummer": "+31685667887",
+        "tijd": "16:30"
+      }
+    ],
+    "terugGebeld": 1,
+    "totaalGemist": 2,
+    "totaalInbound": 12
   }
 }
