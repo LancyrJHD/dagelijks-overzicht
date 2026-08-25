@@ -1,6 +1,6 @@
 {
   "date": "2026-08-25",
-  "generated_at": "2026-08-25T11:08:36Z",
+  "generated_at": "2026-08-25T11:14:20Z",
   "drukte": "rustig",
   "gesprekken": 2,
   "stats": {
@@ -16,7 +16,7 @@
       "tijd": "09:44",
       "titel": "Verkeersongeval – schadevergoeding en leaseauto-rente met verzekering",
       "personen": "Verzekerde: anoniem · Senne Duifhuis | Juridisch medewerker",
-      "samenvatting": "Beller belt over schadevergoeding na verkeersongeval waarbij wederpartij onder invloed was. Beller heeft leaseauto en vraagt of extra renteverlies (ca. EUR 1000 na 8 maanden voortijdig aflossing) bij tegenpartij kan worden verhaald. Medewerker adviseert beller om deze extra schadebedragen direct bij de autoverzekeringmaatschappij in te dienen; identiteit is geverifieerd via postcode/huisnummer, inhoudelijk juridisch advies is gegeven (schadeverhaalbaarheid, procedure indiening bij verzekeringafdeling).",
+      "samenvatting": "Beller belt over schadevergoeding naar aanleiding van een verkeersongeval waarbij de tegenpartij onder invloed was. Beller heeft een leaseauto en vraagt of hij de extra rentekosten (circa EUR verlies vanwege vervroegde aflossing van het contract) kan verhalen op de tegenpartij. De medewerker geeft advies dat dit een zaak voor de autoverzekering is (niet voor de juridische helpdesk) en adviseert de beller om de extra schade rechtstreeks bij de verzekering in te dienen. Beller is geverifieerd via postcode en huisnummer, en ontvangt praktisch advies om contact op te nemen met de verzekering.",
       "tags": [
         [
           "tag-consument",
@@ -37,11 +37,11 @@
       "tijd": "10:04",
       "titel": "Woning verkocht — schadeclaim muurverwarming met Richard van Weert",
       "personen": "Verzekerde: anoniem · Dewi Verver | Juridisch Medewerker",
-      "samenvatting": "Richard van Weert belde over een schadeclaim van de nieuwe eigenaar van zijn verkochte woning wegens beschadigde verwarmingsleidingen in de muur. De medewerker heeft de beller niet geverifieerd in het systeem (geen Zoho-match, geen verificatie via naam/adres/polisnummer in het transcript) en heeft daarom geen inhoudelijk juridisch advies gegeven, maar aangekondigd dat het dossier naar Brandmeester (rechtsbijstandsjuristen) zal worden doorgestuurd en een verzoek voor externe advocaat zal worden ingediend.",
+      "samenvatting": "Richard van Weert belt over een schadeclaim van de nieuwe eigenares van zijn verkochte woning wegens beschadigde verwarmingsleidingen in de muur. De medewerker heeft de beller niet geverifieerd in het systeem (geen Zoho-match, geen naam/adres/polisnummer-controle in het gesprek) en heeft geen inhoudelijk juridisch advies gegeven, maar aangekondigd het geval door te sturen naar Brandmeester (rechtsbijstandspartner) met een verzoek voor eventuele externe advocaatgebruik.",
       "tags": [
         [
-          "tag-bouw",
-          "Bouwrecht"
+          "tag-overig",
+          "Aansprakelijkheidsrecht / Immobiliair"
         ]
       ],
       "uitkomst": [
@@ -58,13 +58,13 @@
   "acties": [],
   "analyse": {
     "goed": [
-      "09:44 Verkeersongeval: Identiteit correct geverifieerd via postcode/huisnummer voordat advies werd gegeven.",
-      "09:44 Verkeersongeval: Inhoudelijk juridisch advies gegeven over schadeverhaalbaarheid en procedurele stappen bij de autoverzekeringmaatschappij.",
-      "10:04 Muurverwarming Richard van Weert: Medewerker heeft terecht geen inhoudelijk advies gegeven zonder verificatie in het systeem en heeft adequate doorverwijzing naar Brandmeester (rechtsbijstandsjuristen) geregeld."
+      "09:44 Verkeersongeval: identiteit correct geverifieerd via postcode en huisnummer voordat advies werd gegeven",
+      "09:44 Verkeersongeval: juiste keuze om zaak door te verwijzen naar autoverzekering (buiten scope juridische helpdesk)",
+      "10:04 Muurverwarming: correcte handeling om zaak door te verwijzen naar rechtsbijstandspartner Brandmeester gezien complexiteit schadeclaim"
     ],
     "beter": [
-      "09:44 Verkeersongeval: Bij schadeclaim (EUR ~1000 renteverlies) ontbreekt documentatie van dekkingscontrole/franchise (EUR 250-norm). Controleer of de schade onder de polis valt en welke franchisebedragen van toepassing zijn.",
-      "10:04 Muurverwarming Richard van Weert: Geen concrete deadline afgesproken voor vervolgcontact of moment waarop extern advocaat/Brandmeester contact zal opnemen; beller heeft geen duidelijke verwachting van responstijd."
+      "10:04 Muurverwarming: identiteit van Richard van Weert is NIET geverifieerd in het systeem (geen Zoho-match, geen controle naam/adres/polisnummer) — dit moet altijd eerst gebeuren voordat een zaak kan worden doorverwezen; concrete deadline afgesproken voor vervolgstap door Brandmeester ontbreekt",
+      "10:04 Muurverwarming: schadeclaim (beschadigde verwarmingsleidingen) vereist dekkingscontrole met franchise (EUR 250) — onduidelijk of dit al is vastgesteld voordat doorverwijzing plaatsvond"
     ]
   },
   "verkeerdVerbonden": {
@@ -78,7 +78,7 @@
       1
     ],
     [
-      "Bouwrecht",
+      "Aansprakelijkheidsrecht / Immobiliair",
       1
     ]
   ]
