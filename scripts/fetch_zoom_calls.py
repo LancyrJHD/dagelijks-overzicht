@@ -141,6 +141,22 @@ def main():
             result_counts[r] = result_counts.get(r, 0) + 1
     print(f"Inbound call_result-waarden vandaag: {result_counts}")
 
+    # TIJDELIJKE DIAGNOSE: op welke lijn/wachtrij (callee) komen de
+    # binnenkomende oproepen vandaag binnen? Een gebruiker meldde een
+    # "gemiste oproep" te zien voor een nummer dat volgens hen nooit heeft
+    # gebeld -- mogelijke oorzaak: dit account heeft meerdere wachtrijen
+    # (bv. een algemene HTJZ-lijn naast de specifieke Lancyr-helpdesklijn)
+    # en dit script haalt nu ALLE wachtrijen van het account op, niet
+    # gefilterd op de Lancyr-helpdesk.
+    queue_counts = {}
+    for log in logs:
+        if (log.get('direction') or '').lower() == 'inbound':
+            key = (log.get('callee_name'), log.get('callee_ext_number'), log.get('callee_did_number'))
+            queue_counts[key] = queue_counts.get(key, 0) + 1
+    print("Inbound-oproepen per (callee_name, callee_ext_number, callee_did_number):")
+    for key, count in queue_counts.items():
+        print(f"  {key}: {count}")
+
     missed = []
     outbound_calls = []
     totaal_inbound = 0
