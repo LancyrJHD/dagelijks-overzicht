@@ -1,26 +1,81 @@
 {
   "date": "2026-08-25",
-  "generated_at": "2026-08-25T07:49:02Z",
+  "generated_at": "2026-08-25T08:49:28Z",
   "drukte": "rustig",
-  "gesprekken": 0,
+  "gesprekken": 2,
   "stats": {
-    "opgelost": 0,
-    "brandmeester": 0,
+    "opgelost": 1,
+    "brandmeester": 1,
     "afkoop": 0,
     "terugbel": 0,
     "geenDekking": 0
   },
-  "score": 0,
-  "conversations": [],
+  "score": 6.5,
+  "conversations": [
+    {
+      "tijd": "09:44",
+      "titel": "Verkeersongeval – schadevergoeding en leaseauto-rente met verzekering",
+      "personen": "Verzekerde: anoniem · Senne Duifhuis | Juridisch medewerker",
+      "samenvatting": "Beller belt over schadevergoeding na verkeersongeval waarbij wederpartij onder invloed was. Beller is geverifieerd via postcode (6925) en e-mailadres. De medewerker heeft inhoudelijk advies gegeven: extra schadeposter (leaseauto-rente) moet bij de autoverzekering worden ingediend als aparte schadeclaim; de juridische helpdesk kan hier niet over oordelen. Zaak wordt afgesloten met verwijzing naar de autoverzekering.",
+      "tags": [
+        [
+          "tag-consument",
+          "Consumentenrecht"
+        ]
+      ],
+      "uitkomst": [
+        "outcome-opgelost",
+        "Telefonisch opgelost"
+      ],
+      "terugbel": false,
+      "verkeerdVerbonden": false,
+      "rechtsbijstandVerwijzing": false,
+      "adviesGegeven": true,
+      "identiteitGeverifieerd": true
+    },
+    {
+      "tijd": "10:04",
+      "titel": "Woning verkocht — schadeclaim muurverwarming met Richard van Weert",
+      "personen": "Verzekerde: anoniem · Dewi Verver | Juridisch Medewerker",
+      "samenvatting": "Richard van Weert belt over een schadeclaim van de nieuwe eigenares van zijn verkochte woning; zij stelt hem aansprakelijk voor schade aan verwarmingsleidingen die zij per ongeluk heeft geraakt bij boren in de muur. De medewerker heeft de beller niet geverifieerd in het systeem (geen Zoho-match, geen expliciete verificatie in transcript) en heeft geen inhoudelijk juridisch advies gegeven; de zaak is doorverwezen naar Brandmeester voor verdere behandeling.",
+      "tags": [
+        [
+          "tag-consument",
+          "Consumentenrecht"
+        ]
+      ],
+      "uitkomst": [
+        "outcome-brandmeester",
+        "Doorverwezen naar Brandmeester"
+      ],
+      "terugbel": false,
+      "verkeerdVerbonden": false,
+      "rechtsbijstandVerwijzing": true,
+      "adviesGegeven": false,
+      "identiteitGeverifieerd": false
+    }
+  ],
   "acties": [],
   "analyse": {
-    "goed": [],
-    "beter": []
+    "goed": [
+      "09:44 Verkeersongeval: identiteit correct geverifieerd via postcode en e-mailadres voordat advies werd gegeven",
+      "09:44 Verkeersongeval: juiste scope bepaald (schadeclaim leaseauto-rente valt onder autoverzekering, niet juridische helpdesk)",
+      "10:04 Muurverwarming: medewerker volgt protocol correct door geval door te verwijzen naar Brandmeester zonder advies te geven, omdat identiteit niet kon worden geverifieerd"
+    ],
+    "beter": [
+      "09:44 Verkeersongeval: bij schadeclaim met concreet schadebedrag ontbreekt vastlegging van dekkingscontrole (franchise EUR 250) in het dossier",
+      "10:04 Muurverwarming: geen concrete deadline of vervolgstap benoemd voor vervolgcontact met Brandmeester; onduidelijk wanneer beller verwachting mag hebben op inhoudelijke reactie"
+    ]
   },
   "verkeerdVerbonden": {
     "aantal": 0,
     "percentage": 0.0
   },
-  "rechtsbijstandVerwijzingen": 0,
-  "categorieen": []
+  "rechtsbijstandVerwijzingen": 1,
+  "categorieen": [
+    [
+      "Consumentenrecht",
+      2
+    ]
+  ]
 }
