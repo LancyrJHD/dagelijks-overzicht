@@ -214,6 +214,27 @@ def main():
     for key, count in queue_counts.items():
         print(f"  {key}: {count}")
 
+    # TIJDELIJKE DIAGNOSE: check of 'answered'-oproepen ECHT door een mens
+    # zijn opgepakt. Bekende beperking (zie docstring bovenaan): bij een
+    # call queue kan het top-level call_result al 'answered' tonen zodra de
+    # wachtrij zelf de oproep in behandeling neemt, ook als de beller ophangt
+    # voordat een medewerker daadwerkelijk opneemt. Een echt beantwoorde
+    # oproep hoort een answer_time te hebben EN een spreekduur (duration) >
+    # 0. Print elke 'answered' inbound-oproep zonder answer_time of met
+    # duration <= 0 -- die zijn hoogstwaarschijnlijk GEEN echte antwoorden
+    # en zouden als gemist geteld moeten worden.
+    verdachte_answered = [
+        log for log in logs
+        if (log.get('direction') or '').lower() == 'inbound'
+        and (log.get('call_result') or '').lower() == 'answered'
+        and (not log.get('answer_time') or (log.get('duration') or 0) <= 0)
+    ]
+    print(f"Verdachte 'answered'-oproepen (geen answer_time of duration<=0): {len(verdachte_answered)}")
+    for log in verdachte_answered:
+        print(f"  id={log.get('id')!r} caller={log.get('caller_did_number')!r} "
+              f"start={log.get('start_time')!r} answer_time={log.get('answer_time')!r} "
+              f"duration={log.get('duration')!r}")
+
     missed = []
     outbound_calls = []
     totaal_inbound = 0
