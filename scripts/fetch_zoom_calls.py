@@ -62,6 +62,18 @@ AMS_OFFSET = timedelta(hours=2)
 # voor waarom dit bewust een denylist is i.p.v. een allowlist.
 HANDLED_RESULTS = {'answered', 'connected'}
 
+# BEVINDING 25 aug 2026: dit Zoom-account heeft meerdere wachtrijen op
+# dezelfde helpdesk-afdeling (o.a. "Lancyr Juridische Helpdesk", ext 807,
+# +31294799077 EN "HTJZ - Juridische Helpdesk", ext 811, +318002300743).
+# Zonder filter haalt get_call_history() ALLE wachtrijen van het account
+# op, waardoor een oproep die nooit de Lancyr-lijn heeft bereikt (bewezen
+# geval: +31433514571, voicemail op ext 811 op 24 aug) toch als "gemiste
+# Lancyr-oproep" werd gerapporteerd. Daarom nu expliciet filteren op de
+# Lancyr-lijn, voor zowel inbound (callee) als outbound (caller = onze
+# queue-DID bij een agent die terugbelt).
+LANCYR_QUEUE_DID = '+31294799077'
+LANCYR_QUEUE_EXT = '807'
+
 
 def get_access_token():
     creds = f'{CLIENT_ID}:{CLIENT_SECRET}'.encode()
@@ -152,6 +164,23 @@ def main():
             print(json.dumps(m, indent=2, ensure_ascii=False))
         print("--- EINDE DIAGNOSE-ONLY (data/zoom-calls.json NIET geschreven) ---")
         return
+
+    # Filter op de Lancyr Juridische Helpdesk-lijn (zie BEVINDING 25 aug 2026
+    # hierboven). Alles hierna (result_counts, queue_counts, missed/outbound)
+    # werkt bewust op de GEFILTERDE lijst.
+    ongefilterd_totaal = len(logs)
+    logs = [
+        log for log in logs
+        if (
+            (log.get("direction") or "").lower() == "inbound"
+            and log.get("callee_did_number") == LANCYR_QUEUE_DID
+        ) or (
+            (log.get("direction") or "").lower() == "outbound"
+            and log.get("caller_did_number") == LANCYR_QUEUE_DID
+        )
+    ]
+    print(f"Gefilterd op Lancyr Juridische Helpdesk-lijn ({LANCYR_QUEUE_DID}): "
+          f"{len(logs)} van {ongefilterd_totaal} opgehaalde records blijven over.")
 
     # Lichte, blijvende diagnose: welke call_result-waarden komen vandaag
     # voor bij inbound gesprekken? Handig om in de Actions-log te zien of er
