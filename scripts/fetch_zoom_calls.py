@@ -140,7 +140,11 @@ def main():
         raise SystemExit(1)
 
     today_str = (datetime.now(timezone.utc) + AMS_OFFSET).date().isoformat()
-    date_str = os.environ.get('ZOOM_DATE', today_str)
+    # FIX 25 aug 2026: ZOOM_DATE staat via workflow_dispatch ALTIJD in de
+    # omgeving (ook als lege string ''), dus os.environ.get(..., today_str)
+    # viel niet terug op vandaag. 'or' behandelt zowel ontbrekend als leeg
+    # als 'gebruik vandaag'.
+    date_str = os.environ.get('ZOOM_DATE') or today_str
 
     print(f"Ophalen call history voor {date_str}...")
     access_token = get_access_token()
