@@ -42,6 +42,13 @@ ACCOUNT_ID = os.environ.get('ZOOM_ACCOUNT_ID', '')
 CLIENT_ID = os.environ.get('ZOOM_CLIENT_ID', '')
 CLIENT_SECRET = os.environ.get('ZOOM_CLIENT_SECRET', '')
 
+# Diagnose-only modus: print volledige ruwe record(s) voor een specifiek
+# nummer en STOP dan zonder data/zoom-calls.json te schrijven. Bedoeld om
+# handmatig (via workflow_dispatch + ZOOM_DATE) een specifieke, betwiste
+# oproep te inspecteren zonder de productiedata van 'vandaag' te overschrijven.
+DIAGNOSE_ONLY = os.environ.get('ZOOM_DIAGNOSE_ONLY', '').lower() in ('1', 'true', 'yes')
+DIAGNOSE_NUMBER = os.environ.get('ZOOM_DIAGNOSE_NUMBER', '').strip()
+
 TOKEN_URL = 'https://zoom.us/oauth/token'
 API_BASE = 'https://api.zoom.us/v2'
 OUTPUT_PATH = 'data/zoom-calls.json'
@@ -129,6 +136,22 @@ def main():
     print(f"Totaal opgehaald: {len(logs)} call log records")
     if logs:
         print("Voorbeeldrecord:", json.dumps(logs[0], indent=2, ensure_ascii=False))
+
+    if DIAGNOSE_ONLY:
+        print(f"--- DIAGNOSE-ONLY MODUS: zoeken op {DIAGNOSE_NUMBER!r} "
+              f"(caller_did_number of callee_did_number) ---")
+        matches = [
+            log for log in logs
+            if DIAGNOSE_NUMBER and (
+                DIAGNOSE_NUMBER in (log.get("caller_did_number") or "")
+                or DIAGNOSE_NUMBER in (log.get("callee_did_number") or "")
+            )
+        ]
+        print(f"Gevonden: {len(matches)} record(en)")
+        for m in matches:
+            print(json.dumps(m, indent=2, ensure_ascii=False))
+        print("--- EINDE DIAGNOSE-ONLY (data/zoom-calls.json NIET geschreven) ---")
+        return
 
     # Lichte, blijvende diagnose: welke call_result-waarden komen vandaag
     # voor bij inbound gesprekken? Handig om in de Actions-log te zien of er

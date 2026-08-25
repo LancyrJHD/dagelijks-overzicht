@@ -5,6 +5,15 @@ on:
     # Elk half uur op werkdagen tussen 07:00 en 18:00 Amsterdam (05:00-16:00 UTC)
     - cron: '0,30 5-16 * * 1-5'
   workflow_dispatch:   # Handmatig triggeren vanuit GitHub
+    inputs:
+      datum:
+        description: 'Zoom: datum (YYYY-MM-DD) om op te halen, leeg = vandaag'
+        required: false
+        default: ''
+      diagnose_nummer:
+        description: 'Zoom: DIAGNOSE-ONLY -- volledig record dumpen voor dit nummer, niets opslaan (leeg = normale run)'
+        required: false
+        default: ''
 
 jobs:
   update:
@@ -35,6 +44,9 @@ jobs:
           ZOOM_ACCOUNT_ID: ${{ secrets.ZOOM_ACCOUNT_ID }}
           ZOOM_CLIENT_ID: ${{ secrets.ZOOM_CLIENT_ID }}
           ZOOM_CLIENT_SECRET: ${{ secrets.ZOOM_CLIENT_SECRET }}
+          ZOOM_DATE: ${{ github.event.inputs.datum }}
+          ZOOM_DIAGNOSE_ONLY: ${{ github.event.inputs.diagnose_nummer != '' }}
+          ZOOM_DIAGNOSE_NUMBER: ${{ github.event.inputs.diagnose_nummer }}
         run: python scripts/fetch_zoom_calls.py
         continue-on-error: true  # Zoom-storing mag de rest van het dagrapport niet blokkeren
       - name: Analyseer Granola-gesprekken met AI
