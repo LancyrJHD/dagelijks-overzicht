@@ -1,6 +1,6 @@
 {
   "date": "2026-08-25",
-  "generated_at": "2026-08-25T11:50:02Z",
+  "generated_at": "2026-08-25T11:52:23Z",
   "drukte": "rustig",
   "gesprekken": 2,
   "stats": {
@@ -16,7 +16,7 @@
       "tijd": "09:44",
       "titel": "Verkeersongeval – schadevergoeding en leaseauto-rente met verzekering",
       "personen": "Verzekerde: anoniem · Senne Duifhuis | Juridisch medewerker",
-      "samenvatting": "Beller belt over schadevergoeding en extra kosten (leaserente) na een verkeersongeval waarbij de tegenpartij onder invloed was. De medewerker heeft de beller geverifieerd via postcode (6925) en adres, en geeft advies dat de extra schade (vroegtijdige aflossing leaserente) bij de autoverzekering moet worden ingediend als aanvulling op de reeds gemelde schade. Het gesprek wordt afgerond met het advies om contact op te nemen met de verzekeringsmaatschappij; geen verdere juridische behandeling nodig.",
+      "samenvatting": "Beller belt over een verkeersongeval met schadevergoeding en extra leaseauto-rentekosten. De medewerker heeft de beller geverifieerd via postcode (6925) en adres, en geeft advies dat de extra schade moet worden opgevoerd bij de verzekeringsmaatschappij, niet bij de juridische helpdesk. Het ticket wordt gesloten met de mogelijkheid om het later opnieuw te openen indien nodig.",
       "tags": [
         [
           "tag-consument",
@@ -37,11 +37,11 @@
       "tijd": "10:04",
       "titel": "Woning verkocht — schadeclaim muurverwarming met Richard van Weert",
       "personen": "Verzekerde: anoniem · Dewi Verver | Juridisch Medewerker",
-      "samenvatting": "Richard van Weert belt over een schadeclaim van de nieuwe eigenaar van zijn verkochte woning. Die eigenaar beschuldigt hem ervan niet te hebben vermeld dat er muurverwarming in de wand zit; zij beschadigde verwarmingsleidingen toen zij in de wand boorde en eist nu herstelkosten. De medewerker heeft de beller NIET geverifieerd in het systeem (geen Zoho-match, geen naam/adres/polisnummer controle in gesprek), en heeft daarom GEEN inhoudelijk juridisch advies gegeven. In plaats daarvan wordt de zaak doorverwezen naar Brandmeester (rechtsbijstandspartner) en wordt een verzoek voor externe advocaat in behandeling genomen.",
+      "samenvatting": "Richard van Weert belt over een schadeclaim van de nieuwe eigenares van zijn voormalige woning: zij beschuldigt hem van het niet-informeren over muurverwarming in een wand, die zij onbewust beschadigde bij boorwerkzaamheden. De medewerker heeft Van Weert niet geverifieerd in het systeem en geeft geen inhoudelijk juridisch advies, maar verwijst hem door naar Brandmeester (rechtsbijstandspartner) met mogelijkheid om een verzoek in te dienen voor gebruik van een externe advocaat.",
       "tags": [
         [
-          "tag-consument",
-          "Consumentenrecht"
+          "tag-bouw",
+          "Bouwrecht"
         ]
       ],
       "uitkomst": [
@@ -58,11 +58,13 @@
   "acties": [],
   "analyse": {
     "goed": [
-      "09:44 Verkeersongeval: Identiteit correct geverifieerd (postcode + adres), advies gegeven binnen competentie (doorverwijzing naar autoverzekering voor aanvullende schadeclaim), helder vervolgplan",
-      "10:04 Muurverwarming-claim: Medewerker handelde correct volgens protocol door beller NIET in het systeem te kunnen verifiëren — geen verificatie betekent terecht geen juridisch advies gegeven, maar zaak proper doorverwezen naar Brandmeester voor externe advocaat"
+      "09:44 Verkeersongeval: Identiteit correct geverifieerd via postcode en adres voordat advies werd gegeven.",
+      "09:44 Verkeersongeval: Helder advies gegeven dat schadevergoeding via verzekeringsmaatschappij moet lopen, niet via juridische helpdesk.",
+      "10:04 Muurverwarming-claim: Medewerker heeft terecht geen advies gegeven zonder verificatie in het systeem.",
+      "10:04 Muurverwarming-claim: Passende doorverwijzing naar Brandmeester (rechtsbijstandspartner) als vervolgstap."
     ],
     "beter": [
-      "10:04 Muurverwarming-claim: Hoewel doorverwijzing correct is, zou meer voordeel hebben gehad van een concrete vervolgdeadline (bijv. 'Brandmeester neemt contact met u op binnen 3 werkdagen') om wachttijd voor beller helder te maken"
+      "10:04 Muurverwarming-claim: Geen concrete deadline of vervolgcontactmoment afgesproken. Duidelijk maken wanneer Richard van Weert mag verwachten dat Brandmeester contact opneemt, of wanneer hij zelf actie moet ondernemen."
     ]
   },
   "verkeerdVerbonden": {
@@ -73,7 +75,11 @@
   "categorieen": [
     [
       "Consumentenrecht",
-      2
+      1
+    ],
+    [
+      "Bouwrecht",
+      1
     ]
   ]
 }
