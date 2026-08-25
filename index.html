@@ -3556,6 +3556,42 @@ function getPeriodData(period) {
 // fetch_zoom_calls.py) over dezelfde periode-sleutels (pd.keys) als de rest
 // van het dagrapport, zodat "Gisteren"/"Deze week"/"Vorige week" ook voor de
 // Zoom-gemiste-oproepen-kaart werken i.p.v. alleen "Vandaag".
+// Geeft de datum-sleutels (YYYY-MM-DD) voor een periode terug, ONAFHANKELIJK
+// van of er Granola-conversatiedata (weekData) voor die dag bestaat -- in
+// tegenstelling tot pd.keys (getPeriodData), dat dagen zonder weekData-
+// entry overslaat. Zoom-geschiedenis kan dagen bevatten die weekData niet
+// heeft (en andersom), dus de Zoom-kaart mag niet van pd.keys afhangen.
+function getZoomPeriodKeys(period) {
+  const today = todayKey();
+  const now = new Date();
+  if (period === 'vandaag') return [today];
+  if (period === 'gisteren') return [prevWorkingDay(today)];
+  if (period === 'deze-week') {
+    const mon = getMonday(now);
+    const keys = [];
+    for (let i = 0; i < 5; i++) {
+      const d = new Date(mon);
+      d.setDate(mon.getDate() + i);
+      if (d > now) break;
+      keys.push(dateKey(d));
+    }
+    return keys;
+  }
+  if (period === 'vorige-week') {
+    const mon = getMonday(now);
+    const prevMon = new Date(mon);
+    prevMon.setDate(mon.getDate() - 7);
+    const keys = [];
+    for (let i = 0; i < 5; i++) {
+      const d = new Date(prevMon);
+      d.setDate(prevMon.getDate() + i);
+      keys.push(dateKey(d));
+    }
+    return keys;
+  }
+  return [];
+}
+
 function getZoomAggregate(keys) {
   let totaalInbound = 0, totaalGemist = 0, terugGebeld = 0;
   let nietTerugGebeld = [];
@@ -3676,7 +3712,7 @@ function toggleScoreReden() {
 function renderDashboard(period) {
   const pd = getPeriodData(period);
   const agg = aggregateEntries(pd.entries);
-  const zoomAgg = getZoomAggregate(pd.keys);
+  const zoomAgg = getZoomAggregate(getZoomPeriodKeys(period));
   const { totalGesprekken, totalOpgelost, totalBrandmeester, totalTerugbel, totalGeenDekking, totalAfkoop, allConversations, avgScore, drukte, juristAvgScore } = agg;
 
   // Update header date
