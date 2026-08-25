@@ -64,6 +64,7 @@ jobs:
           # dat "git add" op een niet-bestaand bestand de hele stap laat falen
           # onder bash's set -e (GitHub Actions default).
           if [ -f data/zoom-calls.json ]; then git add data/zoom-calls.json; fi
+          if [ -f data/zoom-history.json ]; then git add data/zoom-history.json; fi
           # Alleen committen als er iets veranderd is
           git diff --staged --quiet && echo "Geen wijzigingen" || \
             git commit -m "auto: lancyr dagrapport $(date -u '+%Y-%m-%d %H:%M UTC')" && \

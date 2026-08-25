@@ -52,6 +52,7 @@ DIAGNOSE_NUMBER = os.environ.get('ZOOM_DIAGNOSE_NUMBER', '').strip()
 TOKEN_URL = 'https://zoom.us/oauth/token'
 API_BASE = 'https://api.zoom.us/v2'
 OUTPUT_PATH = 'data/zoom-calls.json'
+HISTORY_PATH = 'data/zoom-history.json'
 AMS_OFFSET = timedelta(hours=2)
 
 # Resultaatwaarden die aantonen dat een MENS de oproep heeft beantwoord.
@@ -292,6 +293,21 @@ def main():
     print(f"Saved: {totaal_inbound} binnenkomend, {len(missed)} gemist, "
           f"{gebeld_count} teruggebeld, {len(niet_gebeld)} niet teruggebeld "
           f"-> {OUTPUT_PATH}")
+
+    # Geaccumuleerde historie bijwerken (per datum), zodat het dashboard ook
+    # 'Gisteren'/'Deze week'/'Vorige week' kan tonen voor gemiste oproepen.
+    # Bestaande datums blijven staan; alleen de datum van DEZE run wordt
+    # overschreven (idempotent -- veilig om dezelfde dag meerdere keren
+    # per dag te draaien, zoals de geplande run elke 30 minuten doet).
+    try:
+        with open(HISTORY_PATH, 'r', encoding='utf-8') as f:
+            history = json.load(f)
+    except (FileNotFoundError, json.JSONDecodeError):
+        history = {}
+    history[date_str] = result
+    with open(HISTORY_PATH, 'w', encoding='utf-8') as f:
+        json.dump(history, f, ensure_ascii=False, indent=2, sort_keys=True)
+    print(f"Historie bijgewerkt: {len(history)} datum(s) in {HISTORY_PATH}")
 
 
 if __name__ == '__main__':
