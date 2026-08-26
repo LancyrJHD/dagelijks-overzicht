@@ -1,6 +1,6 @@
 {
   "date": "2026-08-26",
-  "generated_at": "2026-08-26T10:39:32Z",
+  "generated_at": "2026-08-26T11:34:05Z",
   "drukte": "matig",
   "gesprekken": 4,
   "stats": {
@@ -16,7 +16,7 @@
       "tijd": "10:04",
       "titel": "Tommy Hilfiger redundancy — temporary contract extensions and permanent conversion",
       "personen": "Verzekerde: anoniem · Dewi Verver | Juridisch Medewerker",
-      "samenvatting": "Beller werkt bij Tommy Hilfiger en is eerder redundant verklaard; werkgever breidt zijn tijdelijke contract nu uit met drie vervolgcontracten. Beller vraagt of een vierde verlenging mogelijk is en of dit automatisch permanent wordt. De medewerker geeft advies over de 30-dagentermijn voor wijziging van contractvoorwaarden en stelt dat indien deze niet in acht is genomen, het contract automatisch permanent wordt; geen verificatie van identiteit is uitgevoerd en geen polis is gecontroleerd, maar wel is inhoudelijk arbeidsrechtelijk advies gegeven. De zaak wordt doorverwezen naar Brandmeester omdat het een arbeidsconflict betreft.",
+      "samenvatting": "Beller werkt bij Tommy Hilfiger en is eerder bedankt; werkgever heeft drie tijdelijke contracten gegeven om projecten af te maken. Medewerker geeft arbeidsrechtelijk advies over permanentisering na drie verlengingen en de 30-daagse opzegtermijn, maar de beller is NIET geverifieerd in het systeem. Zaak wordt doorverwezen naar Brandmeester voor spoedige contractcheck omdat contract maandag afloopt.",
       "tags": [
         [
           "tag-arbeidsrecht",
@@ -29,7 +29,7 @@
       ],
       "terugbel": false,
       "verkeerdVerbonden": false,
-      "rechtsbijstandVerwijzing": true,
+      "rechtsbijstandVerwijzing": false,
       "adviesGegeven": true,
       "identiteitGeverifieerd": false
     },
@@ -37,16 +37,16 @@
       "tijd": "10:31",
       "titel": "Kostenbeheer en vertrouwen — brief, mediation en betaling met Julia",
       "personen": "Verzekerde: anoniem · Dewi Verver | Juridisch Medewerker",
-      "samenvatting": "Dit is geen telefonisch juridisch adviesgesprek met een beller van de Lancyr Juridische Helpdesk, maar een interne gesprek tussen een juridisch medewerker (mogelijk een advocaat of deurwaarder) en een cliënt (Julia) over kostenbeheer, facturatie en vertrouwen in een lopend dossier met mediation. De identiteit van de beller is niet geverifieerd via standaardprocedures en er is geen juridisch advies gegeven, maar eerder een zakelijke discussie over werkzaamheden, uren en betalingsafspraken.",
+      "samenvatting": "Dit is geen telefonisch juridisch adviesgesprek met een verzekerdenklant, maar een intern werkgesprek tussen een juridisch medewerker en collega Julia over kostenbeheer, vertrouwen, facturatie en budgetplanning voor een lopend dossier. De beller is niet geverifieerd als verzekerdenklant en er is geen inhoudelijk juridisch advies gegeven aan een cliënt.",
       "tags": [
         [
           "tag-overig",
-          "Kostenbeheer en contractuele relatie"
+          "Intern personeelsgesprek"
         ]
       ],
       "uitkomst": [
         "outcome-geen-dekking",
-        "Geen juridische helpdeskvraag"
+        "Geen dekking"
       ],
       "terugbel": false,
       "verkeerdVerbonden": true,
@@ -58,11 +58,11 @@
       "tijd": "11:38",
       "titel": "Autohuurschade Spanje — foto's en verzekeringsclaim",
       "personen": "Verzekerde: R. Aguilera · Dewi Verver | Juridisch Medewerker",
-      "samenvatting": "Beller (R. Aguilera) heeft een dispute met een autoverhuurder in Spanje over schadeclaim voor krasjes aan een gehuurde auto. De medewerker heeft inhoudelijk advies gegeven om foto's/video's aan de verhuurder toe te sturen met verwijzing naar voorafgemaakte documentatie, maar heeft duidelijk gesteld dat juridische bijstand buiten Nederland niet beschikbaar is en de Nederlandse rechtsbijstandsverzekering niet van toepassing is. Beller is automatisch geverifieerd via telefoonnummer/Zoho-koppeling.",
+      "samenvatting": "Beller (automatisch geverifieerd als R. Aguilera) heeft een geschil met een autoverhuurder in Spanje over schadeclaim wegens vermeende krassen op een gehuurd voertuig. De medewerker gaf inhoudelijk advies: fotografisch bewijs (voor- en naftoto's en video) opnieuw per mail naar de verhuurder sturen met verwijzing naar het ontbreken van tegenbewijs, maar stelde duidelijk dat Lancyr juridische rechtsbijstand voor buitenlandse zaken niet kan verlenen. Het gesprek werd telefonisch opgelost met praktische handvatten.",
       "tags": [
         [
-          "tag-consument",
-          "Consumentenrecht"
+          "tag-overig",
+          "Consumentenrecht (internationale autohuur)"
         ]
       ],
       "uitkomst": [
@@ -79,7 +79,7 @@
       "tijd": "11:47",
       "titel": "Loodgieter — materialen niet ontvangen en onredelijke kostenclaim",
       "personen": "Verzekerde: R. Aguilera · Dewi Verver | Juridisch Medewerker",
-      "samenvatting": "Beller heeft een loodgieter ingeschakeld voor aanbouw; loodgieter heeft materialen niet geleverd, werk onvolledig gelaten, en nu een onredelijke kostenclaim van ongeveer €600 indient (9 uur werk à €35/uur + reiskosten, terwijl slechts 3 uur werd gewerkt). Beller is geverifieerd via automatische telefoonnummerherkenning (polis bekend). De medewerker heeft de zaak inhoudelijk besproken maar geen juridisch advies gegeven; in plaats daarvan correct doorverwezen naar Brandmeester (rechtsbijstandsmedewerker) voor verdere behandeling.",
+      "samenvatting": "Beller heeft een geschil met een loodgieter over niet-ontvangen materialen en een onredelijke kostenclaim (€600 voor werk dat naar bellers mening slechts 3 uur duurde tegen €35/uur). De beller is geverifieerd via telefoonnummer in het systeem (R. Aguilera, Zoho-match). De medewerker heeft geen inhoudelijk juridisch advies gegeven, maar heeft de zaak direct doorverwezen naar Brandmeester (partijuriste) omdat dit een geschil met een derde partij betreft dat verdere juridische ondersteuning vereist.",
       "tags": [
         [
           "tag-consument",
@@ -100,34 +100,35 @@
   "acties": [],
   "analyse": {
     "goed": [
-      "11:38 Autohuurschade Spanje: Beller correct geverifieerd via telefoonnummerherkenning; identiteit en polis vastgesteld voordat advies werd gegeven.",
-      "11:38 Autohuurschade Spanje: Medewerker transparant over beperkingen (geen dekking buiten Nederland); realistische verwachtingen gesteld.",
-      "11:47 Loodgieter: Beller correct geverifieerd via automatische herkenning; polis bekend in systeem.",
-      "11:47 Loodgieter: Juiste doorverwijzing naar Brandmeester in plaats van onverantwoord eigen advies geven bij geschil met aannemer."
+      "10:31 – Correct ingedeeld als intern werkgesprek (geen verzekerdenadvies), niet onderworpen aan kwaliteitsnormen.",
+      "11:38 – Identiteit geverifieerd (R. Aguilera), praktisch advies gegeven binnen beperkingen van dekking (buitenlandse zaak correct benoemd).",
+      "11:47 – Identiteit correct geverifieerd via Zoho-match, zaak passend doorverwezen naar Brandmeester voor geschil met derde partij."
     ],
     "beter": [
-      "10:04 Tommy Hilfiger redundancy: KRITIEK — Advies gegeven (30-dagentermijn, automatische permanentering) zonder enige identiteitsverificatie. Beller kon niet in systeem worden geverifieerd, maar medewerker gaf toch inhoudelijk arbeidsrechtelijk advies. Dit had eerst moeten worden opgelost voor adviesverlening, of zaak had meteen naar Brandmeester verwezen moeten worden.",
-      "10:04 Tommy Hilfiger redundancy: Geen concrete vervolgdeadline afgesproken voor verificatie of vervolgcontact; beller wordt in de lucht gelaten.",
-      "10:31 Kostenbeheer Julia: Dit is geen Helpdesk-intake maar een interne cliëntgesprek; waarom staat dit in de logboeken als 'gesprek van vandaag' voor kwaliteitsbeoordeling? Blijkt geen juridische Helpdesk-transactie.",
-      "11:47 Loodgieter: Hoewel doorverwijzing correct is, ontbreekt concrete vervolgdeadline (wanneer neemt Brandmeester contact op?) en geen expliciete dekkingscontrole vastgelegd (franchise EUR 250) ondanks schadebedrag van ~€600."
+      "10:04 – KRITIEK: Advies gegeven (arbeidsrechtelijk advies over permanentisering en opzegtermijn) zonder identiteit van beller geverifieerd in het systeem. Hoewel doorverwijzing naar Brandmeester correct is, mag juridisch advies niet worden gegeven voordat polis en identiteit zijn gecontroleerd. Vervolgplan (Brandmeester, deadline maandag) is wel duidelijk.",
+      "11:47 – Geen concrete vervolgdeadline benoemd: Vervangde medewerker verwijst door naar Brandmeester, maar geen concreet moment/deadline afgesproken voor contact met beller of volgende stap."
     ]
   },
   "verkeerdVerbonden": {
     "aantal": 1,
     "percentage": 25.0
   },
-  "rechtsbijstandVerwijzingen": 2,
+  "rechtsbijstandVerwijzingen": 1,
   "categorieen": [
-    [
-      "Consumentenrecht",
-      2
-    ],
     [
       "Arbeidsrecht",
       1
     ],
     [
-      "Kostenbeheer en contractuele relatie",
+      "Intern personeelsgesprek",
+      1
+    ],
+    [
+      "Consumentenrecht (internationale autohuur)",
+      1
+    ],
+    [
+      "Consumentenrecht",
       1
     ]
   ]
