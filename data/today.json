@@ -1,245 +1,26 @@
 {
-  "date": "2026-08-25",
-  "generated_at": "2026-08-25T16:42:32Z",
-  "drukte": "druk",
-  "gesprekken": 10,
+  "date": "2026-08-26",
+  "generated_at": "2026-08-26T05:38:03Z",
+  "drukte": "rustig",
+  "gesprekken": 0,
   "stats": {
-    "opgelost": 4,
-    "brandmeester": 1,
+    "opgelost": 0,
+    "brandmeester": 0,
     "afkoop": 0,
-    "terugbel": 1,
-    "geenDekking": 4
+    "terugbel": 0,
+    "geenDekking": 0
   },
-  "score": 8.1,
-  "conversations": [
-    {
-      "tijd": "09:44",
-      "titel": "Verkeersongeval – schadevergoeding en leaseauto-rente met verzekering",
-      "personen": "Verzekerde: anoniem · Senne Duifhuis | Juridisch medewerker",
-      "samenvatting": "De beller belt over een verkeersongeval waarbij zijn leaseauto is beschadigd. De medewerker verifieert de beller via postcode en adres en adviseert hem dat extra schadevergoeding (leaseauto-rente) rechtstreeks met de verzekeringsmaatschappij moet worden besproken, niet via de juridische helpdesk. Het gesprek wordt afgesloten met de aanbeveling om contact op te nemen met de autoverzekering.",
-      "tags": [
-        [
-          "tag-consument",
-          "Consumentenrecht"
-        ]
-      ],
-      "uitkomst": [
-        "outcome-opgelost",
-        "Telefonisch opgelost"
-      ],
-      "terugbel": false,
-      "verkeerdVerbonden": false,
-      "rechtsbijstandVerwijzing": false,
-      "adviesGegeven": true,
-      "identiteitGeverifieerd": true
-    },
-    {
-      "tijd": "10:04",
-      "titel": "Woning verkocht — schadeclaim muurverwarming met Richard van Weert",
-      "personen": "Verzekerde: anoniem · Dewi Verver | Juridisch Medewerker",
-      "samenvatting": "Richard van Weert belt over een schadeclaim van de nieuwe eigenaar van zijn verkochte woning wegens beschadigde verwarmingsleidingen in de muur. De medewerker heeft de beller niet geverifieerd in het systeem en geeft geen inhoudelijk juridisch advies, maar verwijst de zaak door naar Brandmeester (rechtsbijstandspartner) voor verdere behandeling. Tevens wordt besproken of een eigen advocaat kan worden gebruikt, waarvoor eerst een verzoek moet worden ingediend.",
-      "tags": [
-        [
-          "tag-consument",
-          "Consumentenrecht"
-        ]
-      ],
-      "uitkomst": [
-        "outcome-brandmeester",
-        "Doorverwezen naar Brandmeester"
-      ],
-      "terugbel": false,
-      "verkeerdVerbonden": false,
-      "rechtsbijstandVerwijzing": true,
-      "adviesGegeven": false,
-      "identiteitGeverifieerd": false
-    },
-    {
-      "tijd": "11:48",
-      "titel": "Lancyr teamoverleg",
-      "personen": "Verzekerde: anoniem · Senne Duifhuis | Juridisch medewerker",
-      "samenvatting": "Dit is een intern teamoverleg van Lancyr-medewerkers (Edgar/Senne en een collega), niet een klantgesprek met een verzekerde. Het gaat over gemiste telefoontjes, technische problemen met de afsprakenlink, en plannen voor training van nieuwe medewerkers. Dit valt niet onder de werkingsfeer van de juridische helpdesk.",
-      "tags": [],
-      "uitkomst": [
-        "outcome-geen-dekking",
-        "Geen dekking"
-      ],
-      "terugbel": false,
-      "verkeerdVerbonden": true,
-      "rechtsbijstandVerwijzing": false,
-      "adviesGegeven": false,
-      "identiteitGeverifieerd": false
-    },
-    {
-      "tijd": "11:59",
-      "titel": "Advocaten Team Huddle",
-      "personen": "Verzekerde: anoniem · Senne Duifhuis | Juridisch medewerker",
-      "samenvatting": "Dit transcript is een interne advocatenkantoor team huddle / overleg, geen klantgesprek met de Lancyr Juridische Helpdesk. De inhoud betreft teamafstemming over webinars, contractchecks, interne processen en spam-emailmanagement. Er is geen sprake van een verzekerdeënquête of juridisch advies aan een externe klant.",
-      "tags": [
-        [
-          "tag-overig",
-          "Interne teambijeen­komst (geen cliëntgesprek)"
-        ]
-      ],
-      "uitkomst": [
-        "outcome-geen-dekking",
-        "Niet van toepassing"
-      ],
-      "terugbel": false,
-      "verkeerdVerbonden": true,
-      "rechtsbijstandVerwijzing": false,
-      "adviesGegeven": false,
-      "identiteitGeverifieerd": false
-    },
-    {
-      "tijd": "12:14",
-      "titel": "Fraudemelding bitcoin — verzekeringsdekking en vervolgstappen",
-      "personen": "Verzekerde: K. Yilmis · Senne Duifhuis | Juridisch medewerker",
-      "samenvatting": "Beller (K. Yilmis, geverifieerd via Zoho) meldde slachtoffer te zijn van online beleggingsfraude met bitcoin ter waarde van EUR 18.000. De medewerker controleerde de polis en stelde vast dat crypto/vermogensbeheer expliciet is uitgesloten onder de consumentenmodule (artikel 9.3.2, nr. 5). Er is geen dekking. De medewerker gaf inhoudelijk juridisch advies over de uitsluitingsgrond en verwees de beller naar het Team Juridische Zaken voor een betaald ad-hoc consult als alternatief. Bij een latere vraag over een bezwaarschrift tegen een UVV-beslissing gaf de medewerker voorzichtig advies dat dit onder de inkomstenmodule zou kunnen vallen, maar verwees terecht naar de rechtsbijstandsuitvoerder voor definitieve beoordeling.",
-      "tags": [
-        [
-          "tag-consument",
-          "Consumentenrecht"
-        ]
-      ],
-      "uitkomst": [
-        "outcome-geen-dekking",
-        "Geen dekking"
-      ],
-      "terugbel": false,
-      "verkeerdVerbonden": false,
-      "rechtsbijstandVerwijzing": false,
-      "adviesGegeven": true,
-      "identiteitGeverifieerd": true
-    },
-    {
-      "tijd": "12:24",
-      "titel": "Telefonische doorverwijzing autoverzekering",
-      "personen": "Verzekerde: K. Yilmis · Senne Duifhuis | Juridisch medewerker",
-      "samenvatting": "Beller belde voor autoverzekeringsvraag. Dit is de juridische helpdesk, geen autoverzekeringsteam. De medewerker heeft de beller correct doorverwezen naar de autoverzekeringslijn via de website. Identiteit werd automatisch herkend op telefoonnummer, maar geen juridisch advies gegeven omdat het onderwerp niet onder juridische hulpverlening valt.",
-      "tags": [],
-      "uitkomst": [
-        "outcome-opgelost",
-        "Telefonisch opgelost"
-      ],
-      "terugbel": false,
-      "verkeerdVerbonden": true,
-      "rechtsbijstandVerwijzing": false,
-      "adviesGegeven": false,
-      "identiteitGeverifieerd": true
-    },
-    {
-      "tijd": "12:45",
-      "titel": "Juridisch advies over CV-ketel en leidingen — gebreken in aankoop",
-      "personen": "Verzekerde: D. Santos · Senne Duifhuis | Juridisch medewerker",
-      "samenvatting": "Meneer Santos belt over gebreken aan een recent gekochte woning: CV-ketel die niet onderhouden is en lekt, rookgasafvoer die niet aan normen voldoet (EUR 250), en verwarmingsleidingen die niet volgens fabricagenormen zijn geplaatst. De medewerker adviseert een ingebrekestelling naar de betrokken partijen te sturen vanwege niet-nakoming van contractuele verplichtingen. De beller is geverifieerd via postcode en naam (systeem herkent ook automatisch op telefoonnummer), en er is inhoudelijk juridisch advies gegeven over de escalatieprocedure.",
-      "tags": [
-        [
-          "tag-consument",
-          "Consumentenrecht"
-        ]
-      ],
-      "uitkomst": [
-        "outcome-terugbel",
-        "Terugbellen"
-      ],
-      "terugbel": true,
-      "verkeerdVerbonden": false,
-      "rechtsbijstandVerwijzing": false,
-      "adviesGegeven": true,
-      "identiteitGeverifieerd": true
-    },
-    {
-      "tijd": "13:37",
-      "titel": "Juridische helpdesk — doorverwijzing autoverzekering",
-      "personen": "Verzekerde: anoniem · Senne Duifhuis | Juridisch medewerker",
-      "samenvatting": "De beller belde per ongeluk de juridische helpdesk maar had eigenlijk een autoverzekeringsvraag. De medewerker stelde vast dat de beller voor autoverzekering belde en verwees hem correct door naar het autoverzekeringsnummer op de Lancyr-website. De beller is niet geverifieerd in het systeem en er is geen juridisch advies gegeven.",
-      "tags": [],
-      "uitkomst": [
-        "outcome-opgelost",
-        "Telefonisch opgelost"
-      ],
-      "terugbel": false,
-      "verkeerdVerbonden": true,
-      "rechtsbijstandVerwijzing": false,
-      "adviesGegeven": false,
-      "identiteitGeverifieerd": false
-    },
-    {
-      "tijd": "14:18",
-      "titel": "Rechtsbijstandsverzekering — dekking en uitsluiting familieconflicten",
-      "personen": "Verzekerde: anoniem · Senne Duifhuis | Juridisch medewerker",
-      "samenvatting": "De beller (Tom Algra) werd geverifieerd via postcode en naam en sprak over een geschil met de ex-partner van zijn huidige vrouw over een gezamenlijk huis en verkoopverplichting. De medewerker gaf inhoudelijk juridisch advies door uit te leggen dat dit geschil onder de familierechtelijke uitsluitingsclausule valt (echtscheiding en gevolgen daarvan) en daarom niet onder de rechtsbijstandsverzekering valt. Er is geen dekking.",
-      "tags": [
-        [
-          "tag-consument",
-          "Consumentenrecht"
-        ]
-      ],
-      "uitkomst": [
-        "outcome-geen-dekking",
-        "Geen dekking"
-      ],
-      "terugbel": false,
-      "verkeerdVerbonden": false,
-      "rechtsbijstandVerwijzing": false,
-      "adviesGegeven": true,
-      "identiteitGeverifieerd": true
-    },
-    {
-      "tijd": "14:33",
-      "titel": "Juridische helpdesk — routering autoverzekering naar juiste afdeling",
-      "personen": "Verzekerde: anoniem · Senne Duifhuis | Juridisch medewerker",
-      "samenvatting": "Beller belt met een autoverzekeringsvraag naar de juridische helpdesk (rechtsbijstandsverzekering). De medewerker verifieert de beller via postcode en naam, stelt vast dat deze geen rechtsbijstandsverzekering heeft en alleen autoverzekering, en geeft daarom het contactnummer van de autoverzekeringafdeling (088-020-4525). Dit is een correcte routering naar de juiste afdeling.",
-      "tags": [
-        [
-          "tag-overig",
-          "Autoverzekering"
-        ]
-      ],
-      "uitkomst": [
-        "outcome-opgelost",
-        "Telefonisch opgelost"
-      ],
-      "terugbel": false,
-      "verkeerdVerbonden": true,
-      "rechtsbijstandVerwijzing": false,
-      "adviesGegeven": false,
-      "identiteitGeverifieerd": true
-    }
-  ],
+  "score": 0,
+  "conversations": [],
   "acties": [],
   "analyse": {
-    "goed": [
-      "09:44 Verkeersongeval: Identiteit correct geverifieerd (postcode + adres), juiste scheidingslijn gehanteerd (schadevergoeding leaseauto-rente hoort bij autoverzekering, niet juridische helpdesk)",
-      "12:14 Fraudemelding bitcoin: Identiteit geverifieerd via Zoho, polis grondig gecontroleerd, uitsluitingsgrond (artikel 9.3.2) expliciet vastgesteld, passende doorverwijzing naar Team Juridische Zaken voor ad-hoc consult",
-      "12:24 Doorverwijzing autoverzekering: Correcte routering naar juiste afdeling, identiteit herkend op telefoonnummer",
-      "12:45 CV-ketel en leidingen: Identiteit geverifieerd (postcode + naam + telefoonnummer), concreet juridisch advies gegeven (ingebrekestelling), vervolgstap 'Terugbellen' genoteerd",
-      "14:18 Familieconflict ex-partner: Identiteit geverifieerd (postcode + naam), juiste toepassingsnorm toegepast (familierecht-uitsluitingsclausule echtscheiding), inhoudelijk advies gegeven over dekking",
-      "14:33 Autoverzekering routering: Identiteit geverifieerd (postcode + naam), juiste contactnummer (088-020-4525) doorgegeven, geen juridisch advies gegeven omdat onderwerp niet relevant"
-    ],
-    "beter": [
-      "10:04 Muurverwarming Richard van Weert: Beller kon niet in systeem geverifieerd worden en geen advies gegeven (correct), maar er ontbreekt een concrete vervolgdeadline — alleen 'doorverwezen naar Brandmeester' staat genoteerd. Afspraak voor vervolgcontact (bijvoorbeeld: 'Brandmeester belt u binnen 2 werkdagen') zou helder moeten zijn vastgelegd",
-      "12:45 CV-ketel en leidingen: Schadebedrag rookgasafvoer (EUR 250) genoemd, maar dekkingscontrole franchise (EUR 250) is niet expliciet vastgelegd in gesprekssamenvating — controleer of dit in het daadwerkelijk gesprek is gebeurd"
-    ]
+    "goed": [],
+    "beter": []
   },
   "verkeerdVerbonden": {
-    "aantal": 5,
-    "percentage": 50.0
+    "aantal": 0,
+    "percentage": 0.0
   },
-  "rechtsbijstandVerwijzingen": 1,
-  "categorieen": [
-    [
-      "Consumentenrecht",
-      5
-    ],
-    [
-      "Interne teambijeen­komst (geen cliëntgesprek)",
-      1
-    ],
-    [
-      "Autoverzekering",
-      1
-    ]
-  ]
+  "rechtsbijstandVerwijzingen": 0,
+  "categorieen": []
 }
