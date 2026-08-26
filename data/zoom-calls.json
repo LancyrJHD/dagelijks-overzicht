@@ -1,15 +1,27 @@
 {
   "date": "2026-08-26",
-  "generated_at": "2026-08-26T11:33:42Z",
-  "totaalInbound": 9,
-  "totaalGemist": 1,
+  "generated_at": "2026-08-26T13:00:27Z",
+  "totaalInbound": 12,
+  "totaalGemist": 3,
   "terugGebeld": 0,
-  "nietTerugGebeld": 1,
+  "nietTerugGebeld": 3,
   "nietTerugGebeldNummers": [
     {
       "nummer": "+31647193090",
       "naam": "Onbekend",
       "tijd": "10:04",
+      "callResult": "abandoned"
+    },
+    {
+      "nummer": "+31633697408",
+      "naam": "Onbekend",
+      "tijd": "14:14",
+      "callResult": "abandoned"
+    },
+    {
+      "nummer": "+31610058158",
+      "naam": "Onbekend",
+      "tijd": "14:28",
       "callResult": "abandoned"
     }
   ]

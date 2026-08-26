@@ -178,18 +178,30 @@
   },
   "2026-08-26": {
     "date": "2026-08-26",
-    "generated_at": "2026-08-26T11:33:42Z",
-    "nietTerugGebeld": 1,
+    "generated_at": "2026-08-26T13:00:27Z",
+    "nietTerugGebeld": 3,
     "nietTerugGebeldNummers": [
       {
         "callResult": "abandoned",
         "naam": "Onbekend",
         "nummer": "+31647193090",
         "tijd": "10:04"
+      },
+      {
+        "callResult": "abandoned",
+        "naam": "Onbekend",
+        "nummer": "+31633697408",
+        "tijd": "14:14"
+      },
+      {
+        "callResult": "abandoned",
+        "naam": "Onbekend",
+        "nummer": "+31610058158",
+        "tijd": "14:28"
       }
     ],
     "terugGebeld": 0,
-    "totaalGemist": 1,
-    "totaalInbound": 9
+    "totaalGemist": 3,
+    "totaalInbound": 12
   }
 }
