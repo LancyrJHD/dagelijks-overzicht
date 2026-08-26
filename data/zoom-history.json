@@ -178,11 +178,18 @@
   },
   "2026-08-26": {
     "date": "2026-08-26",
-    "generated_at": "2026-08-26T07:51:48Z",
-    "nietTerugGebeld": 0,
-    "nietTerugGebeldNummers": [],
+    "generated_at": "2026-08-26T08:50:08Z",
+    "nietTerugGebeld": 1,
+    "nietTerugGebeldNummers": [
+      {
+        "callResult": "abandoned",
+        "naam": "Onbekend",
+        "nummer": "+31647193090",
+        "tijd": "10:04"
+      }
+    ],
     "terugGebeld": 0,
-    "totaalGemist": 0,
-    "totaalInbound": 0
+    "totaalGemist": 1,
+    "totaalInbound": 6
   }
 }
