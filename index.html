@@ -730,6 +730,37 @@ body {
   vertical-align: middle;
 }
 
+/* Losse class voor Gemiste oproepen (27 aug 2026) -- bewust NIET
+   .gesprekken-table hergebruiken, want de responsive kolom-verberg-
+   regels van die tabel (voor Recente gesprekken) verborgen hier per
+   ongeluk de Nummer- en Tijd-kolom op mobiel/tablet. */
+.missed-calls-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+.missed-calls-table thead th {
+  text-align: left;
+  font-size: 10px;
+  font-weight: 700;
+  color: var(--ink-30);
+  text-transform: uppercase;
+  letter-spacing: 0.8px;
+  padding: 8px 12px;
+  border-bottom: 1px solid var(--line);
+  white-space: nowrap;
+}
+.missed-calls-table tbody tr {
+  border-bottom: 1px solid var(--line);
+}
+.missed-calls-table tbody tr:last-child { border-bottom: none; }
+.missed-calls-table tbody tr:hover { background: var(--bg); }
+.missed-calls-table td {
+  padding: 12px;
+  font-size: 13px;
+  vertical-align: middle;
+  white-space: nowrap;
+}
+
 .gs-tijd {
   font-size: 12px;
   font-weight: 600;
@@ -859,12 +890,6 @@ body {
 
   /* Charts */
   .charts-row { grid-template-columns: 1fr; }
-
-  /* Team-tabel: verberg Score + Status */
-  .team-table thead th:nth-child(3),
-  .team-table tbody td:nth-child(3),
-  .team-table thead th:nth-child(4),
-  .team-table tbody td:nth-child(4) { display: none; }
 
   /* Gesprekken: verberg Onderwerp */
   .gesprekken-table thead th:nth-child(3),
@@ -1272,6 +1297,11 @@ body {
 @media (max-width: 480px) {
   .auth-card { padding: 28px 20px; }
   .auth-title { font-size: 22px; }
+  /* Gemiste oproepen: Datum is overbodig bij dag-periodes en het
+     eerste dat mag wijken op een heel smal scherm -- Tijd/Nummer/
+     Call-resultaat/Teruggebeld blijven te allen tijde zichtbaar. */
+  .missed-calls-table thead th:nth-child(1),
+  .missed-calls-table tbody td:nth-child(1) { display: none; }
 }
 </style>
   <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2/dist/umd/supabase.js"></script>
@@ -1281,7 +1311,7 @@ body {
 <!-- TOPBAR -->
 <header class="topbar">
   <div class="topbar-left">
-    <img src="https://htjz.nl/wp-content/uploads/Logo_black.png" alt="HTJZ" style="height:32px;width:auto;display:block;">
+    <img src="https://htjz.nl/wp-content/uploads/2026/06/Logo_black.png" alt="HTJZ" style="height:32px;width:auto;display:block;">
     <div class="topbar-divider"></div>
     <div class="topbar-opdracht">
       <span class="topbar-label">In opdracht van</span>
@@ -1297,7 +1327,6 @@ body {
       <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="23 4 23 10 17 10"></polyline><path d="M20.49 15a9 9 0 1 1-2.12-9.36L23 10"></path></svg>
       Vernieuwen
     </button>
-    <button id="status-toggle-btn" onclick="toggleActief()" style="display:none;border:none;border-radius:50px;padding:6px 14px;cursor:pointer;font-size:12px;font-weight:600;font-family:inherit;margin-right:8px;background:var(--green-bg);color:var(--green)" data-actief="true">🟢 Ik ben actief</button>
     <div id="view-toggle-group" style="display:none;align-items:center;border:1px solid var(--navy);border-radius:50px;overflow:hidden;margin-right:8px;font-family:inherit">
       <button id="view-btn-medewerker" onclick="setManagementView(false)" style="border:none;cursor:pointer;font:inherit;font-size:12px;font-weight:600;padding:6px 14px;background:var(--navy);color:#fff">&#128100; Medewerker</button>
       <button id="view-btn-management" onclick="setManagementView(true)" style="border:none;cursor:pointer;font:inherit;font-size:12px;font-weight:600;padding:6px 14px;background:#fff;color:var(--navy)">&#128202; Management</button>
@@ -3756,9 +3785,8 @@ function renderDashboard(period) {
           <div class="mini-gold-bar-wrap"><div class="mini-gold-bar-fill" style="width:${(count/maxJC*100).toFixed(0)}%"></div></div>
         </td>
         <td style="font-size:13px;color:var(--navy);font-weight:600">${juristAvgScore[name] > 0 ? juristAvgScore[name].toFixed(1) : '—'}<span style="font-size:11px;color:var(--ink-30)">/10</span></td>
-        <td data-presence-email="${email}"><span class="status-dot ${dotClass}"></span><span class="status-label" style="font-size:12px;color:var(--ink-50)">${dotLabel}</span></td>
       </tr>`;
-    }).join('') || '<tr><td colspan="4" style="text-align:center;padding:24px;color:var(--ink-30);font-size:13px">Geen teamdata beschikbaar</td></tr>';
+    }).join('') || '<tr><td colspan="3" style="text-align:center;padding:24px;color:var(--ink-30);font-size:13px">Geen teamdata beschikbaar</td></tr>';
 
   const activeCount = Object.keys(juristCounts).length;
 
@@ -3890,7 +3918,8 @@ function renderDashboard(period) {
         <div style="color:var(--ink-50);font-size:11px;margin:0 0 12px 0;font-style:italic">
           Beta: gebaseerd op het Zoom-call-resultaat, aangevuld met een check van het routeringspad (call path) van de Lancyr-wachtrij zelf (sinds 25 aug 2026) om oproepen te herkennen die overliepen naar een andere bestemming &mdash; controleer bij twijfel alsnog de Zoom-telefonielog zelf.
         </div>
-        <table class="gesprekken-table">
+        <div style="overflow-x:auto">
+        <table class="missed-calls-table">
           <thead>
             <tr>
               <th>Datum</th>
@@ -3913,6 +3942,7 @@ function renderDashboard(period) {
               : `<tr><td colspan="5" style="text-align:center;color:#94a3b8;">Geen gemiste oproepen</td></tr>`
           }</tbody>
         </table>
+        </div>
       </div>
       ` : `<div style="color:var(--ink-50);font-size:12px;margin:-4px 0 0 0">Zoom-data nog niet beschikbaar voor deze periode</div>`}
     </div>
@@ -4017,7 +4047,6 @@ function renderDashboard(period) {
     <div class="card">
       <div class="team-table-header">
         <div class="team-table-title">Team</div>
-        <div class="team-active-badge">${activeCount} jurist${activeCount !== 1 ? 'en' : ''} actief</div>
       </div>
       <table class="team-table">
         <thead>
@@ -4025,7 +4054,6 @@ function renderDashboard(period) {
             <th>Jurist</th>
             <th>Gesprekken</th>
             <th>Score</th>
-            <th>Status</th>
           </tr>
         </thead>
         <tbody>${teamRows}</tbody>
