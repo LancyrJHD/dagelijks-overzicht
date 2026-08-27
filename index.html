@@ -3948,7 +3948,6 @@ function renderDashboard(period) {
             <th>Datum</th>
             <th>Tijd</th>
             <th>Nummer</th>
-            <th>Naam</th>
             <th>Call-resultaat</th>
           </tr>
         </thead>
@@ -3959,10 +3958,9 @@ function renderDashboard(period) {
                 <td>${escapeHtml(formatDateShortNL(m.datum))}</td>
                 <td>${escapeHtml(m.tijd)}</td>
                 <td>${escapeHtml(m.nummer)}</td>
-                <td>${escapeHtml(m.naam)}</td>
                 <td>${escapeHtml(m.callResult)}</td>
               </tr>`).join('')
-            : `<tr><td colspan="5" style="text-align:center;color:#94a3b8;">${zoomAgg.dataAvailable ? 'Geen openstaande gemiste oproepen' : 'Geen Zoom-data beschikbaar'}</td></tr>`
+            : `<tr><td colspan="4" style="text-align:center;color:#94a3b8;">${zoomAgg.dataAvailable ? 'Geen openstaande gemiste oproepen' : 'Geen Zoom-data beschikbaar'}</td></tr>`
         }</tbody>
       </table>
     </div>
