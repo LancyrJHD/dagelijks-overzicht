@@ -295,62 +295,136 @@
     "totaalInbound": 13
   },
   "2026-08-27": {
-    "date": "2026-08-27",
-    "generated_at": "2026-08-27T13:52:10Z",
-    "nietTerugGebeld": 9,
-    "nietTerugGebeldNummers": [
+    "alleGemistNummers": [
       {
         "callResult": "abandoned",
         "naam": "Onbekend",
         "nummer": "+31686075465",
+        "teruggebeld": false,
         "tijd": "09:06"
       },
       {
         "callResult": "overflowed",
         "naam": "Onbekend",
         "nummer": "+31613191200",
+        "teruggebeld": false,
         "tijd": "09:08"
       },
       {
         "callResult": "abandoned",
         "naam": "Onbekend",
         "nummer": "+31616937421",
+        "teruggebeld": false,
         "tijd": "11:59"
       },
       {
         "callResult": "abandoned",
         "naam": "Onbekend",
         "nummer": "+31619864040",
+        "teruggebeld": false,
         "tijd": "12:46"
       },
       {
         "callResult": "abandoned",
         "naam": "Onbekend",
         "nummer": "+31611399835",
+        "teruggebeld": false,
         "tijd": "12:51"
       },
       {
         "callResult": "overflowed",
         "naam": "Onbekend",
         "nummer": "+31614179421",
+        "teruggebeld": false,
         "tijd": "13:10"
       },
       {
         "callResult": "abandoned",
         "naam": "Onbekend",
         "nummer": "+31619864040",
+        "teruggebeld": false,
         "tijd": "13:12"
       },
       {
         "callResult": "overflowed",
         "naam": "Onbekend",
         "nummer": "+31647745354",
+        "teruggebeld": false,
         "tijd": "13:28"
       },
       {
         "callResult": "overflowed",
         "naam": "Onbekend",
         "nummer": "+31613321649",
+        "teruggebeld": false,
+        "tijd": "15:05"
+      }
+    ],
+    "date": "2026-08-27",
+    "generated_at": "2026-08-27T16:17:38Z",
+    "nietTerugGebeld": 9,
+    "nietTerugGebeldNummers": [
+      {
+        "callResult": "abandoned",
+        "naam": "Onbekend",
+        "nummer": "+31686075465",
+        "teruggebeld": false,
+        "tijd": "09:06"
+      },
+      {
+        "callResult": "overflowed",
+        "naam": "Onbekend",
+        "nummer": "+31613191200",
+        "teruggebeld": false,
+        "tijd": "09:08"
+      },
+      {
+        "callResult": "abandoned",
+        "naam": "Onbekend",
+        "nummer": "+31616937421",
+        "teruggebeld": false,
+        "tijd": "11:59"
+      },
+      {
+        "callResult": "abandoned",
+        "naam": "Onbekend",
+        "nummer": "+31619864040",
+        "teruggebeld": false,
+        "tijd": "12:46"
+      },
+      {
+        "callResult": "abandoned",
+        "naam": "Onbekend",
+        "nummer": "+31611399835",
+        "teruggebeld": false,
+        "tijd": "12:51"
+      },
+      {
+        "callResult": "overflowed",
+        "naam": "Onbekend",
+        "nummer": "+31614179421",
+        "teruggebeld": false,
+        "tijd": "13:10"
+      },
+      {
+        "callResult": "abandoned",
+        "naam": "Onbekend",
+        "nummer": "+31619864040",
+        "teruggebeld": false,
+        "tijd": "13:12"
+      },
+      {
+        "callResult": "overflowed",
+        "naam": "Onbekend",
+        "nummer": "+31647745354",
+        "teruggebeld": false,
+        "tijd": "13:28"
+      },
+      {
+        "callResult": "overflowed",
+        "naam": "Onbekend",
+        "nummer": "+31613321649",
+        "teruggebeld": false,
         "tijd": "15:05"
       }
     ],
