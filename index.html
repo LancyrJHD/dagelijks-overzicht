@@ -3571,6 +3571,35 @@ function getZoomPeriodKeys(period) {
   return [];
 }
 
+// Telt 'nieuwe'/'gesloten' tickets op over alle dagen in de periode, en
+// neemt voor 'nog open'/'in de wacht' de LAATSTE dag in de periode die een
+// momentopname heeft (keys is al chronologisch oplopend, zie
+// getZoomPeriodKeys) -- dit zijn geen optelbare grootheden, dus we tonen de
+// meest recente bekende stand i.p.v. iets te oa te tellen dat geen betekenis
+// heeft (elke open ticket zou anders dubbel meetellen per dag dat hij open
+// stond).
+function getTicketStatsAggregate(keys) {
+  let nieuwe = 0, gesloten = 0;
+  let laatsteSnapshot = null;
+  let anyData = false;
+  keys.forEach(k => {
+    const d = zohoTicketHistory[k];
+    if (!d) return;
+    anyData = true;
+    nieuwe += d.nieuweVandaag || 0;
+    gesloten += d.geslotenVandaag || 0;
+    if (typeof d.totaalOpen === 'number') laatsteSnapshot = { datum: k, data: d };
+  });
+  return {
+    nieuwe, gesloten,
+    totaalOpen: laatsteSnapshot ? laatsteSnapshot.data.totaalOpen : null,
+    inDeWacht: laatsteSnapshot ? laatsteSnapshot.data.inDeWacht : null,
+    snapshotDatum: laatsteSnapshot ? laatsteSnapshot.datum : null,
+    capBereikt: laatsteSnapshot ? !!laatsteSnapshot.data.capBereikt : false,
+    dataAvailable: anyData,
+  };
+}
+
 function getZoomAggregate(keys) {
   let totaalInbound = 0, totaalGemist = 0, terugGebeld = 0;
   let nietTerugGebeld = [];
@@ -3903,12 +3932,29 @@ function renderDashboard(period) {
     </div>
   ` : '';
 
-  const ticketStatsDisplay = zohoTicketStats || { nieuweVandaag: '\u2014', geslotenVandaag: '\u2014', totaalOpen: '\u2014', inDeWacht: '\u2014' };
-  const ticketStatsCaveatHTML = !zohoTicketStats
+  const ticketPeriodKeys = getZoomPeriodKeys(period);
+  const ticketAgg = getTicketStatsAggregate(ticketPeriodKeys);
+  const ticketIsWeek = (period === 'deze-week' || period === 'vorige-week');
+  const ticketStatsDisplay = ticketAgg.dataAvailable
+    ? {
+        nieuweVandaag: ticketAgg.nieuwe,
+        geslotenVandaag: ticketAgg.gesloten,
+        totaalOpen: ticketAgg.totaalOpen === null ? '\u2014' : ticketAgg.totaalOpen,
+        inDeWacht: ticketAgg.inDeWacht === null ? '\u2014' : ticketAgg.inDeWacht,
+      }
+    : { nieuweVandaag: '\u2014', geslotenVandaag: '\u2014', totaalOpen: '\u2014', inDeWacht: '\u2014' };
+  const ticketLabelNieuw = ticketIsWeek ? 'Nieuwe tickets (periode)' : 'Nieuwe tickets';
+  const ticketLabelGesloten = ticketIsWeek ? 'Gesloten (periode)' : (period === 'gisteren' ? 'Gesloten gisteren' : 'Gesloten vandaag');
+  const ticketLabelOpen = (ticketIsWeek || period === 'gisteren') ? 'Nog open (laatste stand)' : 'Nog open';
+  const ticketLabelWacht = (ticketIsWeek || period === 'gisteren') ? 'In de wacht (laatste stand)' : 'In de wacht';
+  const ticketSnapshotNote = (ticketAgg.snapshotDatum && ticketAgg.snapshotDatum !== todayKey())
+    ? ` "Nog open"/"In de wacht" zijn de stand per ${escapeHtml(formatDateShortNL(ticketAgg.snapshotDatum))}.`
+    : ' "Nog open" en "Gesloten" zijn gebaseerd op recent gewijzigde tickets.';
+  const ticketStatsCaveatHTML = !ticketAgg.dataAvailable
     ? '<div style="color:var(--ink-50);font-size:11px;margin-top:10px">Zoho-ticketdata nog niet beschikbaar voor deze periode</div>'
-    : zohoTicketStats.capBereikt
+    : ticketAgg.capBereikt
       ? '<div style="color:#b45309;font-size:11px;margin-top:10px">Let op: er zijn meer tickets dan in \u00e9\u00e9n keer opgehaald konden worden -- "Nog open" en "In de wacht" zijn mogelijk niet compleet.</div>'
-      : '<div style="color:var(--ink-50);font-size:11px;margin-top:10px;font-style:italic">"In de wacht" = Zoho-status On Hold. "Nog open" en "Gesloten vandaag" zijn gebaseerd op recent gewijzigde tickets.</div>';
+      : `<div style="color:var(--ink-50);font-size:11px;margin-top:10px;font-style:italic">"In de wacht" = Zoho-status On Hold.${ticketSnapshotNote}</div>`;
 
   const html = `
     <!-- ZOOM PHONE: GEMISTE OPROEPEN -->
@@ -3996,32 +4042,34 @@ function renderDashboard(period) {
       </div>
       <div class="verdeling-list">${kanaalRows}</div>
     </div>
-    <!-- ZOHO DESK TICKETS: KPI-STRIP (nieuw / gesloten / open / wacht) -->
+    ` : ''}
+    <!-- ZOHO DESK TICKETS: KPI-STRIP (nieuw / gesloten / open / wacht) -- niet
+         meer aan periode==='vandaag' gebonden, want getTicketStatsAggregate
+         werkt nu ook voor Gisteren/Deze week/Vorige week via de historie. -->
     <div class="card">
       <div class="chart-card-header">
-        <div class="chart-card-title">Tickets vandaag (Zoho Desk)</div>
+        <div class="chart-card-title">Tickets (Zoho Desk)</div>
       </div>
       <div class="stat-strip" style="grid-template-columns:repeat(4,1fr)">
         <div class="card stat-card">
-          <div class="stat-label">Nieuwe tickets</div>
+          <div class="stat-label">${ticketLabelNieuw}</div>
           <div class="stat-value">${ticketStatsDisplay.nieuweVandaag}</div>
         </div>
         <div class="card stat-card">
-          <div class="stat-label">Gesloten vandaag</div>
+          <div class="stat-label">${ticketLabelGesloten}</div>
           <div class="stat-value">${ticketStatsDisplay.geslotenVandaag}</div>
         </div>
         <div class="card stat-card">
-          <div class="stat-label">Nog open</div>
+          <div class="stat-label">${ticketLabelOpen}</div>
           <div class="stat-value">${ticketStatsDisplay.totaalOpen}</div>
         </div>
         <div class="card stat-card">
-          <div class="stat-label">In de wacht</div>
+          <div class="stat-label">${ticketLabelWacht}</div>
           <div class="stat-value">${ticketStatsDisplay.inDeWacht}</div>
         </div>
       </div>
       ${ticketStatsCaveatHTML}
     </div>
-    ` : ''}
 
     ${managementViewActive ? `
     <!-- MANAGEMENT-WEERGAVE: extra kaarten -->
@@ -4287,9 +4335,21 @@ async function loadZoomHistory() {
   }
 }
 
+async function loadZohoTicketHistory() {
+  try {
+    const resp = await fetch('data/zoho-ticket-history.json?t=' + Date.now());
+    if (!resp.ok) return;
+    const hist = await resp.json();
+    if (hist && typeof hist === 'object') zohoTicketHistory = hist;
+  } catch (e) {
+    console.log('[ZohoTicketHistory] Niet beschikbaar');
+  }
+}
+
 async function initDashboard() {
   await loadLiveToday();
   await loadZohoTickets();
+  await loadZohoTicketHistory();
   await loadZoomCalls();
   await loadZoomHistory();
   const todayStr = new Date().toLocaleDateString('sv-SE');
@@ -4528,6 +4588,7 @@ let zohoChannelCounts = {};
 let zohoBrandmeesterCount = 0;
 let zohoTicketsTodayTotal = 0;
 let zohoTicketStats = null;
+let zohoTicketHistory = {};
 let zoomMissedCalls = [];
 let zoomTotaalInbound = 0;
 let zoomMissedTotal = 0;

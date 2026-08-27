@@ -64,6 +64,7 @@ jobs:
           git config user.name  "Lancyr Bot"
           git config user.email "bot@htjz.nl"
           git add data/today.json data/zoho-tickets.json
+          if [ -f data/zoho-ticket-history.json ]; then git add data/zoho-ticket-history.json; fi
           # data/zoom-calls.json bestaat pas na de eerste geslaagde Zoom-fetch
           # (script slaat niets op bij ontbrekende secrets) -- guard voorkomt
           # dat "git add" op een niet-bestaand bestand de hele stap laat falen

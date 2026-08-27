@@ -21,6 +21,7 @@ ORG_ID = os.environ.get('ZOHO_ORG_ID', '')
 DESK_BASE = 'https://desk.zoho.eu/api/v1'
 ACCOUNTS_URL = 'https://accounts.zoho.eu/oauth/v2/token'
 OUTPUT_PATH = 'data/zoho-tickets.json'
+HISTORY_PATH = 'data/zoho-ticket-history.json'
 AMS_OFFSET = timedelta(hours=2)
 
 
@@ -279,6 +280,16 @@ def main():
         json.dump(result, f, ensure_ascii=False, indent=2)
 
     print(f"Saved {len(entries)} Zoho tickets van vandaag naar {OUTPUT_PATH}")
+
+    try:
+        with open(HISTORY_PATH, 'r', encoding='utf-8') as f:
+            history = json.load(f)
+    except (FileNotFoundError, json.JSONDecodeError):
+        history = {}
+    history[today_str] = ticket_stats
+    with open(HISTORY_PATH, 'w', encoding='utf-8') as f:
+        json.dump(history, f, ensure_ascii=False, indent=2, sort_keys=True)
+    print(f"Ticketstats-geschiedenis bijgewerkt: {len(history)} datum(s) in {HISTORY_PATH}")
 
 
 if __name__ == '__main__':
