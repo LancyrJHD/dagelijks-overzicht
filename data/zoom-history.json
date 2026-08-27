@@ -10,9 +10,33 @@
   },
   "2026-08-18": {
     "date": "2026-08-18",
-    "generated_at": "2026-08-25T11:41:04Z",
-    "nietTerugGebeld": 8,
+    "generated_at": "2026-08-27T12:49:10Z",
+    "nietTerugGebeld": 19,
     "nietTerugGebeldNummers": [
+      {
+        "callResult": "overflowed",
+        "naam": "Onbekend",
+        "nummer": "+31636513591",
+        "tijd": "09:23"
+      },
+      {
+        "callResult": "overflowed",
+        "naam": "Onbekend",
+        "nummer": "+31756411867",
+        "tijd": "09:26"
+      },
+      {
+        "callResult": "overflowed",
+        "naam": "Onbekend",
+        "nummer": "+31639140021",
+        "tijd": "09:30"
+      },
+      {
+        "callResult": "overflowed",
+        "naam": "Onbekend",
+        "nummer": "+31628748384",
+        "tijd": "09:59"
+      },
       {
         "callResult": "abandoned",
         "naam": "Onbekend",
@@ -32,16 +56,46 @@
         "tijd": "11:53"
       },
       {
+        "callResult": "overflowed",
+        "naam": "Onbekend",
+        "nummer": "+31624377958",
+        "tijd": "12:44"
+      },
+      {
         "callResult": "abandoned",
         "naam": "Onbekend",
         "nummer": "+31628748384",
         "tijd": "14:23"
       },
       {
+        "callResult": "overflowed",
+        "naam": "Onbekend",
+        "nummer": "+31657722675",
+        "tijd": "14:23"
+      },
+      {
+        "callResult": "overflowed",
+        "naam": "Onbekend",
+        "nummer": "+31628748384",
+        "tijd": "14:28"
+      },
+      {
+        "callResult": "overflowed",
+        "naam": "Onbekend",
+        "nummer": "+31621361796",
+        "tijd": "14:57"
+      },
+      {
         "callResult": "abandoned",
         "naam": "Onbekend",
         "nummer": "+31612872580",
         "tijd": "15:23"
+      },
+      {
+        "callResult": "overflowed",
+        "naam": "Onbekend",
+        "nummer": "+31683354585",
+        "tijd": "15:26"
       },
       {
         "callResult": "abandoned",
@@ -56,14 +110,26 @@
         "tijd": "16:13"
       },
       {
+        "callResult": "overflowed",
+        "naam": "Onbekend",
+        "nummer": "+31639140021",
+        "tijd": "16:25"
+      },
+      {
         "callResult": "abandoned",
         "naam": "Onbekend",
         "nummer": "+31629527302",
         "tijd": "16:38"
+      },
+      {
+        "callResult": "overflowed",
+        "naam": "Onbekend",
+        "nummer": "+31628748384",
+        "tijd": "16:39"
       }
     ],
     "terugGebeld": 0,
-    "totaalGemist": 8,
+    "totaalGemist": 19,
     "totaalInbound": 19
   },
   "2026-08-19": {
