@@ -3903,6 +3903,13 @@ function renderDashboard(period) {
     </div>
   ` : '';
 
+  const ticketStatsDisplay = zohoTicketStats || { nieuweVandaag: '\u2014', geslotenVandaag: '\u2014', totaalOpen: '\u2014', inDeWacht: '\u2014' };
+  const ticketStatsCaveatHTML = !zohoTicketStats
+    ? '<div style="color:var(--ink-50);font-size:11px;margin-top:10px">Zoho-ticketdata nog niet beschikbaar voor deze periode</div>'
+    : zohoTicketStats.capBereikt
+      ? '<div style="color:#b45309;font-size:11px;margin-top:10px">Let op: er zijn meer tickets dan in \u00e9\u00e9n keer opgehaald konden worden -- "Nog open" en "In de wacht" zijn mogelijk niet compleet.</div>'
+      : '<div style="color:var(--ink-50);font-size:11px;margin-top:10px;font-style:italic">"In de wacht" = Zoho-status On Hold. "Nog open" en "Gesloten vandaag" zijn gebaseerd op recent gewijzigde tickets.</div>';
+
   const html = `
     <!-- ZOOM PHONE: GEMISTE OPROEPEN -->
     <div class="card">
@@ -3988,6 +3995,31 @@ function renderDashboard(period) {
         <div class="chart-card-title">Kanaalverdeling (Zoho Desk, vandaag)</div>
       </div>
       <div class="verdeling-list">${kanaalRows}</div>
+    </div>
+    <!-- ZOHO DESK TICKETS: KPI-STRIP (nieuw / gesloten / open / wacht) -->
+    <div class="card">
+      <div class="chart-card-header">
+        <div class="chart-card-title">Tickets vandaag (Zoho Desk)</div>
+      </div>
+      <div class="stat-strip" style="grid-template-columns:repeat(4,1fr)">
+        <div class="card stat-card">
+          <div class="stat-label">Nieuwe tickets</div>
+          <div class="stat-value">${ticketStatsDisplay.nieuweVandaag}</div>
+        </div>
+        <div class="card stat-card">
+          <div class="stat-label">Gesloten vandaag</div>
+          <div class="stat-value">${ticketStatsDisplay.geslotenVandaag}</div>
+        </div>
+        <div class="card stat-card">
+          <div class="stat-label">Nog open</div>
+          <div class="stat-value">${ticketStatsDisplay.totaalOpen}</div>
+        </div>
+        <div class="card stat-card">
+          <div class="stat-label">In de wacht</div>
+          <div class="stat-value">${ticketStatsDisplay.inDeWacht}</div>
+        </div>
+      </div>
+      ${ticketStatsCaveatHTML}
     </div>
     ` : ''}
 
@@ -4222,6 +4254,7 @@ async function loadZohoTickets() {
     if (Array.isArray(live.tickets)) zohoTicketsToday = live.tickets;
     if (live.channelCounts && typeof live.channelCounts === 'object') zohoChannelCounts = live.channelCounts;
     if (typeof live.brandmeesterCount === 'number') zohoBrandmeesterCount = live.brandmeesterCount;
+    if (live.ticketStats && typeof live.ticketStats === 'object') zohoTicketStats = live.ticketStats;
     zohoTicketsTodayTotal = zohoTicketsToday.length;
   } catch (e) {
     console.log('[ZohoTickets] Niet beschikbaar');
@@ -4494,6 +4527,7 @@ let managementViewActive = false;
 let zohoChannelCounts = {};
 let zohoBrandmeesterCount = 0;
 let zohoTicketsTodayTotal = 0;
+let zohoTicketStats = null;
 let zoomMissedCalls = [];
 let zoomTotaalInbound = 0;
 let zoomMissedTotal = 0;

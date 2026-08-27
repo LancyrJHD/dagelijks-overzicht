@@ -85,6 +85,110 @@ def fetch_tickets(access_token, limit=100):
         return json.loads(resp.read()).get('data', [])
 
 
+CLOSED_ALIASES = ('gesloten', 'closed')
+ONHOLD_ALIASES = ('wachtend', 'on hold', 'onhold', 'on-hold', 'in afwachting', 'in de wacht')
+
+
+def _is_closed_status(status):
+    s = (status or '').strip().lower()
+    return any(alias in s for alias in CLOSED_ALIASES)
+
+
+def _is_onhold_status(status):
+    s = (status or '').strip().lower()
+    return any(alias in s for alias in ONHOLD_ALIASES)
+
+
+def fetch_tickets_for_stats(access_token, max_pages=10, page_size=100):
+    """Haalt een brede, ongefilterde set tickets op (gesorteerd op
+    -modifiedTime, dus meest recent aangeraakt eerst) om drie dingen te
+    berekenen die de losse 'tickets van vandaag'-fetch hierboven niet kan
+    leveren (die is gefilterd op createdTime = vandaag): hoeveel tickets
+    zijn er vandaag GESLOTEN (kan aangemaakt zijn op een eerdere dag),
+    hoeveel staan er in totaal nog open, en hoeveel daarvan staan 'in de
+    wacht'. Best-effort: gepagineerd tot max_pages * page_size tickets
+    (standaard 1000) -- ruim voldoende voor het dagvolume van dit
+    kantoor. Dedupliceert op ticket-id; als paginering geen nieuwe
+    tickets meer oplevert (mogelijk werkt 'from' anders dan verwacht in
+    deze API-versie) stopt de fetch vroeg met een waarschuwing i.p.v.
+    de cap te verspillen aan dubbele tickets."""
+    all_tickets = []
+    seen_ids = set()
+    cap_reached = True
+    for page in range(max_pages):
+        from_index = page * page_size + 1
+        url = f"{DESK_BASE}/tickets?" + urllib.parse.urlencode({
+            'limit': page_size,
+            'from': from_index,
+            'sortBy': '-modifiedTime',
+            'fields': 'id,status,statusType,createdTime,closedTime,modifiedTime',
+        })
+        req = urllib.request.Request(url, headers={
+            'Authorization': f'Zoho-oauthtoken {access_token}',
+            'orgId': ORG_ID,
+        })
+        try:
+            with urllib.request.urlopen(req, timeout=30) as resp:
+                page_data = json.loads(resp.read()).get('data', [])
+        except Exception as e:
+            print(f"  WAARSCHUWING: kon pagina {page + 1} van ticketstats niet ophalen ({e})")
+            cap_reached = False
+            break
+        if not page_data:
+            cap_reached = False
+            break
+        new_count = 0
+        for t in page_data:
+            tid = t.get('id')
+            if tid and tid in seen_ids:
+                continue
+            if tid:
+                seen_ids.add(tid)
+            all_tickets.append(t)
+            new_count += 1
+        if new_count == 0:
+            print("  WAARSCHUWING: paginering ticketstats leverde alleen "
+                  "duplicaten op, gestopt (resultaat mogelijk incompleet).")
+            break
+        if len(page_data) < page_size:
+            cap_reached = False
+            break
+    return all_tickets, cap_reached
+
+
+def compute_ticket_stats(nieuwe_vandaag_count, stats_tickets, cap_reached, today_str):
+    status_breakdown = {}
+    totaal_open = 0
+    in_de_wacht = 0
+    gesloten_vandaag = 0
+    for t in stats_tickets:
+        status = t.get('status') or '(geen status)'
+        status_breakdown[status] = status_breakdown.get(status, 0) + 1
+        if not _is_closed_status(status):
+            totaal_open += 1
+            if _is_onhold_status(status):
+                in_de_wacht += 1
+            continue
+        closed_raw = t.get('closedTime', '')
+        if not closed_raw:
+            continue
+        try:
+            dt_utc = datetime.fromisoformat(closed_raw.replace('Z', '+00:00'))
+            dt_ams = dt_utc + AMS_OFFSET
+        except Exception:
+            continue
+        if dt_ams.date().isoformat() == today_str:
+            gesloten_vandaag += 1
+    return {
+        'nieuweVandaag': nieuwe_vandaag_count,
+        'geslotenVandaag': gesloten_vandaag,
+        'totaalOpen': totaal_open,
+        'inDeWacht': in_de_wacht,
+        'statusBreakdown': status_breakdown,
+        'capBereikt': cap_reached,
+    }
+
+
 def main():
     missing = [n for n, v in [
         ('ZOHO_CLIENT_ID', CLIENT_ID), ('ZOHO_CLIENT_SECRET', CLIENT_SECRET),
@@ -150,12 +254,24 @@ def main():
 
     brandmeester_count = sum(1 for e in entries if e.get('doorgezetBrandmeester'))
 
+    stats_tickets, cap_reached = fetch_tickets_for_stats(access_token)
+    ticket_stats = compute_ticket_stats(len(entries), stats_tickets, cap_reached, today_str)
+    print(
+        f"Ticketstats: {ticket_stats['nieuweVandaag']} nieuw, "
+        f"{ticket_stats['geslotenVandaag']} gesloten vandaag, "
+        f"{ticket_stats['totaalOpen']} nog open, "
+        f"{ticket_stats['inDeWacht']} in de wacht "
+        f"(status-breakdown: {ticket_stats['statusBreakdown']}, "
+        f"cap bereikt: {ticket_stats['capBereikt']})"
+    )
+
     result = {
         'date': today_str,
         'generated_at': datetime.now(timezone.utc).strftime('%Y-%m-%dT%H:%M:%SZ'),
         'tickets': entries,
         'channelCounts': channel_counts,
         'brandmeesterCount': brandmeester_count,
+        'ticketStats': ticket_stats,
     }
 
     os.makedirs('data', exist_ok=True)
