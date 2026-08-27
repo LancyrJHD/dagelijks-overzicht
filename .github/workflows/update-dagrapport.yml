@@ -14,6 +14,10 @@ on:
         description: 'Zoom: DIAGNOSE-ONLY -- volledig record dumpen voor dit nummer, niets opslaan (leeg = normale run)'
         required: false
         default: ''
+      granola_datum:
+        description: 'Granola: datum (YYYY-MM-DD) om te herclassificeren -- schrijft naar data/granola-backfill-<datum>.json, NIET naar data/today.json (leeg = vandaag, normale run)'
+        required: false
+        default: ''
 
 jobs:
   update:
@@ -53,6 +57,7 @@ jobs:
         env:
           GRANOLA_API_KEY: ${{ secrets.GRANOLA_API_KEY }}
           ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+          GRANOLA_DATE: ${{ github.event.inputs.granola_datum }}
         run: python scripts/analyze_granola_ai.py
       - name: Commit en push data/*.json
         run: |
@@ -65,6 +70,10 @@ jobs:
           # onder bash's set -e (GitHub Actions default).
           if [ -f data/zoom-calls.json ]; then git add data/zoom-calls.json; fi
           if [ -f data/zoom-history.json ]; then git add data/zoom-history.json; fi
+          # Backfill-outputbestanden van de Granola-herclassificatie (zie
+          # GRANOLA_DATE) -- glob levert niets op als er geen backfill is
+          # gedraaid; 2>/dev/null || true voorkomt dat 'git add' dan faalt.
+          git add data/granola-backfill-*.json 2>/dev/null || true
           # Alleen committen als er iets veranderd is
           # git pull --rebase vlak voor de push voorkomt dat deze stap faalt
           # wanneer een andere run (bv. handmatig gestart terwijl de geplande

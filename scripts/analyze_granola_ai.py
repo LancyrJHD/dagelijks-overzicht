@@ -25,6 +25,14 @@ from datetime import datetime, timezone, timedelta
 GRANOLA_TOKEN = os.environ.get('GRANOLA_API_KEY', '')
 ANTHROPIC_KEY = os.environ.get('ANTHROPIC_API_KEY', '')
 
+# BEVINDING 27 aug 2026: GRANOLA_DATE (optioneel, zelfde patroon als
+# ZOOM_DATE in fetch_zoom_calls.py) laat dit script een HISTORISCHE dag
+# analyseren i.p.v. altijd 'vandaag'. Nodig om verkeerd_verbonden opnieuw
+# te classificeren na verbreding van de definitie. Zie main() en
+# get_notes_for_date() voor de veiligheidsmaatregelen (nooit
+# data/today.json overschrijven bij een historische datum).
+GRANOLA_DATE = os.environ.get('GRANOLA_DATE', '').strip()
+
 LANCYR_FOLDER_NAME = 'Lancyr Juridische Helpdesk'
 GRANOLA_BASE = 'https://public-api.granola.ai/v1'
 ANTHROPIC_MODEL = 'claude-haiku-4-5-20251001'
@@ -123,14 +131,32 @@ def anthropic_call(system, user_content, max_tokens=800, retries=2):
     return None
 
 
-def get_all_today_notes():
-    today_ams = (datetime.now(timezone.utc) + AMS_OFFSET).date()
-    today_str = today_ams.isoformat()
-    print(f"Fetching notes for {today_str} (Amsterdam)...")
+def _note_created_date_str(note):
+    """Geeft de Amsterdam-kalenderdag (YYYY-MM-DD) van note['created_at']
+    terug, of '' als dat niet te bepalen is."""
+    created_at = note.get('created_at', '')
+    try:
+        dt_utc = datetime.fromisoformat(created_at.replace('Z', '+00:00'))
+        return (dt_utc + AMS_OFFSET).date().isoformat()
+    except Exception:
+        return ''
+
+
+def get_notes_for_date(target_date_str, is_backfill):
+    """Haalt notes op voor EEN specifieke kalenderdag (Amsterdam-tijd).
+    Voor 'vandaag' (is_backfill=False) is created_after=target_date_str
+    voldoende -- er bestaan nog geen notes na nu, dus geen extra filter
+    nodig. Voor een HISTORISCHE dag (is_backfill=True) geeft
+    created_after ook alle latere dagen terug (tot en met vandaag);
+    daarom wordt hier client-side exact gefilterd op notes waarvan de
+    Amsterdam-kalenderdag overeenkomt met target_date_str, ongeacht of
+    de Granola-API zelf een bovengrens-parameter ondersteunt."""
+    print(f"Fetching notes for {target_date_str} (Amsterdam)"
+          f"{' [BACKFILL]' if is_backfill else ''}...")
     notes = []
     cursor = None
     while True:
-        params = {'page_size': 30, 'created_after': today_str}
+        params = {'page_size': 30, 'created_after': target_date_str}
         if cursor:
             params['cursor'] = cursor
         qs = urllib.parse.urlencode(params)
@@ -141,7 +167,10 @@ def get_all_today_notes():
         if not data.get('hasMore'):
             break
         cursor = data.get('cursor')
-    print(f"  -> {len(notes)} total notes today")
+    print(f"  -> {len(notes)} notes opgehaald (created_after={target_date_str})")
+    if is_backfill:
+        notes = [n for n in notes if _note_created_date_str(n) == target_date_str]
+        print(f"  -> {len(notes)} notes na filteren op exacte dag {target_date_str}")
     return notes
 
 
@@ -289,9 +318,17 @@ def main():
 
     today_ams = (datetime.now(timezone.utc) + AMS_OFFSET).date()
     today_str = today_ams.isoformat()
+    target_date_str = GRANOLA_DATE or today_str
+    is_backfill = target_date_str != today_str
+    output_path = OUTPUT_PATH if not is_backfill else f'data/granola-backfill-{target_date_str}.json'
+    if is_backfill:
+        print(f"BACKFILL-MODUS voor {target_date_str} -- schrijft naar {output_path}, "
+              f"raakt data/today.json NIET aan.")
 
-    notes = get_all_today_notes()
-    zoho_tickets = load_zoho_tickets()
+    notes = get_notes_for_date(target_date_str, is_backfill)
+    # Zoho-tickets van 'vandaag' zijn niet tijdsgeldig voor een historische
+    # backfill-dag -- matchen zou willekeurige/foute klantnamen opleveren.
+    zoho_tickets = load_zoho_tickets() if not is_backfill else []
     if zoho_tickets:
         print(f"  -> {len(zoho_tickets)} Zoho-tickets van vandaag geladen voor contextmatching")
     else:
@@ -437,7 +474,7 @@ def main():
             print("  WAARSCHUWING: dag-analyse mislukt, score/analyse blijven leeg")
 
     result = {
-        "date": today_str,
+        "date": target_date_str,
         "generated_at": datetime.now(timezone.utc).strftime('%Y-%m-%dT%H:%M:%SZ'),
         "drukte": drukte,
         "gesprekken": total,
@@ -452,10 +489,10 @@ def main():
     }
 
     os.makedirs('data', exist_ok=True)
-    with open(OUTPUT_PATH, 'w', encoding='utf-8') as f:
+    with open(output_path, 'w', encoding='utf-8') as f:
         json.dump(result, f, ensure_ascii=False, indent=2)
 
-    print(f"\nSaved {len(conversations)} Lancyr entries (score {score}) to {OUTPUT_PATH}")
+    print(f"\nSaved {len(conversations)} Lancyr entries (score {score}) to {output_path}")
 
 
 if __name__ == '__main__':
