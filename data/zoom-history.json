@@ -180,8 +180,8 @@
   },
   "2026-08-20": {
     "date": "2026-08-20",
-    "generated_at": "2026-08-25T11:45:36Z",
-    "nietTerugGebeld": 2,
+    "generated_at": "2026-08-27T12:51:09Z",
+    "nietTerugGebeld": 3,
     "nietTerugGebeldNummers": [
       {
         "callResult": "abandoned",
@@ -194,10 +194,16 @@
         "naam": "Onbekend",
         "nummer": "+31681258989",
         "tijd": "14:05"
+      },
+      {
+        "callResult": "overflowed",
+        "naam": "Onbekend",
+        "nummer": "+31657722675",
+        "tijd": "16:46"
       }
     ],
     "terugGebeld": 0,
-    "totaalGemist": 2,
+    "totaalGemist": 3,
     "totaalInbound": 17
   },
   "2026-08-21": {
