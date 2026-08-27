@@ -72,7 +72,7 @@ Categoriseer het gesprek in EXACT een van deze 5 paren (class, label):
 Tags (rechtsgebied): gebruik ["tag-arbeidsrecht","Arbeidsrecht"], ["tag-consument","Consumentenrecht"], ["tag-bouw","Bouwrecht"], ["tag-huur","Huurrecht"], ["tag-bestuursrecht","Bestuursrecht"], of ["tag-overig","<specifiek rechtsgebied>"] als geen van de vaste categorieen past.
 
 Bepaal ook drie extra booleans, ONAFHANKELIJK van de uitkomst hierboven:
-- "verkeerd_verbonden": true als de beller niet meteen bij de juiste persoon/afdeling terechtkwam en daarom wordt doorverwezen of anders moet handelen -- bijvoorbeeld: (a) de vraag hoort helemaal niet bij een juridische helpdesk (autoverzekeringsvraag, schadeclaim-callcenter, compleet verkeerd doorverbonden nummer), (b) de medewerker zegt dat de beller een collega of een andere afdeling nodig heeft en verwijst door, (c) "dit is niet juridisch, we verbinden je door met X", (d) de beller moet opnieuw bellen en daarbij een andere keuzemenu-optie/toets kiezen, of (e) de beller wordt naar een ander telefoonnummer verwezen. Dit geldt OOK als de doorverwijzing uiteindelijk een legitieme juridische vervolgstap betreft (bijvoorbeeld naar Brandmeester) -- de beller kwam dan namelijk niet meteen bij de juiste persoon/afdeling terecht. Bij twijfel: false.
+- "verkeerd_verbonden": true ALLEEN als de beller HELEMAAL GEEN inhoudelijk juridische vraag heeft -- het onderwerp hoort simpelweg niet bij een juridische helpdesk (bijvoorbeeld een autoverzekeringsvraag, een premievraag, een schadeclaim-callcenter, of een compleet verkeerd doorverbonden nummer) -- en de beller daarom wordt doorverwezen naar iemand anders, een andere afdeling, een ander telefoonnummer, of moet terugbellen en een andere keuzemenu-optie kiezen. BELANGRIJKE UITZONDERING: een doorverwijzing naar Brandmeester/rechtsbijstand (rechtsbijstand_verwijzing) is GEEN verkeerd_verbonden, ook niet als de eerste medewerker zelf geen inhoudelijk advies gaf -- de beller was daar namelijk wel degelijk aan het juiste adres (de juridische helpdesk), en Lancyr heeft zelf professioneel beoordeeld dat de zaak voor verdere behandeling naar rechtsbijstand moet. Dat is een gewenste, correcte triage-uitkomst. Bij twijfel: false.
 - "rechtsbijstand_verwijzing": true ALLEEN als de medewerker de beller expliciet doorverwijst naar de rechtsbijstandsafdeling/rechtsbijstandsverzekering voor verdere behandeling van de zaak (dus niet zomaar "u heeft rechtsbijstand", maar een daadwerkelijke doorverwijzing/overdracht). Bij twijfel: false.
 - "advies_gegeven": true ALLEEN als de medewerker daadwerkelijk inhoudelijk juridisch advies of een concrete juridische uitleg heeft gegeven over de zaak. BELANGRIJK: als de medewerker de beller NIET kon verifieren (niet gevonden in het systeem op naam/adres/polisnummer) en daarom bewust GEEN advies heeft gegeven maar in plaats daarvan om verificatiedocumenten heeft gevraagd en een vervolgcontact heeft afgesproken, is dit false -- en dat is GEEN fout maar juist correct, voorzichtig handelen. Zet dit niet automatisch op true alleen omdat er een juridisch onderwerp is besproken.
 - "identiteit_geverifieerd": true als de medewerker de beller op enig moment tijdens het gesprek heeft gevonden/bevestigd in het systeem (bijvoorbeeld via postcode, huisnummer, adres, polisnummer of naam) -- ook als dat pas halverwege het gesprek gebeurt, vroeg in het gesprek gebeurt is voldoende, het hoeft niet aan het begin te zijn. BELANGRIJK: als onderaan dit bericht "Systeeminfo" staat met een gekoppelde Zoho-contactpersoon, betekent dit dat het systeem de beller AUTOMATISCH heeft herkend op telefoonnummer (koppeling met polis/klantdossier) -- zet dan identiteit_geverifieerd op true, OOK ALS dit nergens expliciet in het transcript wordt besproken. Zet identiteit_geverifieerd alleen op false als er geen Zoho-contactmatch is EN er ook in het transcript geen enkele verificatiepoging (naam/adres/postcode/polisnummer) is gedaan. Let op: "dekkingscontrole" / franchise-controle (EUR 250) is alleen relevant bij zaken met een concreet schadebedrag (bijv. schadeclaims). Bij geschillen over rechten, hinder of gebruik zonder schadebedrag (bijv. burenrecht, onrechtmatige hinder, huurrecht) is de franchise NIET van toepassing en mag dit niet als ontbrekend kwaliteitspunt worden genoemd.
@@ -223,15 +223,20 @@ def heuristic_extra_flags(title, summary_md, summary_text):
     de voorzichtige aanname 'wel advies gegeven' maken zodat kwaliteitschecks
     niet stilzwijgend worden overgeslagen)."""
     text = ((title or '') + ' ' + (summary_md or '') + ' ' + (summary_text or '')).lower()
-    verkeerd_verbonden = any(k in text for k in [
-        'verkeerd verbonden', 'verkeerd nummer', 'autoverzekering', 'niet de juiste afdeling',
-        'doorverwijzing telefoonnummer', 'menunavigatie', 'collega nodig', 'andere afdeling',
-        'verbind je door', 'verbinden we je door', 'niet juridisch', 'bel dit nummer',
-        'bel opnieuw', 'ander nummer', 'kies optie', 'toets de',
-    ])
     rechtsbijstand_verwijzing = 'rechtsbijstand' in text and (
         'verwijs' in text or 'doorverwijs' in text or 'overgedragen' in text
     )
+    # CORRECTIE 27 aug 2026: verkeerd_verbonden is uitsluitend van toepassing
+    # als er HELEMAAL GEEN inhoudelijk juridische vraag was (bijv.
+    # autoverzekering/premie) -- een Brandmeester/rechtsbijstand-verwijzing
+    # (rechtsbijstand_verwijzing) is per definitie GEEN verkeerd_verbonden,
+    # ook al matchen sommige trefwoorden hieronder toevallig.
+    verkeerd_verbonden = any(k in text for k in [
+        'verkeerd verbonden', 'verkeerd nummer', 'autoverzekering', 'premievraag',
+        'niet de juiste afdeling', 'doorverwijzing telefoonnummer', 'menunavigatie',
+        'niet juridisch', 'geen juridische vraag', 'bel dit nummer', 'bel opnieuw',
+        'ander nummer', 'kies optie', 'toets de',
+    ]) and not rechtsbijstand_verwijzing
     niet_gevonden = any(k in text for k in [
         'niet in het systeem', 'niet gevonden', 'kan ik niet vinden', 'kon niet vinden',
         'niet terugvinden', 'niet te vinden',
@@ -402,13 +407,14 @@ def main():
         # echte naam). Gebruik in plaats daarvan de naam uit de gematchte Zoho Desk-
         # ticket (betrouwbaar, want handmatig/systematisch vastgelegd). Zonder match
         # blijft de naam "anoniem" i.p.v. een mogelijk foutieve gok.
-        # BEVINDING 27 aug 2026: de AI volgt de verbrede verkeerd_verbonden-
-        # definitie niet betrouwbaar voor gesprekken die worden doorverwezen
-        # naar Brandmeester/rechtsbijstand (rechtsbijstand_verwijzing=true).
-        # De gebruiker koos expliciet dat dit OOK verkeerd_verbonden is, dus
-        # dwing dit hier af in code i.p.v. te vertrouwen op promptnaleving.
-        if rechtsbijstand_verwijzing:
-            verkeerd_verbonden = True
+        # CORRECTIE 27 aug 2026: eerdere aanname dat elke Brandmeester-
+        # verwijzing (rechtsbijstand_verwijzing) ook verkeerd_verbonden zou
+        # zijn was FOUT -- gebruiker corrigeerde dit expliciet: bij een
+        # Brandmeester-verwijzing was de beller wel degelijk bij de juiste
+        # afdeling (Lancyr besliste zelf tot doorverwijzing voor verdere
+        # behandeling). Dat is dus GEEN verkeerd_verbonden. Zie de
+        # bijgewerkte prompt-definitie hierboven voor het echte criterium
+        # (geen inhoudelijk juridische vraag, bijv. autoverzekering/premie).
 
         klant_naam = zoho_match if zoho_match else "anoniem"
         conversations.append({
