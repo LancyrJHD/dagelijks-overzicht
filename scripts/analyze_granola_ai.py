@@ -402,6 +402,14 @@ def main():
         # echte naam). Gebruik in plaats daarvan de naam uit de gematchte Zoho Desk-
         # ticket (betrouwbaar, want handmatig/systematisch vastgelegd). Zonder match
         # blijft de naam "anoniem" i.p.v. een mogelijk foutieve gok.
+        # BEVINDING 27 aug 2026: de AI volgt de verbrede verkeerd_verbonden-
+        # definitie niet betrouwbaar voor gesprekken die worden doorverwezen
+        # naar Brandmeester/rechtsbijstand (rechtsbijstand_verwijzing=true).
+        # De gebruiker koos expliciet dat dit OOK verkeerd_verbonden is, dus
+        # dwing dit hier af in code i.p.v. te vertrouwen op promptnaleving.
+        if rechtsbijstand_verwijzing:
+            verkeerd_verbonden = True
+
         klant_naam = zoho_match if zoho_match else "anoniem"
         conversations.append({
             "tijd": tijdstip,
