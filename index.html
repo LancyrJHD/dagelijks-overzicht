@@ -4561,14 +4561,12 @@ function getSupabase() {
 function showAuthOverlay() {
   document.getElementById('auth-overlay').classList.remove('hidden');
   document.getElementById('logout-btn').style.display = 'none';
-  document.getElementById('status-toggle-btn').style.display = 'none';
   const mgmtGroup = document.getElementById('view-toggle-group');
   if (mgmtGroup) mgmtGroup.style.display = 'none';
 }
 function hideAuthOverlay() {
   document.getElementById('auth-overlay').classList.add('hidden');
   document.getElementById('logout-btn').style.display = '';
-  document.getElementById('status-toggle-btn').style.display = '';
 }
 function showLogin() {
   document.getElementById('auth-login-screen').classList.add('active');
