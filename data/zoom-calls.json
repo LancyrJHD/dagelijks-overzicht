@@ -1,10 +1,10 @@
 {
   "date": "2026-08-27",
-  "generated_at": "2026-08-27T12:55:03Z",
-  "totaalInbound": 10,
-  "totaalGemist": 8,
+  "generated_at": "2026-08-27T13:39:07Z",
+  "totaalInbound": 11,
+  "totaalGemist": 9,
   "terugGebeld": 0,
-  "nietTerugGebeld": 8,
+  "nietTerugGebeld": 9,
   "nietTerugGebeldNummers": [
     {
       "nummer": "+31686075465",
@@ -52,6 +52,12 @@
       "nummer": "+31647745354",
       "naam": "Onbekend",
       "tijd": "13:28",
+      "callResult": "overflowed"
+    },
+    {
+      "nummer": "+31613321649",
+      "naam": "Onbekend",
+      "tijd": "15:05",
       "callResult": "overflowed"
     }
   ]
