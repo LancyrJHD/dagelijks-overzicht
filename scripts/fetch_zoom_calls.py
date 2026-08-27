@@ -321,25 +321,31 @@ def main():
         return False
 
     niet_gebeld = []
+    alle_gemist = []
     gebeld_count = 0
     for m in missed:
-        if called_back(m):
-            gebeld_count += 1
-            continue
+        is_teruggebeld = called_back(m)
         start_raw = m.get('start_time', '') or ''
         try:
             dt_utc = datetime.fromisoformat(start_raw.replace('Z', '+00:00'))
             tijd = (dt_utc + AMS_OFFSET).strftime('%H:%M')
         except Exception:
             tijd = start_raw
-        niet_gebeld.append({
+        record = {
             'nummer': m.get('caller_did_number', '') or '',
             'naam': m.get('caller_name') or 'Onbekend',
             'tijd': tijd,
             'callResult': m.get('call_result', '') or '',
-        })
+            'teruggebeld': is_teruggebeld,
+        }
+        alle_gemist.append(record)
+        if is_teruggebeld:
+            gebeld_count += 1
+        else:
+            niet_gebeld.append(record)
 
     niet_gebeld.sort(key=lambda x: x['tijd'])
+    alle_gemist.sort(key=lambda x: x['tijd'])
 
     # Overzicht van de classificatie -- geen herhaalde call-path-fetch meer
     # nodig, want die is (voor de overflow-check) al hierboven gedaan.
@@ -358,6 +364,7 @@ def main():
         'terugGebeld': gebeld_count,
         'nietTerugGebeld': len(niet_gebeld),
         'nietTerugGebeldNummers': niet_gebeld,
+        'alleGemistNummers': alle_gemist,
     }
     os.makedirs('data', exist_ok=True)
     with open(OUTPUT_PATH, 'w', encoding='utf-8') as f:

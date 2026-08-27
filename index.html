@@ -3619,6 +3619,7 @@ function getZoomPeriodKeys(period) {
 function getZoomAggregate(keys) {
   let totaalInbound = 0, totaalGemist = 0, terugGebeld = 0;
   let nietTerugGebeld = [];
+  let alleGemist = [];
   let anyData = false;
   keys.forEach(k => {
     const d = zoomHistory[k];
@@ -3630,9 +3631,18 @@ function getZoomAggregate(keys) {
     (d.nietTerugGebeldNummers || []).forEach(m => {
       nietTerugGebeld.push(Object.assign({ datum: k }, m));
     });
+    // 'alleGemistNummers' bestaat pas sinds 27 aug 2026 -- voor oudere dagen
+    // vallen we terug op nietTerugGebeldNummers (dan ontbreken alleen de
+    // details van de al-teruggebelde oproepen op die specifieke dag, de
+    // totalen hierboven kloppen sowieso want die komen uit totaalGemist/
+    // terugGebeld).
+    (d.alleGemistNummers || d.nietTerugGebeldNummers || []).forEach(m => {
+      alleGemist.push(Object.assign({ datum: k }, m));
+    });
   });
   nietTerugGebeld.sort((a, b) => (a.datum + ' ' + a.tijd).localeCompare(b.datum + ' ' + b.tijd));
-  return { totaalInbound, totaalGemist, terugGebeld, nietTerugGebeld, dataAvailable: anyData };
+  alleGemist.sort((a, b) => (a.datum + ' ' + a.tijd).localeCompare(b.datum + ' ' + b.tijd));
+  return { totaalInbound, totaalGemist, terugGebeld, nietTerugGebeld, alleGemist, dataAvailable: anyData };
 }
 
 const VERKEERD_VERBONDEN_BACKFILL = { '2026-08-05': ['11:30','12:48','13:36'], '2026-08-07': ['13:23'], '2026-08-10': ['11:56'], '2026-08-11': ['13:17'], '2026-08-13': ['12:37'], '2026-08-14': ['13:14','15:51'] }; function aggregateEntries(entries) { let totalGesprekken = 0, totalOpgelost = 0, totalBrandmeester = 0; let totalTerugbel = 0, totalGeenDekking = 0, totalAfkoop = 0; let allConversations = []; let scores = []; let druktes = []; let juristScores = {}; entries.forEach(({ key, data }) => { totalGesprekken += (data.gesprekken || 0); if (data.stats) { totalOpgelost += (data.stats.opgelost || 0); totalBrandmeester += (data.stats.brandmeester || 0); totalTerugbel += (data.stats.terugbel || 0); totalGeenDekking += (data.stats.geenDekking || 0); totalAfkoop += (data.stats.afkoop || 0); } if (data.conversations) { const vvBackfill = VERKEERD_VERBONDEN_BACKFILL[key] || []; allConversations = allConversations.concat(data.conversations.map(c => (typeof c.verkeerdVerbonden === 'boolean') ? c : Object.assign({}, c, { verkeerdVerbonden: vvBackfill.includes(c.tijd) }))); } if (data.score && data.score > 0) { scores.push(data.score); /* Dagscore toekennen aan de jurist die die dag de meeste gesprekken deed (zelfde methode als Brandmeester van de dag), zodat het weekoverzicht per persoon een eigen gemiddelde kan tonen i.p.v. het teamgemiddelde. */ const dayTop = getBrandmeester(data.conversations || []); if (dayTop.name) { juristScores[dayTop.name] = juristScores[dayTop.name] || []; juristScores[dayTop.name].push(data.score); } } if (data.drukte) druktes.push(data.drukte); }); const avgScore = scores.length > 0 ? scores.reduce((a,b)=>a+b,0)/scores.length : 0; const drukte = druktes.length > 0 ? druktes[Math.floor(druktes.length/2)] : 'rustig'; const juristAvgScore = {}; for (const naam in juristScores) { const arr = juristScores[naam]; juristAvgScore[naam] = arr.reduce((a,b)=>a+b,0)/arr.length; } return { totalGesprekken, totalOpgelost, totalBrandmeester, totalTerugbel, totalGeenDekking, totalAfkoop, allConversations, avgScore, drukte, juristAvgScore }; }// ======================== SVG LINE CHART ========================
@@ -3727,6 +3737,15 @@ function uitkomstClass(uitkomstKey) {
 function toggleScoreReden() {
   const panel = document.getElementById('score-reden-card');
   const arrow = document.getElementById('score-reden-arrow');
+  if (!panel) return;
+  const isHidden = panel.style.display === 'none';
+  panel.style.display = isHidden ? '' : 'none';
+  if (arrow) arrow.innerHTML = isHidden ? '&#9652;' : '&#9662;';
+}
+
+function toggleGemisteOproepen() {
+  const panel = document.getElementById('gemiste-oproepen-detail');
+  const arrow = document.getElementById('gemiste-oproepen-arrow');
   if (!panel) return;
   const isHidden = panel.style.display === 'none';
   panel.style.display = isHidden ? '' : 'none';
@@ -3936,33 +3955,40 @@ function renderDashboard(period) {
       <div class="gesprekken-header">
         <div class="gesprekken-title">Gemiste oproepen (Zoom Phone)</div>
       </div>
-      <div style="color:var(--ink-50);font-size:12px;margin:-4px 0 4px 0">
-        ${zoomAgg.dataAvailable ? `${zoomAgg.totaalInbound} binnenkomende oproepen &middot; ${zoomAgg.totaalGemist} gemist &middot; ${zoomAgg.terugGebeld} teruggebeld &middot; ${zoomAgg.nietTerugGebeld.length} nog niet teruggebeld` : 'Zoom-data nog niet beschikbaar voor deze periode'}
+      ${zoomAgg.dataAvailable ? `
+      <button type="button" onclick="toggleGemisteOproepen()" style="display:flex;align-items:center;justify-content:space-between;width:100%;background:none;border:none;padding:2px 0 4px 0;margin:-4px 0 4px 0;cursor:pointer;text-align:left">
+        <span style="font-size:14px;color:var(--ink-90)"><strong>${zoomAgg.totaalGemist}</strong> gemist &middot; <strong>${zoomAgg.terugGebeld}</strong> teruggebeld${zoomAgg.nietTerugGebeld.length ? ` &middot; <span style="color:#b45309;font-weight:600">${zoomAgg.nietTerugGebeld.length} nog niet teruggebeld</span>` : ''}</span>
+        <span id="gemiste-oproepen-arrow" style="color:var(--ink-50);font-size:12px">&#9662;</span>
+      </button>
+      <div id="gemiste-oproepen-detail" style="display:none">
+        <div style="color:var(--ink-50);font-size:11px;margin:0 0 12px 0;font-style:italic">
+          Beta: gebaseerd op het Zoom-call-resultaat, aangevuld met een check van het routeringspad (call path) van de Lancyr-wachtrij zelf (sinds 25 aug 2026) om oproepen te herkennen die overliepen naar een andere bestemming &mdash; controleer bij twijfel alsnog de Zoom-telefonielog zelf.
+        </div>
+        <table class="gesprekken-table">
+          <thead>
+            <tr>
+              <th>Datum</th>
+              <th>Tijd</th>
+              <th>Nummer</th>
+              <th>Call-resultaat</th>
+              <th>Teruggebeld</th>
+            </tr>
+          </thead>
+          <tbody>${
+            zoomAgg.alleGemist.length > 0
+              ? zoomAgg.alleGemist.map(m => `
+                <tr>
+                  <td>${escapeHtml(formatDateShortNL(m.datum))}</td>
+                  <td>${escapeHtml(m.tijd)}</td>
+                  <td>${escapeHtml(m.nummer)}</td>
+                  <td>${escapeHtml(m.callResult)}</td>
+                  <td>${m.teruggebeld ? '<span style="color:var(--green)">Ja</span>' : '<span style="color:#b45309;font-weight:600">Nee</span>'}</td>
+                </tr>`).join('')
+              : `<tr><td colspan="5" style="text-align:center;color:#94a3b8;">Geen gemiste oproepen</td></tr>`
+          }</tbody>
+        </table>
       </div>
-      <div style="color:var(--ink-50);font-size:11px;margin:0 0 12px 0;font-style:italic">
-        Beta: gebaseerd op het Zoom-call-resultaat, aangevuld met een check van het routeringspad (call path) van de Lancyr-wachtrij zelf (sinds 25 aug 2026) om oproepen te herkennen die overliepen naar een andere bestemming &mdash; controleer bij twijfel alsnog de Zoom-telefonielog zelf.
-      </div>
-      <table class="gesprekken-table">
-        <thead>
-          <tr>
-            <th>Datum</th>
-            <th>Tijd</th>
-            <th>Nummer</th>
-            <th>Call-resultaat</th>
-          </tr>
-        </thead>
-        <tbody>${
-          zoomAgg.nietTerugGebeld.length > 0
-            ? zoomAgg.nietTerugGebeld.map(m => `
-              <tr>
-                <td>${escapeHtml(formatDateShortNL(m.datum))}</td>
-                <td>${escapeHtml(m.tijd)}</td>
-                <td>${escapeHtml(m.nummer)}</td>
-                <td>${escapeHtml(m.callResult)}</td>
-              </tr>`).join('')
-            : `<tr><td colspan="4" style="text-align:center;color:#94a3b8;">${zoomAgg.dataAvailable ? 'Geen openstaande gemiste oproepen' : 'Geen Zoom-data beschikbaar'}</td></tr>`
-        }</tbody>
-      </table>
+      ` : `<div style="color:var(--ink-50);font-size:12px;margin:-4px 0 0 0">Zoom-data nog niet beschikbaar voor deze periode</div>`}
     </div>
     <!-- KPI HERO -->
     <div class="kpi-row">
