@@ -1,0 +1,134 @@
+{
+  "date": "2026-08-26",
+  "generated_at": "2026-08-27T16:38:58Z",
+  "drukte": "matig",
+  "gesprekken": 4,
+  "stats": {
+    "opgelost": 1,
+    "brandmeester": 2,
+    "afkoop": 0,
+    "terugbel": 0,
+    "geenDekking": 1
+  },
+  "score": 4.8,
+  "conversations": [
+    {
+      "tijd": "10:04",
+      "titel": "Tommy Hilfiger redundancy — temporary contract extensions and permanent conversion",
+      "personen": "Verzekerde: anoniem · Dewi Verver | Juridisch Medewerker",
+      "samenvatting": "Beller werkt bij Tommy Hilfiger en is eerder redundant verklaard; werkgever heeft drie tijdelijke contracten gegeven en beller vraagt of een vierde extensie mogelijk is en of dit dan automatisch permanent wordt. Medewerker gaf inhoudelijk advies over de EU-regelgeving (max 3 tijdelijke contracten, daarna automatisch permanent) en over de 30-dagentermijn voor wijziging; beller is NIET geverifieerd (geen Zoho-match, geen verificatiepoging in transcript). Zaak wordt doorverwezen naar Brandmeester (rechtsbijstand) voor urgente documentbeoordeling vanwege deadline maandag.",
+      "tags": [
+        [
+          "tag-arbeidsrecht",
+          "Arbeidsrecht"
+        ]
+      ],
+      "uitkomst": [
+        "outcome-brandmeester",
+        "Doorverwezen naar Brandmeester"
+      ],
+      "terugbel": false,
+      "verkeerdVerbonden": false,
+      "rechtsbijstandVerwijzing": true,
+      "adviesGegeven": true,
+      "identiteitGeverifieerd": false
+    },
+    {
+      "tijd": "10:31",
+      "titel": "Kostenbeheer en vertrouwen — brief, mediation en betaling met Julia",
+      "personen": "Verzekerde: anoniem · Dewi Verver | Juridisch Medewerker",
+      "samenvatting": "Dit is geen gesprek met een juridische helpdesk, maar een persoonlijk telefoongesprek tussen een rechtsbijstandverlener ('me') en een cliënt (Julia) over kostenbeheer, vertrouwen en betalingsregelingen voor een lopend dossier. De beller is niet geverifieerd in het systeem en er wordt geen inhoudelijk juridisch advies gegeven, maar alleen administratieve en financiële zaken besproken.",
+      "tags": [
+        [
+          "tag-overig",
+          "Kostenbeheer/vertrouwenskwestie"
+        ]
+      ],
+      "uitkomst": [
+        "outcome-geen-dekking",
+        "Geen dekking"
+      ],
+      "terugbel": false,
+      "verkeerdVerbonden": true,
+      "rechtsbijstandVerwijzing": false,
+      "adviesGegeven": false,
+      "identiteitGeverifieerd": false
+    },
+    {
+      "tijd": "11:38",
+      "titel": "Autohuurschade Spanje — foto's en verzekeringsclaim",
+      "personen": "Verzekerde: anoniem · Dewi Verver | Juridisch Medewerker",
+      "samenvatting": "Beller Annie heeft een geschil met een autoverhuurbedrijf in Spanje over schadeclaims voor fijne krasjes aan een gehuurde auto. De medewerker Davy heeft advies gegeven om via e-mail foto's en filmpjes in te dienen als bewijs dat de schade al aanwezig was, maar heeft ook duidelijk gemaakt dat Lancyr geen rechtsbijstand kan verlenen voor buitenlandse zaken. De beller is niet geverifieerd in het systeem en ontvangt alleen telefonisch advies voor de Nederlandse aspecten.",
+      "tags": [
+        [
+          "tag-consument",
+          "Consumentenrecht"
+        ]
+      ],
+      "uitkomst": [
+        "outcome-opgelost",
+        "Telefonisch opgelost"
+      ],
+      "terugbel": false,
+      "verkeerdVerbonden": false,
+      "rechtsbijstandVerwijzing": false,
+      "adviesGegeven": true,
+      "identiteitGeverifieerd": false
+    },
+    {
+      "tijd": "11:47",
+      "titel": "Loodgieter — materialen niet ontvangen en onredelijke kostenclaim",
+      "personen": "Verzekerde: anoniem · Dewi Verver | Juridisch Medewerker",
+      "samenvatting": "Beller heeft een geschil met een loodgieter over ontvangen diensten en materialen: de loodgieter heeft alleen leidingen doorgeslepen maar geen materialen geleverd waarvoor beller heeft betaald, en claimt nu onredelijke kosten (€600 voor 3 uur werk à €35/uur). Beller is geverifieerd via postcode en adres (Bernard Caro 53, nummer 17). De medewerker heeft geen inhoudelijk advies gegeven maar heeft de zaak direct doorverwezen naar Brandmeester (rechtsbijstand) voor verdere behandeling.",
+      "tags": [
+        [
+          "tag-consument",
+          "Consumentenrecht"
+        ]
+      ],
+      "uitkomst": [
+        "outcome-brandmeester",
+        "Doorverwezen naar Brandmeester"
+      ],
+      "terugbel": false,
+      "verkeerdVerbonden": false,
+      "rechtsbijstandVerwijzing": true,
+      "adviesGegeven": false,
+      "identiteitGeverifieerd": true
+    }
+  ],
+  "acties": [],
+  "analyse": {
+    "goed": [
+      "10:04 Tommy Hilfiger: Zaak correct doorverwezen naar Brandmeester met erkende urgentie (deadline maandag)",
+      "11:47 Loodgieter: Beller correct geverifieerd via postcode/adres; zaak passend doorverwezen naar rechtsbijstand zonder onterecht advies",
+      "11:47 Loodgieter: Geen advies gegeven omdat verificatie en doorverwijzing voldoende waren — juiste procedure"
+    ],
+    "beter": [
+      "10:04 Tommy Hilfiger: KRITIEK — Inhoudelijk juridisch advies gegeven (EU-regelgeving, automatische permanentmaking, 30-dagentermijn) ZONDER dat beller was geverifieerd in het systeem. Dit is directe schending van de kwaliteitsnorm 'altijd polis+identiteit verifieren voordat advies wordt gegeven'.",
+      "11:38 Autohuurschade Spanje: KRITIEK — Beller Annie niet geverifieerd in het systeem, maar wel inhoudelijk advies gegeven over schadebewijs (foto's/filmpjes) en bewijsstrategie. Verificatie ontbreekt vooraf.",
+      "11:38 Autohuurschade Spanje: Dekkingscontrole ontbreekt — bij schadeclaim (auto-krasjes, franchise EUR 250) is niet vastgelegd of de schade boven de franchise valt of welk bedrag op het spel staat.",
+      "11:38 Autohuurschade Spanje: Geen concrete vervolgdeadline afgesproken; beller krijgt alleen advies om 'via e-mail' foto's in te dienen, maar geen duidelijk vervolgplan met Lancyr-contact.",
+      "10:31 Julia-gesprek: Dit is geen juridische helpdesk-interactie maar een interne kostenbesprekding tussen rechtsbijstandverlener en cliënt — inhoudelijk geen kwaliteitsfout, maar wel organisatorisch misplaatst in een helpdesk-gesprekkenlijst."
+    ]
+  },
+  "verkeerdVerbonden": {
+    "aantal": 1,
+    "percentage": 25.0
+  },
+  "rechtsbijstandVerwijzingen": 2,
+  "categorieen": [
+    [
+      "Consumentenrecht",
+      2
+    ],
+    [
+      "Arbeidsrecht",
+      1
+    ],
+    [
+      "Kostenbeheer/vertrouwenskwestie",
+      1
+    ]
+  ]
+}
