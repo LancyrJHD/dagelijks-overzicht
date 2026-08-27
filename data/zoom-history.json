@@ -134,8 +134,8 @@
   },
   "2026-08-19": {
     "date": "2026-08-19",
-    "generated_at": "2026-08-25T11:43:05Z",
-    "nietTerugGebeld": 4,
+    "generated_at": "2026-08-27T12:50:08Z",
+    "nietTerugGebeld": 6,
     "nietTerugGebeldNummers": [
       {
         "callResult": "abandoned",
@@ -150,6 +150,12 @@
         "tijd": "09:24"
       },
       {
+        "callResult": "overflowed",
+        "naam": "Onbekend",
+        "nummer": "+31642508400",
+        "tijd": "10:35"
+      },
+      {
         "callResult": "abandoned",
         "naam": "Onbekend",
         "nummer": "+31620525622",
@@ -160,10 +166,16 @@
         "naam": "Onbekend",
         "nummer": "+31134637012",
         "tijd": "13:45"
+      },
+      {
+        "callResult": "overflowed",
+        "naam": "Onbekend",
+        "nummer": "+31644445531",
+        "tijd": "15:51"
       }
     ],
-    "terugGebeld": 1,
-    "totaalGemist": 5,
+    "terugGebeld": 3,
+    "totaalGemist": 9,
     "totaalInbound": 15
   },
   "2026-08-20": {
