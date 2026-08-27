@@ -167,6 +167,16 @@ def main():
         print(f"Gevonden: {len(matches)} record(en)")
         for m in matches:
             print(json.dumps(m, indent=2, ensure_ascii=False))
+            call_id = m.get('id')
+            print(f"--- CALL PATH voor {call_id!r} ---")
+            try:
+                path = get_call_path(access_token, call_id)
+                print(json.dumps(path, indent=2, ensure_ascii=False))
+            except urllib.error.HTTPError as e:
+                body = e.read().decode(errors='replace')
+                print(f"  (kon call path niet ophalen: HTTP {e.code} -- {body})")
+            except Exception as e:
+                print(f"  (kon call path niet ophalen: {e})")
         print("--- EINDE DIAGNOSE-ONLY (data/zoom-calls.json NIET geschreven) ---")
         return
 
