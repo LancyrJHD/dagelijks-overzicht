@@ -1,0 +1,269 @@
+{
+  "date": "2026-08-17",
+  "generated_at": "2026-08-27T16:28:58Z",
+  "drukte": "druk",
+  "gesprekken": 10,
+  "stats": {
+    "opgelost": 3,
+    "brandmeester": 1,
+    "afkoop": 1,
+    "terugbel": 2,
+    "geenDekking": 3
+  },
+  "score": 5.1,
+  "conversations": [
+    {
+      "tijd": "09:01",
+      "titel": "Daily Huddle",
+      "personen": "Verzekerde: anoniem · Senne Duifhuis | Juridisch medewerker",
+      "samenvatting": "Dit is een intern teammeeting (daily huddle) van medewerkers van een juridisch kantoor/organisatie, waarin zij hun werkzaamheden en wekelijkse doelstellingen bespreken. Dit is geen telefonisch juridisch advies aan een beller/verzekerde. De beller is niet geverifieerd, geen inhoudelijk juridisch advies is gegeven aan een externe partij, en er is geen sprake van een cliëntcontact.",
+      "tags": [
+        [
+          "tag-overig",
+          "Interne bedrijfsmeeting"
+        ]
+      ],
+      "uitkomst": [
+        "outcome-geen-dekking",
+        "Geen dekking"
+      ],
+      "terugbel": false,
+      "verkeerdVerbonden": true,
+      "rechtsbijstandVerwijzing": false,
+      "adviesGegeven": false,
+      "identiteitGeverifieerd": false
+    },
+    {
+      "tijd": "09:56",
+      "titel": "Telefoonnummer update en doorverwijzing naar Brandmeester",
+      "personen": "Verzekerde: anoniem · Senne Duifhuis | Juridisch medewerker",
+      "samenvatting": "De beller (Van Arnhem) belde eerder om een nieuw telefoonnummer door te geven en zijn situatie is inmiddels veranderd; hij heeft te maken met een jeugdtrauma en heeft ziekenhuis/ggz-zorg gehad. De medewerker bevestigt dat het telefoonnummer al naar Brandmeester is gestuurd en verwijst de zaak expliciet door naar Brandmeester voor verdere ondersteuning. De beller is niet geverifieerd in het systeem en er is geen inhoudelijk juridisch advies gegeven.",
+      "tags": [
+        [
+          "tag-overig",
+          "Niet-juridische/persoonlijke aangelegenheid"
+        ]
+      ],
+      "uitkomst": [
+        "outcome-brandmeester",
+        "Doorverwezen naar Brandmeester"
+      ],
+      "terugbel": false,
+      "verkeerdVerbonden": false,
+      "rechtsbijstandVerwijzing": true,
+      "adviesGegeven": false,
+      "identiteitGeverifieerd": false
+    },
+    {
+      "tijd": "09:59",
+      "titel": "Schadevergoeding aanbod — prijsaanpassing en bevestiging",
+      "personen": "Verzekerde: anoniem · Senne Duifhuis | Juridisch medewerker",
+      "samenvatting": "De medewerker biedt een herzien schadevergoedingsbedrag van EUR 349 aan (in plaats van EUR 350) en stuurt een aangepast aanbod via e-mail. De beller wordt gevraagd de bijlage en factuur als bevestiging terug te sturen. De beller is niet geverifieerd in het systeem, en er is geen inhoudelijk juridisch advies gegeven — dit is een vervolgcontact over een eerdere schadeclaim met prijsaanpassing.",
+      "tags": [
+        [
+          "tag-consument",
+          "Consumentenrecht"
+        ]
+      ],
+      "uitkomst": [
+        "outcome-terugbel",
+        "Terugbellen"
+      ],
+      "terugbel": true,
+      "verkeerdVerbonden": false,
+      "rechtsbijstandVerwijzing": false,
+      "adviesGegeven": false,
+      "identiteitGeverifieerd": false
+    },
+    {
+      "tijd": "11:20",
+      "titel": "Juridische helpdesk — routering auto-verzekeringsvraag",
+      "personen": "Verzekerde: anoniem · Senne Duifhuis | Juridisch medewerker",
+      "samenvatting": "De beller belde de juridische helpdesk maar heeft een autoverzekeringsvraag (schadeclaim na ongeval). De medewerker identificeerde correct dat dit niet tot de juridische helpdesk behoort en verwees de beller door naar de juiste afdeling via de Lancyr-website. De beller is niet geverifieerd en er is geen inhoudelijk juridisch advies gegeven.",
+      "tags": [
+        [
+          "tag-overig",
+          "Autoverzekering"
+        ]
+      ],
+      "uitkomst": [
+        "outcome-geen-dekking",
+        "Geen dekking"
+      ],
+      "terugbel": false,
+      "verkeerdVerbonden": true,
+      "rechtsbijstandVerwijzing": false,
+      "adviesGegeven": false,
+      "identiteitGeverifieerd": false
+    },
+    {
+      "tijd": "12:22",
+      "titel": "Tesla-oplader — schadeclaim en ingebrekestelling",
+      "personen": "Verzekerde: anoniem · Senne Duifhuis | Juridisch medewerker",
+      "samenvatting": "Beller heeft een Tesla-oplader die na een software-update niet meer werkt; de vervangingswaarde bedraagt EUR 250. De medewerker heeft vastgesteld dat het schadebedrag onder de franchise van EUR 250 valt en daarom geen dekking biedt volgens de polis. Er is inhoudelijk juridisch advies gegeven over de mogelijkheid van een ingebrekestelling naar Tesla, maar de beller is niet geverifieerd in het systeem.",
+      "tags": [
+        [
+          "tag-consument",
+          "Consumentenrecht"
+        ]
+      ],
+      "uitkomst": [
+        "outcome-geen-dekking",
+        "Geen dekking"
+      ],
+      "terugbel": false,
+      "verkeerdVerbonden": false,
+      "rechtsbijstandVerwijzing": false,
+      "adviesGegeven": true,
+      "identiteitGeverifieerd": false
+    },
+    {
+      "tijd": "13:01",
+      "titel": "Rechtsbijstandsverzekering — modules en garantiekwestie eettafel",
+      "personen": "Verzekerde: anoniem · Senne Duifhuis | Juridisch medewerker",
+      "samenvatting": "Beller heeft rechtsbijstandsverzekering en vraagt eerst naar welke modules zij verzekerd is (antwoord: consument, verkeerbasis, verkeer uitgebreid, persoon en familie, wonen; niet: inkomen, belasting en vermogensbeheer). Vervolgens stelt beller een concreet geschil voor: eettafel van €700 met garantie waarvan marmer loslaat; verkoper weigert zonder onderzoek. Medewerker geeft inhoudelijk juridisch advies: ingebrekenstelling versturen met veertien dagen wachtperiode, en beller krijgt contactgegevens en mailadres voor vervolgstappen.",
+      "tags": [
+        [
+          "tag-consument",
+          "Consumentenrecht"
+        ]
+      ],
+      "uitkomst": [
+        "outcome-opgelost",
+        "Telefonisch opgelost"
+      ],
+      "terugbel": false,
+      "verkeerdVerbonden": false,
+      "rechtsbijstandVerwijzing": false,
+      "adviesGegeven": true,
+      "identiteitGeverifieerd": true
+    },
+    {
+      "tijd": "13:07",
+      "titel": "Juridische advies — pak aangepast door derde partij zonder toestemming",
+      "personen": "Verzekerde: anoniem · Senne Duifhuis | Juridisch medewerker",
+      "samenvatting": "Beller belt zonder rechtsbijstandsverzekering via tip van collega voor juridisch advies over een geschil: een kledingmaker heeft zonder toestemming een pak van klant verder aangepast en eist EUR 200 vergoeding. Medewerker geeft inhoudelijk advies dat beller de vergoeding niet hoeft te betalen omdat de klant geen kans heeft gegeven tot zelf herstel, en stelt dat de formele aanzegging waarschijnlijk een dreigement is. Beller wordt NIET geverifieerd in het systeem (geen Zoho-match, postcode-controle mislukt, geen polisnummer gegeven), maar medewerker geeft desondanks rechtsbijstandsadvies.",
+      "tags": [
+        [
+          "tag-consument",
+          "Consumentenrecht"
+        ]
+      ],
+      "uitkomst": [
+        "outcome-opgelost",
+        "Telefonisch opgelost"
+      ],
+      "terugbel": false,
+      "verkeerdVerbonden": false,
+      "rechtsbijstandVerwijzing": false,
+      "adviesGegeven": true,
+      "identiteitGeverifieerd": false
+    },
+    {
+      "tijd": "13:46",
+      "titel": "Badkamerrenovatie — urenverloop en kostenoverschrijding",
+      "personen": "Verzekerde: anoniem · Senne Duifhuis | Juridisch medewerker",
+      "samenvatting": "Beller heeft een badkamerrenovatie laten uitvoeren waarbij de offerte 220 uur aangaf maar de werkelijke uitvoering naar 390+ uur is gelopen (bijna verdubbeling). De medewerker heeft de beller NIET geverifieerd (geen Zoho-match, verificatie in transcript faalt door taalbarrière). Er is WEL inhoudelijk advies gegeven: medewerker legt uit dat de offerte een clausule bevat dat 'het totale uiteindelijke bedrag kan afwijken' en adviseert contact op te nemen met de aannemer voor urenverantwoording en waarschuwing of deze overschrijding tijdig is gecommuniceerd. Het gesprek eindigt met een vervolgstap (contact opnemen met aannemer).",
+      "tags": [
+        [
+          "tag-bouw",
+          "Bouwrecht"
+        ]
+      ],
+      "uitkomst": [
+        "outcome-terugbel",
+        "Terugbellen"
+      ],
+      "terugbel": true,
+      "verkeerdVerbonden": false,
+      "rechtsbijstandVerwijzing": false,
+      "adviesGegeven": true,
+      "identiteitGeverifieerd": false
+    },
+    {
+      "tijd": "15:05",
+      "titel": "Juridische helpdesk — prijsvermindering en waarschuwing aannemer",
+      "personen": "Verzekerde: anoniem · Senne Duifhuis | Juridisch medewerker",
+      "samenvatting": "De beller heeft een geschil met een aannemer over een prijsvermindering en waarschuwing. De medewerker heeft advies gegeven om met de aannemer in gesprek te gaan over prijsaanpassing (richtlijn: 10-20%) en bij weigering terug te bellen. De beller is niet geverifieerd in het systeem (geen Zoho-match, geen expliciete verificatie in transcript).",
+      "tags": [
+        [
+          "tag-bouw",
+          "Bouwrecht"
+        ]
+      ],
+      "uitkomst": [
+        "outcome-opgelost",
+        "Telefonisch opgelost"
+      ],
+      "terugbel": false,
+      "verkeerdVerbonden": false,
+      "rechtsbijstandVerwijzing": false,
+      "adviesGegeven": true,
+      "identiteitGeverifieerd": false
+    },
+    {
+      "tijd": "16:22",
+      "titel": "Verzekeringsclaim ANWB — schadevrije jaren en minnelijke schikking",
+      "personen": "Verzekerde: anoniem · Senne Duifhuis | Juridisch medewerker",
+      "samenvatting": "Beller (Harkema) werd geverifieerd via postcode en huisnummer en sprak over een geschil met ANWB-verzekering over schadevrije jaren die niet correct werden overgedragen tussen verzekeraars, resulterend in een dagvaarding voor EUR 600. De medewerker bood een minnelijke schikking van EUR 500 aan (afkoop) omdat zij onzeker was over dekking, en verwees voor eventuele verdere rechtsbijstand naar de rechtsbijstandsverzekering.",
+      "tags": [
+        [
+          "tag-consument",
+          "Consumentenrecht"
+        ]
+      ],
+      "uitkomst": [
+        "outcome-afkoop",
+        "Afkoop"
+      ],
+      "terugbel": false,
+      "verkeerdVerbonden": false,
+      "rechtsbijstandVerwijzing": true,
+      "adviesGegeven": true,
+      "identiteitGeverifieerd": true
+    }
+  ],
+  "acties": [],
+  "analyse": {
+    "goed": [
+      "09:56 (Telefoonnummer update): Correcte doorverwijzing naar Brandmeester zonder ongeïndiceerde verificatie.",
+      "11:20 (Auto-verzekeringsvraag): Correct herkend buiten scope juridische helpdesk en doorverwezen naar juiste afdeling.",
+      "13:01 (Rechtsbijstandsverzekering eettafel): Beller volledig geverifieerd, modules helder besproken, concreet juridisch advies gegeven (ingebrekenstelling 14 dagen), vervolgstappen duidelijk benoemd.",
+      "16:22 (ANWB-claim Harkema): Beller geverifieerd via postcode/huisnummer, dekkingsprobleem correct herkend, minnelijke schikking aangeboden als pragmatische oplossing."
+    ],
+    "beter": [
+      "12:22 (Tesla-oplader): KRITIEK — Advies gegeven (ingebrekestelling naar Tesla) zonder dat beller in systeem is geverifieerd. Polis/identiteit moest eerst bevestigd worden voordat inhoudelijk juridisch advies werd gegeven.",
+      "13:07 (Pak aangepast): KRITIEK — Ernstige verificatiefout: beller heeft geen rechtsbijstandsverzekering, verificatie mislukt (geen Zoho-match, postcode-controle faalt), en medewerker geeft desondanks volledig rechtsbijstandsadvies. Dit is ongeoorloofd.",
+      "13:46 (Badkamerrenovatie): KRITIEK — Verificatie expliciet mislukt (geen Zoho-match, taalbarrière), maar medewerker geeft toch inhoudelijk juridisch advies over offerteclausules en kostenoverschrijding. Advies had afhankelijk moeten zijn van succesvolle verificatie.",
+      "15:05 (Prijsvermindering aannemer): Geen verificatie vastgesteld; medewerker geeft inhoudelijk advies (10-20% richtlijn) zonder identiteitscontrole.",
+      "09:59 (Schadevergoeding EUR 349): Beller niet geverifieerd; zonder polisverificatie is onduidelijk of dit contact aan de juiste persoon wordt gegeven. Bij schadeclaim hoort ook dekkingscontrole (franchise EUR 250) expliciet vastgelegd te worden in het dossier."
+    ]
+  },
+  "verkeerdVerbonden": {
+    "aantal": 2,
+    "percentage": 20.0
+  },
+  "rechtsbijstandVerwijzingen": 2,
+  "categorieen": [
+    [
+      "Consumentenrecht",
+      5
+    ],
+    [
+      "Bouwrecht",
+      2
+    ],
+    [
+      "Interne bedrijfsmeeting",
+      1
+    ],
+    [
+      "Niet-juridische/persoonlijke aangelegenheid",
+      1
+    ],
+    [
+      "Autoverzekering",
+      1
+    ]
+  ]
+}
