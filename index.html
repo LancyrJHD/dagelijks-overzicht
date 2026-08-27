@@ -873,9 +873,14 @@ body {
 }
 
 @media (max-width: 600px) {
-  /* Topbar */
-  .topbar { height: 56px; }
-  .topbar-opdracht { display: none; }
+  /* Topbar: laat de rechterkant wrappen i.p.v. van het scherm af te
+     lopen (bevinding 27 aug 2026: Medewerker/Management-toggle en
+     Uitloggen vielen buiten beeld op mobiel) en houd het Lancyr-logo
+     zichtbaar (verkleind i.p.v. verborgen). */
+  .topbar { height: auto; min-height: 56px; flex-wrap: wrap; row-gap: 8px; padding: 8px 16px; }
+  .topbar-left { flex-wrap: wrap; gap: 10px; }
+  .topbar-right { flex-wrap: wrap; justify-content: flex-end; gap: 8px; }
+  .topbar-opdracht { transform: scale(0.82); transform-origin: right center; }
 
   /* Header */
   .header-left h1 { font-size: 20px; }
