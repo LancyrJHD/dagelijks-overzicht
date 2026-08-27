@@ -1,0 +1,80 @@
+{
+  "date": "2026-08-21",
+  "generated_at": "2026-08-27T16:35:38Z",
+  "drukte": "rustig",
+  "gesprekken": 2,
+  "stats": {
+    "opgelost": 1,
+    "brandmeester": 0,
+    "afkoop": 1,
+    "terugbel": 0,
+    "geenDekking": 0
+  },
+  "score": 6.1,
+  "conversations": [
+    {
+      "tijd": "14:28",
+      "titel": "Transavia-claim afwijzing — settlement en documentatie met Jack Dunst",
+      "personen": "Verzekerde: anoniem · Dewi Verver | Juridisch Medewerker",
+      "samenvatting": "Jack Dunst (geverifieerd via postcode 1349 en adres) diende een claim in tegen Transavia wegens vluchtverspilling, die is afgewezen. De medewerker bood een afkoop van EUR 500 aan, met dien verstande dat documentatie (vliegticket/factuur) moet worden overlegd. Beller accepteerde het aanbod; er wordt een bevestigingsmail verstuurd en de zaak wordt gesloten na ontvangst van de factuur.",
+      "tags": [
+        [
+          "tag-consument",
+          "Consumentenrecht"
+        ]
+      ],
+      "uitkomst": [
+        "outcome-afkoop",
+        "Afkoop"
+      ],
+      "terugbel": false,
+      "verkeerdVerbonden": false,
+      "rechtsbijstandVerwijzing": false,
+      "adviesGegeven": true,
+      "identiteitGeverifieerd": true
+    },
+    {
+      "tijd": "14:56",
+      "titel": "Kozijnwerk – herstelling en betalingskwestie met Dori Santana",
+      "personen": "Verzekerde: anoniem · Dewi Verver | Juridisch Medewerker",
+      "samenvatting": "Dori Santana belde met een geschil over geplaatst kozijnwerk dat niet volgens tekening is uitgevoerd. De medewerker gaf inhoudelijk juridisch advies: eerst schriftelijk (per mail) aanmaning met 14 werkdagen termijn sturen, met foto's en duidelijke beschrijving, en de factuur intussen wel betalen omdat werkzaamheden zijn verricht. De beller is niet geverifieerd in het systeem en geen vervolgafspraak werd gemaakt.",
+      "tags": [
+        [
+          "tag-consument",
+          "Consumentenrecht"
+        ]
+      ],
+      "uitkomst": [
+        "outcome-opgelost",
+        "Telefonisch opgelost"
+      ],
+      "terugbel": false,
+      "verkeerdVerbonden": false,
+      "rechtsbijstandVerwijzing": false,
+      "adviesGegeven": true,
+      "identiteitGeverifieerd": false
+    }
+  ],
+  "acties": [],
+  "analyse": {
+    "goed": [
+      "14:28 Transavia-claim: identiteit correct geverifieerd (postcode + adres), settlement met duidelijk vervolgstap (documentatie overlegd, bevestigingsmail verstuurd)",
+      "14:28 Transavia-claim: concrete deadline voor afsluiting (na ontvangst factuur) afgesproken"
+    ],
+    "beter": [
+      "14:56 Kozijnwerk Santana: identiteit NIET geverifieerd in het systeem voordat juridisch advies werd gegeven (aanmaning, betalingsadvies) — dit is een kritieke verificatiefout",
+      "14:56 Kozijnwerk Santana: GEEN vervolgcontact of deadline afgesproken ondanks dat beller niet in systeem kon worden gecontroleerd — risico op latere geschillen over gegeven advies"
+    ]
+  },
+  "verkeerdVerbonden": {
+    "aantal": 0,
+    "percentage": 0.0
+  },
+  "rechtsbijstandVerwijzingen": 0,
+  "categorieen": [
+    [
+      "Consumentenrecht",
+      2
+    ]
+  ]
+}
