@@ -481,6 +481,12 @@ body {
   gap: 14px;
 }
 
+.stat-strip-4 {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 14px;
+}
+
 .stat-card {
   display: flex;
   flex-direction: column;
@@ -861,90 +867,6 @@ body {
 
 .empty-state p { font-size: 14px; margin-top: 8px; }
 
-/* ── RESPONSIVE ── */
-@media (max-width: 900px) {
-  /* Topbar */
-  .topbar { padding: 0 16px; }
-  .avatar-stack { display: none; }
-
-  /* Header */
-  .header-band { padding: 16px; flex-direction: column; align-items: flex-start; gap: 10px; }
-  .header-left h1 { font-size: 26px; }
-  .period-tabs { width: 100%; }
-  .period-tab { flex: 1; font-size: 12px; padding: 6px 8px; text-align: center; }
-
-  /* Main */
-  .main { padding: 16px; gap: 16px; }
-
-  /* KPI-rij: 1 kolom */
-  .kpi-row { grid-template-columns: 1fr; }
-
-  /* Stat-strip: 3 per rij */
-  .stat-strip { grid-template-columns: repeat(3, 1fr); gap: 10px; }
-  .stat-card .stat-value { font-size: 22px; }
-
-  /* Week-context: 3 per rij */
-  .week-context-card { flex-wrap: wrap; }
-  .wc-item { flex: 0 0 calc(33.33% - 1px); min-width: 0; border-right: none !important; border-bottom: 1px solid var(--line); }
-  .wc-value { font-size: 20px; }
-
-  /* Charts */
-  .charts-row { grid-template-columns: 1fr; }
-
-  /* Gesprekken: verberg Onderwerp */
-  .gesprekken-table thead th:nth-child(3),
-  .gesprekken-table tbody td:nth-child(3) { display: none; }
-  .gs-samenvatting { max-width: 180px; }
-}
-
-@media (max-width: 600px) {
-  /* Topbar: laat de rechterkant wrappen i.p.v. van het scherm af te
-     lopen (bevinding 27 aug 2026: Medewerker/Management-toggle en
-     Uitloggen vielen buiten beeld op mobiel) en houd het Lancyr-logo
-     zichtbaar (verkleind i.p.v. verborgen). */
-  .topbar { height: auto; min-height: 56px; flex-wrap: wrap; row-gap: 8px; padding: 8px 16px; }
-  .topbar-left { flex-wrap: wrap; gap: 10px; }
-  .topbar-right { flex-wrap: wrap; justify-content: flex-end; gap: 8px; }
-  .topbar-opdracht { transform: scale(0.82); transform-origin: right center; }
-
-  /* Header */
-  .header-left h1 { font-size: 20px; }
-  .header-band { padding: 12px 16px; }
-
-  /* Stat-strip: 2 per rij (6 items = 3 rijen) */
-  .stat-strip { grid-template-columns: repeat(2, 1fr); }
-
-  /* Week-context: 2 per rij */
-  .wc-item { flex: 0 0 calc(50% - 1px); }
-
-  /* Gesprekken: verberg Uitkomst en Samenvatting, toon enkel Tijd + Jurist */
-  .gs-samenvatting { display: none; }
-  .gesprekken-table thead th:nth-child(4),
-  .gesprekken-table tbody td:nth-child(4) { display: none; }
-  .gesprekken-table thead th:nth-child(2),
-  .gesprekken-table tbody td:nth-child(2) { display: none; }
-
-  /* Modal: bijna full-screen */
-  .gesprek-modal-overlay { padding: 8px; }
-  .gesprek-modal { padding: 20px; border-radius: 16px; max-height: 92vh; }
-  .gm-titel { font-size: 15px; }
-  .gm-samenvatting { font-size: 13px; }
-
-  /* Period tabs */
-  .period-tab { font-size: 11px; padding: 5px 6px; }
-}
-
-@media (max-width: 420px) {
-  .main { padding: 10px; gap: 10px; }
-  .card { padding: 14px; border-radius: 16px; }
-  .stat-strip { gap: 8px; }
-  .wc-item { padding: 12px; }
-  .wc-value { font-size: 18px; }
-  .bm-stat .bm-count { font-size: 32px; }
-  .drukte-level { font-size: 28px; }
-  .score-big { font-size: 36px; }
-}
-
 /* ── WEEK-CONTEXT BANNER ── */
 .week-context-card {
   display: flex;
@@ -1293,6 +1215,91 @@ body {
   transition: all 0.15s;
 }
 .logout-btn:hover { background: var(--bg); color: var(--navy); }
+
+/* ── RESPONSIVE ── */
+@media (max-width: 900px) {
+  /* Topbar */
+  .topbar { padding: 0 16px; }
+  .avatar-stack { display: none; }
+
+  /* Header */
+  .header-band { padding: 16px; flex-direction: column; align-items: flex-start; gap: 10px; }
+  .header-left h1 { font-size: 26px; }
+  .period-tabs { width: 100%; }
+  .period-tab { flex: 1; font-size: 12px; padding: 6px 8px; text-align: center; }
+
+  /* Main */
+  .main { padding: 16px; gap: 16px; }
+
+  /* KPI-rij: 1 kolom */
+  .kpi-row { grid-template-columns: 1fr; }
+
+  /* Stat-strip: 3 per rij */
+  .stat-strip { grid-template-columns: repeat(3, 1fr); gap: 10px; }
+  .stat-card .stat-value { font-size: 22px; }
+
+  /* Week-context: 3 per rij */
+  .week-context-card { flex-wrap: wrap; }
+  .wc-item { flex: 0 0 calc(33.33% - 1px); min-width: 0; border-right: none !important; border-bottom: 1px solid var(--line); }
+  .wc-value { font-size: 20px; }
+
+  /* Charts */
+  .charts-row { grid-template-columns: 1fr; }
+
+  /* Gesprekken: verberg Onderwerp */
+  .gesprekken-table thead th:nth-child(3),
+  .gesprekken-table tbody td:nth-child(3) { display: none; }
+  .gs-samenvatting { max-width: 180px; }
+}
+
+@media (max-width: 600px) {
+  /* Topbar: laat de rechterkant wrappen i.p.v. van het scherm af te
+     lopen (bevinding 27 aug 2026: Medewerker/Management-toggle en
+     Uitloggen vielen buiten beeld op mobiel) en houd het Lancyr-logo
+     zichtbaar (verkleind i.p.v. verborgen). */
+  .topbar { height: auto; min-height: 56px; flex-wrap: wrap; row-gap: 8px; padding: 8px 16px; }
+  .topbar-left { flex-wrap: wrap; gap: 10px; }
+  .topbar-right { flex-wrap: wrap; justify-content: flex-end; gap: 8px; }
+  .topbar-opdracht { transform: scale(0.82); transform-origin: right center; }
+
+  /* Header */
+  .header-left h1 { font-size: 20px; }
+  .header-band { padding: 12px 16px; }
+
+  /* Stat-strip: 2 per rij (6 items = 3 rijen) */
+  .stat-strip { grid-template-columns: repeat(2, 1fr); }
+  .stat-strip-4 { grid-template-columns: repeat(2, 1fr); }
+
+  /* Week-context: 2 per rij */
+  .wc-item { flex: 0 0 calc(50% - 1px); }
+
+  /* Gesprekken: verberg Uitkomst en Samenvatting, toon enkel Tijd + Jurist */
+  .gs-samenvatting { display: none; }
+  .gesprekken-table thead th:nth-child(4),
+  .gesprekken-table tbody td:nth-child(4) { display: none; }
+  .gesprekken-table thead th:nth-child(2),
+  .gesprekken-table tbody td:nth-child(2) { display: none; }
+
+  /* Modal: bijna full-screen */
+  .gesprek-modal-overlay { padding: 8px; }
+  .gesprek-modal { padding: 20px; border-radius: 16px; max-height: 92vh; }
+  .gm-titel { font-size: 15px; }
+  .gm-samenvatting { font-size: 13px; }
+
+  /* Period tabs */
+  .period-tab { font-size: 11px; padding: 5px 6px; }
+}
+
+@media (max-width: 420px) {
+  .main { padding: 10px; gap: 10px; }
+  .card { padding: 14px; border-radius: 16px; }
+  .stat-strip { gap: 8px; }
+  .wc-item { padding: 12px; }
+  .wc-value { font-size: 18px; }
+  .bm-stat .bm-count { font-size: 32px; }
+  .drukte-level { font-size: 28px; }
+  .score-big { font-size: 36px; }
+}
 
 @media (max-width: 480px) {
   .auth-card { padding: 28px 20px; }
@@ -4051,7 +4058,7 @@ function renderDashboard(period) {
       <div class="chart-card-header">
         <div class="chart-card-title">Tickets (Zoho Desk)</div>
       </div>
-      <div class="stat-strip" style="grid-template-columns:repeat(4,1fr)">
+      <div class="stat-strip stat-strip-4">
         <div class="card stat-card">
           <div class="stat-label">${ticketLabelNieuw}</div>
           <div class="stat-value">${ticketStatsDisplay.nieuweVandaag}</div>
