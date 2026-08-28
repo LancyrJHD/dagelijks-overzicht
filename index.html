@@ -1317,6 +1317,13 @@ body {
   .score-big { font-size: 36px; }
 }
 
+@media print {
+  .no-print, .refresh-btn, .logout-btn, .period-tabs, .topbar-right button,
+  .gesprek-modal-overlay, .score-reden-toggle { display: none !important; }
+  body { background: #fff; }
+  .card { box-shadow: none; border: 1px solid var(--line); break-inside: avoid; }
+}
+
 @media (max-width: 480px) {
   .auth-card { padding: 28px 20px; }
   .auth-title { font-size: 22px; }
@@ -1349,6 +1356,10 @@ body {
     <button class="refresh-btn" onclick="location.href='?periode='+activePeriod+'&v='+Date.now()">
       <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="23 4 23 10 17 10"></polyline><path d="M20.49 15a9 9 0 1 1-2.12-9.36L23 10"></path></svg>
       <span class="refresh-btn-label">Vernieuwen</span>
+    </button>
+    <button class="refresh-btn no-print" onclick="window.print()" title="Exporteer als PDF via de printdialoog">
+      <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 6 2 18 2 18 9"></polyline><path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"></path><rect x="6" y="14" width="12" height="8"></rect></svg>
+      <span class="refresh-btn-label">PDF</span>
     </button>
     <div id="view-toggle-group" style="display:none;align-items:center;border:1px solid var(--navy);border-radius:50px;overflow:hidden;margin-right:8px;font-family:inherit">
       <button id="view-btn-medewerker" onclick="setManagementView(false)" style="border:none;cursor:pointer;font:inherit;font-size:12px;font-weight:600;padding:6px 14px;background:var(--navy);color:#fff">&#128100; Medewerker</button>
@@ -3876,19 +3887,28 @@ function renderDashboard(period) {
   }).join('') || '<tr><td colspan="5" style="text-align:center;padding:24px;color:var(--ink-30);font-size:13px">Geen gesprekken in dit tijdvak</td></tr>';
 
   // Stat strip
+  let dayCompareHTML = '';
+  if (period === 'vandaag') {
+    const yAgg = aggregateEntries(getPeriodData('gisteren').entries);
+    const diff = totalGesprekken - yAgg.totalGesprekken;
+    const diffLabel = diff > 0 ? `+${diff}` : diff < 0 ? `${diff}` : '±0';
+    const diffColor = diff > 0 ? 'var(--green)' : diff < 0 ? '#b45309' : 'var(--ink-50)';
+    dayCompareHTML = `<div style="font-size:11px;color:${diffColor};margin-top:4px;font-weight:600">${diffLabel} t.o.v. gisteren (${yAgg.totalGesprekken})</div>`;
+  }
   const stats4 = [
-    { label: 'Totaal gesprekken', value: totalGesprekken, variant: 'primary' },
-    { label: 'Eerstelijns opgelost', value: totalOpgelost, variant: 'default' },
-    { label: 'Naar Brandmeester', value: totalBrandmeester, variant: totalBrandmeester > 0 ? 'warn' : 'default' },
-    { label: 'Afkoop', value: totalAfkoop, variant: 'default' },
-    { label: 'Terugbellen', value: totalTerugbel, variant: 'default' },
-    { label: 'Geen dekking', value: totalGeenDekking, variant: totalGeenDekking > 0 ? 'warn' : 'default' },
+    { label: 'Totaal gesprekken', value: totalGesprekken, variant: 'primary', extraHTML: dayCompareHTML },
+    { label: 'Eerstelijns opgelost', value: totalOpgelost, variant: 'default', extraHTML: '' },
+    { label: 'Naar Brandmeester', value: totalBrandmeester, variant: totalBrandmeester > 0 ? 'warn' : 'default', extraHTML: '' },
+    { label: 'Afkoop', value: totalAfkoop, variant: 'default', extraHTML: '' },
+    { label: 'Terugbellen', value: totalTerugbel, variant: 'default', extraHTML: '' },
+    { label: 'Geen dekking', value: totalGeenDekking, variant: totalGeenDekking > 0 ? 'warn' : 'default', extraHTML: '' },
   ];
 
   const statStripHTML = stats4.map(s => `
     <div class="card stat-card">
       <div class="stat-label">${s.label}</div>
       <div class="stat-value stat-value-${s.variant}">${s.value}</div>
+      ${s.extraHTML}
     </div>`).join('');
 
   // Line chart
