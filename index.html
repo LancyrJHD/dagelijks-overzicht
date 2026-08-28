@@ -509,9 +509,11 @@ body {
 }
 
 /* Visuele prioritering KPI's (UX-audit 28 aug 2026): kop-metriek in
-   goud, categorieen die idealiter op nul blijven in amber bij afwijking. */
-.stat-value-primary { color: var(--gold); }
-.stat-value-warn { color: #b45309; }
+   goud, categorieen die idealiter op nul blijven in amber bij afwijking.
+   Compound-selector nodig: .stat-card .stat-value (2 klasses) zou anders
+   winnen van een losse .stat-value-primary/-warn regel (1 klasse). */
+.stat-card .stat-value.stat-value-primary { color: var(--gold); }
+.stat-card .stat-value.stat-value-warn { color: #b45309; }
 
 /* ── CHARTS ROW ── */
 .charts-row {
