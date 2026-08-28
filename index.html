@@ -3749,6 +3749,7 @@ function renderDashboard(period) {
   const agg = aggregateEntries(pd.entries);
   const zoomAgg = getZoomAggregate(getZoomPeriodKeys(period));
   const { totalGesprekken, totalOpgelost, totalBrandmeester, totalTerugbel, totalGeenDekking, totalAfkoop, allConversations, avgScore, drukte, juristAvgScore } = agg;
+  const noConversations = totalGesprekken === 0;
 
   // Update header date
   const dateEl = document.getElementById('header-date');
@@ -4035,12 +4036,25 @@ function renderDashboard(period) {
       </div>
     </div>
 
+    <!-- WEEK CONTEXT -->
+    <div class="card week-context-card" id="week-context-bar"></div>
+
     ${scoreRedenHTML}
 
+    ${noConversations ? `
+    <div class="card">
+      <div class="empty-state">
+        <div style="font-size:32px;margin-bottom:8px">📭</div>
+        <div style="font-weight:600;color:var(--navy);font-size:14px">Geen gesprekken geregistreerd in ${escapeHtml(pd.label)}</div>
+        <p>Zodra er gesprekken binnenkomen, verschijnen hier de statistieken, het teamoverzicht en de recente gesprekken.</p>
+      </div>
+    </div>
+    ` : `
     <!-- STAT STRIP -->
     <div class="stat-strip">
       ${statStripHTML}
     </div>
+    `}
 
     ${period === 'vandaag' ? `
     <!-- KANAALVERDELING (Zoho Desk, alleen vandaag) -->
@@ -4079,7 +4093,7 @@ function renderDashboard(period) {
       ${ticketStatsCaveatHTML}
     </div>
 
-    ${managementViewActive ? `
+    ${managementViewActive && !noConversations ? `
     <!-- MANAGEMENT-WEERGAVE: extra kaarten -->
     <div class="charts-row">
       <div class="card">
@@ -4113,8 +4127,7 @@ function renderDashboard(period) {
     </div>
     ` : ''}
 
-    <!-- WEEK CONTEXT -->
-    <div class="card week-context-card" id="week-context-bar"></div>
+    ${noConversations ? '' : `
     <!-- CHARTS ROW -->
     <div class="charts-row">
       <div class="card">
@@ -4167,6 +4180,7 @@ function renderDashboard(period) {
         <tbody>${gesprekkenRows}</tbody>
       </table>
     </div>
+    `}
 
     ${period === 'vandaag' ? `
     <!-- ZOHO DESK TICKETS -->
