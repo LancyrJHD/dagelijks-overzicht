@@ -1,10 +1,138 @@
 {
   "date": "2026-08-28",
-  "generated_at": "2026-08-28T01:04:21Z",
-  "totaalInbound": 0,
-  "totaalGemist": 0,
+  "generated_at": "2026-08-28T17:13:16Z",
+  "totaalInbound": 21,
+  "totaalGemist": 9,
   "terugGebeld": 0,
-  "nietTerugGebeld": 0,
-  "nietTerugGebeldNummers": [],
-  "alleGemistNummers": []
+  "nietTerugGebeld": 9,
+  "nietTerugGebeldNummers": [
+    {
+      "nummer": "+46737179820",
+      "naam": "Onbekend",
+      "tijd": "09:19",
+      "callResult": "overflowed",
+      "teruggebeld": false
+    },
+    {
+      "nummer": "+31625124468",
+      "naam": "Onbekend",
+      "tijd": "10:27",
+      "callResult": "abandoned",
+      "teruggebeld": false
+    },
+    {
+      "nummer": "+31641016631",
+      "naam": "Onbekend",
+      "tijd": "10:34",
+      "callResult": "abandoned",
+      "teruggebeld": false
+    },
+    {
+      "nummer": "+31619864040",
+      "naam": "Onbekend",
+      "tijd": "15:22",
+      "callResult": "overflowed",
+      "teruggebeld": false
+    },
+    {
+      "nummer": "+31640244109",
+      "naam": "Onbekend",
+      "tijd": "15:27",
+      "callResult": "overflowed",
+      "teruggebeld": false
+    },
+    {
+      "nummer": "+31640244109",
+      "naam": "Onbekend",
+      "tijd": "15:41",
+      "callResult": "abandoned",
+      "teruggebeld": false
+    },
+    {
+      "nummer": "+31630274413",
+      "naam": "Onbekend",
+      "tijd": "15:49",
+      "callResult": "overflowed",
+      "teruggebeld": false
+    },
+    {
+      "nummer": "+31640244109",
+      "naam": "Onbekend",
+      "tijd": "16:00",
+      "callResult": "abandoned",
+      "teruggebeld": false
+    },
+    {
+      "nummer": "+31640244109",
+      "naam": "Onbekend",
+      "tijd": "16:11",
+      "callResult": "abandoned",
+      "teruggebeld": false
+    }
+  ],
+  "alleGemistNummers": [
+    {
+      "nummer": "+46737179820",
+      "naam": "Onbekend",
+      "tijd": "09:19",
+      "callResult": "overflowed",
+      "teruggebeld": false
+    },
+    {
+      "nummer": "+31625124468",
+      "naam": "Onbekend",
+      "tijd": "10:27",
+      "callResult": "abandoned",
+      "teruggebeld": false
+    },
+    {
+      "nummer": "+31641016631",
+      "naam": "Onbekend",
+      "tijd": "10:34",
+      "callResult": "abandoned",
+      "teruggebeld": false
+    },
+    {
+      "nummer": "+31619864040",
+      "naam": "Onbekend",
+      "tijd": "15:22",
+      "callResult": "overflowed",
+      "teruggebeld": false
+    },
+    {
+      "nummer": "+31640244109",
+      "naam": "Onbekend",
+      "tijd": "15:27",
+      "callResult": "overflowed",
+      "teruggebeld": false
+    },
+    {
+      "nummer": "+31640244109",
+      "naam": "Onbekend",
+      "tijd": "15:41",
+      "callResult": "abandoned",
+      "teruggebeld": false
+    },
+    {
+      "nummer": "+31630274413",
+      "naam": "Onbekend",
+      "tijd": "15:49",
+      "callResult": "overflowed",
+      "teruggebeld": false
+    },
+    {
+      "nummer": "+31640244109",
+      "naam": "Onbekend",
+      "tijd": "16:00",
+      "callResult": "abandoned",
+      "teruggebeld": false
+    },
+    {
+      "nummer": "+31640244109",
+      "naam": "Onbekend",
+      "tijd": "16:11",
+      "callResult": "abandoned",
+      "teruggebeld": false
+    }
+  ]
 }

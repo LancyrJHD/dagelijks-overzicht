@@ -1,26 +1,84 @@
 {
   "date": "2026-08-28",
-  "generated_at": "2026-08-28T01:04:22Z",
+  "generated_at": "2026-08-28T17:13:32Z",
   "drukte": "rustig",
-  "gesprekken": 0,
+  "gesprekken": 2,
   "stats": {
-    "opgelost": 0,
+    "opgelost": 1,
     "brandmeester": 0,
     "afkoop": 0,
-    "terugbel": 0,
+    "terugbel": 1,
     "geenDekking": 0
   },
-  "score": 0,
-  "conversations": [],
+  "score": 8.1,
+  "conversations": [
+    {
+      "tijd": "16:21",
+      "titel": "Rechtsbijstandverzekering — wachttijd en polis voorwaarden",
+      "personen": "Verzekerde: anoniem · Edgar Stam",
+      "samenvatting": "Pauline Bonenkamp belde de juridische helpdesk met een vraag over polisvoorwaarden (wachttijd rechtsbijstandsverzekering), maar is geen verzekerde van Lancyr en wenst zich eerst aan te melden. De medewerker Edgar stelde correct vast dat dit geen juridische zaak van een bestaande verzekerde betreft, maar een polisaanvraag- en informatievraag. De beller is niet geverifieerd (niet in systeem) en is doorverwezen naar de afdeling Klantenservice voor polisvoorwaarden en registratie. Geen inhoudelijk juridisch advies gegeven.",
+      "tags": [
+        [
+          "tag-overig",
+          "Polisvoorwaarden / Verzekeringsaangelegenheid"
+        ]
+      ],
+      "uitkomst": [
+        "outcome-terugbel",
+        "Terugbellen"
+      ],
+      "terugbel": true,
+      "verkeerdVerbonden": true,
+      "rechtsbijstandVerwijzing": false,
+      "adviesGegeven": false,
+      "identiteitGeverifieerd": false
+    },
+    {
+      "tijd": "16:34",
+      "titel": "Huwelijksvoorwaarden en vermogensscheiding met Niels Flix",
+      "personen": "Verzekerde: anoniem · Edgar Stam",
+      "samenvatting": "Niels Flix belt naar de juridische helpdesk met vragen over zijn huwelijksvoorwaarden. De medewerker verifies de beller via postcode en huisnummer en geeft inhoudelijk advies: onder de 'algehele gemeenschap' zijn alle goederen 50-50 eigendom van beide echtgenoten (behalve levensverzekeringen), en bij scheiding wordt de waarde van het huis gezamenlijk bepaald (via taxatie, marktwaarde of onderling overleg). De beller is tevreden met dit antwoord en beëindigt het gesprek.",
+      "tags": [
+        [
+          "tag-overig",
+          "Familierecht/Huwelijksgoederenrecht"
+        ]
+      ],
+      "uitkomst": [
+        "outcome-opgelost",
+        "Telefonisch opgelost"
+      ],
+      "terugbel": false,
+      "verkeerdVerbonden": false,
+      "rechtsbijstandVerwijzing": false,
+      "adviesGegeven": true,
+      "identiteitGeverifieerd": true
+    }
+  ],
   "acties": [],
   "analyse": {
-    "goed": [],
-    "beter": []
+    "goed": [
+      "16:21 – Rechtsbijstandverzekering: Medewerker Edgar herkende correct dat dit geen zaak van bestaande verzekerde betreft en verwees passend door naar Klantenservice zonder onnodige verificatiepoging.",
+      "16:34 – Huwelijksvoorwaarden: Identiteit van Niels Flix correct geverifieerd (postcode + huisnummer) voordat inhoudelijk advies over vermogensscheiding werd gegeven.",
+      "16:34 – Huwelijksvoorwaarden: Concreet en helder juridisch advies gegeven over gemeenschap en verdeling bij scheiding; beller tevreden en zaak opgelost."
+    ],
+    "beter": [
+      "16:21 – Rechtsbijstandverzekering: Hoewel doorverwijzing correct was, ontbreekt een concrete deadline of vervolgcontact-moment in de beschikbare informatie (ideaal: 'U hoort binnen 2 werkdagen van Klantenservice')."
+    ]
   },
   "verkeerdVerbonden": {
-    "aantal": 0,
-    "percentage": 0.0
+    "aantal": 1,
+    "percentage": 50.0
   },
   "rechtsbijstandVerwijzingen": 0,
-  "categorieen": []
+  "categorieen": [
+    [
+      "Polisvoorwaarden / Verzekeringsaangelegenheid",
+      1
+    ],
+    [
+      "Familierecht/Huwelijksgoederenrecht",
+      1
+    ]
+  ]
 }
