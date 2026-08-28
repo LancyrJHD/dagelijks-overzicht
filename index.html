@@ -508,6 +508,11 @@ body {
   line-height: 1;
 }
 
+/* Visuele prioritering KPI's (UX-audit 28 aug 2026): kop-metriek in
+   goud, categorieen die idealiter op nul blijven in amber bij afwijking. */
+.stat-value-primary { color: var(--gold); }
+.stat-value-warn { color: #b45309; }
+
 /* ── CHARTS ROW ── */
 .charts-row {
   display: grid;
@@ -1339,7 +1344,7 @@ body {
       <div class="live-dot"></div>
       <span>Live &middot; <span class="live-updated-label">bijgewerkt </span><span id="live-time"></span></span>
     </div>
-    <button class="refresh-btn" onclick="location.href='?v='+Date.now()">
+    <button class="refresh-btn" onclick="location.href='?periode='+activePeriod+'&v='+Date.now()">
       <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="23 4 23 10 17 10"></polyline><path d="M20.49 15a9 9 0 1 1-2.12-9.36L23 10"></path></svg>
       <span class="refresh-btn-label">Vernieuwen</span>
     </button>
@@ -3870,18 +3875,18 @@ function renderDashboard(period) {
 
   // Stat strip
   const stats4 = [
-    { label: 'Totaal gesprekken', value: totalGesprekken, delta: null },
-    { label: 'Eerstelijns opgelost', value: totalOpgelost, delta: null },
-    { label: 'Naar Brandmeester', value: totalBrandmeester, delta: null },
-    { label: 'Afkoop', value: totalAfkoop, delta: null },
-    { label: 'Terugbellen', value: totalTerugbel, delta: null },
-    { label: 'Geen dekking', value: totalGeenDekking, delta: null },
+    { label: 'Totaal gesprekken', value: totalGesprekken, variant: 'primary' },
+    { label: 'Eerstelijns opgelost', value: totalOpgelost, variant: 'default' },
+    { label: 'Naar Brandmeester', value: totalBrandmeester, variant: totalBrandmeester > 0 ? 'warn' : 'default' },
+    { label: 'Afkoop', value: totalAfkoop, variant: 'default' },
+    { label: 'Terugbellen', value: totalTerugbel, variant: 'default' },
+    { label: 'Geen dekking', value: totalGeenDekking, variant: totalGeenDekking > 0 ? 'warn' : 'default' },
   ];
 
   const statStripHTML = stats4.map(s => `
     <div class="card stat-card">
       <div class="stat-label">${s.label}</div>
-      <div class="stat-value">${s.value}</div>
+      <div class="stat-value stat-value-${s.variant}">${s.value}</div>
     </div>`).join('');
 
   // Line chart
@@ -4246,6 +4251,15 @@ function renderDashboard(period) {
 window.druktePct = druktePct;
 
 let activePeriod = 'vandaag';
+const VALID_PERIODS = ['vandaag', 'gisteren', 'deze-week', 'vorige-week'];
+let periodFromUrl = null;
+try {
+  const urlPeriod = new URLSearchParams(location.search).get('periode');
+  if (urlPeriod && VALID_PERIODS.includes(urlPeriod)) {
+    activePeriod = urlPeriod;
+    periodFromUrl = urlPeriod;
+  }
+} catch (e) {}
 
 function setTime() {
   const now = new Date();
@@ -4396,7 +4410,7 @@ async function initDashboard() {
   await loadZoomCalls();
   await loadZoomHistory();
   const todayStr = new Date().toLocaleDateString('sv-SE');
-  if (!weekData[todayStr] && Object.keys(weekData).length > 0) {
+  if (!periodFromUrl && !weekData[todayStr] && Object.keys(weekData).length > 0) {
     activePeriod = 'gisteren';
   }
   const tabs = document.querySelectorAll('.period-tab');
@@ -4405,6 +4419,11 @@ async function initDashboard() {
       tabs.forEach(t => t.classList.remove('active'));
       tab.classList.add('active');
       activePeriod = tab.dataset.period;
+      try {
+        const url = new URL(location.href);
+        url.searchParams.set('periode', activePeriod);
+        history.replaceState(null, '', url);
+      } catch (e) {}
       renderDashboard(activePeriod);
     });
   });
