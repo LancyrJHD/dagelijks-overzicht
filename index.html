@@ -1262,6 +1262,15 @@ body {
   .topbar-right { flex-wrap: wrap; justify-content: flex-end; gap: 8px; }
   .topbar-opdracht { transform: scale(0.82); transform-origin: right center; }
 
+  /* Header breekt in 3 regels op mobiel (bevinding UX-audit 28 aug 2026):
+     verberg de tekstlabels in Vernieuwen/live-indicator zodat live-indicator +
+     Vernieuwen + Uitloggen samen op 1 regel naast de logo-regel passen. */
+  .live-updated-label { display: none; }
+  .refresh-btn-label { display: none; }
+  .refresh-btn { padding: 6px 10px; }
+  .logout-btn { padding: 6px 10px; font-size: 11px; }
+  .topbar-right { gap: 6px; }
+
   /* Header */
   .header-left h1 { font-size: 20px; }
   .header-band { padding: 12px 16px; }
@@ -1328,11 +1337,11 @@ body {
   <div class="topbar-right">
     <div class="live-indicator">
       <div class="live-dot"></div>
-      <span>Live &middot; bijgewerkt <span id="live-time"></span></span>
+      <span>Live &middot; <span class="live-updated-label">bijgewerkt </span><span id="live-time"></span></span>
     </div>
     <button class="refresh-btn" onclick="location.href='?v='+Date.now()">
       <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="23 4 23 10 17 10"></polyline><path d="M20.49 15a9 9 0 1 1-2.12-9.36L23 10"></path></svg>
-      Vernieuwen
+      <span class="refresh-btn-label">Vernieuwen</span>
     </button>
     <div id="view-toggle-group" style="display:none;align-items:center;border:1px solid var(--navy);border-radius:50px;overflow:hidden;margin-right:8px;font-family:inherit">
       <button id="view-btn-medewerker" onclick="setManagementView(false)" style="border:none;cursor:pointer;font:inherit;font-size:12px;font-weight:600;padding:6px 14px;background:var(--navy);color:#fff">&#128100; Medewerker</button>
@@ -3764,7 +3773,14 @@ function renderDashboard(period) {
   const starsHTML = avgScore > 0 ? Array.from({length:5}, (_,i) => {
     const full = i < Math.floor(avgScore/2);
     return `<span class="star${full?'':' empty'}">★</span>`;
-  }).join('') : '<span style="color:var(--ink-30);font-size:13px">Geen beoordelingen</span>';
+  }).join('') : '';
+  let weekAvgContextHTML = '';
+  if (avgScore === 0 && (period === 'vandaag' || period === 'gisteren')) {
+    const weekAgg = aggregateEntries(getPeriodData('deze-week').entries);
+    if (weekAgg.avgScore > 0) {
+      weekAvgContextHTML = `<div style="font-size:12px;color:var(--ink-50);margin-top:6px">Gemiddelde deze week: <strong>${weekAgg.avgScore.toFixed(1)}</strong>/10</div>`;
+    }
+  }
 
   const drukteLabel = drukte || 'rustig';
   const druktePct = window.druktePct(drukteLabel);
@@ -4013,12 +4029,17 @@ function renderDashboard(period) {
       <!-- Score -->
       <div class="card card-score">
         <div class="score-label">Gem. klanttevredenheid</div>
+        ${avgScore > 0 ? `
         <div class="score-number">
           <span class="score-big">${scoreDisplay}</span>
           <span class="score-suffix">/10</span>
         </div>
         <div class="stars">${starsHTML}</div>
-        ${avgScore > 0 ? '<span class="delta-badge neutral" style="margin-top:4px;width:fit-content">Geen vergelijking beschikbaar</span>' : ''}
+        <span class="delta-badge neutral" style="margin-top:4px;width:fit-content">Geen vergelijking beschikbaar</span>
+        ` : `
+        <div style="font-size:16px;font-weight:600;color:var(--ink-50);margin-top:10px">Nog geen beoordelingen ${period === 'vandaag' ? 'vandaag' : period === 'gisteren' ? 'gisteren' : 'in deze periode'}</div>
+        ${weekAvgContextHTML}
+        `}
         ${scoreRedenToggleHTML}
       </div>
 
