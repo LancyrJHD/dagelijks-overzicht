@@ -576,24 +576,31 @@
         "callResult": "overflowed",
         "naam": "Onbekend",
         "nummer": "+31654673777",
-        "teruggebeld": false,
+        "teruggebeld": true,
         "tijd": "10:03"
+      },
+      {
+        "callResult": "abandoned",
+        "naam": "Onbekend",
+        "nummer": "+31612143286",
+        "teruggebeld": false,
+        "tijd": "15:31"
       }
     ],
     "date": "2026-08-31",
-    "generated_at": "2026-08-31T11:28:08Z",
+    "generated_at": "2026-08-31T18:06:14Z",
     "nietTerugGebeld": 1,
     "nietTerugGebeldNummers": [
       {
-        "callResult": "overflowed",
+        "callResult": "abandoned",
         "naam": "Onbekend",
-        "nummer": "+31654673777",
+        "nummer": "+31612143286",
         "teruggebeld": false,
-        "tijd": "10:03"
+        "tijd": "15:31"
       }
     ],
-    "terugGebeld": 0,
-    "totaalGemist": 1,
-    "totaalInbound": 7
+    "terugGebeld": 1,
+    "totaalGemist": 2,
+    "totaalInbound": 14
   }
 }
