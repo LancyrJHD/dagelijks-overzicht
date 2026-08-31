@@ -569,5 +569,31 @@
     "terugGebeld": 0,
     "totaalGemist": 9,
     "totaalInbound": 21
+  },
+  "2026-08-31": {
+    "alleGemistNummers": [
+      {
+        "callResult": "overflowed",
+        "naam": "Onbekend",
+        "nummer": "+31654673777",
+        "teruggebeld": false,
+        "tijd": "10:03"
+      }
+    ],
+    "date": "2026-08-31",
+    "generated_at": "2026-08-31T11:28:08Z",
+    "nietTerugGebeld": 1,
+    "nietTerugGebeldNummers": [
+      {
+        "callResult": "overflowed",
+        "naam": "Onbekend",
+        "nummer": "+31654673777",
+        "teruggebeld": false,
+        "tijd": "10:03"
+      }
+    ],
+    "terugGebeld": 0,
+    "totaalGemist": 1,
+    "totaalInbound": 7
   }
 }
