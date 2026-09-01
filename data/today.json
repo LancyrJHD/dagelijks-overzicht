@@ -4,11 +4,12 @@
   "drukte": "druk",
   "gesprekken": 7,
   "stats": {
-    "opgelost": 4,
+    "opgelost": 2,
     "brandmeester": 0,
     "afkoop": 0,
-    "terugbel": 1,
-    "geenDekking": 2
+    "terugbel": 0,
+    "geenDekking": 0,
+    "verkeerdNummer": 5
   },
   "score": 7.8,
   "conversations": [
@@ -24,8 +25,8 @@
         ]
       ],
       "uitkomst": [
-        "outcome-terugbel",
-        "Terugbellen"
+        "outcome-verkeerd",
+        "Verkeerd nummer"
       ],
       "terugbel": true,
       "verkeerdVerbonden": true,
@@ -61,8 +62,8 @@
       "samenvatting": "De beller belde met een vraag over autoverzekering en werd door Senna van de Juridische Helpdesk herkend als verkeerd verbonden. De beller was gericht op de afdeling rechtsbijstandsverzekering (juridische helpdesk) en niet op autoverzekering. Senna verwees de beller correct door naar het juiste keuzemenu voor autoschadeclaims. Geen juridisch advies gegeven omdat het onderwerp niet onder rechtsbijstand valt.",
       "tags": [],
       "uitkomst": [
-        "outcome-opgelost",
-        "Telefonisch opgelost"
+        "outcome-verkeerd",
+        "Verkeerd nummer"
       ],
       "terugbel": false,
       "verkeerdVerbonden": true,
@@ -98,8 +99,8 @@
       "samenvatting": "Beller heeft per ongeluk vijf keer naar de juridische helpdesk gebeld in plaats van naar de autoverzekeringslijn; het ging om een autoschadeclaim. De medewerker stelde vast dat dit de verkeerde afdeling was en beëindigde het gesprek. Beller is automatisch geverifieerd via telefoonnummer (Zoho-koppeling), maar er is geen inhoudelijk juridisch advies gegeven omdat de zaak niet thuishoort bij de juridische helpdesk.",
       "tags": [],
       "uitkomst": [
-        "outcome-geen-dekking",
-        "Geen dekking"
+        "outcome-verkeerd",
+        "Verkeerd nummer"
       ],
       "terugbel": false,
       "verkeerdVerbonden": true,
@@ -119,8 +120,8 @@
         ]
       ],
       "uitkomst": [
-        "outcome-opgelost",
-        "Telefonisch opgelost"
+        "outcome-verkeerd",
+        "Verkeerd nummer"
       ],
       "terugbel": false,
       "verkeerdVerbonden": true,
@@ -140,8 +141,8 @@
         ]
       ],
       "uitkomst": [
-        "outcome-geen-dekking",
-        "Geen dekking"
+        "outcome-verkeerd",
+        "Verkeerd nummer"
       ],
       "terugbel": false,
       "verkeerdVerbonden": true,

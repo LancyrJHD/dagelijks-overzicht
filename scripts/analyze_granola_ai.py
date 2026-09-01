@@ -45,12 +45,16 @@ GRANOLA_HEADERS = {
 }
 
 # Canonieke uitkomst-paren — MOET exact overeenkomen met MANUAL_OUTCOMES in index.html
+# BEVINDING 1 sep 2026: "outcome-verkeerd" bestond al in MANUAL_OUTCOMES
+# (index.html) maar ontbrak hier, waardoor de AI verkeerd-verbonden
+# gesprekken noodgedwongen in "Geen dekking" moest indelen. Toegevoegd.
 VALID_OUTCOMES = {
     "outcome-opgelost": "Telefonisch opgelost",
     "outcome-terugbel": "Terugbellen",
     "outcome-brandmeester": "Doorverwezen naar Brandmeester",
     "outcome-afkoop": "Afkoop",
     "outcome-geen-dekking": "Geen dekking",
+    "outcome-verkeerd": "Verkeerd nummer",
 }
 
 ANALYZE_SYSTEM_PROMPT = """Je bent een juridische kwaliteitsanalist voor de Lancyr Juridische Helpdesk van HTJZ.
@@ -62,12 +66,18 @@ Achtergrond:
 - Bouwzaken met grote schade (>EUR 5.000) -> verplicht doorverwijzen naar Brandmeester.
 - Arbeidsconflicten -> altijd doorverwijzen naar Brandmeester.
 
-Categoriseer het gesprek in EXACT een van deze 5 paren (class, label):
+Categoriseer het gesprek in EXACT een van deze 6 paren (class, label):
 ["outcome-opgelost","Telefonisch opgelost"]
 ["outcome-terugbel","Terugbellen"]
 ["outcome-brandmeester","Doorverwezen naar Brandmeester"]
 ["outcome-afkoop","Afkoop"]
 ["outcome-geen-dekking","Geen dekking"]
+["outcome-verkeerd","Verkeerd nummer"]
+
+BELANGRIJKE REGEL: als je hieronder "verkeerd_verbonden" op true zet, kies dan ALTIJD
+["outcome-verkeerd","Verkeerd nummer"] als uitkomst -- kies in dat geval NOOIT
+"outcome-geen-dekking", want er is dan geen dekkingsvraag onder de polis beoordeeld,
+de beller zat simpelweg niet bij de juiste helpdesk.
 
 Tags (rechtsgebied): gebruik ["tag-arbeidsrecht","Arbeidsrecht"], ["tag-consument","Consumentenrecht"], ["tag-bouw","Bouwrecht"], ["tag-huur","Huurrecht"], ["tag-bestuursrecht","Bestuursrecht"], of ["tag-overig","<specifiek rechtsgebied>"] als geen van de vaste categorieen past.
 
@@ -402,6 +412,13 @@ def main():
             if zoho_match:
                 identiteit_geverifieerd = True
 
+        # BEVINDING 1 sep 2026: forceer uitkomst=outcome-verkeerd zodra
+        # verkeerd_verbonden true is, ongeacht wat de AI/heuristiek koos --
+        # zo kunnen de boolean en de getoonde badge nooit meer los van
+        # elkaar raken (zie ook de promptregel hierboven).
+        if verkeerd_verbonden and uitkomst[0] != "outcome-verkeerd":
+            uitkomst = ["outcome-verkeerd", "Verkeerd nummer"]
+
         # Naam van de verzekerde: gebruik NOOIT de Granola/ASR-transcriptie hiervoor
         # (spraakherkenning verhaspelt namen regelmatig, bijv. "Fletse Noe" i.p.v. de
         # echte naam). Gebruik in plaats daarvan de naam uit de gematchte Zoho Desk-
@@ -434,13 +451,14 @@ def main():
 
     conversations.sort(key=lambda c: c["tijd"])
 
-    stats = {"opgelost": 0, "brandmeester": 0, "afkoop": 0, "terugbel": 0, "geenDekking": 0}
+    stats = {"opgelost": 0, "brandmeester": 0, "afkoop": 0, "terugbel": 0, "geenDekking": 0, "verkeerdNummer": 0}
     key_map = {
         "outcome-opgelost": "opgelost",
         "outcome-brandmeester": "brandmeester",
         "outcome-afkoop": "afkoop",
         "outcome-terugbel": "terugbel",
         "outcome-geen-dekking": "geenDekking",
+        "outcome-verkeerd": "verkeerdNummer",
     }
     for c in conversations:
         k = key_map.get(c["uitkomst"][0])

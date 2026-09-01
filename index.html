@@ -836,6 +836,7 @@ body {
 .uitkomst-badge.terugbel { background: rgba(174,152,111,0.15); color: var(--gold-dark); }
 .uitkomst-badge.brandmeester { background: rgba(13,31,46,0.08); color: var(--navy); }
 .uitkomst-badge.geen-dekking { background: var(--red-bg); color: var(--red); }
+.uitkomst-badge.verkeerd { background: rgba(180,83,9,0.12); color: #b45309; }
 .uitkomst-badge.overig { background: var(--bg); color: var(--ink-50); }
 
 .gs-samenvatting {
@@ -3770,6 +3771,7 @@ function uitkomstClass(uitkomstKey) {
   if (uitkomstKey.includes('terugbel')) return 'terugbel';
   if (uitkomstKey.includes('brandmeester') || uitkomstKey.includes('stam')) return 'brandmeester';
   if (uitkomstKey.includes('geen-dekking') || uitkomstKey.includes('geenDekking')) return 'geen-dekking';
+  if (uitkomstKey.includes('verkeerd')) return 'verkeerd';
   return 'overig';
 }
 
