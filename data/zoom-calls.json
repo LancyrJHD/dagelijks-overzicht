@@ -1,33 +1,32 @@
 {
-  "date": "2026-08-31",
-  "generated_at": "2026-08-31T18:06:14Z",
-  "totaalInbound": 14,
-  "totaalGemist": 2,
-  "terugGebeld": 1,
-  "nietTerugGebeld": 1,
-  "nietTerugGebeldNummers": [
-    {
-      "nummer": "+31612143286",
-      "naam": "Onbekend",
-      "tijd": "15:31",
-      "callResult": "abandoned",
-      "teruggebeld": false
-    }
-  ],
+  "date": "2026-09-01",
+  "generated_at": "2026-09-01T09:50:57Z",
+  "totaalInbound": 8,
+  "totaalGemist": 3,
+  "terugGebeld": 3,
+  "nietTerugGebeld": 0,
+  "nietTerugGebeldNummers": [],
   "alleGemistNummers": [
     {
-      "nummer": "+31654673777",
+      "nummer": "+31686366815",
       "naam": "Onbekend",
-      "tijd": "10:03",
+      "tijd": "09:05",
+      "callResult": "abandoned",
+      "teruggebeld": true
+    },
+    {
+      "nummer": "+31630041197",
+      "naam": "Onbekend",
+      "tijd": "09:08",
       "callResult": "overflowed",
       "teruggebeld": true
     },
     {
-      "nummer": "+31612143286",
+      "nummer": "+31686366815",
       "naam": "Onbekend",
-      "tijd": "15:31",
+      "tijd": "10:01",
       "callResult": "abandoned",
-      "teruggebeld": false
+      "teruggebeld": true
     }
   ]
 }
