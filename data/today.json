@@ -1,15 +1,15 @@
 {
   "date": "2026-09-01",
-  "generated_at": "2026-09-01T09:51:34Z",
+  "generated_at": "2026-09-01T14:39:46Z",
   "drukte": "druk",
-  "gesprekken": 7,
+  "gesprekken": 10,
   "stats": {
-    "opgelost": 2,
+    "opgelost": 3,
     "brandmeester": 0,
     "afkoop": 0,
-    "terugbel": 0,
+    "terugbel": 1,
     "geenDekking": 0,
-    "verkeerdNummer": 5
+    "verkeerdNummer": 6
   },
   "score": 7.8,
   "conversations": [
@@ -17,18 +17,18 @@
       "tijd": "09:43",
       "titel": "Juridische Helpdesk — letselschadeclaim en rechtsbijstandsverzekering",
       "personen": "Verzekerde: C Ramnarine · Senne Duifhuis | Juridisch medewerker",
-      "samenvatting": "Beller beide met vragen over letselschade en inzittenden die zijn verongelukt. De medewerker constateerde dat de beller een autoverzekering heeft maar geen rechtsbijstandsverzekering in het systeem stond, en verwees de beller door naar de autoverzekeringafdeling voor verdere behandeling. De beller is geverifieerd via postcode en naam (ook automatisch in Zoho herkend op telefoonnummer). Geen inhoudelijk juridisch advies is gegeven.",
+      "samenvatting": "Beller belt de Juridische Helpdesk voor Rechtsbijstandsverzekering met een vraag over letselschade en inzittenden na een verkeersongeval. De medewerker verifieert de beller via postcode en naam (ook automatisch herkend in Zoho). Echter, de beller heeft geen rechtsbijstandsverzekering maar alleen autoverzekering op zijn polis; de medewerker adviseert daarom correct om eerst contact op te nemen met de autoverzekering en alleen terug te bellen bij Juridische Helpdesk als die hen doorverwijst. Geen inhoudelijk juridisch advies gegeven.",
       "tags": [
         [
           "tag-overig",
-          "Letselschadeclaim / Verkeersongeval"
+          "Letselschadeclaim (autoverzekering)"
         ]
       ],
       "uitkomst": [
         "outcome-verkeerd",
         "Verkeerd nummer"
       ],
-      "terugbel": true,
+      "terugbel": false,
       "verkeerdVerbonden": true,
       "rechtsbijstandVerwijzing": false,
       "adviesGegeven": false,
@@ -38,7 +38,7 @@
       "tijd": "09:46",
       "titel": "Verkeerde afdeling — doorverwijzing naar autoverzekering",
       "personen": "Verzekerde: C Ramnarine · Senne Duifhuis | Juridisch medewerker",
-      "samenvatting": "Beller (Van de Eik) werd automatisch herkend via telefoonnummer en zijn polis/klantdossier. De medewerker gaf inhoudelijk juridisch advies over een ingebrekenstelling in een consumentengeschil met een retailer over een defecte laptop: de ingebrekenstelling werd globaal gecontroleerd en goed bevonden, en de medewerker adviseerde de beller om deze te verzenden en niet vooraf te bellen. De zaak werd telefonisch opgelost met concrete stappenplan.",
+      "samenvatting": "Het gesprek bestaat uit twee delen: eerst een verkeerde doorverbinding (beller belt autoverzekeringafdeling maar bereikt juridische helpdesk), waarna de medewerker hem correct doorverwijst. Daarna belt dezelfde beller (C Ramnarine, geverifieerd via Zoho-koppeling) terug voor advies over een consumentengeschil met een retailer over een defecte laptop. De medewerker geeft inhoudelijk juridisch advies: globale beoordeling van een ingebrekenstelling en praktische tactische adviezen (ingebrekenstelling versturen, niet vooraf bellen). Het gesprek eindigt met akkoord van de beller.",
       "tags": [
         [
           "tag-consument",
@@ -59,8 +59,13 @@
       "tijd": "09:54",
       "titel": "Verkeerd nummer — doorverwijzing naar autoverzekering",
       "personen": "Verzekerde: C Ramnarine · Senne Duifhuis | Juridisch medewerker",
-      "samenvatting": "De beller belde met een vraag over autoverzekering en werd door Senna van de Juridische Helpdesk herkend als verkeerd verbonden. De beller was gericht op de afdeling rechtsbijstandsverzekering (juridische helpdesk) en niet op autoverzekering. Senna verwees de beller correct door naar het juiste keuzemenu voor autoschadeclaims. Geen juridisch advies gegeven omdat het onderwerp niet onder rechtsbijstand valt.",
-      "tags": [],
+      "samenvatting": "De beller heeft per ongeluk de juridische helpdesk (rechtsbijstandsverzekering) gebeld, maar had een autoverzekeringsvraag. De medewerker heeft dit goed opgemerkt via postcodeverificatie, heeft uitgelegd dat dit het verkeerde nummer is, en heeft de beller geadviseerd het aantal opnieuw te bellen en de juiste keuze in het keuzemenu te maken. Geen juridisch advies is gegeven omdat dit onderwerp niet bij deze helpdesk hoort.",
+      "tags": [
+        [
+          "tag-overig",
+          "Autoverzekering (verkeerd doorverbonden)"
+        ]
+      ],
       "uitkomst": [
         "outcome-verkeerd",
         "Verkeerd nummer"
@@ -75,7 +80,7 @@
       "tijd": "09:58",
       "titel": "Juridische helpdesk — uitvaartverzekering en schadeclaim",
       "personen": "Verzekerde: J.I. Hubbard · Senne Duifhuis | Juridisch medewerker",
-      "samenvatting": "Beller (J.I. Hubbard, geverifieerd via postcode/naam en automatische Zoho-koppeling) diende klacht in over uitvaartverzekering die sinds 2020 10.000 euro schadevergoeding belooft maar niet uitkeert. Medewerker gaf inhoudelijk juridisch advies: ingebrekenstelling verzenden met 14-daagse betalingstermijn, vervolgens opnieuw contact opnemen. Tweede onderwerp (inboedelverzekering/schadeclaim) werd correct doorverwezen naar verzekeringsafdeling omdat dit buiten juridische helpdesk valt.",
+      "samenvatting": "Beller Hubbard is geverifieerd via postcode en naam en gekoppeld aan Zoho-contactdossier. De juridische helpdesk gaf inhoudelijk advies over een niet-betaalde uitvaartverzekeringsclaim (10.000 euro): aanbeveling om een ingebrekenstelling te sturen met termijn van 14 dagen. Vervolgens werd beller doorverwezen naar de verzekeringsexpert voor een gescheiden inboedelverzekeringskwestie (schadeclaim uit april zonder reactie), wat buiten de juridische rechtsbijstand valt.",
       "tags": [
         [
           "tag-consument",
@@ -96,8 +101,13 @@
       "tijd": "10:15",
       "titel": "Helpdesk routering — accidental calls en spraakresponse verbetering",
       "personen": "Verzekerde: J Klooster · Senne Duifhuis | Juridisch medewerker",
-      "samenvatting": "Beller heeft per ongeluk vijf keer naar de juridische helpdesk gebeld in plaats van naar de autoverzekeringslijn; het ging om een autoschadeclaim. De medewerker stelde vast dat dit de verkeerde afdeling was en beëindigde het gesprek. Beller is automatisch geverifieerd via telefoonnummer (Zoho-koppeling), maar er is geen inhoudelijk juridisch advies gegeven omdat de zaak niet thuishoort bij de juridische helpdesk.",
-      "tags": [],
+      "samenvatting": "De beller heeft per ongeluk de juridische helpdesk gebeld in plaats van de autoschadeclaimafhandeling. Het betreft een autoverzekeringskwestie (ongeluk), niet een juridische vraag. De medewerker heeft correct vastgesteld dat dit een verkeerde doorverbinding betreft en het gesprek beëindigd. Hoewel het systeem de beller automatisch herkende, is geen inhoudelijk juridisch advies gegeven omdat het onderwerp niet tot de juridische helpdesk behoort.",
+      "tags": [
+        [
+          "tag-overig",
+          "Autoverzekering (verkeerde helpdesk)"
+        ]
+      ],
       "uitkomst": [
         "outcome-verkeerd",
         "Verkeerd nummer"
@@ -112,11 +122,11 @@
       "tijd": "10:39",
       "titel": "Juridische helpdesk — wijziging rechtsbijstandsverzekering",
       "personen": "Verzekerde: J Klooster · Senne Duifhuis | Juridisch medewerker",
-      "samenvatting": "Beller belt de juridische helpdesk met een verzoek tot wijziging van de rechtsbijstandsverzekering. De medewerker erkent dat dit niet binnen de scope van de juridische helpdesk valt en verwijst de beller door naar info@lanceerverzekeringen.nl per e-mail. De beller is geverifieerd via postcode en achternaam (systeem herkende het telefoonnummer); geen inhoudelijk juridisch advies is gegeven.",
+      "samenvatting": "De beller wilde een wijziging aan zijn rechtsbijstandsverzekering doorbrengen. De medewerker heeft vastgesteld dat dit niet via de juridische helpdesk kan worden afgehandeld en heeft de beller doorverwezen naar info@lancyrverzekeringen.nl per e-mail. De beller is geverifieerd via postcode en achternaam en er is geen inhoudelijk juridisch advies gegeven.",
       "tags": [
         [
           "tag-overig",
-          "Poliswijziging/administratie"
+          "Verzekeringsadministratie"
         ]
       ],
       "uitkomst": [
@@ -133,7 +143,7 @@
       "tijd": "11:09",
       "titel": "Autoschade — doorverwijzing naar verzekering",
       "personen": "Verzekerde: anoniem · Senne Duifhuis | Juridisch medewerker",
-      "samenvatting": "Beller belde de juridische helpdesk met een autoschade-vraag die daar niet thuishoort. De medewerker heeft correct vastgesteld dat dit een autoverzekeringszaak is en de beller meerdere keren doorverwezen naar de autoverzekering. De beller is niet geverifieerd in het systeem en heeft geen inhoudelijk juridisch advies ontvangen.",
+      "samenvatting": "Beller Klooster belde met een vraag over autoschade die foutief naar de juridische helpdesk is verstuurd in plaats van naar de autoverzekeringsdienst. De medewerker heeft vastgesteld dat de beller geen rechtsbijstandsverzekering heeft maar wel een autoverzekering, en heeft hem herhaaldelijk doorverwezen naar de autoverzekeringsafdeling. De beller is niet geverifieerd in het systeem, en geen inhoudelijk juridisch advies is gegeven.",
       "tags": [
         [
           "tag-overig",
@@ -149,43 +159,124 @@
       "rechtsbijstandVerwijzing": false,
       "adviesGegeven": false,
       "identiteitGeverifieerd": false
+    },
+    {
+      "tijd": "12:45",
+      "titel": "",
+      "personen": "Verzekerde: anoniem · Senne Duifhuis | Juridisch medewerker",
+      "samenvatting": "De beller belde naar de Lancyr Juridische Helpdesk, maar ontving een automatisch bericht dat de medewerker niet beschikbaar is. Er was geen systeemkoppeling met een klantdossier. Geen inhoudelijk juridisch advies kon worden gegeven en geen verificatie kon plaatsvinden.",
+      "tags": [
+        [
+          "tag-overig",
+          "Onbekend rechtsgebied"
+        ]
+      ],
+      "uitkomst": [
+        "outcome-terugbel",
+        "Terugbellen"
+      ],
+      "terugbel": true,
+      "verkeerdVerbonden": false,
+      "rechtsbijstandVerwijzing": false,
+      "adviesGegeven": false,
+      "identiteitGeverifieerd": false
+    },
+    {
+      "tijd": "12:55",
+      "titel": "Syriëche helpdesk — doorverwijzing autoverzekering",
+      "personen": "Verzekerde: anoniem · Senne Duifhuis | Juridisch medewerker",
+      "samenvatting": "Beller beide de juridische helpdesk (rechtsbijstandverzekering) maar had een vraag over autoverzekering. De medewerker heeft de beller geverifieerd via postcode en naam (3962LC, Maike van der Weijer, nummer 162) en correct doorverwezen naar de autoverzekeringslijn, aangezien autoverzekering niet onder de juridische helpdesk valt. Geen inhoudelijk juridisch advies gegeven.",
+      "tags": [
+        [
+          "tag-overig",
+          "Autoverzekering (verkeerd kanaal)"
+        ]
+      ],
+      "uitkomst": [
+        "outcome-verkeerd",
+        "Verkeerd nummer"
+      ],
+      "terugbel": false,
+      "verkeerdVerbonden": true,
+      "rechtsbijstandVerwijzing": false,
+      "adviesGegeven": false,
+      "identiteitGeverifieerd": true
+    },
+    {
+      "tijd": "14:21",
+      "titel": "Rechtsbijstandsverzekering — bed met verkeerde kleuren en ingebrekenstelling",
+      "personen": "Verzekerde: R. Lutteke · Senne Duifhuis | Juridisch medewerker",
+      "samenvatting": "Beller R. Lüttke (geverifieerd via Zoho-automatische herkenning op telefoonnummer) belt over een consumentenkwestie: een bed van EUR 500 via webshop met herhaaldelijk verkeerde kleuren geleverd. De medewerker geeft inhoudelijk juridisch advies: een ingebrekenstelling sturen met een termijn van twee weken, en vervolgens contact opnemen als niet correct wordt nagekomen.",
+      "tags": [
+        [
+          "tag-consument",
+          "Consumentenrecht"
+        ]
+      ],
+      "uitkomst": [
+        "outcome-opgelost",
+        "Telefonisch opgelost"
+      ],
+      "terugbel": false,
+      "verkeerdVerbonden": false,
+      "rechtsbijstandVerwijzing": false,
+      "adviesGegeven": true,
+      "identiteitGeverifieerd": true
     }
   ],
   "acties": [],
   "analyse": {
     "goed": [
-      "09:43 – Letselschadeclaim: Correcte verificatie via postcode/naam en telefoonnummer (Zoho); juiste doorverwijzing naar autoverzekering zonder onterechte juridische adviezen",
-      "09:46 – Consumentengeschil laptop: Identiteit geverifieerd via telefoonnummer; inhoudelijk advies gegeven over ingebrekenstelling met concrete vervolgstappen",
-      "09:54 – Verkeerd nummer autoverzekering: Snelle herkenning van verkeerde afdeling; juiste doorverwijzing naar keuzemenu; geen onterechte adviezen",
-      "09:58 – Uitvaartverzekering: Identiteit geverifieerd (postcode/naam); duidelijk juridisch advies met concrete deadline (14 dagen); secundaire claim correct doorverwezen naar verzekeringsafdeling",
-      "10:15 – Herhaaldelijk verkeerd gebeld: Correct geïdentificeerd als verkeerde afdeling; beller al geverifieerd (telefoonnummer); passend afgehandeld",
-      "10:39 – Wijziging polis: Correct afgebakend dat dit buiten juridische helpdesk valt; beller geverifieerd; e-mailadres voor juiste afdeling gegeven"
+      "09:43 - Letselschadeclaim: Correcte verificatie (postcode + naam, Zoho-herkenning) en juiste doorverwijzing naar autoverzekering omdat rechtsbijstandsverzekering niet van toepassing was.",
+      "09:46 - Consumentengeschil laptop: Identiteit geverifieerd (Zoho-koppeling), inhoudelijk juridisch advies gegeven over ingebrekenstelling met concrete tactische adviezen.",
+      "09:54 - Verkeerd nummer autoverzekering: Correcte identificatie via postcodeverificatie en passende doorverwijzing naar juiste keuzemenu.",
+      "09:58 - Uitvaartverzekering EUR 10.000: Identiteit geverifieerd (postcode + naam, Zoho-koppeling), dekkingscontrole niet relevant (niet-betaalde claim), inhoudelijk advies gegeven met concrete termijn (14 dagen ingebrekenstelling).",
+      "10:15 - Autoschadeclaim verkeerd gerouteerd: Correcte herkenning dat onderwerp niet tot juridische helpdesk behoort, passende beëindiging.",
+      "12:55 - Autoverzekering Maike van der Weijer: Correcte verificatie (postcode + naam + dossiernummer) en juiste doorverwijzing naar autoverzekeringslijn.",
+      "14:21 - Consumentengeschil bed EUR 500: Identiteit geverifieerd (Zoho-automatische herkenning), inhoudelijk advies gegeven met concrete termijn (twee weken ingebrekenstelling)."
     ],
     "beter": [
-      "11:09 – Autoschade: Beller NIET geverifieerd in systeem (identiteit_geverifieerd = false). Hoewel doorverwijzing correct was, had de medewerker bij vervolgcontact verificatie moeten afspreken voor eventueel latere juridische vragen; geen concrete deadline of vervolgplan vastgelegd",
-      "Algemeen: Bij gesprek 09:43 (letselschadeclaim) zou een concrete terugbeldatum en tijdstip voor vervolgcontact beter hebben geholpen dan alleen 'Terugbellen' als uitkomst"
+      "11:09 - Autoschade Klooster: Beller NIET geverifieerd in systeem ondanks herhaalde doorverwijzingen. Norm vereist verificatie (postcode + naam) voordat contact wordt beëindigd, ook bij doorverwijzingen naar andere afdelingen.",
+      "12:45 - Automatisch bericht / geen beschikbaarheid: Geen duidelijke vervolgdeadline vastgesteld voor terugbellen. Concreet moment (bijv. 'we bellen u vandaag nog terug rond 14:00') zou beller duidelijkheid geven.",
+      "09:46 en 14:21 - Consumentengeschillen: Bij het consumentengeschil over de laptop (09:46) en het bed (14:21) werd de franchise (EUR 250) niet expliciet besproken, hoewel deze relevant kan zijn bij verhaalvordering. Vermelding in advies zou transparantie verbeteren."
     ]
   },
   "verkeerdVerbonden": {
-    "aantal": 5,
-    "percentage": 71.4
+    "aantal": 6,
+    "percentage": 60.0
   },
   "rechtsbijstandVerwijzingen": 0,
   "categorieen": [
     [
       "Consumentenrecht",
-      2
+      3
     ],
     [
-      "Letselschadeclaim / Verkeersongeval",
+      "Letselschadeclaim (autoverzekering)",
       1
     ],
     [
-      "Poliswijziging/administratie",
+      "Autoverzekering (verkeerd doorverbonden)",
+      1
+    ],
+    [
+      "Autoverzekering (verkeerde helpdesk)",
+      1
+    ],
+    [
+      "Verzekeringsadministratie",
       1
     ],
     [
       "Autoverzekering",
+      1
+    ],
+    [
+      "Onbekend rechtsgebied",
+      1
+    ],
+    [
+      "Autoverzekering (verkeerd kanaal)",
       1
     ]
   ]

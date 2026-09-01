@@ -1,6 +1,6 @@
 {
   "date": "2026-09-01",
-  "generated_at": "2026-09-01T09:50:54Z",
+  "generated_at": "2026-09-01T14:38:48Z",
   "tickets": [
     {
       "ticketNumber": "2677",
@@ -37,21 +37,46 @@
       "webUrl": "https://desk.zoho.eu/support/htjzlancyr/ShowHomePage.do#Cases/dv/195464000013724001",
       "channel": "Phone",
       "doorgezetBrandmeester": false
+    },
+    {
+      "ticketNumber": "2681",
+      "tijd": "14:25",
+      "titel": "Rechtsbijstandsverzekering — bed met verkeerde kleuren en ingebrekenstelling",
+      "klant": "R. Lutteke",
+      "status": "Gesloten",
+      "statusType": "",
+      "prioriteit": "Niet ingesteld",
+      "webUrl": "https://desk.zoho.eu/support/htjzlancyr/ShowHomePage.do#Cases/dv/195464000013756001",
+      "channel": "Phone",
+      "doorgezetBrandmeester": false
+    },
+    {
+      "ticketNumber": "2682",
+      "tijd": "15:59",
+      "titel": "Spoed polisgegevens [D3074182_I73054572]",
+      "klant": "Ljubica Pesic",
+      "status": "Open",
+      "statusType": "",
+      "prioriteit": "Niet ingesteld",
+      "webUrl": "https://desk.zoho.eu/support/htjzlancyr/ShowHomePage.do#Cases/dv/195464000013753038",
+      "channel": "Email",
+      "doorgezetBrandmeester": false
     }
   ],
   "channelCounts": {
-    "Phone": 3
+    "Phone": 4,
+    "Email": 1
   },
   "brandmeesterCount": 0,
   "ticketStats": {
-    "nieuweVandaag": 3,
-    "geslotenVandaag": 5,
-    "totaalOpen": 15,
+    "nieuweVandaag": 5,
+    "geslotenVandaag": 6,
+    "totaalOpen": 17,
     "inDeWacht": 14,
     "statusBreakdown": {
-      "Gesloten": 610,
-      "In de wacht": 14,
-      "Open": 1
+      "Open": 3,
+      "Gesloten": 608,
+      "In de wacht": 14
     },
     "capBereikt": false
   }

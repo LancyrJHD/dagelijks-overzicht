@@ -1,11 +1,33 @@
 {
   "date": "2026-09-01",
-  "generated_at": "2026-09-01T09:50:57Z",
-  "totaalInbound": 8,
-  "totaalGemist": 3,
-  "terugGebeld": 3,
-  "nietTerugGebeld": 0,
-  "nietTerugGebeldNummers": [],
+  "generated_at": "2026-09-01T14:38:52Z",
+  "totaalInbound": 15,
+  "totaalGemist": 10,
+  "terugGebeld": 7,
+  "nietTerugGebeld": 3,
+  "nietTerugGebeldNummers": [
+    {
+      "nummer": "+31684158236",
+      "naam": "Onbekend",
+      "tijd": "15:50",
+      "callResult": "overflowed",
+      "teruggebeld": false
+    },
+    {
+      "nummer": "+31618299359",
+      "naam": "Onbekend",
+      "tijd": "16:05",
+      "callResult": "abandoned",
+      "teruggebeld": false
+    },
+    {
+      "nummer": "+31618299359",
+      "naam": "Onbekend",
+      "tijd": "16:08",
+      "callResult": "overflowed",
+      "teruggebeld": false
+    }
+  ],
   "alleGemistNummers": [
     {
       "nummer": "+31686366815",
@@ -27,6 +49,55 @@
       "tijd": "10:01",
       "callResult": "abandoned",
       "teruggebeld": true
+    },
+    {
+      "nummer": "+31633697408",
+      "naam": "Onbekend",
+      "tijd": "12:41",
+      "callResult": "abandoned",
+      "teruggebeld": true
+    },
+    {
+      "nummer": "+31612143286",
+      "naam": "Onbekend",
+      "tijd": "12:47",
+      "callResult": "overflowed",
+      "teruggebeld": true
+    },
+    {
+      "nummer": "+31653969152",
+      "naam": "Onbekend",
+      "tijd": "13:55",
+      "callResult": "abandoned",
+      "teruggebeld": true
+    },
+    {
+      "nummer": "+31614116668",
+      "naam": "Onbekend",
+      "tijd": "14:55",
+      "callResult": "overflowed",
+      "teruggebeld": true
+    },
+    {
+      "nummer": "+31684158236",
+      "naam": "Onbekend",
+      "tijd": "15:50",
+      "callResult": "overflowed",
+      "teruggebeld": false
+    },
+    {
+      "nummer": "+31618299359",
+      "naam": "Onbekend",
+      "tijd": "16:05",
+      "callResult": "abandoned",
+      "teruggebeld": false
+    },
+    {
+      "nummer": "+31618299359",
+      "naam": "Onbekend",
+      "tijd": "16:08",
+      "callResult": "overflowed",
+      "teruggebeld": false
     }
   ]
 }
