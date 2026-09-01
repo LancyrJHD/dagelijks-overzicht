@@ -674,11 +674,18 @@
         "nummer": "+31618299359",
         "teruggebeld": false,
         "tijd": "16:08"
+      },
+      {
+        "callResult": "overflowed",
+        "naam": "Onbekend",
+        "nummer": "+31651601171",
+        "teruggebeld": false,
+        "tijd": "16:37"
       }
     ],
     "date": "2026-09-01",
-    "generated_at": "2026-09-01T14:38:52Z",
-    "nietTerugGebeld": 3,
+    "generated_at": "2026-09-01T18:16:40Z",
+    "nietTerugGebeld": 4,
     "nietTerugGebeldNummers": [
       {
         "callResult": "overflowed",
@@ -700,10 +707,17 @@
         "nummer": "+31618299359",
         "teruggebeld": false,
         "tijd": "16:08"
+      },
+      {
+        "callResult": "overflowed",
+        "naam": "Onbekend",
+        "nummer": "+31651601171",
+        "teruggebeld": false,
+        "tijd": "16:37"
       }
     ],
     "terugGebeld": 7,
-    "totaalGemist": 10,
-    "totaalInbound": 15
+    "totaalGemist": 11,
+    "totaalInbound": 16
   }
 }

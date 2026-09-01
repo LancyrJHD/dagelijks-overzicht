@@ -1,10 +1,10 @@
 {
   "date": "2026-09-01",
-  "generated_at": "2026-09-01T14:38:52Z",
-  "totaalInbound": 15,
-  "totaalGemist": 10,
+  "generated_at": "2026-09-01T18:16:40Z",
+  "totaalInbound": 16,
+  "totaalGemist": 11,
   "terugGebeld": 7,
-  "nietTerugGebeld": 3,
+  "nietTerugGebeld": 4,
   "nietTerugGebeldNummers": [
     {
       "nummer": "+31684158236",
@@ -24,6 +24,13 @@
       "nummer": "+31618299359",
       "naam": "Onbekend",
       "tijd": "16:08",
+      "callResult": "overflowed",
+      "teruggebeld": false
+    },
+    {
+      "nummer": "+31651601171",
+      "naam": "Onbekend",
+      "tijd": "16:37",
       "callResult": "overflowed",
       "teruggebeld": false
     }
@@ -96,6 +103,13 @@
       "nummer": "+31618299359",
       "naam": "Onbekend",
       "tijd": "16:08",
+      "callResult": "overflowed",
+      "teruggebeld": false
+    },
+    {
+      "nummer": "+31651601171",
+      "naam": "Onbekend",
+      "tijd": "16:37",
       "callResult": "overflowed",
       "teruggebeld": false
     }
