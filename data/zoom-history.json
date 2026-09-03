@@ -729,5 +729,45 @@
     "terugGebeld": 0,
     "totaalGemist": 0,
     "totaalInbound": 5
+  },
+  "2026-09-03": {
+    "alleGemistNummers": [
+      {
+        "callResult": "abandoned",
+        "naam": "Onbekend",
+        "nummer": "+31682228801",
+        "teruggebeld": false,
+        "tijd": "10:40"
+      },
+      {
+        "callResult": "overflowed",
+        "naam": "Onbekend",
+        "nummer": "+31337508100",
+        "teruggebeld": false,
+        "tijd": "11:07"
+      }
+    ],
+    "date": "2026-09-03",
+    "generated_at": "2026-09-03T09:32:31Z",
+    "nietTerugGebeld": 2,
+    "nietTerugGebeldNummers": [
+      {
+        "callResult": "abandoned",
+        "naam": "Onbekend",
+        "nummer": "+31682228801",
+        "teruggebeld": false,
+        "tijd": "10:40"
+      },
+      {
+        "callResult": "overflowed",
+        "naam": "Onbekend",
+        "nummer": "+31337508100",
+        "teruggebeld": false,
+        "tijd": "11:07"
+      }
+    ],
+    "terugGebeld": 0,
+    "totaalGemist": 2,
+    "totaalInbound": 2
   }
 }
