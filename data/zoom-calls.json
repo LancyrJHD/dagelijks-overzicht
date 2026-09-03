@@ -1,10 +1,10 @@
 {
   "date": "2026-09-03",
-  "generated_at": "2026-09-03T14:16:12Z",
-  "totaalInbound": 15,
-  "totaalGemist": 15,
+  "generated_at": "2026-09-03T17:58:18Z",
+  "totaalInbound": 16,
+  "totaalGemist": 16,
   "terugGebeld": 0,
-  "nietTerugGebeld": 15,
+  "nietTerugGebeld": 16,
   "nietTerugGebeldNummers": [
     {
       "nummer": "+31682228801",
@@ -109,6 +109,13 @@
       "naam": "Onbekend",
       "tijd": "15:53",
       "callResult": "abandoned",
+      "teruggebeld": false
+    },
+    {
+      "nummer": "+31628887688",
+      "naam": "Onbekend",
+      "tijd": "16:41",
+      "callResult": "overflowed",
       "teruggebeld": false
     }
   ],
@@ -216,6 +223,13 @@
       "naam": "Onbekend",
       "tijd": "15:53",
       "callResult": "abandoned",
+      "teruggebeld": false
+    },
+    {
+      "nummer": "+31628887688",
+      "naam": "Onbekend",
+      "tijd": "16:41",
+      "callResult": "overflowed",
       "teruggebeld": false
     }
   ]
