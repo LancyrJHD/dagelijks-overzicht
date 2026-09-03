@@ -745,11 +745,102 @@
         "nummer": "+31337508100",
         "teruggebeld": false,
         "tijd": "11:07"
+      },
+      {
+        "callResult": "abandoned",
+        "naam": "Onbekend",
+        "nummer": "+31687186129",
+        "teruggebeld": false,
+        "tijd": "11:41"
+      },
+      {
+        "callResult": "overflowed",
+        "naam": "Onbekend",
+        "nummer": "+31631960294",
+        "teruggebeld": false,
+        "tijd": "12:17"
+      },
+      {
+        "callResult": "abandoned",
+        "naam": "Onbekend",
+        "nummer": "+31640144665",
+        "teruggebeld": false,
+        "tijd": "12:23"
+      },
+      {
+        "callResult": "abandoned",
+        "naam": "Onbekend",
+        "nummer": "+31640144665",
+        "teruggebeld": false,
+        "tijd": "12:28"
+      },
+      {
+        "callResult": "overflowed",
+        "naam": "Onbekend",
+        "nummer": "+31628938474",
+        "teruggebeld": false,
+        "tijd": "12:35"
+      },
+      {
+        "callResult": "overflowed",
+        "naam": "Onbekend",
+        "nummer": "+31618484666",
+        "teruggebeld": false,
+        "tijd": "12:38"
+      },
+      {
+        "callResult": "abandoned",
+        "naam": "Onbekend",
+        "nummer": "+31687196620",
+        "teruggebeld": false,
+        "tijd": "12:46"
+      },
+      {
+        "callResult": "overflowed",
+        "naam": "Anonymous",
+        "nummer": "Anonymous",
+        "teruggebeld": false,
+        "tijd": "13:56"
+      },
+      {
+        "callResult": "abandoned",
+        "naam": "Anonymous",
+        "nummer": "Anonymous",
+        "teruggebeld": false,
+        "tijd": "14:29"
+      },
+      {
+        "callResult": "overflowed",
+        "naam": "Onbekend",
+        "nummer": "+31681284206",
+        "teruggebeld": false,
+        "tijd": "14:38"
+      },
+      {
+        "callResult": "abandoned",
+        "naam": "Onbekend",
+        "nummer": "+31642802104",
+        "teruggebeld": false,
+        "tijd": "14:46"
+      },
+      {
+        "callResult": "overflowed",
+        "naam": "Onbekend",
+        "nummer": "+31628887688",
+        "teruggebeld": false,
+        "tijd": "15:06"
+      },
+      {
+        "callResult": "abandoned",
+        "naam": "Onbekend",
+        "nummer": "+31610058158",
+        "teruggebeld": false,
+        "tijd": "15:53"
       }
     ],
     "date": "2026-09-03",
-    "generated_at": "2026-09-03T09:32:31Z",
-    "nietTerugGebeld": 2,
+    "generated_at": "2026-09-03T14:16:12Z",
+    "nietTerugGebeld": 15,
     "nietTerugGebeldNummers": [
       {
         "callResult": "abandoned",
@@ -764,10 +855,101 @@
         "nummer": "+31337508100",
         "teruggebeld": false,
         "tijd": "11:07"
+      },
+      {
+        "callResult": "abandoned",
+        "naam": "Onbekend",
+        "nummer": "+31687186129",
+        "teruggebeld": false,
+        "tijd": "11:41"
+      },
+      {
+        "callResult": "overflowed",
+        "naam": "Onbekend",
+        "nummer": "+31631960294",
+        "teruggebeld": false,
+        "tijd": "12:17"
+      },
+      {
+        "callResult": "abandoned",
+        "naam": "Onbekend",
+        "nummer": "+31640144665",
+        "teruggebeld": false,
+        "tijd": "12:23"
+      },
+      {
+        "callResult": "abandoned",
+        "naam": "Onbekend",
+        "nummer": "+31640144665",
+        "teruggebeld": false,
+        "tijd": "12:28"
+      },
+      {
+        "callResult": "overflowed",
+        "naam": "Onbekend",
+        "nummer": "+31628938474",
+        "teruggebeld": false,
+        "tijd": "12:35"
+      },
+      {
+        "callResult": "overflowed",
+        "naam": "Onbekend",
+        "nummer": "+31618484666",
+        "teruggebeld": false,
+        "tijd": "12:38"
+      },
+      {
+        "callResult": "abandoned",
+        "naam": "Onbekend",
+        "nummer": "+31687196620",
+        "teruggebeld": false,
+        "tijd": "12:46"
+      },
+      {
+        "callResult": "overflowed",
+        "naam": "Anonymous",
+        "nummer": "Anonymous",
+        "teruggebeld": false,
+        "tijd": "13:56"
+      },
+      {
+        "callResult": "abandoned",
+        "naam": "Anonymous",
+        "nummer": "Anonymous",
+        "teruggebeld": false,
+        "tijd": "14:29"
+      },
+      {
+        "callResult": "overflowed",
+        "naam": "Onbekend",
+        "nummer": "+31681284206",
+        "teruggebeld": false,
+        "tijd": "14:38"
+      },
+      {
+        "callResult": "abandoned",
+        "naam": "Onbekend",
+        "nummer": "+31642802104",
+        "teruggebeld": false,
+        "tijd": "14:46"
+      },
+      {
+        "callResult": "overflowed",
+        "naam": "Onbekend",
+        "nummer": "+31628887688",
+        "teruggebeld": false,
+        "tijd": "15:06"
+      },
+      {
+        "callResult": "abandoned",
+        "naam": "Onbekend",
+        "nummer": "+31610058158",
+        "teruggebeld": false,
+        "tijd": "15:53"
       }
     ],
     "terugGebeld": 0,
-    "totaalGemist": 2,
-    "totaalInbound": 2
+    "totaalGemist": 15,
+    "totaalInbound": 15
   }
 }

@@ -1,18 +1,33 @@
 {
   "date": "2026-09-03",
-  "generated_at": "2026-09-03T09:32:30Z",
-  "tickets": [],
-  "channelCounts": {},
+  "generated_at": "2026-09-03T14:16:11Z",
+  "tickets": [
+    {
+      "ticketNumber": "2684",
+      "tijd": "15:26",
+      "titel": "Verzoek om juridisch advies arbeidsvoorwaarden/cao",
+      "klant": "T.B. Brand",
+      "status": "Open",
+      "statusType": "",
+      "prioriteit": "Niet ingesteld",
+      "webUrl": "https://desk.zoho.eu/support/htjzlancyr/ShowHomePage.do#Cases/dv/195464000013790001",
+      "channel": "Email",
+      "doorgezetBrandmeester": false
+    }
+  ],
+  "channelCounts": {
+    "Email": 1
+  },
   "brandmeesterCount": 0,
   "ticketStats": {
-    "nieuweVandaag": 0,
+    "nieuweVandaag": 1,
     "geslotenVandaag": 0,
-    "totaalOpen": 19,
+    "totaalOpen": 20,
     "inDeWacht": 14,
     "statusBreakdown": {
-      "Open": 5,
+      "Open": 6,
       "In de wacht": 14,
-      "Gesloten": 606
+      "Gesloten": 604
     },
     "capBereikt": false
   }
