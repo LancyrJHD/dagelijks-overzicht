@@ -625,14 +625,109 @@
         "nummer": "+31686366815",
         "teruggebeld": true,
         "tijd": "10:01"
+      },
+      {
+        "callResult": "abandoned",
+        "naam": "Onbekend",
+        "nummer": "+31633697408",
+        "teruggebeld": true,
+        "tijd": "12:41"
+      },
+      {
+        "callResult": "overflowed",
+        "naam": "Onbekend",
+        "nummer": "+31612143286",
+        "teruggebeld": true,
+        "tijd": "12:47"
+      },
+      {
+        "callResult": "abandoned",
+        "naam": "Onbekend",
+        "nummer": "+31653969152",
+        "teruggebeld": true,
+        "tijd": "13:55"
+      },
+      {
+        "callResult": "overflowed",
+        "naam": "Onbekend",
+        "nummer": "+31614116668",
+        "teruggebeld": true,
+        "tijd": "14:55"
+      },
+      {
+        "callResult": "overflowed",
+        "naam": "Onbekend",
+        "nummer": "+31684158236",
+        "teruggebeld": false,
+        "tijd": "15:50"
+      },
+      {
+        "callResult": "abandoned",
+        "naam": "Onbekend",
+        "nummer": "+31618299359",
+        "teruggebeld": false,
+        "tijd": "16:05"
+      },
+      {
+        "callResult": "overflowed",
+        "naam": "Onbekend",
+        "nummer": "+31618299359",
+        "teruggebeld": false,
+        "tijd": "16:08"
+      },
+      {
+        "callResult": "overflowed",
+        "naam": "Onbekend",
+        "nummer": "+31651601171",
+        "teruggebeld": false,
+        "tijd": "16:37"
       }
     ],
     "date": "2026-09-01",
-    "generated_at": "2026-09-01T09:50:57Z",
+    "generated_at": "2026-09-01T18:16:40Z",
+    "nietTerugGebeld": 4,
+    "nietTerugGebeldNummers": [
+      {
+        "callResult": "overflowed",
+        "naam": "Onbekend",
+        "nummer": "+31684158236",
+        "teruggebeld": false,
+        "tijd": "15:50"
+      },
+      {
+        "callResult": "abandoned",
+        "naam": "Onbekend",
+        "nummer": "+31618299359",
+        "teruggebeld": false,
+        "tijd": "16:05"
+      },
+      {
+        "callResult": "overflowed",
+        "naam": "Onbekend",
+        "nummer": "+31618299359",
+        "teruggebeld": false,
+        "tijd": "16:08"
+      },
+      {
+        "callResult": "overflowed",
+        "naam": "Onbekend",
+        "nummer": "+31651601171",
+        "teruggebeld": false,
+        "tijd": "16:37"
+      }
+    ],
+    "terugGebeld": 7,
+    "totaalGemist": 11,
+    "totaalInbound": 16
+  },
+  "2026-09-02": {
+    "alleGemistNummers": [],
+    "date": "2026-09-02",
+    "generated_at": "2026-09-02T17:46:30Z",
     "nietTerugGebeld": 0,
     "nietTerugGebeldNummers": [],
-    "terugGebeld": 3,
-    "totaalGemist": 3,
-    "totaalInbound": 8
+    "terugGebeld": 0,
+    "totaalGemist": 0,
+    "totaalInbound": 5
   }
 }
