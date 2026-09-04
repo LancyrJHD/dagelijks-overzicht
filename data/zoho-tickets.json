@@ -1,6 +1,6 @@
 {
   "date": "2026-09-04",
-  "generated_at": "2026-09-04T13:42:08Z",
+  "generated_at": "2026-09-04T17:29:20Z",
   "tickets": [
     {
       "ticketNumber": "2685",
@@ -25,19 +25,31 @@
       "webUrl": "https://desk.zoho.eu/support/htjzlancyr/ShowHomePage.do#Cases/dv/195464000013803056",
       "channel": "Email",
       "doorgezetBrandmeester": false
+    },
+    {
+      "ticketNumber": "2687",
+      "tijd": "16:09",
+      "titel": "New case - neighbour dispute over alleged noise nuisance, policy 5607-3263531",
+      "klant": "K. Benjelloun Herrera",
+      "status": "Open",
+      "statusType": "",
+      "prioriteit": "Niet ingesteld",
+      "webUrl": "https://desk.zoho.eu/support/htjzlancyr/ShowHomePage.do#Cases/dv/195464000013828001",
+      "channel": "Email",
+      "doorgezetBrandmeester": false
     }
   ],
   "channelCounts": {
-    "Email": 2
+    "Email": 3
   },
   "brandmeesterCount": 0,
   "ticketStats": {
-    "nieuweVandaag": 2,
+    "nieuweVandaag": 3,
     "geslotenVandaag": 0,
-    "totaalOpen": 22,
+    "totaalOpen": 23,
     "inDeWacht": 14,
     "statusBreakdown": {
-      "Open": 8,
+      "Open": 9,
       "In de wacht": 14,
       "Gesloten": 604
     },
