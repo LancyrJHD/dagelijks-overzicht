@@ -965,5 +965,73 @@
     "terugGebeld": 0,
     "totaalGemist": 16,
     "totaalInbound": 16
+  },
+  "2026-09-04": {
+    "alleGemistNummers": [
+      {
+        "callResult": "overflowed",
+        "naam": "Onbekend",
+        "nummer": "+31650603245",
+        "teruggebeld": false,
+        "tijd": "09:08"
+      },
+      {
+        "callResult": "overflowed",
+        "naam": "Onbekend",
+        "nummer": "+31624934242",
+        "teruggebeld": false,
+        "tijd": "09:22"
+      },
+      {
+        "callResult": "overflowed",
+        "naam": "Onbekend",
+        "nummer": "+31617030287",
+        "teruggebeld": false,
+        "tijd": "10:36"
+      },
+      {
+        "callResult": "overflowed",
+        "naam": "Onbekend",
+        "nummer": "+31651431332",
+        "teruggebeld": false,
+        "tijd": "11:08"
+      }
+    ],
+    "date": "2026-09-04",
+    "generated_at": "2026-09-04T09:24:29Z",
+    "nietTerugGebeld": 4,
+    "nietTerugGebeldNummers": [
+      {
+        "callResult": "overflowed",
+        "naam": "Onbekend",
+        "nummer": "+31650603245",
+        "teruggebeld": false,
+        "tijd": "09:08"
+      },
+      {
+        "callResult": "overflowed",
+        "naam": "Onbekend",
+        "nummer": "+31624934242",
+        "teruggebeld": false,
+        "tijd": "09:22"
+      },
+      {
+        "callResult": "overflowed",
+        "naam": "Onbekend",
+        "nummer": "+31617030287",
+        "teruggebeld": false,
+        "tijd": "10:36"
+      },
+      {
+        "callResult": "overflowed",
+        "naam": "Onbekend",
+        "nummer": "+31651431332",
+        "teruggebeld": false,
+        "tijd": "11:08"
+      }
+    ],
+    "terugGebeld": 0,
+    "totaalGemist": 4,
+    "totaalInbound": 4
   }
 }
