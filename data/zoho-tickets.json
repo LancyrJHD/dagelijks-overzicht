@@ -1,18 +1,18 @@
 {
   "date": "2026-09-07",
-  "generated_at": "2026-09-07T10:01:28Z",
+  "generated_at": "2026-09-07T15:59:53Z",
   "tickets": [
     {
       "ticketNumber": "2688",
       "tijd": "11:11",
       "titel": "Studiebeurs dochter — bezwaar UvA en rechtsbijstand",
       "klant": "I.A. van derSchaar",
-      "status": "In de wacht",
+      "status": "Gesloten",
       "statusType": "",
       "prioriteit": "Niet ingesteld",
       "webUrl": "https://desk.zoho.eu/support/htjzlancyr/ShowHomePage.do#Cases/dv/195464000013816016",
       "channel": "Phone",
-      "doorgezetBrandmeester": false
+      "doorgezetBrandmeester": true
     },
     {
       "ticketNumber": "2689",
@@ -25,21 +25,81 @@
       "webUrl": "https://desk.zoho.eu/support/htjzlancyr/ShowHomePage.do#Cases/dv/195464000013843001",
       "channel": "Phone",
       "doorgezetBrandmeester": false
+    },
+    {
+      "ticketNumber": "2691",
+      "tijd": "14:06",
+      "titel": "Possible termination — documentation and visa concerns with Clay",
+      "klant": "C.O. Logsdon-Tolbert",
+      "status": "Gesloten",
+      "statusType": "",
+      "prioriteit": "Niet ingesteld",
+      "webUrl": "https://desk.zoho.eu/support/htjzlancyr/ShowHomePage.do#Cases/dv/195464000013853001",
+      "channel": "Phone",
+      "doorgezetBrandmeester": false
+    },
+    {
+      "ticketNumber": "2692",
+      "tijd": "14:27",
+      "titel": "Juridisch advies – verbetering traject en ontslag risico",
+      "klant": "B.J.B. Wientjes",
+      "status": "Gesloten",
+      "statusType": "",
+      "prioriteit": "Niet ingesteld",
+      "webUrl": "https://desk.zoho.eu/support/htjzlancyr/ShowHomePage.do#Cases/dv/195464000013849007",
+      "channel": "Phone",
+      "doorgezetBrandmeester": false
+    },
+    {
+      "ticketNumber": "2693",
+      "tijd": "15:07",
+      "titel": "Klacht Jansen en Jansen — betalingen, beslagvrije voet, en doorverwijzing rechtsbijstand",
+      "klant": "P.C.W. Renken",
+      "status": "Gesloten",
+      "statusType": "",
+      "prioriteit": "Niet ingesteld",
+      "webUrl": "https://desk.zoho.eu/support/htjzlancyr/ShowHomePage.do#Cases/dv/195464000013841007",
+      "channel": "Phone",
+      "doorgezetBrandmeester": true
+    },
+    {
+      "ticketNumber": "2694",
+      "tijd": "16:36",
+      "titel": "Erfenis en eigendomsrechten partner — juridische helpdesk",
+      "klant": "J.K. vanGorkom",
+      "status": "In de wacht",
+      "statusType": "",
+      "prioriteit": "Niet ingesteld",
+      "webUrl": "https://desk.zoho.eu/support/htjzlancyr/ShowHomePage.do#Cases/dv/195464000013847016",
+      "channel": "Phone",
+      "doorgezetBrandmeester": false
+    },
+    {
+      "ticketNumber": "2695",
+      "tijd": "17:06",
+      "titel": "Schadevergoeding dierenarts Zuidplas — overlijden kat na verkeerde behandeling",
+      "klant": "C.A.T. Jankie",
+      "status": "In de wacht",
+      "statusType": "",
+      "prioriteit": "Niet ingesteld",
+      "webUrl": "https://desk.zoho.eu/support/htjzlancyr/ShowHomePage.do#Cases/dv/195464000013854001",
+      "channel": "Phone",
+      "doorgezetBrandmeester": false
     }
   ],
   "channelCounts": {
-    "Phone": 2
+    "Phone": 7
   },
-  "brandmeesterCount": 0,
+  "brandmeesterCount": 2,
   "ticketStats": {
-    "nieuweVandaag": 2,
-    "geslotenVandaag": 7,
-    "totaalOpen": 19,
-    "inDeWacht": 15,
+    "nieuweVandaag": 7,
+    "geslotenVandaag": 15,
+    "totaalOpen": 17,
+    "inDeWacht": 16,
     "statusBreakdown": {
-      "Gesloten": 609,
-      "In de wacht": 15,
-      "Open": 4
+      "In de wacht": 16,
+      "Gesloten": 616,
+      "Open": 1
     },
     "capBereikt": false
   }

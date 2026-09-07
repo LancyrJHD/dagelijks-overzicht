@@ -1091,13 +1091,57 @@
     "totaalInbound": 8
   },
   "2026-09-07": {
-    "alleGemistNummers": [],
+    "alleGemistNummers": [
+      {
+        "callResult": "overflowed",
+        "naam": "Onbekend",
+        "nummer": "+31685236043",
+        "teruggebeld": false,
+        "tijd": "12:46"
+      },
+      {
+        "callResult": "overflowed",
+        "naam": "Onbekend",
+        "nummer": "+31641012186",
+        "teruggebeld": false,
+        "tijd": "14:59"
+      },
+      {
+        "callResult": "overflowed",
+        "naam": "Onbekend",
+        "nummer": "+31638025920",
+        "teruggebeld": false,
+        "tijd": "15:01"
+      }
+    ],
     "date": "2026-09-07",
-    "generated_at": "2026-09-07T10:01:29Z",
-    "nietTerugGebeld": 0,
-    "nietTerugGebeldNummers": [],
+    "generated_at": "2026-09-07T15:59:55Z",
+    "nietTerugGebeld": 3,
+    "nietTerugGebeldNummers": [
+      {
+        "callResult": "overflowed",
+        "naam": "Onbekend",
+        "nummer": "+31685236043",
+        "teruggebeld": false,
+        "tijd": "12:46"
+      },
+      {
+        "callResult": "overflowed",
+        "naam": "Onbekend",
+        "nummer": "+31641012186",
+        "teruggebeld": false,
+        "tijd": "14:59"
+      },
+      {
+        "callResult": "overflowed",
+        "naam": "Onbekend",
+        "nummer": "+31638025920",
+        "teruggebeld": false,
+        "tijd": "15:01"
+      }
+    ],
     "terugGebeld": 0,
-    "totaalGemist": 0,
-    "totaalInbound": 1
+    "totaalGemist": 3,
+    "totaalInbound": 8
   }
 }
