@@ -1,6 +1,6 @@
 {
   "date": "2026-09-07",
-  "generated_at": "2026-09-07T15:59:53Z",
+  "generated_at": "2026-09-07T19:52:30Z",
   "tickets": [
     {
       "ticketNumber": "2688",
@@ -85,21 +85,34 @@
       "webUrl": "https://desk.zoho.eu/support/htjzlancyr/ShowHomePage.do#Cases/dv/195464000013854001",
       "channel": "Phone",
       "doorgezetBrandmeester": false
+    },
+    {
+      "ticketNumber": "2696",
+      "tijd": "18:10",
+      "titel": "FW: 84195328_Volp: Bestelling: [C0009FT9FD] retourzending 109767186",
+      "klant": "De juridische helpdesk",
+      "status": "Open",
+      "statusType": "",
+      "prioriteit": "Niet ingesteld",
+      "webUrl": "https://desk.zoho.eu/support/htjzlancyr/ShowHomePage.do#Cases/dv/195464000013803182",
+      "channel": "Email",
+      "doorgezetBrandmeester": false
     }
   ],
   "channelCounts": {
-    "Phone": 7
+    "Phone": 7,
+    "Email": 1
   },
   "brandmeesterCount": 2,
   "ticketStats": {
-    "nieuweVandaag": 7,
+    "nieuweVandaag": 8,
     "geslotenVandaag": 15,
-    "totaalOpen": 17,
+    "totaalOpen": 18,
     "inDeWacht": 16,
     "statusBreakdown": {
+      "Open": 2,
       "In de wacht": 16,
-      "Gesloten": 616,
-      "Open": 1
+      "Gesloten": 616
     },
     "capBereikt": false
   }
