@@ -1,27 +1,61 @@
 {
-  "date": "2026-09-03",
-  "generated_at": "2026-09-03T09:32:33Z",
+  "date": "2026-09-07",
+  "generated_at": "2026-09-07T10:01:39Z",
   "drukte": "rustig",
-  "gesprekken": 0,
+  "gesprekken": 1,
   "stats": {
-    "opgelost": 0,
+    "opgelost": 1,
     "brandmeester": 0,
     "afkoop": 0,
     "terugbel": 0,
     "geenDekking": 0,
     "verkeerdNummer": 0
   },
-  "score": 0,
-  "conversations": [],
+  "score": 6.8,
+  "conversations": [
+    {
+      "tijd": "10:49",
+      "titel": "Studiebeurs dochter — bezwaar UvA en rechtsbijstand",
+      "personen": "Verzekerde: I.A. van derSchaar · Senne Duifhuis | Juridisch medewerker",
+      "samenvatting": "De beller (vader, geverifieerd via postcode en naam) belt namens zijn dochter (geboren 2007) over een studiebeurskwestie aan de UvA: zij had zich ingeschreven voor een keuzevak in plaats van de volledige studie, ontdekte dit laat, diende een verzoek tot alsnog inschrijving in dat werd afgewezen, en is nu in bezwaar gegaan bij een geschillencommissie. De beller vraagt of de dochter via de huishoudpolis rechtsbijstand/dekking heeft en of Lancyr snel kan helpen met aanvullende gronden. De medewerker geeft inhoudelijk advies (maakt duidelijk dat procedures langer dan een jaar duren, dat de beller zelf gronden moet aanvoeren, en dat de helpdesk daar beperkt bij kan helpen), maar verwijst niet expliciet door naar rechtsbijstand.",
+      "tags": [
+        [
+          "tag-bestuursrecht",
+          "Bestuursrecht"
+        ]
+      ],
+      "uitkomst": [
+        "outcome-opgelost",
+        "Telefonisch opgelost"
+      ],
+      "terugbel": false,
+      "verkeerdVerbonden": false,
+      "rechtsbijstandVerwijzing": false,
+      "adviesGegeven": true,
+      "identiteitGeverifieerd": true
+    }
+  ],
   "acties": [],
   "analyse": {
-    "goed": [],
-    "beter": []
+    "goed": [
+      "10:49 Studiebeurs: Identiteit correct geverifieerd (postcode en naam)",
+      "10:49 Studiebeurs: Medewerker geeft inhoudelijk advies over procedureduur en verantwoordelijkheid beller voor grondslag",
+      "10:49 Studiebeurs: Realistische verwachtingen gesteld (procedures duren langer dan een jaar)"
+    ],
+    "beter": [
+      "10:49 Studiebeurs: Geen expliciete doorverwijzing naar rechtsbijstanddekking onderdeel van polis. Medewerker beantwoordde vraag of dochter dekking heeft, maar vervolgstap (activering rechtsbijstand of doorverwijzing afdeling) ontbreekt",
+      "10:49 Studiebeurs: Geen concrete deadline afgesproken voor vervolgstap (bijv. 'bel rechtsbijstand voor maandag') ondanks dat beller om snelle hulp vroeg"
+    ]
   },
   "verkeerdVerbonden": {
     "aantal": 0,
     "percentage": 0.0
   },
   "rechtsbijstandVerwijzingen": 0,
-  "categorieen": []
+  "categorieen": [
+    [
+      "Bestuursrecht",
+      1
+    ]
+  ]
 }

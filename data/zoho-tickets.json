@@ -1,18 +1,45 @@
 {
-  "date": "2026-09-03",
-  "generated_at": "2026-09-03T09:32:30Z",
-  "tickets": [],
-  "channelCounts": {},
+  "date": "2026-09-07",
+  "generated_at": "2026-09-07T10:01:28Z",
+  "tickets": [
+    {
+      "ticketNumber": "2688",
+      "tijd": "11:11",
+      "titel": "Studiebeurs dochter — bezwaar UvA en rechtsbijstand",
+      "klant": "I.A. van derSchaar",
+      "status": "In de wacht",
+      "statusType": "",
+      "prioriteit": "Niet ingesteld",
+      "webUrl": "https://desk.zoho.eu/support/htjzlancyr/ShowHomePage.do#Cases/dv/195464000013816016",
+      "channel": "Phone",
+      "doorgezetBrandmeester": false
+    },
+    {
+      "ticketNumber": "2689",
+      "tijd": "11:21",
+      "titel": "verkeersongeval",
+      "klant": "Y.H.A. Natour",
+      "status": "Gesloten",
+      "statusType": "",
+      "prioriteit": "Niet ingesteld",
+      "webUrl": "https://desk.zoho.eu/support/htjzlancyr/ShowHomePage.do#Cases/dv/195464000013843001",
+      "channel": "Phone",
+      "doorgezetBrandmeester": false
+    }
+  ],
+  "channelCounts": {
+    "Phone": 2
+  },
   "brandmeesterCount": 0,
   "ticketStats": {
-    "nieuweVandaag": 0,
-    "geslotenVandaag": 0,
+    "nieuweVandaag": 2,
+    "geslotenVandaag": 7,
     "totaalOpen": 19,
-    "inDeWacht": 14,
+    "inDeWacht": 15,
     "statusBreakdown": {
-      "Open": 5,
-      "In de wacht": 14,
-      "Gesloten": 606
+      "Gesloten": 609,
+      "In de wacht": 15,
+      "Open": 4
     },
     "capBereikt": false
   }
