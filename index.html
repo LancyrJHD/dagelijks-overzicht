@@ -3979,7 +3979,7 @@ function renderDashboard(period) {
       <div class="verdeling-item">
         <div class="verdeling-row">
           <span class="verdeling-name">${label}</span>
-          <span class="verdeling-count">${count}</span>
+          <span class="verdeling-count">${count} &middot; ${totalGesprekken > 0 ? Math.round(100 * count / totalGesprekken) : 0}%</span>
         </div>
         <div class="verdeling-bar-wrap">
           <div class="verdeling-bar-fill" style="width:${(count/maxUit*100).toFixed(0)}%"></div>
@@ -4094,15 +4094,17 @@ function renderDashboard(period) {
   }));
   const categorieTop = Object.entries(categorieCounts).sort((a, b) => b[1] - a[1]).slice(0, 8);
   const categorieTotal = categorieTop.reduce((s, [, c]) => s + c, 0);
-  const categorieDonutSVG = buildDonutChart(categorieTop);
+  const categorieDonutSVG = buildDonutChart(categorieTop, 200);
   const categorieRows = categorieTop
-    .map(([label, count], i) => `
+    .map(([label, count], i) => {
+      const pct = categorieTotal > 0 ? Math.round(100 * count / categorieTotal) : 0;
+      return `
       <div class="verdeling-item">
         <div class="verdeling-row">
-          <span class="verdeling-name"><span style="display:inline-block;width:8px;height:8px;border-radius:50%;background:${DONUT_COLORS[i % DONUT_COLORS.length]};margin-right:7px;vertical-align:middle"></span>${escapeHtml(label)}</span>
-          <span class="verdeling-count">${count} &middot; ${categorieTotal > 0 ? Math.round(100 * count / categorieTotal) : 0}%</span>
+          <span class="verdeling-name"><span style="display:inline-block;width:8px;height:8px;border-radius:50%;background:${DONUT_COLORS[i % DONUT_COLORS.length]};margin-right:7px;vertical-align:middle"></span><strong>${pct}%</strong> ${escapeHtml(label)} <span style="color:var(--ink-50);font-weight:400">(${count})</span></span>
         </div>
-      </div>`).join('') || '<p style="color:var(--ink-30);font-size:12px;padding:12px 0">Geen data</p>';
+      </div>`;
+    }).join('') || '<p style="color:var(--ink-30);font-size:12px;padding:12px 0">Geen data</p>';
 
   const kanaalRows = Object.entries(zohoChannelCounts)
     .sort((a, b) => b[1] - a[1])
@@ -4172,7 +4174,8 @@ function renderDashboard(period) {
       : `<div style="color:var(--ink-50);font-size:11px;margin-top:10px;font-style:italic">"In de wacht" = Zoho-status On Hold.${ticketSnapshotNote}</div>`;
 
   const html = `
-    <!-- ZOOM PHONE: GEMISTE OPROEPEN -->
+    <!-- ZOOM PHONE: GEMISTE OPROEPEN -- alleen zichtbaar voor MISSED_CALLS_EMAILS -->
+    ${canSeeMissedCalls ? `
     <div class="card">
       <div class="gesprekken-header">
         <div class="gesprekken-title">Gemiste oproepen (Zoom Phone)</div>
@@ -4217,6 +4220,7 @@ function renderDashboard(period) {
       </div>
       ` : `<div style="color:var(--ink-50);font-size:12px;margin:-4px 0 0 0">Zoom-data nog niet beschikbaar voor deze periode</div>`}
     </div>
+    ` : ''}
     <!-- KPI HERO -->
     <div class="kpi-row">
       <!-- Score -->
@@ -4905,6 +4909,9 @@ let _recoveryMode = false;
 // ── Managementweergave (rolgebaseerd op e-mailadres) ──
 const MANAGEMENT_EMAILS = ['jackiestam@htjz.nl', 'edgarstam@htjz.nl', 'edgarstam@me.com', 'monikaboomgaard@htjz.nl', 's.bakker@nedvol.nl'];
 let isManagement = false;
+// ── Gemiste-oproepen-kaart (Zoom Phone) is alleen zichtbaar voor deze e-mailadressen ──
+const MISSED_CALLS_EMAILS = ['edgarstam@htjz.nl', 'dewiverver@htjz.nl', 'senneduifhuis@htjz.nl', 'jackiestam@htjz.nl'];
+let canSeeMissedCalls = false;
 let managementViewActive = false;
 let zohoChannelCounts = {};
 let zohoBrandmeesterCount = 0;
@@ -4944,9 +4951,11 @@ async function checkManagementAccess() {
     if (!sb) return;
     const { data: { user } } = await sb.auth.getUser();
     isManagement = !!(user && user.email && MANAGEMENT_EMAILS.includes(user.email.toLowerCase()));
+    canSeeMissedCalls = !!(user && user.email && MISSED_CALLS_EMAILS.includes(user.email.toLowerCase()));
   } catch (e) {
     console.log('[Management] kon rol niet bepalen:', e);
     isManagement = false;
+    canSeeMissedCalls = false;
   }
   const group = document.getElementById('view-toggle-group');
   if (group) group.style.display = isManagement ? 'inline-flex' : 'none';
