@@ -1385,6 +1385,7 @@ a:focus-visible,
       <button id="view-btn-medewerker" onclick="setManagementView(false)" style="border:none;cursor:pointer;font:inherit;font-size:12px;font-weight:600;padding:6px 14px;background:var(--navy);color:#fff">&#128100; Medewerker</button>
       <button id="view-btn-management" onclick="setManagementView(true)" style="border:none;cursor:pointer;font:inherit;font-size:12px;font-weight:600;padding:6px 14px;background:#fff;color:var(--navy)">&#128202; Management</button>
     </div>
+    <button class="logout-btn" id="profile-btn" onclick="openProfileModal()" style="display:none">&#128100; Profiel</button>
     <button class="logout-btn" id="logout-btn" onclick="authLogout()" style="display:none">Uitloggen</button>
     <div class="avatar-stack">
       <div class="av" title="Jackie Stam">JS</div>
@@ -4820,8 +4821,71 @@ function closeGesprekModalDirect() {
 }
 
 document.addEventListener('keydown', function(e) {
-  if (e.key === 'Escape') closeGesprekModalDirect();
+  if (e.key === 'Escape') { closeGesprekModalDirect(); closeProfileModalDirect(); }
 });
+
+// ======================== PROFIEL (ingelogd e-mailadres + wachtwoord wijzigen) ========================
+
+async function openProfileModal() {
+  const emailEl = document.getElementById('profile-email-display');
+  if (emailEl) emailEl.textContent = 'Laden…';
+  document.getElementById('profile-password').value = '';
+  document.getElementById('profile-password2').value = '';
+  clearProfileMessages();
+  document.getElementById('profile-modal').classList.add('open');
+  document.body.style.overflow = 'hidden';
+  const sb = getSupabase();
+  if (sb) {
+    const { data: { user } } = await sb.auth.getUser();
+    if (emailEl) emailEl.textContent = (user && user.email) || 'Onbekend';
+  } else if (emailEl) {
+    emailEl.textContent = 'Onbekend';
+  }
+}
+
+function closeProfileModal(e) {
+  if (e.target === document.getElementById('profile-modal')) closeProfileModalDirect();
+}
+
+function closeProfileModalDirect() {
+  const modal = document.getElementById('profile-modal');
+  if (modal) modal.classList.remove('open');
+  document.body.style.overflow = '';
+}
+
+function showProfileError(msg) {
+  const el = document.getElementById('profile-error');
+  el.textContent = msg;
+  el.classList.add('visible');
+}
+
+function clearProfileMessages() {
+  ['profile-error', 'profile-success'].forEach(id => {
+    const el = document.getElementById(id);
+    if (el) { el.textContent = ''; el.classList.remove('visible'); }
+  });
+}
+
+async function authChangePassword() {
+  const sb = getSupabase();
+  clearProfileMessages();
+  if (!sb) { showProfileError('Supabase niet geconfigureerd.'); return; }
+  const pw1 = document.getElementById('profile-password').value;
+  const pw2 = document.getElementById('profile-password2').value;
+  if (!pw1) { showProfileError('Vul een nieuw wachtwoord in.'); return; }
+  if (pw1 !== pw2) { showProfileError('Wachtwoorden komen niet overeen.'); return; }
+  if (pw1.length < 8) { showProfileError('Wachtwoord moet minimaal 8 tekens zijn.'); return; }
+  const btn = document.getElementById('profile-password-btn');
+  btn.disabled = true; btn.textContent = 'Bezig…';
+  const { error } = await sb.auth.updateUser({ password: pw1 });
+  btn.disabled = false; btn.textContent = 'Wachtwoord wijzigen';
+  if (error) { showProfileError(vertaalAuthFout(error.message)); return; }
+  document.getElementById('profile-password').value = '';
+  document.getElementById('profile-password2').value = '';
+  const succ = document.getElementById('profile-success');
+  succ.textContent = 'Wachtwoord succesvol gewijzigd.';
+  succ.classList.add('visible');
+}
 
 // ======================== SUPABASE AUTH ========================
 // ⚠️  Vul hieronder jouw Supabase project-URL en anon-key in
@@ -4920,12 +4984,14 @@ function togglePasswordVisibility(inputId, btn) {
 function showAuthOverlay() {
   document.getElementById('auth-overlay').classList.remove('hidden');
   document.getElementById('logout-btn').style.display = 'none';
+  document.getElementById('profile-btn').style.display = 'none';
   const mgmtGroup = document.getElementById('view-toggle-group');
   if (mgmtGroup) mgmtGroup.style.display = 'none';
 }
 function hideAuthOverlay() {
   document.getElementById('auth-overlay').classList.add('hidden');
   document.getElementById('logout-btn').style.display = '';
+  document.getElementById('profile-btn').style.display = '';
 }
 function showLogin() {
   document.getElementById('auth-login-screen').classList.add('active');
@@ -5395,6 +5461,33 @@ async function checkAuth() {
       <div class="auth-switch" style="margin-top:12px"><a onclick="showLogin()">&#8592; Terug naar inloggen</a></div>
     </div>
 
+  </div>
+</div>
+
+<!-- PROFIEL MODAL -->
+<div class="gesprek-modal-overlay" id="profile-modal" onclick="closeProfileModal(event)">
+  <div class="gesprek-modal" id="profile-modal-inner" style="max-width:420px">
+    <div class="gm-header">
+      <div class="gm-titel">Mijn profiel</div>
+      <button class="gm-close" onclick="closeProfileModalDirect()">&times;</button>
+    </div>
+    <div class="auth-field">
+      <label class="auth-label">Ingelogd als</label>
+      <div style="font-size:14px;font-weight:600;color:var(--navy);padding:8px 0" id="profile-email-display">&mdash;</div>
+    </div>
+    <div style="height:1px;background:var(--line);margin:12px 0 16px 0"></div>
+    <div class="auth-title" style="font-size:15px;margin-bottom:12px">Wachtwoord wijzigen</div>
+    <div class="auth-error" id="profile-error"></div>
+    <div class="auth-success" id="profile-success"></div>
+    <div class="auth-field">
+      <label class="auth-label">Nieuw wachtwoord</label>
+      <input class="auth-input" id="profile-password" type="password" placeholder="Min. 8 tekens" autocomplete="new-password" />
+    </div>
+    <div class="auth-field">
+      <label class="auth-label">Bevestig nieuw wachtwoord</label>
+      <input class="auth-input" id="profile-password2" type="password" placeholder="Herhaal wachtwoord" autocomplete="new-password" />
+    </div>
+    <button class="auth-btn" id="profile-password-btn" onclick="authChangePassword()">Wachtwoord wijzigen</button>
   </div>
 </div>
 
