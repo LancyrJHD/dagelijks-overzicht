@@ -1,6 +1,6 @@
 {
   "date": "2026-09-08",
-  "generated_at": "2026-09-08T16:01:29Z",
+  "generated_at": "2026-09-08T16:10:57Z",
   "drukte": "rustig",
   "gesprekken": 1,
   "stats": {
@@ -11,13 +11,13 @@
     "geenDekking": 0,
     "verkeerdNummer": 0
   },
-  "score": 6.8,
+  "score": 7.8,
   "conversations": [
     {
       "tijd": "16:55",
       "titel": "Eettafel geschil – dossierstand en vervolgstappen",
       "personen": "Verzekerde: anoniem · Jackie Stam | Juridisch Medewerker",
-      "samenvatting": "Beller belt over een geschil met fabrikant van eettafel (afgebroken rand); hij heeft foto's ingediend en drie opties (nieuwe tafel, geld terug, of prijsvermindering) doorgegeven aan Lancyr, maar hoort sinds ~3 weken niets meer. Identiteit is uiteindelijk geverifieerd via adresgegevens (2871 PH huisnummer 25), maar geen inhoudelijk juridisch advies is gegeven. Medewerker belooft dossier morgen door te zetten naar collega voor vervolgbehandeling.",
+      "samenvatting": "Beller belt over een geschil met een eettafelfabrikant (afgebroken rand) en wacht sinds ~3 weken op vervolgstappen. Medewerker Jackie voert verificatie uit via adresgegevens (2871 PH, huisnummer 25) en vindt het dossier met e-mailcorrespondentie van 20 augustus. Er is geen inhoudelijk juridisch advies gegeven; in plaats daarvan wordt de zaak doorgeplaatst naar een collega voor vervolgbesprek morgen met een plan van aanpak. Identiteit is geverifieerd via adresgegevens.",
       "tags": [
         [
           "tag-consument",
@@ -38,12 +38,14 @@
   "acties": [],
   "analyse": {
     "goed": [
-      "16:55 Eettafel geschil: Identiteit correct geverifieerd via adresgegevens (2871 PH huisnummer 25)",
-      "16:55 Eettafel geschil: Medewerker herkent ernst van situatie (3 weken geen contact) en neemt eigenaarschap door dossier morgen door te zetten"
+      "Identiteit correct geverifieerd via adresgegevens (16:55 – Eettafel geschil)",
+      "Dossier opgehaald en eerdere correspondentie (20 augustus) gecontroleerd (16:55 – Eettafel geschil)",
+      "Proactief vervolgcontact ingepland voor morgen met toezegging van plan van aanpak (16:55 – Eettafel geschil)",
+      "Geen overhaast advies gegeven zonder grondige dossieranalyse; zaak verantwoord doorgeplaatst naar collega (16:55 – Eettafel geschil)"
     ],
     "beter": [
-      "16:55 Eettafel geschil: Vervolgstap is te vaag ('morgen doorzetten naar collega') – concrete deadline en contactmoment met klant ontbreekt; afgesproken moment voor terugbellen niet benoemd",
-      "16:55 Eettafel geschil: Geen voortgang geboekt; beller blijft in onzekerheid zonder duidelijke verwachting over wanneer en hoe hij geïnformeerd wordt"
+      "Concrete deadline of contactmoment voor morgen zou explicieter kunnen zijn benoemd (bijv. telefoontijd 10:00 uur) – nu alleen 'morgen' afgesproken (16:55 – Eettafel geschil)",
+      "Bij terugbellen zou kunnen worden genoteerd welke collega de vervolgbesprek voert en op welk telefoonnummer de beller verwacht gebeld te worden (16:55 – Eettafel geschil)"
     ]
   },
   "verkeerdVerbonden": {
