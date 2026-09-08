@@ -4088,8 +4088,15 @@ function renderDashboard(period) {
   const verkeerdVerbondenCount = allConversations.filter(c => c.verkeerdVerbonden).length;
   const rechtsbijstandCount = allConversations.filter(c => c.rechtsbijstandVerwijzing).length;
   const verkeerdVerbondenPct = totalGesprekken > 0 ? (100 * verkeerdVerbondenCount / totalGesprekken).toFixed(1) : '0.0';
+  // "Autoverzekering" en "Routering" zijn in de historische data door de AI
+  // door elkaar gebruikt voor hetzelfde soort verkeerd-verbonden gesprek --
+  // hier samengevoegd voor de weergave (bevinding 8 sep 2026), de opgeslagen
+  // data zelf blijft ongewijzigd. scripts/analyze_granola_ai.py is
+  // aangepast zodat nieuwe gesprekken consistent "Routering" krijgen.
+  const CATEGORIE_LABEL_MERGE = { 'Autoverzekering': 'Routering' };
   const categorieCounts = {};
-  allConversations.forEach(c => (c.tags || []).forEach(([, label]) => {
+  allConversations.forEach(c => (c.tags || []).forEach(([, rawLabel]) => {
+    const label = CATEGORIE_LABEL_MERGE[rawLabel] || rawLabel;
     if (label) categorieCounts[label] = (categorieCounts[label] || 0) + 1;
   }));
   const categorieTop = Object.entries(categorieCounts).sort((a, b) => b[1] - a[1]).slice(0, 8);
