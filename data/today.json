@@ -1,6 +1,6 @@
 {
   "date": "2026-09-08",
-  "generated_at": "2026-09-08T15:40:59Z",
+  "generated_at": "2026-09-08T15:51:05Z",
   "drukte": "rustig",
   "gesprekken": 1,
   "stats": {
@@ -11,13 +11,13 @@
     "geenDekking": 0,
     "verkeerdNummer": 0
   },
-  "score": 7.8,
+  "score": 6.8,
   "conversations": [
     {
       "tijd": "16:55",
       "titel": "Eettafel geschil – dossierstand en vervolgstappen",
       "personen": "Verzekerde: anoniem · Jackie Stam | Juridisch Medewerker",
-      "samenvatting": "Beller heeft een consumentengeschil over een beschadigde eettafel met de fabrikant. De verificatie verliep moeizaam (verkeerde postcode in systeem), maar is uiteindelijk gelukt via adres 2871 PH huisnummer 25. Jackie gaf geen inhoudelijk juridisch advies, maar verzamelde dossierinformatie en stemde ermee in het dossier door te zetten naar een collega voor vervolgstappen morgen met een plan van aanpak.",
+      "samenvatting": "Beller belt over een geschil met een eettafel-fabrikant (afgebroken rand); identiteit werd tijdens het gesprek geverifieerd via adres (2871 PH, huisnummer 25). Lancyr had eerder opties aangeboden (nieuwe tafel, geld terug, of prijsvermindering); beller koos voor prijsvermindering en wacht nu bijna 3 weken op vervolgstappen. Medewerker geeft geen inhoudelijk advies maar stelt voor het dossier morgen door een collega te laten uitzoeken en de beller terug te bellen voor verdere behandeling.",
       "tags": [
         [
           "tag-consument",
@@ -38,13 +38,12 @@
   "acties": [],
   "analyse": {
     "goed": [
-      "Identiteit uiteindelijk succesvol geverifieerd (16:55, Eettafel geschil) – ondanks initiële postcode-discrepantie is de beller via adres 2871 PH huisnummer 25 bevestigd in het systeem",
-      "Correct gehandeld door geen inhoudelijk advies te geven voordat volledige dossierstand was opgehelderd (16:55)",
-      "Vervolgplan afgesproken: doorverwijzing naar collega morgen met plan van aanpak, wat zorgt voor continuïteit"
+      "Identiteit correct geverifieerd via adresgegevens (16:55, eettafelgeschil)",
+      "Vervolgstap afgesproken: collega zal dossier morgen uitzoeken (16:55, eettafelgeschil)"
     ],
     "beter": [
-      "Vervolgcontact (16:55, Eettafel geschil) – zorg dat de beller een concrete deadline krijgt (bijv. 'wij bellen u morgen vóór 15:00') in plaats van alleen 'morgen'; dit verhoogt de servicekwaliteit en voorkomt miscommunicatie",
-      "Schadebedrag van de beschadigde eettafel zou moeten worden vastgesteld in het dossier (16:55) voor toekomstige dekkingscontrole (franchise EUR 250), zodat de vervolgafhandeling direct kan beginnen zonder extra onderzoek"
+      "Concrete terugbeldeadline ontbreekt – alleen 'morgen' afgesproken zonder tijdstip (16:55, eettafelgeschil); beter: 'wij bellen u donderdag voor 17:00 terug'",
+      "Geen tussencommunicatie naar fabrikant afgesproken ondanks wachttijd van bijna 3 weken – medewerker had kunnen vaststellen of Lancyr zelf nu actie onderneemt (16:55, eettafelgeschil)"
     ]
   },
   "verkeerdVerbonden": {
