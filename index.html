@@ -3690,6 +3690,32 @@ function getZoomAggregate(keys) {
   return { totaalInbound, totaalGemist, terugGebeld, nietTerugGebeld, alleGemist, dataAvailable: anyData };
 }
 
+// Drukte moet het totaal aantal oproepen weerspiegelen (Zoom), niet het
+// aantal Granola-gesprekken -- dat laatste telt alleen opgenomen/
+// geanalyseerde gesprekken, dus een dag met veel gemiste oproepen maar
+// weinig opgenomen gesprekken zou anders ten onrechte als "rustig" gelden.
+// Drempels gekalibreerd op de werkelijke verdeling in data/zoom-history.json
+// (8 sep 2026): 5-21 oproepen/dag, mediaan 13.
+function drukteLabelFromCallCount(n) {
+  if (n >= 16) return 'druk';
+  if (n >= 10) return 'matig';
+  return 'rustig';
+}
+
+function computeDrukteFromCalls(keys) {
+  const labels = [];
+  keys.forEach(k => {
+    const d = zoomHistory[k];
+    if (d && typeof d.totaalInbound === 'number') {
+      labels.push(drukteLabelFromCallCount(d.totaalInbound));
+    }
+  });
+  if (labels.length === 0) return null;
+  const order = { rustig: 0, matig: 1, druk: 2 };
+  labels.sort((a, b) => order[a] - order[b]);
+  return labels[Math.floor(labels.length / 2)];
+}
+
 // Groepeert gemiste oproepen per (datum, nummer) -- zonder dit toont de
 // detailtabel een aparte rij per keer dat hetzelfde nummer belde, terwijl
 // het totaal-gemist-cijfer daarboven (zoomAgg.totaalGemist) wel al het
@@ -3855,12 +3881,17 @@ function renderDashboard(period) {
     }
   }
 
-  const drukteLabel = drukte || 'rustig';
+  const callDrukte = computeDrukteFromCalls(getZoomPeriodKeys(period));
+  const drukteLabel = callDrukte || drukte || 'rustig';
   const druktePct = window.druktePct(drukteLabel);
   const piekTijd = druktePiek(allConversations);
-  const drukteSubText = piekTijd
-    ? `${totalGesprekken} gesprekken · piek om ${piekTijd}`
-    : `${totalGesprekken} gesprekken vandaag`;
+  const drukteSubText = zoomAgg.dataAvailable
+    ? (piekTijd
+      ? `${zoomAgg.totaalInbound} oproepen · piek om ${piekTijd}`
+      : `${zoomAgg.totaalInbound} oproepen`)
+    : (piekTijd
+      ? `${totalGesprekken} gesprekken · piek om ${piekTijd}`
+      : `${totalGesprekken} gesprekken vandaag`);
 
   // Verdeling per uitkomst
   const uitkomstCounts = getUitkomstCounts(allConversations);
@@ -4071,7 +4102,7 @@ function renderDashboard(period) {
       </div>
       ${zoomAgg.dataAvailable ? `
       <button type="button" onclick="toggleGemisteOproepen()" style="display:flex;align-items:center;justify-content:space-between;width:100%;background:none;border:none;padding:2px 0 4px 0;margin:-4px 0 4px 0;cursor:pointer;text-align:left">
-        <span style="font-size:14px;color:var(--ink-90)"><strong>${zoomAgg.totaalInbound}</strong> totaal gebeld &middot; <strong>${zoomAgg.totaalGemist}</strong> gemist &middot; <strong>${zoomAgg.terugGebeld}</strong> teruggebeld${zoomAgg.nietTerugGebeld.length ? ` &middot; <span style="color:#b45309;font-weight:600">${zoomAgg.nietTerugGebeld.length} nog niet teruggebeld</span>` : ''}</span>
+        <span style="font-size:14px;color:var(--ink-90)"><strong>${zoomAgg.totaalGemist}</strong> gemist &middot; <strong>${zoomAgg.terugGebeld}</strong> teruggebeld${zoomAgg.nietTerugGebeld.length ? ` &middot; <span style="color:#b45309;font-weight:600">${zoomAgg.nietTerugGebeld.length} nog niet teruggebeld</span>` : ''} <span style="font-size:10px;color:var(--ink-50);font-weight:400">(${zoomAgg.totaalInbound} totaal gebeld)</span></span>
         <span id="gemiste-oproepen-arrow" style="color:var(--ink-50);font-size:12px">&#9662;</span>
       </button>
       <div id="gemiste-oproepen-detail" style="display:none">
