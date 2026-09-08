@@ -1,27 +1,60 @@
 {
   "date": "2026-09-08",
-  "generated_at": "2026-09-08T14:50:54Z",
+  "generated_at": "2026-09-08T15:11:08Z",
   "drukte": "rustig",
-  "gesprekken": 0,
+  "gesprekken": 1,
   "stats": {
     "opgelost": 0,
     "brandmeester": 0,
     "afkoop": 0,
-    "terugbel": 0,
+    "terugbel": 1,
     "geenDekking": 0,
     "verkeerdNummer": 0
   },
-  "score": 0,
-  "conversations": [],
+  "score": 8.1,
+  "conversations": [
+    {
+      "tijd": "16:55",
+      "titel": "Eettafel geschil – dossierstand en vervolgstappen",
+      "personen": "Verzekerde: anoniem · Jackie Stam | Juridisch Medewerker",
+      "samenvatting": "Beller heeft een geschil over een beschadigde eettafel met de fabrikant en heeft via Lancyr rechtsbijstand gezocht. De beller is geverifieerd via adres (2871 PH, huisnummer 25) en het dossier is teruggevonden; Jackie heeft het dossierverloop samengevat (foto's ingediend 20 augustus, opties aangeboden, ingebrekenstelling verzonden door beller zelf, geen reactie van fabrikant ontvangen). Jackie heeft geen inhoudelijk juridisch advies gegeven, maar stelt voor de zaak naar een collega door te zetten voor vervolgbehandeling morgen, met het doel een plan van aanpak uit te werken en de beller (liefst) financiële compensatie te helpen verkrijgen.",
+      "tags": [
+        [
+          "tag-consument",
+          "Consumentenrecht"
+        ]
+      ],
+      "uitkomst": [
+        "outcome-terugbel",
+        "Terugbellen"
+      ],
+      "terugbel": true,
+      "verkeerdVerbonden": false,
+      "rechtsbijstandVerwijzing": false,
+      "adviesGegeven": false,
+      "identiteitGeverifieerd": true
+    }
+  ],
   "acties": [],
   "analyse": {
-    "goed": [],
-    "beter": []
+    "goed": [
+      "16:55 Eettafel geschil: Identiteit correct geverifieerd via adres (2871 PH, huisnummer 25) en dossier teruggevonden in systeem",
+      "16:55 Eettafel geschil: Dossierstand helder samengevat (foto's 20 augustus, opties aangeboden, ingebrekenstelling verzonden, geen fabrikantreactie) – beller goed geïnformeerd",
+      "16:55 Eettafel geschil: Duidelijk vervolgplan afgesproken – doorverwijzing naar collega morgen voor plan van aanpak en onderhandeling compensatie"
+    ],
+    "beter": [
+      "16:55 Eettafel geschil: Geen concrete deadline genoemd voor vervolgcontact morgen (geen specifiek tijdstip of 'voor 12:00 uur' afgesproken)"
+    ]
   },
   "verkeerdVerbonden": {
     "aantal": 0,
     "percentage": 0.0
   },
   "rechtsbijstandVerwijzingen": 0,
-  "categorieen": []
+  "categorieen": [
+    [
+      "Consumentenrecht",
+      1
+    ]
+  ]
 }

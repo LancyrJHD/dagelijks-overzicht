@@ -1,10 +1,10 @@
 {
   "date": "2026-09-08",
-  "generated_at": "2026-09-08T14:50:52Z",
+  "generated_at": "2026-09-08T15:10:55Z",
   "totaalInbound": 10,
   "totaalGemist": 10,
-  "terugGebeld": 0,
-  "nietTerugGebeld": 10,
+  "terugGebeld": 1,
+  "nietTerugGebeld": 9,
   "nietTerugGebeldNummers": [
     {
       "nummer": "+31646820413",
@@ -67,13 +67,6 @@
       "naam": "Onbekend",
       "tijd": "12:11",
       "callResult": "abandoned",
-      "teruggebeld": false
-    },
-    {
-      "nummer": "+31641012186",
-      "naam": "Onbekend",
-      "tijd": "15:46",
-      "callResult": "overflowed",
       "teruggebeld": false
     }
   ],
@@ -146,7 +139,7 @@
       "naam": "Onbekend",
       "tijd": "15:46",
       "callResult": "overflowed",
-      "teruggebeld": false
+      "teruggebeld": true
     }
   ]
 }

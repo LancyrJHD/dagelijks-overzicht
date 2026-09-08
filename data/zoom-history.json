@@ -1213,13 +1213,13 @@
         "callResult": "overflowed",
         "naam": "Onbekend",
         "nummer": "+31641012186",
-        "teruggebeld": false,
+        "teruggebeld": true,
         "tijd": "15:46"
       }
     ],
     "date": "2026-09-08",
-    "generated_at": "2026-09-08T14:50:52Z",
-    "nietTerugGebeld": 10,
+    "generated_at": "2026-09-08T15:10:55Z",
+    "nietTerugGebeld": 9,
     "nietTerugGebeldNummers": [
       {
         "callResult": "overflowed",
@@ -1283,16 +1283,9 @@
         "nummer": "+31620976298",
         "teruggebeld": false,
         "tijd": "12:11"
-      },
-      {
-        "callResult": "overflowed",
-        "naam": "Onbekend",
-        "nummer": "+31641012186",
-        "teruggebeld": false,
-        "tijd": "15:46"
       }
     ],
-    "terugGebeld": 0,
+    "terugGebeld": 1,
     "totaalGemist": 10,
     "totaalInbound": 10
   }
