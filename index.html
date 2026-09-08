@@ -4174,7 +4174,7 @@ function renderDashboard(period) {
       : `<div style="color:var(--ink-50);font-size:11px;margin-top:10px;font-style:italic">"In de wacht" = Zoho-status On Hold.${ticketSnapshotNote}</div>`;
 
   const html = `
-    <!-- ZOOM PHONE: GEMISTE OPROEPEN -- alleen zichtbaar voor MISSED_CALLS_EMAILS -->
+    <!-- ZOOM PHONE: GEMISTE OPROEPEN -- alleen zichtbaar voor @htjz.nl-accounts -->
     ${canSeeMissedCalls ? `
     <div class="card">
       <div class="gesprekken-header">
@@ -4182,7 +4182,7 @@ function renderDashboard(period) {
       </div>
       ${zoomAgg.dataAvailable ? `
       <button type="button" onclick="toggleGemisteOproepen()" style="display:flex;align-items:center;justify-content:space-between;width:100%;background:none;border:none;padding:2px 0 4px 0;margin:-4px 0 4px 0;cursor:pointer;text-align:left">
-        <span style="font-size:14px;color:var(--ink-90)"><strong>${zoomAgg.totaalGemist}</strong> gemist &middot; <strong>${zoomAgg.terugGebeld}</strong> teruggebeld${zoomAgg.nietTerugGebeld.length ? ` &middot; <span style="color:#b45309;font-weight:600">${zoomAgg.nietTerugGebeld.length} nog niet teruggebeld</span>` : ''} <span style="font-size:10px;color:var(--ink-50);font-weight:400">(${zoomAgg.totaalInbound} totaal gebeld)</span></span>
+        <span style="font-size:14px;color:var(--ink-90)"><strong>${zoomAgg.totaalGemist}</strong> gemist &middot; <strong>${zoomAgg.terugGebeld}</strong> teruggebeld${zoomAgg.nietTerugGebeld.length ? ` &middot; <span style="color:#b45309;font-weight:600">${zoomAgg.totaalGemist > 0 ? Math.round(100 * zoomAgg.nietTerugGebeld.length / zoomAgg.totaalGemist) : 0}% nog niet teruggebeld</span> <span style="font-size:10px;color:var(--ink-50);font-weight:400">(${zoomAgg.nietTerugGebeld.length})</span>` : ''} <span style="font-size:10px;color:var(--ink-50);font-weight:400">(${zoomAgg.totaalInbound} totaal gebeld)</span></span>
         <span id="gemiste-oproepen-arrow" style="color:var(--ink-50);font-size:12px">&#9662;</span>
       </button>
       <div id="gemiste-oproepen-detail" style="display:none">
@@ -4909,8 +4909,7 @@ let _recoveryMode = false;
 // ── Managementweergave (rolgebaseerd op e-mailadres) ──
 const MANAGEMENT_EMAILS = ['jackiestam@htjz.nl', 'edgarstam@htjz.nl', 'edgarstam@me.com', 'monikaboomgaard@htjz.nl', 's.bakker@nedvol.nl'];
 let isManagement = false;
-// ── Gemiste-oproepen-kaart (Zoom Phone) is alleen zichtbaar voor deze e-mailadressen ──
-const MISSED_CALLS_EMAILS = ['edgarstam@htjz.nl', 'dewiverver@htjz.nl', 'senneduifhuis@htjz.nl', 'jackiestam@htjz.nl'];
+// ── Gemiste-oproepen-kaart (Zoom Phone) is alleen zichtbaar voor @htjz.nl-accounts ──
 let canSeeMissedCalls = false;
 let managementViewActive = false;
 let zohoChannelCounts = {};
@@ -4951,7 +4950,7 @@ async function checkManagementAccess() {
     if (!sb) return;
     const { data: { user } } = await sb.auth.getUser();
     isManagement = !!(user && user.email && MANAGEMENT_EMAILS.includes(user.email.toLowerCase()));
-    canSeeMissedCalls = !!(user && user.email && MISSED_CALLS_EMAILS.includes(user.email.toLowerCase()));
+    canSeeMissedCalls = !!(user && user.email && user.email.toLowerCase().endsWith('@htjz.nl'));
   } catch (e) {
     console.log('[Management] kon rol niet bepalen:', e);
     isManagement = false;
