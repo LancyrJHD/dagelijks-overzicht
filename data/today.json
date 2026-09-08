@@ -1,6 +1,6 @@
 {
   "date": "2026-09-08",
-  "generated_at": "2026-09-08T15:11:08Z",
+  "generated_at": "2026-09-08T15:21:28Z",
   "drukte": "rustig",
   "gesprekken": 1,
   "stats": {
@@ -11,13 +11,13 @@
     "geenDekking": 0,
     "verkeerdNummer": 0
   },
-  "score": 8.1,
+  "score": 7.8,
   "conversations": [
     {
       "tijd": "16:55",
       "titel": "Eettafel geschil – dossierstand en vervolgstappen",
       "personen": "Verzekerde: anoniem · Jackie Stam | Juridisch Medewerker",
-      "samenvatting": "Beller heeft een geschil over een beschadigde eettafel met de fabrikant en heeft via Lancyr rechtsbijstand gezocht. De beller is geverifieerd via adres (2871 PH, huisnummer 25) en het dossier is teruggevonden; Jackie heeft het dossierverloop samengevat (foto's ingediend 20 augustus, opties aangeboden, ingebrekenstelling verzonden door beller zelf, geen reactie van fabrikant ontvangen). Jackie heeft geen inhoudelijk juridisch advies gegeven, maar stelt voor de zaak naar een collega door te zetten voor vervolgbehandeling morgen, met het doel een plan van aanpak uit te werken en de beller (liefst) financiële compensatie te helpen verkrijgen.",
+      "samenvatting": "Beller heeft een consumentengeschil over een defecte eettafel (afgebroken rand) met de fabrikant. De beller is geverifieerd via adresgegevens (2871 PH, huisnummer 25) en heeft eerder een verzoek ingediend met foto's (20 augustus). De zaak loopt via rechtsbijstandsverzekering, maar er is geen voortgang geboekt in ruim 2,5 weken; de medewerker geeft geen inhoudelijk advies maar verwijst door naar collega voor vervolgcontact morgen.",
       "tags": [
         [
           "tag-consument",
@@ -38,12 +38,13 @@
   "acties": [],
   "analyse": {
     "goed": [
-      "16:55 Eettafel geschil: Identiteit correct geverifieerd via adres (2871 PH, huisnummer 25) en dossier teruggevonden in systeem",
-      "16:55 Eettafel geschil: Dossierstand helder samengevat (foto's 20 augustus, opties aangeboden, ingebrekenstelling verzonden, geen fabrikantreactie) – beller goed geïnformeerd",
-      "16:55 Eettafel geschil: Duidelijk vervolgplan afgesproken – doorverwijzing naar collega morgen voor plan van aanpak en onderhandeling compensatie"
+      "Identiteit correct geverifieerd via adresgegevens (16:55 – Eettafel geschil)",
+      "Vervolgcontact concreet gepland: terugbellen morgen via collega (16:55 – Eettafel geschil)",
+      "Medewerker erkent stagnatie in zaak (ruim 2,5 weken geen voortgang sinds 20 augustus) en initieert actie"
     ],
     "beter": [
-      "16:55 Eettafel geschil: Geen concrete deadline genoemd voor vervolgcontact morgen (geen specifiek tijdstip of 'voor 12:00 uur' afgesproken)"
+      "Concrete deadline voor terugbellen ontbreekt: 'morgen' is onprecies – geef een exact tijdstip of zeg 'uiterlijk 17:00 morgen' (16:55 – Eettafel geschil)",
+      "Geen heldere tussenstappen vastgelegd: wat zal collega morgen concreet doen (fabrikant bellen, escalatie, vervangingsproces)? (16:55 – Eettafel geschil)"
     ]
   },
   "verkeerdVerbonden": {
