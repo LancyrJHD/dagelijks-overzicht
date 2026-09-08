@@ -3475,6 +3475,18 @@ function druktePiek(conversations) {
   return maxH ? `${maxH}:00` : null;
 }
 
+// Normaliseert bijnamen/verhoorde varianten en rol-suffixen naar dezelfde
+// canonieke naam -- zonder dit stond dezelfde persoon soms als 3 losse
+// "juristen" in de teamstatistieken (bevinding 8 sep 2026): "Senna"/"Senne"
+// vs "Senne Duifhuis" vs "Senne Duifhuis | Juridisch medewerker", en
+// "Davy" (Granola-transcriptiefout) vs "Dewi Verver".
+const JURIST_NAME_ALIASES = {
+  'senna': 'Senne Duifhuis',
+  'senne': 'Senne Duifhuis',
+  'davy': 'Dewi Verver',
+  'dd': 'Dewi Verver',
+};
+
 function juristFromPersoon(personen) {
   if (!personen) return null;
   const parts = personen.split('·');
@@ -3483,7 +3495,11 @@ function juristFromPersoon(personen) {
   // remove "Medewerker:" prefix
   j = j.replace(/^Medewerker:\s*/i, '').replace(/^n\.v\.t\.?$/i, '').trim();
   if (!j || j.toLowerCase() === 'medewerker') return null;
-  return j;
+  // Rol-suffix en bijnaam-tussen-haakjes eraf, bv. "Jackie Stam | Juridisch
+  // Medewerker" -> "Jackie Stam", 'Davy ("DD")' -> "Davy"
+  j = j.replace(/\s*\|.*$/, '').replace(/\s*\([^)]*\)\s*$/, '').trim();
+  const alias = JURIST_NAME_ALIASES[j.toLowerCase()];
+  return alias || j;
 }
 
 function getJuristCounts(conversations) {
