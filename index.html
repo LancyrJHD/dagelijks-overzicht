@@ -4835,6 +4835,7 @@ async function openProfileModal() {
   if (emailEl) emailEl.textContent = 'Laden…';
   document.getElementById('profile-password').value = '';
   document.getElementById('profile-password2').value = '';
+  document.getElementById('profile-name').value = '';
   clearProfileMessages();
   document.getElementById('profile-modal').classList.add('open');
   document.body.style.overflow = 'hidden';
@@ -4842,6 +4843,7 @@ async function openProfileModal() {
   if (sb) {
     const { data: { user } } = await sb.auth.getUser();
     if (emailEl) emailEl.textContent = (user && user.email) || 'Onbekend';
+    document.getElementById('profile-name').value = (user && user.user_metadata && user.user_metadata.name) || '';
   } else if (emailEl) {
     emailEl.textContent = 'Onbekend';
   }
@@ -4864,10 +4866,34 @@ function showProfileError(msg) {
 }
 
 function clearProfileMessages() {
-  ['profile-error', 'profile-success'].forEach(id => {
+  ['profile-error', 'profile-success', 'profile-name-error', 'profile-name-success'].forEach(id => {
     const el = document.getElementById(id);
     if (el) { el.textContent = ''; el.classList.remove('visible'); }
   });
+}
+
+async function authChangeName() {
+  const sb = getSupabase();
+  clearProfileMessages();
+  if (!sb) { document.getElementById('profile-name-error').textContent = 'Supabase niet geconfigureerd.'; document.getElementById('profile-name-error').classList.add('visible'); return; }
+  const naam = document.getElementById('profile-name').value.trim();
+  if (!naam) {
+    const el = document.getElementById('profile-name-error');
+    el.textContent = 'Vul een naam in.'; el.classList.add('visible');
+    return;
+  }
+  const btn = document.getElementById('profile-name-btn');
+  btn.disabled = true; btn.textContent = 'Bezig…';
+  const { error } = await sb.auth.updateUser({ data: { name: naam } });
+  btn.disabled = false; btn.textContent = 'Naam opslaan';
+  if (error) {
+    const el = document.getElementById('profile-name-error');
+    el.textContent = vertaalAuthFout(error.message); el.classList.add('visible');
+    return;
+  }
+  const succ = document.getElementById('profile-name-success');
+  succ.textContent = 'Naam opgeslagen.';
+  succ.classList.add('visible');
 }
 
 async function authChangePassword() {
@@ -5107,7 +5133,10 @@ async function initPresence() {
   if (!user) return;
 
   _myEmail = user.email;
-  _myNaam = user.user_metadata?.naam || user.email.split('@')[0];
+  // BUG (gevonden 8 sep 2026): authRegister() slaat de naam op als
+  // user_metadata.name, maar hier werd .naam gelezen -- viel daardoor
+  // altijd terug op de e-mailprefix i.p.v. de echte naam te tonen.
+  _myNaam = user.user_metadata?.name || user.email.split('@')[0];
   const savedActief = localStorage.getItem('lancyr_actief') !== 'false';
 
   _presenceChannel = sb.channel('team-status', { config: { presence: { key: _myEmail } } });
@@ -5483,6 +5512,14 @@ async function checkAuth() {
       <div style="font-size:14px;font-weight:600;color:var(--navy);padding:8px 0" id="profile-email-display">&mdash;</div>
     </div>
     <div style="height:1px;background:var(--line);margin:12px 0 16px 0"></div>
+    <div class="auth-title" style="font-size:15px;margin-bottom:12px">Naam</div>
+    <div class="auth-error" id="profile-name-error"></div>
+    <div class="auth-success" id="profile-name-success"></div>
+    <div class="auth-field">
+      <input class="auth-input" id="profile-name" type="text" placeholder="Jouw naam" autocomplete="name" />
+    </div>
+    <button class="auth-btn" id="profile-name-btn" onclick="authChangeName()">Naam opslaan</button>
+    <div style="height:1px;background:var(--line);margin:20px 0 16px 0"></div>
     <div class="auth-title" style="font-size:15px;margin-bottom:12px">Wachtwoord wijzigen</div>
     <div class="auth-error" id="profile-error"></div>
     <div class="auth-success" id="profile-success"></div>
