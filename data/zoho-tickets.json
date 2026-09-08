@@ -1,6 +1,6 @@
 {
   "date": "2026-09-08",
-  "generated_at": "2026-09-08T13:51:56Z",
+  "generated_at": "2026-09-08T14:01:00Z",
   "tickets": [
     {
       "ticketNumber": "2697",
@@ -13,19 +13,32 @@
       "webUrl": "https://desk.zoho.eu/support/htjzlancyr/ShowHomePage.do#Cases/dv/195464000013873001",
       "channel": "Phone",
       "doorgezetBrandmeester": false
+    },
+    {
+      "ticketNumber": "2698",
+      "tijd": "15:59",
+      "titel": "FW: Klacht over terugbel afspraak",
+      "klant": "De juridische helpdesk",
+      "status": "Open",
+      "statusType": "",
+      "prioriteit": "Niet ingesteld",
+      "webUrl": "https://desk.zoho.eu/support/htjzlancyr/ShowHomePage.do#Cases/dv/195464000013862023",
+      "channel": "Email",
+      "doorgezetBrandmeester": false
     }
   ],
   "channelCounts": {
-    "Phone": 1
+    "Phone": 1,
+    "Email": 1
   },
   "brandmeesterCount": 0,
   "ticketStats": {
-    "nieuweVandaag": 1,
+    "nieuweVandaag": 2,
     "geslotenVandaag": 0,
-    "totaalOpen": 19,
+    "totaalOpen": 20,
     "inDeWacht": 14,
     "statusBreakdown": {
-      "Open": 5,
+      "Open": 6,
       "Gesloten": 616,
       "In de wacht": 14
     },
