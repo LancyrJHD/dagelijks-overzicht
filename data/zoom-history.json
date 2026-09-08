@@ -1143,5 +1143,87 @@
     "terugGebeld": 0,
     "totaalGemist": 3,
     "totaalInbound": 8
+  },
+  "2026-09-08": {
+    "alleGemistNummers": [
+      {
+        "callResult": "overflowed",
+        "naam": "Onbekend",
+        "nummer": "+31646820413",
+        "teruggebeld": false,
+        "tijd": "09:26"
+      },
+      {
+        "callResult": "overflowed",
+        "naam": "Onbekend",
+        "nummer": "+31647183191",
+        "teruggebeld": false,
+        "tijd": "09:46"
+      },
+      {
+        "callResult": "overflowed",
+        "naam": "Onbekend",
+        "nummer": "+31618989828",
+        "teruggebeld": false,
+        "tijd": "10:07"
+      },
+      {
+        "callResult": "abandoned",
+        "naam": "Onbekend",
+        "nummer": "+31651601171",
+        "teruggebeld": false,
+        "tijd": "11:08"
+      },
+      {
+        "callResult": "abandoned",
+        "naam": "Onbekend",
+        "nummer": "+31651601171",
+        "teruggebeld": false,
+        "tijd": "11:13"
+      }
+    ],
+    "date": "2026-09-08",
+    "generated_at": "2026-09-08T09:26:56Z",
+    "nietTerugGebeld": 5,
+    "nietTerugGebeldNummers": [
+      {
+        "callResult": "overflowed",
+        "naam": "Onbekend",
+        "nummer": "+31646820413",
+        "teruggebeld": false,
+        "tijd": "09:26"
+      },
+      {
+        "callResult": "overflowed",
+        "naam": "Onbekend",
+        "nummer": "+31647183191",
+        "teruggebeld": false,
+        "tijd": "09:46"
+      },
+      {
+        "callResult": "overflowed",
+        "naam": "Onbekend",
+        "nummer": "+31618989828",
+        "teruggebeld": false,
+        "tijd": "10:07"
+      },
+      {
+        "callResult": "abandoned",
+        "naam": "Onbekend",
+        "nummer": "+31651601171",
+        "teruggebeld": false,
+        "tijd": "11:08"
+      },
+      {
+        "callResult": "abandoned",
+        "naam": "Onbekend",
+        "nummer": "+31651601171",
+        "teruggebeld": false,
+        "tijd": "11:13"
+      }
+    ],
+    "terugGebeld": 0,
+    "totaalGemist": 5,
+    "totaalInbound": 5
   }
 }
