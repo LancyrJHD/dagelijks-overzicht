@@ -5075,17 +5075,16 @@ async function authLogin() {
   const { error } = await sb.auth.signInWithPassword({ email, password });
   btn.disabled = false; btn.textContent = 'Aanmelden';
   if (error) {
+    // BUG (gevonden 8 sep 2026): dit riep voorheen sb.auth.signInWithOtp()
+    // aan om te bepalen of het account niet bestond of het wachtwoord fout
+    // was -- maar die aanroep heeft een echt neveneffect: als het account
+    // wel bestaat, verstuurt Supabase daadwerkelijk een inlogmail. Elke
+    // mislukte inlogpoging met een bestaand account triggerde zo stiekem
+    // een echte e-mail. Toon nu simpelweg een generieke foutmelding, zonder
+    // te verklappen of het account bestaat (ook beter voor de veiligheid --
+    // voorkomt dat iemand e-mailadressen kan aftasten op een account).
     if (error.message && error.message.includes('Invalid login')) {
-      const { error: otpErr } = await sb.auth.signInWithOtp({ email, options: { shouldCreateUser: false } });
-      const noAccount = otpErr && (
-        otpErr.message.includes('not found') ||
-        otpErr.message.includes('user_not_found') ||
-        otpErr.message.includes('User not found') ||
-        (otpErr.status === 422)
-      );
-      showAuthError('login-error', noAccount
-        ? 'Er bestaat geen account met dit e-mailadres.'
-        : 'E-mail of wachtwoord klopt niet.');
+      showAuthError('login-error', 'E-mail of wachtwoord klopt niet.');
     } else {
       showAuthError('login-error', vertaalAuthFout(error.message));
     }
