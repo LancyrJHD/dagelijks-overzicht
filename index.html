@@ -1407,6 +1407,8 @@ a:focus-visible,
     <button class="period-tab" data-period="gisteren">Gisteren</button>
     <button class="period-tab" data-period="deze-week">Deze week</button>
     <button class="period-tab" data-period="vorige-week">Vorige week</button>
+    <button class="period-tab" data-period="laatste-3-maanden">Laatste 3 maanden</button>
+    <button class="period-tab" data-period="ytd">YTD</button>
   </div>
 </div>
 
@@ -3588,6 +3590,33 @@ function getPeriodData(period) {
     return { keys, entries, label: 'Vorige week', range: formatWeekRange(startKey, endKey) };
   }
 
+  if (period === 'ytd') {
+    const start = new Date(now.getFullYear(), 0, 1);
+    const keys = [];
+    const entries = [];
+    const cur = new Date(start);
+    while (cur <= now) {
+      const k = dateKey(cur);
+      if (weekData[k]) { keys.push(k); entries.push({ key:k, data:weekData[k] }); }
+      cur.setDate(cur.getDate() + 1);
+    }
+    return { keys, entries, label: 'Dit jaar (YTD)', range: formatWeekRange(dateKey(start), today) };
+  }
+
+  if (period === 'laatste-3-maanden') {
+    const start = new Date(now);
+    start.setMonth(start.getMonth() - 3);
+    const keys = [];
+    const entries = [];
+    const cur = new Date(start);
+    while (cur <= now) {
+      const k = dateKey(cur);
+      if (weekData[k]) { keys.push(k); entries.push({ key:k, data:weekData[k] }); }
+      cur.setDate(cur.getDate() + 1);
+    }
+    return { keys, entries, label: 'Laatste 3 maanden', range: formatWeekRange(dateKey(start), today) };
+  }
+
   return { keys:[], entries:[], label:'', range:null };
 }
 
@@ -3627,6 +3656,21 @@ function getZoomPeriodKeys(period) {
       d.setDate(prevMon.getDate() + i);
       keys.push(dateKey(d));
     }
+    return keys;
+  }
+  if (period === 'ytd') {
+    const start = new Date(now.getFullYear(), 0, 1);
+    const keys = [];
+    const cur = new Date(start);
+    while (cur <= now) { keys.push(dateKey(cur)); cur.setDate(cur.getDate() + 1); }
+    return keys;
+  }
+  if (period === 'laatste-3-maanden') {
+    const start = new Date(now);
+    start.setMonth(start.getMonth() - 3);
+    const keys = [];
+    const cur = new Date(start);
+    while (cur <= now) { keys.push(dateKey(cur)); cur.setDate(cur.getDate() + 1); }
     return keys;
   }
   return [];
@@ -3799,11 +3843,14 @@ function buildLineChart(entries, period) {
       values.push(hourCounts[h] || 0);
     }
   } else {
-    // Group by day
+    // Group by day -- bij lange periodes (YTD/laatste 3 maanden) is een
+    // dagnaam (ma/di/wo...) niet onderscheidend genoeg om te herkennen
+    // welke week/maand het is, dan tonen we de datum.
     const DAY_NAMES = ['zo','ma','di','wo','do','vr','za'];
+    const useDateLabels = entries.length > 10;
     entries.forEach(({ key, data }) => {
       const d = new Date(key);
-      labels.push(DAY_NAMES[d.getDay()]);
+      labels.push(useDateLabels ? formatDateShortNL(key) : DAY_NAMES[d.getDay()]);
       values.push(data.gesprekken || 0);
     });
     if (labels.length === 0) { labels = ['ma','di','wo','do','vr']; values = [0,0,0,0,0]; }
@@ -4101,7 +4148,7 @@ function renderDashboard(period) {
 
   const ticketPeriodKeys = getZoomPeriodKeys(period);
   const ticketAgg = getTicketStatsAggregate(ticketPeriodKeys);
-  const ticketIsWeek = (period === 'deze-week' || period === 'vorige-week');
+  const ticketIsWeek = (period === 'deze-week' || period === 'vorige-week' || period === 'ytd' || period === 'laatste-3-maanden');
   const ticketStatsDisplay = ticketAgg.dataAvailable
     ? {
         nieuweVandaag: ticketAgg.nieuwe,
@@ -4395,7 +4442,7 @@ function renderDashboard(period) {
 window.druktePct = druktePct;
 
 let activePeriod = 'vandaag';
-const VALID_PERIODS = ['vandaag', 'gisteren', 'deze-week', 'vorige-week'];
+const VALID_PERIODS = ['vandaag', 'gisteren', 'deze-week', 'vorige-week', 'laatste-3-maanden', 'ytd'];
 let periodFromUrl = null;
 try {
   const urlPeriod = new URLSearchParams(location.search).get('periode');
