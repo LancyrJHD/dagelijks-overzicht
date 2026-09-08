@@ -117,9 +117,12 @@ def main():
         new_entry = f'{datum_key}: {ENTRY_DATA.strip()}'
 
         if has_comma:
-            # Vervang entry + comma
+            # Vervang entry + comma -- de komma wordt hier bewust ook uit de
+            # oude tekst verwijderd (comma_end ligt erna), dus moet met een
+            # losse ',' teruggezet worden, anders smelt deze entry samen met
+            # de volgende tot ongeldige JS (bevinding 8 sep 2026).
             comma_end = content.find(',', end) + 1
-            content = content[:idx_datum] + new_entry + content[comma_end:]
+            content = content[:idx_datum] + new_entry + ',' + content[comma_end:]
         else:
             content = content[:idx_datum] + new_entry + content[end:]
 

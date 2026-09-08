@@ -97,8 +97,12 @@ def upsert(content, date_key_raw, entry_json):
         has_comma = after.startswith(',')
         new_entry = f'{datum_key}: {entry_json}'
         if has_comma:
+            # De komma die de vervangen entry van de volgende scheidde wordt
+            # hier bewust meeverwijderd (comma_end ligt erna) -- moet dus
+            # terug, anders smelten deze en de volgende entry samen tot
+            # ongeldige JS (bevinding 8 sep 2026, brak de eerste CI-run).
             comma_end = content.find(',', end) + 1
-            content = content[:idx_datum] + new_entry + content[comma_end:]
+            content = content[:idx_datum] + new_entry + ',' + content[comma_end:]
         else:
             content = content[:idx_datum] + new_entry + content[end:]
     else:
