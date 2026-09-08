@@ -31,6 +31,10 @@ jobs:
         uses: actions/setup-python@v5
         with:
           python-version: '3.11'
+      - name: Set up Node.js (voor weekData-validatie)
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
       - name: Install dependencies
         run: pip install requests
       - name: Haal Zoho Desk-tickets op
@@ -59,11 +63,19 @@ jobs:
           ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
           GRANOLA_DATE: ${{ github.event.inputs.granola_datum }}
         run: python scripts/analyze_granola_ai.py
-      - name: Commit en push data/*.json
+      - name: Bak Granola-analyse permanent in in weekData (index.html)
+        # Zonder deze stap bestond de enige permanente vastlegging van
+        # data/today.json uit een lokale Cowork-taak (17:30, alleen als de
+        # laptop aan staat) -- data/today.json zelf wordt de volgende dag
+        # overschreven. Deze stap draait elke cron-run mee, dus de hele
+        # dagrapport-historie blijft voortaan bijgewerkt ongeacht of er
+        # ook maar één laptop aan staat.
+        run: python scripts/finalize_weekdata.py
+      - name: Commit en push data/*.json + index.html
         run: |
           git config user.name  "Lancyr Bot"
           git config user.email "bot@htjz.nl"
-          git add data/today.json data/zoho-tickets.json
+          git add data/today.json data/zoho-tickets.json index.html
           if [ -f data/zoho-ticket-history.json ]; then git add data/zoho-ticket-history.json; fi
           # data/zoom-calls.json bestaat pas na de eerste geslaagde Zoom-fetch
           # (script slaat niets op bij ontbrekende secrets) -- guard voorkomt
