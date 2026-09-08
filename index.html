@@ -4249,10 +4249,11 @@ function renderDashboard(period) {
         <div style="color:var(--ink-50);font-size:12px;margin-top:4px">van ${zohoTicketsTodayTotal} Zoho-tickets &middot; "Doorgezet naar BrandMR"</div>
         ` : (period === 'deze-week' || period === 'vorige-week') ? `
         <div style="font-size:32px;font-weight:700;color:var(--navy)">${BRANDMR_WEEK_HISTORY[period].brandmeester} / ${BRANDMR_WEEK_HISTORY[period].totaal}</div>
-<div style="color:var(--ink-50);font-size:12px;margin-top:4px">${Math.round(BRANDMR_WEEK_HISTORY[period].brandmeester / BRANDMR_WEEK_HISTORY[period].totaal * 100)}% doorgezet naar BrandMR &middot; Zoho-historie</div>
+<div style="color:var(--ink-50);font-size:12px;margin-top:4px">${Math.round(BRANDMR_WEEK_HISTORY[period].brandmeester / BRANDMR_WEEK_HISTORY[period].totaal * 100)}% doorgezet naar BrandMR</div>
+        <div style="color:#b45309;font-size:11px;margin-top:2px">Eenmalige meting ${BRANDMR_WEEK_HISTORY[period].periode} &middot; niet live, wordt niet automatisch bijgewerkt</div>
         ` : `
 <div style="font-size:32px;font-weight:700;color:var(--ink-30)">&mdash;</div>
-        <div style="color:var(--ink-50);font-size:12px;margin-top:4px">Alleen beschikbaar voor vandaag (Zoho-historie niet bewaard)</div>
+        <div style="color:var(--ink-50);font-size:12px;margin-top:4px">Alleen beschikbaar voor vandaag, vorige week en deze week (geen live Zoho-koppeling voor oudere periodes)</div>
         `}
       </div>
     </div>
@@ -4776,8 +4777,8 @@ let zoomHistory = {};
 // Let op: 2026-08-12 toont 0 van de 0 tickets, vermoedelijk een Zoho-paginatiegat
 //    (normale werkdag), cijfer desondanks overgenomen zoals gerapporteerd door Zoho.
 const BRANDMR_WEEK_HISTORY = {
-  'vorige-week': { brandmeester: 4, totaal: 26 }, // ma 3 t/m vr 7 aug 2026
-  'deze-week': { brandmeester: 3, totaal: 16 }, // ma 10 t/m 15 aug 2026 (lopende week)
+  'vorige-week': { brandmeester: 4, totaal: 26, periode: '3-7 aug 2026' },
+  'deze-week': { brandmeester: 3, totaal: 16, periode: '10-15 aug 2026' },
    };
 
 function kanaalLabel(raw) {
