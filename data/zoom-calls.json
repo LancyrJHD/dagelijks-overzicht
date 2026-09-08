@@ -1,10 +1,10 @@
 {
   "date": "2026-09-08",
-  "generated_at": "2026-09-08T09:26:56Z",
-  "totaalInbound": 5,
-  "totaalGemist": 5,
+  "generated_at": "2026-09-08T13:30:51Z",
+  "totaalInbound": 9,
+  "totaalGemist": 9,
   "terugGebeld": 0,
-  "nietTerugGebeld": 5,
+  "nietTerugGebeld": 9,
   "nietTerugGebeldNummers": [
     {
       "nummer": "+31646820413",
@@ -38,6 +38,34 @@
       "nummer": "+31651601171",
       "naam": "Onbekend",
       "tijd": "11:13",
+      "callResult": "abandoned",
+      "teruggebeld": false
+    },
+    {
+      "nummer": "+31651601171",
+      "naam": "Onbekend",
+      "tijd": "11:15",
+      "callResult": "overflowed",
+      "teruggebeld": false
+    },
+    {
+      "nummer": "+31623632216",
+      "naam": "Onbekend",
+      "tijd": "11:40",
+      "callResult": "abandoned",
+      "teruggebeld": false
+    },
+    {
+      "nummer": "+31623632216",
+      "naam": "Onbekend",
+      "tijd": "11:41",
+      "callResult": "abandoned",
+      "teruggebeld": false
+    },
+    {
+      "nummer": "+31620976298",
+      "naam": "Onbekend",
+      "tijd": "12:11",
       "callResult": "abandoned",
       "teruggebeld": false
     }
@@ -75,6 +103,34 @@
       "nummer": "+31651601171",
       "naam": "Onbekend",
       "tijd": "11:13",
+      "callResult": "abandoned",
+      "teruggebeld": false
+    },
+    {
+      "nummer": "+31651601171",
+      "naam": "Onbekend",
+      "tijd": "11:15",
+      "callResult": "overflowed",
+      "teruggebeld": false
+    },
+    {
+      "nummer": "+31623632216",
+      "naam": "Onbekend",
+      "tijd": "11:40",
+      "callResult": "abandoned",
+      "teruggebeld": false
+    },
+    {
+      "nummer": "+31623632216",
+      "naam": "Onbekend",
+      "tijd": "11:41",
+      "callResult": "abandoned",
+      "teruggebeld": false
+    },
+    {
+      "nummer": "+31620976298",
+      "naam": "Onbekend",
+      "tijd": "12:11",
       "callResult": "abandoned",
       "teruggebeld": false
     }
