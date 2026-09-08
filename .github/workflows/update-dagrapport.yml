@@ -2,10 +2,15 @@ name: Update Lancyr Dagrapport
 
 on:
   schedule:
-    # Elke 10 minuten op werkdagen tussen 07:00 en 18:00 Amsterdam (05:00-16:00 UTC)
-    # Let op: GitHub garandeert dit interval niet exact -- runs kunnen vertragen
-    # of soms overslaan, vooral bij minder actieve repo's.
-    - cron: '0,10,20,30,40,50 5-16 * * 1-5'
+    # Elke 10 minuten op werkdagen tussen 07:00 en 18:00 Amsterdam (05:00-16:00 UTC).
+    # Bewust NIET op ronde minuten (:00/:10/:20...) -- GitHub's schedule-trigger
+    # raakt structureel vertraagd/overgeslagen rond ronde tijdstippen omdat wereldwijd
+    # de meeste workflows daar tegelijk vuren (congestie). Offset naar :03/:13/... etc.
+    # is GitHub's eigen aanbevolen mitigatie. Geconstateerd 8 sep 2026: met het oude
+    # "elk half uur" schema (0,30) draaide dit in de praktijk maandenlang effectief
+    # maar ~1x per 4 uur i.p.v. elke 30 min -- dit is geen garantie, alleen een
+    # verbetering.
+    - cron: '3,13,23,33,43,53 5-16 * * 1-5'
   workflow_dispatch:   # Handmatig triggeren vanuit GitHub
     inputs:
       datum:
