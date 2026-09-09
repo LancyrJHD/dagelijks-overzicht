@@ -1,6 +1,6 @@
 {
   "date": "2026-09-09",
-  "generated_at": "2026-09-09T07:10:48Z",
+  "generated_at": "2026-09-09T07:20:52Z",
   "drukte": "rustig",
   "gesprekken": 1,
   "stats": {
@@ -11,13 +11,13 @@
     "geenDekking": 0,
     "verkeerdNummer": 1
   },
-  "score": 10.0,
+  "score": 8.5,
   "conversations": [
     {
       "tijd": "09:01",
       "titel": "Daily Huddle",
       "personen": "Verzekerde: T.J. Hageman · Senne Duifhuis | Juridisch medewerker",
-      "samenvatting": "Dit is geen klantgesprek maar een interne 'Daily Huddle'-meeting van teamleden (Marta, Shanti, Charlotte, Senna, Davy, Angie) die hun dagagenda bespreken. Er is geen juridische vraag van een verzekerden, geen dekkingsvraag, en geen inhoudelijk juridisch advies gegeven. De Zoho-koppeling naar T.J. Hageman lijkt een administratieve fout (mogelijk achtergrondgeluid of verkeerde telefoonnummerherkenning). Dit is geen client-helpdesk-interactie.",
+      "samenvatting": "Dit transcript bevat een interne 'Daily Huddle' teambesprekking van HTJZ-medewerkers, niet een juridisch adviescall met een klant. Halverwege wordt er kort een fragment van een werkelijk klantencontact opgenomen (mevrouw van Gorkum, postcode 2021, huisnummer 40), waarbij de medewerker alleen een schadenummer heeft verstrekt zonder inhoudelijk juridisch advies te geven. De beller is geverifieerd via adresgegevens.",
       "tags": [
         [
           "tag-overig",
@@ -32,15 +32,19 @@
       "verkeerdVerbonden": true,
       "rechtsbijstandVerwijzing": false,
       "adviesGegeven": false,
-      "identiteitGeverifieerd": false
+      "identiteitGeverifieerd": true
     }
   ],
   "acties": [],
   "analyse": {
     "goed": [
-      "09:01 Daily Huddle: Dit was een interne teammeeting, geen klantgesprek. Geen kwaliteitsnormen van toepassing; correct als 'Verkeerd nummer' geregistreerd."
+      "09:01 Daily Huddle: Identiteit correct geverifieerd via adresgegevens (mevrouw van Gorkum, postcode 2021, huisnummer 40)",
+      "09:01 Daily Huddle: Juiste voorzichtigheid — geen inhoudelijk juridisch advies gegeven toen bleek om verkeerd nummer te gaan",
+      "09:01 Daily Huddle: Schadenummer correct verstrekt als administratieve ondersteuning"
     ],
-    "beter": []
+    "beter": [
+      "09:01 Daily Huddle: Geen duidelijk vervolgplan / deadline afgesproken voor de beller met verkeerd nummer (eventueel doorverwijzing naar juiste afdeling had gewenst)"
+    ]
   },
   "verkeerdVerbonden": {
     "aantal": 1,

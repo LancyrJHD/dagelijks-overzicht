@@ -1290,13 +1290,21 @@
     "totaalInbound": 10
   },
   "2026-09-09": {
-    "alleGemistNummers": [],
+    "alleGemistNummers": [
+      {
+        "callResult": "abandoned",
+        "naam": "Onbekend",
+        "nummer": "+31642783798",
+        "teruggebeld": true,
+        "tijd": "09:10"
+      }
+    ],
     "date": "2026-09-09",
-    "generated_at": "2026-09-09T07:10:40Z",
+    "generated_at": "2026-09-09T07:20:45Z",
     "nietTerugGebeld": 0,
     "nietTerugGebeldNummers": [],
-    "terugGebeld": 0,
-    "totaalGemist": 0,
-    "totaalInbound": 1
+    "terugGebeld": 1,
+    "totaalGemist": 1,
+    "totaalInbound": 2
   }
 }
