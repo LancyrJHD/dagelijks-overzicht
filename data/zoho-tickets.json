@@ -1,6 +1,6 @@
 {
   "date": "2026-09-09",
-  "generated_at": "2026-09-09T14:20:49Z",
+  "generated_at": "2026-09-09T14:30:59Z",
   "tickets": [
     {
       "ticketNumber": "2702",
@@ -97,19 +97,31 @@
       "webUrl": "https://desk.zoho.eu/support/htjzlancyr/ShowHomePage.do#Cases/dv/195464000013919073",
       "channel": "Phone",
       "doorgezetBrandmeester": false
+    },
+    {
+      "ticketNumber": "2714",
+      "tijd": "16:26",
+      "titel": "Zonnepanelen — gedeeltelijke ontbinding en schadeclaim",
+      "klant": "M.P.J. van derEnde",
+      "status": "Gesloten",
+      "statusType": "",
+      "prioriteit": "Niet ingesteld",
+      "webUrl": "https://desk.zoho.eu/support/htjzlancyr/ShowHomePage.do#Cases/dv/195464000013945001",
+      "channel": "Phone",
+      "doorgezetBrandmeester": false
     }
   ],
   "channelCounts": {
-    "Phone": 8
+    "Phone": 9
   },
   "brandmeesterCount": 0,
   "ticketStats": {
-    "nieuweVandaag": 8,
-    "geslotenVandaag": 10,
+    "nieuweVandaag": 9,
+    "geslotenVandaag": 11,
     "totaalOpen": 19,
     "inDeWacht": 19,
     "statusBreakdown": {
-      "Gesloten": 623,
+      "Gesloten": 624,
       "In de wacht": 19
     },
     "capBereikt": false
