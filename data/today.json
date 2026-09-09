@@ -1,6 +1,6 @@
 {
   "date": "2026-09-09",
-  "generated_at": "2026-09-09T08:20:57Z",
+  "generated_at": "2026-09-09T08:31:06Z",
   "drukte": "rustig",
   "gesprekken": 1,
   "stats": {
@@ -11,13 +11,13 @@
     "geenDekking": 0,
     "verkeerdNummer": 1
   },
-  "score": 8.5,
+  "score": 6.5,
   "conversations": [
     {
       "tijd": "09:01",
       "titel": "Daily Huddle",
       "personen": "Verzekerde: T.J. Hageman · Senne Duifhuis | Juridisch medewerker",
-      "samenvatting": "Dit transcript is een interne 'Daily Huddle'-vergadering van teamleden (Marta, Shanti, Charlotte, Senna, Davy, Angie en anderen), niet een gesprek tussen een medewerker en een externe beller. Halverwege wordt kort een extern gesprek met 'Floor van Gorkum' ingelast waarin deze wordt geverifieerd via postcode en huisnummer en geïnformeerd wordt dat zij binnen twee minuten een e-mail met schadenummer ontvangt. Dit externe gesprek was zeer kort en transactioneel; geen inhoudelijk juridisch advies werd gegeven.",
+      "samenvatting": "Dit transcript bevat een interne Daily Huddle-meeting van een juridisch adviesteam, niet een klantgesprek met Lancyr-verzekerden. Halverwege het transcript verschijnt een fragment van een echt klantgesprek tussen 'Senna' en 'mevrouw van Gorkum' (postcode 2021, huisnummer 40), waarin de beller navraag doet naar een schadenummer voor een ingediende claim. De medewerker verifieerde de beller via postcode en adres, bevestigde dat het schadenummer zojuist is gegenereerd en stuurde dit via e-mail op. Er is geen inhoudelijk juridisch advies gegeven; het betrof administratieve afhandeling van een schadeclaim-triage.",
       "tags": [
         [
           "tag-overig",
@@ -38,11 +38,13 @@
   "acties": [],
   "analyse": {
     "goed": [
-      "09:01 Daily Huddle / Floor van Gorkum: Identiteit correct geverifieerd via postcode en huisnummer voordat transactionele informatie (schadenummer per e-mail) werd verstrekt.",
-      "09:01 Daily Huddle / Floor van Gorkum: Concrete vervolgactie afgesproken (e-mail met schadenummer binnen twee minuten), wat duidelijkheid geeft aan de beller."
+      "09:01 Daily Huddle / klantgesprek Van Gorkum: Identiteit correct geverifieerd via postcode en adres.",
+      "09:01 Daily Huddle / klantgesprek Van Gorkum: Administratieve afhandeling (schadenummergeneratie en e-mailverzending) uitgevoerd zonder onnodige vertraging."
     ],
     "beter": [
-      "09:01 Daily Huddle / Floor van Gorkum: Hoewel dit een interne vergadering was met slechts een korte externe interruptie, zou nuttig zijn geweest om in het vervolgcontact expliciet een deadlinefrase te gebruiken (bijv. 'u ontvangt deze e-mail uiterlijk binnen twee minuten') om de urgentie nog scherper in te stellen."
+      "09:01 Daily Huddle / klantgesprek Van Gorkum: Het transcript vermengt een interne meeting met één klantfragment, wat duidt op ongebruikelijke documentatie. Zorg voor duidelijke scheiding tussen intern overleg en klantcommunicatie.",
+      "09:01 Daily Huddle / klantgesprek Van Gorkum: Bij schadeclaims is dekkingscontrole (franchise EUR 250) standaard. Geen aantekening dat dit is geverifieerd voordat het schadenummer werd bevestigd – controleer dit voor volledige compliance.",
+      "09:01 Daily Huddle / klantgesprek Van Gorkum: Ondanks administratieve afhandeling: geen concrete vervolgdeadline vastgesteld voor eventueel vervolgcontact over de claim zelf."
     ]
   },
   "verkeerdVerbonden": {
