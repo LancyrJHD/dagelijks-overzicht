@@ -1,6 +1,6 @@
 {
   "date": "2026-09-09",
-  "generated_at": "2026-09-09T09:11:01Z",
+  "generated_at": "2026-09-09T09:21:03Z",
   "drukte": "rustig",
   "gesprekken": 1,
   "stats": {
@@ -17,7 +17,7 @@
       "tijd": "09:01",
       "titel": "Daily Huddle",
       "personen": "Verzekerde: T.J. Hageman · Senne Duifhuis | Juridisch medewerker",
-      "samenvatting": "Dit transcript is een interne 'Daily Huddle'-meeting van het HTJZ-team, niet een klantgesprek met een externe beller. Hoewel aan het einde een kort fragment voorkomt van een telefoongesprek tussen een medewerker (Senna) en een beller (mevrouw van Gorkum, geverifieerd via postcode en huisnummer), betreft dit fragment slechts een beperkte administratieve vraag over een schadenummer dat al was aangemaakt. Er is geen inhoudelijk juridisch advies gegeven; de beller kreeg alleen bevestiging dat het mailtje met het schadenummer binnenkort zou volgen.",
+      "samenvatting": "Dit transcript betreft een interne 'Daily Huddle'-vergadering van HTJZ-medewerkers, geen klantcontact van een verzekerde. Het enige daadwerkelijke klantcontact (mevrouw van Gorkum) was heel kort: verificatie via postcode/huisnummer, informatie dat een schadenummer net ontvangen was, en afspraak dat zij het betreffende mailtje zou afwachten. Geen inhoudelijk juridisch advies gegeven.",
       "tags": [
         [
           "tag-overig",
@@ -38,12 +38,12 @@
   "acties": [],
   "analyse": {
     "goed": [
-      "09:01 Daily Huddle: Identiteit correct geverifieerd (postcode + huisnummer) voordat informatie werd verstrekt",
-      "09:01 Daily Huddle: Appropriate handling van administratieve vraag zonder onnodig juridisch advies",
-      "09:01 Daily Huddle: Duidelijke vervolgstap gecommuniceerd (mailtje met schadenummer volgt binnenkort)"
+      "09:01 Daily Huddle: Identiteit mevrouw van Gorkum correct geverifieerd via postcode/huisnummer",
+      "09:01 Daily Huddle: Duidelijk vervolgplan afgesproken (afwachten mailtje met schadenummer)",
+      "09:01 Daily Huddle: Juist gehandeld door geen inhoudelijk advies te geven zonder volledige zaaksgegevens"
     ],
     "beter": [
-      "09:01 Daily Huddle: Geen concrete deadline genoemd voor verzending van het mailtje met schadenummer (bijv. 'vandaag nog voor 17:00' of 'morgen voor 10:00')"
+      "09:01 Daily Huddle: Bij vervolgcontact zou een concrete deadline voor opvolging wenselijk zijn geweest (bijv. 'mailtje volgt vandaag/morgen')"
     ]
   },
   "verkeerdVerbonden": {
