@@ -1,6 +1,6 @@
 {
   "date": "2026-09-09",
-  "generated_at": "2026-09-09T12:10:48Z",
+  "generated_at": "2026-09-09T17:20:02Z",
   "tickets": [
     {
       "ticketNumber": "2702",
@@ -85,20 +85,57 @@
       "webUrl": "https://desk.zoho.eu/support/htjzlancyr/ShowHomePage.do#Cases/dv/195464000013941001",
       "channel": "Phone",
       "doorgezetBrandmeester": false
+    },
+    {
+      "ticketNumber": "2713",
+      "tijd": "16:12",
+      "titel": "Tuinafscheiding schadeclaim — ingebrekenstelling verzenden",
+      "klant": "M.J.M. Tobij",
+      "status": "Gesloten",
+      "statusType": "",
+      "prioriteit": "Niet ingesteld",
+      "webUrl": "https://desk.zoho.eu/support/htjzlancyr/ShowHomePage.do#Cases/dv/195464000013919073",
+      "channel": "Phone",
+      "doorgezetBrandmeester": false
+    },
+    {
+      "ticketNumber": "2714",
+      "tijd": "16:26",
+      "titel": "Zonnepanelen — gedeeltelijke ontbinding en schadeclaim",
+      "klant": "M.P.J. van derEnde",
+      "status": "Gesloten",
+      "statusType": "",
+      "prioriteit": "Niet ingesteld",
+      "webUrl": "https://desk.zoho.eu/support/htjzlancyr/ShowHomePage.do#Cases/dv/195464000013945001",
+      "channel": "Phone",
+      "doorgezetBrandmeester": false
+    },
+    {
+      "ticketNumber": "2715",
+      "tijd": "18:46",
+      "titel": "Nieuwe AFV-Regelgeving",
+      "klant": "DEGIRO",
+      "status": "Open",
+      "statusType": "",
+      "prioriteit": "Niet ingesteld",
+      "webUrl": "https://desk.zoho.eu/support/htjzlancyr/ShowHomePage.do#Cases/dv/195464000013921038",
+      "channel": "Email",
+      "doorgezetBrandmeester": false
     }
   ],
   "channelCounts": {
-    "Phone": 7
+    "Phone": 9,
+    "Email": 1
   },
   "brandmeesterCount": 0,
   "ticketStats": {
-    "nieuweVandaag": 7,
-    "geslotenVandaag": 8,
+    "nieuweVandaag": 10,
+    "geslotenVandaag": 11,
     "totaalOpen": 20,
     "inDeWacht": 19,
     "statusBreakdown": {
-      "Gesloten": 621,
       "Open": 1,
+      "Gesloten": 624,
       "In de wacht": 19
     },
     "capBereikt": false
