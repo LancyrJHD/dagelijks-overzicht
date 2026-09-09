@@ -1309,38 +1309,23 @@
         "callResult": "abandoned",
         "naam": "Onbekend",
         "nummer": "+31650697980",
-        "teruggebeld": false,
+        "teruggebeld": true,
         "tijd": "09:52"
       },
       {
         "callResult": "abandoned",
         "naam": "Onbekend",
         "nummer": "+31642998890",
-        "teruggebeld": false,
+        "teruggebeld": true,
         "tijd": "10:43"
       }
     ],
     "date": "2026-09-09",
-    "generated_at": "2026-09-09T10:20:48Z",
-    "nietTerugGebeld": 2,
-    "nietTerugGebeldNummers": [
-      {
-        "callResult": "abandoned",
-        "naam": "Onbekend",
-        "nummer": "+31650697980",
-        "teruggebeld": false,
-        "tijd": "09:52"
-      },
-      {
-        "callResult": "abandoned",
-        "naam": "Onbekend",
-        "nummer": "+31642998890",
-        "teruggebeld": false,
-        "tijd": "10:43"
-      }
-    ],
-    "terugGebeld": 2,
+    "generated_at": "2026-09-09T10:30:57Z",
+    "nietTerugGebeld": 0,
+    "nietTerugGebeldNummers": [],
+    "terugGebeld": 4,
     "totaalGemist": 4,
-    "totaalInbound": 12
+    "totaalInbound": 13
   }
 }
