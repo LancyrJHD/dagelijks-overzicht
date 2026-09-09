@@ -1,6 +1,6 @@
 {
   "date": "2026-09-09",
-  "generated_at": "2026-09-09T09:31:06Z",
+  "generated_at": "2026-09-09T09:40:59Z",
   "drukte": "rustig",
   "gesprekken": 1,
   "stats": {
@@ -17,7 +17,7 @@
       "tijd": "09:01",
       "titel": "Daily Huddle",
       "personen": "Verzekerde: T.J. Hageman · Senne Duifhuis | Juridisch medewerker",
-      "samenvatting": "Dit transcript is een interne 'Daily Huddle' teambesprekking, geen klantgesprek met de juridische helpdesk. De enige telefonische interactie met een externe beller (mevrouw van Gorkum, postcode 2021 DZ) betrof een routineverificatie waarbij deze beller werd ingelicht dat zij binnenkort een mailtje met een schadenummer zou ontvangen; geen inhoudelijk juridisch advies werd gegeven. De beller werd geverifieerd via postcode en huisnummer.",
+      "samenvatting": "Dit transcript is een interne 'Daily Huddle' teammeeting, geen klantgesprek met de juridische helpdesk. Hoewel er aan het einde een korte fragmentarische interactie is tussen een medewerker ('Senna') en een beller ('mevrouw van Gorkum') over een schadenummer, betreft dit alleen administratieve routering van een dossiernummer/schadenummer – geen juridisch advies is gegeven. De beller is geverifieerd via postcode en huisnummer en wordt verwezen naar een vervolgmail.",
       "tags": [
         [
           "tag-overig",
@@ -38,12 +38,12 @@
   "acties": [],
   "analyse": {
     "goed": [
-      "09:01 Daily Huddle: Identiteit van mevrouw van Gorkum correct geverifieerd via postcode en huisnummer voordat enige informatie werd gedeeld.",
-      "09:01 Daily Huddle: Medewerker heeft terecht geen inhoudelijk juridisch advies gegeven, maar uitsluitend een routineverificatie en vervolgcommunicatie (mailtje met schadenummer) afgesproken.",
-      "09:01 Daily Huddle: Duidelijk vervolgplan voor de beller vastgelegd (mailtje met schadenummer volgt)."
+      "09:01 Daily Huddle – Identiteit correct geverifieerd via postcode en huisnummer (mevrouw van Gorkum)",
+      "09:01 Daily Huddle – Juiste afhandeling: geen juridisch advies gegeven bij administratieve routering, passend voor een verkeerd nummer scenario",
+      "09:01 Daily Huddle – Beller verwezen naar vervolgmail voor duidelijk vervolgcontact"
     ],
     "beter": [
-      "09:01 Daily Huddle: Bij het routineverificatiegesprek zou expliciet een concrete deadline kunnen worden meegegeven voor ontvangst van het mailtje (bijvoorbeeld 'u ontvangt dit vandaag nog' of 'binnen 2 werkdagen'), zodat de beller een duidelijke verwachting heeft."
+      "09:01 Daily Huddle – Voor toekomstige vervolgmails zou een concrete deadline (bijv. 'u ontvangt binnenkort een mail met uw schadenummer') de verwachting van de beller nog duidelijker kunnen maken"
     ]
   },
   "verkeerdVerbonden": {
