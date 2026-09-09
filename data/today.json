@@ -1,6 +1,6 @@
 {
   "date": "2026-09-09",
-  "generated_at": "2026-09-09T09:21:03Z",
+  "generated_at": "2026-09-09T09:22:05Z",
   "drukte": "rustig",
   "gesprekken": 1,
   "stats": {
@@ -17,7 +17,7 @@
       "tijd": "09:01",
       "titel": "Daily Huddle",
       "personen": "Verzekerde: T.J. Hageman · Senne Duifhuis | Juridisch medewerker",
-      "samenvatting": "Dit transcript betreft een interne 'Daily Huddle'-vergadering van HTJZ-medewerkers, geen klantcontact van een verzekerde. Het enige daadwerkelijke klantcontact (mevrouw van Gorkum) was heel kort: verificatie via postcode/huisnummer, informatie dat een schadenummer net ontvangen was, en afspraak dat zij het betreffende mailtje zou afwachten. Geen inhoudelijk juridisch advies gegeven.",
+      "samenvatting": "Dit is een internal daily huddle-meeting van het Lancyr-team, geen klantgesprek. De enige daadwerkelijke klantinteractie is een zeer kort vervolgcontact met mevrouw van Gorkum (postcode 2021, huisnummer 40) over een schadenummer dat al was gegenereerd. De medewerker heeft bevestigd dat het schadenummer binnen twee minuten per mail wordt verstuurd. Er is geen inhoudelijk juridisch advies gegeven, slechts administratieve begeleiding. Identiteit is geverifieerd via postcode en huisnummer.",
       "tags": [
         [
           "tag-overig",
@@ -38,12 +38,12 @@
   "acties": [],
   "analyse": {
     "goed": [
-      "09:01 Daily Huddle: Identiteit mevrouw van Gorkum correct geverifieerd via postcode/huisnummer",
-      "09:01 Daily Huddle: Duidelijk vervolgplan afgesproken (afwachten mailtje met schadenummer)",
-      "09:01 Daily Huddle: Juist gehandeld door geen inhoudelijk advies te geven zonder volledige zaaksgegevens"
+      "09:01 Daily Huddle: Identiteit van mevrouw van Gorkum correct geverifieerd via postcode en huisnummer voordat enige actie werd ondernomen",
+      "09:01 Daily Huddle: Vervolgcontact heeft een concrete deadline ('binnen twee minuten per mail') waardoor klant duidelijkheid heeft over timing",
+      "09:01 Daily Huddle: Administratieve afhandeling (schadenummerverstuur) is efficiënt en adequaat georganiseerd"
     ],
     "beter": [
-      "09:01 Daily Huddle: Bij vervolgcontact zou een concrete deadline voor opvolging wenselijk zijn geweest (bijv. 'mailtje volgt vandaag/morgen')"
+      "09:01 Daily Huddle: In de samenvatting wordt melding gemaakt van 'Verkeerd nummer' als uitkomst, maar het is onduidelijk of dit nummer door de medewerker is gecorrigeerd of dat dit als openstaand item moet worden gevolgd. Verduidelijking van het vervolgplan hierop zou helpen"
     ]
   },
   "verkeerdVerbonden": {
