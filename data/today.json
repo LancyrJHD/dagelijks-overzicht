@@ -1,61 +1,27 @@
 {
-  "date": "2026-09-08",
-  "generated_at": "2026-09-08T18:48:38Z",
+  "date": "2026-09-09",
+  "generated_at": "2026-09-09T05:01:34Z",
   "drukte": "rustig",
-  "gesprekken": 1,
+  "gesprekken": 0,
   "stats": {
     "opgelost": 0,
     "brandmeester": 0,
     "afkoop": 0,
-    "terugbel": 1,
+    "terugbel": 0,
     "geenDekking": 0,
     "verkeerdNummer": 0
   },
-  "score": 7.8,
-  "conversations": [
-    {
-      "tijd": "16:55",
-      "titel": "Eettafel geschil – dossierstand en vervolgstappen",
-      "personen": "Verzekerde: anoniem · Jackie Stam | Juridisch Medewerker",
-      "samenvatting": "Beller belt over een geschil met fabrikant aangaande een defecte eettafel (afgebroken rand). De beller is geverifieerd via adresgegevens (postcode/huisnummer). Er is geen inhoudelijk juridisch advies gegeven; de medewerker heeft het dossier gecontroleerd en vastgesteld dat de zaak stilligt sinds 20 augustus (beller had toen zijn voorkeur voor prijsvermindering doorgegeven, maar heeft daarna niets meer gehoord). De medewerker stelt voor de zaak door te zetten naar een collega voor vervolgcontact morgen.",
-      "tags": [
-        [
-          "tag-consument",
-          "Consumentenrecht"
-        ]
-      ],
-      "uitkomst": [
-        "outcome-terugbel",
-        "Terugbellen"
-      ],
-      "terugbel": true,
-      "verkeerdVerbonden": false,
-      "rechtsbijstandVerwijzing": false,
-      "adviesGegeven": false,
-      "identiteitGeverifieerd": true
-    }
-  ],
+  "score": 0,
+  "conversations": [],
   "acties": [],
   "analyse": {
-    "goed": [
-      "Identiteit correct geverifieerd via adresgegevens (16:55 Eettafel geschil)",
-      "Dossierstand nauwkeurig gecontroleerd en stilstand sinds 20 augustus vastgesteld (16:55 Eettafel geschil)",
-      "Vervolgstap gepland: doorverwijzing naar collega voor vervolgcontact morgen (16:55 Eettafel geschil)"
-    ],
-    "beter": [
-      "Vervolgcontact morgen mist concrete deadline/tijdstip – duidelijk afspreken op welk moment (16:55 Eettafel geschil)",
-      "In vervolgplanning zou kunnen worden opgemerkt wat de concrete volgende actie is (bijv. contact fabrikant, reactie beller op prijsverminderingsvoorstel) (16:55 Eettafel geschil)"
-    ]
+    "goed": [],
+    "beter": []
   },
   "verkeerdVerbonden": {
     "aantal": 0,
     "percentage": 0.0
   },
   "rechtsbijstandVerwijzingen": 0,
-  "categorieen": [
-    [
-      "Consumentenrecht",
-      1
-    ]
-  ]
+  "categorieen": []
 }
