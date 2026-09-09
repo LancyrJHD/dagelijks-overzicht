@@ -1,6 +1,6 @@
 {
   "date": "2026-09-09",
-  "generated_at": "2026-09-09T07:20:52Z",
+  "generated_at": "2026-09-09T07:31:00Z",
   "drukte": "rustig",
   "gesprekken": 1,
   "stats": {
@@ -17,7 +17,7 @@
       "tijd": "09:01",
       "titel": "Daily Huddle",
       "personen": "Verzekerde: T.J. Hageman · Senne Duifhuis | Juridisch medewerker",
-      "samenvatting": "Dit transcript bevat een interne 'Daily Huddle' teambesprekking van HTJZ-medewerkers, niet een juridisch adviescall met een klant. Halverwege wordt er kort een fragment van een werkelijk klantencontact opgenomen (mevrouw van Gorkum, postcode 2021, huisnummer 40), waarbij de medewerker alleen een schadenummer heeft verstrekt zonder inhoudelijk juridisch advies te geven. De beller is geverifieerd via adresgegevens.",
+      "samenvatting": "Dit is geen telefoongesprek met een klant van Lancyr Juridische Helpdesk, maar een interne 'Daily Huddle'-vergadering van het kantoorteam. Het transcript bevat teamupdates over werkzaamheden (events, webinars, sollicitatiegesprekken) en een korte, toevallige interactie met mevrouw van Gorkum die belt over een schadenummer. Er is geen inhoudelijke juridische vraag gesteld of beantwoord. De beller werd geverifieerd via postcode/huisnummer, maar kreeg geen juridisch advies.",
       "tags": [
         [
           "tag-overig",
@@ -38,12 +38,11 @@
   "acties": [],
   "analyse": {
     "goed": [
-      "09:01 Daily Huddle: Identiteit correct geverifieerd via adresgegevens (mevrouw van Gorkum, postcode 2021, huisnummer 40)",
-      "09:01 Daily Huddle: Juiste voorzichtigheid — geen inhoudelijk juridisch advies gegeven toen bleek om verkeerd nummer te gaan",
-      "09:01 Daily Huddle: Schadenummer correct verstrekt als administratieve ondersteuning"
+      "09:01 Daily Huddle: Beller (mevrouw van Gorkum) correct geverifieerd via postcode/huisnummer ondanks dat dit een interne vergadering was",
+      "09:01 Daily Huddle: Juiste handeling om vast te stellen dat het verkeerd nummer betrof en geen inhoudelijk advies te geven"
     ],
     "beter": [
-      "09:01 Daily Huddle: Geen duidelijk vervolgplan / deadline afgesproken voor de beller met verkeerd nummer (eventueel doorverwijzing naar juiste afdeling had gewenst)"
+      "09:01 Daily Huddle: Bij verificatie van mevrouw van Gorkum ontbreekt documentatie van een vervolgplan/deadline voor herhaald contact, mocht zij opnieuw bellen met dezelfde schadenummervraag"
     ]
   },
   "verkeerdVerbonden": {

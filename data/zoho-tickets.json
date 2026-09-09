@@ -1,6 +1,6 @@
 {
   "date": "2026-09-09",
-  "generated_at": "2026-09-09T07:20:44Z",
+  "generated_at": "2026-09-09T07:30:50Z",
   "tickets": [
     {
       "ticketNumber": "2702",
@@ -13,19 +13,31 @@
       "webUrl": "https://desk.zoho.eu/support/htjzlancyr/ShowHomePage.do#Cases/dv/195464000013902001",
       "channel": "Phone",
       "doorgezetBrandmeester": false
+    },
+    {
+      "ticketNumber": "2703",
+      "tijd": "09:26",
+      "titel": "vragen mbt arbeidsovk",
+      "klant": "E.W.M. Hendrikx",
+      "status": "In de wacht",
+      "statusType": "",
+      "prioriteit": "Niet ingesteld",
+      "webUrl": "https://desk.zoho.eu/support/htjzlancyr/ShowHomePage.do#Cases/dv/195464000013919001",
+      "channel": "Phone",
+      "doorgezetBrandmeester": false
     }
   ],
   "channelCounts": {
-    "Phone": 1
+    "Phone": 2
   },
   "brandmeesterCount": 0,
   "ticketStats": {
-    "nieuweVandaag": 1,
+    "nieuweVandaag": 2,
     "geslotenVandaag": 3,
-    "totaalOpen": 20,
-    "inDeWacht": 13,
+    "totaalOpen": 21,
+    "inDeWacht": 14,
     "statusBreakdown": {
-      "In de wacht": 13,
+      "In de wacht": 14,
       "Gesloten": 619,
       "Open": 7
     },
