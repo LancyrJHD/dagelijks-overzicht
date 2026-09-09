@@ -1,6 +1,6 @@
 {
   "date": "2026-09-09",
-  "generated_at": "2026-09-09T07:50:50Z",
+  "generated_at": "2026-09-09T08:01:12Z",
   "drukte": "rustig",
   "gesprekken": 1,
   "stats": {
@@ -17,7 +17,7 @@
       "tijd": "09:01",
       "titel": "Daily Huddle",
       "personen": "Verzekerde: T.J. Hageman · Senne Duifhuis | Juridisch medewerker",
-      "samenvatting": "Dit is een interne teambriefing/daily huddle, geen telefonisch juridisch advies aan een verzekerdevan Lancyr. Het gesprek begint met een interne teammeeting en eindigt met een korte, operationele telefoongesprek waarin een beller (mevrouw van Gorkum) louter wordt geïnformeerd dat een schadenummer is ontvangen en dat een mail volgt. Er is geen inhoudelijk juridisch advies gegeven. De beller is wel geverifieerd via postcode en huisnummer.",
+      "samenvatting": "Dit transcript is een interne Daily Huddle-meeting van het HTJZ-team, niet een telefonisch klantgesprek met de Lancyr Juridische Helpdesk. Hoewel aan het eind een korte telefonische uitwisseling met mevrouw Van Gorkum plaatsvindt waarin zij wordt geverifieerd (postcode, huisnummer, naam) en een schadenummer wordt besproken, gaat het hier niet om juridisch advies maar om administratieve afhandeling van een schadeclaim. De beller wordt automatisch herkend in het systeem en ontvangt informatie dat een schadenummer is gemaakt en zij een mailtje zal ontvangen.",
       "tags": [
         [
           "tag-overig",
@@ -38,12 +38,11 @@
   "acties": [],
   "analyse": {
     "goed": [
-      "09:01 Daily Huddle: Identiteit correct geverifieerd via postcode en huisnummer voordat communicatie plaatsvond",
-      "09:01 Daily Huddle: Beller (mevrouw van Gorkum) kreeg duidelijke vervolgcommunicatie (mail volgt) met schadenummer als referentie",
-      "09:01 Daily Huddle: Geen juridisch advies gegeven zonder volledige context, alleen operationele bevestiging"
+      "09:01 Daily Huddle: Mevrouw Van Gorkum werd correct geverifieerd (postcode, huisnummer, naam) voordat administratieve informatie werd gedeeld.",
+      "09:01 Daily Huddle: Het team handelde de schadeclaim correct af zonder ongefundeerd juridisch advies te geven; de focus lag op administratieve afhandeling met concrete vervolgstap (mailtje met schadenummer)."
     ],
     "beter": [
-      "09:01 Daily Huddle: Bij vervolgcommunicatie (mail) zou een concrete deadline moeten worden opgenomen voor vervolgstappen of reactie van de verzekerde, vooral nu een schadenummer is vastgesteld"
+      "09:01 Daily Huddle: Dit transcript betreft een interne meeting met een korte administratieve contactmoment aan het eind, geen volledig klantgesprek. Zorg dat toekomstige analysedata van daadwerkelijke telefonische klantgesprekken met juridische vragen afkomstig zijn voor betekenisvolle kwaliteitsbeoordeling."
     ]
   },
   "verkeerdVerbonden": {
