@@ -1,6 +1,6 @@
 {
   "date": "2026-09-09",
-  "generated_at": "2026-09-09T10:40:46Z",
+  "generated_at": "2026-09-09T10:50:47Z",
   "tickets": [
     {
       "ticketNumber": "2702",
@@ -49,21 +49,33 @@
       "webUrl": "https://desk.zoho.eu/support/htjzlancyr/ShowHomePage.do#Cases/dv/195464000013929001",
       "channel": "Phone",
       "doorgezetBrandmeester": false
+    },
+    {
+      "ticketNumber": "2709",
+      "tijd": "12:45",
+      "titel": "Rechtsbijstandadvies — mishandeling kat en politiegesprek met zoon",
+      "klant": "E. Luttikhold",
+      "status": "Gesloten",
+      "statusType": "",
+      "prioriteit": "Niet ingesteld",
+      "webUrl": "https://desk.zoho.eu/support/htjzlancyr/ShowHomePage.do#Cases/dv/195464000013935001",
+      "channel": "Phone",
+      "doorgezetBrandmeester": false
     }
   ],
   "channelCounts": {
-    "Phone": 4
+    "Phone": 5
   },
   "brandmeesterCount": 0,
   "ticketStats": {
-    "nieuweVandaag": 4,
-    "geslotenVandaag": 5,
+    "nieuweVandaag": 5,
+    "geslotenVandaag": 6,
     "totaalOpen": 20,
     "inDeWacht": 17,
     "statusBreakdown": {
+      "Gesloten": 622,
       "Open": 3,
-      "In de wacht": 17,
-      "Gesloten": 621
+      "In de wacht": 17
     },
     "capBereikt": false
   }
