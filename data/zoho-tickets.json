@@ -1,6 +1,6 @@
 {
   "date": "2026-09-09",
-  "generated_at": "2026-09-09T11:10:48Z",
+  "generated_at": "2026-09-09T11:20:52Z",
   "tickets": [
     {
       "ticketNumber": "2702",
@@ -31,7 +31,7 @@
       "tijd": "09:40",
       "titel": "FW: 84212100 (Biezen, I.C. van) Verzoek om juridisch advies ",
       "klant": "I.C. vanBiezen",
-      "status": "Open",
+      "status": "In de wacht",
       "statusType": "",
       "prioriteit": "Niet ingesteld",
       "webUrl": "https://desk.zoho.eu/support/htjzlancyr/ShowHomePage.do#Cases/dv/195464000013922001",
@@ -71,11 +71,11 @@
     "nieuweVandaag": 5,
     "geslotenVandaag": 6,
     "totaalOpen": 20,
-    "inDeWacht": 17,
+    "inDeWacht": 19,
     "statusBreakdown": {
+      "In de wacht": 19,
       "Gesloten": 622,
-      "Open": 3,
-      "In de wacht": 17
+      "Open": 1
     },
     "capBereikt": false
   }
