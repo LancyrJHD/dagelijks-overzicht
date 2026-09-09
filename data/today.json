@@ -1,6 +1,6 @@
 {
   "date": "2026-09-09",
-  "generated_at": "2026-09-09T09:22:05Z",
+  "generated_at": "2026-09-09T09:31:06Z",
   "drukte": "rustig",
   "gesprekken": 1,
   "stats": {
@@ -17,7 +17,7 @@
       "tijd": "09:01",
       "titel": "Daily Huddle",
       "personen": "Verzekerde: T.J. Hageman · Senne Duifhuis | Juridisch medewerker",
-      "samenvatting": "Dit is een internal daily huddle-meeting van het Lancyr-team, geen klantgesprek. De enige daadwerkelijke klantinteractie is een zeer kort vervolgcontact met mevrouw van Gorkum (postcode 2021, huisnummer 40) over een schadenummer dat al was gegenereerd. De medewerker heeft bevestigd dat het schadenummer binnen twee minuten per mail wordt verstuurd. Er is geen inhoudelijk juridisch advies gegeven, slechts administratieve begeleiding. Identiteit is geverifieerd via postcode en huisnummer.",
+      "samenvatting": "Dit transcript is een interne 'Daily Huddle' teambesprekking, geen klantgesprek met de juridische helpdesk. De enige telefonische interactie met een externe beller (mevrouw van Gorkum, postcode 2021 DZ) betrof een routineverificatie waarbij deze beller werd ingelicht dat zij binnenkort een mailtje met een schadenummer zou ontvangen; geen inhoudelijk juridisch advies werd gegeven. De beller werd geverifieerd via postcode en huisnummer.",
       "tags": [
         [
           "tag-overig",
@@ -38,12 +38,12 @@
   "acties": [],
   "analyse": {
     "goed": [
-      "09:01 Daily Huddle: Identiteit van mevrouw van Gorkum correct geverifieerd via postcode en huisnummer voordat enige actie werd ondernomen",
-      "09:01 Daily Huddle: Vervolgcontact heeft een concrete deadline ('binnen twee minuten per mail') waardoor klant duidelijkheid heeft over timing",
-      "09:01 Daily Huddle: Administratieve afhandeling (schadenummerverstuur) is efficiënt en adequaat georganiseerd"
+      "09:01 Daily Huddle: Identiteit van mevrouw van Gorkum correct geverifieerd via postcode en huisnummer voordat enige informatie werd gedeeld.",
+      "09:01 Daily Huddle: Medewerker heeft terecht geen inhoudelijk juridisch advies gegeven, maar uitsluitend een routineverificatie en vervolgcommunicatie (mailtje met schadenummer) afgesproken.",
+      "09:01 Daily Huddle: Duidelijk vervolgplan voor de beller vastgelegd (mailtje met schadenummer volgt)."
     ],
     "beter": [
-      "09:01 Daily Huddle: In de samenvatting wordt melding gemaakt van 'Verkeerd nummer' als uitkomst, maar het is onduidelijk of dit nummer door de medewerker is gecorrigeerd of dat dit als openstaand item moet worden gevolgd. Verduidelijking van het vervolgplan hierop zou helpen"
+      "09:01 Daily Huddle: Bij het routineverificatiegesprek zou expliciet een concrete deadline kunnen worden meegegeven voor ontvangst van het mailtje (bijvoorbeeld 'u ontvangt dit vandaag nog' of 'binnen 2 werkdagen'), zodat de beller een duidelijke verwachting heeft."
     ]
   },
   "verkeerdVerbonden": {
