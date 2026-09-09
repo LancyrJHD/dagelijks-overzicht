@@ -1,6 +1,6 @@
 {
   "date": "2026-09-09",
-  "generated_at": "2026-09-09T08:10:51Z",
+  "generated_at": "2026-09-09T08:20:57Z",
   "drukte": "rustig",
   "gesprekken": 1,
   "stats": {
@@ -17,7 +17,7 @@
       "tijd": "09:01",
       "titel": "Daily Huddle",
       "personen": "Verzekerde: T.J. Hageman · Senne Duifhuis | Juridisch medewerker",
-      "samenvatting": "Dit transcript betreft een interne 'Daily Huddle' teambijjeenkomst, geen klantgesprek met de Lancyr Juridische Helpdesk. Er is één fragment waarin een beller (mevrouw van Gorkum) contact opneemt over een schadenummer, maar dit is een administratieve vraag (of een dossiernummer/schadenummer al is aangemaakt), geen juridische vraag. De medewerker geeft alleen administratieve informatie en verwijst door naar een e-mail. De beller is wel geverifieerd via postcode en huisnummer, maar er is geen inhoudelijk juridisch advies gegeven.",
+      "samenvatting": "Dit transcript is een interne 'Daily Huddle'-vergadering van teamleden (Marta, Shanti, Charlotte, Senna, Davy, Angie en anderen), niet een gesprek tussen een medewerker en een externe beller. Halverwege wordt kort een extern gesprek met 'Floor van Gorkum' ingelast waarin deze wordt geverifieerd via postcode en huisnummer en geïnformeerd wordt dat zij binnen twee minuten een e-mail met schadenummer ontvangt. Dit externe gesprek was zeer kort en transactioneel; geen inhoudelijk juridisch advies werd gegeven.",
       "tags": [
         [
           "tag-overig",
@@ -38,12 +38,11 @@
   "acties": [],
   "analyse": {
     "goed": [
-      "09:01 Daily Huddle: Mevrouw van Gorkum werd correct geverifieerd via postcode en huisnummer voordat administratieve informatie werd verstrekt.",
-      "09:01 Daily Huddle: De medewerker herkende terecht dat dit een administratieve vraag (schadenummerstatus) betrof en verwees correct door naar e-mail voor opvolging, in plaats van juridisch advies te geven.",
-      "09:01 Daily Huddle: Geen juridische adviezen gegeven waar dat niet passend was – juiste scheidslijn tussen administratieve en juridische vragen."
+      "09:01 Daily Huddle / Floor van Gorkum: Identiteit correct geverifieerd via postcode en huisnummer voordat transactionele informatie (schadenummer per e-mail) werd verstrekt.",
+      "09:01 Daily Huddle / Floor van Gorkum: Concrete vervolgactie afgesproken (e-mail met schadenummer binnen twee minuten), wat duidelijkheid geeft aan de beller."
     ],
     "beter": [
-      "09:01 Daily Huddle: Bij doorverwijzing via e-mail zou een concrete deadline (bijv. 'u ontvangt antwoord binnen 2 werkdagen') de verwachting kunnen helpen stellen."
+      "09:01 Daily Huddle / Floor van Gorkum: Hoewel dit een interne vergadering was met slechts een korte externe interruptie, zou nuttig zijn geweest om in het vervolgcontact expliciet een deadlinefrase te gebruiken (bijv. 'u ontvangt deze e-mail uiterlijk binnen twee minuten') om de urgentie nog scherper in te stellen."
     ]
   },
   "verkeerdVerbonden": {

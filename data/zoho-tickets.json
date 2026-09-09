@@ -1,6 +1,6 @@
 {
   "date": "2026-09-09",
-  "generated_at": "2026-09-09T08:10:42Z",
+  "generated_at": "2026-09-09T08:20:44Z",
   "tickets": [
     {
       "ticketNumber": "2702",
@@ -37,34 +37,22 @@
       "webUrl": "https://desk.zoho.eu/support/htjzlancyr/ShowHomePage.do#Cases/dv/195464000013922001",
       "channel": "Email",
       "doorgezetBrandmeester": false
-    },
-    {
-      "ticketNumber": "2705",
-      "tijd": "09:47",
-      "titel": "samenvoegen",
-      "klant": "C.K.N. Volp",
-      "status": "Open",
-      "statusType": "",
-      "prioriteit": "Niet ingesteld",
-      "webUrl": "https://desk.zoho.eu/support/htjzlancyr/ShowHomePage.do#Cases/dv/195464000013926001",
-      "channel": "Phone",
-      "doorgezetBrandmeester": false
     }
   ],
   "channelCounts": {
-    "Phone": 3,
+    "Phone": 2,
     "Email": 1
   },
   "brandmeesterCount": 0,
   "ticketStats": {
-    "nieuweVandaag": 4,
+    "nieuweVandaag": 3,
     "geslotenVandaag": 4,
-    "totaalOpen": 22,
-    "inDeWacht": 15,
+    "totaalOpen": 21,
+    "inDeWacht": 16,
     "statusBreakdown": {
-      "In de wacht": 15,
-      "Open": 7,
-      "Gesloten": 619
+      "In de wacht": 16,
+      "Open": 5,
+      "Gesloten": 620
     },
     "capBereikt": false
   }
