@@ -57,6 +57,14 @@ VALID_OUTCOMES = {
     "outcome-verkeerd": "Verkeerd nummer",
 }
 
+# Namen moeten exact overeenkomen met de lijst in ANALYZE_SYSTEM_PROMPT --
+# alles buiten deze lijst (incl. "Onbekend" of een hallucinatie) wordt
+# genegeerd en valt terug op de Granola-notitie-eigenaar.
+KNOWN_STAFF = {
+    "Senne Duifhuis", "Jackie Stam", "Edgar Stam", "Dewi Verver",
+    "Roelof van Beijnum", "Wouter Toonen", "Rowan Ros",
+}
+
 ANALYZE_SYSTEM_PROMPT = """Je bent een juridische kwaliteitsanalist voor de Lancyr Juridische Helpdesk van HTJZ.
 
 Achtergrond:
@@ -87,8 +95,18 @@ Bepaal ook drie extra booleans, ONAFHANKELIJK van de uitkomst hierboven:
 - "advies_gegeven": true ALLEEN als de medewerker daadwerkelijk inhoudelijk juridisch advies of een concrete juridische uitleg heeft gegeven over de zaak. BELANGRIJK: als de medewerker de beller NIET kon verifieren (niet gevonden in het systeem op naam/adres/polisnummer) en daarom bewust GEEN advies heeft gegeven maar in plaats daarvan om verificatiedocumenten heeft gevraagd en een vervolgcontact heeft afgesproken, is dit false -- en dat is GEEN fout maar juist correct, voorzichtig handelen. Zet dit niet automatisch op true alleen omdat er een juridisch onderwerp is besproken.
 - "identiteit_geverifieerd": true als de medewerker de beller op enig moment tijdens het gesprek heeft gevonden/bevestigd in het systeem (bijvoorbeeld via postcode, huisnummer, adres, polisnummer of naam) -- ook als dat pas halverwege het gesprek gebeurt, vroeg in het gesprek gebeurt is voldoende, het hoeft niet aan het begin te zijn. BELANGRIJK: als onderaan dit bericht "Systeeminfo" staat met een gekoppelde Zoho-contactpersoon, betekent dit dat het systeem de beller AUTOMATISCH heeft herkend op telefoonnummer (koppeling met polis/klantdossier) -- zet dan identiteit_geverifieerd op true, OOK ALS dit nergens expliciet in het transcript wordt besproken. Zet identiteit_geverifieerd alleen op false als er geen Zoho-contactmatch is EN er ook in het transcript geen enkele verificatiepoging (naam/adres/postcode/polisnummer) is gedaan. Let op: "dekkingscontrole" / franchise-controle (EUR 250) is alleen relevant bij zaken met een concreet schadebedrag (bijv. schadeclaims). Bij geschillen over rechten, hinder of gebruik zonder schadebedrag (bijv. burenrecht, onrechtmatige hinder, huurrecht) is de franchise NIET van toepassing en mag dit niet als ontbrekend kwaliteitspunt worden genoemd.
 
+Bepaal ook welke HTJZ-medewerker het gesprek daadwerkelijk voerde:
+- "medewerker": de naam van de medewerker die de beller te woord staat, EXACT een van
+  ["Senne Duifhuis", "Jackie Stam", "Edgar Stam", "Dewi Verver", "Roelof van Beijnum",
+  "Wouter Toonen", "Rowan Ros"], gebaseerd op zelfintroductie ("u spreekt met ...", "dit is
+  ... van HTJZ") of andere duidelijke aanwijzingen in het transcript zelf. BELANGRIJK: de
+  metadata van de opname (wie de notitie heeft aangemaakt/bezit in het opnamesysteem) is
+  GEEN betrouwbare bron voor wie het gesprek voerde -- gebruik ALLEEN de inhoud van het
+  transcript. Als het transcript geen duidelijke aanwijzing geeft welke medewerker het is,
+  zet "medewerker" dan op "Onbekend" (verzin nooit een gok).
+
 Geef ALLEEN geldige JSON terug, geen andere tekst, in dit exacte formaat:
-{"samenvatting": "max 3 zinnen, feitelijk en concreet, en vermeld expliciet of en wanneer de beller is geverifieerd en of er wel of geen inhoudelijk advies is gegeven", "tags": [["tag-x","Label"]], "uitkomst": ["outcome-x","Label"], "terugbel": true of false, "verkeerd_verbonden": true of false, "rechtsbijstand_verwijzing": true of false, "advies_gegeven": true of false, "identiteit_geverifieerd": true of false}
+{"samenvatting": "max 3 zinnen, feitelijk en concreet, en vermeld expliciet of en wanneer de beller is geverifieerd en of er wel of geen inhoudelijk advies is gegeven", "tags": [["tag-x","Label"]], "uitkomst": ["outcome-x","Label"], "terugbel": true of false, "verkeerd_verbonden": true of false, "rechtsbijstand_verwijzing": true of false, "advies_gegeven": true of false, "identiteit_geverifieerd": true of false, "medewerker": "<naam of Onbekend>"}
 """
 
 DAY_SYSTEM_PROMPT = """Je bent een juridische kwaliteitsanalist voor de Lancyr Juridische Helpdesk van HTJZ.
@@ -402,6 +420,17 @@ def main():
             rechtsbijstand_verwijzing = bool(ai_result.get("rechtsbijstand_verwijzing", False))
             advies_gegeven = bool(ai_result.get("advies_gegeven", True))
             identiteit_geverifieerd = bool(ai_result.get("identiteit_geverifieerd", False))
+            # BEVINDING 9 sep 2026: 'medewerker' kwam voorheen altijd uit
+            # detail['owner'] (de Granola-notitie-eigenaar), NIET uit wie het
+            # gesprek daadwerkelijk voerde -- in de praktijk is dat vrijwel
+            # altijd dezelfde persoon (de eigenaar van de gedeelde Granola-
+            # map), waardoor bijna elk gesprek aan die ene medewerker werd
+            # toegeschreven. De AI leest de transcriptie toch al en herkent
+            # zelfintroducties; gebruik dat, met de oude owner-aanpak alleen
+            # nog als terugval wanneer de AI het niet kan bepalen.
+            ai_medewerker = ai_result.get("medewerker")
+            if ai_medewerker in KNOWN_STAFF:
+                medewerker = ai_medewerker
         else:
             print(f"  Fallback (heuristiek) voor: {title}")
             samenvatting = (summary_md or summary_text or '')[:300]
