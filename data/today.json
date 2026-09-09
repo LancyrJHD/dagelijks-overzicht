@@ -1,35 +1,35 @@
 {
   "date": "2026-09-09",
-  "generated_at": "2026-09-09T13:02:47Z",
+  "generated_at": "2026-09-09T13:11:59Z",
   "drukte": "druk",
   "gesprekken": 14,
   "stats": {
-    "opgelost": 1,
-    "brandmeester": 3,
+    "opgelost": 2,
+    "brandmeester": 4,
     "afkoop": 2,
-    "terugbel": 3,
+    "terugbel": 2,
     "geenDekking": 1,
-    "verkeerdNummer": 4
+    "verkeerdNummer": 3
   },
-  "score": 6.1,
+  "score": 7.8,
   "conversations": [
     {
       "tijd": "09:01",
       "titel": "Daily Huddle",
-      "personen": "Verzekerde: T.J. Hageman · Senne Duifhuis | Juridisch medewerker",
-      "samenvatting": "Dit is geen telefonisch gesprek met een klant van de juridische helpdesk, maar een interne Daily Huddle-meeting van het HTJZ-team waarin personeelsleden hun dagagenda's bespreken. Het transcript bevat voornamelijk teamcommunicatie, waarbij er wel één korte klantinteractie voorkomt: mevrouw van Gorkum belde over een schadenummer, werd geverifieerd via postcode/huisnummer, en ontving een bevestiging dat het schadenummer zou volgen per mail. Dit was een administratieve mededeling, geen juridisch advies.",
+      "personen": "Verzekerde: T.J. Hageman · Senne Duifhuis",
+      "samenvatting": "Dit is geen gesprek tussen een medewerker en een beller, maar een interne Daily Huddle-meeting van het HTJZ-team. Alleen de allerlaatste uitwisseling bevat een korte telefonische interactie waarbij mevrouw van Gorkum (geverifieerd via postcode/huisnummer) door Senna wordt geholpen met een schadenummervraag. Senna bevestigt dat het schadenummer is ontvangen en een mailtje volgt, waarna het gesprek wordt beëindigd.",
       "tags": [
         [
           "tag-overig",
-          "Routering"
+          "Administratie/Schadebeheer"
         ]
       ],
       "uitkomst": [
-        "outcome-verkeerd",
-        "Verkeerd nummer"
+        "outcome-opgelost",
+        "Telefonisch opgelost"
       ],
       "terugbel": false,
-      "verkeerdVerbonden": true,
+      "verkeerdVerbonden": false,
       "rechtsbijstandVerwijzing": false,
       "adviesGegeven": false,
       "identiteitGeverifieerd": true
@@ -38,7 +38,7 @@
       "tijd": "09:04",
       "titel": "Lancier rechtsbijstandsverzekering — woning module en dakkapel",
       "personen": "Verzekerde: T.J. Hageman · Senne Duifhuis | Juridisch medewerker",
-      "samenvatting": "Beller Hageman belde eerst Lancyr-kantoor in Rijswijk over een dakkapel-installatie (vier maanden geleden) en werd doorverwezen naar het juridisch loket, maar belde vervolgens deze juridische helpdesk. De medewerker stelde vast dat de beller geen woonmodule in zijn rechtsbijstandsverzekering heeft en daarom geen rechtsbijstandsdekking voor woongeschillen beschikbaar is. De beller werd geverifieerd via naam en postcode, maar geen inhoudelijk juridisch advies over het dakkapel-geschil werd gegeven omdat de dekking ontbreekt; het gesprek eindigde met de beller die zelf afsluit.",
+      "samenvatting": "Beller Hageman is geverifieerd (Zoho-match op telefoonnummer; naam bevestigd in transcript) en belde over een dakkapel-installatie aan zijn woning. De medewerker stelde vast dat de beller NIET verzekerd is voor de module 'Wonen' in zijn rechtsbijstandsverzekering bij Lancyr, en daarom geen inhoudelijk juridisch advies over de zaak kon geven. De medewerker legde uit dat eerstelijns advies theoretisch mogelijk is, maar geen rechtsbijstandsdekking voor woonzaken beschikbaar is. Beller beëindigde het gesprek zelf en ging verder bellen.",
       "tags": [
         [
           "tag-bouw",
@@ -59,7 +59,7 @@
       "tijd": "09:20",
       "titel": "Zaak 2285 — juridisch advies aannemer en verwijzing naar juridisch loket",
       "personen": "Verzekerde: E.W.M. Hendrikx · Senne Duifhuis | Juridisch medewerker",
-      "samenvatting": "Dit gesprek is een terugkoppeling tussen twee medewerkers van dezelfde organisatie over een eerdere cliëntzaak (zaak 2285): een klant had een conflict met een aannemer en geen module wonen in zijn rechtsbijstandverzekering. De medewerker van de Lancyr Juridische Helpdesk (Senna) heeft aangegeven dat zij eerste-lijnsjuridisch advies kan verlenen maar geen rechtsbijstandsdekking kan activeren; zij heeft de klant ook geadviseerd het juridisch loket te raadplegen. De beller (Mariska) bevestigt dat zij dit eerder al aan de klant had verteld en belt voor verificatie van de inhoud. De beller is geverifieerd via postcode/zaak-referentie; inhoudelijk juridisch advies is niet aan de beller gegeven (dit was een terugkoppelgesprek tussen medewerkers).",
+      "samenvatting": "Mariska (personeelslid van een verzekeraar of juridische partner) belt achteraf met de HTJZ-helpdesk over een eerdere vervijzing van een cliënt met een geschil met een aannemer. De cliënt had geen woonmodule in zijn rechtsbijstandsverzekering en is daarom niet verder door rechtsbijstand kunnen worden geholpen. De HTJZ-medewerker (Senna) heeft eerstelijns telefonisch advies aangeboden maar de cliënt had daar geen behoefte aan en is doorverwezen naar het Juridisch Loket. Identiteit is geverifieerd via postcode, inhoudelijk juridisch advies is niet gegeven (het was een vervolggesprek over triage).",
       "tags": [
         [
           "tag-bouw",
@@ -80,7 +80,7 @@
       "tijd": "09:28",
       "titel": "Juridisch advies — jaarlijkse bonus en doorverwijzing rechtsbijstand",
       "personen": "Verzekerde: E.W.M. Hendrikx · Senne Duifhuis | Juridisch medewerker",
-      "samenvatting": "Mevrouw Hendricks belde op afspraak voor juridisch advies over twee vragen, waarvan één betrekking heeft op een jaarlijkse bonus over acht jaar. De medewerker heeft bepaald dat de zaak ingewikkelder is dan eerstelijns advies kan geven en heeft de beller daarom doorverwezen naar de rechtsbijstandsverzekering (Brandmeester). De beller is geverifieerd via automatische herkenning op telefoonnummer (Zoho-koppeling), maar geen inhoudelijk juridisch advies is gegeven.",
+      "samenvatting": "Mevrouw Hendricks belt met voorgemaakte afspraak over twee juridische vragen met betrekking tot een jaarlijkse bonus (acht jaar niet uitgekeerd). De medewerker beoordeelt dat de zaak arbeidsrechtelijke complexiteit vereist die buiten eerstelijnsniveau ligt, en verwijst daarom expliciet door naar de rechtsbijstandsafdeling (Brandmeester). Identiteit is automatisch geverifieerd via telefoonnummer (Zoho-koppeling); inhoudelijk juridisch advies is niet gegeven, maar professionele triage naar rechtsbijstand is wel uitgevoerd.",
       "tags": [
         [
           "tag-arbeidsrecht",
@@ -100,8 +100,8 @@
     {
       "tijd": "09:32",
       "titel": "Contactgegevens Koos Vink doorgegeven",
-      "personen": "Verzekerde: E.W.M. Hendrikx · Senne Duifhuis | Juridisch medewerker",
-      "samenvatting": "De medewerker belde Mevrouw Vink om contactgegevens van haar man Koos door te geven. Er werd geen inhoudelijk juridisch advies gegeven, slechts een telefoonnummer uitgewisseld voor vervolgcontact. De identiteit van de beller kon niet volledig worden geverifieerd in dit gesprek, hoewel het systeem de beller automatisch heeft herkend via het telefoonnummer.",
+      "personen": "Verzekerde: E.W.M. Hendrikx · Senne Duifhuis",
+      "samenvatting": "De medewerker belde Mevrouw Vink thuis op en vroeg naar haar man Koos, met wie eerder contact was geweest over een juridische zaak. Mevrouw Vink gaf het mobiele nummer van haar man door. Er werd geen inhoudelijk juridisch advies gegeven; het gesprek bestond uitsluitend uit het doorgeven van contactgegevens. De beller is geverifieerd via automatische systeemkoppeling (Zoho-match op telefoonnummer).",
       "tags": [
         [
           "tag-overig",
@@ -122,11 +122,11 @@
       "tijd": "09:34",
       "titel": "Ingebrekenstelling — termijn en vervolgstappen met Koos",
       "personen": "Verzekerde: I.C. vanBiezen · Senne Duifhuis",
-      "samenvatting": "Beller Koos belt over een ingebrekenstelling die hij heeft verstuurd met een termijn van één week. De medewerker corrigeert dit naar de juiste termijn van twee weken en adviseert om nog een week af te wachten. De beller wordt geïnstrueerd om volgende maandag terug te bellen via dit nummer om de vervolgstappen door te spreken. Identiteit is geverifieerd via automatische koppeling in het systeem, en inhoudelijk juridisch advies over termijnen is gegeven.",
+      "samenvatting": "Beller Koos belt over een ingebrekenstelling die hij heeft verstuurd met een termijn van één week. De medewerker adviseert om de standaardtermijn van twee weken aan te houden en stelt voor om volgende week maandag opnieuw contact op te nemen voor verdere stappen. Identiteit is geverifieerd via Zoho-koppeling, en inhoudelijk juridisch advies is gegeven over de juiste termijnstelling.",
       "tags": [
         [
-          "tag-consument",
-          "Consumentenrecht"
+          "tag-overig",
+          "Contractenrecht"
         ]
       ],
       "uitkomst": [
@@ -143,7 +143,7 @@
       "tijd": "09:41",
       "titel": "",
       "personen": "Verzekerde: I.C. vanBiezen · Senne Duifhuis | Juridisch medewerker",
-      "samenvatting": "Beller belt het verkeerde nummer: dit is een Vodafone-voicemail, niet de Lancyr Juridische Helpdesk. Er is geen juridische vraag gesteld en geen inhoudelijk advies gegeven. De beller is automatisch herkend in het systeem, maar dit is duidelijk een verkeerde verbinding.",
+      "samenvatting": "Beller bereikt de Vodafone voicemail (telefoonnummer 07), niet de Lancyr Juridische Helpdesk. Dit is een verkeerd verbonden gesprek; de beller zit niet bij de juiste helpdesk en er is geen juridische vraag behandeld. Identiteit is automatisch herkend in het systeem, maar geen advies is gegeven omdat dit niet de juiste afdeling is.",
       "tags": [
         [
           "tag-overig",
@@ -164,7 +164,7 @@
       "tijd": "09:46",
       "titel": "Laptop connector defect — afkoopregeling vs rechtsbijstand",
       "personen": "Verzekerde: I.C. vanBiezen · Senne Duifhuis | Juridisch medewerker",
-      "samenvatting": "Beller (Van der Eyck) belt over defecte laptop-connector en wil weten welke juridische stappen hij kan ondernemen tegen de verkoper. Medewerker 'Sander van Lansheer' verifieert de beller via postcode (2555), bespreekt twee opties: (1) afkoopregeling van €500 waarbij rechtsbijstand vervalt, of (2) doorverwijzing naar rechtsbijstand voor verdere juridische stappen. Beller geeft geen duidelijke keuze en het gesprek wordt afgebroken voordat een uitkomst is bereikt.",
+      "samenvatting": "Beller (geverifieerd via postcode 2555 en naam Van der Eyck) heeft een geschil over een defecte laptopconnector met Acer/Yorkom. De medewerker presenteert twee opties: (1) afkoopregeling van EUR 500 (waarna juridische hulp stopt) of (2) doorverwijzing naar rechtsbijstand voor verdere juridische stappen. De beller is voorzichtig en wil eerst zien wat de wederpartij biedt voordat hij kiest. Inhoudelijk juridisch advies werd gegeven over beide vervolgpaden en de voor- en nadelen daarvan.",
       "tags": [
         [
           "tag-consument",
@@ -172,12 +172,12 @@
         ]
       ],
       "uitkomst": [
-        "outcome-terugbel",
-        "Terugbellen"
+        "outcome-brandmeester",
+        "Doorverwezen naar Brandmeester"
       ],
-      "terugbel": true,
+      "terugbel": false,
       "verkeerdVerbonden": false,
-      "rechtsbijstandVerwijzing": false,
+      "rechtsbijstandVerwijzing": true,
       "adviesGegeven": true,
       "identiteitGeverifieerd": true
     },
@@ -185,11 +185,11 @@
       "tijd": "10:27",
       "titel": "Pleegzoon paspoort en registratie Polen — juridische bijstand",
       "personen": "Verzekerde: P. deMan · Senne Duifhuis | Juridisch medewerker",
-      "samenvatting": "Beller Pamela de Man (geverifieerd via postcode/huisnummer en automatische Zoho-koppeling) belt over haar pleegzoon van 15 jaar, die als Pools staatsburger nooit in Polen is geregistreerd en daarom geen paspoort heeft. Dit belemmert schoolinschrijving, bankrekening, buitenlandse reizen en werkgelegenheid. De medewerker (Senna) erkent de complexiteit van deze zaak die internationale regelgeving (Polen) en familierecht betreft, controleert dat de beller rechtsbijstandsdekking voor personen- en familierecht heeft, en verwijst de zaak expliciet door naar de rechtsbijstandsafdeling voor verdere behandeling.",
+      "samenvatting": "Beller (Pamela de Man) werd geverifieerd via postcode en huisnummer en stelde een complexe juridische vraag over paspoortregistratie en staatsburgerschap van haar pleegzoon (bijna 16 jaar, geboren uit Poolse ouders, nooit geregistreerd in Polen, zonder paspoort). De medewerker gaf geen inhoudelijk advies maar stuurde de beller direct door naar de rechtsbijstandsafdeling, omdat de zaak internationaal-privaatrechtelijk van aard is en buiten de scope van eerstelijnshulp valt.",
       "tags": [
         [
-          "tag-overig",
-          "Familie- en internationaal recht"
+          "tag-bestuursrecht",
+          "Familierecht / Internationaal privaatrecht"
         ]
       ],
       "uitkomst": [
@@ -205,8 +205,8 @@
     {
       "tijd": "10:42",
       "titel": "Marmeren tafel — schadeclaim en schikking €500",
-      "personen": "Verzekerde: P. deMan · Senne Duifhuis",
-      "samenvatting": "Beller Henna Gehoedi claimt €500 van een marmeren tafel (originele prijs €700) na geschil met verkoper. Medewerker Sennen biedt vanuit Lancyr een schikking aan van €500, op voorwaarde dat de zaak daarna wordt afgesloten en niet naar rechtsbijstand gaat. Beller accepteert dit aanbod; betaling binnen twee weken met spoed. Identiteit werd automatisch geverifieerd via telefoonnummer (Zoho-match 'P. deMan'). Inhoudelijk advies is gegeven: uitleg over de verhouding tussen rechtsbijstand en de eerstelijnshelpdesk, en de voorwaarden van de schikking.",
+      "personen": "Verzekerde: P. deMan · Senne Duifhuis | Juridisch medewerker",
+      "samenvatting": "Beller heeft een geschil over een beschadigde marmeren tafel (€700) besteld bij een verkoper. De medewerker biedt een schikking van €500 aan vanuit de rechtsbijstandsverzekering van Lancyr, onder voorwaarde dat verdere juridische stappen worden gestaakt. De beller wordt geverifieerd via het Zoho-systeem (automatische herkenning op telefoonnummer) en accepteert de afkoop; de medewerker geeft inhoudelijk advies over de positie van de beller en de schikkingsvoorwaarden.",
       "tags": [
         [
           "tag-consument",
@@ -226,12 +226,12 @@
     {
       "tijd": "11:05",
       "titel": "Rechtsbijstandsverzekering — afsluiting en polisvoorwaarden",
-      "personen": "Verzekerde: anoniem · Senne Duifhuis",
-      "samenvatting": "Een potentiële klant (Sarah Lokissa) zonder bestaande polis belt de Lancyr Juridische Helpdesk met vragen over rechtsbijstandsverzekering voordat zij afsluiting overweegt. De medewerker stelt vast dat de beller niet in het systeem bekend is (geen verificatie mogelijk), informeert dat rechtsbijstandsverzekering niet telefonisch via deze helpdesk kan worden afgesloten maar via de Lancyr-website, en begeleidt de beller stap voor stap naar de polisvoorwaarden online. Er wordt geen inhoudelijk juridisch advies gegeven over dekkingsomvang of voorwaarden zelf.",
+      "personen": "Verzekerde: anoniem · Senne Duifhuis | Juridisch medewerker",
+      "samenvatting": "Potentiële klant Sarah Lokissa belde de juridische helpdesk voor vragen over rechtsbijstandsverzekering voordat zij zich wil afsluiten. De medewerker stelde vast dat de beller niet in het systeem bekend is (geen polis) en gaf daarom geen inhoudelijk juridisch advies over de polisvoorwaarden. In plaats daarvan verwees de medewerker de beller naar de Lancyr-website om zelf de polisvoorwaarden (pagina 2025-07) door te lezen en stelde voor dat zij later opnieuw contact zou opnemen indien nodig.",
       "tags": [
         [
           "tag-overig",
-          "Verzekeringsadministratie"
+          "Routering"
         ]
       ],
       "uitkomst": [
@@ -248,7 +248,7 @@
       "tijd": "11:20",
       "titel": "Terugbelafspraak met Renske Buis",
       "personen": "Verzekerde: anoniem · Senne Duifhuis | Juridisch medewerker",
-      "samenvatting": "Meneer Schiphuizen belt de Lancyr Juridische Helpdesk, maar verzoekt om terugbellen over vijf minuten omdat hij bezig is met iets zwaars. De medewerker stemt in met de terugbelafspraak. Er is geen inhoudelijke juridische vraag besproken en de identiteit is niet geverifieerd.",
+      "samenvatting": "Meneer Schiphuizen belt naar de Lancyr Juridische Helpdesk via Renske Buis (mogelijk een intermediair of contactpersoon). De beller verzoekt om teruggebeld te worden over vijf minuten omdat hij bezig is met zwaar tilwerk. De medewerker Senna stemt in met de terugbelafspraak. Er is geen inhoudelijk juridisch advies gegeven en de identiteit is niet geverifieerd.",
       "tags": [
         [
           "tag-overig",
@@ -269,7 +269,7 @@
       "tijd": "11:26",
       "titel": "Doorverwijzing naar Brandmeester — erfrechtzaak en DAS-coverage",
       "personen": "Verzekerde: anoniem · Senne Duifhuis",
-      "samenvatting": "Mevrouw Van Gesselen belt over een erfrechtzaak die onder lopende zaken valt en mogelijk onder DAS-dekking. De medewerker (Senne) verwijst de zaak door naar Brandmeester op advies van een collega-verzekeringsexpert, zonder zelf inhoudelijk advies te geven. Identiteit is niet geverifieerd (geen Zoho-match en geen verificatiepoging in het transcript).",
+      "samenvatting": "Mevrouw Van Gesselen belt over een erfrechtzaak met DAS-coverage. De medewerker (Senne) verifieert de identiteit niet in het transcript en geeft geen inhoudelijk juridisch advies, maar verwijst de beller direct door naar Brandmeester (rechtsbijstand) op advies van een interne collega. De beller wordt geïnformeerd dat Brandmeester contact zal opnemen voor verdere behandeling van de zaak.",
       "tags": [
         [
           "tag-overig",
@@ -290,7 +290,7 @@
       "tijd": "11:31",
       "titel": "Schadeclaim Spindler — WTW installatie en 50-50 schikking met Gijs Rensch",
       "personen": "Verzekerde: anoniem · Senne Duifhuis | Juridisch medewerker",
-      "samenvatting": "Meneer Rensch belt over schadeclaim van EUR 740 voor beschadigde droger en wasmachine bij WTW-installatie door Spindler. De medewerker legt uit dat Spindler zich waarschijnlijk beroept op exoneratiebepalingen en eigen schuld (gezamenlijk verplaatsen), en biedt daarom een 50-50 schikking aan (EUR 370 per partij), wat de beller accepteert. Er is geen expliciete verificatie in het transcript opgenomen, maar inhoudelijk juridisch advies (exoneratiebepalingen, eigen schuld, schikkingsvoorstel) is gegeven en een afkoop (50-50 verdeling) is afgesproken.",
+      "samenvatting": "Schadeclaim WTW-installatie met schade van EUR 740 (verplaatsing droger en wasmachine). Medewerker legde uit dat Spindler zich waarschijnlijk kan beroepen op exoneratiebeding voor gevolgsschade en dat eigen schuld een verdedigingslijn vormt. Beller en medewerker kwamen tot 50-50 afkoop (EUR 370 voor verzekerde): beller is geverifieerd via herkenning van zijn zaak in het systeem, en inhoudelijk advies is gegeven over rechtspositie en afkoop.",
       "tags": [
         [
           "tag-consument",
@@ -305,32 +305,32 @@
       "verkeerdVerbonden": false,
       "rechtsbijstandVerwijzing": false,
       "adviesGegeven": true,
-      "identiteitGeverifieerd": false
+      "identiteitGeverifieerd": true
     }
   ],
   "acties": [],
   "analyse": {
     "goed": [
-      "09:34 Ingebrekenstelling: concrete vervolgstap afgesproken (terugbellen volgende maandag) met specifieke deadline en correct juridisch advies gegeven (termijn twee weken).",
-      "09:46 Laptop connector: beller geverifieerd via postcode, twee opties besproken (afkoopregeling vs rechtsbijstand) met poging tot duidelijke keuze.",
-      "10:27 Pleegzoon paspoort: beller geverifieerd, complexiteit erkend, correcte dekking gecontroleerd (personen- en familierecht), passende doorverwijzing naar rechtsbijstand.",
-      "10:42 Marmeren tafel: schadeclaim EUR 500 correct afgehandeld met expliciete voorwaarden van schikking, betalingstermijn (twee weken) duidelijk benoemd.",
-      "09:04 Dackapel Hageman: beller geverifieerd, dekkingslacune correct vastgesteld (geen woonmodule), passende afhandeling zonder ongeautoriseerd advies."
+      "09:01 Daily Huddle: mevrouw van Gorkum correct geverifieerd via postcode/huisnummer voor schadenummervraag",
+      "09:04 Dakkapel Hageman: juist vastgesteld dat woonmodule ontbreekt en geen dekking bestaat; geen advies gegeven zonder dekking",
+      "09:20 Zaak 2285: professionele triage uitgevoerd, cliënt correct doorverwezen naar Juridisch Loket wegens ontbrekende dekking",
+      "09:28 Bonus Hendricks: arbeidsrechtelijke complexiteit correct herkend en expliciet doorverwezen naar Brandmeester",
+      "09:34 Ingebrekenstelling Koos: juist advies gegeven over standaardtermijn (twee weken i.p.v. één week) met concrete vervolgafspraak (volgende week maandag)",
+      "09:46 Laptop Van der Eyck: identiteit geverifieerd, inhoudelijk advies gegeven over beide opties (afkoop vs rechtsbijstand) met duidelijke voor- en nadelen",
+      "10:42 Marmeren tafel: identiteit geverifieerd, schadeclaim van EUR 700 vastgesteld, schikking EUR 500 onderhandeld en geaccepteerd",
+      "11:31 WTW Spindler: schadeclaim EUR 740 vastgesteld, inhoudelijk advies gegeven over rechtsverdedigingen (exoneratiebeding, eigen schuld), 50-50 afkoop (EUR 370) bereikt"
     ],
     "beter": [
-      "11:31 Schadeclaim Spindler EUR 740: identiteit is NIET geverifieerd voordat juridisch advies (exoneratiebepalingen, eigen schuld) en schikkingsvoorstel (EUR 370) werden gegeven — dit is een kritieke verificatiefout bij schadezaak.",
-      "11:26 Erfrechtzaak Van Gesselen: identiteit is NIET geverifieerd (geen Zoho-match, geen verificatiepoging in transcript) voordat doorverwijzing plaatsvond — verificatie was hier mogelijk en nodig geweest.",
-      "11:20 Terugbelafspraak Schiphuizen: identiteit is NIET geverifieerd en geen concrete deadline afgesproken ('over vijf minuten' is onvoldoende nauwkeurig voor terugbelplanning).",
-      "11:05 Polisafsluiting Sarah Lokissa: terecht afgewezen (potentiële klant, niet in systeem), maar geen verificatiepoging gedaan voor het geval zij toch bestaande klant was — verificatie zou hier standaard moeten plaatsvinden.",
-      "10:42 Marmeren tafel: Zoho-match van 'P. deMan' is voor 'Henna Gehoedi' — naamverificatie lijkt onvoldoende, controleer of identiteit volledig correct is vastgesteld.",
-      "09:46 Laptop connector: afkoop EUR 500 aangeboden maar geen schriftelijke bevestiging van voorwaarden vermeld; terugbelafspraak zonder concrete deadline ('terugbellen' zonder moment)."
+      "11:20 Terugbelafspraak Schiphuizen: identiteit NIET geverifieerd voordat terugbelafspraak werd gemaakt; geen verificatie via systeem uitgevoerd en geen polisgegevens vastgesteld",
+      "11:26 Erfrechtzaak Van Gesselen: identiteit NIET geverifieerd ondanks doorverwijzing naar Brandmeester; transcript vertoont geen verificatiestap; concrete vervolgdeadline door Brandmeester niet benoegd",
+      "11:05 Sarah Lokissa: correct afgehouden van advies (geen polis), maar geen concreet vervolgplan afgesproken voor latere contactmogelijkheid (vage formule 'later opnieuw contact')"
     ]
   },
   "verkeerdVerbonden": {
-    "aantal": 4,
-    "percentage": 28.6
+    "aantal": 3,
+    "percentage": 21.4
   },
-  "rechtsbijstandVerwijzingen": 3,
+  "rechtsbijstandVerwijzingen": 4,
   "categorieen": [
     [
       "Routering",
@@ -338,22 +338,26 @@
     ],
     [
       "Consumentenrecht",
-      4
+      3
     ],
     [
       "Bouwrecht",
       2
     ],
     [
+      "Administratie/Schadebeheer",
+      1
+    ],
+    [
       "Arbeidsrecht",
       1
     ],
     [
-      "Familie- en internationaal recht",
+      "Contractenrecht",
       1
     ],
     [
-      "Verzekeringsadministratie",
+      "Familierecht / Internationaal privaatrecht",
       1
     ],
     [
