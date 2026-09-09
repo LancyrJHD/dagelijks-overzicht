@@ -1,6 +1,6 @@
 {
   "date": "2026-09-09",
-  "generated_at": "2026-09-09T12:01:07Z",
+  "generated_at": "2026-09-09T12:10:48Z",
   "tickets": [
     {
       "ticketNumber": "2702",
@@ -73,20 +73,32 @@
       "webUrl": "https://desk.zoho.eu/support/htjzlancyr/ShowHomePage.do#Cases/dv/195464000013938001",
       "channel": "Phone",
       "doorgezetBrandmeester": false
+    },
+    {
+      "ticketNumber": "2712",
+      "tijd": "14:02",
+      "titel": "Schadevergoeding losgebroken buurhonden — aansprakelijkstelling en aangifte",
+      "klant": "B.W.F. van derGaag",
+      "status": "Gesloten",
+      "statusType": "",
+      "prioriteit": "Niet ingesteld",
+      "webUrl": "https://desk.zoho.eu/support/htjzlancyr/ShowHomePage.do#Cases/dv/195464000013941001",
+      "channel": "Phone",
+      "doorgezetBrandmeester": false
     }
   ],
   "channelCounts": {
-    "Phone": 6
+    "Phone": 7
   },
   "brandmeesterCount": 0,
   "ticketStats": {
-    "nieuweVandaag": 6,
-    "geslotenVandaag": 7,
+    "nieuweVandaag": 7,
+    "geslotenVandaag": 8,
     "totaalOpen": 20,
     "inDeWacht": 19,
     "statusBreakdown": {
+      "Gesloten": 621,
       "Open": 1,
-      "Gesloten": 620,
       "In de wacht": 19
     },
     "capBereikt": false
