@@ -1,6 +1,6 @@
 {
   "date": "2026-09-09",
-  "generated_at": "2026-09-09T07:40:37Z",
+  "generated_at": "2026-09-09T07:50:41Z",
   "tickets": [
     {
       "ticketNumber": "2702",
@@ -25,21 +25,46 @@
       "webUrl": "https://desk.zoho.eu/support/htjzlancyr/ShowHomePage.do#Cases/dv/195464000013919001",
       "channel": "Phone",
       "doorgezetBrandmeester": false
+    },
+    {
+      "ticketNumber": "2704",
+      "tijd": "09:40",
+      "titel": "FW: 84212100 (Biezen, I.C. van) Verzoek om juridisch advies ",
+      "klant": "De juridische helpdesk",
+      "status": "Open",
+      "statusType": "",
+      "prioriteit": "Niet ingesteld",
+      "webUrl": "https://desk.zoho.eu/support/htjzlancyr/ShowHomePage.do#Cases/dv/195464000013922001",
+      "channel": "Email",
+      "doorgezetBrandmeester": false
+    },
+    {
+      "ticketNumber": "2705",
+      "tijd": "09:47",
+      "titel": "samenvoegen",
+      "klant": "C.K.N. Volp",
+      "status": "Open",
+      "statusType": "",
+      "prioriteit": "Niet ingesteld",
+      "webUrl": "https://desk.zoho.eu/support/htjzlancyr/ShowHomePage.do#Cases/dv/195464000013926001",
+      "channel": "Phone",
+      "doorgezetBrandmeester": false
     }
   ],
   "channelCounts": {
-    "Phone": 2
+    "Phone": 3,
+    "Email": 1
   },
   "brandmeesterCount": 0,
   "ticketStats": {
-    "nieuweVandaag": 2,
+    "nieuweVandaag": 4,
     "geslotenVandaag": 4,
-    "totaalOpen": 20,
+    "totaalOpen": 22,
     "inDeWacht": 14,
     "statusBreakdown": {
+      "Open": 8,
       "Gesloten": 620,
-      "In de wacht": 14,
-      "Open": 6
+      "In de wacht": 14
     },
     "capBereikt": false
   }

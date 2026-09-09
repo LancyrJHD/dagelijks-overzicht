@@ -1297,14 +1297,29 @@
         "nummer": "+31642783798",
         "teruggebeld": true,
         "tijd": "09:10"
+      },
+      {
+        "callResult": "abandoned",
+        "naam": "Onbekend",
+        "nummer": "+31630041197",
+        "teruggebeld": false,
+        "tijd": "09:47"
       }
     ],
     "date": "2026-09-09",
-    "generated_at": "2026-09-09T07:40:38Z",
-    "nietTerugGebeld": 0,
-    "nietTerugGebeldNummers": [],
+    "generated_at": "2026-09-09T07:50:42Z",
+    "nietTerugGebeld": 1,
+    "nietTerugGebeldNummers": [
+      {
+        "callResult": "abandoned",
+        "naam": "Onbekend",
+        "nummer": "+31630041197",
+        "teruggebeld": false,
+        "tijd": "09:47"
+      }
+    ],
     "terugGebeld": 1,
-    "totaalGemist": 1,
-    "totaalInbound": 5
+    "totaalGemist": 2,
+    "totaalInbound": 6
   }
 }
