@@ -1,27 +1,56 @@
 {
   "date": "2026-09-09",
-  "generated_at": "2026-09-09T07:00:52Z",
+  "generated_at": "2026-09-09T07:10:48Z",
   "drukte": "rustig",
-  "gesprekken": 0,
+  "gesprekken": 1,
   "stats": {
     "opgelost": 0,
     "brandmeester": 0,
     "afkoop": 0,
     "terugbel": 0,
     "geenDekking": 0,
-    "verkeerdNummer": 0
+    "verkeerdNummer": 1
   },
-  "score": 0,
-  "conversations": [],
+  "score": 10.0,
+  "conversations": [
+    {
+      "tijd": "09:01",
+      "titel": "Daily Huddle",
+      "personen": "Verzekerde: T.J. Hageman · Senne Duifhuis | Juridisch medewerker",
+      "samenvatting": "Dit is geen klantgesprek maar een interne 'Daily Huddle'-meeting van teamleden (Marta, Shanti, Charlotte, Senna, Davy, Angie) die hun dagagenda bespreken. Er is geen juridische vraag van een verzekerden, geen dekkingsvraag, en geen inhoudelijk juridisch advies gegeven. De Zoho-koppeling naar T.J. Hageman lijkt een administratieve fout (mogelijk achtergrondgeluid of verkeerde telefoonnummerherkenning). Dit is geen client-helpdesk-interactie.",
+      "tags": [
+        [
+          "tag-overig",
+          "Routering"
+        ]
+      ],
+      "uitkomst": [
+        "outcome-verkeerd",
+        "Verkeerd nummer"
+      ],
+      "terugbel": false,
+      "verkeerdVerbonden": true,
+      "rechtsbijstandVerwijzing": false,
+      "adviesGegeven": false,
+      "identiteitGeverifieerd": false
+    }
+  ],
   "acties": [],
   "analyse": {
-    "goed": [],
+    "goed": [
+      "09:01 Daily Huddle: Dit was een interne teammeeting, geen klantgesprek. Geen kwaliteitsnormen van toepassing; correct als 'Verkeerd nummer' geregistreerd."
+    ],
     "beter": []
   },
   "verkeerdVerbonden": {
-    "aantal": 0,
-    "percentage": 0.0
+    "aantal": 1,
+    "percentage": 100.0
   },
   "rechtsbijstandVerwijzingen": 0,
-  "categorieen": []
+  "categorieen": [
+    [
+      "Routering",
+      1
+    ]
+  ]
 }
