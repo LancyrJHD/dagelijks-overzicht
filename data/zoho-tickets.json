@@ -1,6 +1,6 @@
 {
   "date": "2026-09-09",
-  "generated_at": "2026-09-09T16:40:52Z",
+  "generated_at": "2026-09-09T16:50:47Z",
   "tickets": [
     {
       "ticketNumber": "2702",
@@ -109,18 +109,32 @@
       "webUrl": "https://desk.zoho.eu/support/htjzlancyr/ShowHomePage.do#Cases/dv/195464000013945001",
       "channel": "Phone",
       "doorgezetBrandmeester": false
+    },
+    {
+      "ticketNumber": "2715",
+      "tijd": "18:46",
+      "titel": "Nieuwe AFV-Regelgeving",
+      "klant": "DEGIRO",
+      "status": "Open",
+      "statusType": "",
+      "prioriteit": "Niet ingesteld",
+      "webUrl": "https://desk.zoho.eu/support/htjzlancyr/ShowHomePage.do#Cases/dv/195464000013921038",
+      "channel": "Email",
+      "doorgezetBrandmeester": false
     }
   ],
   "channelCounts": {
-    "Phone": 9
+    "Phone": 9,
+    "Email": 1
   },
   "brandmeesterCount": 0,
   "ticketStats": {
-    "nieuweVandaag": 9,
+    "nieuweVandaag": 10,
     "geslotenVandaag": 11,
-    "totaalOpen": 19,
+    "totaalOpen": 20,
     "inDeWacht": 19,
     "statusBreakdown": {
+      "Open": 1,
       "Gesloten": 624,
       "In de wacht": 19
     },
