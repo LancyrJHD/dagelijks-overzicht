@@ -1,6 +1,6 @@
 {
   "date": "2026-09-09",
-  "generated_at": "2026-09-09T08:30:55Z",
+  "generated_at": "2026-09-09T08:40:43Z",
   "tickets": [
     {
       "ticketNumber": "2702",
@@ -37,21 +37,33 @@
       "webUrl": "https://desk.zoho.eu/support/htjzlancyr/ShowHomePage.do#Cases/dv/195464000013922001",
       "channel": "Email",
       "doorgezetBrandmeester": false
+    },
+    {
+      "ticketNumber": "2706",
+      "tijd": "10:38",
+      "titel": "Pleegzoon paspoort en registratie Polen — juridische bijstand",
+      "klant": "P. deMan",
+      "status": "In de wacht",
+      "statusType": "",
+      "prioriteit": "Niet ingesteld",
+      "webUrl": "https://desk.zoho.eu/support/htjzlancyr/ShowHomePage.do#Cases/dv/195464000013929001",
+      "channel": "Phone",
+      "doorgezetBrandmeester": false
     }
   ],
   "channelCounts": {
-    "Phone": 2,
+    "Phone": 3,
     "Email": 1
   },
   "brandmeesterCount": 0,
   "ticketStats": {
-    "nieuweVandaag": 3,
+    "nieuweVandaag": 4,
     "geslotenVandaag": 4,
-    "totaalOpen": 20,
-    "inDeWacht": 16,
+    "totaalOpen": 21,
+    "inDeWacht": 17,
     "statusBreakdown": {
+      "In de wacht": 17,
       "Open": 4,
-      "In de wacht": 16,
       "Gesloten": 620
     },
     "capBereikt": false
