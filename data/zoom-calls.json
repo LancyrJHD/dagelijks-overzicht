@@ -1,15 +1,22 @@
 {
   "date": "2026-09-09",
-  "generated_at": "2026-09-09T08:40:45Z",
-  "totaalInbound": 9,
-  "totaalGemist": 3,
+  "generated_at": "2026-09-09T08:50:48Z",
+  "totaalInbound": 10,
+  "totaalGemist": 4,
   "terugGebeld": 2,
-  "nietTerugGebeld": 1,
+  "nietTerugGebeld": 2,
   "nietTerugGebeldNummers": [
     {
       "nummer": "+31650697980",
       "naam": "Onbekend",
       "tijd": "09:52",
+      "callResult": "abandoned",
+      "teruggebeld": false
+    },
+    {
+      "nummer": "+31642998890",
+      "naam": "Onbekend",
+      "tijd": "10:43",
       "callResult": "abandoned",
       "teruggebeld": false
     }
@@ -33,6 +40,13 @@
       "nummer": "+31650697980",
       "naam": "Onbekend",
       "tijd": "09:52",
+      "callResult": "abandoned",
+      "teruggebeld": false
+    },
+    {
+      "nummer": "+31642998890",
+      "naam": "Onbekend",
+      "tijd": "10:43",
       "callResult": "abandoned",
       "teruggebeld": false
     }

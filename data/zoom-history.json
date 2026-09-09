@@ -1311,11 +1311,18 @@
         "nummer": "+31650697980",
         "teruggebeld": false,
         "tijd": "09:52"
+      },
+      {
+        "callResult": "abandoned",
+        "naam": "Onbekend",
+        "nummer": "+31642998890",
+        "teruggebeld": false,
+        "tijd": "10:43"
       }
     ],
     "date": "2026-09-09",
-    "generated_at": "2026-09-09T08:40:45Z",
-    "nietTerugGebeld": 1,
+    "generated_at": "2026-09-09T08:50:48Z",
+    "nietTerugGebeld": 2,
     "nietTerugGebeldNummers": [
       {
         "callResult": "abandoned",
@@ -1323,10 +1330,17 @@
         "nummer": "+31650697980",
         "teruggebeld": false,
         "tijd": "09:52"
+      },
+      {
+        "callResult": "abandoned",
+        "naam": "Onbekend",
+        "nummer": "+31642998890",
+        "teruggebeld": false,
+        "tijd": "10:43"
       }
     ],
     "terugGebeld": 2,
-    "totaalGemist": 3,
-    "totaalInbound": 9
+    "totaalGemist": 4,
+    "totaalInbound": 10
   }
 }

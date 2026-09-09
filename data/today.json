@@ -1,15 +1,15 @@
 {
   "date": "2026-09-09",
-  "generated_at": "2026-09-09T08:40:54Z",
+  "generated_at": "2026-09-09T08:50:56Z",
   "drukte": "rustig",
   "gesprekken": 1,
   "stats": {
-    "opgelost": 0,
+    "opgelost": 1,
     "brandmeester": 0,
     "afkoop": 0,
     "terugbel": 0,
     "geenDekking": 0,
-    "verkeerdNummer": 1
+    "verkeerdNummer": 0
   },
   "score": 8.5,
   "conversations": [
@@ -17,19 +17,19 @@
       "tijd": "09:01",
       "titel": "Daily Huddle",
       "personen": "Verzekerde: T.J. Hageman · Senne Duifhuis | Juridisch medewerker",
-      "samenvatting": "Dit transcript betreft een interne 'Daily Huddle' teammeeting van HTJZ-medewerkers, geen klantgesprek met de juridische helpdesk. Halverwege wordt er kortstondig een klant (mevrouw van Gorkum) doorverbonden die alleen informatie wil krijgen over een al ingediend schadedossier en schadenummer. De medewerker verifieerde de klant via postcode/huisnummer, gaf geen inhoudelijk juridisch advies, maar bevestigde alleen dat het schadenummer reeds was ontvangen en dat het mailtje volgt.",
+      "samenvatting": "Dit is een interne team daily huddle meeting, geen telefonisch juridisch advrek aan een verzekerde. Wel komt aan het einde een korte telefonische vraag voor, waarbij mevrouw van Gorkum (postcode 2021, huisnummer 40) navraag doet naar een dossiernummer/schadenummer. De medewerker bevestigt dat het schadenummer is ontvangen en dat een mailtje volgt; geen juridisch advies is gegeven, slechts administratieve informatie verstrekt. Identiteit is geverifieerd via postcode en huisnummer.",
       "tags": [
         [
           "tag-overig",
-          "Routering"
+          "Administratieve vraag"
         ]
       ],
       "uitkomst": [
-        "outcome-verkeerd",
-        "Verkeerd nummer"
+        "outcome-opgelost",
+        "Telefonisch opgelost"
       ],
       "terugbel": false,
-      "verkeerdVerbonden": true,
+      "verkeerdVerbonden": false,
       "rechtsbijstandVerwijzing": false,
       "adviesGegeven": false,
       "identiteitGeverifieerd": true
@@ -38,22 +38,22 @@
   "acties": [],
   "analyse": {
     "goed": [
-      "09:01 Daily Huddle / Mevrouw van Gorkum: Identiteit correct geverifieerd via postcode/huisnummer voordat informatieverstrekking plaatsvond.",
-      "09:01 Daily Huddle / Mevrouw van Gorkum: Medewerker hield zich beperkt tot feitelijke statusinformatie (schadenummer ontvangen, mailtje volgt) zonder inhoudelijk juridisch advies te geven – passend voor een korte informatievraag.",
-      "09:01 Daily Huddle / Mevrouw van Gorkum: Goed proces: doorverbonden klant kreeg duidelijke verwachting over vervolgcommunicatie (mailtje volgt)."
+      "09:01 Daily Huddle: Identiteit correct geverifieerd via postcode en huisnummer voordat administratieve informatie werd verstrekt",
+      "09:01 Daily Huddle: Medewerker handelde passend op door geen juridisch advies te geven maar alleen administratieve bevestiging (schadenummer/vervolgmail) te bieden",
+      "09:01 Daily Huddle: Telefonische afhandeling efficiënt opgelost"
     ],
     "beter": [
-      "09:01 Daily Huddle / Mevrouw van Gorkum: Geen concrete deadline of vervolgdatum genoemd voor wanneer het mailtje met schadetoelichting zal verschijnen – een concrete uiterste datum zou helpen verwachtingen te managen."
+      "09:01 Daily Huddle: Geen concrete deadline genoemd voor de vervolgmail (bijvoorbeeld 'u ontvangt het mailtje vandaag nog voor 17:00 uur')"
     ]
   },
   "verkeerdVerbonden": {
-    "aantal": 1,
-    "percentage": 100.0
+    "aantal": 0,
+    "percentage": 0.0
   },
   "rechtsbijstandVerwijzingen": 0,
   "categorieen": [
     [
-      "Routering",
+      "Administratieve vraag",
       1
     ]
   ]
