@@ -1,6 +1,6 @@
 {
   "date": "2026-09-10",
-  "generated_at": "2026-09-10T09:20:55Z",
+  "generated_at": "2026-09-10T09:31:03Z",
   "drukte": "rustig",
   "gesprekken": 1,
   "stats": {
@@ -17,7 +17,7 @@
       "tijd": "09:21",
       "titel": "Rechtsbijstandsverzekering — schadeclaim dakterras en polisgegevens aanpassen",
       "personen": "Verzekerde: J.C. Zuilhof · Edgar Stam",
-      "samenvatting": "Beller belt over rechtsbijstandsverzekering wegens schadeclaim tegen tekenaar/aannemer vanwege fouten in dakterras-constructie (geschatte schade enkele duizenden euro's). Identiteit geverifieerd via automatische Zoho-match en adrescontrole (oude adres 3532 Bernard Gerard 62). Medewerker gaf beperkt juridisch advies (aansprakelijkheid tekenaar/aannemer) maar verwees zaak vervolgens naar Brandmeester omdat polis op naam echtgenote staat en huisdeling niet actueel is; zaak wordt met schadenummer doorgestuurd naar rechtsbijstand.",
+      "samenvatting": "Beller belt met een juridische vraag over aansprakelijkstelling van een tekenaar/aannemer voor fouten bij een nieuw dakterras dat niet voldoet aan vergunningsvoorschriften; geschatte schade enkele duizenden euro's. Identiteit is geverifieerd via automatische systeemherkenning (Zoho-koppeling); de medewerker gaf basis-juridisch advies dat de tekenaar/aannemer aansprakelijk kan zijn, maar verwees de zaak vervolgens expliciet door naar Brandmeester (rechtsbijstandsafdeling) voor verdere behandeling en schadeopbouw, omdat de polis op naam van de vrouw staat en er complicaties zijn met de gezinssamenstelling in het systeem. Geen inhoudelijk schadeclaimadvies gegeven.",
       "tags": [
         [
           "tag-bouw",
@@ -38,13 +38,13 @@
   "acties": [],
   "analyse": {
     "goed": [
-      "09:21 Dakterras — Identiteit correct geverifieerd via Zoho-match en adrescontrole",
-      "09:21 Dakterras — Medewerker herkende beleidsrisico (polis op naam echtgenote, huisdeling niet actueel) en verwees correct door naar Brandmeester",
-      "09:21 Dakterras — Zaak met schadenummer doorgestuurd naar rechtsbijstand (duidelijk vervolgproces)"
+      "09:21 Dakterras: Identiteit correct geverifieerd via automatische systeemherkenning (Zoho) voordat advies werd gegeven",
+      "09:21 Dakterras: Medewerker herkende begrenzing van eigen rol; gaf basis-juridisch advies maar verwees terecht door naar Brandmeester (rechtsbijstandsafdeling) voor schadeopbouw omdat zaak juridisch-technisch ingewikkelder is en polisgegevens inconsistent zijn",
+      "09:21 Dakterras: Duidelijk vervolgcontact afgesproken (doorverwijzing naar Brandmeester) voor verdere behandeling van schadeclaim"
     ],
     "beter": [
-      "09:21 Dakterras — Geen expliciete dekkingscontrole (franchise EUR 250) vastgelegd in gespreksnotities ondanks schadeclaim enkele duizenden euro's",
-      "09:21 Dakterras — Geen concrete deadline genoemd voor vervolgstap bij Brandmeester of rechtsbijstand (timing rechtsbijstandsbehandeling)"
+      "09:21 Dakterras: Bij schadeclaim van enkele duizenden euro's is geen dekkingscontrole (franchise EUR 250) in het gespreksverslag gedocumenteerd; dit zou voor volledigheid moeten zijn vastgelegd",
+      "09:21 Dakterras: Geen concrete deadline/timing genoemd voor terugbellen of contact Brandmeester (bijv. 'binnen 2 werkdagen')"
     ]
   },
   "verkeerdVerbonden": {
