@@ -1,6 +1,6 @@
 {
   "date": "2026-09-10",
-  "generated_at": "2026-09-10T09:50:55Z",
+  "generated_at": "2026-09-10T10:01:18Z",
   "drukte": "rustig",
   "gesprekken": 1,
   "stats": {
@@ -11,17 +11,17 @@
     "geenDekking": 0,
     "verkeerdNummer": 0
   },
-  "score": 7.8,
+  "score": 8.1,
   "conversations": [
     {
       "tijd": "09:21",
       "titel": "Rechtsbijstandsverzekering — schadeclaim dakterras en polisgegevens aanpassen",
       "personen": "Verzekerde: J.C. Zuilhof · Edgar Stam",
-      "samenvatting": "Beller (J.C. Zuilhof) belt namens zijn vrouw (Mevrouw Selhoff) met een juridische vraag over aansprakelijkheid van een tekenaar voor fouten in constructietekening van een dakterras, wat tot aanpassingskosten van enkele duizenden euro's leidt. De identiteit is geverifieerd via telefoonnummer (Zoho-koppeling) en adresgegevens. De medewerker geeft enig inhoudelijk advies (aansprakelijkheid tekenaar/aannemer), maar verwwijst de zaak vervolgens door naar Brandmeester omdat de polis op naam van de vrouw staat en zij niet zelf kan bellen, en omdat de schade en complexiteit rechtsbijstand vereisen.",
+      "samenvatting": "Beller belt over rechtsbijstandsverzekering aangaande een schadeclaim: dakterras van recent verbouwing voldoet niet aan vergunning omdat tekenaar fouten in maten heeft gemaakt; beller vraagt of tekenaar aansprakelijk kan worden gesteld. Medewerker verifieert beller via postcode/huisnummer (oude adres 3532 Bernard Gerard 62), stelt vast dat polis op naam vrouw staat (Mevrouw Selhoff) maar gezinssamenstelling niet is aangepast sinds 2018, en verwijst zaak door naar Brandmeester met schadenummer omdat dit een rechtsbijstandszaak is. Identiteit geverifieerd via adresgegevens en Zoho-koppeling; geen inhoudelijk juridisch advies gegeven, maar bewuste doorverwijzing naar rechtsbijstand voor verdere behandeling.",
       "tags": [
         [
-          "tag-bestuursrecht",
-          "Bestuursrecht / Bouwrecht"
+          "tag-bouw",
+          "Bouwrecht"
         ]
       ],
       "uitkomst": [
@@ -31,20 +31,19 @@
       "terugbel": false,
       "verkeerdVerbonden": false,
       "rechtsbijstandVerwijzing": true,
-      "adviesGegeven": true,
+      "adviesGegeven": false,
       "identiteitGeverifieerd": true
     }
   ],
   "acties": [],
   "analyse": {
     "goed": [
-      "09:21 Rechtsbijstand dakterras: Identiteit correct geverifieerd via telefoonnummer (Zoho) en adresgegevens voordat advies werd gegeven.",
-      "09:21 Rechtsbijstand dakterras: Medewerker herkende terecht dat de zaak om rechtsbijstand vraagt (complexiteit, schadebedrag enkele duizenden euro's) en verwees door naar Brandmeester.",
-      "09:21 Rechtsbijstand dakterras: Zaakoverdracht naar gespecialiseerde afdeling (Brandmeester) was gepast gegeven de situatie dat beller namens polishouder belt."
+      "09:21 Dakterras: Identiteit correct geverifieerd via postcode/huisnummer en Zoho-systeem",
+      "09:21 Dakterras: Medewerker herkende dit terecht als rechtsbijstandszaak en verwees door naar Brandmeester met schadenummer",
+      "09:21 Dakterras: Geregistreerde administratieve issue (gezinssamenstelling niet aangepast sinds 2018) werd geïdentificeerd en kan later worden opgelost"
     ],
     "beter": [
-      "09:21 Rechtsbijstand dakterras: Dekkingscontrole (franchise EUR 250) niet expliciet vastgelegd in het gespreksverslag, terwijl het schadebedrag van enkele duizenden euro's dit vereist. Zorg dat dit altijd concreet wordt gedocumenteerd, ook bij doorverwijzingen.",
-      "09:21 Rechtsbijstand dakterras: Bij overdracht naar Brandmeester geen concrete deadline benoemd (wanneer neemt Brandmeester contact op, tot wanneer wacht de klant?). Voeg dit altijd toe bij vervolgafspraken."
+      "09:21 Dakterras: Geen concrete deadline of vervolgstap benoemd voor het aanpassen van de gezinssamenstelling (polis staat op naam Mevrouw Selhoff maar gezinsgegevens zijn verouderd sinds 2018) — dit dient te worden afgestemd met vervolgcontact"
     ]
   },
   "verkeerdVerbonden": {
@@ -54,7 +53,7 @@
   "rechtsbijstandVerwijzingen": 1,
   "categorieen": [
     [
-      "Bestuursrecht / Bouwrecht",
+      "Bouwrecht",
       1
     ]
   ]
