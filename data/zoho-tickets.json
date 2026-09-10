@@ -1,18 +1,18 @@
 {
   "date": "2026-09-10",
-  "generated_at": "2026-09-10T12:10:42Z",
+  "generated_at": "2026-09-10T12:20:39Z",
   "tickets": [
     {
       "ticketNumber": "2716",
       "tijd": "09:28",
       "titel": "Rechtsbijstandsverzekering — schadeclaim dakterras en polisgegevens aanpassen",
       "klant": "J.C. Zuilhof",
-      "status": "Open",
+      "status": "Gesloten",
       "statusType": "",
       "prioriteit": "Niet ingesteld",
       "webUrl": "https://desk.zoho.eu/support/htjzlancyr/ShowHomePage.do#Cases/dv/195464000013926088",
       "channel": "Phone",
-      "doorgezetBrandmeester": false
+      "doorgezetBrandmeester": true
     },
     {
       "ticketNumber": "2717",
@@ -31,16 +31,16 @@
     "Phone": 1,
     "Email": 1
   },
-  "brandmeesterCount": 0,
+  "brandmeesterCount": 1,
   "ticketStats": {
     "nieuweVandaag": 2,
-    "geslotenVandaag": 7,
-    "totaalOpen": 14,
+    "geslotenVandaag": 8,
+    "totaalOpen": 13,
     "inDeWacht": 12,
     "statusBreakdown": {
-      "Gesloten": 631,
-      "Open": 2,
-      "In de wacht": 12
+      "In de wacht": 12,
+      "Open": 1,
+      "Gesloten": 632
     },
     "capBereikt": false
   }
