@@ -1,6 +1,6 @@
 {
   "date": "2026-09-10",
-  "generated_at": "2026-09-10T11:01:11Z",
+  "generated_at": "2026-09-10T11:10:50Z",
   "drukte": "rustig",
   "gesprekken": 1,
   "stats": {
@@ -11,17 +11,17 @@
     "geenDekking": 0,
     "verkeerdNummer": 0
   },
-  "score": 7.8,
+  "score": 8.1,
   "conversations": [
     {
       "tijd": "09:21",
       "titel": "Rechtsbijstandsverzekering — schadeclaim dakterras en polisgegevens aanpassen",
       "personen": "Verzekerde: J.C. Zuilhof · Edgar Stam",
-      "samenvatting": "Beller belt over rechtsbijstandsverzekering betreffende een schadeclaim (geschatte schade enkele duizenden euro) wegens fouten van een tekenaar bij een dakterras-verbouwing. De medewerker verifieerde de beller via postcode/huisnummer op het oude adres en stelde vast dat de polis op naam van mevrouw Selhoff staat (de echtgenote van de beller), maar de gezinssamenstelling niet is bijgewerkt sinds 2018. De zaak is doorverwezen naar Brandmeester met een schadenummer; de medewerker adviseerde de beller ook om de polisgegevens aan te passen via de website.",
+      "samenvatting": "Beller belt over rechtsbijstandsverzekering vanwege schadeclaim tegen tekenaar/aannemer voor fouten bij dakterras-constructie (verwachte schade enkele duizenden euro's). Identiteit is geverifieerd via systeem (automatische Zoho-koppeling op telefoonnummer). Medewerker geeft inhoudelijk advies dat tekenaar/aannemer aansprakelijk kunnen zijn, maar verwijst de zaak daarna door naar Brandmeester (rechtsbijstandsafdeling) omdat dit een bouwgerelateerde schadeclaim vereist. Medewerker wijst ook op administratieve aanpassingen (adreswijziging, gezinssamenstellling) op de polis.",
       "tags": [
         [
-          "tag-bestuursrecht",
-          "Bouwrecht/Vergunningskwestie"
+          "tag-bouw",
+          "Bouwrecht"
         ]
       ],
       "uitkomst": [
@@ -38,13 +38,13 @@
   "acties": [],
   "analyse": {
     "goed": [
-      "09:21 Dakterras-schadeclaim: identiteit correct geverifieerd via postcode/huisnummer",
-      "09:21 Dakterras-schadeclaim: polis gevonden en polishouder (mevrouw Selhoff) vastgesteld",
-      "09:21 Dakterras-schadeclaim: zaak professioneel doorverwezen naar Brandmeester met schadenummer",
-      "09:21 Dakterras-schadeclaim: beller ook praktisch advies gegeven om polisgegevens (gezinssamenstelling) aan te passen"
+      "09:21 Dakterras-schadeclaim: Identiteit correct geverifieerd via automatische Zoha-koppeling op telefoonnummer voordat advies werd gegeven",
+      "09:21 Dakterras-schadeclaim: Medewerker herkende correct dat bouwgerelateerde schadeclaim specialistische afhandeling vereist en verwees passend door naar Brandmeester (rechtsbijstandsafdeling)",
+      "09:21 Dakterras-schadeclaim: Medewerker herkende administratieve aangelegenheden (adreswijziging, gezinssamenstellling) en wees hier actief op, wat preventief werkt"
     ],
     "beter": [
-      "09:21 Dakterras-schadeclaim: geen expliciete vermelding of dekkingscontrole (franchise EUR 250) is uitgevoerd voordat doorverwijzing plaatsvond – bij schadeclaim van enkele duizenden euro is dit een relevant kwaliteitspunt"
+      "09:21 Dakterras-schadeclaim: Dekkingscontrole (franchise EUR 250) ontbreekt in het verslag. Bij schadebedrag van enkele duizenden euro's moest dekkingsstatus en franchiserelevantie expliciet vastgelegd worden voordat doorverwijzing plaatsvond",
+      "09:21 Dakterras-schadeclaim: Geen concrete deadline vermeld voor vervolgstap bij Brandmeester of verwachting van vervolgcontact"
     ]
   },
   "verkeerdVerbonden": {
@@ -54,7 +54,7 @@
   "rechtsbijstandVerwijzingen": 1,
   "categorieen": [
     [
-      "Bouwrecht/Vergunningskwestie",
+      "Bouwrecht",
       1
     ]
   ]
