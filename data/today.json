@@ -1,6 +1,6 @@
 {
   "date": "2026-09-10",
-  "generated_at": "2026-09-10T08:40:50Z",
+  "generated_at": "2026-09-10T08:50:56Z",
   "drukte": "rustig",
   "gesprekken": 1,
   "stats": {
@@ -17,7 +17,7 @@
       "tijd": "09:21",
       "titel": "Rechtsbijstandsverzekering — schadeclaim dakterras en polisgegevens aanpassen",
       "personen": "Verzekerde: J.C. Zuilhof · Edgar Stam",
-      "samenvatting": "Beller belt over rechtsbijstandsverzekering met juridische vraag over aansprakelijkheid van tekenaar/aannemer voor fouten aan dakterras na verbouwing (geschatte schade enkele duizenden euro's). De medewerker verifieert de beller via het oude adres (3532 Bernard Gerard 62), ontdekt dat de polis op naam van mevrouw Selhoff staat terwijl de beller (echtgenoot) belt, geeft basaal juridisch advies over aansprakelijkheid, en verwijst de zaak vervolgens expliciet door naar Brandmeester voor verdere behandeling met schadenummer en mail-confirmatie.",
+      "samenvatting": "Beller belt over rechtsbijstandsverzekering en stelt juridische vraag over aansprakelijkheid van tekenaar voor fouten in bouwvergunning dakterras (geschatte schade enkele duizenden euro's). Identiteit is geverifieerd via Zoho-systeemherkenning (J.C. Zuilhof) en oude adres (3532 Bernard Gerard 62). Medewerker geeft basaal inhoudelijk advies over aansprakelijkheid van tekenaar/aannemer, maar verwijst zaak vervolgens expliciet door naar Brandmeester (rechtsbijstand) voor verdere behandeling, omdat polis op naam van vrouw staat en deze zaak professionele rechtsbijstand vereist.",
       "tags": [
         [
           "tag-bouw",
@@ -38,14 +38,13 @@
   "acties": [],
   "analyse": {
     "goed": [
-      "09:21 Dakterras: Identiteit correct geverifieerd via adresgegevens en polis teruggevonden in systeem",
-      "09:21 Dakterras: Juridisch advies gegeven over aansprakelijkheid voor constructiefouten",
-      "09:21 Dakterras: Zaak professioneel doorverwezen naar Brandmeester met schadenummer en schriftelijke confirmatie (mail)",
-      "09:21 Dakterras: Medewerker erkent dat polis op andere naam staat (mevrouw Selhoff) dan beller (echtgenoot) en handelt dit expliciet af"
+      "09:21 Dakterras: Identiteit correct geverifieerd via Zoho-systeemherkenning (J.C. Zuilhof, adres 3532 Bernard Gerard 62)",
+      "09:21 Dakterras: Medewerker herkent terecht dat zaak professionele rechtsbijstand vereist en verwijst expliciet door naar Brandmeester",
+      "09:21 Dakterras: Beller krijgt basaal inhoudelijk advies over aansprakelijkheid voordat doorverwijzing plaatsvindt"
     ],
     "beter": [
-      "09:21 Dakterras: Geen concrete deadline/vervolgdatum vastgelegd voor contact met Brandmeester of klant (wanneer mag klant antwoord verwachten?)",
-      "09:21 Dakterras: Bij schadeclaim enkele duizenden euro's ontbreekt vastlegging of dekkingscontrole tegen franchise EUR 250 is uitgevoerd"
+      "09:21 Dakterras: Polisgegevens (polis op naam van vrouw) noemen als issue, maar onduidelijk of adreswijziging/polisaanpassing daadwerkelijk is afgehandeld of alleen genoteerd voor vervolgactie",
+      "09:21 Dakterras: Geen concrete deadline of vervolgcontact-afspraak met Brandmeester gedocumenteerd voor deze overdracht"
     ]
   },
   "verkeerdVerbonden": {
