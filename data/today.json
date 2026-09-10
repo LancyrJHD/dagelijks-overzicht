@@ -1,6 +1,6 @@
 {
   "date": "2026-09-10",
-  "generated_at": "2026-09-10T11:10:50Z",
+  "generated_at": "2026-09-10T11:21:06Z",
   "drukte": "rustig",
   "gesprekken": 1,
   "stats": {
@@ -11,13 +11,13 @@
     "geenDekking": 0,
     "verkeerdNummer": 0
   },
-  "score": 8.1,
+  "score": 7.8,
   "conversations": [
     {
       "tijd": "09:21",
       "titel": "Rechtsbijstandsverzekering — schadeclaim dakterras en polisgegevens aanpassen",
       "personen": "Verzekerde: J.C. Zuilhof · Edgar Stam",
-      "samenvatting": "Beller belt over rechtsbijstandsverzekering vanwege schadeclaim tegen tekenaar/aannemer voor fouten bij dakterras-constructie (verwachte schade enkele duizenden euro's). Identiteit is geverifieerd via systeem (automatische Zoho-koppeling op telefoonnummer). Medewerker geeft inhoudelijk advies dat tekenaar/aannemer aansprakelijk kunnen zijn, maar verwijst de zaak daarna door naar Brandmeester (rechtsbijstandsafdeling) omdat dit een bouwgerelateerde schadeclaim vereist. Medewerker wijst ook op administratieve aanpassingen (adreswijziging, gezinssamenstellling) op de polis.",
+      "samenvatting": "Beller belt over rechtsbijstandsverzekering vanwege schadeclaim: dakterras van verbouwing voldoet niet aan vergunning door fouten van tekenaar; schade wordt geschat op enkele duizenden euro. Beller is geverifieerd via systeem (oude adres 3532 Bernard Gerard 62); medewerker geeft basaal juridisch advies (tekenaar/aannemer kan aansprakelijk zijn) maar verwijst zaak expliciet door naar Brandmeester voor verdere behandeling. Medewerker wijst ook op noodzaak polisgegevens aan te passen (gezinssamenstelling staat verkeerd sinds 2018).",
       "tags": [
         [
           "tag-bouw",
@@ -38,13 +38,14 @@
   "acties": [],
   "analyse": {
     "goed": [
-      "09:21 Dakterras-schadeclaim: Identiteit correct geverifieerd via automatische Zoha-koppeling op telefoonnummer voordat advies werd gegeven",
-      "09:21 Dakterras-schadeclaim: Medewerker herkende correct dat bouwgerelateerde schadeclaim specialistische afhandeling vereist en verwees passend door naar Brandmeester (rechtsbijstandsafdeling)",
-      "09:21 Dakterras-schadeclaim: Medewerker herkende administratieve aangelegenheden (adreswijziging, gezinssamenstellling) en wees hier actief op, wat preventief werkt"
+      "09:21 Rechtsbijstandsverzekering: Identiteit correct geverifieerd via systeem (adres Bernard Gerard 62)",
+      "09:21 Rechtsbijstandsverzekering: Basaal juridisch advies gegeven (aansprakelijkheid tekenaar/aannemer) voordat doorverwijzing naar Brandmeester plaatsvond",
+      "09:21 Rechtsbijstandsverzekering: Zaak correct geëscaleerd naar specialisten (Brandmeester) voor verdere behandeling van schadeclaim",
+      "09:21 Rechtsbijstandsverzekering: Proactief punt opgemerkt dat polisgegevens actualisering nodig is (gezinssamenstelling sinds 2018 onjuist)"
     ],
     "beter": [
-      "09:21 Dakterras-schadeclaim: Dekkingscontrole (franchise EUR 250) ontbreekt in het verslag. Bij schadebedrag van enkele duizenden euro's moest dekkingsstatus en franchiserelevantie expliciet vastgelegd worden voordat doorverwijzing plaatsvond",
-      "09:21 Dakterras-schadeclaim: Geen concrete deadline vermeld voor vervolgstap bij Brandmeester of verwachting van vervolgcontact"
+      "09:21 Rechtsbijstandsverzekering: Geen concrete dekkingscontrole vastgelegd (franchise EUR 250 bij schadeclaim enkele duizenden euro) — dit had moeten gebeuren voordat advies werd gegeven",
+      "09:21 Rechtsbijstandsverzekering: Geen concrete deadline benoemd voor de vervolgstap bij Brandmeester (bijv. 'u hoort binnen 3 werkdagen') of voor het aanpassen van polisgegevens"
     ]
   },
   "verkeerdVerbonden": {
