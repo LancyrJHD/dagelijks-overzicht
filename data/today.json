@@ -1,6 +1,6 @@
 {
   "date": "2026-09-10",
-  "generated_at": "2026-09-10T16:01:26Z",
+  "generated_at": "2026-09-10T16:11:18Z",
   "drukte": "rustig",
   "gesprekken": 3,
   "stats": {
@@ -11,13 +11,13 @@
     "geenDekking": 0,
     "verkeerdNummer": 1
   },
-  "score": 6.8,
+  "score": 7.8,
   "conversations": [
     {
       "tijd": "09:21",
       "titel": "Rechtsbijstandsverzekering — schadeclaim dakterras en polisgegevens aanpassen",
       "personen": "Verzekerde: J.C. Zuilhof · Edgar Stam",
-      "samenvatting": "Beller belt over rechtsbijstandsverzekering naar aanleiding van een schadeclaim (dakterras niet conform vergunning, geschat enkele duizenden euro's). Medewerker verifieert beller via postcode/huisnummer (oude adres 3532 Bernard Gerard 62) en ontdekt dat polis op naam van zijn vrouw staat terwijl hij belt. Medewerker verwijst de zaak door naar Brandmeester voor verdere behandeling en stuurt een schadenummer en contactgegevens per e-mail.",
+      "samenvatting": "Beller belt over rechtsbijstandsverzekering wegens schadeclaim tegen tekenaar/aannemer vanwege foutieve constructietekening dakterras (verwachte schade enkele duizenden euro's). Medewerker verifieert beller via oude adres (3532 Bernard Gerard 62), stelt vast dat polis op naam vrouw staat maar beller belt namens haar omdat zij ziek is. Medewerker geeft inhoudelijk advies over aansprakelijkheid, vraagt om schadenummer en verwijst zaak vervolgens expliciet door naar Brandmeester (rechtsbijstand) voor verdere behandeling.",
       "tags": [
         [
           "tag-bouw",
@@ -31,14 +31,14 @@
       "terugbel": false,
       "verkeerdVerbonden": false,
       "rechtsbijstandVerwijzing": true,
-      "adviesGegeven": false,
+      "adviesGegeven": true,
       "identiteitGeverifieerd": true
     },
     {
       "tijd": "14:06",
       "titel": "VSO-ondersteuning en arbeidsrechtelijke bescherming met Scott Amers",
       "personen": "Verzekerde: anoniem · Edgar Stam",
-      "samenvatting": "Beller Scott Amers belt over ondersteuning bij een aanstaande VSO (vertrekregeling) en arbeidsrechtelijke bescherming. De beller werd geverifieerd via postcode/huisnummer (6067 AK, nr. 16). Er werd inhoudelijk juridisch advies gegeven: de medewerker legde uit dat privacy-schendingen door collega's de grondslag voor een onderzoek kunnen ongeldig maken, en adviseerde op het belang van expliciete bescherming in de VSO-overeenkomst. De zaak is doorverwezen naar de rechtsbijstandsafdeling voor verdere behandeling van de VSO-onderhandelingen.",
+      "samenvatting": "Beller Scott Amers belt over ondersteuning bij een aanstaande VSO (vrijwillige scheidingsovereenkomst) vanwege arbeidsrechtelijk conflict bij zijn werkgever (stichting waar hij als psycholoog werkt). Na verificatie via postcode/huisnummer (6067 AK, huisnummer 16) wordt de beller geïdentificeerd. De medewerker neemt het arbeidsrechtelijk verhaal op (beschuldiging van onbehoorlijk gedrag gebaseerd op privacyschending door collega, dreigend onderzoek door werkgever) en kondigt aan dit door te sturen naar de rechtsbijstandsafdeling voor verdere behandeling.",
       "tags": [
         [
           "tag-arbeidsrecht",
@@ -52,14 +52,14 @@
       "terugbel": false,
       "verkeerdVerbonden": false,
       "rechtsbijstandVerwijzing": true,
-      "adviesGegeven": true,
+      "adviesGegeven": false,
       "identiteitGeverifieerd": true
     },
     {
       "tijd": "15:10",
       "titel": "Belastingkwestie Wouter van Arnhem — terugbetaling en bezwaar",
       "personen": "Verzekerde: W. vanArnhem · Edgar Stam",
-      "samenvatting": "Beller Wouter van Arnhem belt over een belastingkwestie met de Belastingdienst (terugbetalingsverplichting EUR 3.300 wegens te veel ontvangen uitkering). De medewerker probeert hem te verifiëren via postcode/huisnummer, maar het adres in het systeem klopt niet (beller is verhuisd); verificatie mislukt. De medewerker geeft geen inhoudelijk juridisch advies over de belastingzaak zelf, maar verwijst beller door naar het adreswijzigingsproces via de Lancyr-website. Het gesprek eindigt zonder dat de juridische vraag over de belastingkwestie is behandeld.",
+      "samenvatting": "Beller Wouter van Arnhem belt over een belastingkwestie (terugbetaling EUR 3.300 aan de Belastingdienst) die buiten het juridische verzekeringspakket van Lancyr valt. De medewerker probeert de beller te verifiëren via adresgegevens, maar het adres in het systeem klopt niet (beller is recent verhuisd). De beller wordt niet geverifieerd en ontvangt geen inhoudelijk juridisch advies over de belastingkwestie.",
       "tags": [
         [
           "tag-overig",
@@ -74,19 +74,22 @@
       "verkeerdVerbonden": true,
       "rechtsbijstandVerwijzing": false,
       "adviesGegeven": false,
-      "identiteitGeverifieerd": true
+      "identiteitGeverifieerd": false
     }
   ],
   "acties": [],
   "analyse": {
     "goed": [
-      "09:21 dakterras-claim: Identiteit correct geverifieerd via postcode/huisnummer; ontdekking dat polis op naam vrouw staat werd professioneel aangepakt door doorverwijzing naar Brandmeester met schadenummer en contactgegevens per e-mail.",
-      "14:06 VSO Scott Amers: Identiteit geverifieerd; inhoudelijk juridisch advies gegeven over privacy-schendingen en VSO-bescherming; passende doorverwijzing naar rechtsbijstandsafdeling voor vervolg.",
-      "09:21 dakterras-claim: Dekkingscontrole (franchise EUR 250) is relevant voor schadeclaim van enkele duizenden euro's — doorverwijzing naar Brandmeester is juist waar specialistische behandeling nodig is."
+      "09:21 Dakterras-claim: Identiteit correct geverifieerd via adresgegevens ondanks dat polis op naam van vrouw staat; medewerker handelt professioneel door situatie (beller belt namens zieke echtgenote) in te schatten en advies uit te brengen.",
+      "09:21 Dakterras-claim: Inhoudelijk advies gegeven over aansprakelijkheid bij verwachte schadebedrag van enkele duizenden euro's; zaak expliciet doorverwezen naar Brandmeester (rechtsbijstand) voor vervolgbehandeling.",
+      "14:06 VSO-arbeidsrecht Scott Amers: Beller correct geverifieerd via postcode en huisnummer; medewerker neemt arbeidsrechtelijk verhaal zorgvuldig op zonder onbevoegde juridische conclusies.",
+      "14:06 VSO-arbeidsrecht Scott Amers: Geen inhoudelijk advies gegeven (correct, gezien complexiteit arbeidsrechtelijk geschil); zaak professioneel doorverwezen naar Brandmeester voor verdere behandeling.",
+      "15:10 Belastingkwestie Wouter van Arnhem: Medewerker handelt correct door geen advies te geven zonder succesvolle verificatie; zaak valt bovendien buiten pakket."
     ],
     "beter": [
-      "15:10 belastingkwestie Van Arnhem: Verificatie mislukt door adreswijziging, maar medewerker geeft hierop onvoldoende duidelijkheid over vervolgstappen. Geen concrete deadline genoemd voor herintrede of hoe beller na adreswijziging opnieuw contact kan opnemen voor behandeling van de EUR 3.300-belastingzaak zelf.",
-      "15:10 belastingkwestie Van Arnhem: De juridische vraag (bezwaar/terugbetaling EUR 3.300) is volledig onbehandeld gebleven. Beller had duidelijkheid moeten krijgen over: (1) of de belastingzaak onder rechtsbijstandsverzeking valt, (2) concrete deadline voor vervolgcontact na adreswijziging, (3) tussentijdse termijnen bij de Belastingdienst."
+      "09:21 Dakterras-claim: Geen expliciete vermelding van franchise (EUR 250) of dekkingscontroleprocedure in samenvatting; beste praktijk is om dit standaard te documenteren bij schadeclaims.",
+      "14:06 VSO-arbeidsrecht Scott Amers: Geen concrete deadline of vervolgcontactmoment afgesproken voor contact met Brandmeester; wenselijk is om beller een concreet moment/week te noemen waarop hij kan verwachten dat Brandmeester contact opneemt.",
+      "15:10 Belastingkwestie Wouter van Arnhem: Geen vervolgplan opgenomen (bijv. opnieuw contact als beller met correct adres belt); medewerker kan beller adviseren om met actueel adres opnieuw contact op te nemen, zodat toekomstig contact soepeler verloopt."
     ]
   },
   "verkeerdVerbonden": {
