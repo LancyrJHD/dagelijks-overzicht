@@ -1,27 +1,61 @@
 {
   "date": "2026-09-10",
-  "generated_at": "2026-09-10T07:20:41Z",
+  "generated_at": "2026-09-10T07:30:57Z",
   "drukte": "rustig",
-  "gesprekken": 0,
+  "gesprekken": 1,
   "stats": {
     "opgelost": 0,
-    "brandmeester": 0,
+    "brandmeester": 1,
     "afkoop": 0,
     "terugbel": 0,
     "geenDekking": 0,
     "verkeerdNummer": 0
   },
-  "score": 0,
-  "conversations": [],
+  "score": 6.8,
+  "conversations": [
+    {
+      "tijd": "09:21",
+      "titel": "Rechtsbijstandsverzekering — schadeclaim dakterras en polisgegevens aanpassen",
+      "personen": "Verzekerde: J.C. Zuilhof · Edgar Stam",
+      "samenvatting": "Beller belt over rechtsbijstandsverzekering naar aanleiding van een bouwfout aan een dakterras (tekenaar heeft fouten in maten doorgegeven aan gemeente, waardoor vergunning is afgekeurd en aanpassingen nodig zijn; geschatte schade enkele duizenden euro). Identiteit geverifieerd via postcode en huisnummer (oude adres, omdat beller recent is verhuisd); polis staat echter op naam van zijn vrouw (Mevrouw Selhoff), wat nog niet is aangepast in het systeem. Medewerker geeft beperkt juridisch advies (tekenaar/aannemer kunnen aansprakelijk gesteld worden), maar verwijst zaak vervolgens door naar Brandmeester voor verdere behandeling vanwege complexiteit en mogelijk grootschalige schade.",
+      "tags": [
+        [
+          "tag-bouw",
+          "Bouwrecht"
+        ]
+      ],
+      "uitkomst": [
+        "outcome-brandmeester",
+        "Doorverwezen naar Brandmeester"
+      ],
+      "terugbel": false,
+      "verkeerdVerbonden": false,
+      "rechtsbijstandVerwijzing": true,
+      "adviesGegeven": true,
+      "identiteitGeverifieerd": true
+    }
+  ],
   "acties": [],
   "analyse": {
-    "goed": [],
-    "beter": []
+    "goed": [
+      "09:21 | Dakterras-schadeclaim: Identiteit correct geverifieerd via postcode en huisnummer",
+      "09:21 | Dakterras-schadeclaim: Juridisch advies gegeven (aansprakelijkstelling tekenaar/aannemer)",
+      "09:21 | Dakterras-schadeclaim: Zaak terecht doorverwezen naar Brandmeester vanwege complexiteit en schadeomvang"
+    ],
+    "beter": [
+      "09:21 | Dakterras-schadeclaim: Polisgegevens staan op naam vrouw (Mevrouw Selhoff), maar zijn nog niet aangepast in systeem — geen duidelijk vervolgplan afgesproken om dit uit te voeren of op te volgen",
+      "09:21 | Dakterras-schadeclaim: Geschatte schade (enkele duizenden euro) ligt boven franchise EUR 250, maar geen formele dekkingscontrole (franchise, verzekerde risico's, declinering) vastgelegd voordat doorverwijzing naar Brandmeester plaatsvond"
+    ]
   },
   "verkeerdVerbonden": {
     "aantal": 0,
     "percentage": 0.0
   },
-  "rechtsbijstandVerwijzingen": 0,
-  "categorieen": []
+  "rechtsbijstandVerwijzingen": 1,
+  "categorieen": [
+    [
+      "Bouwrecht",
+      1
+    ]
+  ]
 }
