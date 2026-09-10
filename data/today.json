@@ -1,6 +1,6 @@
 {
   "date": "2026-09-10",
-  "generated_at": "2026-09-10T13:11:04Z",
+  "generated_at": "2026-09-10T13:21:03Z",
   "drukte": "rustig",
   "gesprekken": 2,
   "stats": {
@@ -17,7 +17,7 @@
       "tijd": "09:21",
       "titel": "Rechtsbijstandsverzekering — schadeclaim dakterras en polisgegevens aanpassen",
       "personen": "Verzekerde: J.C. Zuilhof · Edgar Stam",
-      "samenvatting": "Beller belt met rechtsbijstandsverzekeringsvraag over aansprakelijkstelling van tekenaar wegens fouten bij dakterras-verbouwing (geschatte schade enkele duizenden euro's). Identiteit geverifieerd via postcode/huisnummer (oud adres 3532 Bernard Gerard 62); polis staat op naam echtgenote (Mevrouw Selhoff). Medewerker gaf beperkt advies over aansprakelijkheid, constateerde dat gezinssamenstelling niet up-to-date is, en verwees vervolgens expliciet door naar Brandmeester voor verdere behandeling met aanmelding en schadenummer.",
+      "samenvatting": "Beller belt over rechtsbijstandsverzekering met vraag over aansprakelijkheid tekenaar/aannemer voor fouten aan dakterras na verbouwing (geschatte schade enkele duizenden euro's). Medewerker verifieert beller via adres (oude adres 3532 Bernard Gerard 62 gevonden in systeem), constateert dat polis op naam vrouw staat maar beller belt namens haar (zij is ziek), en verwijst zaak door naar Brandmeester met schadenummeraanvraag. Advies gegeven over aansprakelijkheid; zaak niet telefonisch opgelost maar naar rechtsbijstand.",
       "tags": [
         [
           "tag-bouw",
@@ -38,7 +38,7 @@
       "tijd": "14:06",
       "titel": "VSO-ondersteuning en arbeidsrechtelijke bescherming met Scott Amers",
       "personen": "Verzekerde: anoniem · Edgar Stam",
-      "samenvatting": "Beller Scott Amers belt over een aankomende VSO (Vrijwillig Staakt Onderzoek) in zijn functie als psycholoog bij een stichting, met onderliggende arbeidsrechtelijke kwesties: collega heeft privacy geschonden door info te verzamelen, werkgever dreigt met onderzoek en VSO, beller wil zich laten beschermen via finale kwijting en bescherming tegen toekomstige vervolgingen. Identiteit is geverifieerd via postcode (6067 AK) en huisnummer 16. Geen inhoudelijk juridisch advies gegeven, gesprek is als verslagje genoteerd en wordt doorgeleid naar behandeling.",
+      "samenvatting": "Beller Scott Amers belt over een aanstaande VSO (vrijwillige scheidingsovereenkomst) bij zijn werkgever (stichting waar hij als psycholoog werkt). Hij is geverifieerd via postcode/huisnummer (6067 AK, nr. 16) en e-mailadres (Yvonne.Wouwen@gmail.com). De medewerker heeft geen inhoudelijk juridisch advies gegeven maar het geval opgenomen als arbeidsrechtelijk conflict en aangekondigd dit intern te zullen beoordelen met het verzoek om terug te bellen.",
       "tags": [
         [
           "tag-arbeidsrecht",
@@ -59,14 +59,13 @@
   "acties": [],
   "analyse": {
     "goed": [
-      "09:21 Dakterras-claim: Identiteit correct geverifieerd via postcode/huisnummer; polis op naam echtgenote opgemerkt en vastgelegd; beller doorverwezen naar Brandmeester voor professionele schadebehanding.",
-      "14:06 VSO-arbeidsrecht: Identiteit correct geverifieerd via postcode/huisnummer; medewerker terecht geen inhoudelijk advies gegeven maar zaak doorgeleidt naar Brandmeester voor specialistische behandeling.",
-      "Beide gesprekken: Duidelijke doorverwijzingen naar Brandmeester zonder risico's te nemen bij complexe zaken (schadeclaim, arbeidsrechtelijke bescherming)."
+      "09:21 Dakterras-zaak: Identiteit correct geverifieerd via adres en systeem, ondanks dat beller namens verzekerde belt (ziekte); passende doorverwijzing naar Brandmeester met schadenummeraanvraag voor schadeclaim enkele duizenden euro's.",
+      "14:06 VSO-zaak (Scott Amers): Identiteit volledig geverifieerd via postcode/huisnummer en e-mailadres; medewerker terrecht geen inhoudelijk advies gegeven maar zaak als arbeidsrechtelijk conflict geregistreerd voor vervolgbeoordeling.",
+      "Beide zaken correct doorverwezen naar Brandmeester (rechtsbijstand) in plaats van telefonisch opgelost; passend gegeven de complexiteit."
     ],
     "beter": [
-      "09:21 Dakterras-claim: Dekkingscontrole/franchise (EUR 250) niet expliciet vastgelegd ondanks schadebedrag enkele duizenden euro's. Aanbeveling: vor gesprekken met concrete schadebedragen altijd franchisebedrag bespreken.",
-      "09:21 Dakterras-claim: Geen concrete deadline/vervolgdatum afgesproken voor contact met Brandmeester; alleen 'expliciet doorverwezen' genoteerd. Aanbeveling: concrete afspraak (bijv. 'Brandmeester belt u dinsdag') vergroot helderheid.",
-      "14:06 VSO-arbeidsrecht: Geen concrete deadline of vervolgcontact ingeplan; alleen 'wordt doorgeleid naar behandeling' zonder expliciete timing. Aanbeveling: klant verwachting stellen (bijv. 'u hoort donderdag van ons team')."
+      "09:21 Dakterras-zaak: Voor schadeclaim enkele duizenden euro's ontbreekt documentatie van de dekkingscontrole (franchise EUR 250); dit moest bij doorverwijzing naar Brandmeester worden vastgelegd.",
+      "14:06 VSO-zaak: Geen concrete deadline of vervolgcontactmoment genoemd voor terugbelbelofte ('zal intern beoordelen en terugebellen'); adviseer moment binnen bijvoorbeeld 5 werkdagen af te spreken."
     ]
   },
   "verkeerdVerbonden": {
