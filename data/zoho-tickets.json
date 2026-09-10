@@ -1,6 +1,6 @@
 {
   "date": "2026-09-10",
-  "generated_at": "2026-09-10T13:30:56Z",
+  "generated_at": "2026-09-10T13:40:38Z",
   "tickets": [
     {
       "ticketNumber": "2716",
@@ -25,22 +25,34 @@
       "webUrl": "https://desk.zoho.eu/support/htjzlancyr/ShowHomePage.do#Cases/dv/195464000013930045",
       "channel": "Email",
       "doorgezetBrandmeester": false
+    },
+    {
+      "ticketNumber": "2718",
+      "tijd": "15:32",
+      "titel": "Belastingkwestie Wouter van Arnhem — terugbetaling en bezwaar",
+      "klant": "W. vanArnhem",
+      "status": "Gesloten",
+      "statusType": "",
+      "prioriteit": "Niet ingesteld",
+      "webUrl": "https://desk.zoho.eu/support/htjzlancyr/ShowHomePage.do#Cases/dv/195464000013928039",
+      "channel": "Phone",
+      "doorgezetBrandmeester": false
     }
   ],
   "channelCounts": {
-    "Phone": 1,
+    "Phone": 2,
     "Email": 1
   },
   "brandmeesterCount": 1,
   "ticketStats": {
-    "nieuweVandaag": 2,
-    "geslotenVandaag": 8,
+    "nieuweVandaag": 3,
+    "geslotenVandaag": 9,
     "totaalOpen": 14,
     "inDeWacht": 12,
     "statusBreakdown": {
       "Open": 2,
-      "In de wacht": 12,
-      "Gesloten": 631
+      "Gesloten": 632,
+      "In de wacht": 12
     },
     "capBereikt": false
   }
