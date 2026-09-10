@@ -1,6 +1,6 @@
 {
   "date": "2026-09-10",
-  "generated_at": "2026-09-10T14:31:18Z",
+  "generated_at": "2026-09-10T14:41:20Z",
   "drukte": "rustig",
   "gesprekken": 3,
   "stats": {
@@ -11,13 +11,13 @@
     "geenDekking": 0,
     "verkeerdNummer": 1
   },
-  "score": 5.8,
+  "score": 6.8,
   "conversations": [
     {
       "tijd": "09:21",
       "titel": "Rechtsbijstandsverzekering — schadeclaim dakterras en polisgegevens aanpassen",
       "personen": "Verzekerde: J.C. Zuilhof · Edgar Stam",
-      "samenvatting": "Beller belt over rechtsbijstandsverzekering voor schadeclaim tegen tekenaar/aannemer vanwege fouten in dakterrasconstuctie (geschatte schade enkele duizenden euro). Identiteit geverifieerd via oud adres (3532 Bernard Gerard 62), polis staat op naam vrouw (mevrouw Selhoff) die ziek is. Medewerker geeft beperkt juridisch advies over aansprakelijkheid, vraagt schadenummer aan en verwijst zaak expliciet door naar Brandmeester voor verdere behandeling.",
+      "samenvatting": "Beller belt over rechtsbijstandsverzekering met een vraag over aansprakelijkstelling van een tekenaar voor fouten bij een dakterrasconstuctie (geschatte schade enkele duizenden euro's). Identiteit geverifieerd via systeem (oude adres 3532 Bernard Gerard 62). Medewerker geeft beperkt inhoudelijk advies ('hij moet conform voorschriften'), stelt daarna vast dat polis op naam van echtgenote staat en gezinssituatie niet correct is, en verwijst zaak vervolgens door naar Brandmeester met schadenummer en mail-bevestiging.",
       "tags": [
         [
           "tag-bouw",
@@ -38,7 +38,7 @@
       "tijd": "14:06",
       "titel": "VSO-ondersteuning en arbeidsrechtelijke bescherming met Scott Amers",
       "personen": "Verzekerde: anoniem · Edgar Stam",
-      "samenvatting": "Beller Scott Amers belde voor ondersteuning bij een VSO (vrijwillige scheidingsovereenkomst) met arbeidsrechtelijke complicaties. Beller werd geverifieerd via postcode (6067 AK) en huisnummer 16, onder naam Wouwe. De medewerker gaf enig inhoudelijk advies (opmerkingen over klachtrechten van collega's en privacyschending), maar verwees de zaak niet expliciet door naar rechtsbijstand en sloot af met 'ik kijk er even naar en laat je weten hoe verder', wat suggereert terugbellen/verdere behandeling.",
+      "samenvatting": "Beller Scott Amers belt over ondersteuning bij een aanstaande VSO (vrijwillige scheidingsovereenkomst) en arbeidsrechtelijke bescherming. De beller is geverifieerd via postcode, huisnummer en naam. Het gesprek betreft een arbeidsconflict met werkgever waarbij onderzoeksdreiging en onrechtmatige privacyschending door collega aan de orde zijn; de medewerker heeft geen inhoudelijk juridisch advies gegeven maar het geval genoteerd en aangekondigd dit ter beoordeling voor te leggen.",
       "tags": [
         [
           "tag-arbeidsrecht",
@@ -51,15 +51,15 @@
       ],
       "terugbel": true,
       "verkeerdVerbonden": false,
-      "rechtsbijstandVerwijzing": false,
-      "adviesGegeven": true,
+      "rechtsbijstandVerwijzing": true,
+      "adviesGegeven": false,
       "identiteitGeverifieerd": true
     },
     {
       "tijd": "15:10",
       "titel": "Belastingkwestie Wouter van Arnhem — terugbetaling en bezwaar",
       "personen": "Verzekerde: W. vanArnhem · Edgar Stam",
-      "samenvatting": "Beller Wouter van Arnhem belt over een belastingkwestie met de Belastingdienst (terugbetalingsverplichting van EUR 3.300 vanwege te veel ontvangen uitkering). De medewerker probeert de beller te verifiëren via postcode/huisnummer, maar vindt hem niet in het systeem (adres is verouderd). De beller wordt niet inhoudelijk juridisch geadviseerd over zijn belastingzaak; het gesprek eindigt zonder concrete begeleiding naar een vervolgstap.",
+      "samenvatting": "Beller Wouter van Arnhem belt over een belastingkwestie (terugbetalingsverplichting van EUR 3.300 aan de Belastingdienst wegens te veel ontvangen uitkering) en vraagt juridisch advies of dit een winstbaar geschil is. De medewerker verifieert de beller via telefoonnummer (Zoho-match) en probeert hem op te zoeken via postcode/huisnummer, maar vindt het dossier niet door adreswijzigingen. De medewerker geeft geen inhoudelijk juridisch advies over de belastingkwestie zelf, maar verwijst naar het adreswijzigingsproces. Het gesprek eindigt zonder dat de beller volledig is geverifieerd in het systeem en zonder inhoudelijk advies over de zaak.",
       "tags": [
         [
           "tag-overig",
@@ -80,22 +80,23 @@
   "acties": [],
   "analyse": {
     "goed": [
-      "09:21 Dakterras: Identiteit correct geverifieerd via adres, juridisch advies gegeven en expliciet doorverwezen naar Brandmeester met schadenummeraanvraag — sterke procedure.",
-      "14:06 VSO/arbeidsrecht: Identiteit geverifieerd via postcode/huisnummer, inhoudelijk advies gegeven over klachtrechten en privacyschending, doorverwezen naar Brandmeester.",
-      "09:21 Dakterras: Medewerker herkent correcte afbakening — schadeclaim wordt doorverwezen naar schadeteam (Brandmeester) in plaats van alles zelf af te handelen."
+      "09:21 Dakterras: Identiteit correct geverifieerd via systeem voordat advies werd gegeven",
+      "09:21 Dakterras: Schadebedrag (enkele duizenden euro's) vastgesteld; doorverwijzing naar Brandmeester met schadenummer en mailbevestiging is passend",
+      "14:06 VSO/arbeidsrecht Scott Amers: Identiteit correct geverifieerd (postcode, huisnummer, naam)",
+      "14:06 VSO/arbeidsrecht: Medewerker juist geen inhoudelijk advies gegeven maar zaak ter beoordeling voorgelegd (passende grenzen gehanteerd)",
+      "15:10 Belasting Wouter van Arnhem: Identiteit via telefoonnummer geverifieerd (Zoho-match)"
     ],
     "beter": [
-      "09:21 Dakterras: Dekkingscontrole / franchise (EUR 250) niet expliciet vastgelegd in gesprek ondanks concreet schadebedrag (enkele duizenden euro) — moet in dossier worden opgenomen voordat Brandmeester handelt.",
-      "14:06 VSO/arbeidsrecht: Vervolgstap onvoldoende gedefinieerd — 'ik kijk er even naar en laat je weten hoe verder' zonder concrete deadline of duidelijk tussenpersoon (Brandmeester is genoemd in uitkomst, maar niet in samenvatting van het gesprek zelf) — beller had moeten horen: 'U hoort uiterlijk [dag/datum] van ons'.",
-      "15:10 Belastingkwestie: KRITIEK — Beller niet gevonden in systeem (adres verouderd, 'verkeerd nummer'), geen inhoudelijk advies gegeven, maar ook geen duidelijk vervolgplan afgesproken. Beller blijft zonder begeleiding achter voor zaak van EUR 3.300 terugbetaling. Moest zijn: verificatiedocumenten opvragen, concrete deadline voor vervolgcontact stellen, evt. interim advies geven.",
-      "15:10 Belastingkwestie: Geen deadline of vervolgcontact afgesproken; gesprek eindigt zonder stappen forward — herhaalcontactrisico verhoogd."
+      "09:21 Dakterras: Geen expliciete dekkingscontrole (franchise EUR 250) en geen concrete deadline voor vervolgcontact via Brandmeester vastgelegd in het vervolgplan",
+      "14:06 VSO/arbeidsrecht Scott Amers: Geen concrete deadline of vervolgcontactstrategie opgenomen voor de beoordeling door Brandmeester",
+      "15:10 Belasting Wouter van Arnhem: Adreswijziging niet opgelost; beller kon niet volledig in systeem worden geverifieerd, waardoor geen inhoudelijk advies kon worden gegeven — vervolgplan en deadline voor adresupdate ontbreken"
     ]
   },
   "verkeerdVerbonden": {
     "aantal": 1,
     "percentage": 33.3
   },
-  "rechtsbijstandVerwijzingen": 1,
+  "rechtsbijstandVerwijzingen": 2,
   "categorieen": [
     [
       "Bouwrecht",
