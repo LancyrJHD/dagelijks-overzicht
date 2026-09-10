@@ -1,6 +1,6 @@
 {
   "date": "2026-09-10",
-  "generated_at": "2026-09-10T11:40:50Z",
+  "generated_at": "2026-09-10T11:50:54Z",
   "drukte": "rustig",
   "gesprekken": 1,
   "stats": {
@@ -11,17 +11,17 @@
     "geenDekking": 0,
     "verkeerdNummer": 0
   },
-  "score": 7.8,
+  "score": 8.1,
   "conversations": [
     {
       "tijd": "09:21",
       "titel": "Rechtsbijstandsverzekering — schadeclaim dakterras en polisgegevens aanpassen",
       "personen": "Verzekerde: J.C. Zuilhof · Edgar Stam",
-      "samenvatting": "Beller belt over een rechtsbijstandsverzekering wegens schadeclaim tegen een tekenaar/aannemer die fouten heeft gemaakt bij constructietekening dakterras (geschatte schade enkele duizenden euro's). Identiteit wordt geverifieerd via postcode/huisnummer (oude adres 3532 Bernard Gerard 62). Medewerker geeft minimaal inhoudelijk advies (bevestigt aansprakelijkheid mogelijk), maar verwijst zaak vervolgens expliciet door naar Brandmeester (rechtsbijstandsafdeling) omdat polisgegevens niet correct zijn (gezinssamenstelling 'alleenstaand' sinds 2018, maar zaak is op naam vrouw) en dit eerst moet worden opgelost.",
+      "samenvatting": "Beller belt over een bouwschadegeval: dakterras niet conform vergunning door tekenaarfouten, geschatte schade enkele duizenden euro's. Beller is geverifieerd via Zoho-systeem (automatische herkenning op telefoonnummer, oude adres 3532 Bernard Gerard 62). Medewerker gaf geen inhoudelijk juridisch advies maar verwees de zaak direct door naar Brandmeester/rechtsbijstand, omdat het een bouwgeschil met potentieel grote schade betreft; tevens bleek een polisgegevens-issue (gezinssamenstelling niet actueel) die Brandmeester moet helpen oplossen.",
       "tags": [
         [
-          "tag-bestuursrecht",
-          "Bouwrecht / Vergunningen"
+          "tag-bouw",
+          "Bouwrecht"
         ]
       ],
       "uitkomst": [
@@ -31,21 +31,19 @@
       "terugbel": false,
       "verkeerdVerbonden": false,
       "rechtsbijstandVerwijzing": true,
-      "adviesGegeven": true,
+      "adviesGegeven": false,
       "identiteitGeverifieerd": true
     }
   ],
   "acties": [],
   "analyse": {
     "goed": [
-      "09:21 Dakterras: Identiteit correct geverifieerd via postcode/huisnummer",
-      "09:21 Dakterras: Medewerker herkende dat polisgegevens (gezinssamenstelling 'alleenstaand' sinds 2018 vs. zaak op naam vrouw) niet klopten en dit eerst moet worden opgelost voordat rechtsbijstand kan worden ingediend",
-      "09:21 Dakterras: Zaak professioneel doorverwezen naar Brandmeester (rechtsbijstandsafdeling) voor vervolgbehandeling",
-      "09:21 Dakterras: Minimaal inhoudelijk advies gegeven (aansprakelijkheid besproken)"
+      "Identiteit correct geverifieerd via Zoho-systeem op telefoonnummer (09:21, dakterras-schadeclaim)",
+      "Juiste triage: zaak met potentieel grote schade (enkele duizenden euro's) en juridische complexiteit (bouwvergunning, tekenaarfouten) direct doorverwezen naar Brandmeester/rechtsbijstand in plaats van zelf advies geven",
+      "Polyprobleem herkend en meegenomen: polisgegevens-issue (gezinssamenstelling niet actueel) gekoppeld aan vervolgproces bij Brandmeester"
     ],
     "beter": [
-      "09:21 Dakterras: Geen concrete deadline genoemd voor vervolgstap bij Brandmeester of voor corrigeren polisgegevens",
-      "09:21 Dakterras: Dekkingscontrole (franchise EUR 250) niet expliciet vastgelegd ondanks schadebedrag van enkele duizenden euro's"
+      "Geen concrete deadline of vervolgcontactmoment expliciet benoemd in samenvatting voor de Brandmeester-vervolgstap (09:21, dakterras-schadeclaim) — wanneer mag beller een update verwachten?"
     ]
   },
   "verkeerdVerbonden": {
@@ -55,7 +53,7 @@
   "rechtsbijstandVerwijzingen": 1,
   "categorieen": [
     [
-      "Bouwrecht / Vergunningen",
+      "Bouwrecht",
       1
     ]
   ]
