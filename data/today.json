@@ -1,6 +1,6 @@
 {
   "date": "2026-09-10",
-  "generated_at": "2026-09-10T09:01:11Z",
+  "generated_at": "2026-09-10T09:10:55Z",
   "drukte": "rustig",
   "gesprekken": 1,
   "stats": {
@@ -17,7 +17,7 @@
       "tijd": "09:21",
       "titel": "Rechtsbijstandsverzekering — schadeclaim dakterras en polisgegevens aanpassen",
       "personen": "Verzekerde: J.C. Zuilhof · Edgar Stam",
-      "samenvatting": "Beller belt over rechtsbijstandsverzekering vanwege schadeclaim tegen tekenaar/aannemer wegens fouten in dakterras-constructie (geschatte schade enkele duizenden euro's). Medewerker verifieert beller via oud adres (postcode 3532, huisnummer 62) en ontdekt dat polis op naam vrouw staat terwijl beller namens haar belt (gezinssamenstelling niet correct bijgewerkt sinds 2018). Medewerker geeft inhoudelijk juridisch advies over aansprakelijkstelling, verwijst zaak expliciet door naar Brandmeester voor verdere behandeling, stuurt schadenummer en contactgegevens per mail.",
+      "samenvatting": "Beller belt over een rechtsbijstandsverzekering met een vraag over aansprakelijkheid van een tekenaar voor fouten in de constructietekening van een dakterras (verwachte schade enkele duizenden euro's). De medewerker verifieert de beller via adresgegevens (oude adres gevonden), geeft beperkt inhoudelijk advies (tekenaar/aannemer kan aansprakelijk zijn), maar besluit de zaak door te verwijzen naar Brandmeester voor verdere behandeling vanwege de bouwgerelateerde aard en potentiële complexiteit. Geen volledige juridische analyse gegeven, maar wel triage en doorverwijzing naar rechtsbijstand.",
       "tags": [
         [
           "tag-bouw",
@@ -31,21 +31,20 @@
       "terugbel": false,
       "verkeerdVerbonden": false,
       "rechtsbijstandVerwijzing": true,
-      "adviesGegeven": true,
+      "adviesGegeven": false,
       "identiteitGeverifieerd": true
     }
   ],
   "acties": [],
   "analyse": {
     "goed": [
-      "09:21 Dakterras: Identiteit correct geverifieerd via postcode en huisnummer",
-      "09:21 Dakterras: Inhoudelijk juridisch advies gegeven over aansprakelijkstelling",
-      "09:21 Dakterras: Zaak expliciet doorverwezen naar Brandmeester met schadenummer en contactgegevens per mail",
-      "09:21 Dakterras: Administratieve fout ontdekt (polisgegevens niet actueel sinds 2018) en geadresseerd"
+      "09:21 Dakterras-claim: Identiteit correct geverifieerd via adresgegevens voordat verdere stappen werden ondernomen",
+      "09:21 Dakterras-claim: Juiste triage uitgevoerd — zaak met complexe bouwrechtelijke aspecten en potentieel schadebedrag (enkele duizenden euro's) correct doorverwezen naar Brandmeester voor gespecialiseerde rechtsbijstand",
+      "09:21 Dakterras-claim: Medewerker heeft beperkt oriënterend advies gegeven (aansprakelijkheid tekenaar/aannemer) voordat doorverwijzing plaatsvond — passende triage"
     ],
     "beter": [
-      "09:21 Dakterras: Geen concrete deadline afgesproken voor vervolgstappen bij Brandmeester of voor actualisatie gezinssamenstelling in het systeem",
-      "09:21 Dakterras: Dekkingscontrole franchise (EUR 250) niet expliciet vastgelegd in het gespreksverslag ondanks schadebedrag van enkele duizenden euro's"
+      "09:21 Dakterras-claim: Geen concrete deadline/vervolgmoment vermeld voor vervolgcontact met Brandmeester of verwachting wanneer beller feedback ontvangt",
+      "09:21 Dakterras-claim: Geen dekkingscontrole (franchise EUR 250) vastgelegd in het verslag, ondanks dat sprake is van schadeclaim met verwacht bedrag van enkele duizenden euro's — dit is relevant voor de beller om te weten of de zaak onder de dekking valt"
     ]
   },
   "verkeerdVerbonden": {
