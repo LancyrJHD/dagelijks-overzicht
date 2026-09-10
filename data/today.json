@@ -1,6 +1,6 @@
 {
   "date": "2026-09-10",
-  "generated_at": "2026-09-10T08:01:06Z",
+  "generated_at": "2026-09-10T08:10:52Z",
   "drukte": "rustig",
   "gesprekken": 1,
   "stats": {
@@ -11,13 +11,13 @@
     "geenDekking": 0,
     "verkeerdNummer": 0
   },
-  "score": 6.8,
+  "score": 7.8,
   "conversations": [
     {
       "tijd": "09:21",
       "titel": "Rechtsbijstandsverzekering — schadeclaim dakterras en polisgegevens aanpassen",
       "personen": "Verzekerde: J.C. Zuilhof · Edgar Stam",
-      "samenvatting": "Beller belt over rechtsbijstandsverzekering en vraagt juridisch advies over aansprakelijkheid van een tekenaar/aannemer die fouten heeft gemaakt bij een dakterras-verbouwing (geschatte schade enkele duizenden euro's). De medewerker geeft inhoudelijk advies dat de tekenaar en/of aannemer aansprakelijk kunnen zijn, verifieert de beller via adresgegevens (oude adres 3532 Bernard Gerard 62), stelt vast dat de polis op naam van mevrouw Selhoff staat (terwijl de beller opbelt) en besluit dit samen met de schadeclaim door te verwijzen naar Brandmeester (rechtsbijstand) omdat er sprake is van een bouwgerelateerde kwestie met potentieel grote schade en omdat de polishouder zelf niet beschikbaar is.",
+      "samenvatting": "Beller belt over rechtsbijstandsverzekering voor schadeclaim tegen tekenaar/aannemer wegens foutieve constructietekening dakterras (geschatte schade enkele duizenden euro's). Identiteit geverifieerd via postcode/huisnummer (oude adres 3532 Bernard Gerard 62); medewerker gaf beperkt inhoudelijk advies (aansprakelijkheid tekenaar/aannemer) maar verwees de zaak expliciet door naar Brandmeester voor verdere behandeling. Nevenadministratieve punten: adreswijziging en gezinssamenstellingsupdate nodig (polis alleen op vrouw naam).",
       "tags": [
         [
           "tag-bouw",
@@ -38,14 +38,13 @@
   "acties": [],
   "analyse": {
     "goed": [
-      "09:21 Dakterras-claim: Identiteit correct geverifieerd via adresgegevens (Bernard Gerard 62)",
-      "09:21 Dakterras-claim: Inhoudelijk advies gegeven over aansprakelijkheid tekenaar/aannemer",
-      "09:21 Dakterras-claim: Juist doorverwezen naar Brandmeester (rechtsbijstand) gezien bouwgerelateerde aard en potentieel grote schade"
+      "09:21 Dakterras: Identiteit correct geverifieerd via postcode/huisnummer voordat advies werd gegeven",
+      "09:21 Dakterras: Medewerker herkende de grenzen van eigen expertise en verwees zaak expliciet en tijdig door naar Brandmeester (gespecialiseerde afdeling)",
+      "09:21 Dakterras: Medewerker signaleerde administratieve tekortkomingen (adreswijziging, gezinssamenstelling) en zette deze op de agenda voor vervolgbehandeling"
     ],
     "beter": [
-      "09:21 Dakterras-claim: Geen concrete dekkingscontrole (franchise EUR 250) vastgelegd ondanks schadebedrag van enkele duizenden euro's",
-      "09:21 Dakterras-claim: Geen expliciete deadline/vervolgstap afgesproken voor contact met Brandmeester of voor eventuele vervolgstappen aan klantenzijde",
-      "09:21 Dakterras-claim: Polisaanpassing (polis staat op naam mevrouw Selhoff, beller is dit niet) niet afgerond — geen duidelijk plan voor wie nu contact opneemt met Brandmeester en hoe polishouder betrokken wordt"
+      "09:21 Dakterras: Dekkingscontrole ontbreekt — bij een schadeclaim van enkele duizenden euro's (boven franchise EUR 250) moest worden vastgelegd dat dekking aanwezig is voordat inhoudelijk advies werd gegeven; dit moet worden bevestigd in de vervolgbehandeling bij Brandmeester",
+      "09:21 Dakterras: Geen concrete deadline genoemd voor vervolgcontact of verwerking door Brandmeester — duidelijk maken wanneer beller kan rekenen op contact van de gespecialiseerde afdeling"
     ]
   },
   "verkeerdVerbonden": {
