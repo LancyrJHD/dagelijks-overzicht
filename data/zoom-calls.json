@@ -1,10 +1,10 @@
 {
   "date": "2026-09-11",
-  "generated_at": "2026-09-11T10:30:48Z",
-  "totaalInbound": 10,
-  "totaalGemist": 10,
+  "generated_at": "2026-09-11T10:40:46Z",
+  "totaalInbound": 11,
+  "totaalGemist": 11,
   "terugGebeld": 0,
-  "nietTerugGebeld": 10,
+  "nietTerugGebeld": 11,
   "nietTerugGebeldNummers": [
     {
       "nummer": "+31630684221",
@@ -74,6 +74,13 @@
       "naam": "Onbekend",
       "tijd": "12:19",
       "callResult": "overflowed",
+      "teruggebeld": false
+    },
+    {
+      "nummer": "+31880204525",
+      "naam": "Onbekend",
+      "tijd": "12:39",
+      "callResult": "abandoned",
       "teruggebeld": false
     }
   ],
@@ -146,6 +153,13 @@
       "naam": "Onbekend",
       "tijd": "12:19",
       "callResult": "overflowed",
+      "teruggebeld": false
+    },
+    {
+      "nummer": "+31880204525",
+      "naam": "Onbekend",
+      "tijd": "12:39",
+      "callResult": "abandoned",
       "teruggebeld": false
     }
   ]

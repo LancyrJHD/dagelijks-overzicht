@@ -1409,11 +1409,18 @@
         "nummer": "+31640641634",
         "teruggebeld": false,
         "tijd": "12:19"
+      },
+      {
+        "callResult": "abandoned",
+        "naam": "Onbekend",
+        "nummer": "+31880204525",
+        "teruggebeld": false,
+        "tijd": "12:39"
       }
     ],
     "date": "2026-09-11",
-    "generated_at": "2026-09-11T10:30:48Z",
-    "nietTerugGebeld": 10,
+    "generated_at": "2026-09-11T10:40:46Z",
+    "nietTerugGebeld": 11,
     "nietTerugGebeldNummers": [
       {
         "callResult": "abandoned",
@@ -1484,10 +1491,17 @@
         "nummer": "+31640641634",
         "teruggebeld": false,
         "tijd": "12:19"
+      },
+      {
+        "callResult": "abandoned",
+        "naam": "Onbekend",
+        "nummer": "+31880204525",
+        "teruggebeld": false,
+        "tijd": "12:39"
       }
     ],
     "terugGebeld": 0,
-    "totaalGemist": 10,
-    "totaalInbound": 10
+    "totaalGemist": 11,
+    "totaalInbound": 11
   }
 }
