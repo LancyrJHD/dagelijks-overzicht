@@ -1,10 +1,10 @@
 {
   "date": "2026-09-11",
-  "generated_at": "2026-09-11T09:40:42Z",
-  "totaalInbound": 3,
-  "totaalGemist": 3,
+  "generated_at": "2026-09-11T09:50:45Z",
+  "totaalInbound": 5,
+  "totaalGemist": 5,
   "terugGebeld": 0,
-  "nietTerugGebeld": 3,
+  "nietTerugGebeld": 5,
   "nietTerugGebeldNummers": [
     {
       "nummer": "+31630684221",
@@ -21,9 +21,23 @@
       "teruggebeld": false
     },
     {
+      "nummer": "+31618989828",
+      "naam": "Onbekend",
+      "tijd": "11:32",
+      "callResult": "overflowed",
+      "teruggebeld": false
+    },
+    {
       "nummer": "+31619508926",
       "naam": "Onbekend",
       "tijd": "11:37",
+      "callResult": "abandoned",
+      "teruggebeld": false
+    },
+    {
+      "nummer": "+31681925035",
+      "naam": "Onbekend",
+      "tijd": "11:40",
       "callResult": "abandoned",
       "teruggebeld": false
     }
@@ -44,9 +58,23 @@
       "teruggebeld": false
     },
     {
+      "nummer": "+31618989828",
+      "naam": "Onbekend",
+      "tijd": "11:32",
+      "callResult": "overflowed",
+      "teruggebeld": false
+    },
+    {
       "nummer": "+31619508926",
       "naam": "Onbekend",
       "tijd": "11:37",
+      "callResult": "abandoned",
+      "teruggebeld": false
+    },
+    {
+      "nummer": "+31681925035",
+      "naam": "Onbekend",
+      "tijd": "11:40",
       "callResult": "abandoned",
       "teruggebeld": false
     }
