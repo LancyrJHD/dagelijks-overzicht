@@ -1388,11 +1388,18 @@
         "nummer": "+31655198077",
         "teruggebeld": false,
         "tijd": "11:54"
+      },
+      {
+        "callResult": "abandoned",
+        "naam": "Onbekend",
+        "nummer": "+31621382476",
+        "teruggebeld": false,
+        "tijd": "12:03"
       }
     ],
     "date": "2026-09-11",
-    "generated_at": "2026-09-11T10:00:58Z",
-    "nietTerugGebeld": 7,
+    "generated_at": "2026-09-11T10:10:42Z",
+    "nietTerugGebeld": 8,
     "nietTerugGebeldNummers": [
       {
         "callResult": "abandoned",
@@ -1442,10 +1449,17 @@
         "nummer": "+31655198077",
         "teruggebeld": false,
         "tijd": "11:54"
+      },
+      {
+        "callResult": "abandoned",
+        "naam": "Onbekend",
+        "nummer": "+31621382476",
+        "teruggebeld": false,
+        "tijd": "12:03"
       }
     ],
     "terugGebeld": 0,
-    "totaalGemist": 7,
-    "totaalInbound": 7
+    "totaalGemist": 8,
+    "totaalInbound": 8
   }
 }

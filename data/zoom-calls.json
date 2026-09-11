@@ -1,10 +1,10 @@
 {
   "date": "2026-09-11",
-  "generated_at": "2026-09-11T10:00:58Z",
-  "totaalInbound": 7,
-  "totaalGemist": 7,
+  "generated_at": "2026-09-11T10:10:42Z",
+  "totaalInbound": 8,
+  "totaalGemist": 8,
   "terugGebeld": 0,
-  "nietTerugGebeld": 7,
+  "nietTerugGebeld": 8,
   "nietTerugGebeldNummers": [
     {
       "nummer": "+31630684221",
@@ -52,6 +52,13 @@
       "nummer": "+31655198077",
       "naam": "Onbekend",
       "tijd": "11:54",
+      "callResult": "abandoned",
+      "teruggebeld": false
+    },
+    {
+      "nummer": "+31621382476",
+      "naam": "Onbekend",
+      "tijd": "12:03",
       "callResult": "abandoned",
       "teruggebeld": false
     }
@@ -103,6 +110,13 @@
       "nummer": "+31655198077",
       "naam": "Onbekend",
       "tijd": "11:54",
+      "callResult": "abandoned",
+      "teruggebeld": false
+    },
+    {
+      "nummer": "+31621382476",
+      "naam": "Onbekend",
+      "tijd": "12:03",
       "callResult": "abandoned",
       "teruggebeld": false
     }
