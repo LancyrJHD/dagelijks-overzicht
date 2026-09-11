@@ -1416,11 +1416,18 @@
         "nummer": "+31880204525",
         "teruggebeld": false,
         "tijd": "12:39"
+      },
+      {
+        "callResult": "abandoned",
+        "naam": "Onbekend",
+        "nummer": "+31880204525",
+        "teruggebeld": false,
+        "tijd": "12:42"
       }
     ],
     "date": "2026-09-11",
-    "generated_at": "2026-09-11T10:40:46Z",
-    "nietTerugGebeld": 11,
+    "generated_at": "2026-09-11T10:50:46Z",
+    "nietTerugGebeld": 12,
     "nietTerugGebeldNummers": [
       {
         "callResult": "abandoned",
@@ -1498,10 +1505,17 @@
         "nummer": "+31880204525",
         "teruggebeld": false,
         "tijd": "12:39"
+      },
+      {
+        "callResult": "abandoned",
+        "naam": "Onbekend",
+        "nummer": "+31880204525",
+        "teruggebeld": false,
+        "tijd": "12:42"
       }
     ],
     "terugGebeld": 0,
-    "totaalGemist": 11,
-    "totaalInbound": 11
+    "totaalGemist": 12,
+    "totaalInbound": 12
   }
 }
