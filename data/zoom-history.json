@@ -1395,11 +1395,18 @@
         "nummer": "+31621382476",
         "teruggebeld": false,
         "tijd": "12:03"
+      },
+      {
+        "callResult": "abandoned",
+        "naam": "Onbekend",
+        "nummer": "+31626601232",
+        "teruggebeld": false,
+        "tijd": "12:09"
       }
     ],
     "date": "2026-09-11",
-    "generated_at": "2026-09-11T10:10:42Z",
-    "nietTerugGebeld": 8,
+    "generated_at": "2026-09-11T10:20:44Z",
+    "nietTerugGebeld": 9,
     "nietTerugGebeldNummers": [
       {
         "callResult": "abandoned",
@@ -1456,10 +1463,17 @@
         "nummer": "+31621382476",
         "teruggebeld": false,
         "tijd": "12:03"
+      },
+      {
+        "callResult": "abandoned",
+        "naam": "Onbekend",
+        "nummer": "+31626601232",
+        "teruggebeld": false,
+        "tijd": "12:09"
       }
     ],
     "terugGebeld": 0,
-    "totaalGemist": 8,
-    "totaalInbound": 8
+    "totaalGemist": 9,
+    "totaalInbound": 9
   }
 }
