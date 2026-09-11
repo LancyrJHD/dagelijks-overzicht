@@ -1,10 +1,10 @@
 {
   "date": "2026-09-11",
-  "generated_at": "2026-09-11T12:40:52Z",
-  "totaalInbound": 13,
-  "totaalGemist": 13,
+  "generated_at": "2026-09-11T12:50:43Z",
+  "totaalInbound": 14,
+  "totaalGemist": 14,
   "terugGebeld": 0,
-  "nietTerugGebeld": 13,
+  "nietTerugGebeld": 14,
   "nietTerugGebeldNummers": [
     {
       "nummer": "+31630684221",
@@ -95,6 +95,13 @@
       "naam": "Onbekend",
       "tijd": "13:10",
       "callResult": "abandoned",
+      "teruggebeld": false
+    },
+    {
+      "nummer": "+31615101654",
+      "naam": "Onbekend",
+      "tijd": "14:41",
+      "callResult": "overflowed",
       "teruggebeld": false
     }
   ],
@@ -188,6 +195,13 @@
       "naam": "Onbekend",
       "tijd": "13:10",
       "callResult": "abandoned",
+      "teruggebeld": false
+    },
+    {
+      "nummer": "+31615101654",
+      "naam": "Onbekend",
+      "tijd": "14:41",
+      "callResult": "overflowed",
       "teruggebeld": false
     }
   ]
