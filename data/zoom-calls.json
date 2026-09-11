@@ -1,10 +1,10 @@
 {
   "date": "2026-09-11",
-  "generated_at": "2026-09-11T09:50:45Z",
-  "totaalInbound": 5,
-  "totaalGemist": 5,
+  "generated_at": "2026-09-11T10:00:58Z",
+  "totaalInbound": 7,
+  "totaalGemist": 7,
   "terugGebeld": 0,
-  "nietTerugGebeld": 5,
+  "nietTerugGebeld": 7,
   "nietTerugGebeldNummers": [
     {
       "nummer": "+31630684221",
@@ -38,6 +38,20 @@
       "nummer": "+31681925035",
       "naam": "Onbekend",
       "tijd": "11:40",
+      "callResult": "overflowed",
+      "teruggebeld": false
+    },
+    {
+      "nummer": "+31681925035",
+      "naam": "Onbekend",
+      "tijd": "11:40",
+      "callResult": "abandoned",
+      "teruggebeld": false
+    },
+    {
+      "nummer": "+31655198077",
+      "naam": "Onbekend",
+      "tijd": "11:54",
       "callResult": "abandoned",
       "teruggebeld": false
     }
@@ -75,6 +89,20 @@
       "nummer": "+31681925035",
       "naam": "Onbekend",
       "tijd": "11:40",
+      "callResult": "overflowed",
+      "teruggebeld": false
+    },
+    {
+      "nummer": "+31681925035",
+      "naam": "Onbekend",
+      "tijd": "11:40",
+      "callResult": "abandoned",
+      "teruggebeld": false
+    },
+    {
+      "nummer": "+31655198077",
+      "naam": "Onbekend",
+      "tijd": "11:54",
       "callResult": "abandoned",
       "teruggebeld": false
     }
