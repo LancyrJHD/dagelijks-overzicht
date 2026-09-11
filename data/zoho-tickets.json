@@ -1,6 +1,6 @@
 {
   "date": "2026-09-11",
-  "generated_at": "2026-09-11T14:00:58Z",
+  "generated_at": "2026-09-11T14:10:45Z",
   "tickets": [
     {
       "ticketNumber": "2719",
@@ -37,19 +37,31 @@
       "webUrl": "https://desk.zoho.eu/support/htjzlancyr/ShowHomePage.do#Cases/dv/195464000013972024",
       "channel": "Email",
       "doorgezetBrandmeester": false
+    },
+    {
+      "ticketNumber": "2722",
+      "tijd": "16:04",
+      "titel": "FW: Relatienummer 84181098: LancyrJuridischeHelpdesk is nodig.",
+      "klant": "De juridische helpdesk",
+      "status": "Open",
+      "statusType": "",
+      "prioriteit": "Niet ingesteld",
+      "webUrl": "https://desk.zoho.eu/support/htjzlancyr/ShowHomePage.do#Cases/dv/195464000013967056",
+      "channel": "Email",
+      "doorgezetBrandmeester": false
     }
   ],
   "channelCounts": {
-    "Email": 3
+    "Email": 4
   },
   "brandmeesterCount": 0,
   "ticketStats": {
-    "nieuweVandaag": 3,
+    "nieuweVandaag": 4,
     "geslotenVandaag": 0,
-    "totaalOpen": 17,
+    "totaalOpen": 18,
     "inDeWacht": 12,
     "statusBreakdown": {
-      "Open": 5,
+      "Open": 6,
       "Gesloten": 630,
       "In de wacht": 12
     },

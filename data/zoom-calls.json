@@ -1,10 +1,10 @@
 {
   "date": "2026-09-11",
-  "generated_at": "2026-09-11T14:00:59Z",
-  "totaalInbound": 16,
-  "totaalGemist": 16,
+  "generated_at": "2026-09-11T14:10:47Z",
+  "totaalInbound": 18,
+  "totaalGemist": 18,
   "terugGebeld": 0,
-  "nietTerugGebeld": 16,
+  "nietTerugGebeld": 18,
   "nietTerugGebeldNummers": [
     {
       "nummer": "+31630684221",
@@ -116,6 +116,20 @@
       "naam": "Onbekend",
       "tijd": "15:02",
       "callResult": "abandoned",
+      "teruggebeld": false
+    },
+    {
+      "nummer": "+31622622743",
+      "naam": "Onbekend",
+      "tijd": "15:56",
+      "callResult": "overflowed",
+      "teruggebeld": false
+    },
+    {
+      "nummer": "+31627595490",
+      "naam": "Onbekend",
+      "tijd": "16:01",
+      "callResult": "overflowed",
       "teruggebeld": false
     }
   ],
@@ -230,6 +244,20 @@
       "naam": "Onbekend",
       "tijd": "15:02",
       "callResult": "abandoned",
+      "teruggebeld": false
+    },
+    {
+      "nummer": "+31622622743",
+      "naam": "Onbekend",
+      "tijd": "15:56",
+      "callResult": "overflowed",
+      "teruggebeld": false
+    },
+    {
+      "nummer": "+31627595490",
+      "naam": "Onbekend",
+      "tijd": "16:01",
+      "callResult": "overflowed",
       "teruggebeld": false
     }
   ]
