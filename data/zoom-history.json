@@ -1346,11 +1346,18 @@
         "nummer": "+31630684221",
         "teruggebeld": false,
         "tijd": "10:16"
+      },
+      {
+        "callResult": "abandoned",
+        "naam": "Onbekend",
+        "nummer": "+31648364735",
+        "teruggebeld": false,
+        "tijd": "10:37"
       }
     ],
     "date": "2026-09-11",
-    "generated_at": "2026-09-11T08:30:53Z",
-    "nietTerugGebeld": 1,
+    "generated_at": "2026-09-11T08:40:41Z",
+    "nietTerugGebeld": 2,
     "nietTerugGebeldNummers": [
       {
         "callResult": "abandoned",
@@ -1358,10 +1365,17 @@
         "nummer": "+31630684221",
         "teruggebeld": false,
         "tijd": "10:16"
+      },
+      {
+        "callResult": "abandoned",
+        "naam": "Onbekend",
+        "nummer": "+31648364735",
+        "teruggebeld": false,
+        "tijd": "10:37"
       }
     ],
     "terugGebeld": 0,
-    "totaalGemist": 1,
-    "totaalInbound": 1
+    "totaalGemist": 2,
+    "totaalInbound": 2
   }
 }
