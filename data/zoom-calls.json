@@ -1,10 +1,10 @@
 {
   "date": "2026-09-11",
-  "generated_at": "2026-09-11T14:50:46Z",
-  "totaalInbound": 18,
-  "totaalGemist": 18,
+  "generated_at": "2026-09-11T15:01:07Z",
+  "totaalInbound": 19,
+  "totaalGemist": 19,
   "terugGebeld": 0,
-  "nietTerugGebeld": 18,
+  "nietTerugGebeld": 19,
   "nietTerugGebeldNummers": [
     {
       "nummer": "+31630684221",
@@ -130,6 +130,13 @@
       "naam": "Onbekend",
       "tijd": "16:01",
       "callResult": "overflowed",
+      "teruggebeld": false
+    },
+    {
+      "nummer": "+31637304843",
+      "naam": "Onbekend",
+      "tijd": "16:51",
+      "callResult": "abandoned",
       "teruggebeld": false
     }
   ],
@@ -258,6 +265,13 @@
       "naam": "Onbekend",
       "tijd": "16:01",
       "callResult": "overflowed",
+      "teruggebeld": false
+    },
+    {
+      "nummer": "+31637304843",
+      "naam": "Onbekend",
+      "tijd": "16:51",
+      "callResult": "abandoned",
       "teruggebeld": false
     }
   ]

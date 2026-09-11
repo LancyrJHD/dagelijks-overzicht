@@ -1465,11 +1465,18 @@
         "nummer": "+31627595490",
         "teruggebeld": false,
         "tijd": "16:01"
+      },
+      {
+        "callResult": "abandoned",
+        "naam": "Onbekend",
+        "nummer": "+31637304843",
+        "teruggebeld": false,
+        "tijd": "16:51"
       }
     ],
     "date": "2026-09-11",
-    "generated_at": "2026-09-11T14:50:46Z",
-    "nietTerugGebeld": 18,
+    "generated_at": "2026-09-11T15:01:07Z",
+    "nietTerugGebeld": 19,
     "nietTerugGebeldNummers": [
       {
         "callResult": "abandoned",
@@ -1596,10 +1603,17 @@
         "nummer": "+31627595490",
         "teruggebeld": false,
         "tijd": "16:01"
+      },
+      {
+        "callResult": "abandoned",
+        "naam": "Onbekend",
+        "nummer": "+31637304843",
+        "teruggebeld": false,
+        "tijd": "16:51"
       }
     ],
     "terugGebeld": 0,
-    "totaalGemist": 18,
-    "totaalInbound": 18
+    "totaalGemist": 19,
+    "totaalInbound": 19
   }
 }
