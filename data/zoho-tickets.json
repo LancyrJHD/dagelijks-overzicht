@@ -1,16 +1,31 @@
 {
   "date": "2026-09-11",
-  "generated_at": "2026-09-11T07:40:42Z",
-  "tickets": [],
-  "channelCounts": {},
+  "generated_at": "2026-09-11T07:50:41Z",
+  "tickets": [
+    {
+      "ticketNumber": "2719",
+      "tijd": "09:49",
+      "titel": "FW: 84198908_Hopmann: Voortzetting eerdere zaak bij DAS",
+      "klant": "De juridische helpdesk",
+      "status": "Open",
+      "statusType": "",
+      "prioriteit": "Niet ingesteld",
+      "webUrl": "https://desk.zoho.eu/support/htjzlancyr/ShowHomePage.do#Cases/dv/195464000013958001",
+      "channel": "Email",
+      "doorgezetBrandmeester": false
+    }
+  ],
+  "channelCounts": {
+    "Email": 1
+  },
   "brandmeesterCount": 0,
   "ticketStats": {
-    "nieuweVandaag": 0,
+    "nieuweVandaag": 1,
     "geslotenVandaag": 0,
-    "totaalOpen": 14,
+    "totaalOpen": 15,
     "inDeWacht": 12,
     "statusBreakdown": {
-      "Open": 2,
+      "Open": 3,
       "Gesloten": 632,
       "In de wacht": 12
     },
