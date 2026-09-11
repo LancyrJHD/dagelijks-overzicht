@@ -1437,11 +1437,18 @@
         "nummer": "+31615101654",
         "teruggebeld": false,
         "tijd": "14:41"
+      },
+      {
+        "callResult": "abandoned",
+        "naam": "Onbekend",
+        "nummer": "+31651431332",
+        "teruggebeld": false,
+        "tijd": "14:51"
       }
     ],
     "date": "2026-09-11",
-    "generated_at": "2026-09-11T12:50:43Z",
-    "nietTerugGebeld": 14,
+    "generated_at": "2026-09-11T13:01:06Z",
+    "nietTerugGebeld": 15,
     "nietTerugGebeldNummers": [
       {
         "callResult": "abandoned",
@@ -1540,10 +1547,17 @@
         "nummer": "+31615101654",
         "teruggebeld": false,
         "tijd": "14:41"
+      },
+      {
+        "callResult": "abandoned",
+        "naam": "Onbekend",
+        "nummer": "+31651431332",
+        "teruggebeld": false,
+        "tijd": "14:51"
       }
     ],
     "terugGebeld": 0,
-    "totaalGemist": 14,
-    "totaalInbound": 14
+    "totaalGemist": 15,
+    "totaalInbound": 15
   }
 }
