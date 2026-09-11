@@ -1423,11 +1423,18 @@
         "nummer": "+31880204525",
         "teruggebeld": false,
         "tijd": "12:42"
+      },
+      {
+        "callResult": "abandoned",
+        "naam": "Onbekend",
+        "nummer": "+31618989828",
+        "teruggebeld": false,
+        "tijd": "13:10"
       }
     ],
     "date": "2026-09-11",
-    "generated_at": "2026-09-11T11:10:45Z",
-    "nietTerugGebeld": 12,
+    "generated_at": "2026-09-11T11:20:40Z",
+    "nietTerugGebeld": 13,
     "nietTerugGebeldNummers": [
       {
         "callResult": "abandoned",
@@ -1512,10 +1519,17 @@
         "nummer": "+31880204525",
         "teruggebeld": false,
         "tijd": "12:42"
+      },
+      {
+        "callResult": "abandoned",
+        "naam": "Onbekend",
+        "nummer": "+31618989828",
+        "teruggebeld": false,
+        "tijd": "13:10"
       }
     ],
     "terugGebeld": 0,
-    "totaalGemist": 12,
-    "totaalInbound": 12
+    "totaalGemist": 13,
+    "totaalInbound": 13
   }
 }
