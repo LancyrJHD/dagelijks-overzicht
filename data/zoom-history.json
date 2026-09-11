@@ -1444,11 +1444,18 @@
         "nummer": "+31651431332",
         "teruggebeld": false,
         "tijd": "14:51"
+      },
+      {
+        "callResult": "abandoned",
+        "naam": "Onbekend",
+        "nummer": "+31615574700",
+        "teruggebeld": false,
+        "tijd": "15:02"
       }
     ],
     "date": "2026-09-11",
-    "generated_at": "2026-09-11T13:01:06Z",
-    "nietTerugGebeld": 15,
+    "generated_at": "2026-09-11T13:10:41Z",
+    "nietTerugGebeld": 16,
     "nietTerugGebeldNummers": [
       {
         "callResult": "abandoned",
@@ -1554,10 +1561,17 @@
         "nummer": "+31651431332",
         "teruggebeld": false,
         "tijd": "14:51"
+      },
+      {
+        "callResult": "abandoned",
+        "naam": "Onbekend",
+        "nummer": "+31615574700",
+        "teruggebeld": false,
+        "tijd": "15:02"
       }
     ],
     "terugGebeld": 0,
-    "totaalGemist": 15,
-    "totaalInbound": 15
+    "totaalGemist": 16,
+    "totaalInbound": 16
   }
 }
