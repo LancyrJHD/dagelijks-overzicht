@@ -1,10 +1,10 @@
 {
   "date": "2026-09-11",
-  "generated_at": "2026-09-11T10:20:44Z",
-  "totaalInbound": 9,
-  "totaalGemist": 9,
+  "generated_at": "2026-09-11T10:30:48Z",
+  "totaalInbound": 10,
+  "totaalGemist": 10,
   "terugGebeld": 0,
-  "nietTerugGebeld": 9,
+  "nietTerugGebeld": 10,
   "nietTerugGebeldNummers": [
     {
       "nummer": "+31630684221",
@@ -67,6 +67,13 @@
       "naam": "Onbekend",
       "tijd": "12:09",
       "callResult": "abandoned",
+      "teruggebeld": false
+    },
+    {
+      "nummer": "+31640641634",
+      "naam": "Onbekend",
+      "tijd": "12:19",
+      "callResult": "overflowed",
       "teruggebeld": false
     }
   ],
@@ -132,6 +139,13 @@
       "naam": "Onbekend",
       "tijd": "12:09",
       "callResult": "abandoned",
+      "teruggebeld": false
+    },
+    {
+      "nummer": "+31640641634",
+      "naam": "Onbekend",
+      "tijd": "12:19",
+      "callResult": "overflowed",
       "teruggebeld": false
     }
   ]
