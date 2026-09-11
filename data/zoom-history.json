@@ -1353,11 +1353,18 @@
         "nummer": "+31648364735",
         "teruggebeld": false,
         "tijd": "10:37"
+      },
+      {
+        "callResult": "abandoned",
+        "naam": "Onbekend",
+        "nummer": "+31619508926",
+        "teruggebeld": false,
+        "tijd": "11:37"
       }
     ],
     "date": "2026-09-11",
-    "generated_at": "2026-09-11T09:30:54Z",
-    "nietTerugGebeld": 2,
+    "generated_at": "2026-09-11T09:40:42Z",
+    "nietTerugGebeld": 3,
     "nietTerugGebeldNummers": [
       {
         "callResult": "abandoned",
@@ -1372,10 +1379,17 @@
         "nummer": "+31648364735",
         "teruggebeld": false,
         "tijd": "10:37"
+      },
+      {
+        "callResult": "abandoned",
+        "naam": "Onbekend",
+        "nummer": "+31619508926",
+        "teruggebeld": false,
+        "tijd": "11:37"
       }
     ],
     "terugGebeld": 0,
-    "totaalGemist": 2,
-    "totaalInbound": 2
+    "totaalGemist": 3,
+    "totaalInbound": 3
   }
 }
