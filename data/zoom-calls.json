@@ -1,10 +1,26 @@
 {
   "date": "2026-09-11",
-  "generated_at": "2026-09-11T08:10:39Z",
-  "totaalInbound": 0,
-  "totaalGemist": 0,
+  "generated_at": "2026-09-11T08:20:40Z",
+  "totaalInbound": 1,
+  "totaalGemist": 1,
   "terugGebeld": 0,
-  "nietTerugGebeld": 0,
-  "nietTerugGebeldNummers": [],
-  "alleGemistNummers": []
+  "nietTerugGebeld": 1,
+  "nietTerugGebeldNummers": [
+    {
+      "nummer": "+31630684221",
+      "naam": "Onbekend",
+      "tijd": "10:16",
+      "callResult": "abandoned",
+      "teruggebeld": false
+    }
+  ],
+  "alleGemistNummers": [
+    {
+      "nummer": "+31630684221",
+      "naam": "Onbekend",
+      "tijd": "10:16",
+      "callResult": "abandoned",
+      "teruggebeld": false
+    }
+  ]
 }
