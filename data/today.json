@@ -1,6 +1,6 @@
 {
   "date": "2026-09-14",
-  "generated_at": "2026-09-14T16:31:09Z",
+  "generated_at": "2026-09-14T16:41:10Z",
   "drukte": "rustig",
   "gesprekken": 1,
   "stats": {
@@ -11,13 +11,13 @@
     "geenDekking": 0,
     "verkeerdNummer": 1
   },
-  "score": 8.1,
+  "score": 8.5,
   "conversations": [
     {
       "tijd": "09:09",
       "titel": "Daily Huddle",
       "personen": "Verzekerde: anoniem · Dewi Verver | Juridisch Medewerker",
-      "samenvatting": "Beller belt de juridische helpdesk met een vraag over autoverzekering (vader wil auto op naam van beller verzekeren). De medewerker erkent dat dit niet de juiste afdeling is, geeft korte uitleg dat dit als fraude wordt gezien, en verwijst de beller door naar de verzekeringafdeling (toets 3). Beller is niet geverifieerd en geen inhoudelijk juridisch advies is gegeven.",
+      "samenvatting": "De beller belde de juridische helpdesk met een vraag over autoverzekering (het toevoegen van een nieuwe auto aan de polis van zijn vader). De medewerker herkende dat dit een autoverzekeringsvraag is en geen juridische aangelegenheid, en verwees de beller correct door naar de juiste afdeling (opnieuw bellen, optie 3). De beller is niet geverifieerd en er is geen inhoudelijk juridisch advies gegeven.",
       "tags": [
         [
           "tag-overig",
@@ -38,12 +38,12 @@
   "acties": [],
   "analyse": {
     "goed": [
-      "09:09 Daily Huddle: Medewerker herkent correct dat dit geen juridische zaak is, maar een verzekeringstechnische routeringskwestie",
-      "09:09 Daily Huddle: Beller correct doorverwezen naar verzekeringafdeling (toets 3) - geen onnodig advies gegeven",
-      "09:09 Daily Huddle: Medewerker geeft nuttige context (fraude-waarschuwing) zonder formeel juridisch advies uit te stellen"
+      "09:09 Daily Huddle: Medewerker herkende correct dat de vraag over autoverzekering buiten het juridische domein valt en verwees de beller doelgericht door naar de juiste afdeling (opnieuw bellen, optie 3).",
+      "09:09 Daily Huddle: Geen inhoudelijk advies gegeven voordat de vraag uit scope bleek, wat correct is.",
+      "09:09 Daily Huddle: Efficiënte afhandeling en geen verspilde tijd aan niet-juridische kwesties."
     ],
     "beter": [
-      "09:09 Daily Huddle: Geen concrete vervolgdeadline afgesproken voor contact met verzekeringafdeling (bv. 'probeer binnen 2 uur toets 3' of verwachting voor terugbellen)"
+      "09:09 Daily Huddle: Bij doorverwijzing zou de medewerker kunnen overwegen om ook kort mee te geven welke informatie de beller voor de autoverzekeringsvraag gereed moet hebben (bijv. polisnummer, gegevens nieuwe auto), zodat het vervolgcontact efficiënter verloopt."
     ]
   },
   "verkeerdVerbonden": {
