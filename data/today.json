@@ -1,6 +1,6 @@
 {
   "date": "2026-09-14",
-  "generated_at": "2026-09-14T13:01:10Z",
+  "generated_at": "2026-09-14T13:13:53Z",
   "drukte": "rustig",
   "gesprekken": 1,
   "stats": {
@@ -17,7 +17,7 @@
       "tijd": "09:09",
       "titel": "Daily Huddle",
       "personen": "Verzekerde: anoniem · Dewi Verver | Juridisch Medewerker",
-      "samenvatting": "De beller belt de juridische helpdesk met een vraag over autoverzekering (een auto registreren op naam van zijn vader). De medewerker erkent dat dit de verkeerde afdeling is en verwijst de beller door naar de autoverzekeringafdeling (optie 3). De beller is niet geverifieerd en er is geen inhoudelijk juridisch advies gegeven.",
+      "samenvatting": "Beller belt de juridische helpdesk met een vraag over autoverzekering (wijziging van verzekerde voertuig). De medewerker erkent dat dit geen juridisch advies betreft maar een administratieve/verzekeringstechnische kwestie, en verwijst de beller door naar de juiste afdeling (autoverzekeringen) met instructie om opnieuw te bellen en optie 3 te kiezen. Identiteit is niet geverifieerd, geen inhoudelijk juridisch advies gegeven.",
       "tags": [
         [
           "tag-overig",
@@ -38,11 +38,12 @@
   "acties": [],
   "analyse": {
     "goed": [
-      "09:09 - Autoverzekering: Medewerker herkende correct dat dit geen juridische zaak voor de helpdesk is en verwees professioneel door naar de juiste afdeling (autoverzekering, optie 3)",
-      "09:09 - Autoverzekering: Geen advies gegeven zonder verificatie, wat correct is gezien het routeringskarakter van het gesprek"
+      "09:09 Daily Huddle: Medewerker herkende correct dat dit een administratieve/verzekeringstechnische kwestie betreft en geen juridisch advies vereist",
+      "09:09 Daily Huddle: Beller werd adequaat doorverwezen naar de juiste afdeling (autoverzekeringen) met duidelijke instructies (opnieuw bellen, optie 3)",
+      "09:09 Daily Huddle: Geen juridisch advies gegeven zonder verificatie, wat correct is gegeven de aard van het verzoek"
     ],
     "beter": [
-      "09:09 - Autoverzekering: Bij doorverwijzing zou ideaal zijn geweest om de beller een concrete deadline of vervolgstap mee te geven (bijv. 'U kunt onmiddellijk het volgnummer van uw vraag vastleggen bij optie 3')"
+      "09:09 Daily Huddle: Hoewel doorverwijzing correct was, had een concrete deadline of duidelijk vervolgplan (bijv. 'bel nu naar [nummer]' of 'u krijgt binnen 2 uur terugbel') het contact kunnen versterken"
     ]
   },
   "verkeerdVerbonden": {
