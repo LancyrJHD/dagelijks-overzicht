@@ -1638,11 +1638,18 @@
         "nummer": "+31644627889",
         "teruggebeld": false,
         "tijd": "10:45"
+      },
+      {
+        "callResult": "abandoned",
+        "naam": "Onbekend",
+        "nummer": "+380683153127",
+        "teruggebeld": false,
+        "tijd": "12:13"
       }
     ],
     "date": "2026-09-14",
-    "generated_at": "2026-09-14T10:10:42Z",
-    "nietTerugGebeld": 3,
+    "generated_at": "2026-09-14T10:30:55Z",
+    "nietTerugGebeld": 4,
     "nietTerugGebeldNummers": [
       {
         "callResult": "abandoned",
@@ -1664,10 +1671,17 @@
         "nummer": "+31644627889",
         "teruggebeld": false,
         "tijd": "10:45"
+      },
+      {
+        "callResult": "abandoned",
+        "naam": "Onbekend",
+        "nummer": "+380683153127",
+        "teruggebeld": false,
+        "tijd": "12:13"
       }
     ],
     "terugGebeld": 0,
-    "totaalGemist": 3,
-    "totaalInbound": 11
+    "totaalGemist": 4,
+    "totaalInbound": 12
   }
 }

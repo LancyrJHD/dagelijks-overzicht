@@ -1,6 +1,6 @@
 {
   "date": "2026-09-14",
-  "generated_at": "2026-09-14T10:10:49Z",
+  "generated_at": "2026-09-14T10:31:04Z",
   "drukte": "rustig",
   "gesprekken": 1,
   "stats": {
@@ -17,7 +17,7 @@
       "tijd": "09:09",
       "titel": "Daily Huddle",
       "personen": "Verzekerde: anoniem · Dewi Verver | Juridisch Medewerker",
-      "samenvatting": "De beller belt met een vraag over autoverzekeringadministratie (wijziging van verzekerde voertuig), geen juridische kwestie. De medewerker (Davy) erkent dat dit niet de juridische helpdesk betreft en verwijst de beller correct door naar de afdeling autoverzekeringen (toets 3). De beller is niet geverifieerd en er is geen inhoudelijk juridisch advies gegeven.",
+      "samenvatting": "De beller belt de juridische helpdesk met een vraag over autoverzekering (wijziging van verzekerde auto). De medewerker erkent correct dat dit onderwerp niet bij de juridische helpdesk hoort en verwijst de beller door naar de autoverzekeringingsafdeling (optie 3). De beller is niet geverifieerd en er is geen inhoudelijk juridisch advies gegeven.",
       "tags": [
         [
           "tag-overig",
@@ -38,11 +38,11 @@
   "acties": [],
   "analyse": {
     "goed": [
-      "09:09 Daily Huddle: Medewerker Davy herkent correct dat dit geen juridische zaak betreft en verwijst de beller passend door naar de afdeling autoverzekeringen (toets 3). Dit is een juiste triage.",
-      "Geen verificatie nodig voordat doorverwijzing plaatsvond, aangezien dit buiten de scope van de juridische helpdesk valt."
+      "09:09 Autoverzekering: Medewerker herkent correct dat autoverzekeringsvragen niet binnen de juridische helpdesk vallen en verwijst de beller professioneel door naar de juiste afdeling (optie 3).",
+      "09:09 Autoverzekering: Geen onnodige verificatie uitgevoerd omdat het onderwerp buiten de scope valt."
     ],
     "beter": [
-      "09:09 Daily Huddle: Het zou kunnen helpen om de beller expliciet te adviseren om hun polisgegevens paraat te hebben bij contact met de afdeling autoverzekeringen, om latere irritatie te voorkomen."
+      "09:09 Autoverzekering: Hoewel de doorverwijzing correct is, zou opheldering over welke onderwerpen wél bij de juridische helpdesk horen, toekomstige verkeerde nummers kunnen voorkomen."
     ]
   },
   "verkeerdVerbonden": {
