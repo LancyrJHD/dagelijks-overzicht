@@ -1,6 +1,6 @@
 {
   "date": "2026-09-14",
-  "generated_at": "2026-09-14T11:20:57Z",
+  "generated_at": "2026-09-14T11:31:46Z",
   "drukte": "rustig",
   "gesprekken": 1,
   "stats": {
@@ -17,7 +17,7 @@
       "tijd": "09:09",
       "titel": "Daily Huddle",
       "personen": "Verzekerde: anoniem · Dewi Verver | Juridisch Medewerker",
-      "samenvatting": "De beller belde de juridische helpdesk met een vraag over autoverzekering (een nieuwe auto op naam van zijn vader verzekeren). De medewerker verkende kort of er fraude in het geding was, maar erkende vervolgens dat dit onderwerp niet onder de juridische helpdesk valt. De beller werd doorverwezen naar de afdeling autoverzekeringen (menuoptie 3) en het gesprek werd beëindigd.",
+      "samenvatting": "De beller beide de juridische helpdesk met een vraag over autoverzekering (wijziging van polisnaam voor een nieuw voertuig van zijn vader). De medewerker (Davy) stelde vast dat dit een administratieve verzekeringsvraag is die niet onder de juridische helpdesk valt, en verwees de beller door naar de juiste afdeling (autoverzekeringen, optie 3). De beller werd niet geverifieerd en ontving geen juridisch advies.",
       "tags": [
         [
           "tag-overig",
@@ -38,12 +38,11 @@
   "acties": [],
   "analyse": {
     "goed": [
-      "09:09 Daily Huddle: Medewerker herkende correct dat autoverzekeringsvraag buiten juridische helpdesk valt en verwees beller doelgericht door naar afdeling autoverzekeringen (menuoptie 3)",
-      "09:09 Daily Huddle: Medewerker verkende eerst of fraude in het geding was voordat doorverwijzing plaatsvond, wat een goede triage-aanpak toont",
-      "09:09 Daily Huddle: Geen advies gegeven zonder verificatie – terecht, omdat onderwerp niet onder juridische diensten valt"
+      "09:09 Daily Huddle: Medewerker Davy herkende correct dat dit een administratieve verzekeringsvraag betreft die niet onder juridische helpdesk valt en verwees beller professioneel door naar de juiste afdeling (autoverzekeringen, optie 3).",
+      "09:09 Daily Huddle: Geen verificatie nodig omdat dit geen juridisch dossier betrof - juiste scope-assessment."
     ],
     "beter": [
-      "09:09 Daily Huddle: Bij doorverwijzing zou expliciet kunnen worden bevestigd dat beller de juiste afdeling bereikt heeft (bijv. verificatie van bereiken menuoptie 3)"
+      "09:09 Daily Huddle: Het routeringsbericht naar de beller had concreter kunnen zijn (bijv. 'U bereikt de autoverzekeringsdienst via optie 3, die kan u direct helpen met de polisnaamwijziging' in plaats van alleen door te verwijzen)."
     ]
   },
   "verkeerdVerbonden": {

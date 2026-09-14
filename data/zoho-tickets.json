@@ -1,6 +1,6 @@
 {
   "date": "2026-09-14",
-  "generated_at": "2026-09-14T11:20:44Z",
+  "generated_at": "2026-09-14T11:31:33Z",
   "tickets": [
     {
       "ticketNumber": "2723",
@@ -25,20 +25,32 @@
       "webUrl": "https://desk.zoho.eu/support/htjzlancyr/ShowHomePage.do#Cases/dv/195464000013973012",
       "channel": "Email",
       "doorgezetBrandmeester": false
+    },
+    {
+      "ticketNumber": "2725",
+      "tijd": "13:23",
+      "titel": "Conflict na bouwtechnische",
+      "klant": "H.A.G. Kamperman",
+      "status": "Open",
+      "statusType": "",
+      "prioriteit": "Niet ingesteld",
+      "webUrl": "https://desk.zoho.eu/support/htjzlancyr/ShowHomePage.do#Cases/dv/195464000014003002",
+      "channel": "Phone",
+      "doorgezetBrandmeester": false
     }
   ],
   "channelCounts": {
-    "Phone": 1,
+    "Phone": 2,
     "Email": 1
   },
   "brandmeesterCount": 0,
   "ticketStats": {
-    "nieuweVandaag": 2,
+    "nieuweVandaag": 3,
     "geslotenVandaag": 1,
-    "totaalOpen": 21,
+    "totaalOpen": 22,
     "inDeWacht": 11,
     "statusBreakdown": {
-      "Open": 10,
+      "Open": 11,
       "Gesloten": 629,
       "In de wacht": 11
     },
