@@ -1,6 +1,6 @@
 {
   "date": "2026-09-14",
-  "generated_at": "2026-09-14T09:30:56Z",
+  "generated_at": "2026-09-14T09:40:48Z",
   "tickets": [
     {
       "ticketNumber": "2723",
@@ -13,20 +13,33 @@
       "webUrl": "https://desk.zoho.eu/support/htjzlancyr/ShowHomePage.do#Cases/dv/195464000014005001",
       "channel": "Phone",
       "doorgezetBrandmeester": false
+    },
+    {
+      "ticketNumber": "2724",
+      "tijd": "11:39",
+      "titel": "Nieuw dossier, beroep op motorrijtuigen RB module op auto polis I.A.R. Malmberg 5607-3387865",
+      "klant": "Schade Particulier | Nedvol",
+      "status": "Open",
+      "statusType": "",
+      "prioriteit": "Niet ingesteld",
+      "webUrl": "https://desk.zoho.eu/support/htjzlancyr/ShowHomePage.do#Cases/dv/195464000013973012",
+      "channel": "Email",
+      "doorgezetBrandmeester": false
     }
   ],
   "channelCounts": {
-    "Phone": 1
+    "Phone": 1,
+    "Email": 1
   },
   "brandmeesterCount": 0,
   "ticketStats": {
-    "nieuweVandaag": 1,
+    "nieuweVandaag": 2,
     "geslotenVandaag": 1,
-    "totaalOpen": 20,
+    "totaalOpen": 21,
     "inDeWacht": 11,
     "statusBreakdown": {
+      "Open": 10,
       "Gesloten": 629,
-      "Open": 9,
       "In de wacht": 11
     },
     "capBereikt": false
