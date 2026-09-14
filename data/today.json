@@ -1,6 +1,6 @@
 {
   "date": "2026-09-14",
-  "generated_at": "2026-09-14T10:17:05Z",
+  "generated_at": "2026-09-14T10:20:47Z",
   "drukte": "rustig",
   "gesprekken": 1,
   "stats": {
@@ -17,7 +17,7 @@
       "tijd": "09:09",
       "titel": "Daily Huddle",
       "personen": "Verzekerde: anoniem · Dewi Verver | Juridisch Medewerker",
-      "samenvatting": "De beller belt met een vraag over autoverzekeringszaken (wijzigen van verzekering naar een ander voertuig), maar de juridische helpdesk kan dit niet behandelen. De medewerker identificeert correct dat dit een administratief/verzekeringstechnisch onderwerp is en verwijst de beller door naar de juiste afdeling (optie 3 in het menu). De beller is niet geverifieerd en er is geen inhoudelijk juridisch advies gegeven.",
+      "samenvatting": "De beller belt met een vraag over het wijzigen van een autoverzekering (auto van vader op naam van beller zetten). De medewerker erkent dat dit een autoverzekeringsvraag is die niet onder de juridische helpdesk valt, en verwijst de beller door naar de juiste afdeling (option 3). Er is geen identiteitsverificatie uitgevoerd en geen inhoudelijk juridisch advies gegeven, omdat de zaak niet onder de competentie van de juridische helpdesk valt.",
       "tags": [
         [
           "tag-overig",
@@ -38,11 +38,11 @@
   "acties": [],
   "analyse": {
     "goed": [
-      "09:09 Daily Huddle: Medewerker identificeert correct dat autoverzekeringszaken (wijziging voertuig) buiten de scope van de juridische helpdesk vallen en verwijst doeltreffend door naar de juiste afdeling (optie 3). Dit voorkomt onnodige belastading van juridische resources.",
-      "09:09 Daily Huddle: Geen advies gegeven zonder verificatie – juiste procedure gevolgd omdat geen juridisch advies aan de orde was."
+      "09:09 Daily Huddle: Medewerker herkent correct dat autoverzekeringsvraag buiten juridische helpdesk-competentie valt en verwijst adequaat door naar juiste afdeling (option 3)",
+      "09:09 Daily Huddle: Geen onnodige verificatie of advies gegeven bij verkeerd routeringsgeval"
     ],
     "beter": [
-      "09:09 Daily Huddle: Geen concretisering vastgelegd of de beller daadwerkelijk via optie 3 doorverbonden is. Documenteer bij doorverwijzing ook het moment van handoff naar voorkoming van verloren contacten."
+      "09:09 Daily Huddle: Geen vervolgplan of deadline afgesproken, maar gezien dit een doorverwijzing naar correcte afdeling betreft, is dit minder kritiek"
     ]
   },
   "verkeerdVerbonden": {
