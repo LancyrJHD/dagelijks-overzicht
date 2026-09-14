@@ -1,6 +1,6 @@
 {
   "date": "2026-09-14",
-  "generated_at": "2026-09-14T12:51:02Z",
+  "generated_at": "2026-09-14T13:01:10Z",
   "drukte": "rustig",
   "gesprekken": 1,
   "stats": {
@@ -17,7 +17,7 @@
       "tijd": "09:09",
       "titel": "Daily Huddle",
       "personen": "Verzekerde: anoniem · Dewi Verver | Juridisch Medewerker",
-      "samenvatting": "De beller belde de juridische helpdesk met een vraag over autoverzekeringspolicering, welk onderwerp niet tot de competentie van de juridische helpdesk behoort. De medewerker heeft correct vastgesteld dat dit een autoverzekeringsbeheer-vraag is, niet een juridische vraag, en heeft de beller doorverwezen naar de juiste afdeling (optie 3). Geen inhoudelijk juridisch advies is gegeven, identiteit is niet geverifieerd.",
+      "samenvatting": "De beller belt de juridische helpdesk met een vraag over autoverzekering (een auto registreren op naam van zijn vader). De medewerker erkent dat dit de verkeerde afdeling is en verwijst de beller door naar de autoverzekeringafdeling (optie 3). De beller is niet geverifieerd en er is geen inhoudelijk juridisch advies gegeven.",
       "tags": [
         [
           "tag-overig",
@@ -38,11 +38,11 @@
   "acties": [],
   "analyse": {
     "goed": [
-      "09:09 Daily Huddle: Medewerker heeft correct herkend dat de vraag over autoverzekeringspolicering buiten de competentie van de juridische helpdesk valt en heeft de beller professioneel doorverwezen naar de juiste afdeling (optie 3).",
-      "09:09 Daily Huddle: Geen onnodige verificatie uitgevoerd voor een niet-juridische vraag, wat efficiënt gebruik van tijd is."
+      "09:09 - Autoverzekering: Medewerker herkende correct dat dit geen juridische zaak voor de helpdesk is en verwees professioneel door naar de juiste afdeling (autoverzekering, optie 3)",
+      "09:09 - Autoverzekering: Geen advies gegeven zonder verificatie, wat correct is gezien het routeringskarakter van het gesprek"
     ],
     "beter": [
-      "09:09 Daily Huddle: Bij doorverwijzing zou de medewerker de beller kunnen informeren wat hij/zij kan verwachten bij de nieuwe afdeling (bijv. wachttijd, wat mee te nemen voor verificatie), zodat de beller beter geïnformeerd is."
+      "09:09 - Autoverzekering: Bij doorverwijzing zou ideaal zijn geweest om de beller een concrete deadline of vervolgstap mee te geven (bijv. 'U kunt onmiddellijk het volgnummer van uw vraag vastleggen bij optie 3')"
     ]
   },
   "verkeerdVerbonden": {
