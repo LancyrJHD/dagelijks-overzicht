@@ -1,6 +1,6 @@
 {
   "date": "2026-09-14",
-  "generated_at": "2026-09-14T11:01:20Z",
+  "generated_at": "2026-09-14T11:10:53Z",
   "drukte": "rustig",
   "gesprekken": 1,
   "stats": {
@@ -11,13 +11,13 @@
     "geenDekking": 0,
     "verkeerdNummer": 1
   },
-  "score": 8.5,
+  "score": 8.1,
   "conversations": [
     {
       "tijd": "09:09",
       "titel": "Daily Huddle",
       "personen": "Verzekerde: anoniem · Dewi Verver | Juridisch Medewerker",
-      "samenvatting": "De beller beide de juridische helpdesk met een vraag over autoverzekering (wijziging van verzekeringsgegevens bij aankoop van een nieuwe auto). De medewerker stelde correct vast dat dit geen juridische zaak is, maar een administratieve verzekeringsmatter. De beller is niet geverifieerd en heeft geen inhoudelijk juridisch advies ontvangen; de medewerker verwees de beller correct door naar de juiste afdeling (autoverzekeringen) met instructie om opnieuw te bellen en optie 3 te selecteren.",
+      "samenvatting": "De beller belt de juridische helpdesk met een vraag over autoverzekering (vader wil auto op naam van zoon verzekeren). De medewerker erkent dat dit niet de juiste afdeling is, geeft een korte opmerking over verzekeringsfraude, en verwijst de beller door naar de autoverzekeringafdeling (toets 3). De beller is niet geverifieerd en er is geen juridisch advies gegeven.",
       "tags": [
         [
           "tag-overig",
@@ -38,11 +38,12 @@
   "acties": [],
   "analyse": {
     "goed": [
-      "09:09 Daily Huddle: Medewerker herkende correct dat dit een administratieve verzekeringsmatter betreft en geen juridische zaak. Juiste doorverwijzing naar afdeling autoverzekeringen met concrete instructie (optie 3 selecteren) voor vervolgcontact.",
-      "Geen onjuist advies gegeven waar verificatie ontbrak – dit is correct beleid toegepast."
+      "09:09 Daily Huddle: Medewerker herkent correct dat dit een autoverzekeringsvraag is die niet bij juridische helpdesk hoort",
+      "09:09 Daily Huddle: Beller wordt adequaat doorverwezen naar juiste afdeling (toets 3)",
+      "09:09 Daily Huddle: Geen verificatie nodig omdat geen juridisch advies werd gegeven"
     ],
     "beter": [
-      "09:09 Daily Huddle: Bij doorverwijzing zou nuttig zijn geweest om de verwachte beschikbaarheid van de andere afdeling te noemen (bijv. 'bereikbaar maandag-vrijdag 08:00-18:00') zodat de beller beter kan plannen."
+      "09:09 Daily Huddle: Opmerking over verzekeringsfraude was mogelijk onnodig en kon verwarrend werken; beter is simpelweg door te verwijzen naar juiste afdeling zonder inhoudelijke opmerkingen"
     ]
   },
   "verkeerdVerbonden": {
