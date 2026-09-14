@@ -1,6 +1,6 @@
 {
   "date": "2026-09-14",
-  "generated_at": "2026-09-14T16:24:02Z",
+  "generated_at": "2026-09-14T16:31:09Z",
   "drukte": "rustig",
   "gesprekken": 1,
   "stats": {
@@ -11,13 +11,13 @@
     "geenDekking": 0,
     "verkeerdNummer": 1
   },
-  "score": 8.5,
+  "score": 8.1,
   "conversations": [
     {
       "tijd": "09:09",
       "titel": "Daily Huddle",
       "personen": "Verzekerde: anoniem · Dewi Verver | Juridisch Medewerker",
-      "samenvatting": "De beller belde de juridische helpdesk met een vraag over autoverzekering (wijziging van een autoverzekeringspolis voor een nieuwe auto). De medewerker stelde vast dat dit onderwerp niet onder de juridische helpdesk valt, maar bij de afdeling autoverzekeringen hoort, en verwees de beller door naar het juiste nummer/keuzemenu-optie. De beller is niet geverifieerd en er is geen inhoudelijk juridisch advies gegeven.",
+      "samenvatting": "Beller belt de juridische helpdesk met een vraag over autoverzekering (vader wil auto op naam van beller verzekeren). De medewerker erkent dat dit niet de juiste afdeling is, geeft korte uitleg dat dit als fraude wordt gezien, en verwijst de beller door naar de verzekeringafdeling (toets 3). Beller is niet geverifieerd en geen inhoudelijk juridisch advies is gegeven.",
       "tags": [
         [
           "tag-overig",
@@ -38,11 +38,12 @@
   "acties": [],
   "analyse": {
     "goed": [
-      "09:09 Daily Huddle: Medewerker herkende correct dat autoverzekeringskwesties buiten het juridische helpdesk-bereik vallen en verwees de beller naar de juiste afdeling/keuzemenu-optie.",
-      "09:09 Daily Huddle: Geen verificatie en geen advies vereist bij een doorverwijzing naar ander departement; procedure was passend."
+      "09:09 Daily Huddle: Medewerker herkent correct dat dit geen juridische zaak is, maar een verzekeringstechnische routeringskwestie",
+      "09:09 Daily Huddle: Beller correct doorverwezen naar verzekeringafdeling (toets 3) - geen onnodig advies gegeven",
+      "09:09 Daily Huddle: Medewerker geeft nuttige context (fraude-waarschuwing) zonder formeel juridisch advies uit te stellen"
     ],
     "beter": [
-      "09:09 Daily Huddle: Niet expliciet vermeld of de medewerker een concrete doorverwijzingsinstructie/telefoonnummer heeft gegeven (ter voorkoming dat de beller ernstig moet zoeken)."
+      "09:09 Daily Huddle: Geen concrete vervolgdeadline afgesproken voor contact met verzekeringafdeling (bv. 'probeer binnen 2 uur toets 3' of verwachting voor terugbellen)"
     ]
   },
   "verkeerdVerbonden": {
