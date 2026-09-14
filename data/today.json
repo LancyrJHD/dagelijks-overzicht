@@ -1,6 +1,6 @@
 {
   "date": "2026-09-14",
-  "generated_at": "2026-09-14T12:01:17Z",
+  "generated_at": "2026-09-14T12:10:50Z",
   "drukte": "rustig",
   "gesprekken": 1,
   "stats": {
@@ -17,7 +17,7 @@
       "tijd": "09:09",
       "titel": "Daily Huddle",
       "personen": "Verzekerde: anoniem · Dewi Verver | Juridisch Medewerker",
-      "samenvatting": "Een beller belt de juridische helpdesk met een vraag over autoverzekering (wijzigen van een polis na aankoop nieuwe auto). De medewerker stelt vast dat dit onderwerp niet bij de juridische helpdesk hoort, maar bij de afdeling Autoverzekeringen. De beller wordt doorverwezen naar het juiste nummer (opnieuw bellen en optie 3 kiezen). Identiteit is niet geverifieerd en geen inhoudelijk juridisch advies is gegeven.",
+      "samenvatting": "De beller belde de juridische helpdesk met een vraag over autoverzekering (wijziging van verzekerde persoon voor een nieuwe auto). De medewerker heeft correct herkend dat dit onderwerp niet onder juridische rechtsbijstand valt, maar onder verzekeringsadministratie. De beller is niet geverifieerd en heeft geen inhoudelijk juridisch advies ontvangen; de medewerker verwees de beller door naar de juiste afdeling (autoverzekeringen, optie 3).",
       "tags": [
         [
           "tag-overig",
@@ -38,12 +38,10 @@
   "acties": [],
   "analyse": {
     "goed": [
-      "09:09 - Daily Huddle: Medewerker herkende correct dat de vraag over autoverzekeringspolis buiten het juridische domein valt en verwees beller door naar de juiste afdeling (Autoverzekeringen, optie 3). Dit voorkomt verspilde tijd en zorgt voor snelle routering naar competente collega's.",
-      "09:09 - Daily Huddle: Geen verificatie of juridisch advies nodig geweest omdat het onderwerp niet onder juridische diensten valt. De doorverwijzing was de juiste handeling."
+      "09:09 Daily Huddle: Medewerker herkende correct dat autoverzekeringskwestie (wijziging verzekerde persoon) niet onder juridische rechtsbijstand valt en verwees beller correct door naar verzekeringsadministratie (optie 3)",
+      "09:09 Daily Huddle: Geen juridisch advies gegeven toen het onderwerp buiten competentie lag – juiste proceduringvolging"
     ],
-    "beter": [
-      "09:09 - Daily Huddle: Het zou waardevol zijn geweest om de beller naast het telefoonnummer ook de openingstijden van de Autoverzekeringenafdeling te geven, zodat deze niet onnodig lang wacht of een vervolgpoging hoeft te doen."
-    ]
+    "beter": []
   },
   "verkeerdVerbonden": {
     "aantal": 1,
