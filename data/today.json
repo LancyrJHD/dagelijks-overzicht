@@ -1,6 +1,6 @@
 {
   "date": "2026-09-14",
-  "generated_at": "2026-09-14T14:40:58Z",
+  "generated_at": "2026-09-14T14:51:02Z",
   "drukte": "rustig",
   "gesprekken": 1,
   "stats": {
@@ -11,13 +11,13 @@
     "geenDekking": 0,
     "verkeerdNummer": 1
   },
-  "score": 8.5,
+  "score": 8.1,
   "conversations": [
     {
       "tijd": "09:09",
       "titel": "Daily Huddle",
       "personen": "Verzekerde: anoniem · Dewi Verver | Juridisch Medewerker",
-      "samenvatting": "Beller belde de juridische helpdesk met een vraag over autoverzekering (wijzigen van verzekerde auto). De medewerker constateerde dat dit niet onder juridische rechtsbijstand valt, maar onder de afdeling autoverzekeringen. De beller is niet geverifieerd en geen inhoudelijk juridisch advies is gegeven; de beller werd doorverwezen naar de juiste afdeling (opnieuw bellen, optie 3).",
+      "samenvatting": "Beller belt de juridische helpdesk met een vraag over autoverzekeringadministratie (naam wijzigen op polis voor een nieuwe auto van zijn vader). De medewerker erkent dat dit niet bij de juridische helpdesk hoort, geeft korte procedurele informatie (verzekering via website wijzigen), en verwijst de beller door naar de juiste afdeling (autoverzekeringen, menuoptie 3). Identiteit is niet geverifieerd en geen juridisch advies is gegeven.",
       "tags": [
         [
           "tag-overig",
@@ -38,11 +38,11 @@
   "acties": [],
   "analyse": {
     "goed": [
-      "09:09 Daily Huddle: Medewerker herkende correct dat autoverzekeringskwestie (wijzigen verzekerde auto) niet onder juridische rechtsbijstand valt en verwees beller naar juiste afdeling (opnieuw bellen, optie 3). Geen onnodige verificatie aangevraagd voor verkeerd soort zaak.",
-      "Geen advies gegeven waar dit niet thuishoort – professioneel gatekeeping."
+      "09:09 Daily Huddle: Medewerker herkende correct dat autoverzekeringadministratie niet onder juridische helpdesk valt en verwees beller doelgericht door naar de juiste afdeling (autoverzekeringen, menuoptie 3)",
+      "09:09 Daily Huddle: Geen juridisch advies gegeven, wat passend is voor een administratieve verzekeringsvraag buiten het domein van de juridische helpdesk"
     ],
     "beter": [
-      "09:09 Daily Huddle: Concrete deadline of vervolgstap zou helpen (bijv. 'u kunt meteen opnieuw bellen en optie 3 kiezen' geeft duidelijkheid, maar eventuele wachttijd of contactgegevens zouden waardevol zijn geweest)."
+      "09:09 Daily Huddle: Medewerker had kunnen overwegen om de beller een concrete vervolgstap of contactweg naar de autoverzekeringafdeling mee te geven (bijv. directe doorschakeling of telefoonnummer) in plaats van alleen een menuoptie"
     ]
   },
   "verkeerdVerbonden": {
