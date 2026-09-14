@@ -1,6 +1,6 @@
 {
   "date": "2026-09-14",
-  "generated_at": "2026-09-14T12:40:55Z",
+  "generated_at": "2026-09-14T12:51:02Z",
   "drukte": "rustig",
   "gesprekken": 1,
   "stats": {
@@ -17,7 +17,7 @@
       "tijd": "09:09",
       "titel": "Daily Huddle",
       "personen": "Verzekerde: anoniem · Dewi Verver | Juridisch Medewerker",
-      "samenvatting": "Beller belt met de juridische helpdesk maar heeft een autoverzekeringsvraag (wijziging verzekering na aankoop nieuwe auto). De medewerker herkent dat dit niet onder de juridische helpdesk valt, geeft geen inhoudelijk juridisch advies, en verwijst de beller door naar de juiste afdeling (autoverzekeringen) via het keuzemenu. Beller is niet geverifieerd.",
+      "samenvatting": "De beller belde de juridische helpdesk met een vraag over autoverzekeringspolicering, welk onderwerp niet tot de competentie van de juridische helpdesk behoort. De medewerker heeft correct vastgesteld dat dit een autoverzekeringsbeheer-vraag is, niet een juridische vraag, en heeft de beller doorverwezen naar de juiste afdeling (optie 3). Geen inhoudelijk juridisch advies is gegeven, identiteit is niet geverifieerd.",
       "tags": [
         [
           "tag-overig",
@@ -38,11 +38,11 @@
   "acties": [],
   "analyse": {
     "goed": [
-      "09:09 Daily Huddle: Medewerker herkent correct dat autoverzekeringsvraag buiten scope van juridische helpdesk valt en verwijst beller proactief door naar juiste afdeling (autoverzekeringen). Geen inhoudelijk advies gegeven zonder verificatie.",
-      "Efficiënte afhandeling; geen tijd verspild aan irrelevante vragen."
+      "09:09 Daily Huddle: Medewerker heeft correct herkend dat de vraag over autoverzekeringspolicering buiten de competentie van de juridische helpdesk valt en heeft de beller professioneel doorverwezen naar de juiste afdeling (optie 3).",
+      "09:09 Daily Huddle: Geen onnodige verificatie uitgevoerd voor een niet-juridische vraag, wat efficiënt gebruik van tijd is."
     ],
     "beter": [
-      "09:09 Daily Huddle: Aangezien beller naar verkeerde afdeling is doorverwezen, is geen vervolgplan voor juridische helpdesk nodig, maar in toekomst kan opmerking gemaakt worden of beller via spraakgestuurde menu beter is geleid (preventief)."
+      "09:09 Daily Huddle: Bij doorverwijzing zou de medewerker de beller kunnen informeren wat hij/zij kan verwachten bij de nieuwe afdeling (bijv. wachttijd, wat mee te nemen voor verificatie), zodat de beller beter geïnformeerd is."
     ]
   },
   "verkeerdVerbonden": {
