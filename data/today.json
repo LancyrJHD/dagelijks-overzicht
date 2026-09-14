@@ -1,6 +1,6 @@
 {
   "date": "2026-09-14",
-  "generated_at": "2026-09-14T15:50:59Z",
+  "generated_at": "2026-09-14T16:01:21Z",
   "drukte": "rustig",
   "gesprekken": 1,
   "stats": {
@@ -17,7 +17,7 @@
       "tijd": "09:09",
       "titel": "Daily Huddle",
       "personen": "Verzekerde: anoniem · Dewi Verver | Juridisch Medewerker",
-      "samenvatting": "De beller belde de juridische helpdesk met een vraag over autoverzekering (het wijzigen van een verzekering op een andere auto). De medewerker herkende dat dit niet tot het juridische adviesteam behoort en verwees de beller correct door naar de afdeling autoverzekeringen (toets 3). De beller is niet geverifieerd en er is geen inhoudelijk juridisch advies gegeven.",
+      "samenvatting": "Beller beide de juridische helpdesk met een vraag over autoverzekering (wijziging polis voor nieuwe auto van zijn vader). De medewerker gaf correcte triage door: dit onderwerp behoort niet tot de juridische helpdesk maar tot de verzekeringsadministratie-afdeling, en verwees de beller door om opnieuw te bellen en optie 3 te kiezen. Identiteit is niet geverifieerd en geen juridisch advies is gegeven, omdat dit geen juridische zaak betreft.",
       "tags": [
         [
           "tag-overig",
@@ -38,11 +38,11 @@
   "acties": [],
   "analyse": {
     "goed": [
-      "09:09 Daily Huddle: Medewerker herkende correct dat autoverzekeringskwestie buiten het juridische adviesterim valt en verwees beller professioneel door naar de juiste afdeling (toets 3)",
-      "09:09 Daily Huddle: Geen onnodige verificatie uitgevoerd omdat call direct werd doorgeleid naar bevoegd team"
+      "09:09 Daily Huddle: Correcte triage uitgevoerd – beller met autoverzekeringsvraag (poliswijziging) terecht doorverwezen naar verzekeringsadministratie (optie 3) omdat dit buiten het juridische bereik van de helpdesk valt.",
+      "09:09 Daily Huddle: Geen onnodige verificatie of advies gegeven voor niet-juridische zaak – efficiënte afhandeling van verkeerd nummer."
     ],
     "beter": [
-      "09:09 Daily Huddle: Geen vermelding van concrete deadline of vervolgstap voor beller bij doorverwijzing naar toets 3 (best practice: confirm dat beller het nummer heeft en bieden om terug te bellen)"
+      "09:09 Daily Huddle: Bij doorverwijzing zou kunnen worden overwogen om de beller duidelijk de exacte stappen (optie 3 kiezen, mogelijk callback-optie) en eventueel een inschatting van wachttijd te geven voor betere klantervaringen."
     ]
   },
   "verkeerdVerbonden": {
