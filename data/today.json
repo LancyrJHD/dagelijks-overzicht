@@ -1,6 +1,6 @@
 {
   "date": "2026-09-14",
-  "generated_at": "2026-09-14T13:20:59Z",
+  "generated_at": "2026-09-14T13:31:16Z",
   "drukte": "rustig",
   "gesprekken": 1,
   "stats": {
@@ -17,7 +17,7 @@
       "tijd": "09:09",
       "titel": "Daily Huddle",
       "personen": "Verzekerde: anoniem · Dewi Verver | Juridisch Medewerker",
-      "samenvatting": "De beller beide de juridische helpdesk met een vraag over het verzekeren van een auto op naam van zijn vader. De medewerker erkende dat dit onderwerp (autoverzekeringsbeheer) niet onder de juridische helpdesk valt en verwees de beller correct door naar de verzekeringsafdeling (menuoptie 3). De beller is nooit geverifieerd en er is geen inhoudelijk juridisch advies gegeven.",
+      "samenvatting": "De beller belde de juridische helpdesk met een vraag over autoverzekering (verzekering van een nieuw aangekochte auto). De medewerker stelde vast dat dit onderwerp niet bij de juridische helpdesk hoort, maar bij de afdeling autoverzekeringen, en verwees de beller door met instructie om opnieuw te bellen en optie 3 te kiezen. De beller is niet geverifieerd en er is geen inhoudelijk juridisch advies gegeven.",
       "tags": [
         [
           "tag-overig",
@@ -38,11 +38,11 @@
   "acties": [],
   "analyse": {
     "goed": [
-      "09:09 Daily Huddle: Medewerker herkende correct dat autoverzekeringsbeheer buiten het juridische mandaat valt en verwees de beller doeltreffend door naar de verzekeringsafdeling (menuoptie 3)",
-      "09:09 Daily Huddle: Geen onnodige verificatie uitgevoerd omdat het onderwerp niet aan de juridische helpdesk toebehoort"
+      "09:09 Daily Huddle: Medewerker herkende correct dat autoverzekeringsvraag buiten het mandaat van juridische helpdesk valt en verwees beller doelgericht door naar afdeling autoverzekeringen (optie 3). Dit voorkomt onnodig doorloopwerk.",
+      "09:09 Daily Huddle: Geen verificatie nodig omdat geen juridisch advies werd gegeven. Medewerker handelde correct door geen inhoudelijk advies te geven zonder verificatie."
     ],
     "beter": [
-      "09:09 Daily Huddle: Geen vastlegging van vervolgstap of bevestiging dat beller de doorverwijzing heeft begrepen"
+      "09:09 Daily Huddle: Geen concrete deadline of vervolgplan afgesproken. Adviseer beller een specifiek moment in te stellen voor het doorschakelen (bijv. 'belt u nu meteen weer en kiest u optie 3')."
     ]
   },
   "verkeerdVerbonden": {
