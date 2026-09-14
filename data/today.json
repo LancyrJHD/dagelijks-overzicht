@@ -1,6 +1,6 @@
 {
   "date": "2026-09-14",
-  "generated_at": "2026-09-14T10:40:54Z",
+  "generated_at": "2026-09-14T10:50:51Z",
   "drukte": "rustig",
   "gesprekken": 1,
   "stats": {
@@ -17,7 +17,7 @@
       "tijd": "09:09",
       "titel": "Daily Huddle",
       "personen": "Verzekerde: anoniem · Dewi Verver | Juridisch Medewerker",
-      "samenvatting": "Beller beide de juridische helpdesk met een vraag over autoverzekering (wijziging van verzekerde auto). De medewerker stelde vast dat dit onderwerp niet onder de juridische helpdesk valt en verwees de beller door naar de juiste afdeling (autoverzekeringen) via menuoptie 3. De beller is niet geverifieerd en er is geen inhoudelijk juridisch advies gegeven.",
+      "samenvatting": "De beller belde de juridische helpdesk met een vraag over autoverzekeringsprocedures (een auto op naam van een ander zetten). De medewerker stelde vast dat dit geen juridische kwestie is maar een administratieve/verzekeringstechnische aangelegenheid, en verwees de beller door naar de autoverzekeringafdeling (menuoptie 3). De beller is niet geverifieerd en geen inhoudelijk juridisch advies is gegeven.",
       "tags": [
         [
           "tag-overig",
@@ -38,11 +38,11 @@
   "acties": [],
   "analyse": {
     "goed": [
-      "09:09 Autoverzekering: Medewerker herkende correct dat de vraag buiten het bereik van de juridische helpdesk valt en verwees beller doelgericht door naar de juiste afdeling (autoverzekeringen, menuoptie 3)",
-      "09:09 Autoverzekering: Geen onnodige verificatie uitgevoerd aangezien het onderwerp niet relevant voor juridische afdeling was"
+      "09:09 Daily Huddle: Medewerker heeft correct herkend dat de vraag (auto op naam van ander zetten) geen juridische kwestie is, maar een administratieve/verzekeringstechnische aangelegenheid, en heeft passend doorverwezen naar autoverzekeringafdeling (menuoptie 3).",
+      "09:09 Daily Huddle: Geen onnodige verificatie uitgevoerd, omdat geen juridisch advies werd gegeven en dit niet relevant was voor doorverwijzing."
     ],
     "beter": [
-      "09:09 Autoverzekering: Noteer voor toekomstige intake dat vragen over verzekeringswissels of wijzigingen via het automatische menu beter direct kunnen worden gefilterd om binnenkomende oproepen efficiënter te scheiden"
+      "09:09 Daily Huddle: Noteer in de samenvatting of de medewerker de beller uitdrukkelijk heeft uitgelegd waarom dit onderwerp buiten de juridische helpdesk valt, zodat de beller begrijpt wat de reden van doorverwijzing is."
     ]
   },
   "verkeerdVerbonden": {
