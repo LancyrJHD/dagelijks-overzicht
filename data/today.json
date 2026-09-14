@@ -1,6 +1,6 @@
 {
   "date": "2026-09-14",
-  "generated_at": "2026-09-14T12:20:58Z",
+  "generated_at": "2026-09-14T12:31:13Z",
   "drukte": "rustig",
   "gesprekken": 1,
   "stats": {
@@ -11,13 +11,13 @@
     "geenDekking": 0,
     "verkeerdNummer": 1
   },
-  "score": 8.5,
+  "score": 8.1,
   "conversations": [
     {
       "tijd": "09:09",
       "titel": "Daily Huddle",
       "personen": "Verzekerde: anoniem · Dewi Verver | Juridisch Medewerker",
-      "samenvatting": "De beller belde de juridische helpdesk met een vraag over autoverzekering (een auto op naam van zijn vader laten zetten). De medewerker herkende dat dit een verzekeringsadministratieve vraag is die niet onder rechtsbijstand valt, gaf korte informatieve uitleg (fraude-risico bij naamgeving), en verwees de beller correct door naar de autoverzekeringafdeling (keuze 3). De beller werd niet geverifieerd en er werd geen inhoudelijk juridisch advies gegeven.",
+      "samenvatting": "De beller beide de juridische helpdesk met een vraag over autoverzekering (verzekering op naam van een ander persoon wijzigen). De medewerker gaf korte juridische opmerking (fraude-aspect) maar erkende dat dit onderwerp niet bij de juridische helpdesk hoort. De beller werd doorverwezen naar de afdeling autoverzekeringen (keuzemenu optie 3) en geen identiteitsverificatie heeft plaatsgevonden.",
       "tags": [
         [
           "tag-overig",
@@ -38,12 +38,11 @@
   "acties": [],
   "analyse": {
     "goed": [
-      "09:09 Daily Huddle: Medewerker herkende correct dat autoverzekering-administratie geen rechtsbijstandzaak is en verwees de beller doelgericht door naar de juiste afdeling (keuze 3). Dit voorkomt onnodige belasting van de juridische helpdesk.",
-      "09:09 Daily Huddle: Geen verificatie nodig gesteld omdat geen inhoudelijk juridisch advies werd gegeven – correct protocol voor doorgeleide zaken.",
-      "09:09 Daily Huddle: Medewerker gaf korte informatieve context mee (fraude-risico bij naamgeving) voordat werd doorverwezen – zinvolle oriëntatie voor de beller."
+      "09:09 Daily Huddle: Medewerker erkende correct dat autoverzekeringskwesties buiten de scope van de juridische helpdesk vallen en verwees beller door naar de juiste afdeling (optie 3)",
+      "09:09 Daily Huddle: Geen onnodige identiteitsverificatie uitgevoerd voor een doorverwijzing naar een ander team"
     ],
     "beter": [
-      "09:09 Daily Huddle: Geen concrete vervolgdeadline of confirmatie vastgelegd dat de beller daadwerkelijk is doorverbonden naar keuze 3. Documenteer altijd of de doorverwijzing is voltooid."
+      "09:09 Daily Huddle: Medewerker had beller kunnen adviseren om na doorverwijzing de verificatiegegevens klaar te hebben voor de afdeling autoverzekeringen, zodat de vervolgafdeling niet opnieuw hoeft te vragen"
     ]
   },
   "verkeerdVerbonden": {
