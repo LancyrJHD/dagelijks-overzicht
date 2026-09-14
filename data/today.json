@@ -1,6 +1,6 @@
 {
   "date": "2026-09-14",
-  "generated_at": "2026-09-14T15:02:45Z",
+  "generated_at": "2026-09-14T15:11:03Z",
   "drukte": "rustig",
   "gesprekken": 1,
   "stats": {
@@ -17,7 +17,7 @@
       "tijd": "09:09",
       "titel": "Daily Huddle",
       "personen": "Verzekerde: anoniem · Dewi Verver | Juridisch Medewerker",
-      "samenvatting": "Beller belt de juridische helpdesk met een vraag over autoverzekeringsprocedures (wijziging van verzekerde voertuig). De medewerker erkent dat dit geen juridische aangelegenheid is, maar een administratieve/verzekeringsvraag, en verwijst de beller door naar de juiste afdeling (autoverzekering, menuoptie 3). De beller is niet geverifieerd en geen inhoudelijk juridisch advies is gegeven.",
+      "samenvatting": "De beller belt de juridische helpdesk met een vraag over autoverzekering (wijziging van verzekerde auto op naam van vader). De medewerker herkent dat dit niet onder de juridische helpdesk valt, maar onder de autoverzekeringenafdeling, en verwijst de beller door naar het juiste nummer/menu-optie (toets 3). Geen identiteitsverificatie gedaan, geen inhoudelijk juridisch advies gegeven.",
       "tags": [
         [
           "tag-overig",
@@ -38,11 +38,11 @@
   "acties": [],
   "analyse": {
     "goed": [
-      "09:09 Daily Huddle: Medewerker herkende correct dat autoverzekeringsprocedures (wijziging voertuig) geen juridische aangelegenheid zijn en verwees beller doelgericht door naar de juiste afdeling (autoverzekering, menuoptie 3).",
-      "09:09 Daily Huddle: Geen onnodige verificatie uitgevoerd voor een verwijzingsgeval zonder juridische component."
+      "09:09 Daily Huddle: Medewerker herkende correct dat de vraag over autoverzekeringwijziging niet onder juridische helpdesk valt en verwees beller professioneel door naar juiste afdeling (toets 3)",
+      "09:09 Daily Huddle: Geen onnodige verificatie of advies gegeven voor een zaak die buiten de competentie valt"
     ],
     "beter": [
-      "09:09 Daily Huddle: Hoewel de doorverwijzing correct was, zou de medewerker kunnen vermelden of de beller al in het systeem is gezien (voor toekomstige contacten) en een korte bevestiging kunnen geven dat de helpdesk nu is gecontacteerd."
+      "09:09 Daily Huddle: Overweeg of medewerker de beller had kunnen instrueren om eerst het juiste menu-item te selecteren voordat doorverbonden werd, om wachttijd te minimaliseren"
     ]
   },
   "verkeerdVerbonden": {
