@@ -1,15 +1,29 @@
 {
   "date": "2026-09-14",
-  "generated_at": "2026-09-14T08:40:39Z",
-  "totaalInbound": 9,
-  "totaalGemist": 1,
+  "generated_at": "2026-09-14T08:50:41Z",
+  "totaalInbound": 11,
+  "totaalGemist": 3,
   "terugGebeld": 0,
-  "nietTerugGebeld": 1,
+  "nietTerugGebeld": 3,
   "nietTerugGebeldNummers": [
     {
       "nummer": "+31615184071",
       "naam": "Onbekend",
       "tijd": "09:04",
+      "callResult": "abandoned",
+      "teruggebeld": false
+    },
+    {
+      "nummer": "+31135352624",
+      "naam": "Onbekend",
+      "tijd": "10:42",
+      "callResult": "overflowed",
+      "teruggebeld": false
+    },
+    {
+      "nummer": "+31644627889",
+      "naam": "Onbekend",
+      "tijd": "10:45",
       "callResult": "abandoned",
       "teruggebeld": false
     }
@@ -19,6 +33,20 @@
       "nummer": "+31615184071",
       "naam": "Onbekend",
       "tijd": "09:04",
+      "callResult": "abandoned",
+      "teruggebeld": false
+    },
+    {
+      "nummer": "+31135352624",
+      "naam": "Onbekend",
+      "tijd": "10:42",
+      "callResult": "overflowed",
+      "teruggebeld": false
+    },
+    {
+      "nummer": "+31644627889",
+      "naam": "Onbekend",
+      "tijd": "10:45",
       "callResult": "abandoned",
       "teruggebeld": false
     }

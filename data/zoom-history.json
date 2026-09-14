@@ -1624,11 +1624,25 @@
         "nummer": "+31615184071",
         "teruggebeld": false,
         "tijd": "09:04"
+      },
+      {
+        "callResult": "overflowed",
+        "naam": "Onbekend",
+        "nummer": "+31135352624",
+        "teruggebeld": false,
+        "tijd": "10:42"
+      },
+      {
+        "callResult": "abandoned",
+        "naam": "Onbekend",
+        "nummer": "+31644627889",
+        "teruggebeld": false,
+        "tijd": "10:45"
       }
     ],
     "date": "2026-09-14",
-    "generated_at": "2026-09-14T08:40:39Z",
-    "nietTerugGebeld": 1,
+    "generated_at": "2026-09-14T08:50:41Z",
+    "nietTerugGebeld": 3,
     "nietTerugGebeldNummers": [
       {
         "callResult": "abandoned",
@@ -1636,10 +1650,24 @@
         "nummer": "+31615184071",
         "teruggebeld": false,
         "tijd": "09:04"
+      },
+      {
+        "callResult": "overflowed",
+        "naam": "Onbekend",
+        "nummer": "+31135352624",
+        "teruggebeld": false,
+        "tijd": "10:42"
+      },
+      {
+        "callResult": "abandoned",
+        "naam": "Onbekend",
+        "nummer": "+31644627889",
+        "teruggebeld": false,
+        "tijd": "10:45"
       }
     ],
     "terugGebeld": 0,
-    "totaalGemist": 1,
-    "totaalInbound": 9
+    "totaalGemist": 3,
+    "totaalInbound": 11
   }
 }
