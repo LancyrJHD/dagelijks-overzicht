@@ -1,6 +1,6 @@
 {
   "date": "2026-09-14",
-  "generated_at": "2026-09-14T09:20:49Z",
+  "generated_at": "2026-09-14T09:31:09Z",
   "drukte": "rustig",
   "gesprekken": 1,
   "stats": {
@@ -11,13 +11,13 @@
     "geenDekking": 0,
     "verkeerdNummer": 1
   },
-  "score": 8.5,
+  "score": 8.1,
   "conversations": [
     {
       "tijd": "09:09",
       "titel": "Daily Huddle",
       "personen": "Verzekerde: anoniem · Dewi Verver | Juridisch Medewerker",
-      "samenvatting": "Beller belt met de juridische helpdesk maar heeft een administratieve vraag over autoverzekeringswisseling (vader koopt nieuwe auto, wil deze laten verzekeren). De medewerker herkent correct dat dit niet tot de juridische helpdesk behoort en verwijst de beller door naar de autoverzekeringafdeling (optie 3). Beller is niet geverifieerd en er is geen juridisch advies gegeven.",
+      "samenvatting": "Beller belt de juridische helpdesk met een vraag over autoverzekeringsprocedures (wijziging van verzekerde persoon/auto). De medewerker erkent dat dit onderwerp niet onder de juridische helpdesk valt, maar onder de afdeling autoverzekeringen. De beller wordt doorverwezen naar het juiste nummer (keuzemenu optie 3) en de identiteit is niet geverifieerd.",
       "tags": [
         [
           "tag-overig",
@@ -38,12 +38,11 @@
   "acties": [],
   "analyse": {
     "goed": [
-      "09:09 Daily Huddle: Medewerker herkent correct dat een administratieve vraag over autoverzekeringswisseling niet tot de juridische helpdesk behoort en verwijst de beller professioneel door naar de juiste afdeling (optie 3). Geen onnodige tijd verspild aan verkeerde routing.",
-      "Geen verificatie nodig omdat geen juridisch advies is gegeven – de verwijzing naar de juiste afdeling is een passende handeling.",
-      "Efficiënte afhandeling van misdirected call."
+      "09:09 Daily Huddle: Medewerker herkent correct dat autoverzekeringsprocedures buiten het juridische mandaat vallen en verwijst beller proactief naar het juiste departement (optie 3 keuzemenu). Geen onnodige tijd verspild aan verkeerde afdeling.",
+      "09:09 Daily Huddle: Identiteitsverificatie terecht achterwege gelaten – bij een verkeerde routering naar een ander departement is verificatie in de juridische helpdesk niet relevant."
     ],
     "beter": [
-      "09:09 Daily Huddle: Overweeg of de medewerker de beller ook de contactgegevens van de autoverzekeringafdeling mondeling heeft meegegeven of alleen heeft verwezen naar 'optie 3' – een volledige overdracht met voicemail of directe doorschakeling zou de beller beter helpen."
+      "09:09 Daily Huddle: Geen notitie van een concrete vervolgstap of controle of beller succesvol is doorverbonden/geholpen door het juiste departement. Een korte vervolgnotitie zou helpen om te voorkomen dat de beller opnieuw belt met dezelfde vraag."
     ]
   },
   "verkeerdVerbonden": {
