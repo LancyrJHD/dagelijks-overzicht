@@ -1,6 +1,6 @@
 {
   "date": "2026-09-14",
-  "generated_at": "2026-09-14T10:50:51Z",
+  "generated_at": "2026-09-14T11:01:20Z",
   "drukte": "rustig",
   "gesprekken": 1,
   "stats": {
@@ -17,7 +17,7 @@
       "tijd": "09:09",
       "titel": "Daily Huddle",
       "personen": "Verzekerde: anoniem · Dewi Verver | Juridisch Medewerker",
-      "samenvatting": "De beller belde de juridische helpdesk met een vraag over autoverzekeringsprocedures (een auto op naam van een ander zetten). De medewerker stelde vast dat dit geen juridische kwestie is maar een administratieve/verzekeringstechnische aangelegenheid, en verwees de beller door naar de autoverzekeringafdeling (menuoptie 3). De beller is niet geverifieerd en geen inhoudelijk juridisch advies is gegeven.",
+      "samenvatting": "De beller beide de juridische helpdesk met een vraag over autoverzekering (wijziging van verzekeringsgegevens bij aankoop van een nieuwe auto). De medewerker stelde correct vast dat dit geen juridische zaak is, maar een administratieve verzekeringsmatter. De beller is niet geverifieerd en heeft geen inhoudelijk juridisch advies ontvangen; de medewerker verwees de beller correct door naar de juiste afdeling (autoverzekeringen) met instructie om opnieuw te bellen en optie 3 te selecteren.",
       "tags": [
         [
           "tag-overig",
@@ -38,11 +38,11 @@
   "acties": [],
   "analyse": {
     "goed": [
-      "09:09 Daily Huddle: Medewerker heeft correct herkend dat de vraag (auto op naam van ander zetten) geen juridische kwestie is, maar een administratieve/verzekeringstechnische aangelegenheid, en heeft passend doorverwezen naar autoverzekeringafdeling (menuoptie 3).",
-      "09:09 Daily Huddle: Geen onnodige verificatie uitgevoerd, omdat geen juridisch advies werd gegeven en dit niet relevant was voor doorverwijzing."
+      "09:09 Daily Huddle: Medewerker herkende correct dat dit een administratieve verzekeringsmatter betreft en geen juridische zaak. Juiste doorverwijzing naar afdeling autoverzekeringen met concrete instructie (optie 3 selecteren) voor vervolgcontact.",
+      "Geen onjuist advies gegeven waar verificatie ontbrak – dit is correct beleid toegepast."
     ],
     "beter": [
-      "09:09 Daily Huddle: Noteer in de samenvatting of de medewerker de beller uitdrukkelijk heeft uitgelegd waarom dit onderwerp buiten de juridische helpdesk valt, zodat de beller begrijpt wat de reden van doorverwijzing is."
+      "09:09 Daily Huddle: Bij doorverwijzing zou nuttig zijn geweest om de verwachte beschikbaarheid van de andere afdeling te noemen (bijv. 'bereikbaar maandag-vrijdag 08:00-18:00') zodat de beller beter kan plannen."
     ]
   },
   "verkeerdVerbonden": {
