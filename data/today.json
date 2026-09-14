@@ -1,6 +1,6 @@
 {
   "date": "2026-09-14",
-  "generated_at": "2026-09-14T14:11:01Z",
+  "generated_at": "2026-09-14T14:21:00Z",
   "drukte": "rustig",
   "gesprekken": 1,
   "stats": {
@@ -11,13 +11,13 @@
     "geenDekking": 0,
     "verkeerdNummer": 1
   },
-  "score": 7.5,
+  "score": 8.5,
   "conversations": [
     {
       "tijd": "09:09",
       "titel": "Daily Huddle",
       "personen": "Verzekerde: anoniem · Dewi Verver | Juridisch Medewerker",
-      "samenvatting": "De beller belt de juridische helpdesk met een vraag over autoverzekeringswisseling voor een nieuwe auto van zijn vader. De medewerker stelt vast dat dit een autoverzekeringsvraag is die niet onder de juridische helpdesk valt en verwijst de beller door naar de juiste afdeling (opnieuw bellen, optie 3). De beller is niet geverifieerd en er is geen inhoudelijk juridisch advies gegeven.",
+      "samenvatting": "Beller belt de juridische helpdesk met een vraag over autoverzekering (het toevoegen van een nieuwe auto aan de polis van zijn vader). De medewerker herkent dat dit een administratieve/verzekeringstechnische vraag is die niet onder de juridische helpdesk valt en verwijst de beller correct door naar de verzekeringsadministratie (toets 3). De beller is niet geverifieerd en er is geen inhoudelijk juridisch advies gegeven.",
       "tags": [
         [
           "tag-overig",
@@ -38,11 +38,11 @@
   "acties": [],
   "analyse": {
     "goed": [
-      "09:09 Daily Huddle: Medewerker herkende correct dat autoverzekeringswisseling buiten de scope van juridische helpdesk valt en verwees beller door naar juiste afdeling (optie 3). Geen onnodige processtappen.",
-      "09:09 Daily Huddle: Geen advies gegeven zonder verificatie; beller werd meteen herleid naar correcte afdeling, dus verificatie niet relevant."
+      "09:09 Daily Huddle: Medewerker herkent correct dat de vraag over het toevoegen van een auto aan een verzekeringspolis een administratieve/verzekeringstechnische materie is en niet onder de juridische helpdesk valt. Juiste doorverwijzing naar verzekeringsadministratie (toets 3).",
+      "09:09 Daily Huddle: Geen verificatie nodig omdat dit geen juridische kwestie betrof en de beller correct is doorverwezen. Procedureel correct afgehandeld."
     ],
     "beter": [
-      "09:09 Daily Huddle: Geen concrete instructie vastgelegd hoe beller het vervolgcontact moet uitvoeren (bijv. 'kies optie 3 en meld autoverzekeringswisseling') – advies kon duidelijker zijn voor betere klantervaring."
+      "09:09 Daily Huddle: Geen concrete vervolgdeadline of vervolgcontactnummer vermeld in het overzicht. Idealiter zou de medewerker de beller kunnen helpen door een directe transferring of duidelijk vervolgstap (pers.naam, toestelnummer verzekeringsadministratie) aan te bieden."
     ]
   },
   "verkeerdVerbonden": {
