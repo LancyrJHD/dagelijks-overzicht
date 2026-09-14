@@ -1,6 +1,6 @@
 {
   "date": "2026-09-14",
-  "generated_at": "2026-09-14T14:51:02Z",
+  "generated_at": "2026-09-14T15:02:45Z",
   "drukte": "rustig",
   "gesprekken": 1,
   "stats": {
@@ -11,13 +11,13 @@
     "geenDekking": 0,
     "verkeerdNummer": 1
   },
-  "score": 8.1,
+  "score": 8.5,
   "conversations": [
     {
       "tijd": "09:09",
       "titel": "Daily Huddle",
       "personen": "Verzekerde: anoniem · Dewi Verver | Juridisch Medewerker",
-      "samenvatting": "Beller belt de juridische helpdesk met een vraag over autoverzekeringadministratie (naam wijzigen op polis voor een nieuwe auto van zijn vader). De medewerker erkent dat dit niet bij de juridische helpdesk hoort, geeft korte procedurele informatie (verzekering via website wijzigen), en verwijst de beller door naar de juiste afdeling (autoverzekeringen, menuoptie 3). Identiteit is niet geverifieerd en geen juridisch advies is gegeven.",
+      "samenvatting": "Beller belt de juridische helpdesk met een vraag over autoverzekeringsprocedures (wijziging van verzekerde voertuig). De medewerker erkent dat dit geen juridische aangelegenheid is, maar een administratieve/verzekeringsvraag, en verwijst de beller door naar de juiste afdeling (autoverzekering, menuoptie 3). De beller is niet geverifieerd en geen inhoudelijk juridisch advies is gegeven.",
       "tags": [
         [
           "tag-overig",
@@ -38,11 +38,11 @@
   "acties": [],
   "analyse": {
     "goed": [
-      "09:09 Daily Huddle: Medewerker herkende correct dat autoverzekeringadministratie niet onder juridische helpdesk valt en verwees beller doelgericht door naar de juiste afdeling (autoverzekeringen, menuoptie 3)",
-      "09:09 Daily Huddle: Geen juridisch advies gegeven, wat passend is voor een administratieve verzekeringsvraag buiten het domein van de juridische helpdesk"
+      "09:09 Daily Huddle: Medewerker herkende correct dat autoverzekeringsprocedures (wijziging voertuig) geen juridische aangelegenheid zijn en verwees beller doelgericht door naar de juiste afdeling (autoverzekering, menuoptie 3).",
+      "09:09 Daily Huddle: Geen onnodige verificatie uitgevoerd voor een verwijzingsgeval zonder juridische component."
     ],
     "beter": [
-      "09:09 Daily Huddle: Medewerker had kunnen overwegen om de beller een concrete vervolgstap of contactweg naar de autoverzekeringafdeling mee te geven (bijv. directe doorschakeling of telefoonnummer) in plaats van alleen een menuoptie"
+      "09:09 Daily Huddle: Hoewel de doorverwijzing correct was, zou de medewerker kunnen vermelden of de beller al in het systeem is gezien (voor toekomstige contacten) en een korte bevestiging kunnen geven dat de helpdesk nu is gecontacteerd."
     ]
   },
   "verkeerdVerbonden": {

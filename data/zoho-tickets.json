@@ -1,6 +1,6 @@
 {
   "date": "2026-09-14",
-  "generated_at": "2026-09-14T14:50:46Z",
+  "generated_at": "2026-09-14T15:02:31Z",
   "tickets": [
     {
       "ticketNumber": "2723",
@@ -37,22 +37,34 @@
       "webUrl": "https://desk.zoho.eu/support/htjzlancyr/ShowHomePage.do#Cases/dv/195464000014003002",
       "channel": "Phone",
       "doorgezetBrandmeester": false
+    },
+    {
+      "ticketNumber": "2726",
+      "tijd": "16:57",
+      "titel": "conflict met aannemer",
+      "klant": "G. vanIttersum",
+      "status": "Open",
+      "statusType": "",
+      "prioriteit": "Niet ingesteld",
+      "webUrl": "https://desk.zoho.eu/support/htjzlancyr/ShowHomePage.do#Cases/dv/195464000013993058",
+      "channel": "Phone",
+      "doorgezetBrandmeester": false
     }
   ],
   "channelCounts": {
-    "Phone": 2,
+    "Phone": 3,
     "Email": 1
   },
   "brandmeesterCount": 0,
   "ticketStats": {
-    "nieuweVandaag": 3,
+    "nieuweVandaag": 4,
     "geslotenVandaag": 2,
-    "totaalOpen": 22,
+    "totaalOpen": 23,
     "inDeWacht": 16,
     "statusBreakdown": {
+      "Open": 7,
       "Gesloten": 629,
-      "In de wacht": 16,
-      "Open": 6
+      "In de wacht": 16
     },
     "capBereikt": false
   }
