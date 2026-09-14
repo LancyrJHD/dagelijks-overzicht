@@ -1,6 +1,6 @@
 {
   "date": "2026-09-14",
-  "generated_at": "2026-09-14T13:40:53Z",
+  "generated_at": "2026-09-14T13:51:02Z",
   "drukte": "rustig",
   "gesprekken": 1,
   "stats": {
@@ -11,13 +11,13 @@
     "geenDekking": 0,
     "verkeerdNummer": 1
   },
-  "score": 8.5,
+  "score": 7.5,
   "conversations": [
     {
       "tijd": "09:09",
       "titel": "Daily Huddle",
       "personen": "Verzekerde: anoniem · Dewi Verver | Juridisch Medewerker",
-      "samenvatting": "De beller belde de juridische helpdesk met een vraag over autoverzekering (wijziging van verzekerde persoon op een nieuwe auto van zijn vader). De medewerker identificeerde correct dat dit onderwerp niet onder de juridische helpdesk valt, gaf minimaal advies (opmerking over fraude bij verkeerde eigenaar), en verwees de beller door naar de afdeling autoverzekeringen (keuzemenu-optie 3). De beller is niet geverifieerd en er is geen inhoudelijk juridisch advies gegeven.",
+      "samenvatting": "De beller belt de juridische helpdesk met een vraag over autoverzekering (wijzigen van de verzekerde auto). De medewerker geeft beperkt inhoudelijk advies (verzekering kan via website worden gewijzigd) maar erkent dat dit onderwerp niet thuishoort bij de juridische helpdesk en verwijst de beller door naar de autoverzekeringafdeling (option 3). De beller is niet geverifieerd.",
       "tags": [
         [
           "tag-overig",
@@ -38,11 +38,11 @@
   "acties": [],
   "analyse": {
     "goed": [
-      "09:09 Daily Huddle: Medewerker herkende correct dat autoverzekeringskwestie buiten de scope van juridische helpdesk valt en verwees passend door naar afdeling autoverzekeringen (keuzemenu-optie 3)",
-      "09:09 Daily Huddle: Geen onnodige verificatie uitgevoerd voor een zaak die niet onder juridische diensten valt; efficiënte routering"
+      "09:09 Daily Huddle: Medewerker herkent correct dat autoverzekeringsvragen buiten de juridische helpdesk vallen en verwijst de beller door naar de juiste afdeling (autoverzekering, option 3)",
+      "09:09 Daily Huddle: Omdat geen advies werd gegeven, was verificatie niet nodig – correct gehandeld"
     ],
     "beter": [
-      "09:09 Daily Huddle: Minimaal advies over fraude was niet nodig gegeven de doorverwijzing; dit kan verwarring creëren over de grenzen van de juridische helpdesk"
+      "09:09 Daily Huddle: Medewerker geeft beperkt inhoudelijk advies ('verzekering kan via website worden gewijzigd') voordat wordt doorverwezen. Bij doorverwijzing naar ander team is het beter om eerst de beller door te verbinden zonder voorafgaand advies te geven"
     ]
   },
   "verkeerdVerbonden": {
