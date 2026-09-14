@@ -1,10 +1,10 @@
 {
   "date": "2026-09-14",
-  "generated_at": "2026-09-14T14:01:09Z",
+  "generated_at": "2026-09-14T14:10:51Z",
   "totaalInbound": 18,
   "totaalGemist": 4,
-  "terugGebeld": 0,
-  "nietTerugGebeld": 4,
+  "terugGebeld": 1,
+  "nietTerugGebeld": 3,
   "nietTerugGebeldNummers": [
     {
       "nummer": "+31615184071",
@@ -18,13 +18,6 @@
       "naam": "Onbekend",
       "tijd": "10:42",
       "callResult": "overflowed",
-      "teruggebeld": false
-    },
-    {
-      "nummer": "+31644627889",
-      "naam": "Onbekend",
-      "tijd": "10:45",
-      "callResult": "abandoned",
       "teruggebeld": false
     },
     {
@@ -55,7 +48,7 @@
       "naam": "Onbekend",
       "tijd": "10:45",
       "callResult": "abandoned",
-      "teruggebeld": false
+      "teruggebeld": true
     },
     {
       "nummer": "+380683153127",
