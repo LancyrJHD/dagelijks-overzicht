@@ -1,6 +1,6 @@
 {
   "date": "2026-09-14",
-  "generated_at": "2026-09-14T08:10:51Z",
+  "generated_at": "2026-09-14T08:20:52Z",
   "drukte": "rustig",
   "gesprekken": 1,
   "stats": {
@@ -17,7 +17,7 @@
       "tijd": "09:09",
       "titel": "Daily Huddle",
       "personen": "Verzekerde: anoniem · Dewi Verver | Juridisch Medewerker",
-      "samenvatting": "Beller belt de juridische helpdesk met een vraag over autoverzekering (of zijn vader's auto op zijn naam verzekeren). De medewerker stelt vast dat dit een autoverzekeringsvraag is, geen juridische kwestie, en verwijst de beller door naar de juiste afdeling (toets 3). De beller is niet geverifieerd en er is geen inhoudelijk juridisch advies gegeven.",
+      "samenvatting": "De beller belt de juridische helpdesk met een vraag over autoverzekering (het toevoegen van een nieuwe auto aan de bestaande polis van zijn vader). De medewerker erkent dat dit onderwerp niet tot de juridische helpdesk behoort en verwijst de beller door naar de juiste afdeling (autoverzekeringen) met de instructie om opnieuw te bellen en optie 3 te kiezen. De beller is niet geverifieerd en er is geen inhoudelijk juridisch advies gegeven.",
       "tags": [
         [
           "tag-overig",
@@ -38,11 +38,11 @@
   "acties": [],
   "analyse": {
     "goed": [
-      "09:09 Daily Huddle: Medewerker herkent correct dat dit een autoverzekeringsvraag is (geen juridische kwestie) en verwijst de beller professioneel door naar de juiste afdeling (toets 3). Geen onnodig advies gegeven buiten eigen competentie.",
-      "09:09 Daily Huddle: Geen verificatie nodig omdat geen juridisch advies is gegeven – juiste procedure gevolgd voor doorverwijzing."
+      "09:09 Daily Huddle: Medewerker herkent correct dat autoverzekeringsvraag buiten het domein van juridische helpdesk valt en verwijst proactief door naar juiste afdeling (autoverzekeringen, optie 3) met concrete routeringsinstructie.",
+      "09:09 Daily Huddle: Geen onnodige verificatie ingesteld bij routering naar ander team; efficiënte afhandeling."
     ],
     "beter": [
-      "09:09 Daily Huddle: Aanbeveling voor vervolgcontact: ook al is dit een doorverwijzing, zou het nuttig zijn geweest om de beller mee te geven dat hij/zij na doorschakeling naar toets 3 kan verifiëren met polisnummer en -houder (preventie herhaald contact)."
+      "09:09 Daily Huddle: Overweeg of de medewerker de beller meer specifieke contactgegevens van de autoverzekeringenafdeling had kunnen geven (bijv. directe lijn, openingstijden) voor snellere afhandeling."
     ]
   },
   "verkeerdVerbonden": {
