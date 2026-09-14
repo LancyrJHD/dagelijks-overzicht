@@ -1,6 +1,6 @@
 {
   "date": "2026-09-14",
-  "generated_at": "2026-09-14T07:50:48Z",
+  "generated_at": "2026-09-14T08:01:07Z",
   "drukte": "rustig",
   "gesprekken": 1,
   "stats": {
@@ -17,7 +17,7 @@
       "tijd": "09:09",
       "titel": "Daily Huddle",
       "personen": "Verzekerde: anoniem · Dewi Verver | Juridisch Medewerker",
-      "samenvatting": "Beller belde de juridische helpdesk met een vraag over autoverzekeringadministratie (verzekering van een nieuwe auto op naam van zijn vader). De medewerker erkende dat dit onderwerp niet bij de juridische helpdesk hoort, gaf geen inhoudelijk juridisch advies, en verwees de beller door naar de juiste afdeling (autoverzekeringen) via het keuzemenu. De beller is niet geverifieerd geweest.",
+      "samenvatting": "Beller belt de juridische helpdesk met een vraag over autoverzekering (het toevoegen van een nieuw voertuig aan de verzekering van zijn vader). De medewerker erkent dat dit een autoverzekeringsvraag is, geen juridische vraag, en verwijst de beller door naar de juiste afdeling (opnieuw bellen en optie 3 kiezen). De beller is niet geverifieerd en er is geen inhoudelijk juridisch advies gegeven.",
       "tags": [
         [
           "tag-overig",
@@ -38,11 +38,11 @@
   "acties": [],
   "analyse": {
     "goed": [
-      "09:09 Daily Huddle: Medewerker herkende correct dat het onderwerp (autoverzekeringadministratie) niet binnen de bevoegdheid van de juridische helpdesk valt en verwees beller doelgericht door naar de juiste afdeling (autoverzekeringen). Dit voorkomt fouten en versnelt het helpproces.",
-      "09:09 Daily Huddle: Geen inhoudelijk juridisch advies gegeven over een onderwerp dat buiten de werkingsfeer valt — juiste handelswijze."
+      "09:09 Daily Huddle: Medewerker herkent correct dat dit een autoverzekeringsvraag is (geen juridische materie) en verwijst beller professioneel door naar de juiste afdeling met concrete instructies (optie 3 kiezen).",
+      "09:09 Daily Huddle: Geen advies gegeven voordat duidelijkheid bestaat over bevoegdheid — correct protocol gevolgd."
     ],
     "beter": [
-      "09:09 Daily Huddle: Hoewel correcte doorverwijzing, ontbreekt notitie of afspraak over vervolgstappen. Controleer of doorverwijzing via het systeem is geregistreerd zodat beller geen tijd verspilt."
+      "09:09 Daily Huddle: Bij doorverwijzing naar de juiste afdeling zou het helpen om ook een concrete deadline of vervolgstap te noemen (bijv. 'U bereikt hen direct via optie 3, zij helpen u verder met de toevoeging van het voertuig')."
     ]
   },
   "verkeerdVerbonden": {
