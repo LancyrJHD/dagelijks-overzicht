@@ -1,6 +1,6 @@
 {
   "date": "2026-09-14",
-  "generated_at": "2026-09-14T16:01:21Z",
+  "generated_at": "2026-09-14T16:10:57Z",
   "drukte": "rustig",
   "gesprekken": 1,
   "stats": {
@@ -17,7 +17,7 @@
       "tijd": "09:09",
       "titel": "Daily Huddle",
       "personen": "Verzekerde: anoniem · Dewi Verver | Juridisch Medewerker",
-      "samenvatting": "Beller beide de juridische helpdesk met een vraag over autoverzekering (wijziging polis voor nieuwe auto van zijn vader). De medewerker gaf correcte triage door: dit onderwerp behoort niet tot de juridische helpdesk maar tot de verzekeringsadministratie-afdeling, en verwees de beller door om opnieuw te bellen en optie 3 te kiezen. Identiteit is niet geverifieerd en geen juridisch advies is gegeven, omdat dit geen juridische zaak betreft.",
+      "samenvatting": "De beller belde de juridische helpdesk met een vraag over autoverzekering (een auto op naam van een familielid zetten). De medewerker herkenning correct dat dit een autoverzekeringsadministratieve vraag is en geen juridische zaak, en verwees de beller door naar de juiste afdeling (optie 3 in het menu). De beller is niet geverifieerd en er is geen inhoudelijk juridisch advies gegeven.",
       "tags": [
         [
           "tag-overig",
@@ -38,11 +38,11 @@
   "acties": [],
   "analyse": {
     "goed": [
-      "09:09 Daily Huddle: Correcte triage uitgevoerd – beller met autoverzekeringsvraag (poliswijziging) terecht doorverwezen naar verzekeringsadministratie (optie 3) omdat dit buiten het juridische bereik van de helpdesk valt.",
-      "09:09 Daily Huddle: Geen onnodige verificatie of advies gegeven voor niet-juridische zaak – efficiënte afhandeling van verkeerd nummer."
+      "09:09 Daily Huddle: Medewerker herkende correct dat dit een autoverzekeringsadministratieve vraag is (geen juridisch probleem) en verwees de beller doelgericht door naar de juiste afdeling (optie 3). Dit is een efficiënte triage.",
+      "09:09 Daily Huddle: Geen juridisch advies gegeven omdat de zaak niet bij de juridische helpdesk hoorde — juiste afbakening van competenties."
     ],
     "beter": [
-      "09:09 Daily Huddle: Bij doorverwijzing zou kunnen worden overwogen om de beller duidelijk de exacte stappen (optie 3 kiezen, mogelijk callback-optie) en eventueel een inschatting van wachttijd te geven voor betere klantervaringen."
+      "09:09 Daily Huddle: Hoewel doorverwijzing correct was, zou een vriendelijk slotwoord of beknopte instructie hoe de beller de juiste afdeling bereikt, de servicekwaliteit kunnen verhogen."
     ]
   },
   "verkeerdVerbonden": {
