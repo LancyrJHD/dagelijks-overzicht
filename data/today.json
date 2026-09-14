@@ -1,6 +1,6 @@
 {
   "date": "2026-09-14",
-  "generated_at": "2026-09-14T15:20:54Z",
+  "generated_at": "2026-09-14T15:31:15Z",
   "drukte": "rustig",
   "gesprekken": 1,
   "stats": {
@@ -17,7 +17,7 @@
       "tijd": "09:09",
       "titel": "Daily Huddle",
       "personen": "Verzekerde: anoniem · Dewi Verver | Juridisch Medewerker",
-      "samenvatting": "De beller belt de juridische helpdesk met een vraag over autoverzekeringsprocedures (wijzigen van verzekerde auto). De medewerker stelt vast dat dit onderwerp niet bij de juridische helpdesk hoort, maar bij de afdeling autoverzekeringen, en verwijst de beller door naar de juiste afdeling (toets 3). De beller is niet geverifieerd en er is geen inhoudelijk juridisch advies gegeven.",
+      "samenvatting": "De beller beide de juridische helpdesk met een vraag over autoverzekering (een nieuwe auto op naam van de vader verzekeren). De medewerker stelde vast dat dit geen juridische aangelegenheid is, maar een administratieve verzekeringsvraag, en verwees de beller door naar de juiste afdeling (autoverzekeringen, optie 3). De beller is niet geverifieerd en er is geen inhoudelijk juridisch advies gegeven.",
       "tags": [
         [
           "tag-overig",
@@ -38,11 +38,11 @@
   "acties": [],
   "analyse": {
     "goed": [
-      "09:09 Daily Huddle: Medewerker herkent correct dat het onderwerp (autoverzekeringsprocedures) niet tot het juridische domein behoort en verwijst de beller doeltreffend door naar de juiste afdeling (autoverzekeringen, toets 3). Dit voorkomt onnodige tijd verspilling en zorgt voor klantgerichte service.",
-      "09:09 Daily Huddle: Geen juridisch advies gegeven bij een ongepast onderwerp, wat de kwaliteit beschermt."
+      "09:09 Daily Huddle: Medewerker herkende correct dat dit een administratieve verzekeringsvraag was (auto op naam vader) en geen juridische materie, en verwees de beller adequaat door naar de juiste afdeling (autoverzekeringen, optie 3).",
+      "09:09 Daily Huddle: Geen onnodige verificatie uitgevoerd omdat dit geen juridische zaak was; passende routing naar juiste team."
     ],
     "beter": [
-      "09:09 Daily Huddle: Geen concrete deadline of vervolgstap voor escalatie vastgelegd in de notulen. Het is onduidelijk of de beller direct is doorverbonden of zelf moet bellen."
+      "09:09 Daily Huddle: Medewerker had kunnen helpen door de beller duidelijk uit te leggen waarom dit via autoverzekeringen moet en eventueel nog een tip mee te geven (bijv. documenten van de vader meenemen voor inschrijving)."
     ]
   },
   "verkeerdVerbonden": {
