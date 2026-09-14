@@ -1,6 +1,6 @@
 {
   "date": "2026-09-14",
-  "generated_at": "2026-09-14T16:10:57Z",
+  "generated_at": "2026-09-14T16:20:53Z",
   "drukte": "rustig",
   "gesprekken": 1,
   "stats": {
@@ -17,7 +17,7 @@
       "tijd": "09:09",
       "titel": "Daily Huddle",
       "personen": "Verzekerde: anoniem · Dewi Verver | Juridisch Medewerker",
-      "samenvatting": "De beller belde de juridische helpdesk met een vraag over autoverzekering (een auto op naam van een familielid zetten). De medewerker herkenning correct dat dit een autoverzekeringsadministratieve vraag is en geen juridische zaak, en verwees de beller door naar de juiste afdeling (optie 3 in het menu). De beller is niet geverifieerd en er is geen inhoudelijk juridisch advies gegeven.",
+      "samenvatting": "De beller belt de juridische helpdesk met een vraag over autoverzekering (wijziging van auto op naam van vader). De medewerker erkent dat dit niet het juiste nummer is en verwijst de beller door naar de autoverzekeringafdeling (optie 3 in het keuzemenu). De beller is niet geverifieerd en er is geen inhoudelijk juridisch advies gegeven.",
       "tags": [
         [
           "tag-overig",
@@ -38,11 +38,11 @@
   "acties": [],
   "analyse": {
     "goed": [
-      "09:09 Daily Huddle: Medewerker herkende correct dat dit een autoverzekeringsadministratieve vraag is (geen juridisch probleem) en verwees de beller doelgericht door naar de juiste afdeling (optie 3). Dit is een efficiënte triage.",
-      "09:09 Daily Huddle: Geen juridisch advies gegeven omdat de zaak niet bij de juridische helpdesk hoorde — juiste afbakening van competenties."
+      "09:09 'Daily Huddle': Medewerker herkende correct dat dit een autoverzekeringsvraag was en niet binnen het juridische helpdesk-domein viel, en verwees de beller naar de juiste afdeling (optie 3 in keuzemenu). Professionele handeling.",
+      "Geen onnodige verificatie of adviesverlening aan beller met verkeerde afdeling."
     ],
     "beter": [
-      "09:09 Daily Huddle: Hoewel doorverwijzing correct was, zou een vriendelijk slotwoord of beknopte instructie hoe de beller de juiste afdeling bereikt, de servicekwaliteit kunnen verhogen."
+      "09:09 'Daily Huddle': Hoewel correcte doorverwijzing plaatsvond, had de medewerker nog kunnen aangeven dat de beller het juiste directe nummer van de autoverzekeringafdeling kon opvragen als onderdeel van de serviceverlening."
     ]
   },
   "verkeerdVerbonden": {
