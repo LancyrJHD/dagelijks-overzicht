@@ -1617,13 +1617,29 @@
     "totaalInbound": 19
   },
   "2026-09-14": {
-    "alleGemistNummers": [],
+    "alleGemistNummers": [
+      {
+        "callResult": "abandoned",
+        "naam": "Onbekend",
+        "nummer": "+31615184071",
+        "teruggebeld": false,
+        "tijd": "09:04"
+      }
+    ],
     "date": "2026-09-14",
-    "generated_at": "2026-09-14T07:00:57Z",
-    "nietTerugGebeld": 0,
-    "nietTerugGebeldNummers": [],
+    "generated_at": "2026-09-14T07:10:39Z",
+    "nietTerugGebeld": 1,
+    "nietTerugGebeldNummers": [
+      {
+        "callResult": "abandoned",
+        "naam": "Onbekend",
+        "nummer": "+31615184071",
+        "teruggebeld": false,
+        "tijd": "09:04"
+      }
+    ],
     "terugGebeld": 0,
-    "totaalGemist": 0,
-    "totaalInbound": 0
+    "totaalGemist": 1,
+    "totaalInbound": 1
   }
 }

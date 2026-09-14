@@ -1,10 +1,26 @@
 {
   "date": "2026-09-14",
-  "generated_at": "2026-09-14T07:00:57Z",
-  "totaalInbound": 0,
-  "totaalGemist": 0,
+  "generated_at": "2026-09-14T07:10:39Z",
+  "totaalInbound": 1,
+  "totaalGemist": 1,
   "terugGebeld": 0,
-  "nietTerugGebeld": 0,
-  "nietTerugGebeldNummers": [],
-  "alleGemistNummers": []
+  "nietTerugGebeld": 1,
+  "nietTerugGebeldNummers": [
+    {
+      "nummer": "+31615184071",
+      "naam": "Onbekend",
+      "tijd": "09:04",
+      "callResult": "abandoned",
+      "teruggebeld": false
+    }
+  ],
+  "alleGemistNummers": [
+    {
+      "nummer": "+31615184071",
+      "naam": "Onbekend",
+      "tijd": "09:04",
+      "callResult": "abandoned",
+      "teruggebeld": false
+    }
+  ]
 }
