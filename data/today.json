@@ -1,6 +1,6 @@
 {
   "date": "2026-09-14",
-  "generated_at": "2026-09-14T15:31:15Z",
+  "generated_at": "2026-09-14T15:41:00Z",
   "drukte": "rustig",
   "gesprekken": 1,
   "stats": {
@@ -17,7 +17,7 @@
       "tijd": "09:09",
       "titel": "Daily Huddle",
       "personen": "Verzekerde: anoniem · Dewi Verver | Juridisch Medewerker",
-      "samenvatting": "De beller beide de juridische helpdesk met een vraag over autoverzekering (een nieuwe auto op naam van de vader verzekeren). De medewerker stelde vast dat dit geen juridische aangelegenheid is, maar een administratieve verzekeringsvraag, en verwees de beller door naar de juiste afdeling (autoverzekeringen, optie 3). De beller is niet geverifieerd en er is geen inhoudelijk juridisch advies gegeven.",
+      "samenvatting": "Beller belt de juridische helpdesk met een vraag over autoverzekering (een nieuwe auto toevoegen aan vaders polis). De medewerker herkent dat dit geen juridische kwestie is maar een verzekeringsbeheersvraag, en verwijst de beller correct door naar de autoverzekeringafdeling (toets 3). Beller is niet geverifieerd en er is geen inhoudelijk juridisch advies gegeven.",
       "tags": [
         [
           "tag-overig",
@@ -38,11 +38,11 @@
   "acties": [],
   "analyse": {
     "goed": [
-      "09:09 Daily Huddle: Medewerker herkende correct dat dit een administratieve verzekeringsvraag was (auto op naam vader) en geen juridische materie, en verwees de beller adequaat door naar de juiste afdeling (autoverzekeringen, optie 3).",
-      "09:09 Daily Huddle: Geen onnodige verificatie uitgevoerd omdat dit geen juridische zaak was; passende routing naar juiste team."
+      "09:09 Daily Huddle: Medewerker herkent correct dat de vraag over autoverzekering (auto toevoegen aan polis) geen juridische materie is en verwijst proactief door naar de juiste afdeling (autoverzekeringafdeling, toets 3). Dit bespaart de beller tijd en zorgt voor efficiënte routering.",
+      "09:09 Daily Huddle: Geen verificatie en geen advies gegeven is hier correct, omdat het geen juridische zaak betreft en doorverwijzing het doel was."
     ],
     "beter": [
-      "09:09 Daily Huddle: Medewerker had kunnen helpen door de beller duidelijk uit te leggen waarom dit via autoverzekeringen moet en eventueel nog een tip mee te geven (bijv. documenten van de vader meenemen voor inschrijving)."
+      "09:09 Daily Huddle: Voor toekomstige vergelijkbare situaties: overweeg kort aan de beller uit te leggen waarom dit niet onder juridische zaken valt, zodat deze beter begrijpt waarom doorverwijzing nodig is."
     ]
   },
   "verkeerdVerbonden": {
