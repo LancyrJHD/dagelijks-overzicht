@@ -1,6 +1,6 @@
 {
   "date": "2026-09-14",
-  "generated_at": "2026-09-14T14:31:10Z",
+  "generated_at": "2026-09-14T14:40:58Z",
   "drukte": "rustig",
   "gesprekken": 1,
   "stats": {
@@ -17,7 +17,7 @@
       "tijd": "09:09",
       "titel": "Daily Huddle",
       "personen": "Verzekerde: anoniem · Dewi Verver | Juridisch Medewerker",
-      "samenvatting": "De beller beide de juridische helpdesk met een vraag over autoverzekering (wijziging van verzekerde auto na aankoop nieuwe auto door vader). De medewerker erkende dat dit niet tot het juridische adviesdomein behoort en verwees de beller door naar de autoverzekeringsverzekeringafdeling (toets 3 in het menu). De beller is niet geverifieerd en er is geen inhoudelijk juridisch advies gegeven.",
+      "samenvatting": "Beller belde de juridische helpdesk met een vraag over autoverzekering (wijzigen van verzekerde auto). De medewerker constateerde dat dit niet onder juridische rechtsbijstand valt, maar onder de afdeling autoverzekeringen. De beller is niet geverifieerd en geen inhoudelijk juridisch advies is gegeven; de beller werd doorverwezen naar de juiste afdeling (opnieuw bellen, optie 3).",
       "tags": [
         [
           "tag-overig",
@@ -38,12 +38,11 @@
   "acties": [],
   "analyse": {
     "goed": [
-      "09:09 Daily Huddle: Medewerker herkende correct dat autoverzekeringskwesties buiten het juridische adviesdomein vallen en gaf een passende doorverwijzing (toets 3) naar de juiste afdeling.",
-      "09:09 Daily Huddle: Geen advies gegeven zonder verificatie — medewerker handelde correct door niet in te gaan op inhoudelijke vragen voordat verificatie plaatsvond.",
-      "09:09 Daily Huddle: Efficiënte afhandeling met duidelijke routering voorkwam onnodige werkstroom."
+      "09:09 Daily Huddle: Medewerker herkende correct dat autoverzekeringskwestie (wijzigen verzekerde auto) niet onder juridische rechtsbijstand valt en verwees beller naar juiste afdeling (opnieuw bellen, optie 3). Geen onnodige verificatie aangevraagd voor verkeerd soort zaak.",
+      "Geen advies gegeven waar dit niet thuishoort – professioneel gatekeeping."
     ],
     "beter": [
-      "09:09 Daily Huddle: Hoewel doorverwijzing juist was, had de medewerker aan het begin van het gesprek kunnen vastleggen of de beller zelf klant is of namens iemand anders belt (vader's verzekeringsgegevens vs. eigen zaken), om toekomstige contactmomenten efficiënter in te richten."
+      "09:09 Daily Huddle: Concrete deadline of vervolgstap zou helpen (bijv. 'u kunt meteen opnieuw bellen en optie 3 kiezen' geeft duidelijkheid, maar eventuele wachttijd of contactgegevens zouden waardevol zijn geweest)."
     ]
   },
   "verkeerdVerbonden": {
