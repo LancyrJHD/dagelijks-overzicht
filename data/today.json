@@ -1,6 +1,6 @@
 {
   "date": "2026-09-14",
-  "generated_at": "2026-09-14T11:31:46Z",
+  "generated_at": "2026-09-14T11:40:59Z",
   "drukte": "rustig",
   "gesprekken": 1,
   "stats": {
@@ -17,7 +17,7 @@
       "tijd": "09:09",
       "titel": "Daily Huddle",
       "personen": "Verzekerde: anoniem · Dewi Verver | Juridisch Medewerker",
-      "samenvatting": "De beller beide de juridische helpdesk met een vraag over autoverzekering (wijziging van polisnaam voor een nieuw voertuig van zijn vader). De medewerker (Davy) stelde vast dat dit een administratieve verzekeringsvraag is die niet onder de juridische helpdesk valt, en verwees de beller door naar de juiste afdeling (autoverzekeringen, optie 3). De beller werd niet geverifieerd en ontving geen juridisch advies.",
+      "samenvatting": "De beller belt de juridische helpdesk met een vraag over autoverzekeringadministratie (auto op naam van vader, nu op naam van beller zetten). De medewerker Davy herkent dat dit geen juridische vraag is maar een verzekeringsadministratieve kwestie en verwijst de beller door naar de juiste afdeling (keuzemenu optie 3). De beller is niet geverifieerd en er is geen inhoudelijk juridisch advies gegeven.",
       "tags": [
         [
           "tag-overig",
@@ -38,11 +38,11 @@
   "acties": [],
   "analyse": {
     "goed": [
-      "09:09 Daily Huddle: Medewerker Davy herkende correct dat dit een administratieve verzekeringsvraag betreft die niet onder juridische helpdesk valt en verwees beller professioneel door naar de juiste afdeling (autoverzekeringen, optie 3).",
-      "09:09 Daily Huddle: Geen verificatie nodig omdat dit geen juridisch dossier betrof - juiste scope-assessment."
+      "09:09 Daily Huddle: Medewerker Davy herkent correct dat het om een verzekeringsadministratieve kwestie gaat (auto-eigendomsoverdracht) en niet om een juridische vraag. Juiste doorverwijzing naar de desbetreffende afdeling (keuzemenu optie 3).",
+      "09:09 Daily Huddle: Geen onnodig advies gegeven; de medewerker handelt procedureel correct af door direct door te verwijzen in plaats van een niet-juridische vraag inhoudelijk te behandelen."
     ],
     "beter": [
-      "09:09 Daily Huddle: Het routeringsbericht naar de beller had concreter kunnen zijn (bijv. 'U bereikt de autoverzekeringsdienst via optie 3, die kan u direct helpen met de polisnaamwijziging' in plaats van alleen door te verwijzen)."
+      "09:09 Daily Huddle: Hoewel de doorverwijzing correct is, zou de medewerker kunnen opmerken dat de beller ook juridische vragen (bijv. over eigendomsoverdracht onder erfrecht of schenkingskwesties) kan stellen als die relevant zijn. Een korte checkvraag ('Zijn er verder juridische vragen bij deze eigendomsoverdracht?') voorafgaand aan de doorverwijzing zou de dienstverlening kunnen verbeteren."
     ]
   },
   "verkeerdVerbonden": {
