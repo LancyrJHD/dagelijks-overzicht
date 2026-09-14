@@ -1,6 +1,6 @@
 {
   "date": "2026-09-14",
-  "generated_at": "2026-09-14T08:50:49Z",
+  "generated_at": "2026-09-14T09:01:08Z",
   "drukte": "rustig",
   "gesprekken": 1,
   "stats": {
@@ -17,7 +17,7 @@
       "tijd": "09:09",
       "titel": "Daily Huddle",
       "personen": "Verzekerde: anoniem · Dewi Verver | Juridisch Medewerker",
-      "samenvatting": "Beller belt de juridische helpdesk met een vraag over autoverzekering (wijziging van verzekerde auto). De medewerker herkent dat dit een autoverzekeringsvraag is, geen juridische zaak, en verwijst de beller door naar de autoverzekeringafdeling (keuzeoptie 3). Beller is niet geverifieerd en er is geen inhoudelijk juridisch advies gegeven.",
+      "samenvatting": "De beller belt de juridische helpdesk met een vraag over autoverzekeringen (wijziging van de verzekerde auto). De medewerker herkent dat dit geen juridische kwestie is, maar een administratieve/verzekeringstechnische aangelegenheid, en verwijst de beller correct door naar de afdeling autoverzekeringen (toets 3). De beller is niet geverifieerd en heeft geen inhoudelijk juridisch advies ontvangen.",
       "tags": [
         [
           "tag-overig",
@@ -38,11 +38,11 @@
   "acties": [],
   "analyse": {
     "goed": [
-      "09:09 Daily Huddle: Medewerker herkende correct dat dit een autoverzekeringsvraag betreft en geen juridische zaak, en verwees beller doelgericht door naar de juiste afdeling (keuzeoptie 3). Dit voorkomt onnodige vertraging voor de klant.",
-      "09:09 Daily Huddle: Geen advies gegeven zonder verificatie — beller werd niet geverifieerd, maar dit was ook niet nodig omdat het gesprek werd doorverwezen naar de bevoegde afdeling."
+      "09:09 Daily Huddle: Medewerker herkent correct dat autoverzekeringskwestie (wijziging verzekerde auto) geen juridische materie is en verwijst adequaat door naar afdeling autoverzekeringen (toets 3). Juiste kanaalkeuze.",
+      "09:09 Daily Huddle: Geen inhoudelijk advies gegeven over non-juridische materie, wat passend is. Geen verificatie nodig geweest omdat doorverwijzing plaatsvond."
     ],
     "beter": [
-      "09:09 Daily Huddle: Hoewel doorverwijzing correct was, zou het nuttig zijn om de beller kort te informeren hoe de doorverwijzing werkt (bijv. 'U wordt nu doorverbonden met onze autoverzekeringafdeling, die kan u veel sneller helpen') om de klantervaring te verbeteren."
+      "09:09 Daily Huddle: Niet vastgelegd of de medewerker aan de beller heeft medegedeeld welke toets of procedure moet worden gevolgd voor het vervolgcontact met autoverzekeringen, of dit duidelijk genoeg is uitgelegd."
     ]
   },
   "verkeerdVerbonden": {
