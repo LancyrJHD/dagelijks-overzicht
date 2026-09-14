@@ -1,17 +1,32 @@
 {
   "date": "2026-09-14",
-  "generated_at": "2026-09-14T08:30:55Z",
-  "tickets": [],
-  "channelCounts": {},
+  "generated_at": "2026-09-14T08:40:38Z",
+  "tickets": [
+    {
+      "ticketNumber": "2723",
+      "tijd": "10:33",
+      "titel": "beoordeling schadebedrag",
+      "klant": "J.C.A.J. vanEngelen",
+      "status": "Gesloten",
+      "statusType": "",
+      "prioriteit": "Niet ingesteld",
+      "webUrl": "https://desk.zoho.eu/support/htjzlancyr/ShowHomePage.do#Cases/dv/195464000014005001",
+      "channel": "Phone",
+      "doorgezetBrandmeester": false
+    }
+  ],
+  "channelCounts": {
+    "Phone": 1
+  },
   "brandmeesterCount": 0,
   "ticketStats": {
-    "nieuweVandaag": 0,
-    "geslotenVandaag": 0,
+    "nieuweVandaag": 1,
+    "geslotenVandaag": 1,
     "totaalOpen": 20,
     "inDeWacht": 11,
     "statusBreakdown": {
+      "Gesloten": 629,
       "Open": 9,
-      "Gesloten": 628,
       "In de wacht": 11
     },
     "capBereikt": false
