@@ -1,6 +1,6 @@
 {
   "date": "2026-09-14",
-  "generated_at": "2026-09-14T16:20:53Z",
+  "generated_at": "2026-09-14T16:24:02Z",
   "drukte": "rustig",
   "gesprekken": 1,
   "stats": {
@@ -17,7 +17,7 @@
       "tijd": "09:09",
       "titel": "Daily Huddle",
       "personen": "Verzekerde: anoniem · Dewi Verver | Juridisch Medewerker",
-      "samenvatting": "De beller belt de juridische helpdesk met een vraag over autoverzekering (wijziging van auto op naam van vader). De medewerker erkent dat dit niet het juiste nummer is en verwijst de beller door naar de autoverzekeringafdeling (optie 3 in het keuzemenu). De beller is niet geverifieerd en er is geen inhoudelijk juridisch advies gegeven.",
+      "samenvatting": "De beller belde de juridische helpdesk met een vraag over autoverzekering (wijziging van een autoverzekeringspolis voor een nieuwe auto). De medewerker stelde vast dat dit onderwerp niet onder de juridische helpdesk valt, maar bij de afdeling autoverzekeringen hoort, en verwees de beller door naar het juiste nummer/keuzemenu-optie. De beller is niet geverifieerd en er is geen inhoudelijk juridisch advies gegeven.",
       "tags": [
         [
           "tag-overig",
@@ -38,11 +38,11 @@
   "acties": [],
   "analyse": {
     "goed": [
-      "09:09 'Daily Huddle': Medewerker herkende correct dat dit een autoverzekeringsvraag was en niet binnen het juridische helpdesk-domein viel, en verwees de beller naar de juiste afdeling (optie 3 in keuzemenu). Professionele handeling.",
-      "Geen onnodige verificatie of adviesverlening aan beller met verkeerde afdeling."
+      "09:09 Daily Huddle: Medewerker herkende correct dat autoverzekeringskwesties buiten het juridische helpdesk-bereik vallen en verwees de beller naar de juiste afdeling/keuzemenu-optie.",
+      "09:09 Daily Huddle: Geen verificatie en geen advies vereist bij een doorverwijzing naar ander departement; procedure was passend."
     ],
     "beter": [
-      "09:09 'Daily Huddle': Hoewel correcte doorverwijzing plaatsvond, had de medewerker nog kunnen aangeven dat de beller het juiste directe nummer van de autoverzekeringafdeling kon opvragen als onderdeel van de serviceverlening."
+      "09:09 Daily Huddle: Niet expliciet vermeld of de medewerker een concrete doorverwijzingsinstructie/telefoonnummer heeft gegeven (ter voorkoming dat de beller ernstig moet zoeken)."
     ]
   },
   "verkeerdVerbonden": {
