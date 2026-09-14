@@ -1,6 +1,6 @@
 {
   "date": "2026-09-14",
-  "generated_at": "2026-09-14T09:10:57Z",
+  "generated_at": "2026-09-14T09:20:49Z",
   "drukte": "rustig",
   "gesprekken": 1,
   "stats": {
@@ -17,7 +17,7 @@
       "tijd": "09:09",
       "titel": "Daily Huddle",
       "personen": "Verzekerde: anoniem · Dewi Verver | Juridisch Medewerker",
-      "samenvatting": "De beller belt de juridische helpdesk met een vraag over autoverzekering (of een auto op naam van iemand anders verzekeren). De medewerker stelt vast dat dit geen juridische zaak is, maar een verzekeringsadministratieve aangelegenheid, en verwijst de beller correct door naar de autoverzekeringshelpdesk (option 3). De beller is niet geverifieerd en geen inhoudelijk juridisch advies is gegeven, omdat dit onderwerp niet onder juridische rechtsbijstand valt.",
+      "samenvatting": "Beller belt met de juridische helpdesk maar heeft een administratieve vraag over autoverzekeringswisseling (vader koopt nieuwe auto, wil deze laten verzekeren). De medewerker herkent correct dat dit niet tot de juridische helpdesk behoort en verwijst de beller door naar de autoverzekeringafdeling (optie 3). Beller is niet geverifieerd en er is geen juridisch advies gegeven.",
       "tags": [
         [
           "tag-overig",
@@ -38,11 +38,12 @@
   "acties": [],
   "analyse": {
     "goed": [
-      "09:09 Daily Huddle: Medewerker herkent correct dat de vraag over autoverzekeringadministratie niet onder juridische rechtsbijstand valt en verwijst de beller professioneel door naar de juiste afdeling (autoverzekeringshelpdesk, option 3). Dit voorkomt onnodige conversatietijd en zorgt voor efficiënte routering.",
-      "Geen verificatie vereist omdat geen juridisch advies is gegeven – correct proces voor out-of-scope vragen."
+      "09:09 Daily Huddle: Medewerker herkent correct dat een administratieve vraag over autoverzekeringswisseling niet tot de juridische helpdesk behoort en verwijst de beller professioneel door naar de juiste afdeling (optie 3). Geen onnodige tijd verspild aan verkeerde routing.",
+      "Geen verificatie nodig omdat geen juridisch advies is gegeven – de verwijzing naar de juiste afdeling is een passende handeling.",
+      "Efficiënte afhandeling van misdirected call."
     ],
     "beter": [
-      "09:09 Daily Huddle: Vermeld in het vervolgcontact of de beller met enig refnummer, contactpersoon of duidelijke instructies naar de autoverzekeringshelpdesk is doorverwezen, zodat de doorverwijzing traceerbaar is."
+      "09:09 Daily Huddle: Overweeg of de medewerker de beller ook de contactgegevens van de autoverzekeringafdeling mondeling heeft meegegeven of alleen heeft verwezen naar 'optie 3' – een volledige overdracht met voicemail of directe doorschakeling zou de beller beter helpen."
     ]
   },
   "verkeerdVerbonden": {
