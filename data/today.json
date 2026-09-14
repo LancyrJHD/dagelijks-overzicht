@@ -1,6 +1,6 @@
 {
   "date": "2026-09-14",
-  "generated_at": "2026-09-14T10:01:12Z",
+  "generated_at": "2026-09-14T10:10:49Z",
   "drukte": "rustig",
   "gesprekken": 1,
   "stats": {
@@ -17,7 +17,7 @@
       "tijd": "09:09",
       "titel": "Daily Huddle",
       "personen": "Verzekerde: anoniem · Dewi Verver | Juridisch Medewerker",
-      "samenvatting": "De beller belde de juridische helpdesk met een vraag over autoverzekering (verzekeringwijziging voor een nieuwe auto). Dit is geen juridische materie maar een verzekeringsadministratieve vraag. De medewerker (Davy) stelde correct vast dat dit niet tot de juridische helpdesk behoort en verwees de beller door naar de juiste afdeling (autoverzekeringen, optie 3). De beller is niet geverifieerd en er is geen inhoudelijk juridisch advies gegeven.",
+      "samenvatting": "De beller belt met een vraag over autoverzekeringadministratie (wijziging van verzekerde voertuig), geen juridische kwestie. De medewerker (Davy) erkent dat dit niet de juridische helpdesk betreft en verwijst de beller correct door naar de afdeling autoverzekeringen (toets 3). De beller is niet geverifieerd en er is geen inhoudelijk juridisch advies gegeven.",
       "tags": [
         [
           "tag-overig",
@@ -38,11 +38,11 @@
   "acties": [],
   "analyse": {
     "goed": [
-      "09:09 Daily Huddle: Medewerker Davy herkende correct dat de vraag over verzekeringwijziging (autoverzekering) niet tot de juridische helpdesk behoort en verwees de beller doelgericht door naar de juiste afdeling (autoverzekeringen, optie 3). Dit is professioneel gatekeeping.",
-      "09:09 Daily Huddle: Geen onnodige verificatie uitgevoerd voor een niet-juridische zaak die direct doorverwezen kon worden."
+      "09:09 Daily Huddle: Medewerker Davy herkent correct dat dit geen juridische zaak betreft en verwijst de beller passend door naar de afdeling autoverzekeringen (toets 3). Dit is een juiste triage.",
+      "Geen verificatie nodig voordat doorverwijzing plaatsvond, aangezien dit buiten de scope van de juridische helpdesk valt."
     ],
     "beter": [
-      "09:09 Daily Huddle: Het gesprek is erg kort gedocumenteerd. Voor toekomstige kwaliteitsanalyse zou nuttig zijn op te nemen of de beller duidelijk is geïnformeerd over de doorverwijzing (afdeling, telefoonnummer/optie, of verwachte wachttijd)."
+      "09:09 Daily Huddle: Het zou kunnen helpen om de beller expliciet te adviseren om hun polisgegevens paraat te hebben bij contact met de afdeling autoverzekeringen, om latere irritatie te voorkomen."
     ]
   },
   "verkeerdVerbonden": {
