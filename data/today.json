@@ -1,6 +1,6 @@
 {
   "date": "2026-09-14",
-  "generated_at": "2026-09-14T08:20:52Z",
+  "generated_at": "2026-09-14T08:31:06Z",
   "drukte": "rustig",
   "gesprekken": 1,
   "stats": {
@@ -17,7 +17,7 @@
       "tijd": "09:09",
       "titel": "Daily Huddle",
       "personen": "Verzekerde: anoniem · Dewi Verver | Juridisch Medewerker",
-      "samenvatting": "De beller belt de juridische helpdesk met een vraag over autoverzekering (het toevoegen van een nieuwe auto aan de bestaande polis van zijn vader). De medewerker erkent dat dit onderwerp niet tot de juridische helpdesk behoort en verwijst de beller door naar de juiste afdeling (autoverzekeringen) met de instructie om opnieuw te bellen en optie 3 te kiezen. De beller is niet geverifieerd en er is geen inhoudelijk juridisch advies gegeven.",
+      "samenvatting": "De beller belt de juridische helpdesk met een vraag over autoverzekering (het toevoegen van een nieuwe auto aan de verzekering van zijn vader). De medewerker erkent dat dit onderwerp niet onder de juridische helpdesk valt, maar bij de afdeling autoverzekeringen hoort, en verwijst de beller door om opnieuw te bellen en optie 3 te kiezen. De beller is niet geverifieerd en er is geen inhoudelijk juridisch advies gegeven.",
       "tags": [
         [
           "tag-overig",
@@ -38,11 +38,11 @@
   "acties": [],
   "analyse": {
     "goed": [
-      "09:09 Daily Huddle: Medewerker herkent correct dat autoverzekeringsvraag buiten het domein van juridische helpdesk valt en verwijst proactief door naar juiste afdeling (autoverzekeringen, optie 3) met concrete routeringsinstructie.",
-      "09:09 Daily Huddle: Geen onnodige verificatie ingesteld bij routering naar ander team; efficiënte afhandeling."
+      "09:09 Daily Huddle: Medewerker herkent correct dat autoverzekeringsvraag buiten het juridische helpdesk-domein valt en verwijst de beller professioneel door naar de juiste afdeling (autoverzekeringen, optie 3) zonder onnodige verificatie.",
+      "Geen tijd verspild aan verificatie of adviespoging voor uit-scope onderwerp."
     ],
     "beter": [
-      "09:09 Daily Huddle: Overweeg of de medewerker de beller meer specifieke contactgegevens van de autoverzekeringenafdeling had kunnen geven (bijv. directe lijn, openingstijden) voor snellere afhandeling."
+      "09:09 Daily Huddle: Het zou helpen als de medewerker de beller ook een directe vervolgstap had gegeven (bijv. 'U kunt ons rechtstreeks op [nummer] bereiken' of 'Kies optie 3 in het menu'), hoewel de doorverwijzing zelf correct is."
     ]
   },
   "verkeerdVerbonden": {
