@@ -1,27 +1,60 @@
 {
   "date": "2026-09-15",
-  "generated_at": "2026-09-15T13:30:55Z",
+  "generated_at": "2026-09-15T13:40:52Z",
   "drukte": "rustig",
-  "gesprekken": 0,
+  "gesprekken": 1,
   "stats": {
-    "opgelost": 0,
+    "opgelost": 1,
     "brandmeester": 0,
     "afkoop": 0,
     "terugbel": 0,
     "geenDekking": 0,
     "verkeerdNummer": 0
   },
-  "score": 0,
-  "conversations": [],
+  "score": 8.5,
+  "conversations": [
+    {
+      "tijd": "15:31",
+      "titel": "Polis en gezinsleden – vraag over dochter en zoon",
+      "personen": "Verzekerde: anoniem · Dewi Verver | Juridisch Medewerker",
+      "samenvatting": "Beller Arno Rossum (postcode 3295, huisnummer 9) belt over zijn nieuwe polis en stelt vragen over de dekking van zijn 20-jarige dochter (studerend, deels op ander adres ingeschreven) en zijn zoon (niet meer thuiswonend). De medewerker geeft inhoudelijk advies: dochter valt onder de verzekering omdat zij primair op het huisadres woont, en de zoon valt automatisch buiten de polis omdat hij niet meer thuiswonend is. De beller wordt geverifieerd via postcode en huisnummer.",
+      "tags": [
+        [
+          "tag-consument",
+          "Consumentenrecht"
+        ]
+      ],
+      "uitkomst": [
+        "outcome-opgelost",
+        "Telefonisch opgelost"
+      ],
+      "terugbel": false,
+      "verkeerdVerbonden": false,
+      "rechtsbijstandVerwijzing": false,
+      "adviesGegeven": true,
+      "identiteitGeverifieerd": true
+    }
+  ],
   "acties": [],
   "analyse": {
-    "goed": [],
-    "beter": []
+    "goed": [
+      "15:31 Polis en gezinsleden: Identiteit correct geverifieerd via postcode en huisnummer voordat advies werd gegeven",
+      "15:31 Polis en gezinsleden: Inhoudelijk advies gegeven over polisuitbreiding en gezinslidendekking (dochter vs. zoon)",
+      "15:31 Polis en gezinsleden: Telefonisch opgelost in één contact"
+    ],
+    "beter": [
+      "15:31 Polis en gezinsleden: Geen concrete vervolgdeadline of schriftelijke bevestiging van de gegeven adviezen afgesproken (raadzaam voor poliswijzigingen met gezinsleden)"
+    ]
   },
   "verkeerdVerbonden": {
     "aantal": 0,
     "percentage": 0.0
   },
   "rechtsbijstandVerwijzingen": 0,
-  "categorieen": []
+  "categorieen": [
+    [
+      "Consumentenrecht",
+      1
+    ]
+  ]
 }
