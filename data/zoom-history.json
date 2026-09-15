@@ -1706,11 +1706,32 @@
         "nummer": "+31683792820",
         "teruggebeld": false,
         "tijd": "11:21"
+      },
+      {
+        "callResult": "abandoned",
+        "naam": "Onbekend",
+        "nummer": "+31611620825",
+        "teruggebeld": false,
+        "tijd": "11:33"
+      },
+      {
+        "callResult": "abandoned",
+        "naam": "Onbekend",
+        "nummer": "+31886630663",
+        "teruggebeld": false,
+        "tijd": "11:34"
+      },
+      {
+        "callResult": "abandoned",
+        "naam": "Onbekend",
+        "nummer": "+31651077821",
+        "teruggebeld": false,
+        "tijd": "11:35"
       }
     ],
     "date": "2026-09-15",
-    "generated_at": "2026-09-15T09:30:46Z",
-    "nietTerugGebeld": 4,
+    "generated_at": "2026-09-15T09:40:40Z",
+    "nietTerugGebeld": 7,
     "nietTerugGebeldNummers": [
       {
         "callResult": "abandoned",
@@ -1739,10 +1760,31 @@
         "nummer": "+31683792820",
         "teruggebeld": false,
         "tijd": "11:21"
+      },
+      {
+        "callResult": "abandoned",
+        "naam": "Onbekend",
+        "nummer": "+31611620825",
+        "teruggebeld": false,
+        "tijd": "11:33"
+      },
+      {
+        "callResult": "abandoned",
+        "naam": "Onbekend",
+        "nummer": "+31886630663",
+        "teruggebeld": false,
+        "tijd": "11:34"
+      },
+      {
+        "callResult": "abandoned",
+        "naam": "Onbekend",
+        "nummer": "+31651077821",
+        "teruggebeld": false,
+        "tijd": "11:35"
       }
     ],
     "terugGebeld": 0,
-    "totaalGemist": 4,
-    "totaalInbound": 4
+    "totaalGemist": 7,
+    "totaalInbound": 7
   }
 }
