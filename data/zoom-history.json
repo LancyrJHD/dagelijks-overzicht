@@ -1678,13 +1678,43 @@
     "totaalInbound": 21
   },
   "2026-09-15": {
-    "alleGemistNummers": [],
+    "alleGemistNummers": [
+      {
+        "callResult": "abandoned",
+        "naam": "Onbekend",
+        "nummer": "+31886630663",
+        "teruggebeld": false,
+        "tijd": "11:04"
+      },
+      {
+        "callResult": "abandoned",
+        "naam": "Onbekend",
+        "nummer": "+31886630663",
+        "teruggebeld": false,
+        "tijd": "11:06"
+      }
+    ],
     "date": "2026-09-15",
-    "generated_at": "2026-09-15T09:00:57Z",
-    "nietTerugGebeld": 0,
-    "nietTerugGebeldNummers": [],
+    "generated_at": "2026-09-15T09:10:40Z",
+    "nietTerugGebeld": 2,
+    "nietTerugGebeldNummers": [
+      {
+        "callResult": "abandoned",
+        "naam": "Onbekend",
+        "nummer": "+31886630663",
+        "teruggebeld": false,
+        "tijd": "11:04"
+      },
+      {
+        "callResult": "abandoned",
+        "naam": "Onbekend",
+        "nummer": "+31886630663",
+        "teruggebeld": false,
+        "tijd": "11:06"
+      }
+    ],
     "terugGebeld": 0,
-    "totaalGemist": 0,
-    "totaalInbound": 0
+    "totaalGemist": 2,
+    "totaalInbound": 2
   }
 }

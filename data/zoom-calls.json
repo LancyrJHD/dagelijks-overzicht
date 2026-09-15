@@ -1,10 +1,40 @@
 {
   "date": "2026-09-15",
-  "generated_at": "2026-09-15T09:00:57Z",
-  "totaalInbound": 0,
-  "totaalGemist": 0,
+  "generated_at": "2026-09-15T09:10:40Z",
+  "totaalInbound": 2,
+  "totaalGemist": 2,
   "terugGebeld": 0,
-  "nietTerugGebeld": 0,
-  "nietTerugGebeldNummers": [],
-  "alleGemistNummers": []
+  "nietTerugGebeld": 2,
+  "nietTerugGebeldNummers": [
+    {
+      "nummer": "+31886630663",
+      "naam": "Onbekend",
+      "tijd": "11:04",
+      "callResult": "abandoned",
+      "teruggebeld": false
+    },
+    {
+      "nummer": "+31886630663",
+      "naam": "Onbekend",
+      "tijd": "11:06",
+      "callResult": "abandoned",
+      "teruggebeld": false
+    }
+  ],
+  "alleGemistNummers": [
+    {
+      "nummer": "+31886630663",
+      "naam": "Onbekend",
+      "tijd": "11:04",
+      "callResult": "abandoned",
+      "teruggebeld": false
+    },
+    {
+      "nummer": "+31886630663",
+      "naam": "Onbekend",
+      "tijd": "11:06",
+      "callResult": "abandoned",
+      "teruggebeld": false
+    }
+  ]
 }
