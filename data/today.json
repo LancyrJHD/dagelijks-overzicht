@@ -1,6 +1,6 @@
 {
   "date": "2026-09-15",
-  "generated_at": "2026-09-15T13:40:52Z",
+  "generated_at": "2026-09-15T13:50:56Z",
   "drukte": "rustig",
   "gesprekken": 1,
   "stats": {
@@ -17,7 +17,7 @@
       "tijd": "15:31",
       "titel": "Polis en gezinsleden – vraag over dochter en zoon",
       "personen": "Verzekerde: anoniem · Dewi Verver | Juridisch Medewerker",
-      "samenvatting": "Beller Arno Rossum (postcode 3295, huisnummer 9) belt over zijn nieuwe polis en stelt vragen over de dekking van zijn 20-jarige dochter (studerend, deels op ander adres ingeschreven) en zijn zoon (niet meer thuiswonend). De medewerker geeft inhoudelijk advies: dochter valt onder de verzekering omdat zij primair op het huisadres woont, en de zoon valt automatisch buiten de polis omdat hij niet meer thuiswonend is. De beller wordt geverifieerd via postcode en huisnummer.",
+      "samenvatting": "Arno Rossum belt met vragen over zijn nieuwe polis en gezinsleden. De medewerker verifieert hem via postcode (3295) en huisnummer 9. De beller informeert naar de verzekeringsdekking voor zijn 20-jarige dochter die deels op een ander adres woont wegens studie, en zijn zoon die niet meer thuis woont. De medewerker geeft advies dat de dochter onder de polis valt omdat zij nog hoofdzakelijk op het adres van de beller woont, en dat de zoon automatisch buiten de polis valt omdat hij niet meer thuiswonend is – geen aanpassing nodig.",
       "tags": [
         [
           "tag-consument",
@@ -39,11 +39,11 @@
   "analyse": {
     "goed": [
       "15:31 Polis en gezinsleden: Identiteit correct geverifieerd via postcode en huisnummer voordat advies werd gegeven",
-      "15:31 Polis en gezinsleden: Inhoudelijk advies gegeven over polisuitbreiding en gezinslidendekking (dochter vs. zoon)",
-      "15:31 Polis en gezinsleden: Telefonisch opgelost in één contact"
+      "15:31 Polis en gezinsleden: Duidelijk advies gegeven over dekkingsvraag gezinsleden (dochter onder polis, zoon buiten polis)",
+      "15:31 Polis en gezinsleden: Beller telefonisch opgelost zonder vervolgcontact nodig"
     ],
     "beter": [
-      "15:31 Polis en gezinsleden: Geen concrete vervolgdeadline of schriftelijke bevestiging van de gegeven adviezen afgesproken (raadzaam voor poliswijzigingen met gezinsleden)"
+      "15:31 Polis en gezinsleden: Geen concrete deadline of vervolgstap benoemd voor eventuele toekomstige wijzigingen in gezinssituatie (bijvoorbeeld wanneer dochter volledig uitwonend wordt)"
     ]
   },
   "verkeerdVerbonden": {
