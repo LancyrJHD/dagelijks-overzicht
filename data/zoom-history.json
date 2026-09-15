@@ -1727,11 +1727,18 @@
         "nummer": "+31651077821",
         "teruggebeld": false,
         "tijd": "11:35"
+      },
+      {
+        "callResult": "abandoned",
+        "naam": "Onbekend",
+        "nummer": "+31624517684",
+        "teruggebeld": false,
+        "tijd": "16:18"
       }
     ],
     "date": "2026-09-15",
-    "generated_at": "2026-09-15T14:10:44Z",
-    "nietTerugGebeld": 7,
+    "generated_at": "2026-09-15T14:20:38Z",
+    "nietTerugGebeld": 8,
     "nietTerugGebeldNummers": [
       {
         "callResult": "abandoned",
@@ -1781,10 +1788,17 @@
         "nummer": "+31651077821",
         "teruggebeld": false,
         "tijd": "11:35"
+      },
+      {
+        "callResult": "abandoned",
+        "naam": "Onbekend",
+        "nummer": "+31624517684",
+        "teruggebeld": false,
+        "tijd": "16:18"
       }
     ],
     "terugGebeld": 0,
-    "totaalGemist": 7,
-    "totaalInbound": 8
+    "totaalGemist": 8,
+    "totaalInbound": 9
   }
 }
