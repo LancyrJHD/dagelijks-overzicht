@@ -1,6 +1,6 @@
 {
   "date": "2026-09-15",
-  "generated_at": "2026-09-15T14:29:54Z",
+  "generated_at": "2026-09-15T14:31:03Z",
   "drukte": "rustig",
   "gesprekken": 1,
   "stats": {
@@ -11,17 +11,17 @@
     "geenDekking": 0,
     "verkeerdNummer": 0
   },
-  "score": 8.5,
+  "score": 8.1,
   "conversations": [
     {
       "tijd": "15:31",
       "titel": "Polis en gezinsleden – vraag over dochter en zoon",
       "personen": "Verzekerde: anoniem · Dewi Verver | Juridisch Medewerker",
-      "samenvatting": "Arno Rossum belt met vragen over zijn nieuwe polis en de verzekeringsdekking van zijn gezinsleden. De medewerker verifieert zijn identiteit via postcode (3295) en huisnummer (9) en geeft inhoudelijk advies: de 20-jarige dochter valt onder de gezinsverzekering omdat zij nog thuis woont (hoofdadres) ondanks inschrijving op een ander adres voor studie; de zoon die niet meer thuiswoont valt buiten de polis en hoeft niet apart te worden aangepast. Het gesprek wordt telefonisch opgelost.",
+      "samenvatting": "Arno Rossum belt over zijn nieuwe polis en heeft vragen over de dekking van zijn gezinsleden. De medewerker verifieert zijn identiteit via postcode (3295) en huisnummer (9), geeft advies dat zijn 20-jarige dochter die deels op een ander adres woont (voor studie) onder de gezinsverzekering valt, en dat zijn zoon die niet meer thuis woont automatisch buiten de polis valt zonder dat aanpassingen nodig zijn. Het gesprek eindigt met beantwoorde vragen.",
       "tags": [
         [
           "tag-consument",
-          "Verzekeringsrecht - Familiedekking"
+          "Consumentenrecht"
         ]
       ],
       "uitkomst": [
@@ -38,12 +38,12 @@
   "acties": [],
   "analyse": {
     "goed": [
-      "15:31 'Polis en gezinsleden': Identiteit correct geverifieerd via postcode en huisnummer voordat advies werd gegeven",
-      "15:31 'Polis en gezinsleden': Inhoudelijk advies duidelijk gegeven over gezinsleden-dekking (dochter onder polis vanwege hoofdadres, zoon buiten polis)",
-      "15:31 'Polis en gezinsleden': Zaak telefonisch opgelost, geen vervolgcontact nodig"
+      "15:31 Polis en gezinsleden: Identiteit correct geverifieerd via postcode en huisnummer voordat advies werd gegeven",
+      "15:31 Polis en gezinsleden: Advies gegeven over gezinslidendekking met concrete situaties (studerend kind op ander adres blijft inbegrepen, volwassen kind buiten polis)",
+      "15:31 Polis en gezinsleden: Telefonische oplossing zonder vervolgstappen nodig – helder en definitief antwoord gegeven"
     ],
     "beter": [
-      "15:31 'Polis en gezinsleden': Geen concrete deadline of vervolgstap gedocumenteerd (hoewel zaak afgerond is, zou beller beter kunnen voelen zich ondersteund met korte schriftelijke bevestiging)"
+      "15:31 Polis en gezinsleden: Voor gezinslidenvragen adviseus: concretisering of dit vraag betrof naar de duur van dekking voor studerend kind (bijv. tot bepaalde leeftijd/einddatum studie) zou helderheid hebben vergroot – geen deadline of vervolgmoment vastgelegd mocht dit later onduidelijk zijn"
     ]
   },
   "verkeerdVerbonden": {
@@ -53,7 +53,7 @@
   "rechtsbijstandVerwijzingen": 0,
   "categorieen": [
     [
-      "Verzekeringsrecht - Familiedekking",
+      "Consumentenrecht",
       1
     ]
   ]
