@@ -1,6 +1,6 @@
 {
   "date": "2026-09-15",
-  "generated_at": "2026-09-15T14:40:47Z",
+  "generated_at": "2026-09-15T14:50:52Z",
   "drukte": "rustig",
   "gesprekken": 1,
   "stats": {
@@ -17,7 +17,7 @@
       "tijd": "15:31",
       "titel": "Polis en gezinsleden – vraag over dochter en zoon",
       "personen": "Verzekerde: anoniem · Dewi Verver | Juridisch Medewerker",
-      "samenvatting": "Beller Arno Rossum (postcode 3295, huisnummer 9) vraagt naar verzekeringsdekkingsgevolgen voor zijn 20-jarige dochter die deels op een ander adres woont vanwege studie, en voor zijn niet-thuiswonende zoon. Medewerker verifieert via postcode en huisnummer en geeft inhoudelijk advies: de dochter valt onder de gezinsverzekering omdat zij hoofd adres bij ouders heeft, de zoon valt automatisch buiten de polis omdat hij niet meer thuiswonend is. Gesprek wordt telefonisch opgelost.",
+      "samenvatting": "Arno Rossum belde met een vraag over zijn nieuwe polis aangaande de verzekeringsdekking van zijn gezinsleden. De medewerker verificeerde de beller via postcode (3295) en huisnummer (9) en gaf inhoudelijk advies: de 20-jarige dochter valt onder de familieverzekering omdat zij nog thuis woont (studerend), en de zoon die uitwonend is, valt automatisch buiten de polis zonder aparte aanpassing nodig. De beller was tevreden en het gesprek werd telefonisch opgelost.",
       "tags": [
         [
           "tag-consument",
@@ -38,13 +38,12 @@
   "acties": [],
   "analyse": {
     "goed": [
-      "15:31 – Polis en gezinsleden: Identiteit correct geverifieerd via postcode en huisnummer voordat advies werd gegeven",
-      "15:31 – Polis en gezinsleden: Inhoudelijk advies gegeven over dekkingsstatus van gezinsleden (dochter onder polis, zoon buiten polis)",
-      "15:31 – Polis en gezinsleden: Praktische situatie duidelijk uitgelegd (studeerplaats vs. hoofdadres criteria)"
+      "15:31 'Polis en gezinsleden': Identiteit correct geverifieerd via postcode en huisnummer voordat advies werd gegeven",
+      "15:31 'Polis en gezinsleden': Inhoudelijk duidelijk advies gegeven over gezinslidendekking (dochter thuis = mee verzekerd, zoon uitwonend = buiten polis)",
+      "15:31 'Polis en gezinsleden': Gesprek telefonisch opgelost, beller tevreden"
     ],
     "beter": [
-      "15:31 – Polis en gezinsleden: Geen concrete vervolgstappen of documentatie-verwijzingen genoemd (bijv. schriftelijke bevestiging van dekkingsstatus gezinsleden aangeboden of deadline voor wijzigingsverzoeking indien nodig)",
-      "15:31 – Polis en gezinsleden: Geen expliciete notatie of timing vastgesteld voor eventuele vervolgacties (bijv. als zoon alsnog onder polis zou moeten vallen)"
+      "15:31 'Polis en gezinsleden': Geen concrete vervolgdeadline genoemd (hoewel niet altijd nodig bij informatievragen, kan expliciete toezegging 'ik stuur u dit schriftelijk binnen X werkdagen' de kwaliteit versterken)"
     ]
   },
   "verkeerdVerbonden": {
