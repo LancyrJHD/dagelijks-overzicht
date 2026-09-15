@@ -1692,11 +1692,18 @@
         "nummer": "+31886630663",
         "teruggebeld": false,
         "tijd": "11:06"
+      },
+      {
+        "callResult": "abandoned",
+        "naam": "Onbekend",
+        "nummer": "+31616138399",
+        "teruggebeld": false,
+        "tijd": "11:12"
       }
     ],
     "date": "2026-09-15",
-    "generated_at": "2026-09-15T09:10:40Z",
-    "nietTerugGebeld": 2,
+    "generated_at": "2026-09-15T09:20:42Z",
+    "nietTerugGebeld": 3,
     "nietTerugGebeldNummers": [
       {
         "callResult": "abandoned",
@@ -1711,10 +1718,17 @@
         "nummer": "+31886630663",
         "teruggebeld": false,
         "tijd": "11:06"
+      },
+      {
+        "callResult": "abandoned",
+        "naam": "Onbekend",
+        "nummer": "+31616138399",
+        "teruggebeld": false,
+        "tijd": "11:12"
       }
     ],
     "terugGebeld": 0,
-    "totaalGemist": 2,
-    "totaalInbound": 2
+    "totaalGemist": 3,
+    "totaalInbound": 3
   }
 }
