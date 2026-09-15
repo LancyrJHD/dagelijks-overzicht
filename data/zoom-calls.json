@@ -1,10 +1,10 @@
 {
   "date": "2026-09-15",
-  "generated_at": "2026-09-15T09:20:42Z",
-  "totaalInbound": 3,
-  "totaalGemist": 3,
+  "generated_at": "2026-09-15T09:30:46Z",
+  "totaalInbound": 4,
+  "totaalGemist": 4,
   "terugGebeld": 0,
-  "nietTerugGebeld": 3,
+  "nietTerugGebeld": 4,
   "nietTerugGebeldNummers": [
     {
       "nummer": "+31886630663",
@@ -24,6 +24,13 @@
       "nummer": "+31616138399",
       "naam": "Onbekend",
       "tijd": "11:12",
+      "callResult": "abandoned",
+      "teruggebeld": false
+    },
+    {
+      "nummer": "+31683792820",
+      "naam": "Onbekend",
+      "tijd": "11:21",
       "callResult": "abandoned",
       "teruggebeld": false
     }
@@ -47,6 +54,13 @@
       "nummer": "+31616138399",
       "naam": "Onbekend",
       "tijd": "11:12",
+      "callResult": "abandoned",
+      "teruggebeld": false
+    },
+    {
+      "nummer": "+31683792820",
+      "naam": "Onbekend",
+      "tijd": "11:21",
       "callResult": "abandoned",
       "teruggebeld": false
     }

@@ -1699,11 +1699,18 @@
         "nummer": "+31616138399",
         "teruggebeld": false,
         "tijd": "11:12"
+      },
+      {
+        "callResult": "abandoned",
+        "naam": "Onbekend",
+        "nummer": "+31683792820",
+        "teruggebeld": false,
+        "tijd": "11:21"
       }
     ],
     "date": "2026-09-15",
-    "generated_at": "2026-09-15T09:20:42Z",
-    "nietTerugGebeld": 3,
+    "generated_at": "2026-09-15T09:30:46Z",
+    "nietTerugGebeld": 4,
     "nietTerugGebeldNummers": [
       {
         "callResult": "abandoned",
@@ -1725,10 +1732,17 @@
         "nummer": "+31616138399",
         "teruggebeld": false,
         "tijd": "11:12"
+      },
+      {
+        "callResult": "abandoned",
+        "naam": "Onbekend",
+        "nummer": "+31683792820",
+        "teruggebeld": false,
+        "tijd": "11:21"
       }
     ],
     "terugGebeld": 0,
-    "totaalGemist": 3,
-    "totaalInbound": 3
+    "totaalGemist": 4,
+    "totaalInbound": 4
   }
 }
