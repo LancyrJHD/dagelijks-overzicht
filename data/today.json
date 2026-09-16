@@ -1,6 +1,6 @@
 {
   "date": "2026-09-16",
-  "generated_at": "2026-09-16T13:20:58Z",
+  "generated_at": "2026-09-16T13:31:11Z",
   "drukte": "rustig",
   "gesprekken": 1,
   "stats": {
@@ -17,7 +17,7 @@
       "tijd": "09:01",
       "titel": "Daily Huddle",
       "personen": "Verzekerde: anoniem · Dewi Verver | Juridisch Medewerker",
-      "samenvatting": "Beller Moussavi belde de juridische helpdesk met een vraag over een autoverzekeringspremie en schadeverloop (zes jaar schadevrij nu één jaar, premie gestegen van EUR 65 naar EUR 120). De medewerker stelde vast dat dit een autoverzekeringsvraag is en daarom niet onder de juridische helpdesk valt. De beller werd doorverwezen naar de juiste afdeling (opnieuw bellen en optie 3 kiezen). Identiteit werd niet geverifieerd en geen inhoudelijk juridisch advies werd gegeven.",
+      "samenvatting": "Beller Moussavi belt de juridische helpdesk met een vraag over autoverzekeringspremie en schadeverloop (van EUR 65 naar EUR 120 en van 6 jaar schadevrij naar 1 jaar). De medewerker erkent dat dit onderwerp niet bij de juridische helpdesk hoort en verwijst de beller door naar de autoverzekeringseditie (toets 3). Identiteit is niet geverifieerd en geen juridisch advies is gegeven.",
       "tags": [
         [
           "tag-overig",
@@ -38,11 +38,11 @@
   "acties": [],
   "analyse": {
     "goed": [
-      "09:01 Daily Huddle: Medewerker herkende correct dat het om een autoverzekeringsvraag gaat die buiten het mandate van de juridische helpdesk valt",
-      "09:01 Daily Huddle: Beller werd adequaat doorverwezen naar de juiste afdeling met concrete instructies (opnieuw bellen, optie 3)"
+      "09:01 Daily Huddle: Medewerker herkent correct dat de vraag over autoverzekeringspremie en schadeverloop niet binnen het mandaat van de juridische helpdesk valt en verwijst de beller proactief door naar de juiste afdeling (autoverzekeringseditie, toets 3). Dit voorkomt inefficiënte behandeling en zorgt voor snelle oplossing.",
+      "09:01 Daily Huddle: Geen onnodige verificatie uitgevoerd omdat geen juridisch advies werd gegeven. De doorverwijzing is het juiste antwoord op een inhoudelijk misgeplaatst contact."
     ],
     "beter": [
-      "09:01 Daily Huddle: Hoewel doorverwijzing correct was, ontbrak bevestiging dat beller de vervolgstap succesvol kon uitvoeren (had deze optie goed kunnen notiëren of herhalen)"
+      "09:01 Daily Huddle: Aanbeveling voor vervolgcontact zou kunnen verhelderen – bijvoorbeeld: 'U bent nu doorgeschakeld naar toets 3' of 'Uw gegevens zijn doorgegeven aan het team autoverzekering'. Dit versterkt de klanttevredenheid."
     ]
   },
   "verkeerdVerbonden": {
