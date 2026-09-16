@@ -1,6 +1,6 @@
 {
   "date": "2026-09-16",
-  "generated_at": "2026-09-16T14:40:44Z",
+  "generated_at": "2026-09-16T14:50:47Z",
   "tickets": [
     {
       "ticketNumber": "2728",
@@ -61,21 +61,33 @@
       "webUrl": "https://desk.zoho.eu/support/htjzlancyr/ShowHomePage.do#Cases/dv/195464000014038020",
       "channel": "Phone",
       "doorgezetBrandmeester": false
+    },
+    {
+      "ticketNumber": "2732",
+      "tijd": "16:46",
+      "titel": "FW: 84214089.FW: ziektewet na bedrijf ongeval Ronald De Bleijser",
+      "klant": "De juridische helpdesk",
+      "status": "Open",
+      "statusType": "",
+      "prioriteit": "Niet ingesteld",
+      "webUrl": "https://desk.zoho.eu/support/htjzlancyr/ShowHomePage.do#Cases/dv/195464000014068001",
+      "channel": "Email",
+      "doorgezetBrandmeester": false
     }
   ],
   "channelCounts": {
-    "Email": 3,
+    "Email": 4,
     "Phone": 2
   },
   "brandmeesterCount": 0,
   "ticketStats": {
-    "nieuweVandaag": 5,
+    "nieuweVandaag": 6,
     "geslotenVandaag": 7,
-    "totaalOpen": 23,
+    "totaalOpen": 24,
     "inDeWacht": 17,
     "statusBreakdown": {
+      "Open": 7,
       "In de wacht": 17,
-      "Open": 6,
       "Gesloten": 632
     },
     "capBereikt": false

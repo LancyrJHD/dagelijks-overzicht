@@ -1928,11 +1928,25 @@
         "nummer": "+31651809892",
         "teruggebeld": false,
         "tijd": "13:54"
+      },
+      {
+        "callResult": "overflowed",
+        "naam": "Onbekend",
+        "nummer": "+31685315922",
+        "teruggebeld": false,
+        "tijd": "16:34"
+      },
+      {
+        "callResult": "overflowed",
+        "naam": "Onbekend",
+        "nummer": "+31611301313",
+        "teruggebeld": false,
+        "tijd": "16:34"
       }
     ],
     "date": "2026-09-16",
-    "generated_at": "2026-09-16T14:40:49Z",
-    "nietTerugGebeld": 14,
+    "generated_at": "2026-09-16T14:50:52Z",
+    "nietTerugGebeld": 16,
     "nietTerugGebeldNummers": [
       {
         "callResult": "overflowed",
@@ -2031,10 +2045,24 @@
         "nummer": "+31651809892",
         "teruggebeld": false,
         "tijd": "13:54"
+      },
+      {
+        "callResult": "overflowed",
+        "naam": "Onbekend",
+        "nummer": "+31685315922",
+        "teruggebeld": false,
+        "tijd": "16:34"
+      },
+      {
+        "callResult": "overflowed",
+        "naam": "Onbekend",
+        "nummer": "+31611301313",
+        "teruggebeld": false,
+        "tijd": "16:34"
       }
     ],
     "terugGebeld": 0,
-    "totaalGemist": 14,
-    "totaalInbound": 21
+    "totaalGemist": 16,
+    "totaalInbound": 23
   }
 }
