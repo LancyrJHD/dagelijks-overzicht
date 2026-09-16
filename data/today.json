@@ -1,6 +1,6 @@
 {
   "date": "2026-09-16",
-  "generated_at": "2026-09-16T11:50:53Z",
+  "generated_at": "2026-09-16T12:01:07Z",
   "drukte": "rustig",
   "gesprekken": 1,
   "stats": {
@@ -17,7 +17,7 @@
       "tijd": "09:01",
       "titel": "Daily Huddle",
       "personen": "Verzekerde: anoniem · Dewi Verver | Juridisch Medewerker",
-      "samenvatting": "De beller Moussavi belt de juridische helpdesk met een vraag over zijn autoverzekering (premiewijziging en schadevrij jaren). De medewerker Davy stelt vast dat dit onderwerp niet onder de juridische helpdesk valt, maar onder de afdeling autoverzekering. De beller wordt correct doorverwezen naar het juiste keuzemenu (optie 3) van hetzelfde nummer. Er is geen verificatie plaatsgevonden en geen juridisch advies gegeven.",
+      "samenvatting": "Beller Moussavi belde de juridische helpdesk met een vraag over wijzigingen in zijn autoverzekeringspremie en schadevrij-jaren. De medewerker stelde vast dat dit onderwerp niet onder de juridische helpdesk valt, maar onder de afdeling autoverzekering, en verwees de beller door om opnieuw te bellen en optie 3 te kiezen. De beller is niet geverifieerd en er is geen inhoudelijk juridisch advies gegeven.",
       "tags": [
         [
           "tag-overig",
@@ -38,11 +38,11 @@
   "acties": [],
   "analyse": {
     "goed": [
-      "09:01 Daily Huddle: Medewerker Davy herkende correct dat de vraag over autoverzekering (premiewijziging, schadevrij jaren) niet onder juridische helpdesk valt en verwees de beller Moussavi doelgericht door naar het juiste keuzemenu (optie 3). Dit voorkomt verspilde tijd en zorgt voor efficiënte routering.",
-      "09:01 Daily Huddle: Geen verificatie nodig geweest omdat geen juridisch advies is gegeven – dit is correct geprotocolleerd als 'advies_gegeven: false'."
+      "09:01 Daily Huddle: Medewerker herkende correct dat de vraag over autoverzekeringspremie en schadevrij-jaren buiten de scope van de juridische helpdesk valt en verwees beller doelbewust door naar de juiste afdeling (autoverzekering, optie 3). Dit is efficiente routering.",
+      "Geen verificatie nodig aangezien geen juridisch advies werd gegeven en beller meteen werd doorverwezen naar competente afdeling."
     ],
     "beter": [
-      "09:01 Daily Huddle: Overweeg in toekomst om bij doorverwijzing kort te bevestigen dat de beller het nieuwe menu heeft bereikt, zodat zeker is dat het vervolgcontact tot stand komt."
+      "09:01 Daily Huddle: Hoewel doorverwijzing correct was, had de medewerker kunnen opmerken of noteren dat dit een \"verkeerd nummergeval\" is en eventueel kunnen voorstellen om dit gesprek in de toekomst al bij de IVR-selectie af te vangen. Dit verhoogt efficiëntie."
     ]
   },
   "verkeerdVerbonden": {
