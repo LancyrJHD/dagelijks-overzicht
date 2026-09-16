@@ -1830,13 +1830,29 @@
     "totaalInbound": 11
   },
   "2026-09-16": {
-    "alleGemistNummers": [],
+    "alleGemistNummers": [
+      {
+        "callResult": "overflowed",
+        "naam": "Onbekend",
+        "nummer": "+31619955158",
+        "teruggebeld": false,
+        "tijd": "09:02"
+      }
+    ],
     "date": "2026-09-16",
-    "generated_at": "2026-09-16T07:00:53Z",
-    "nietTerugGebeld": 0,
-    "nietTerugGebeldNummers": [],
+    "generated_at": "2026-09-16T07:10:38Z",
+    "nietTerugGebeld": 1,
+    "nietTerugGebeldNummers": [
+      {
+        "callResult": "overflowed",
+        "naam": "Onbekend",
+        "nummer": "+31619955158",
+        "teruggebeld": false,
+        "tijd": "09:02"
+      }
+    ],
     "terugGebeld": 0,
-    "totaalGemist": 0,
-    "totaalInbound": 0
+    "totaalGemist": 1,
+    "totaalInbound": 2
   }
 }

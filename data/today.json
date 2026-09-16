@@ -1,27 +1,59 @@
 {
   "date": "2026-09-16",
-  "generated_at": "2026-09-16T07:00:54Z",
+  "generated_at": "2026-09-16T07:10:45Z",
   "drukte": "rustig",
-  "gesprekken": 0,
+  "gesprekken": 1,
   "stats": {
     "opgelost": 0,
     "brandmeester": 0,
     "afkoop": 0,
     "terugbel": 0,
     "geenDekking": 0,
-    "verkeerdNummer": 0
+    "verkeerdNummer": 1
   },
-  "score": 0,
-  "conversations": [],
+  "score": 8.5,
+  "conversations": [
+    {
+      "tijd": "09:01",
+      "titel": "Daily Huddle",
+      "personen": "Verzekerde: anoniem · Dewi Verver | Juridisch Medewerker",
+      "samenvatting": "Beller Moussavi beide de juridische helpdesk met een vraag over een premiewijziging en schadeverloop-berekening van zijn autoverzekering. De medewerker stelde vast dat dit een verzekeringsadministratieve vraag is die niet onder de juridische helpdesk valt, en verwees de beller door naar de juiste afdeling (optie 3 in het keuzemenu). De beller is niet geverifieerd en er is geen inhoudelijk juridisch advies gegeven.",
+      "tags": [
+        [
+          "tag-overig",
+          "Routering"
+        ]
+      ],
+      "uitkomst": [
+        "outcome-verkeerd",
+        "Verkeerd nummer"
+      ],
+      "terugbel": false,
+      "verkeerdVerbonden": true,
+      "rechtsbijstandVerwijzing": false,
+      "adviesGegeven": false,
+      "identiteitGeverifieerd": false
+    }
+  ],
   "acties": [],
   "analyse": {
-    "goed": [],
-    "beter": []
+    "goed": [
+      "09:01 Daily Huddle: Medewerker herkende correct dat de vraag over premiewijziging en schadeverloop-berekening een verzekeringsadministratieve kwestie betreft die niet onder juridische helpdesk valt",
+      "09:01 Daily Huddle: Beller werd professioneel doorverwezen naar de juiste afdeling (optie 3 in keuzemenu) in plaats van onjuist advies te geven"
+    ],
+    "beter": [
+      "09:01 Daily Huddle: Geen verificatie nodig geweest gezien het geen juridische zaak betrof, maar documentatie van de doorverwijzing (wie, waarnaar, wanneer follow-up verwacht) zou de zaak hebben afgerond"
+    ]
   },
   "verkeerdVerbonden": {
-    "aantal": 0,
-    "percentage": 0.0
+    "aantal": 1,
+    "percentage": 100.0
   },
   "rechtsbijstandVerwijzingen": 0,
-  "categorieen": []
+  "categorieen": [
+    [
+      "Routering",
+      1
+    ]
+  ]
 }
