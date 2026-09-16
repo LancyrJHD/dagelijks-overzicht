@@ -1,6 +1,6 @@
 {
   "date": "2026-09-16",
-  "generated_at": "2026-09-16T07:30:58Z",
+  "generated_at": "2026-09-16T07:40:47Z",
   "drukte": "rustig",
   "gesprekken": 1,
   "stats": {
@@ -17,7 +17,7 @@
       "tijd": "09:01",
       "titel": "Daily Huddle",
       "personen": "Verzekerde: anoniem · Dewi Verver | Juridisch Medewerker",
-      "samenvatting": "Beller Moussavi belt met een vraag over autoverzekeringspremie en schadeverloop, maar is verkeerd doorverbonden naar de juridische helpdesk. De medewerker herkent dit direct en verwijst de beller correct door naar de afdeling autoverzekering (optie 3 in het keuzemenu). De beller is niet geverifieerd en er is geen inhoudelijk juridisch advies gegeven.",
+      "samenvatting": "De beller Moussavi belt de juridische helpdesk met een vraag over autoverzekeringspremie en schadeverloop (van EUR 65 naar EUR 120, en van 6 jaar schadevrij naar 1 jaar). De medewerker herkent correct dat dit een autoverzekeringsvraag is en geen juridische zaak, en verwijst de beller door naar de juiste afdeling (toets 3) in hetzelfde callcenter. De beller is niet geverifieerd en geen inhoudelijk juridisch advies is gegeven.",
       "tags": [
         [
           "tag-overig",
@@ -38,11 +38,11 @@
   "acties": [],
   "analyse": {
     "goed": [
-      "09:01 Daily Huddle: Medewerker herkende direct dat het een verkeerde doorverbinding betrof (autoverzekeringspremie/schadeverloop hoort niet bij juridische helpdesk) en verwees de beller correct door naar de juiste afdeling (optie 3 autoverzekering). Dit voorkomt vertraging en frustratie voor de klant.",
-      "09:01 Daily Huddle: Geen verificatie vereist of advies gegeven bij verkeerde routering — procedureel correct afgehandeld."
+      "09:01 Daily Huddle: Medewerker herkent correct dat dit een autoverzekeringsvraag is en geen juridische materie, en verwijst de beller professioneel door naar de juiste afdeling (toets 3). Dit toont goed triage-vermogen.",
+      "09:01 Daily Huddle: Geen advies gegeven zonder verificatie — correct protocol gevolgd aangezien dit buiten de juridische helpdesk valt."
     ],
     "beter": [
-      "09:01 Daily Huddle: Geen verdere verbeterpunten; dit was een routing-issue dat adequaat is opgelost."
+      "09:01 Daily Huddle: Bij doorverwijzing zou kunnen worden opgemerkt of aan de beller is uitgelegd dat deze zaak niet onder juridische diensten valt, zodat verwachtingen helder worden gesteld."
     ]
   },
   "verkeerdVerbonden": {
