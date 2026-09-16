@@ -1,23 +1,23 @@
 {
   "date": "2026-09-16",
-  "generated_at": "2026-09-16T15:51:32Z",
+  "generated_at": "2026-09-16T16:01:41Z",
   "drukte": "matig",
   "gesprekken": 4,
   "stats": {
-    "opgelost": 1,
+    "opgelost": 0,
     "brandmeester": 2,
     "afkoop": 0,
-    "terugbel": 0,
+    "terugbel": 1,
     "geenDekking": 0,
     "verkeerdNummer": 1
   },
-  "score": 6.1,
+  "score": 5.8,
   "conversations": [
     {
       "tijd": "09:01",
       "titel": "Daily Huddle",
       "personen": "Verzekerde: anoniem · Dewi Verver | Juridisch Medewerker",
-      "samenvatting": "Beller Moussavi belde de juridische helpdesk met een vraag over autoverzekeringspremie en schadeverloop (van 6 jaar schadevrij naar 1 jaar, premie gestegen van EUR 65 naar EUR 120). De medewerker Davy stelde vast dat dit een autoverzekeringszaak is en geen juridische materie, en verwees de beller naar de juiste afdeling (optie 3 in het keuzemenu). De beller is nooit geverifieerd en er is geen inhoudelijk juridisch advies gegeven.",
+      "samenvatting": "Beller Moussavi belt de juridische helpdesk met een vraag over zijn autoverzekeringspremie en schadeverloopkorting (zes jaar schadevrij nu één jaar, premie gestegen van 65 naar 120 euro). De medewerker stelt vast dat dit een autoverzekeringsadministratieve vraag is, niet juridisch van aard, en verwijst de beller terecht door naar de autoverzekeringsafdeling (option 3 in het keuzemenu). De beller is niet geverifieerd en er is geen inhoudelijk juridisch advies gegeven.",
       "tags": [
         [
           "tag-overig",
@@ -38,18 +38,18 @@
       "tijd": "09:24",
       "titel": "Huurauto Portugal — creditcardnaam en verzekeringskost met Zanne",
       "personen": "Verzekerde: anoniem · Dewi Verver | Juridisch Medewerker",
-      "samenvatting": "Beller Zanne Paardenkoper belt over een huurauto in Portugal waar het autoverhuurbedrijf extra verzekering eiste omdat haar voornaam niet volledig op de creditcard stond; Booking.com heeft €70 terugbetaald, maar zij moest €170 aan het autobedrijf betalen. De medewerker (Davy) gaf advies om zelf de algemene voorwaarden van Booking.com en het autobedrijf na te lezen, en stelde voor dat als het een conflict wordt, de rechtsbijstandsverzekering kan helpen; beller is niet geverifieerd in het systeem.",
+      "samenvatting": "Beller Zanne Paardenkoper belt over een huurauto in Portugal waar de autoverhuurbedrijf extra verzekering eiste omdat de volledige voornaam niet op de creditcard stond; Booking.com heeft al 70 euro terugbetaald. Identiteit is niet geverifieerd in dit gesprek. De medewerker geeft inhoudelijk juridisch advies: hij legt uit hoe algemene voorwaarden van Booking.com en de autoverhuurbedrijf elkaar kunnen uitsluiten, adviseert de beller zelf de voorwaarden na te lezen, en stelt vast dat rechtsbijstand beschikbaar is mocht het een conflict worden.",
       "tags": [
         [
-          "tag-overig",
-          "Consumentenrecht (reizen/autoverhuur)"
+          "tag-consument",
+          "Consumentenrecht"
         ]
       ],
       "uitkomst": [
-        "outcome-opgelost",
-        "Telefonisch opgelost"
+        "outcome-terugbel",
+        "Terugbellen"
       ],
-      "terugbel": false,
+      "terugbel": true,
       "verkeerdVerbonden": false,
       "rechtsbijstandVerwijzing": false,
       "adviesGegeven": true,
@@ -59,7 +59,7 @@
       "tijd": "09:32",
       "titel": "VSO-check en eerste onderhandeling met arbeidsrechtadvocaat",
       "personen": "Verzekerde: anoniem · Dewi Verver",
-      "samenvatting": "Beller heeft een VSO (Verbeteringsrichtlijn Sociaal Overleg) ontvangen en neemt contact op voor rechtsbijstand. Dewi Verver verifieert de beller via postcode, legt twee opties uit (Brandmeester onder rechtsbijstandsverzekering vs. arbeidsrechtadvocaat met eigen kosten), en de beller kiest voor VSO-check met eerste onderhandeling via het advocatenkantoor (€1.210 incl. BTW, deels gedekt door €1.000 juridische bijstandsvergoeding). Beller wordt geverifieerd via postcode, inhoudelijk advies wordt gegeven, en zaak wordt doorverwezen naar arbeidsrechtadvocaat voor verdere behandeling.",
+      "samenvatting": "Beller heeft een VSO (Verticale Schulden Ordening) ontvangen en wil zijn rechten en plichten weten. Dewi Verver heeft twee opties uitgelegd: doorverwijzing naar Brandmeester (onder rechtsbijstandsverzekering) of naar een arbeidsrechtadvocaat voor VSO-check met eerste onderhandeling (tegen betaling, deels gedekt door EUR 1.000 juridische bijstandsvergoeding). Beller kiest voor de advocaatoptie; Dewi verwijst door naar het advocatenkantoor. Identiteit is niet expliciet geverifieerd in het transcript (postcode werd gevraagd maar niet bevestigd), en geen inhoudelijk advies is gegeven – wel een triage en doorverwijzing.",
       "tags": [
         [
           "tag-arbeidsrecht",
@@ -73,14 +73,14 @@
       "terugbel": false,
       "verkeerdVerbonden": false,
       "rechtsbijstandVerwijzing": true,
-      "adviesGegeven": true,
-      "identiteitGeverifieerd": true
+      "adviesGegeven": false,
+      "identiteitGeverifieerd": false
     },
     {
       "tijd": "15:27",
       "titel": "Geschil ex-werkgever: aanzegvergoeding en transitievergoeding met Jaco Zinsoff",
       "personen": "Verzekerde: anoniem · Dewi Verver | Juridisch Medewerker",
-      "samenvatting": "Jaco Zinsoff belt met een arbeidsconflict over aanzegvergoeding en transitievergoeding met zijn ex-werkgever. De identiteit van de beller is niet geverifieerd (geen Zoho-match, geen verificatiepoging in het transcript). De medewerker heeft geen inhoudelijk juridisch advies gegeven, maar heeft de zaak direct doorverwezen naar Brandmeester voor verdere behandeling.",
+      "samenvatting": "Jaco Zinsoff belde met een geschil met zijn ex-werkgever over aanzegvergoeding en transitievergoeding. De werkgever heeft beide vergoedingen eerst toegezegd maar weigert nu uit te betaling op grond van een betwiste uren-inhouding. De medewerker heeft de beller, zonder verdere verificatie of inhoudelijk advies te geven, direct doorverwezen naar Brandmeester voor verdere rechtsbijstandsbehandeling.",
       "tags": [
         [
           "tag-arbeidsrecht",
@@ -101,13 +101,16 @@
   "acties": [],
   "analyse": {
     "goed": [
-      "09:01 Daily Huddle: Correcte routering naar juiste afdeling (autoverzekering is geen juridische materie)",
-      "09:32 VSO-check: Identiteit proper geverifieerd via postcode, twee opties uitgelegd, beller kon bewust kiezen, doorverwijzing naar advocaat met duidelijk kostenplaatje (€1.210, waarvan €1.000 gedekt)"
+      "09:01 Daily Huddle: Correcte triage — medewerker herkent dat dit een administratieve autoverzekeringsquaestie is, niet juridisch, en verwijst terecht door naar de juiste afdeling.",
+      "09:32 VSO-check: Medewerker biedt de beller twee duidelijke opties (Brandmeester vs. advocaat) en respecteert de keuze van de beller; doorverwijzing is helder uitgevoerd.",
+      "15:27 Geschil ex-werkgever: Doorverwijzing naar Brandmeester is passend gegeven de complexiteit van het arbeidsrechtelijk geschil."
     ],
     "beter": [
-      "09:24 Huurauto Portugal: Beller Zanne Paardenkoper is NIET geverifieerd in het systeem voordat juridisch advies werd gegeven over de rechtsbijstandsverzekering en mogelijke geschillenafhandeling. Dit is een kritieke verificatiefout.",
-      "15:27 Arbeidsconflict ex-werkgever: Beller Jaco Zinsoff is niet geverifieerd (geen Zoho-match vastgesteld, geen verificatiepoging ondernomen). Hoewel doorverwijzing naar Brandmeester op zich correct is, ontbreekt een verificatiestap en afspraken over vervolgstappen met concrete deadline.",
-      "Herhaalcontact: Geen systeemaantekening gevonden of waarschuwing gegeven voor potentieel herhaalcontact (beller Moussavi belt 09:01, maar afdeling is correct gewisseld)."
+      "09:24 Huurauto Portugal (Zanne): KRITIEK — Identiteit is NIET geverifieerd voordat juridisch advies werd gegeven. De medewerker legt uit hoe voorwaarden elkaar uitsluiten, adviseert Booking.com-voorwaarden na te lezen, en noemt rechtsbijstand, zonder eerst de beller in het systeem te hebben bevestigd. Dit is een directe schending van de kwaliteitsnorm 'altijd polis+identiteit verifieren'.",
+      "09:24 Huurauto Portugal (Zanne): Geen concrete deadline of vervolgplan afgesproken. Het advies eindigt met 'mocht het een conflict worden' maar geen duidelijke volgende stap of timeframe is vastgesteld.",
+      "09:32 VSO-check: Identiteit is onvoldoende geverifieerd (postcode werd gevraagd maar niet bevestigd in het systeem). Voorgaande norm vereist expliciete verificatie.",
+      "15:27 Geschil ex-werkgever: Identiteit is NIET geverifieerd. Zonder verificatie is doorverwijzing naar rechtsbijstand onvolledig.",
+      "15:27 Geschil ex-werkgever: Geen concrete deadline of vervolgplan benoemd voor de beller (wacht de beller op contact van Brandmeester? Wanneer?)."
     ]
   },
   "verkeerdVerbonden": {
@@ -125,7 +128,7 @@
       1
     ],
     [
-      "Consumentenrecht (reizen/autoverhuur)",
+      "Consumentenrecht",
       1
     ]
   ]
