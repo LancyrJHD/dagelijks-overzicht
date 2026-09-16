@@ -1,6 +1,6 @@
 {
   "date": "2026-09-16",
-  "generated_at": "2026-09-16T09:01:05Z",
+  "generated_at": "2026-09-16T09:10:50Z",
   "drukte": "rustig",
   "gesprekken": 1,
   "stats": {
@@ -17,7 +17,7 @@
       "tijd": "09:01",
       "titel": "Daily Huddle",
       "personen": "Verzekerde: anoniem · Dewi Verver | Juridisch Medewerker",
-      "samenvatting": "Beller Moussavi belt met een vraag over autoverzekeringspremieberekeningen (schadevrij-korting en tariefstijging van €65 naar €120). De medewerker (Davy) stelt vast dat dit een autoverzekeringsvraag is, niet een juridische vraag, en verwijst de beller door naar het juiste keuzemenu (optie 3) van dezelfde helpdesk. Er is geen juridisch advies gegeven en geen verificatie uitgevoerd.",
+      "samenvatting": "Beller Moussavi belt met een vraag over autoverzekeringspremie en schadeverloop (schadevrij-korting veranderd van 6 naar 1 jaar, premie gestegen van EUR 65 naar EUR 120). De medewerker stelt vast dat dit een autoverzekeringsvraag betreft en geen juridische zaak, en verwijst de beller correct door naar de autoverzekeringsvraag (menukeuze 3). Beller is niet geverifieerd en ontvangt geen juridisch advies, omdat het onderwerp niet onder de juridische helpdesk valt.",
       "tags": [
         [
           "tag-overig",
@@ -38,12 +38,11 @@
   "acties": [],
   "analyse": {
     "goed": [
-      "09:01 Daily Huddle: Medewerker Davy herkent correct dat dit een autoverzekeringsvraag is (premieberekening, schadevrij-korting), niet een juridische vraag, en verwijst de beller professioneel door naar het juiste keuzemenu (optie 3) van dezelfde helpdesk.",
-      "Geen onnodige verificatie uitgevoerd voor een doorverwijzing naar een ander departement — efficiënt routeren.",
-      "Beller wordt geholpen met juiste vervolgstap."
+      "09:01 Daily Huddle: Medewerker herkende correct dat de autoverzekeringsvraag (premiewijziging, schadevrij-korting) buiten het juridische domein valt en verwees beller correct door naar menukeuze 3 (autoverzekering). Dit voorkomt inefficiënte verwerking.",
+      "09:01 Daily Huddle: Geen onnodige verificatie ingesteld omdat het onderwerp niet onder juridische hulp valt – efficiënt proces."
     ],
     "beter": [
-      "Bij doorverwijzing zou nuttig kunnen zijn om de beller expliciet te instrueren welke informatie (bijv. polisnummer) klaar te houden voor het vervolgcontact met de autoverzekeringsakantoor, zodat het vervolgproces soepel verloopt."
+      "09:01 Daily Huddle: Overwegen of medewerker aan beller Moussavi bij het doorverwijzen kon meegeven dat premiewijzigingen en schadevrij-kortingen standaard door de autoverzekeringafdeling worden behandeld, zodat klant beter begrijpt waarom doorverwijzing plaatsvindt."
     ]
   },
   "verkeerdVerbonden": {
