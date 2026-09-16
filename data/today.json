@@ -1,6 +1,6 @@
 {
   "date": "2026-09-16",
-  "generated_at": "2026-09-16T10:50:47Z",
+  "generated_at": "2026-09-16T11:01:06Z",
   "drukte": "rustig",
   "gesprekken": 1,
   "stats": {
@@ -17,7 +17,7 @@
       "tijd": "09:01",
       "titel": "Daily Huddle",
       "personen": "Verzekerde: anoniem · Dewi Verver | Juridisch Medewerker",
-      "samenvatting": "De beller Moussavi belt met een vraag over zijn autoverzekeringspremie en schadevergoedingskorting, maar is verkeerd doorverbonden naar de juridische helpdesk. De medewerker erkent dit en verwijst de beller door naar de juiste afdeling (autoverzekering) met instructie om opnieuw te bellen en optie 3 te kiezen. De beller is niet geverifieerd en er is geen inhoudelijk juridisch advies gegeven.",
+      "samenvatting": "De beller (Moussavi) heeft een vraag over een autoverzekeringspremie en schadevrij-korting. De medewerker heeft correct herkend dat dit een autoverzekeringsvraag is, niet juridisch, en heeft de beller doorverwezen naar de juiste afdeling (optie 3 in het keuzemenu). De beller is niet geverifieerd en er is geen inhoudelijk juridisch advies gegeven.",
       "tags": [
         [
           "tag-overig",
@@ -28,7 +28,7 @@
         "outcome-verkeerd",
         "Verkeerd nummer"
       ],
-      "terugbel": true,
+      "terugbel": false,
       "verkeerdVerbonden": true,
       "rechtsbijstandVerwijzing": false,
       "adviesGegeven": false,
@@ -38,11 +38,11 @@
   "acties": [],
   "analyse": {
     "goed": [
-      "09:01 Daily Huddle: Medewerker herkende correct dat de beller naar de verkeerde afdeling was doorverbonden en verwees proactief door naar autoverzekering met concrete routeringsinstructie (optie 3). Dit voorkomt verdere verspilling van tijd voor klant en helpdesk.",
-      "Geen ongerechtvaardigde verificatie nodig: Dit was een routing-issue zonder inhoudelijk juridisch advies, dus verificatie was hier niet van toepassing."
+      "09:01 Daily Huddle: Medewerker heeft correct herkend dat de vraag over autoverzekeringspremie en schadevrij-korting buiten juridische competentie valt en heeft de beller doeltreffend doorverwezen naar de juiste afdeling (optie 3). Juiste triagehandeling.",
+      "09:01 Daily Huddle: Geen juridisch advies gegeven zonder verificatie, wat correct is. Doorverwijzing is het passende vervolg."
     ],
     "beter": [
-      "09:01 Daily Huddle: Geen concrete vervolgdeadline genoemd (bijv. 'bel nu meteen of probeer vandaag nog'). Dit kan helpen de beller zekerder te voelen over volgende stappen."
+      "09:01 Daily Huddle: Niet duidelijk of de medewerker een concreet vervolgplan of deadline heeft afgesproken voor de overdracht naar de juiste afdeling, of dat dit volledig aan de beller is overgelaten."
     ]
   },
   "verkeerdVerbonden": {
