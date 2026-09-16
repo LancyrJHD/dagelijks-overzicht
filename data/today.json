@@ -1,6 +1,6 @@
 {
   "date": "2026-09-16",
-  "generated_at": "2026-09-16T08:50:50Z",
+  "generated_at": "2026-09-16T09:01:05Z",
   "drukte": "rustig",
   "gesprekken": 1,
   "stats": {
@@ -17,7 +17,7 @@
       "tijd": "09:01",
       "titel": "Daily Huddle",
       "personen": "Verzekerde: anoniem · Dewi Verver | Juridisch Medewerker",
-      "samenvatting": "Beller Moussavi belt met een vraag over wijzigingen in zijn autoverzekeringspremie en schadeverloop (van 6 jaar schadevrij naar 1 jaar, en premie gestegen van EUR 65 naar EUR 120). De medewerker stelt vast dat dit een autoverzekeringsvraag is en geen juridische zaak, en verwijst de beller door naar de juiste afdeling (toets 3 in het keuzemenu). De beller is niet geverifieerd en er is geen juridisch advies gegeven.",
+      "samenvatting": "Beller Moussavi belt met een vraag over autoverzekeringspremieberekeningen (schadevrij-korting en tariefstijging van €65 naar €120). De medewerker (Davy) stelt vast dat dit een autoverzekeringsvraag is, niet een juridische vraag, en verwijst de beller door naar het juiste keuzemenu (optie 3) van dezelfde helpdesk. Er is geen juridisch advies gegeven en geen verificatie uitgevoerd.",
       "tags": [
         [
           "tag-overig",
@@ -38,12 +38,12 @@
   "acties": [],
   "analyse": {
     "goed": [
-      "09:01 Daily Huddle: Medewerker herkende correct dat dit een verzekeringsadministratieve vraag is (premieverhoging, schadeverloop), geen juridische zaak, en verwees professioneel door naar de juiste afdeling (toets 3). Dit voorkomt onnodig juridisch onderzoek.",
-      "09:01 Daily Huddle: Geen verificatie nodig omdat gerechtvaardigd doorverwezen is vóór intake — geen advies gegeven, dus geen risico.",
-      "09:01 Daily Huddle: Efficiënte klantenservice — snelle herkenning van verkeerde afdeling bespaart tijd."
+      "09:01 Daily Huddle: Medewerker Davy herkent correct dat dit een autoverzekeringsvraag is (premieberekening, schadevrij-korting), niet een juridische vraag, en verwijst de beller professioneel door naar het juiste keuzemenu (optie 3) van dezelfde helpdesk.",
+      "Geen onnodige verificatie uitgevoerd voor een doorverwijzing naar een ander departement — efficiënt routeren.",
+      "Beller wordt geholpen met juiste vervolgstap."
     ],
     "beter": [
-      "09:01 Daily Huddle: Bij doorverwijzing naar verzekeringsteam kon de medewerker voornaam/achternaam nóteren voor betere continuïteit en nagingscapaciteit aan verzekeringskant."
+      "Bij doorverwijzing zou nuttig kunnen zijn om de beller expliciet te instrueren welke informatie (bijv. polisnummer) klaar te houden voor het vervolgcontact met de autoverzekeringsakantoor, zodat het vervolgproces soepel verloopt."
     ]
   },
   "verkeerdVerbonden": {

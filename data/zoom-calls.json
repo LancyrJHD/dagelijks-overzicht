@@ -1,10 +1,10 @@
 {
   "date": "2026-09-16",
-  "generated_at": "2026-09-16T08:50:43Z",
-  "totaalInbound": 7,
-  "totaalGemist": 3,
+  "generated_at": "2026-09-16T09:00:57Z",
+  "totaalInbound": 8,
+  "totaalGemist": 4,
   "terugGebeld": 0,
-  "nietTerugGebeld": 3,
+  "nietTerugGebeld": 4,
   "nietTerugGebeldNummers": [
     {
       "nummer": "+31619955158",
@@ -25,6 +25,13 @@
       "naam": "Onbekend",
       "tijd": "09:56",
       "callResult": "overflowed",
+      "teruggebeld": false
+    },
+    {
+      "nummer": "+31619955158",
+      "naam": "Onbekend",
+      "tijd": "10:59",
+      "callResult": "abandoned",
       "teruggebeld": false
     }
   ],
@@ -48,6 +55,13 @@
       "naam": "Onbekend",
       "tijd": "09:56",
       "callResult": "overflowed",
+      "teruggebeld": false
+    },
+    {
+      "nummer": "+31619955158",
+      "naam": "Onbekend",
+      "tijd": "10:59",
+      "callResult": "abandoned",
       "teruggebeld": false
     }
   ]
