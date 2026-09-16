@@ -1,6 +1,6 @@
 {
   "date": "2026-09-16",
-  "generated_at": "2026-09-16T12:51:08Z",
+  "generated_at": "2026-09-16T13:01:17Z",
   "drukte": "rustig",
   "gesprekken": 1,
   "stats": {
@@ -17,7 +17,7 @@
       "tijd": "09:01",
       "titel": "Daily Huddle",
       "personen": "Verzekerde: anoniem · Dewi Verver | Juridisch Medewerker",
-      "samenvatting": "Beller Moussavi belde de juridische helpdesk met een vraag over autoverzekeringspremie en schadeverloopkorting (van EUR 65 naar EUR 120, en van 6 jaar naar 1 jaar schadevrij). De medewerker Davy erkende dat dit onderwerp niet bij de juridische helpdesk hoort en verwees de beller door naar de autoverzekeringafdeling (toets 3 op hetzelfde nummer). De beller is niet geverifieerd en er is geen juridisch advies gegeven.",
+      "samenvatting": "Beller Moussavi belt de juridische helpdesk met een vraag over een autoverzekeringspremie en schadevrije jaren. De medewerker stelt vast dat dit een verzekeringsadministratieve vraag is die niet onder de juridische helpdesk valt en verwijst de beller door naar de juiste afdeling (option 3 van het keuzemenu). De beller is niet geverifieerd en er is geen juridisch advies gegeven.",
       "tags": [
         [
           "tag-overig",
@@ -38,11 +38,12 @@
   "acties": [],
   "analyse": {
     "goed": [
-      "09:01 Daily Huddle: Medewerker Davy herkende correct dat de premie- en schadeverloopvraag van Moussavi niet binnen het juridische domein valt en verwees professioneel door naar de autoverzekeringafdeling (toets 3). Dit voorkomt onnodige wachttijd voor de beller.",
-      "Geen advies gegeven zonder verificatie — correct procedeert de medewerker door geen juridisch standpunt in te nemen wanneer verificatie niet noodzakelijk was voor de doorverwijzing."
+      "09:01 Daily Huddle: Medewerker herkent correct dat de vraag over autoverzekeringspremie en schadevrije jaren een verzekeringsadministratieve materie betreft die niet onder juridische helpdesk valt",
+      "09:01 Daily Huddle: Beller wordt professioneel doorverwezen naar de juiste afdeling (option 3 keuzemenu) in plaats van onterecht juridisch advies te geven",
+      "09:01 Daily Huddle: Geen verificatie nodig omdat geen juridisch advies is gegeven"
     ],
     "beter": [
-      "09:01 Daily Huddle: Geen concrete deadline of vervolgstap vastgelegd (bijv. 'afdeling autoverzekering neemt contact op binnen 2 uur'). Een korte bevestiging van het verwachte vervolgproces zou de servicekwaliteit verhogen."
+      "09:01 Daily Huddle: Geen opmerking - doorverwijzing is correct uitgevoerd"
     ]
   },
   "verkeerdVerbonden": {
