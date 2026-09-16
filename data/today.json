@@ -1,6 +1,6 @@
 {
   "date": "2026-09-16",
-  "generated_at": "2026-09-16T09:50:45Z",
+  "generated_at": "2026-09-16T10:01:08Z",
   "drukte": "rustig",
   "gesprekken": 1,
   "stats": {
@@ -17,7 +17,7 @@
       "tijd": "09:01",
       "titel": "Daily Huddle",
       "personen": "Verzekerde: anoniem · Dewi Verver | Juridisch Medewerker",
-      "samenvatting": "Beller Moussavi beide met een vraag over autoverzekeringspremieberekening (schadevrij-status en tariefstijging van €65 naar €120). De medewerker stelde vast dat dit onderwerp niet onder de juridische helpdesk valt en verwees de beller door naar de juiste afdeling (autoverzekering) via het keuzemenu. De beller is niet geverifieerd en er is geen inhoudelijk advies gegeven, omdat dit geen juridische zaak betreft.",
+      "samenvatting": "Beller Moussavi belt de juridische helpdesk met een vraag over zijn autoverzekeringspremie en schadeverloop (premie gestegen van EUR 65 naar EUR 120, schadevrij jaren gewijzigd). De medewerker stelt vast dat dit een autoverzekeringsvraag betreft, geen juridische materie, en verwijst de beller door naar de juiste afdeling (toets 3 op het keuzemenu). De beller is niet geverifieerd en er is geen inhoudelijk advies gegeven.",
       "tags": [
         [
           "tag-overig",
@@ -38,12 +38,11 @@
   "acties": [],
   "analyse": {
     "goed": [
-      "09:01 - Daily Huddle: Medewerker herkende correct dat premieberekening geen juridische materie is en verwees beller Moussavi passend door naar de juiste afdeling (autoverzekering). Dit voorkomt verspilde tijd en zorgt voor snellere oplossing.",
-      "09:01 - Daily Huddle: Geen verificatie uitgevoerd, maar dat was terecht aangezien de zaak niet binnen de juridische helpdesk valt. Geen inhoudelijk advies gegeven, dus geen risico's.",
-      "Algemeen: Korte doorlooptijd (eerste gesprek van de dag) en snelle correcte routering."
+      "09:01 Daily Huddle: Medewerker herkende correct dat dit een verzekeringsadministratieve vraag betreft (premiewijziging, schadevrij jaren), niet een juridische materie, en verwees de beller professioneel door naar de juiste afdeling (toets 3). Dit voorkomt onjuiste juridische adviezen en zorgt voor efficiënte routering.",
+      "09:01 Daily Huddle: Geen advies gegeven zonder verificatie – omdat het niet om juridische kwesties ging, was verificatie niet nodig voor deze doorverwijzing."
     ],
     "beter": [
-      "09:01 - Daily Huddle: Controleer of de doorverwijzing via het keuzemenu duidelijk is gecommuniceerd en of de beller instructies heeft gekregen hoe contact op te nemen met de autoverzekeringafdeling (direct nummer, openingstijden e.d.). Dit voorkomt frustratie bij de beller."
+      "09:01 Daily Huddle: Bij doorverwijzing naar een ander team zou het beter zijn geweest om de beller ook concrete informatie te geven over wat hij kan verwachten (bijv. wachttijd, welke gegevens paraat hebben) zodat het vervolggesprek efficiënter verloopt."
     ]
   },
   "verkeerdVerbonden": {
