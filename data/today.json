@@ -1,6 +1,6 @@
 {
   "date": "2026-09-16",
-  "generated_at": "2026-09-16T09:38:58Z",
+  "generated_at": "2026-09-16T09:40:47Z",
   "drukte": "rustig",
   "gesprekken": 1,
   "stats": {
@@ -17,7 +17,7 @@
       "tijd": "09:01",
       "titel": "Daily Huddle",
       "personen": "Verzekerde: anoniem · Dewi Verver | Juridisch Medewerker",
-      "samenvatting": "Beller Moussavi belt met een vraag over autoverzekeringspremie en schadevrijheidskorting (premie gestegen van EUR 65 naar EUR 120, schadevrijheid afgenomen van 6 naar 1 jaar). De medewerker stelt vast dat dit een autoverzekeringsvraag is en geen juridische zaak, en verwijst de beller correct door naar de juiste afdeling (keuzemenu optie 3). Beller is niet geverifieerd, geen inhoudelijk juridisch advies gegeven.",
+      "samenvatting": "De beller Moussavi belt met een vraag over premieberekening en schadeverloop bij zijn autoverzekering (premie gestegen van EUR 65 naar EUR 120, schadeverloop gewijzigd van 6 naar 1 jaar). De medewerker Davy herkent dat dit een verzekeringsvraag is die niet bij de juridische helpdesk hoort en verwijst de beller door naar de correcte afdeling (toets 3). Geen inhoudelijk juridisch advies gegeven, geen verificatie uitgevoerd.",
       "tags": [
         [
           "tag-overig",
@@ -38,12 +38,11 @@
   "acties": [],
   "analyse": {
     "goed": [
-      "09:01 Daily Huddle: Medewerker herkende correct dat dit een autoverzekeringsvraag betreft (premiewijziging, schadevrijheidskorting) en geen juridische zaak, en verwees de beller doelgericht door naar de juiste afdeling (keuzemenu optie 3).",
-      "09:01 Daily Huddle: Geen advies gegeven voordat duidelijk was dat de zaak niet binnen juridische competentie viel – juiste prioriteit.",
-      "09:01 Daily Huddle: Afhandeling was efficiënt en voorkomt onnodige belasting van juridische helpdesk met verzekeringstechnische vragen."
+      "09:01 Daily Huddle: Medewerker Davy herkent correct dat premieberekening en schadeverloop verzekeringsvragen zijn die niet bij de juridische helpdesk horen en verwijst de beller Moussavi direct door naar de juiste afdeling (toets 3). Geen onnodige verificatie of advies gegeven.",
+      "Efficiente kanaalverwijzing voorkomt verspilling van juridische capaciteit en zorgt voor snellere hulp voor de beller bij de competente afdeling."
     ],
     "beter": [
-      "09:01 Daily Huddle: Bij doorverwijzing naar keuzemenu optie 3 zou nog sterker kunnen worden bevestigd dat de beller op het juiste nummer is aangesloten voordat de verbinding verbroken wordt, om te voorkomen dat er opnieuw contact nodig is."
+      "09:01 Daily Huddle: Het zou nog beter zijn geweest om de beller bij doorverwijzing een concreet vervolgstap (bijv. 'U bent doorverbonden met afdeling Premies, zij beantwoorden uw vraag direct') of wachttijd te noemen, zodat de beller weet wat te verwachten."
     ]
   },
   "verkeerdVerbonden": {
