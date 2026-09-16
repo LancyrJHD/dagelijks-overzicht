@@ -1,6 +1,6 @@
 {
   "date": "2026-09-16",
-  "generated_at": "2026-09-16T07:50:48Z",
+  "generated_at": "2026-09-16T08:01:02Z",
   "drukte": "rustig",
   "gesprekken": 1,
   "stats": {
@@ -17,7 +17,7 @@
       "tijd": "09:01",
       "titel": "Daily Huddle",
       "personen": "Verzekerde: anoniem · Dewi Verver | Juridisch Medewerker",
-      "samenvatting": "De beller Moussavi belde de juridische helpdesk met een vraag over autoverzekeringspremieberekeningen (schadevrij-jaren en bedragtarieven). De medewerker Davy constateerde dat dit onderwerp niet onder de juridische helpdesk valt en verwees de beller door naar de juiste afdeling (autoverzekering) via optie 3 in het keuzemenu. De beller is niet geverifieerd en heeft geen inhoudelijk juridisch advies ontvangen.",
+      "samenvatting": "Beller Moussavi belt met een vraag over wijzigingen in zijn autoverzekeringspremie en schadeverloofstatus. De medewerker (Davy) erkent dat dit onderwerp niet onder de juridische helpdesk valt en verwijst hem door naar de autoverzekeringafdeling via het juiste keuzemenu-optie. De beller is niet geverifieerd omdat het geen inhoudelijk juridisch advies werd gegeven.",
       "tags": [
         [
           "tag-overig",
@@ -38,11 +38,10 @@
   "acties": [],
   "analyse": {
     "goed": [
-      "09:01 Daily Huddle: Medewerker Davy herkende correct dat de vraag over autoverzekeringspremieberekeningen buiten het bereik van de juridische helpdesk valt en verwees de beller proactief door naar de juiste afdeling (autoverzekering) via het keuzemenu.",
-      "Geen onnodige verificatie uitgevoerd voor een gesprek dat niet tot de juridische helpdesk behoort."
+      "09:01 Daily Huddle: Medewerker Davy herkende correct dat de vraag over autoverzekeringspremies en schadeverloofstatus buiten de bevoegdheid van de juridische helpdesk valt en verwees de beller doelgericht door naar de juiste afdeling via het keuzemenu."
     ],
     "beter": [
-      "09:01 Daily Huddle: Hoewel de doorverwijzing juist was, had de medewerker kunnen documenteren of een concrete vervolgstap (bv. bevestiging dat beller via optie 3 is doorverbonden en wanneer deze afdeling bereikbaar is) is afgesproken voor administratieve traceerbaarheid."
+      "09:01 Daily Huddle: Hoewel de doorverwijzing correct was, zou het goed zijn geweest om voordat Davy doorverwees expliciet vast te stellen of de beller nog andere juridische vragen had die wel onder de juridische helpdesk vallen (preventieve check op verborgen juridische behoeften)."
     ]
   },
   "verkeerdVerbonden": {
