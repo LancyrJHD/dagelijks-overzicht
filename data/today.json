@@ -1,6 +1,6 @@
 {
   "date": "2026-09-16",
-  "generated_at": "2026-09-16T11:01:06Z",
+  "generated_at": "2026-09-16T11:10:56Z",
   "drukte": "rustig",
   "gesprekken": 1,
   "stats": {
@@ -17,7 +17,7 @@
       "tijd": "09:01",
       "titel": "Daily Huddle",
       "personen": "Verzekerde: anoniem · Dewi Verver | Juridisch Medewerker",
-      "samenvatting": "De beller (Moussavi) heeft een vraag over een autoverzekeringspremie en schadevrij-korting. De medewerker heeft correct herkend dat dit een autoverzekeringsvraag is, niet juridisch, en heeft de beller doorverwezen naar de juiste afdeling (optie 3 in het keuzemenu). De beller is niet geverifieerd en er is geen inhoudelijk juridisch advies gegeven.",
+      "samenvatting": "Beller Moussavi belde de juridische helpdesk met een vraag over autoverzekeringspremieberekening (schadevrij-korting en tariefwijziging). De medewerker herkenrde correct dat dit geen juridische zaak is, maar een administratieve/commerciële verzekeringsadministratievraag, en verwees de beller door naar de juiste afdeling (opnieuw bellen, optie 3). Geen verificatie plaatsgevonden, geen inhoudelijk juridisch advies gegeven.",
       "tags": [
         [
           "tag-overig",
@@ -38,11 +38,11 @@
   "acties": [],
   "analyse": {
     "goed": [
-      "09:01 Daily Huddle: Medewerker heeft correct herkend dat de vraag over autoverzekeringspremie en schadevrij-korting buiten juridische competentie valt en heeft de beller doeltreffend doorverwezen naar de juiste afdeling (optie 3). Juiste triagehandeling.",
-      "09:01 Daily Huddle: Geen juridisch advies gegeven zonder verificatie, wat correct is. Doorverwijzing is het passende vervolg."
+      "09:01 Daily Huddle: Medewerker herkende correct dat premieberekening een administratieve/commerciële zaak is, niet juridisch, en verwees beller naar juiste afdeling (optie 3) in plaats van ongepast juridisch advies te geven.",
+      "09:01 Daily Huddle: Geen verificatie nodig geweest aangezien geen juridisch advies werd gegeven en beller correct werd doorverwezen."
     ],
     "beter": [
-      "09:01 Daily Huddle: Niet duidelijk of de medewerker een concreet vervolgplan of deadline heeft afgesproken voor de overdracht naar de juiste afdeling, of dat dit volledig aan de beller is overgelaten."
+      "09:01 Daily Huddle: Geen concrete deadline of vervolgafspraak gedocumenteerd voor herbeproeving na contact met optie 3."
     ]
   },
   "verkeerdVerbonden": {
