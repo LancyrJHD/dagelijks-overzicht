@@ -1,6 +1,6 @@
 {
   "date": "2026-09-16",
-  "generated_at": "2026-09-16T10:20:51Z",
+  "generated_at": "2026-09-16T10:31:05Z",
   "drukte": "rustig",
   "gesprekken": 1,
   "stats": {
@@ -17,7 +17,7 @@
       "tijd": "09:01",
       "titel": "Daily Huddle",
       "personen": "Verzekerde: anoniem · Dewi Verver | Juridisch Medewerker",
-      "samenvatting": "Beller Moussavi belde de juridische helpdesk met een vraag over zijn autoverzekeringspremie en schadeverloop (premie gestegen van €65 naar €120, schadevrij-jaren verminderd). De medewerker stelde vast dat dit een autoverzekeringsvraag is en geen juridische materie, en verwees de beller door naar de juiste afdeling (keuzemenu optie 3). De identiteit van de beller is niet geverifieerd en er is geen juridisch advies gegeven.",
+      "samenvatting": "Beller Moussavi belt de juridische helpdesk met een vraag over autoverzekeringspremie en schadeverloop (schadevrij-korting en premieberekening). De medewerker erkent dat dit onderwerp niet tot de juridische helpdesk behoort en verwijst de beller door naar de autoverzekeringafdeling (keuzeoptie 3). Identiteit is niet geverifieerd en geen inhoudelijk advies is gegeven.",
       "tags": [
         [
           "tag-overig",
@@ -38,11 +38,11 @@
   "acties": [],
   "analyse": {
     "goed": [
-      "09:01 Daily Huddle: Medewerker herkende correct dat dit een verzekeringsvraag is (premieberekening, schadevrij-jaren) en geen juridische materie, en verwees de beller doeltreffend door naar de juiste afdeling (keuzemenu optie 3)",
-      "09:01 Daily Huddle: Geen advies gegeven aangezien dit buiten het juridisch domein valt – correct protocol"
+      "09:01 Daily Huddle: Medewerker herkent correct dat autoverzekeringspremies en schadeverloop buiten het bereik van de juridische helpdesk vallen en verwijst de beller professioneel door naar de juiste afdeling (keuzeoptie 3).",
+      "09:01 Daily Huddle: Geen onnodig advies gegeven waar de medewerker niet competent was; deurbeleid correct toegepast."
     ],
     "beter": [
-      "09:01 Daily Huddle: Voorkant screening zou nog kunnen worden verbeterd door bellers al in het IVR-menu (voordat zij de juridische helpdesk bereiken) naar het juiste onderdeel te leiden op basis van hun vraag – dit bespaart doorverbindingen"
+      "09:01 Daily Huddle: Hoewel doorverwijzing correct was, zou een expliciete bevestiging aan de beller ('u bent nu doorverbonden met de autoverzekeringafdeling') het contact nog gebruiksvriendelijker maken."
     ]
   },
   "verkeerdVerbonden": {
