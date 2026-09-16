@@ -1,6 +1,6 @@
 {
   "date": "2026-09-16",
-  "generated_at": "2026-09-16T11:20:57Z",
+  "generated_at": "2026-09-16T11:31:07Z",
   "drukte": "rustig",
   "gesprekken": 1,
   "stats": {
@@ -11,13 +11,13 @@
     "geenDekking": 0,
     "verkeerdNummer": 1
   },
-  "score": 7.5,
+  "score": 8.5,
   "conversations": [
     {
       "tijd": "09:01",
       "titel": "Daily Huddle",
       "personen": "Verzekerde: anoniem · Dewi Verver | Juridisch Medewerker",
-      "samenvatting": "Beller Moussavi belt de juridische helpdesk met een vraag over autoverzekeringsberekeningen (premie stijging van EUR 65 naar EUR 120 en schadeverloop). De medewerker erkent dat dit niet onder juridische hulp valt, verifieert de beller niet inhoudelijk, en verwijst hem door naar de autoverzekeringsdienst via het juiste keuzemenu-optie (toets 3). Geen juridisch advies gegeven.",
+      "samenvatting": "De beller Moussavi belde met een vraag over een autoverzekeringspremie-berekening (schadevrij-korting en tarief). De medewerker stelde vast dat dit onderwerp niet bij de juridische helpdesk hoort, maar bij de autoverzekeringsverzekering-afdeling. De beller werd correct doorverwezen naar het juiste nummer en toetsen. Identiteit is niet geverifieerd en geen inhoudelijk advies is gegeven.",
       "tags": [
         [
           "tag-overig",
@@ -38,11 +38,11 @@
   "acties": [],
   "analyse": {
     "goed": [
-      "09:01 Daily Huddle: Medewerker herkent correct dat autoverzekeringsberekeningen niet onder juridische hulp vallen en verwijst beller Moussavi doelgericht door naar de juiste afdeling (toets 3) via het keuzemenu.",
-      "09:01 Daily Huddle: Geen juridisch advies gegeven over onderwerp dat buiten de scope valt – correct gatekeeping."
+      "09:01 Daily Huddle: Medewerker herkende correct dat premie-berekening buiten de bevoegdheid van de juridische helpdesk valt en verwees de beller Moussavi naar de juiste afdeling met specifieke toetsen.",
+      "09:01 Daily Huddle: Bij een routeringsgesprek is verificatie en advies terecht niet van toepassing; de medewerker handelde volgens protocol."
     ],
     "beter": [
-      "09:01 Daily Huddle: Geen concrete vervolgdeadline voor beller afgesproken (bijv. 'u wordt binnen 2 uur geholpen door onze autoverzekeringsdienst'); het vervolgcontact is impliciet alleen via doorschakeling."
+      "09:01 Daily Huddle: Geen concrete vervolgdeadline of vervolgplan vastgelegd (bijv. 'u kunt nu direct dit nummer bellen' of verwachte reactietijd). Dit helpt de beller duidelijkheid geven."
     ]
   },
   "verkeerdVerbonden": {

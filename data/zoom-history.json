@@ -1886,11 +1886,25 @@
         "nummer": "+31640151349",
         "teruggebeld": false,
         "tijd": "12:32"
+      },
+      {
+        "callResult": "overflowed",
+        "naam": "Onbekend",
+        "nummer": "+31626170119",
+        "teruggebeld": false,
+        "tijd": "13:22"
+      },
+      {
+        "callResult": "abandoned",
+        "naam": "Onbekend",
+        "nummer": "+31648740390",
+        "teruggebeld": false,
+        "tijd": "13:25"
       }
     ],
     "date": "2026-09-16",
-    "generated_at": "2026-09-16T11:20:45Z",
-    "nietTerugGebeld": 8,
+    "generated_at": "2026-09-16T11:30:55Z",
+    "nietTerugGebeld": 10,
     "nietTerugGebeldNummers": [
       {
         "callResult": "overflowed",
@@ -1947,10 +1961,24 @@
         "nummer": "+31640151349",
         "teruggebeld": false,
         "tijd": "12:32"
+      },
+      {
+        "callResult": "overflowed",
+        "naam": "Onbekend",
+        "nummer": "+31626170119",
+        "teruggebeld": false,
+        "tijd": "13:22"
+      },
+      {
+        "callResult": "abandoned",
+        "naam": "Onbekend",
+        "nummer": "+31648740390",
+        "teruggebeld": false,
+        "tijd": "13:25"
       }
     ],
     "terugGebeld": 0,
-    "totaalGemist": 8,
-    "totaalInbound": 12
+    "totaalGemist": 10,
+    "totaalInbound": 14
   }
 }
