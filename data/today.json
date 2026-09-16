@@ -1,6 +1,6 @@
 {
   "date": "2026-09-16",
-  "generated_at": "2026-09-16T11:40:51Z",
+  "generated_at": "2026-09-16T11:50:53Z",
   "drukte": "rustig",
   "gesprekken": 1,
   "stats": {
@@ -17,7 +17,7 @@
       "tijd": "09:01",
       "titel": "Daily Huddle",
       "personen": "Verzekerde: anoniem · Dewi Verver | Juridisch Medewerker",
-      "samenvatting": "Beller Moussavi belt de juridische helpdesk met een vraag over autoverzekeringspremie en schadeverloop (schadevrij-korting gedaald van 6 jaar naar 1 jaar, premie gestegen van €65 naar €120). De medewerker stelt vast dat dit een autoverzekeringszaak is en niet onder de juridische helpdesk valt, en verwijst de beller door naar de juiste afdeling (toets 3). Geen verificatie heeft plaatsgevonden en geen inhoudelijk juridisch advies is gegeven.",
+      "samenvatting": "De beller Moussavi belt de juridische helpdesk met een vraag over zijn autoverzekering (premiewijziging en schadevrij jaren). De medewerker Davy stelt vast dat dit onderwerp niet onder de juridische helpdesk valt, maar onder de afdeling autoverzekering. De beller wordt correct doorverwezen naar het juiste keuzemenu (optie 3) van hetzelfde nummer. Er is geen verificatie plaatsgevonden en geen juridisch advies gegeven.",
       "tags": [
         [
           "tag-overig",
@@ -38,12 +38,11 @@
   "acties": [],
   "analyse": {
     "goed": [
-      "09:01 Daily Huddle: Medewerker herkent correct dat autoverzekeringspremie en schadeverloop buiten het bereik van de juridische helpdesk vallen en verwijst de beller direct door naar de juiste afdeling (toets 3). Dit voorkomt onnodige vertraging.",
-      "09:01 Daily Huddle: Geen verificatie nodig aangezien geen juridisch advies wordt gegeven aan deze beller; correcte handelwijze.",
-      "09:01 Daily Huddle: Efficiënte afhandeling van een misdgeadreerde beller."
+      "09:01 Daily Huddle: Medewerker Davy herkende correct dat de vraag over autoverzekering (premiewijziging, schadevrij jaren) niet onder juridische helpdesk valt en verwees de beller Moussavi doelgericht door naar het juiste keuzemenu (optie 3). Dit voorkomt verspilde tijd en zorgt voor efficiënte routering.",
+      "09:01 Daily Huddle: Geen verificatie nodig geweest omdat geen juridisch advies is gegeven – dit is correct geprotocolleerd als 'advies_gegeven: false'."
     ],
     "beter": [
-      "09:01 Daily Huddle: Overweeg in het vervolgplan of de beller duidelijk instructie heeft gekregen welke toets hij moet kiezen en wat hij kan verwachten van de doorverwijzing, zodat hij niet opnieuw moet wachten."
+      "09:01 Daily Huddle: Overweeg in toekomst om bij doorverwijzing kort te bevestigen dat de beller het nieuwe menu heeft bereikt, zodat zeker is dat het vervolgcontact tot stand komt."
     ]
   },
   "verkeerdVerbonden": {
