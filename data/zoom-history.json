@@ -1900,11 +1900,32 @@
         "nummer": "+31648740390",
         "teruggebeld": false,
         "tijd": "13:25"
+      },
+      {
+        "callResult": "overflowed",
+        "naam": "Onbekend",
+        "nummer": "+31648740390",
+        "teruggebeld": false,
+        "tijd": "13:26"
+      },
+      {
+        "callResult": "overflowed",
+        "naam": "Onbekend",
+        "nummer": "+31626170119",
+        "teruggebeld": false,
+        "tijd": "13:29"
+      },
+      {
+        "callResult": "abandoned",
+        "naam": "Onbekend",
+        "nummer": "+31651809892",
+        "teruggebeld": false,
+        "tijd": "13:38"
       }
     ],
     "date": "2026-09-16",
-    "generated_at": "2026-09-16T11:30:55Z",
-    "nietTerugGebeld": 10,
+    "generated_at": "2026-09-16T11:40:41Z",
+    "nietTerugGebeld": 13,
     "nietTerugGebeldNummers": [
       {
         "callResult": "overflowed",
@@ -1975,10 +1996,31 @@
         "nummer": "+31648740390",
         "teruggebeld": false,
         "tijd": "13:25"
+      },
+      {
+        "callResult": "overflowed",
+        "naam": "Onbekend",
+        "nummer": "+31648740390",
+        "teruggebeld": false,
+        "tijd": "13:26"
+      },
+      {
+        "callResult": "overflowed",
+        "naam": "Onbekend",
+        "nummer": "+31626170119",
+        "teruggebeld": false,
+        "tijd": "13:29"
+      },
+      {
+        "callResult": "abandoned",
+        "naam": "Onbekend",
+        "nummer": "+31651809892",
+        "teruggebeld": false,
+        "tijd": "13:38"
       }
     ],
     "terugGebeld": 0,
-    "totaalGemist": 10,
-    "totaalInbound": 14
+    "totaalGemist": 13,
+    "totaalInbound": 17
   }
 }
