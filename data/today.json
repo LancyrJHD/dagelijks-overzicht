@@ -1,6 +1,6 @@
 {
   "date": "2026-09-16",
-  "generated_at": "2026-09-16T14:21:19Z",
+  "generated_at": "2026-09-16T14:31:23Z",
   "drukte": "matig",
   "gesprekken": 4,
   "stats": {
@@ -11,13 +11,13 @@
     "geenDekking": 0,
     "verkeerdNummer": 1
   },
-  "score": 5.8,
+  "score": 5.1,
   "conversations": [
     {
       "tijd": "09:01",
       "titel": "Daily Huddle",
       "personen": "Verzekerde: anoniem · Dewi Verver | Juridisch Medewerker",
-      "samenvatting": "Beller Moussavi belde de juridische helpdesk met een vraag over autoverzekeringspremieberekeningen (schadevrije jaren en tariefswijziging). De medewerker constateerde dat dit onderwerp niet onder de juridische helpdesk valt en verwees de beller door naar de juiste afdeling (opnieuw bellen en optie 3 kiezen). De identiteit van de beller is niet geverifieerd en er is geen inhoudelijk juridisch advies gegeven.",
+      "samenvatting": "Beller Moussavi belt met een vraag over autoverzekeringspremie en schadeverloopkorting, maar de juridische helpdesk heeft geen bevoegdheid over verzekeringsadministratie. De medewerker heeft de beller correct doorverwezen naar de autoverzekeringsverzekeringafdeling (toets 3). Identiteit is niet geverifieerd en geen inhoudelijk juridisch advies is gegeven.",
       "tags": [
         [
           "tag-overig",
@@ -38,7 +38,7 @@
       "tijd": "09:24",
       "titel": "Huurauto Portugal — creditcardnaam en verzekeringskost met Zanne",
       "personen": "Verzekerde: anoniem · Dewi Verver | Juridisch Medewerker",
-      "samenvatting": "Beller Zanne Paardenkoper belt over een geschil met Booking.com/rentalcars.com en een autoverhuurder in Portugal: zij moest onverwacht €170 extra betalen voor een aanvullende verzekering omdat haar creditcard niet haar volledige voornaam droeg, terwijl Booking.com slechts €70 van de verzekeringspremie terugbetaalde. De medewerker gaf juridisch advies door uit te leggen hoe algemene voorwaarden tussen partijen elkaar kunnen uitsluiten, adviseerde zelf de voorwaarden na te lezen, en stelde voor later terug te bellen als er een echt conflict ontstaat waarvoor rechtsbijstand nodig is. Identiteit is NIET geverifieerd (geen Zoho-match, geen verificatiepoging in het transcript), maar wel inhoudelijk advies gegeven.",
+      "samenvatting": "Beller Zanne Paardenkoper belt over een huurauto in Portugal waarbij het autoverhuurbbedrijf een aanvullende verzekering (€170) eiste omdat haar voornaam niet volledig op de creditcard stond; Booking.com heeft €70 terugbetaald. De medewerker geeft advies om zelf de algemene voorwaarden van Booking.com en het autoverhuurbbedrijf te controleren en stelt dat rechtsbijstand kan helpen als het een conflict wordt. De identiteit van de beller is NIET geverifieerd in het systeem.",
       "tags": [
         [
           "tag-consument",
@@ -59,7 +59,7 @@
       "tijd": "09:32",
       "titel": "VSO-check en eerste onderhandeling met arbeidsrechtadvocaat",
       "personen": "Verzekerde: anoniem · Dewi Verver",
-      "samenvatting": "Beller heeft een VSO (Vervolg Samenwerkings Ontslagbesluit) ontvangen en wil zijn rechten en verplichtingen checken. Dewi Verver heeft twee opties uitgelegd: doorverwijzing naar Brandmeester (Lancyr-rechtsbijstand, gratis) of directe samenwerking met een arbeidsrechtadvocaat (betaald, maar sneller en specialistisch). Beller kiest voor VSO-check met eerste onderhandeling via de advocaat (€1.210 incl. BTW, onder zijn juridische bijstandsvergoeding van €1.000); identiteit is niet geverifieerd (geen Zoho-match, geen verificatie in transcript), maar beller wordt doorverwezen naar arbeidsrechtadvocaat voor verdere behandeling.",
+      "samenvatting": "Beller ontving een VSO (ontslagbesluit) en belde de juridische helpdesk voor advies over rechten en plichten. Medewerker Dewi legde twee opties uit: (1) doorverwijzing naar Brandmeester onder rechtsbijstandsverzekering, of (2) een arbeidsrechtadvocaat voor VSO-check met eerste onderhandeling (€1.210 incl. BTW, deels gedekt door €1.000 juridische bijstandsvergoeding). Beller koos voor optie 2 en werd doorverwezen naar het advocatenkantoor. Identiteit is niet geverifieerd in het transcript; wel inhoudelijk juridisch advies gegeven.",
       "tags": [
         [
           "tag-arbeidsrecht",
@@ -80,7 +80,7 @@
       "tijd": "15:27",
       "titel": "Geschil ex-werkgever: aanzegvergoeding en transitievergoeding met Jaco Zinsoff",
       "personen": "Verzekerde: anoniem · Dewi Verver | Juridisch Medewerker",
-      "samenvatting": "Jaco Zinsoff belt over een arbeidsconflict met zijn ex-werkgever aangaande aanzegvergoeding en transitievergoeding. De werkgever heeft eerst beide vergoedingen toegezegd, maar weigert nu uiteindelijk betaling en stelt dat Zinsoff meer schuldig is door verlofuren. De medewerker verifieert de identiteit via e-mailadres (jeff.kousatnetsov@gmail.com) en verwijst de zaak direct door naar Brandmeester voor verdere juridische behandeling, zonder zelf inhoudelijk advies te geven.",
+      "samenvatting": "Jaco Zinsoff belt over een arbeidsconflict met zijn ex-werkgever betreffende aanzegvergoeding en transitievergoeding. De werkgever weigert uitbetaling en stelt dat Zinsoff geen recht heeft op aanzegvergoeding, terwijl er bovendien een geschil bestaat over teruggave van uren. De medewerker heeft geen inhoudelijk advies gegeven maar heeft de zaak direct doorverwezen naar Brandmeester voor rechtsbijstand; identiteit is niet geverifieerd maar email is genoteerd (jeff.kousatnetsov@gmail.com).",
       "tags": [
         [
           "tag-arbeidsrecht",
@@ -95,21 +95,21 @@
       "verkeerdVerbonden": false,
       "rechtsbijstandVerwijzing": true,
       "adviesGegeven": false,
-      "identiteitGeverifieerd": true
+      "identiteitGeverifieerd": false
     }
   ],
   "acties": [],
   "analyse": {
     "goed": [
-      "09:01 Daily Huddle: Correcte herkenning dat autoverzekeringspremies buiten het juridische domein vallen en juiste doorverwijzing naar de juiste afdeling.",
-      "15:27 Geschil ex-werkgever: Identiteit correct geverifieerd via e-mailadres voordat doorverwijzing naar Brandmeester plaatsvond.",
-      "09:32 VSO-check: Beller kreeg twee duidelijke opties uitgelegd (Brandmeester gratis vs. arbeidsrechtadvocaat betaald) met concrete kostenraming (€1.210 incl. BTW)."
+      "09:01 Daily Huddle: Correct doorverwezen naar juiste afdeling (autoverzekeringsverzekeringafdeling) omdat juridische helpdesk geen bevoegdheid heeft over verzekeringsadministratie.",
+      "09:32 VSO-check: Inhoudelijk juridisch advies gegeven met duidelijke opties (Brandmeester vs. arbeidsrechtadvocaat) en kostentransparantie (€1.210 met €1.000 dekking).",
+      "15:27 Arbeidsconflict: Zaak correct doorverwezen naar Brandmeester voor rechtsbijstand; emailadres genoteerd voor vervolgcontact."
     ],
     "beter": [
-      "09:24 Huurauto Portugal: KRITIEK – Identiteit is niet geverifieerd (geen Zoho-match, geen verificatiepoging geregistreerd), maar wel inhoudelijk juridisch advies gegeven over algemene voorwaarden en geschillenafhandeling. Volgens kwaliteitsnorm moet polis+identiteit altijd worden geverifieerd voordat advies wordt gegeven.",
-      "09:32 VSO-check: KRITIEK – Identiteit is niet geverifieerd (geen Zoho-match, geen verificatie in transcript), maar wel inhoudelijk advies gegeven over VSO-opties en kosten. Verificatie moet plaatsvinden voordat advies (ook optieadvies) wordt gegeven.",
-      "09:24 Huurauto Portugal: Geen concrete deadline afgesproken voor vervolgcontact. Formulering 'later terug te bellen als er een echt conflict ontstaat' is te vaag.",
-      "09:24 Huurauto Portugal: Geen dekkingscontrole (franchise EUR 250) opgemerkt – al gaat het hier om een geschil zonder concrete schadeclaim, dus dit is minder zwaarwegend."
+      "09:24 Huurauto Portugal: KRITIEK — identiteit NIET geverifieerd voordat inhoudelijk juridisch advies werd gegeven. Advies over contractuelle rechten en rechtsbijstand vereist polis- en identiteitsverificatie. Geen concrete deadline voor vervolgstappen afgesproken.",
+      "09:32 VSO-check: KRITIEK — identiteit NIET geverifieerd voordat inhoudelijk juridisch advies (twee opties, kostentransparantie) werd gegeven. Dit is een breuk op de kwaliteitsnorm. Geen expliciete deadline voor contact met advocatenkantoor genoteerd.",
+      "15:27 Arbeidsconflict: KRITIEK — identiteit NIET geverifieerd ondanks ernstige arbeidsrechtsclaim (aanzegvergoeding/transitievergoeding). Alleen emailadres genoteerd volstaat niet. Geen concrete deadline voor Brandmeester-vervolgcontact afgesproken.",
+      "09:01 Daily Huddle: Geen vervolgplan/deadline afgesproken voor doorverwijzing naar autoverzekeringsverzekeringafdeling (geen confirmation of callback expected)."
     ]
   },
   "verkeerdVerbonden": {
