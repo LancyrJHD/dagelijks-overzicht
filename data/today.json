@@ -1,6 +1,6 @@
 {
   "date": "2026-09-16",
-  "generated_at": "2026-09-16T11:10:56Z",
+  "generated_at": "2026-09-16T11:20:57Z",
   "drukte": "rustig",
   "gesprekken": 1,
   "stats": {
@@ -11,13 +11,13 @@
     "geenDekking": 0,
     "verkeerdNummer": 1
   },
-  "score": 8.5,
+  "score": 7.5,
   "conversations": [
     {
       "tijd": "09:01",
       "titel": "Daily Huddle",
       "personen": "Verzekerde: anoniem · Dewi Verver | Juridisch Medewerker",
-      "samenvatting": "Beller Moussavi belde de juridische helpdesk met een vraag over autoverzekeringspremieberekening (schadevrij-korting en tariefwijziging). De medewerker herkenrde correct dat dit geen juridische zaak is, maar een administratieve/commerciële verzekeringsadministratievraag, en verwees de beller door naar de juiste afdeling (opnieuw bellen, optie 3). Geen verificatie plaatsgevonden, geen inhoudelijk juridisch advies gegeven.",
+      "samenvatting": "Beller Moussavi belt de juridische helpdesk met een vraag over autoverzekeringsberekeningen (premie stijging van EUR 65 naar EUR 120 en schadeverloop). De medewerker erkent dat dit niet onder juridische hulp valt, verifieert de beller niet inhoudelijk, en verwijst hem door naar de autoverzekeringsdienst via het juiste keuzemenu-optie (toets 3). Geen juridisch advies gegeven.",
       "tags": [
         [
           "tag-overig",
@@ -38,11 +38,11 @@
   "acties": [],
   "analyse": {
     "goed": [
-      "09:01 Daily Huddle: Medewerker herkende correct dat premieberekening een administratieve/commerciële zaak is, niet juridisch, en verwees beller naar juiste afdeling (optie 3) in plaats van ongepast juridisch advies te geven.",
-      "09:01 Daily Huddle: Geen verificatie nodig geweest aangezien geen juridisch advies werd gegeven en beller correct werd doorverwezen."
+      "09:01 Daily Huddle: Medewerker herkent correct dat autoverzekeringsberekeningen niet onder juridische hulp vallen en verwijst beller Moussavi doelgericht door naar de juiste afdeling (toets 3) via het keuzemenu.",
+      "09:01 Daily Huddle: Geen juridisch advies gegeven over onderwerp dat buiten de scope valt – correct gatekeeping."
     ],
     "beter": [
-      "09:01 Daily Huddle: Geen concrete deadline of vervolgafspraak gedocumenteerd voor herbeproeving na contact met optie 3."
+      "09:01 Daily Huddle: Geen concrete vervolgdeadline voor beller afgesproken (bijv. 'u wordt binnen 2 uur geholpen door onze autoverzekeringsdienst'); het vervolgcontact is impliciet alleen via doorschakeling."
     ]
   },
   "verkeerdVerbonden": {
