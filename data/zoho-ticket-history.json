@@ -133,14 +133,38 @@
   },
   "2026-09-14": {
     "capBereikt": false,
-    "geslotenVandaag": 1,
-    "inDeWacht": 11,
-    "nieuweVandaag": 2,
+    "geslotenVandaag": 2,
+    "inDeWacht": 16,
+    "nieuweVandaag": 4,
     "statusBreakdown": {
       "Gesloten": 629,
-      "In de wacht": 11,
+      "In de wacht": 16,
+      "Open": 7
+    },
+    "totaalOpen": 23
+  },
+  "2026-09-15": {
+    "capBereikt": false,
+    "geslotenVandaag": 2,
+    "inDeWacht": 14,
+    "nieuweVandaag": 0,
+    "statusBreakdown": {
+      "Gesloten": 627,
+      "In de wacht": 14,
       "Open": 10
     },
-    "totaalOpen": 21
+    "totaalOpen": 24
+  },
+  "2026-09-16": {
+    "capBereikt": false,
+    "geslotenVandaag": 0,
+    "inDeWacht": 13,
+    "nieuweVandaag": 0,
+    "statusBreakdown": {
+      "Gesloten": 626,
+      "In de wacht": 13,
+      "Open": 12
+    },
+    "totaalOpen": 25
   }
 }

@@ -1,6 +1,6 @@
 {
-  "date": "2026-09-14",
-  "generated_at": "2026-09-14T10:31:04Z",
+  "date": "2026-09-16",
+  "generated_at": "2026-09-16T08:01:02Z",
   "drukte": "rustig",
   "gesprekken": 1,
   "stats": {
@@ -14,10 +14,10 @@
   "score": 8.5,
   "conversations": [
     {
-      "tijd": "09:09",
+      "tijd": "09:01",
       "titel": "Daily Huddle",
       "personen": "Verzekerde: anoniem · Dewi Verver | Juridisch Medewerker",
-      "samenvatting": "De beller belt de juridische helpdesk met een vraag over autoverzekering (wijziging van verzekerde auto). De medewerker erkent correct dat dit onderwerp niet bij de juridische helpdesk hoort en verwijst de beller door naar de autoverzekeringingsafdeling (optie 3). De beller is niet geverifieerd en er is geen inhoudelijk juridisch advies gegeven.",
+      "samenvatting": "Beller Moussavi belt met een vraag over wijzigingen in zijn autoverzekeringspremie en schadeverloofstatus. De medewerker (Davy) erkent dat dit onderwerp niet onder de juridische helpdesk valt en verwijst hem door naar de autoverzekeringafdeling via het juiste keuzemenu-optie. De beller is niet geverifieerd omdat het geen inhoudelijk juridisch advies werd gegeven.",
       "tags": [
         [
           "tag-overig",
@@ -38,11 +38,10 @@
   "acties": [],
   "analyse": {
     "goed": [
-      "09:09 Autoverzekering: Medewerker herkent correct dat autoverzekeringsvragen niet binnen de juridische helpdesk vallen en verwijst de beller professioneel door naar de juiste afdeling (optie 3).",
-      "09:09 Autoverzekering: Geen onnodige verificatie uitgevoerd omdat het onderwerp buiten de scope valt."
+      "09:01 Daily Huddle: Medewerker Davy herkende correct dat de vraag over autoverzekeringspremies en schadeverloofstatus buiten de bevoegdheid van de juridische helpdesk valt en verwees de beller doelgericht door naar de juiste afdeling via het keuzemenu."
     ],
     "beter": [
-      "09:09 Autoverzekering: Hoewel de doorverwijzing correct is, zou opheldering over welke onderwerpen wél bij de juridische helpdesk horen, toekomstige verkeerde nummers kunnen voorkomen."
+      "09:01 Daily Huddle: Hoewel de doorverwijzing correct was, zou het goed zijn geweest om voordat Davy doorverwees expliciet vast te stellen of de beller nog andere juridische vragen had die wel onder de juridische helpdesk vallen (preventieve check op verborgen juridische behoeften)."
     ]
   },
   "verkeerdVerbonden": {

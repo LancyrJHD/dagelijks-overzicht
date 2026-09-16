@@ -1,66 +1,38 @@
 {
-  "date": "2026-09-14",
-  "generated_at": "2026-09-14T10:30:55Z",
-  "totaalInbound": 12,
-  "totaalGemist": 4,
+  "date": "2026-09-16",
+  "generated_at": "2026-09-16T08:00:55Z",
+  "totaalInbound": 5,
+  "totaalGemist": 2,
   "terugGebeld": 0,
-  "nietTerugGebeld": 4,
+  "nietTerugGebeld": 2,
   "nietTerugGebeldNummers": [
     {
-      "nummer": "+31615184071",
+      "nummer": "+31619955158",
       "naam": "Onbekend",
-      "tijd": "09:04",
-      "callResult": "abandoned",
-      "teruggebeld": false
-    },
-    {
-      "nummer": "+31135352624",
-      "naam": "Onbekend",
-      "tijd": "10:42",
+      "tijd": "09:02",
       "callResult": "overflowed",
       "teruggebeld": false
     },
     {
-      "nummer": "+31644627889",
+      "nummer": "+31619955158",
       "naam": "Onbekend",
-      "tijd": "10:45",
-      "callResult": "abandoned",
-      "teruggebeld": false
-    },
-    {
-      "nummer": "+380683153127",
-      "naam": "Onbekend",
-      "tijd": "12:13",
+      "tijd": "09:18",
       "callResult": "abandoned",
       "teruggebeld": false
     }
   ],
   "alleGemistNummers": [
     {
-      "nummer": "+31615184071",
+      "nummer": "+31619955158",
       "naam": "Onbekend",
-      "tijd": "09:04",
-      "callResult": "abandoned",
-      "teruggebeld": false
-    },
-    {
-      "nummer": "+31135352624",
-      "naam": "Onbekend",
-      "tijd": "10:42",
+      "tijd": "09:02",
       "callResult": "overflowed",
       "teruggebeld": false
     },
     {
-      "nummer": "+31644627889",
+      "nummer": "+31619955158",
       "naam": "Onbekend",
-      "tijd": "10:45",
-      "callResult": "abandoned",
-      "teruggebeld": false
-    },
-    {
-      "nummer": "+380683153127",
-      "naam": "Onbekend",
-      "tijd": "12:13",
+      "tijd": "09:18",
       "callResult": "abandoned",
       "teruggebeld": false
     }
