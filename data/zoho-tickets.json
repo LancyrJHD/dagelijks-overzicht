@@ -1,13 +1,13 @@
 {
   "date": "2026-09-16",
-  "generated_at": "2026-09-16T13:40:39Z",
+  "generated_at": "2026-09-16T13:50:40Z",
   "tickets": [
     {
       "ticketNumber": "2728",
       "tijd": "14:19",
       "titel": "FW: Claim Request – Vehicle Damaged While Parked",
       "klant": "De juridische helpdesk",
-      "status": "Open",
+      "status": "Gesloten",
       "statusType": "",
       "prioriteit": "Niet ingesteld",
       "webUrl": "https://desk.zoho.eu/support/htjzlancyr/ShowHomePage.do#Cases/dv/195464000014021061",
@@ -19,7 +19,7 @@
       "tijd": "14:19",
       "titel": "Creditcard moest opeens voornaam bevatten",
       "klant": "A.W.J. Paardekooper",
-      "status": "Open",
+      "status": "In de wacht",
       "statusType": "",
       "prioriteit": "Niet ingesteld",
       "webUrl": "https://desk.zoho.eu/support/htjzlancyr/ShowHomePage.do#Cases/dv/195464000014021001",
@@ -33,13 +33,13 @@
   "brandmeesterCount": 0,
   "ticketStats": {
     "nieuweVandaag": 2,
-    "geslotenVandaag": 0,
-    "totaalOpen": 27,
-    "inDeWacht": 13,
+    "geslotenVandaag": 2,
+    "totaalOpen": 25,
+    "inDeWacht": 14,
     "statusBreakdown": {
-      "Open": 14,
-      "Gesloten": 625,
-      "In de wacht": 13
+      "Gesloten": 627,
+      "In de wacht": 14,
+      "Open": 11
     },
     "capBereikt": false
   }
