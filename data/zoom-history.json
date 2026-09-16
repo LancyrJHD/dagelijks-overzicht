@@ -1837,11 +1837,18 @@
         "nummer": "+31619955158",
         "teruggebeld": false,
         "tijd": "09:02"
+      },
+      {
+        "callResult": "abandoned",
+        "naam": "Onbekend",
+        "nummer": "+31619955158",
+        "teruggebeld": false,
+        "tijd": "09:18"
       }
     ],
     "date": "2026-09-16",
-    "generated_at": "2026-09-16T07:10:38Z",
-    "nietTerugGebeld": 1,
+    "generated_at": "2026-09-16T07:20:39Z",
+    "nietTerugGebeld": 2,
     "nietTerugGebeldNummers": [
       {
         "callResult": "overflowed",
@@ -1849,10 +1856,17 @@
         "nummer": "+31619955158",
         "teruggebeld": false,
         "tijd": "09:02"
+      },
+      {
+        "callResult": "abandoned",
+        "naam": "Onbekend",
+        "nummer": "+31619955158",
+        "teruggebeld": false,
+        "tijd": "09:18"
       }
     ],
     "terugGebeld": 0,
-    "totaalGemist": 1,
-    "totaalInbound": 2
+    "totaalGemist": 2,
+    "totaalInbound": 3
   }
 }

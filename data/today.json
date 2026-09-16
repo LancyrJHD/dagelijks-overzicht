@@ -1,6 +1,6 @@
 {
   "date": "2026-09-16",
-  "generated_at": "2026-09-16T07:10:45Z",
+  "generated_at": "2026-09-16T07:20:46Z",
   "drukte": "rustig",
   "gesprekken": 1,
   "stats": {
@@ -17,7 +17,7 @@
       "tijd": "09:01",
       "titel": "Daily Huddle",
       "personen": "Verzekerde: anoniem · Dewi Verver | Juridisch Medewerker",
-      "samenvatting": "Beller Moussavi beide de juridische helpdesk met een vraag over een premiewijziging en schadeverloop-berekening van zijn autoverzekering. De medewerker stelde vast dat dit een verzekeringsadministratieve vraag is die niet onder de juridische helpdesk valt, en verwees de beller door naar de juiste afdeling (optie 3 in het keuzemenu). De beller is niet geverifieerd en er is geen inhoudelijk juridisch advies gegeven.",
+      "samenvatting": "Mevrouw Moussavi belde de juridische helpdesk met een vraag over autoverzekeringspremie en schadeverloop (van EUR 65 naar EUR 120, en van zes naar één jaar schadevrij). De medewerker Davy stelde vast dat dit een autoverzekeringsvraag is, die niet onder juridische hulp valt, en verwees de beller door naar de juiste afdeling (keuzemenu optie 3). De beller is niet geverifieerd en geen inhoudelijk juridisch advies is gegeven.",
       "tags": [
         [
           "tag-overig",
@@ -38,11 +38,11 @@
   "acties": [],
   "analyse": {
     "goed": [
-      "09:01 Daily Huddle: Medewerker herkende correct dat de vraag over premiewijziging en schadeverloop-berekening een verzekeringsadministratieve kwestie betreft die niet onder juridische helpdesk valt",
-      "09:01 Daily Huddle: Beller werd professioneel doorverwezen naar de juiste afdeling (optie 3 in keuzemenu) in plaats van onjuist advies te geven"
+      "09:01 Daily Huddle: Medewerker Davy herkende correct dat de autoverzekeringspremie-vraag buiten het juridische domein valt en verwees de beller professioneel door naar de juiste afdeling (keuzemenu optie 3). Dit voorkomt onnodige belasting van de juridische helpdesk.",
+      "09:01 Daily Huddle: Geen advies gegeven zonder verificatie — dit is correct afgehandeld omdat de zaak niet juridisch was."
     ],
     "beter": [
-      "09:01 Daily Huddle: Geen verificatie nodig geweest gezien het geen juridische zaak betrof, maar documentatie van de doorverwijzing (wie, waarnaar, wanneer follow-up verwacht) zou de zaak hebben afgerond"
+      "09:01 Daily Huddle: Zou goed zijn geweest om bij doorverwijzing naar optie 3 (verzekeringszaken) een concrete deadline of vervolgstap te noemen, zodat mevrouw Moussavi duidelijk weet wat ze kan verwachten."
     ]
   },
   "verkeerdVerbonden": {
