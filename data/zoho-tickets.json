@@ -1,6 +1,6 @@
 {
   "date": "2026-09-16",
-  "generated_at": "2026-09-16T14:10:46Z",
+  "generated_at": "2026-09-16T14:20:43Z",
   "tickets": [
     {
       "ticketNumber": "2728",
@@ -49,22 +49,34 @@
       "webUrl": "https://desk.zoho.eu/support/htjzlancyr/ShowHomePage.do#Cases/dv/195464000014067001",
       "channel": "Phone",
       "doorgezetBrandmeester": false
+    },
+    {
+      "ticketNumber": "2731",
+      "tijd": "16:18",
+      "titel": "Conflict met werkgever",
+      "klant": "E. Kuznetsov",
+      "status": "In de wacht",
+      "statusType": "",
+      "prioriteit": "Niet ingesteld",
+      "webUrl": "https://desk.zoho.eu/support/htjzlancyr/ShowHomePage.do#Cases/dv/195464000014038020",
+      "channel": "Phone",
+      "doorgezetBrandmeester": false
     }
   ],
   "channelCounts": {
     "Email": 3,
-    "Phone": 1
+    "Phone": 2
   },
   "brandmeesterCount": 0,
   "ticketStats": {
-    "nieuweVandaag": 4,
+    "nieuweVandaag": 5,
     "geslotenVandaag": 7,
-    "totaalOpen": 22,
+    "totaalOpen": 23,
     "inDeWacht": 17,
     "statusBreakdown": {
-      "Open": 5,
-      "Gesloten": 632,
-      "In de wacht": 17
+      "In de wacht": 17,
+      "Open": 6,
+      "Gesloten": 632
     },
     "capBereikt": false
   }
