@@ -1,61 +1,27 @@
 {
-  "date": "2026-09-15",
-  "generated_at": "2026-09-15T18:22:52Z",
+  "date": "2026-09-16",
+  "generated_at": "2026-09-16T05:00:55Z",
   "drukte": "rustig",
-  "gesprekken": 1,
+  "gesprekken": 0,
   "stats": {
-    "opgelost": 1,
+    "opgelost": 0,
     "brandmeester": 0,
     "afkoop": 0,
     "terugbel": 0,
     "geenDekking": 0,
     "verkeerdNummer": 0
   },
-  "score": 8.1,
-  "conversations": [
-    {
-      "tijd": "15:31",
-      "titel": "Polis en gezinsleden – vraag over dochter en zoon",
-      "personen": "Verzekerde: anoniem · Dewi Verver | Juridisch Medewerker",
-      "samenvatting": "Arno Rossum belde over zijn nieuwe polis en had vragen over dekking voor zijn dochter (20 jaar, studerend, deels woonachtig op twee adressen) en zoon (niet meer thuiswonend). De medewerker verificeerde de beller via postcode (3295) en huisnummer (9), gaf advies dat de dochter onder de gezinsverzekering valt en de zoon automatisch buiten de polis valt nu hij niet meer thuiswoont. Het gesprek werd telefonisch opgelost.",
-      "tags": [
-        [
-          "tag-consument",
-          "Verzekeringsadministratie"
-        ]
-      ],
-      "uitkomst": [
-        "outcome-opgelost",
-        "Telefonisch opgelost"
-      ],
-      "terugbel": false,
-      "verkeerdVerbonden": false,
-      "rechtsbijstandVerwijzing": false,
-      "adviesGegeven": true,
-      "identiteitGeverifieerd": true
-    }
-  ],
+  "score": 0,
+  "conversations": [],
   "acties": [],
   "analyse": {
-    "goed": [
-      "Identiteitsverificatie correct uitgevoerd (postcode + huisnummer) voordat advies werd gegeven (15:31, Polis en gezinsleden)",
-      "Concrete en duidelijke adviezen gegeven over dekkingsstatus dochter en zoon",
-      "Zaak telefonisch volledig opgelost zonder vervolgcontact nodig"
-    ],
-    "beter": [
-      "Bij identiteitsverificatie via postcode en huisnummer zou aanvullend kunnen worden gecontroleerd of ook de polisnummer is bevestigd voor extra zekerheid (15:31, Polis en gezinsleden)",
-      "Geen documentatie vermeld dat schriftelijke bevestiging van de gezinssamenstelling en dekkingsstatus aan de klant is toegezegd (15:31, Polis en gezinsleden)"
-    ]
+    "goed": [],
+    "beter": []
   },
   "verkeerdVerbonden": {
     "aantal": 0,
     "percentage": 0.0
   },
   "rechtsbijstandVerwijzingen": 0,
-  "categorieen": [
-    [
-      "Verzekeringsadministratie",
-      1
-    ]
-  ]
+  "categorieen": []
 }
