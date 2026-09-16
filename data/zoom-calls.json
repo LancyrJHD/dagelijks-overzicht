@@ -1,10 +1,10 @@
 {
   "date": "2026-09-16",
-  "generated_at": "2026-09-16T10:30:54Z",
-  "totaalInbound": 10,
-  "totaalGemist": 6,
+  "generated_at": "2026-09-16T10:40:42Z",
+  "totaalInbound": 12,
+  "totaalGemist": 8,
   "terugGebeld": 0,
-  "nietTerugGebeld": 6,
+  "nietTerugGebeld": 8,
   "nietTerugGebeldNummers": [
     {
       "nummer": "+31619955158",
@@ -46,6 +46,20 @@
       "naam": "Onbekend",
       "tijd": "12:02",
       "callResult": "overflowed",
+      "teruggebeld": false
+    },
+    {
+      "nummer": "+31640151349",
+      "naam": "Onbekend",
+      "tijd": "12:26",
+      "callResult": "overflowed",
+      "teruggebeld": false
+    },
+    {
+      "nummer": "+31640151349",
+      "naam": "Onbekend",
+      "tijd": "12:32",
+      "callResult": "abandoned",
       "teruggebeld": false
     }
   ],
@@ -90,6 +104,20 @@
       "naam": "Onbekend",
       "tijd": "12:02",
       "callResult": "overflowed",
+      "teruggebeld": false
+    },
+    {
+      "nummer": "+31640151349",
+      "naam": "Onbekend",
+      "tijd": "12:26",
+      "callResult": "overflowed",
+      "teruggebeld": false
+    },
+    {
+      "nummer": "+31640151349",
+      "naam": "Onbekend",
+      "tijd": "12:32",
+      "callResult": "abandoned",
       "teruggebeld": false
     }
   ]

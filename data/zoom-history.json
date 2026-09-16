@@ -1872,11 +1872,25 @@
         "nummer": "+31615101654",
         "teruggebeld": false,
         "tijd": "12:02"
+      },
+      {
+        "callResult": "overflowed",
+        "naam": "Onbekend",
+        "nummer": "+31640151349",
+        "teruggebeld": false,
+        "tijd": "12:26"
+      },
+      {
+        "callResult": "abandoned",
+        "naam": "Onbekend",
+        "nummer": "+31640151349",
+        "teruggebeld": false,
+        "tijd": "12:32"
       }
     ],
     "date": "2026-09-16",
-    "generated_at": "2026-09-16T10:30:54Z",
-    "nietTerugGebeld": 6,
+    "generated_at": "2026-09-16T10:40:42Z",
+    "nietTerugGebeld": 8,
     "nietTerugGebeldNummers": [
       {
         "callResult": "overflowed",
@@ -1919,10 +1933,24 @@
         "nummer": "+31615101654",
         "teruggebeld": false,
         "tijd": "12:02"
+      },
+      {
+        "callResult": "overflowed",
+        "naam": "Onbekend",
+        "nummer": "+31640151349",
+        "teruggebeld": false,
+        "tijd": "12:26"
+      },
+      {
+        "callResult": "abandoned",
+        "naam": "Onbekend",
+        "nummer": "+31640151349",
+        "teruggebeld": false,
+        "tijd": "12:32"
       }
     ],
     "terugGebeld": 0,
-    "totaalGemist": 6,
-    "totaalInbound": 10
+    "totaalGemist": 8,
+    "totaalInbound": 12
   }
 }
