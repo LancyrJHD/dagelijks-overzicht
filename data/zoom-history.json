@@ -2066,13 +2066,29 @@
     "totaalInbound": 23
   },
   "2026-09-17": {
-    "alleGemistNummers": [],
+    "alleGemistNummers": [
+      {
+        "callResult": "overflowed",
+        "naam": "Onbekend",
+        "nummer": "+31658710056",
+        "teruggebeld": false,
+        "tijd": "09:14"
+      }
+    ],
     "date": "2026-09-17",
-    "generated_at": "2026-09-17T07:20:42Z",
-    "nietTerugGebeld": 0,
-    "nietTerugGebeldNummers": [],
+    "generated_at": "2026-09-17T07:30:45Z",
+    "nietTerugGebeld": 1,
+    "nietTerugGebeldNummers": [
+      {
+        "callResult": "overflowed",
+        "naam": "Onbekend",
+        "nummer": "+31658710056",
+        "teruggebeld": false,
+        "tijd": "09:14"
+      }
+    ],
     "terugGebeld": 0,
-    "totaalGemist": 0,
-    "totaalInbound": 0
+    "totaalGemist": 1,
+    "totaalInbound": 1
   }
 }
