@@ -1,133 +1,27 @@
 {
-  "date": "2026-09-16",
-  "generated_at": "2026-09-16T18:15:04Z",
-  "drukte": "matig",
-  "gesprekken": 4,
+  "date": "2026-09-17",
+  "generated_at": "2026-09-17T05:01:07Z",
+  "drukte": "rustig",
+  "gesprekken": 0,
   "stats": {
-    "opgelost": 1,
-    "brandmeester": 2,
+    "opgelost": 0,
+    "brandmeester": 0,
     "afkoop": 0,
     "terugbel": 0,
     "geenDekking": 0,
-    "verkeerdNummer": 1
+    "verkeerdNummer": 0
   },
-  "score": 6.1,
-  "conversations": [
-    {
-      "tijd": "09:01",
-      "titel": "Daily Huddle",
-      "personen": "Verzekerde: anoniem · Dewi Verver | Juridisch Medewerker",
-      "samenvatting": "Mevrouw Moussavi belde de juridische helpdesk met een vraag over een autoverzekeringspremie en schadevergoedingskorting. De medewerker erkende dat dit onderwerp niet onder de juridische helpdesk valt en verwees de beller door naar de autoverzekeringafdeling (optie 3). De beller is niet geverifieerd en er is geen inhoudelijk juridisch advies gegeven.",
-      "tags": [
-        [
-          "tag-overig",
-          "Routering"
-        ]
-      ],
-      "uitkomst": [
-        "outcome-verkeerd",
-        "Verkeerd nummer"
-      ],
-      "terugbel": false,
-      "verkeerdVerbonden": true,
-      "rechtsbijstandVerwijzing": false,
-      "adviesGegeven": false,
-      "identiteitGeverifieerd": false
-    },
-    {
-      "tijd": "09:24",
-      "titel": "Huurauto Portugal — creditcardnaam en verzekeringskost met Zanne",
-      "personen": "Verzekerde: anoniem · Dewi Verver | Juridisch Medewerker",
-      "samenvatting": "Beller Zanne Paardenkoper belt over een geschil met Booking.com/Rentalcars en een autoverhuurder in Portugal: zij moest onverwacht EUR 170 extra betalen voor aanvullende verzekering omdat haar volledige voornaam niet op de creditcard stond, terwijl Booking.com haar EUR 70 terugbetaalde. De medewerker gaf inhoudelijk juridisch advies over algemene voorwaarden en contractuele aansprakelijkheid, en verwees naar de rechtsbijstandsverzekering voor verdere ondersteuning mocht het een geschil worden. Identiteit is niet geverifieerd.",
-      "tags": [
-        [
-          "tag-consument",
-          "Consumentenrecht"
-        ]
-      ],
-      "uitkomst": [
-        "outcome-opgelost",
-        "Telefonisch opgelost"
-      ],
-      "terugbel": true,
-      "verkeerdVerbonden": false,
-      "rechtsbijstandVerwijzing": false,
-      "adviesGegeven": true,
-      "identiteitGeverifieerd": false
-    },
-    {
-      "tijd": "09:32",
-      "titel": "VSO-check en eerste onderhandeling met arbeidsrechtadvocaat",
-      "personen": "Verzekerde: anoniem · Dewi Verver",
-      "samenvatting": "Beller heeft een VSO (Verklaring Scheiding op Verzoek) ontvangen en vraagt naar zijn rechten en plichten. De medewerker (Dewi) verwerkt de identiteit via postcode en huisnummer, vervolgens legt zij twee opties uit: doorverwijzing naar Brandmeester (onder rechtsbijstandsverzekering) of directe betrokkenheid van een arbeidsrechtadvocaat (€1.210 inclusief BTW voor VSO-check + eerste onderhandeling). De beller kiest voor de advocaatoptie en gaat akkoord met doorverwijzing naar het advocatenkantoor.",
-      "tags": [
-        [
-          "tag-arbeidsrecht",
-          "Arbeidsrecht"
-        ]
-      ],
-      "uitkomst": [
-        "outcome-brandmeester",
-        "Doorverwezen naar Brandmeester"
-      ],
-      "terugbel": false,
-      "verkeerdVerbonden": false,
-      "rechtsbijstandVerwijzing": true,
-      "adviesGegeven": true,
-      "identiteitGeverifieerd": true
-    },
-    {
-      "tijd": "15:27",
-      "titel": "Geschil ex-werkgever: aanzegvergoeding en transitievergoeding met Jaco Zinsoff",
-      "personen": "Verzekerde: anoniem · Dewi Verver | Juridisch Medewerker",
-      "samenvatting": "Jaco Zinsoff belt met een arbeidsconflict met zijn ex-werkgever over aanzegvergoeding en transitievergoeding. De werkgever weigert beide vergoedingen uit te betalen en stelt dat Zinsoff geen recht heeft op aanzegvergoeding en dat hij schuldig is door te veel verlof te hebben opgenomen. De medewerker heeft de beller niet geverifieerd in het systeem en heeft geen inhoudelijk advies gegeven, maar verwijst de zaak direct door naar Brandmeester voor rechtsbijstandsbehandeling.",
-      "tags": [
-        [
-          "tag-arbeidsrecht",
-          "Arbeidsrecht"
-        ]
-      ],
-      "uitkomst": [
-        "outcome-brandmeester",
-        "Doorverwezen naar Brandmeester"
-      ],
-      "terugbel": false,
-      "verkeerdVerbonden": false,
-      "rechtsbijstandVerwijzing": true,
-      "adviesGegeven": false,
-      "identiteitGeverifieerd": false
-    }
-  ],
+  "score": 0,
+  "conversations": [],
   "acties": [],
   "analyse": {
-    "goed": [
-      "09:01 Daily Huddle: Correcte herkenning dat autoverzekeringsvraag buiten juridische helpdesk valt; juiste doorverwijzing naar autoverzekeringafdeling.",
-      "09:32 VSO-check: Identiteit correct geverifieerd via postcode en huisnummer; twee duidelijke opties voorgelegd met concrete kostenbegroting (€1.210); vervolgstap gespecificeerd.",
-      "09:24 Huurauto Portugal: Inhoudelijk juridisch advies gegeven over contractuele aansprakelijkheid en algemene voorwaarden; rechtsbijstandsverzekering als vervolgoptie benoemd."
-    ],
-    "beter": [
-      "09:24 Huurauto Portugal: KRITIEK – Identiteit niet geverifieerd voordat inhoudelijk juridisch advies werd gegeven over het geschil met Rentalcars/Booking.com. Dit is een basiscontrole die heeft gefaald.",
-      "15:27 Geschil ex-werkgever (Jaco Zinsoff): KRITIEK – Beller niet geverifieerd in het systeem EN geen vervolgplan/deadline afgesproken. De directe doorverwijzing naar Brandmeester had moeten gepaard gaan met: (1) poging tot verificatie via postcode/huisnummer en (2) concrete deadline voor Brandmeester-contact (bijvoorbeeld: 'U hoort woensdag van ons') – nu blijft onduidelijk wat de volgende stap en timing is.",
-      "09:24 Huurauto Portugal: Geen concrete deadline benoemd voor vervolgcontact of escalatie naar rechtsbijstand mocht het geschil verder lopen."
-    ]
+    "goed": [],
+    "beter": []
   },
   "verkeerdVerbonden": {
-    "aantal": 1,
-    "percentage": 25.0
+    "aantal": 0,
+    "percentage": 0.0
   },
-  "rechtsbijstandVerwijzingen": 2,
-  "categorieen": [
-    [
-      "Arbeidsrecht",
-      2
-    ],
-    [
-      "Routering",
-      1
-    ],
-    [
-      "Consumentenrecht",
-      1
-    ]
-  ]
+  "rechtsbijstandVerwijzingen": 0,
+  "categorieen": []
 }
