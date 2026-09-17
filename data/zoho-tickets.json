@@ -1,18 +1,33 @@
 {
   "date": "2026-09-17",
-  "generated_at": "2026-09-17T07:50:40Z",
-  "tickets": [],
-  "channelCounts": {},
+  "generated_at": "2026-09-17T08:01:07Z",
+  "tickets": [
+    {
+      "ticketNumber": "2734",
+      "tijd": "09:50",
+      "titel": "FW: Schade aan auto",
+      "klant": "Intake Schade | Lancyr",
+      "status": "Open",
+      "statusType": "",
+      "prioriteit": "Niet ingesteld",
+      "webUrl": "https://desk.zoho.eu/support/htjzlancyr/ShowHomePage.do#Cases/dv/195464000014021181",
+      "channel": "Email",
+      "doorgezetBrandmeester": false
+    }
+  ],
+  "channelCounts": {
+    "Email": 1
+  },
   "brandmeesterCount": 0,
   "ticketStats": {
-    "nieuweVandaag": 0,
+    "nieuweVandaag": 1,
     "geslotenVandaag": 0,
-    "totaalOpen": 25,
+    "totaalOpen": 27,
     "inDeWacht": 17,
     "statusBreakdown": {
-      "Open": 8,
+      "Open": 10,
       "In de wacht": 17,
-      "Gesloten": 632
+      "Gesloten": 631
     },
     "capBereikt": false
   }
