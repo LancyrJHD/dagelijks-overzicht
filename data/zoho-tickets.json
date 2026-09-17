@@ -1,6 +1,6 @@
 {
   "date": "2026-09-17",
-  "generated_at": "2026-09-17T15:40:45Z",
+  "generated_at": "2026-09-17T15:50:41Z",
   "tickets": [
     {
       "ticketNumber": "2734",
@@ -73,19 +73,31 @@
       "webUrl": "https://desk.zoho.eu/support/htjzlancyr/ShowHomePage.do#Cases/dv/195464000014022247",
       "channel": "Email",
       "doorgezetBrandmeester": false
+    },
+    {
+      "ticketNumber": "2740",
+      "tijd": "17:41",
+      "titel": "FW: 84217098 (Tahiri, O.)FW: Terugbelverzoek",
+      "klant": "De juridische helpdesk",
+      "status": "Open",
+      "statusType": "",
+      "prioriteit": "Niet ingesteld",
+      "webUrl": "https://desk.zoho.eu/support/htjzlancyr/ShowHomePage.do#Cases/dv/195464000014021354",
+      "channel": "Email",
+      "doorgezetBrandmeester": false
     }
   ],
   "channelCounts": {
-    "Email": 6
+    "Email": 7
   },
   "brandmeesterCount": 0,
   "ticketStats": {
-    "nieuweVandaag": 6,
+    "nieuweVandaag": 7,
     "geslotenVandaag": 0,
-    "totaalOpen": 34,
+    "totaalOpen": 35,
     "inDeWacht": 14,
     "statusBreakdown": {
-      "Open": 20,
+      "Open": 21,
       "In de wacht": 14,
       "Gesloten": 628
     },
