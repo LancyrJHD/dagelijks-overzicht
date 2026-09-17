@@ -1,6 +1,6 @@
 {
   "date": "2026-09-17",
-  "generated_at": "2026-09-17T10:40:43Z",
+  "generated_at": "2026-09-17T10:50:43Z",
   "tickets": [
     {
       "ticketNumber": "2734",
@@ -37,19 +37,31 @@
       "webUrl": "https://desk.zoho.eu/support/htjzlancyr/ShowHomePage.do#Cases/dv/195464000014022139",
       "channel": "Email",
       "doorgezetBrandmeester": false
+    },
+    {
+      "ticketNumber": "2737",
+      "tijd": "12:42",
+      "titel": "Schadenummer: HSCH2605166",
+      "klant": "KTS Klimaat",
+      "status": "Open",
+      "statusType": "",
+      "prioriteit": "Niet ingesteld",
+      "webUrl": "https://desk.zoho.eu/support/htjzlancyr/ShowHomePage.do#Cases/dv/195464000014021292",
+      "channel": "Email",
+      "doorgezetBrandmeester": false
     }
   ],
   "channelCounts": {
-    "Email": 3
+    "Email": 4
   },
   "brandmeesterCount": 0,
   "ticketStats": {
-    "nieuweVandaag": 3,
+    "nieuweVandaag": 4,
     "geslotenVandaag": 0,
-    "totaalOpen": 31,
+    "totaalOpen": 32,
     "inDeWacht": 15,
     "statusBreakdown": {
-      "Open": 16,
+      "Open": 17,
       "In de wacht": 15,
       "Gesloten": 629
     },
