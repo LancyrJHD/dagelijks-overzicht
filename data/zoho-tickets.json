@@ -1,6 +1,6 @@
 {
   "date": "2026-09-17",
-  "generated_at": "2026-09-17T08:10:45Z",
+  "generated_at": "2026-09-17T08:20:47Z",
   "tickets": [
     {
       "ticketNumber": "2734",
@@ -13,21 +13,33 @@
       "webUrl": "https://desk.zoho.eu/support/htjzlancyr/ShowHomePage.do#Cases/dv/195464000014021181",
       "channel": "Email",
       "doorgezetBrandmeester": false
+    },
+    {
+      "ticketNumber": "2735",
+      "tijd": "10:13",
+      "titel": "Spoed",
+      "klant": "Y. Verwijs",
+      "status": "Open",
+      "statusType": "",
+      "prioriteit": "Niet ingesteld",
+      "webUrl": "https://desk.zoho.eu/support/htjzlancyr/ShowHomePage.do#Cases/dv/195464000014068078",
+      "channel": "Email",
+      "doorgezetBrandmeester": false
     }
   ],
   "channelCounts": {
-    "Email": 1
+    "Email": 2
   },
   "brandmeesterCount": 0,
   "ticketStats": {
-    "nieuweVandaag": 1,
+    "nieuweVandaag": 2,
     "geslotenVandaag": 0,
-    "totaalOpen": 27,
+    "totaalOpen": 29,
     "inDeWacht": 17,
     "statusBreakdown": {
-      "Open": 10,
+      "Open": 12,
       "In de wacht": 17,
-      "Gesloten": 631
+      "Gesloten": 630
     },
     "capBereikt": false
   }
