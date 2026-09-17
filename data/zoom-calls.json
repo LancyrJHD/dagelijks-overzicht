@@ -1,10 +1,10 @@
 {
   "date": "2026-09-17",
-  "generated_at": "2026-09-17T08:01:08Z",
-  "totaalInbound": 2,
-  "totaalGemist": 2,
+  "generated_at": "2026-09-17T08:10:47Z",
+  "totaalInbound": 3,
+  "totaalGemist": 3,
   "terugGebeld": 0,
-  "nietTerugGebeld": 2,
+  "nietTerugGebeld": 3,
   "nietTerugGebeldNummers": [
     {
       "nummer": "+31658710056",
@@ -17,6 +17,13 @@
       "nummer": "+31643087323",
       "naam": "Onbekend",
       "tijd": "09:37",
+      "callResult": "overflowed",
+      "teruggebeld": false
+    },
+    {
+      "nummer": "+31638652762",
+      "naam": "Onbekend",
+      "tijd": "09:57",
       "callResult": "overflowed",
       "teruggebeld": false
     }
@@ -33,6 +40,13 @@
       "nummer": "+31643087323",
       "naam": "Onbekend",
       "tijd": "09:37",
+      "callResult": "overflowed",
+      "teruggebeld": false
+    },
+    {
+      "nummer": "+31638652762",
+      "naam": "Onbekend",
+      "tijd": "09:57",
       "callResult": "overflowed",
       "teruggebeld": false
     }
