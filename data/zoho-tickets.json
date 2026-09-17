@@ -1,6 +1,6 @@
 {
   "date": "2026-09-17",
-  "generated_at": "2026-09-17T13:30:55Z",
+  "generated_at": "2026-09-17T13:40:45Z",
   "tickets": [
     {
       "ticketNumber": "2734",
@@ -49,19 +49,31 @@
       "webUrl": "https://desk.zoho.eu/support/htjzlancyr/ShowHomePage.do#Cases/dv/195464000014021292",
       "channel": "Email",
       "doorgezetBrandmeester": false
+    },
+    {
+      "ticketNumber": "2738",
+      "tijd": "15:37",
+      "titel": "FW: 84193022_Stots Een vraag stellen",
+      "klant": "De juridische helpdesk",
+      "status": "Open",
+      "statusType": "",
+      "prioriteit": "Niet ingesteld",
+      "webUrl": "https://desk.zoho.eu/support/htjzlancyr/ShowHomePage.do#Cases/dv/195464000014022192",
+      "channel": "Email",
+      "doorgezetBrandmeester": false
     }
   ],
   "channelCounts": {
-    "Email": 4
+    "Email": 5
   },
   "brandmeesterCount": 0,
   "ticketStats": {
-    "nieuweVandaag": 4,
+    "nieuweVandaag": 5,
     "geslotenVandaag": 0,
-    "totaalOpen": 32,
+    "totaalOpen": 33,
     "inDeWacht": 15,
     "statusBreakdown": {
-      "Open": 17,
+      "Open": 18,
       "In de wacht": 15,
       "Gesloten": 628
     },
