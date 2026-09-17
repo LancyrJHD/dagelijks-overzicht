@@ -2136,11 +2136,18 @@
         "nummer": "+31658710056",
         "teruggebeld": false,
         "tijd": "15:09"
+      },
+      {
+        "callResult": "abandoned",
+        "naam": "Onbekend",
+        "nummer": "+31621180720",
+        "teruggebeld": false,
+        "tijd": "16:18"
       }
     ],
     "date": "2026-09-17",
-    "generated_at": "2026-09-17T14:10:46Z",
-    "nietTerugGebeld": 10,
+    "generated_at": "2026-09-17T14:20:49Z",
+    "nietTerugGebeld": 11,
     "nietTerugGebeldNummers": [
       {
         "callResult": "overflowed",
@@ -2211,10 +2218,17 @@
         "nummer": "+31658710056",
         "teruggebeld": false,
         "tijd": "15:09"
+      },
+      {
+        "callResult": "abandoned",
+        "naam": "Onbekend",
+        "nummer": "+31621180720",
+        "teruggebeld": false,
+        "tijd": "16:18"
       }
     ],
     "terugGebeld": 0,
-    "totaalGemist": 10,
-    "totaalInbound": 10
+    "totaalGemist": 11,
+    "totaalInbound": 11
   }
 }

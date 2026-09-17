@@ -1,10 +1,10 @@
 {
   "date": "2026-09-17",
-  "generated_at": "2026-09-17T14:10:46Z",
-  "totaalInbound": 10,
-  "totaalGemist": 10,
+  "generated_at": "2026-09-17T14:20:49Z",
+  "totaalInbound": 11,
+  "totaalGemist": 11,
   "terugGebeld": 0,
-  "nietTerugGebeld": 10,
+  "nietTerugGebeld": 11,
   "nietTerugGebeldNummers": [
     {
       "nummer": "+31658710056",
@@ -74,6 +74,13 @@
       "naam": "Onbekend",
       "tijd": "15:09",
       "callResult": "overflowed",
+      "teruggebeld": false
+    },
+    {
+      "nummer": "+31621180720",
+      "naam": "Onbekend",
+      "tijd": "16:18",
+      "callResult": "abandoned",
       "teruggebeld": false
     }
   ],
@@ -146,6 +153,13 @@
       "naam": "Onbekend",
       "tijd": "15:09",
       "callResult": "overflowed",
+      "teruggebeld": false
+    },
+    {
+      "nummer": "+31621180720",
+      "naam": "Onbekend",
+      "tijd": "16:18",
+      "callResult": "abandoned",
       "teruggebeld": false
     }
   ]
