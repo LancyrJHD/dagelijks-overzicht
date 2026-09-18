@@ -2253,11 +2253,18 @@
         "nummer": "+31687410680",
         "teruggebeld": false,
         "tijd": "09:46"
+      },
+      {
+        "callResult": "abandoned",
+        "naam": "Onbekend",
+        "nummer": "+31614262094",
+        "teruggebeld": false,
+        "tijd": "09:56"
       }
     ],
     "date": "2026-09-18",
-    "generated_at": "2026-09-18T07:50:39Z",
-    "nietTerugGebeld": 3,
+    "generated_at": "2026-09-18T08:00:57Z",
+    "nietTerugGebeld": 4,
     "nietTerugGebeldNummers": [
       {
         "callResult": "abandoned",
@@ -2279,10 +2286,17 @@
         "nummer": "+31687410680",
         "teruggebeld": false,
         "tijd": "09:46"
+      },
+      {
+        "callResult": "abandoned",
+        "naam": "Onbekend",
+        "nummer": "+31614262094",
+        "teruggebeld": false,
+        "tijd": "09:56"
       }
     ],
     "terugGebeld": 0,
-    "totaalGemist": 3,
-    "totaalInbound": 3
+    "totaalGemist": 4,
+    "totaalInbound": 4
   }
 }

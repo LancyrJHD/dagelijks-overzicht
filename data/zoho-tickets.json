@@ -1,16 +1,31 @@
 {
   "date": "2026-09-18",
-  "generated_at": "2026-09-18T07:50:38Z",
-  "tickets": [],
-  "channelCounts": {},
+  "generated_at": "2026-09-18T08:00:56Z",
+  "tickets": [
+    {
+      "ticketNumber": "2741",
+      "tijd": "09:58",
+      "titel": "Rechtsbijstand geschil BSO",
+      "klant": "Simone de Ruijter-Heemskerk",
+      "status": "Open",
+      "statusType": "",
+      "prioriteit": "Niet ingesteld",
+      "webUrl": "https://desk.zoho.eu/support/htjzlancyr/ShowHomePage.do#Cases/dv/195464000014022324",
+      "channel": "Email",
+      "doorgezetBrandmeester": false
+    }
+  ],
+  "channelCounts": {
+    "Email": 1
+  },
   "brandmeesterCount": 0,
   "ticketStats": {
-    "nieuweVandaag": 0,
+    "nieuweVandaag": 1,
     "geslotenVandaag": 0,
-    "totaalOpen": 35,
+    "totaalOpen": 36,
     "inDeWacht": 13,
     "statusBreakdown": {
-      "Open": 22,
+      "Open": 23,
       "In de wacht": 13,
       "Gesloten": 628
     },

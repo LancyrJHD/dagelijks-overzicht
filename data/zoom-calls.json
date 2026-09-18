@@ -1,10 +1,10 @@
 {
   "date": "2026-09-18",
-  "generated_at": "2026-09-18T07:50:39Z",
-  "totaalInbound": 3,
-  "totaalGemist": 3,
+  "generated_at": "2026-09-18T08:00:57Z",
+  "totaalInbound": 4,
+  "totaalGemist": 4,
   "terugGebeld": 0,
-  "nietTerugGebeld": 3,
+  "nietTerugGebeld": 4,
   "nietTerugGebeldNummers": [
     {
       "nummer": "+31625464551",
@@ -24,6 +24,13 @@
       "nummer": "+31687410680",
       "naam": "Onbekend",
       "tijd": "09:46",
+      "callResult": "abandoned",
+      "teruggebeld": false
+    },
+    {
+      "nummer": "+31614262094",
+      "naam": "Onbekend",
+      "tijd": "09:56",
       "callResult": "abandoned",
       "teruggebeld": false
     }
@@ -47,6 +54,13 @@
       "nummer": "+31687410680",
       "naam": "Onbekend",
       "tijd": "09:46",
+      "callResult": "abandoned",
+      "teruggebeld": false
+    },
+    {
+      "nummer": "+31614262094",
+      "naam": "Onbekend",
+      "tijd": "09:56",
       "callResult": "abandoned",
       "teruggebeld": false
     }
