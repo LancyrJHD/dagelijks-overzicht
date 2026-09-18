@@ -1,6 +1,6 @@
 {
   "date": "2026-09-18",
-  "generated_at": "2026-09-18T10:01:06Z",
+  "generated_at": "2026-09-18T10:10:40Z",
   "tickets": [
     {
       "ticketNumber": "2741",
@@ -13,19 +13,31 @@
       "webUrl": "https://desk.zoho.eu/support/htjzlancyr/ShowHomePage.do#Cases/dv/195464000014022324",
       "channel": "Email",
       "doorgezetBrandmeester": false
+    },
+    {
+      "ticketNumber": "2742",
+      "tijd": "12:07",
+      "titel": "FW: Dispute of Liability and Damage Claim – €1,228.46",
+      "klant": "De juridische helpdesk",
+      "status": "Open",
+      "statusType": "",
+      "prioriteit": "Niet ingesteld",
+      "webUrl": "https://desk.zoho.eu/support/htjzlancyr/ShowHomePage.do#Cases/dv/195464000014021409",
+      "channel": "Email",
+      "doorgezetBrandmeester": false
     }
   ],
   "channelCounts": {
-    "Email": 1
+    "Email": 2
   },
   "brandmeesterCount": 0,
   "ticketStats": {
-    "nieuweVandaag": 1,
+    "nieuweVandaag": 2,
     "geslotenVandaag": 0,
-    "totaalOpen": 37,
+    "totaalOpen": 38,
     "inDeWacht": 13,
     "statusBreakdown": {
-      "Open": 24,
+      "Open": 25,
       "In de wacht": 13,
       "Gesloten": 627
     },
