@@ -2309,11 +2309,18 @@
         "nummer": "+31611056769",
         "teruggebeld": false,
         "tijd": "11:39"
+      },
+      {
+        "callResult": "abandoned",
+        "naam": "Onbekend",
+        "nummer": "+31643087323",
+        "teruggebeld": false,
+        "tijd": "12:34"
       }
     ],
     "date": "2026-09-18",
-    "generated_at": "2026-09-18T10:30:50Z",
-    "nietTerugGebeld": 11,
+    "generated_at": "2026-09-18T10:40:46Z",
+    "nietTerugGebeld": 12,
     "nietTerugGebeldNummers": [
       {
         "callResult": "abandoned",
@@ -2391,10 +2398,17 @@
         "nummer": "+31611056769",
         "teruggebeld": false,
         "tijd": "11:39"
+      },
+      {
+        "callResult": "abandoned",
+        "naam": "Onbekend",
+        "nummer": "+31643087323",
+        "teruggebeld": false,
+        "tijd": "12:34"
       }
     ],
     "terugGebeld": 0,
-    "totaalGemist": 11,
-    "totaalInbound": 11
+    "totaalGemist": 12,
+    "totaalInbound": 12
   }
 }

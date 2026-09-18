@@ -1,6 +1,6 @@
 {
   "date": "2026-09-18",
-  "generated_at": "2026-09-18T10:30:49Z",
+  "generated_at": "2026-09-18T10:40:44Z",
   "tickets": [
     {
       "ticketNumber": "2741",
@@ -25,19 +25,31 @@
       "webUrl": "https://desk.zoho.eu/support/htjzlancyr/ShowHomePage.do#Cases/dv/195464000014021409",
       "channel": "Email",
       "doorgezetBrandmeester": false
+    },
+    {
+      "ticketNumber": "2743",
+      "tijd": "12:32",
+      "titel": "FW: HSCH2605450",
+      "klant": "De juridische helpdesk",
+      "status": "Open",
+      "statusType": "",
+      "prioriteit": "Niet ingesteld",
+      "webUrl": "https://desk.zoho.eu/support/htjzlancyr/ShowHomePage.do#Cases/dv/195464000014068131",
+      "channel": "Email",
+      "doorgezetBrandmeester": false
     }
   ],
   "channelCounts": {
-    "Email": 2
+    "Email": 3
   },
   "brandmeesterCount": 0,
   "ticketStats": {
-    "nieuweVandaag": 2,
+    "nieuweVandaag": 3,
     "geslotenVandaag": 0,
-    "totaalOpen": 38,
+    "totaalOpen": 39,
     "inDeWacht": 13,
     "statusBreakdown": {
-      "Open": 25,
+      "Open": 26,
       "In de wacht": 13,
       "Gesloten": 627
     },
