@@ -2281,11 +2281,18 @@
         "nummer": "+31657838246",
         "teruggebeld": false,
         "tijd": "11:00"
+      },
+      {
+        "callResult": "abandoned",
+        "naam": "Onbekend",
+        "nummer": "+31644958593",
+        "teruggebeld": false,
+        "tijd": "11:12"
       }
     ],
     "date": "2026-09-18",
-    "generated_at": "2026-09-18T09:10:40Z",
-    "nietTerugGebeld": 7,
+    "generated_at": "2026-09-18T09:20:44Z",
+    "nietTerugGebeld": 8,
     "nietTerugGebeldNummers": [
       {
         "callResult": "abandoned",
@@ -2335,10 +2342,17 @@
         "nummer": "+31657838246",
         "teruggebeld": false,
         "tijd": "11:00"
+      },
+      {
+        "callResult": "abandoned",
+        "naam": "Onbekend",
+        "nummer": "+31644958593",
+        "teruggebeld": false,
+        "tijd": "11:12"
       }
     ],
     "terugGebeld": 0,
-    "totaalGemist": 7,
-    "totaalInbound": 7
+    "totaalGemist": 8,
+    "totaalInbound": 8
   }
 }
