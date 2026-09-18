@@ -1,6 +1,6 @@
 {
   "date": "2026-09-18",
-  "generated_at": "2026-09-18T12:50:51Z",
+  "generated_at": "2026-09-18T13:01:02Z",
   "tickets": [
     {
       "ticketNumber": "2741",
@@ -37,19 +37,31 @@
       "webUrl": "https://desk.zoho.eu/support/htjzlancyr/ShowHomePage.do#Cases/dv/195464000014068131",
       "channel": "Email",
       "doorgezetBrandmeester": false
+    },
+    {
+      "ticketNumber": "2744",
+      "tijd": "14:59",
+      "titel": "K-639-RF",
+      "klant": "KTS Klimaat",
+      "status": "Open",
+      "statusType": "",
+      "prioriteit": "Niet ingesteld",
+      "webUrl": "https://desk.zoho.eu/support/htjzlancyr/ShowHomePage.do#Cases/dv/195464000014068186",
+      "channel": "Email",
+      "doorgezetBrandmeester": false
     }
   ],
   "channelCounts": {
-    "Email": 3
+    "Email": 4
   },
   "brandmeesterCount": 0,
   "ticketStats": {
-    "nieuweVandaag": 3,
+    "nieuweVandaag": 4,
     "geslotenVandaag": 0,
-    "totaalOpen": 39,
+    "totaalOpen": 40,
     "inDeWacht": 13,
     "statusBreakdown": {
-      "Open": 26,
+      "Open": 27,
       "In de wacht": 13,
       "Gesloten": 625
     },

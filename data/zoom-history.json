@@ -2330,11 +2330,18 @@
         "nummer": "+31624581614",
         "teruggebeld": false,
         "tijd": "14:19"
+      },
+      {
+        "callResult": "overflowed",
+        "naam": "Onbekend",
+        "nummer": "+31645302455",
+        "teruggebeld": false,
+        "tijd": "14:50"
       }
     ],
     "date": "2026-09-18",
-    "generated_at": "2026-09-18T12:50:53Z",
-    "nietTerugGebeld": 14,
+    "generated_at": "2026-09-18T13:01:04Z",
+    "nietTerugGebeld": 15,
     "nietTerugGebeldNummers": [
       {
         "callResult": "abandoned",
@@ -2433,10 +2440,17 @@
         "nummer": "+31624581614",
         "teruggebeld": false,
         "tijd": "14:19"
+      },
+      {
+        "callResult": "overflowed",
+        "naam": "Onbekend",
+        "nummer": "+31645302455",
+        "teruggebeld": false,
+        "tijd": "14:50"
       }
     ],
     "terugGebeld": 0,
-    "totaalGemist": 14,
-    "totaalInbound": 14
+    "totaalGemist": 15,
+    "totaalInbound": 15
   }
 }
