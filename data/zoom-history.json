@@ -2344,11 +2344,18 @@
         "nummer": "+31614494357",
         "teruggebeld": false,
         "tijd": "15:21"
+      },
+      {
+        "callResult": "overflowed",
+        "naam": "Onbekend",
+        "nummer": "+31644958593",
+        "teruggebeld": false,
+        "tijd": "16:07"
       }
     ],
     "date": "2026-09-18",
-    "generated_at": "2026-09-18T14:10:47Z",
-    "nietTerugGebeld": 16,
+    "generated_at": "2026-09-18T14:20:49Z",
+    "nietTerugGebeld": 17,
     "nietTerugGebeldNummers": [
       {
         "callResult": "abandoned",
@@ -2461,10 +2468,17 @@
         "nummer": "+31614494357",
         "teruggebeld": false,
         "tijd": "15:21"
+      },
+      {
+        "callResult": "overflowed",
+        "naam": "Onbekend",
+        "nummer": "+31644958593",
+        "teruggebeld": false,
+        "tijd": "16:07"
       }
     ],
     "terugGebeld": 0,
-    "totaalGemist": 16,
-    "totaalInbound": 16
+    "totaalGemist": 17,
+    "totaalInbound": 17
   }
 }
