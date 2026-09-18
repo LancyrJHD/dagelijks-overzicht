@@ -2283,6 +2283,13 @@
         "tijd": "11:00"
       },
       {
+        "callResult": "overflowed",
+        "naam": "Onbekend",
+        "nummer": "+31623726962",
+        "teruggebeld": false,
+        "tijd": "11:11"
+      },
+      {
         "callResult": "abandoned",
         "naam": "Onbekend",
         "nummer": "+31644958593",
@@ -2291,8 +2298,8 @@
       }
     ],
     "date": "2026-09-18",
-    "generated_at": "2026-09-18T09:20:44Z",
-    "nietTerugGebeld": 8,
+    "generated_at": "2026-09-18T09:30:52Z",
+    "nietTerugGebeld": 9,
     "nietTerugGebeldNummers": [
       {
         "callResult": "abandoned",
@@ -2344,6 +2351,13 @@
         "tijd": "11:00"
       },
       {
+        "callResult": "overflowed",
+        "naam": "Onbekend",
+        "nummer": "+31623726962",
+        "teruggebeld": false,
+        "tijd": "11:11"
+      },
+      {
         "callResult": "abandoned",
         "naam": "Onbekend",
         "nummer": "+31644958593",
@@ -2352,7 +2366,7 @@
       }
     ],
     "terugGebeld": 0,
-    "totaalGemist": 8,
-    "totaalInbound": 8
+    "totaalGemist": 9,
+    "totaalInbound": 9
   }
 }

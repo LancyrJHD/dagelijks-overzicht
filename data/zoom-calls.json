@@ -1,10 +1,10 @@
 {
   "date": "2026-09-18",
-  "generated_at": "2026-09-18T09:20:44Z",
-  "totaalInbound": 8,
-  "totaalGemist": 8,
+  "generated_at": "2026-09-18T09:30:52Z",
+  "totaalInbound": 9,
+  "totaalGemist": 9,
   "terugGebeld": 0,
-  "nietTerugGebeld": 8,
+  "nietTerugGebeld": 9,
   "nietTerugGebeldNummers": [
     {
       "nummer": "+31625464551",
@@ -52,6 +52,13 @@
       "nummer": "+31657838246",
       "naam": "Onbekend",
       "tijd": "11:00",
+      "callResult": "overflowed",
+      "teruggebeld": false
+    },
+    {
+      "nummer": "+31623726962",
+      "naam": "Onbekend",
+      "tijd": "11:11",
       "callResult": "overflowed",
       "teruggebeld": false
     },
@@ -110,6 +117,13 @@
       "nummer": "+31657838246",
       "naam": "Onbekend",
       "tijd": "11:00",
+      "callResult": "overflowed",
+      "teruggebeld": false
+    },
+    {
+      "nummer": "+31623726962",
+      "naam": "Onbekend",
+      "tijd": "11:11",
       "callResult": "overflowed",
       "teruggebeld": false
     },
