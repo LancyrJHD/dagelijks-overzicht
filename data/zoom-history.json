@@ -2239,11 +2239,18 @@
         "nummer": "+31625464551",
         "teruggebeld": false,
         "tijd": "09:10"
+      },
+      {
+        "callResult": "overflowed",
+        "naam": "Onbekend",
+        "nummer": "+31627450872",
+        "teruggebeld": false,
+        "tijd": "09:21"
       }
     ],
     "date": "2026-09-18",
-    "generated_at": "2026-09-18T07:30:49Z",
-    "nietTerugGebeld": 1,
+    "generated_at": "2026-09-18T07:40:43Z",
+    "nietTerugGebeld": 2,
     "nietTerugGebeldNummers": [
       {
         "callResult": "abandoned",
@@ -2251,10 +2258,17 @@
         "nummer": "+31625464551",
         "teruggebeld": false,
         "tijd": "09:10"
+      },
+      {
+        "callResult": "overflowed",
+        "naam": "Onbekend",
+        "nummer": "+31627450872",
+        "teruggebeld": false,
+        "tijd": "09:21"
       }
     ],
     "terugGebeld": 0,
-    "totaalGemist": 1,
-    "totaalInbound": 1
+    "totaalGemist": 2,
+    "totaalInbound": 2
   }
 }
