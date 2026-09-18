@@ -2232,13 +2232,29 @@
     "totaalInbound": 11
   },
   "2026-09-18": {
-    "alleGemistNummers": [],
+    "alleGemistNummers": [
+      {
+        "callResult": "abandoned",
+        "naam": "Onbekend",
+        "nummer": "+31625464551",
+        "teruggebeld": false,
+        "tijd": "09:10"
+      }
+    ],
     "date": "2026-09-18",
-    "generated_at": "2026-09-18T07:10:42Z",
-    "nietTerugGebeld": 0,
-    "nietTerugGebeldNummers": [],
+    "generated_at": "2026-09-18T07:20:46Z",
+    "nietTerugGebeld": 1,
+    "nietTerugGebeldNummers": [
+      {
+        "callResult": "abandoned",
+        "naam": "Onbekend",
+        "nummer": "+31625464551",
+        "teruggebeld": false,
+        "tijd": "09:10"
+      }
+    ],
     "terugGebeld": 0,
-    "totaalGemist": 0,
-    "totaalInbound": 0
+    "totaalGemist": 1,
+    "totaalInbound": 1
   }
 }

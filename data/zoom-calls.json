@@ -1,10 +1,26 @@
 {
   "date": "2026-09-18",
-  "generated_at": "2026-09-18T07:10:42Z",
-  "totaalInbound": 0,
-  "totaalGemist": 0,
+  "generated_at": "2026-09-18T07:20:46Z",
+  "totaalInbound": 1,
+  "totaalGemist": 1,
   "terugGebeld": 0,
-  "nietTerugGebeld": 0,
-  "nietTerugGebeldNummers": [],
-  "alleGemistNummers": []
+  "nietTerugGebeld": 1,
+  "nietTerugGebeldNummers": [
+    {
+      "nummer": "+31625464551",
+      "naam": "Onbekend",
+      "tijd": "09:10",
+      "callResult": "abandoned",
+      "teruggebeld": false
+    }
+  ],
+  "alleGemistNummers": [
+    {
+      "nummer": "+31625464551",
+      "naam": "Onbekend",
+      "tijd": "09:10",
+      "callResult": "abandoned",
+      "teruggebeld": false
+    }
+  ]
 }
