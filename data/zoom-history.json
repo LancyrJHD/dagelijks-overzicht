@@ -2323,11 +2323,18 @@
         "nummer": "+31648316922",
         "teruggebeld": false,
         "tijd": "14:12"
+      },
+      {
+        "callResult": "overflowed",
+        "naam": "Onbekend",
+        "nummer": "+31624581614",
+        "teruggebeld": false,
+        "tijd": "14:19"
       }
     ],
     "date": "2026-09-18",
-    "generated_at": "2026-09-18T12:20:54Z",
-    "nietTerugGebeld": 13,
+    "generated_at": "2026-09-18T12:30:57Z",
+    "nietTerugGebeld": 14,
     "nietTerugGebeldNummers": [
       {
         "callResult": "abandoned",
@@ -2419,10 +2426,17 @@
         "nummer": "+31648316922",
         "teruggebeld": false,
         "tijd": "14:12"
+      },
+      {
+        "callResult": "overflowed",
+        "naam": "Onbekend",
+        "nummer": "+31624581614",
+        "teruggebeld": false,
+        "tijd": "14:19"
       }
     ],
     "terugGebeld": 0,
-    "totaalGemist": 13,
-    "totaalInbound": 13
+    "totaalGemist": 14,
+    "totaalInbound": 14
   }
 }
