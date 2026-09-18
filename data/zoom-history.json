@@ -2295,11 +2295,18 @@
         "nummer": "+31644958593",
         "teruggebeld": false,
         "tijd": "11:12"
+      },
+      {
+        "callResult": "overflowed",
+        "naam": "Onbekend",
+        "nummer": "+31643087323",
+        "teruggebeld": false,
+        "tijd": "11:28"
       }
     ],
     "date": "2026-09-18",
-    "generated_at": "2026-09-18T09:30:52Z",
-    "nietTerugGebeld": 9,
+    "generated_at": "2026-09-18T09:40:47Z",
+    "nietTerugGebeld": 10,
     "nietTerugGebeldNummers": [
       {
         "callResult": "abandoned",
@@ -2363,10 +2370,17 @@
         "nummer": "+31644958593",
         "teruggebeld": false,
         "tijd": "11:12"
+      },
+      {
+        "callResult": "overflowed",
+        "naam": "Onbekend",
+        "nummer": "+31643087323",
+        "teruggebeld": false,
+        "tijd": "11:28"
       }
     ],
     "terugGebeld": 0,
-    "totaalGemist": 9,
-    "totaalInbound": 9
+    "totaalGemist": 10,
+    "totaalInbound": 10
   }
 }
