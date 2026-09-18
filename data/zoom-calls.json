@@ -1,10 +1,10 @@
 {
   "date": "2026-09-18",
-  "generated_at": "2026-09-18T09:40:47Z",
-  "totaalInbound": 10,
-  "totaalGemist": 10,
+  "generated_at": "2026-09-18T09:50:40Z",
+  "totaalInbound": 11,
+  "totaalGemist": 11,
   "terugGebeld": 0,
-  "nietTerugGebeld": 10,
+  "nietTerugGebeld": 11,
   "nietTerugGebeldNummers": [
     {
       "nummer": "+31625464551",
@@ -74,6 +74,13 @@
       "naam": "Onbekend",
       "tijd": "11:28",
       "callResult": "overflowed",
+      "teruggebeld": false
+    },
+    {
+      "nummer": "+31611056769",
+      "naam": "Onbekend",
+      "tijd": "11:39",
+      "callResult": "abandoned",
       "teruggebeld": false
     }
   ],
@@ -146,6 +153,13 @@
       "naam": "Onbekend",
       "tijd": "11:28",
       "callResult": "overflowed",
+      "teruggebeld": false
+    },
+    {
+      "nummer": "+31611056769",
+      "naam": "Onbekend",
+      "tijd": "11:39",
+      "callResult": "abandoned",
       "teruggebeld": false
     }
   ]

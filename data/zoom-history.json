@@ -2302,11 +2302,18 @@
         "nummer": "+31643087323",
         "teruggebeld": false,
         "tijd": "11:28"
+      },
+      {
+        "callResult": "abandoned",
+        "naam": "Onbekend",
+        "nummer": "+31611056769",
+        "teruggebeld": false,
+        "tijd": "11:39"
       }
     ],
     "date": "2026-09-18",
-    "generated_at": "2026-09-18T09:40:47Z",
-    "nietTerugGebeld": 10,
+    "generated_at": "2026-09-18T09:50:40Z",
+    "nietTerugGebeld": 11,
     "nietTerugGebeldNummers": [
       {
         "callResult": "abandoned",
@@ -2377,10 +2384,17 @@
         "nummer": "+31643087323",
         "teruggebeld": false,
         "tijd": "11:28"
+      },
+      {
+        "callResult": "abandoned",
+        "naam": "Onbekend",
+        "nummer": "+31611056769",
+        "teruggebeld": false,
+        "tijd": "11:39"
       }
     ],
     "terugGebeld": 0,
-    "totaalGemist": 10,
-    "totaalInbound": 10
+    "totaalGemist": 11,
+    "totaalInbound": 11
   }
 }
