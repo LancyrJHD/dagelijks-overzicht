@@ -1,10 +1,10 @@
 {
   "date": "2026-09-18",
-  "generated_at": "2026-09-18T14:40:48Z",
-  "totaalInbound": 17,
-  "totaalGemist": 17,
+  "generated_at": "2026-09-18T14:50:48Z",
+  "totaalInbound": 19,
+  "totaalGemist": 19,
   "terugGebeld": 0,
-  "nietTerugGebeld": 17,
+  "nietTerugGebeld": 19,
   "nietTerugGebeldNummers": [
     {
       "nummer": "+31625464551",
@@ -122,6 +122,20 @@
       "nummer": "+31644958593",
       "naam": "Onbekend",
       "tijd": "16:07",
+      "callResult": "overflowed",
+      "teruggebeld": false
+    },
+    {
+      "nummer": "+31644958593",
+      "naam": "Onbekend",
+      "tijd": "16:31",
+      "callResult": "overflowed",
+      "teruggebeld": false
+    },
+    {
+      "nummer": "+31684158236",
+      "naam": "Onbekend",
+      "tijd": "16:37",
       "callResult": "overflowed",
       "teruggebeld": false
     }
@@ -243,6 +257,20 @@
       "nummer": "+31644958593",
       "naam": "Onbekend",
       "tijd": "16:07",
+      "callResult": "overflowed",
+      "teruggebeld": false
+    },
+    {
+      "nummer": "+31644958593",
+      "naam": "Onbekend",
+      "tijd": "16:31",
+      "callResult": "overflowed",
+      "teruggebeld": false
+    },
+    {
+      "nummer": "+31684158236",
+      "naam": "Onbekend",
+      "tijd": "16:37",
       "callResult": "overflowed",
       "teruggebeld": false
     }

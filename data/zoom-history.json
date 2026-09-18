@@ -2351,11 +2351,25 @@
         "nummer": "+31644958593",
         "teruggebeld": false,
         "tijd": "16:07"
+      },
+      {
+        "callResult": "overflowed",
+        "naam": "Onbekend",
+        "nummer": "+31644958593",
+        "teruggebeld": false,
+        "tijd": "16:31"
+      },
+      {
+        "callResult": "overflowed",
+        "naam": "Onbekend",
+        "nummer": "+31684158236",
+        "teruggebeld": false,
+        "tijd": "16:37"
       }
     ],
     "date": "2026-09-18",
-    "generated_at": "2026-09-18T14:40:48Z",
-    "nietTerugGebeld": 17,
+    "generated_at": "2026-09-18T14:50:48Z",
+    "nietTerugGebeld": 19,
     "nietTerugGebeldNummers": [
       {
         "callResult": "abandoned",
@@ -2475,10 +2489,24 @@
         "nummer": "+31644958593",
         "teruggebeld": false,
         "tijd": "16:07"
+      },
+      {
+        "callResult": "overflowed",
+        "naam": "Onbekend",
+        "nummer": "+31644958593",
+        "teruggebeld": false,
+        "tijd": "16:31"
+      },
+      {
+        "callResult": "overflowed",
+        "naam": "Onbekend",
+        "nummer": "+31684158236",
+        "teruggebeld": false,
+        "tijd": "16:37"
       }
     ],
     "terugGebeld": 0,
-    "totaalGemist": 17,
-    "totaalInbound": 17
+    "totaalGemist": 19,
+    "totaalInbound": 19
   }
 }
