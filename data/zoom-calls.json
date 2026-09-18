@@ -1,10 +1,10 @@
 {
   "date": "2026-09-18",
-  "generated_at": "2026-09-18T12:10:56Z",
-  "totaalInbound": 12,
-  "totaalGemist": 12,
+  "generated_at": "2026-09-18T12:20:54Z",
+  "totaalInbound": 13,
+  "totaalGemist": 13,
   "terugGebeld": 0,
-  "nietTerugGebeld": 12,
+  "nietTerugGebeld": 13,
   "nietTerugGebeldNummers": [
     {
       "nummer": "+31625464551",
@@ -87,6 +87,13 @@
       "nummer": "+31643087323",
       "naam": "Onbekend",
       "tijd": "12:34",
+      "callResult": "abandoned",
+      "teruggebeld": false
+    },
+    {
+      "nummer": "+31648316922",
+      "naam": "Onbekend",
+      "tijd": "14:12",
       "callResult": "abandoned",
       "teruggebeld": false
     }
@@ -173,6 +180,13 @@
       "nummer": "+31643087323",
       "naam": "Onbekend",
       "tijd": "12:34",
+      "callResult": "abandoned",
+      "teruggebeld": false
+    },
+    {
+      "nummer": "+31648316922",
+      "naam": "Onbekend",
+      "tijd": "14:12",
       "callResult": "abandoned",
       "teruggebeld": false
     }

@@ -2316,11 +2316,18 @@
         "nummer": "+31643087323",
         "teruggebeld": false,
         "tijd": "12:34"
+      },
+      {
+        "callResult": "abandoned",
+        "naam": "Onbekend",
+        "nummer": "+31648316922",
+        "teruggebeld": false,
+        "tijd": "14:12"
       }
     ],
     "date": "2026-09-18",
-    "generated_at": "2026-09-18T12:10:56Z",
-    "nietTerugGebeld": 12,
+    "generated_at": "2026-09-18T12:20:54Z",
+    "nietTerugGebeld": 13,
     "nietTerugGebeldNummers": [
       {
         "callResult": "abandoned",
@@ -2405,10 +2412,17 @@
         "nummer": "+31643087323",
         "teruggebeld": false,
         "tijd": "12:34"
+      },
+      {
+        "callResult": "abandoned",
+        "naam": "Onbekend",
+        "nummer": "+31648316922",
+        "teruggebeld": false,
+        "tijd": "14:12"
       }
     ],
     "terugGebeld": 0,
-    "totaalGemist": 12,
-    "totaalInbound": 12
+    "totaalGemist": 13,
+    "totaalInbound": 13
   }
 }
