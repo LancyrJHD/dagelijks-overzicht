@@ -1,6 +1,6 @@
 {
   "date": "2026-09-21",
-  "generated_at": "2026-09-21T08:40:37Z",
+  "generated_at": "2026-09-21T08:50:43Z",
   "tickets": [
     {
       "ticketNumber": "2745",
@@ -13,21 +13,33 @@
       "webUrl": "https://desk.zoho.eu/support/htjzlancyr/ShowHomePage.do#Cases/dv/195464000014083001",
       "channel": "Phone",
       "doorgezetBrandmeester": false
+    },
+    {
+      "ticketNumber": "2747",
+      "tijd": "10:46",
+      "titel": "verhoor politie",
+      "klant": "P.H.J.L. vanAsperen",
+      "status": "Gesloten",
+      "statusType": "",
+      "prioriteit": "Niet ingesteld",
+      "webUrl": "https://desk.zoho.eu/support/htjzlancyr/ShowHomePage.do#Cases/dv/195464000014102001",
+      "channel": "Phone",
+      "doorgezetBrandmeester": false
     }
   ],
   "channelCounts": {
-    "Phone": 1
+    "Phone": 2
   },
   "brandmeesterCount": 0,
   "ticketStats": {
-    "nieuweVandaag": 1,
-    "geslotenVandaag": 0,
-    "totaalOpen": 41,
+    "nieuweVandaag": 2,
+    "geslotenVandaag": 2,
+    "totaalOpen": 40,
     "inDeWacht": 14,
     "statusBreakdown": {
+      "Gesloten": 627,
       "In de wacht": 14,
-      "Open": 27,
-      "Gesloten": 625
+      "Open": 26
     },
     "capBereikt": false
   }
