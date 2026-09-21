@@ -2529,7 +2529,7 @@
         "callResult": "overflowed",
         "naam": "Onbekend",
         "nummer": "+31611170193",
-        "teruggebeld": false,
+        "teruggebeld": true,
         "tijd": "09:39"
       },
       {
@@ -2562,8 +2562,8 @@
       }
     ],
     "date": "2026-09-21",
-    "generated_at": "2026-09-21T09:30:54Z",
-    "nietTerugGebeld": 6,
+    "generated_at": "2026-09-21T09:40:51Z",
+    "nietTerugGebeld": 5,
     "nietTerugGebeldNummers": [
       {
         "callResult": "abandoned",
@@ -2571,13 +2571,6 @@
         "nummer": "+31638513655",
         "teruggebeld": false,
         "tijd": "09:12"
-      },
-      {
-        "callResult": "overflowed",
-        "naam": "Onbekend",
-        "nummer": "+31611170193",
-        "teruggebeld": false,
-        "tijd": "09:39"
       },
       {
         "callResult": "overflowed",
@@ -2608,7 +2601,7 @@
         "tijd": "10:53"
       }
     ],
-    "terugGebeld": 1,
+    "terugGebeld": 2,
     "totaalGemist": 7,
     "totaalInbound": 13
   }
