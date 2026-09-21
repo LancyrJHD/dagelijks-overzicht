@@ -1,16 +1,30 @@
 {
   "date": "2026-09-21",
-  "generated_at": "2026-09-21T07:41:07Z",
-  "totaalInbound": 2,
-  "totaalGemist": 1,
+  "generated_at": "2026-09-21T07:51:25Z",
+  "totaalInbound": 4,
+  "totaalGemist": 3,
   "terugGebeld": 0,
-  "nietTerugGebeld": 1,
+  "nietTerugGebeld": 3,
   "nietTerugGebeldNummers": [
     {
       "nummer": "+31638513655",
       "naam": "Onbekend",
       "tijd": "09:12",
       "callResult": "abandoned",
+      "teruggebeld": false
+    },
+    {
+      "nummer": "+31623726962",
+      "naam": "Onbekend",
+      "tijd": "09:38",
+      "callResult": "overflowed",
+      "teruggebeld": false
+    },
+    {
+      "nummer": "+31611170193",
+      "naam": "Onbekend",
+      "tijd": "09:39",
+      "callResult": "overflowed",
       "teruggebeld": false
     }
   ],
@@ -20,6 +34,20 @@
       "naam": "Onbekend",
       "tijd": "09:12",
       "callResult": "abandoned",
+      "teruggebeld": false
+    },
+    {
+      "nummer": "+31623726962",
+      "naam": "Onbekend",
+      "tijd": "09:38",
+      "callResult": "overflowed",
+      "teruggebeld": false
+    },
+    {
+      "nummer": "+31611170193",
+      "naam": "Onbekend",
+      "tijd": "09:39",
+      "callResult": "overflowed",
       "teruggebeld": false
     }
   ]
