@@ -1,6 +1,6 @@
 {
   "date": "2026-09-21",
-  "generated_at": "2026-09-21T14:20:52Z",
+  "generated_at": "2026-09-21T14:31:02Z",
   "tickets": [
     {
       "ticketNumber": "2745",
@@ -103,12 +103,12 @@
       "tijd": "13:08",
       "titel": "Schadeclaim vrachtauto – doorverwijzing rechtsbijstand",
       "klant": "R.L. Blokhuis",
-      "status": "Open",
+      "status": "Gesloten",
       "statusType": "",
       "prioriteit": "Niet ingesteld",
       "webUrl": "https://desk.zoho.eu/support/htjzlancyr/ShowHomePage.do#Cases/dv/195464000014137001",
       "channel": "Phone",
-      "doorgezetBrandmeester": false
+      "doorgezetBrandmeester": true
     },
     {
       "ticketNumber": "2759",
@@ -121,21 +121,33 @@
       "webUrl": "https://desk.zoho.eu/support/htjzlancyr/ShowHomePage.do#Cases/dv/195464000014153001",
       "channel": "Phone",
       "doorgezetBrandmeester": false
+    },
+    {
+      "ticketNumber": "2763",
+      "tijd": "16:22",
+      "titel": "FW: 84297179_Munnik: Een vraag stellen mbt beëindigd leaseauto contract",
+      "klant": "De juridische helpdesk",
+      "status": "Open",
+      "statusType": "",
+      "prioriteit": "Niet ingesteld",
+      "webUrl": "https://desk.zoho.eu/support/htjzlancyr/ShowHomePage.do#Cases/dv/195464000014172067",
+      "channel": "Email",
+      "doorgezetBrandmeester": false
     }
   ],
   "channelCounts": {
     "Phone": 9,
-    "Email": 1
+    "Email": 2
   },
-  "brandmeesterCount": 0,
+  "brandmeesterCount": 1,
   "ticketStats": {
-    "nieuweVandaag": 10,
-    "geslotenVandaag": 18,
+    "nieuweVandaag": 11,
+    "geslotenVandaag": 19,
     "totaalOpen": 30,
     "inDeWacht": 22,
     "statusBreakdown": {
+      "Gesloten": 641,
       "Open": 8,
-      "Gesloten": 640,
       "In de wacht": 22
     },
     "capBereikt": false
