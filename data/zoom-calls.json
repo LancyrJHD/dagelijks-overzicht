@@ -1,10 +1,10 @@
 {
   "date": "2026-09-21",
-  "generated_at": "2026-09-21T12:01:08Z",
+  "generated_at": "2026-09-21T12:10:49Z",
   "totaalInbound": 17,
   "totaalGemist": 10,
-  "terugGebeld": 4,
-  "nietTerugGebeld": 6,
+  "terugGebeld": 5,
+  "nietTerugGebeld": 5,
   "nietTerugGebeldNummers": [
     {
       "nummer": "+31638513655",
@@ -39,13 +39,6 @@
       "naam": "Onbekend",
       "tijd": "10:53",
       "callResult": "abandoned",
-      "teruggebeld": false
-    },
-    {
-      "nummer": "+31645302493",
-      "naam": "Onbekend",
-      "tijd": "13:13",
-      "callResult": "overflowed",
       "teruggebeld": false
     }
   ],
@@ -118,7 +111,7 @@
       "naam": "Onbekend",
       "tijd": "13:13",
       "callResult": "overflowed",
-      "teruggebeld": false
+      "teruggebeld": true
     }
   ]
 }

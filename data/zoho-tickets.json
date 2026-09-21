@@ -1,6 +1,6 @@
 {
   "date": "2026-09-21",
-  "generated_at": "2026-09-21T12:01:04Z",
+  "generated_at": "2026-09-21T12:10:47Z",
   "tickets": [
     {
       "ticketNumber": "2745",
@@ -109,22 +109,34 @@
       "webUrl": "https://desk.zoho.eu/support/htjzlancyr/ShowHomePage.do#Cases/dv/195464000014137001",
       "channel": "Phone",
       "doorgezetBrandmeester": false
+    },
+    {
+      "ticketNumber": "2759",
+      "tijd": "14:05",
+      "titel": "Juridische bijstand schadeclaim fietsongeval moeder",
+      "klant": "L.A. van derNiet",
+      "status": "In de wacht",
+      "statusType": "",
+      "prioriteit": "Niet ingesteld",
+      "webUrl": "https://desk.zoho.eu/support/htjzlancyr/ShowHomePage.do#Cases/dv/195464000014153001",
+      "channel": "Phone",
+      "doorgezetBrandmeester": false
     }
   ],
   "channelCounts": {
-    "Phone": 8,
+    "Phone": 9,
     "Email": 1
   },
   "brandmeesterCount": 0,
   "ticketStats": {
-    "nieuweVandaag": 9,
+    "nieuweVandaag": 10,
     "geslotenVandaag": 14,
-    "totaalOpen": 32,
-    "inDeWacht": 16,
+    "totaalOpen": 33,
+    "inDeWacht": 17,
     "statusBreakdown": {
-      "Gesloten": 638,
       "Open": 16,
-      "In de wacht": 16
+      "In de wacht": 17,
+      "Gesloten": 638
     },
     "capBereikt": false
   }

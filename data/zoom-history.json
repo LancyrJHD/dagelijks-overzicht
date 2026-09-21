@@ -2578,13 +2578,13 @@
         "callResult": "overflowed",
         "naam": "Onbekend",
         "nummer": "+31645302493",
-        "teruggebeld": false,
+        "teruggebeld": true,
         "tijd": "13:13"
       }
     ],
     "date": "2026-09-21",
-    "generated_at": "2026-09-21T12:01:08Z",
-    "nietTerugGebeld": 6,
+    "generated_at": "2026-09-21T12:10:49Z",
+    "nietTerugGebeld": 5,
     "nietTerugGebeldNummers": [
       {
         "callResult": "abandoned",
@@ -2620,16 +2620,9 @@
         "nummer": "+31628870574",
         "teruggebeld": false,
         "tijd": "10:53"
-      },
-      {
-        "callResult": "overflowed",
-        "naam": "Onbekend",
-        "nummer": "+31645302493",
-        "teruggebeld": false,
-        "tijd": "13:13"
       }
     ],
-    "terugGebeld": 4,
+    "terugGebeld": 5,
     "totaalGemist": 10,
     "totaalInbound": 17
   }
