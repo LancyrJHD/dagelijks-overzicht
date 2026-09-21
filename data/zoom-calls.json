@@ -1,10 +1,10 @@
 {
   "date": "2026-09-21",
-  "generated_at": "2026-09-21T11:01:18Z",
-  "totaalInbound": 15,
-  "totaalGemist": 8,
+  "generated_at": "2026-09-21T11:10:50Z",
+  "totaalInbound": 16,
+  "totaalGemist": 9,
   "terugGebeld": 3,
-  "nietTerugGebeld": 5,
+  "nietTerugGebeld": 6,
   "nietTerugGebeldNummers": [
     {
       "nummer": "+31638513655",
@@ -38,6 +38,13 @@
       "nummer": "+31628870574",
       "naam": "Onbekend",
       "tijd": "10:53",
+      "callResult": "abandoned",
+      "teruggebeld": false
+    },
+    {
+      "nummer": "+31641012186",
+      "naam": "Onbekend",
+      "tijd": "12:56",
       "callResult": "abandoned",
       "teruggebeld": false
     }
@@ -98,6 +105,13 @@
       "tijd": "12:13",
       "callResult": "abandoned",
       "teruggebeld": true
+    },
+    {
+      "nummer": "+31641012186",
+      "naam": "Onbekend",
+      "tijd": "12:56",
+      "callResult": "abandoned",
+      "teruggebeld": false
     }
   ]
 }
