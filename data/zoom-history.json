@@ -2571,13 +2571,13 @@
         "callResult": "abandoned",
         "naam": "Onbekend",
         "nummer": "+31641012186",
-        "teruggebeld": false,
+        "teruggebeld": true,
         "tijd": "12:56"
       }
     ],
     "date": "2026-09-21",
-    "generated_at": "2026-09-21T11:10:50Z",
-    "nietTerugGebeld": 6,
+    "generated_at": "2026-09-21T11:21:22Z",
+    "nietTerugGebeld": 5,
     "nietTerugGebeldNummers": [
       {
         "callResult": "abandoned",
@@ -2613,16 +2613,9 @@
         "nummer": "+31628870574",
         "teruggebeld": false,
         "tijd": "10:53"
-      },
-      {
-        "callResult": "abandoned",
-        "naam": "Onbekend",
-        "nummer": "+31641012186",
-        "teruggebeld": false,
-        "tijd": "12:56"
       }
     ],
-    "terugGebeld": 3,
+    "terugGebeld": 4,
     "totaalGemist": 9,
     "totaalInbound": 16
   }
