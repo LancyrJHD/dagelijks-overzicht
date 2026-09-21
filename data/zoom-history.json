@@ -2536,14 +2536,14 @@
         "callResult": "overflowed",
         "naam": "Onbekend",
         "nummer": "+31620948349",
-        "teruggebeld": false,
+        "teruggebeld": true,
         "tijd": "09:49"
       },
       {
         "callResult": "abandoned",
         "naam": "Onbekend",
         "nummer": "+31620948349",
-        "teruggebeld": false,
+        "teruggebeld": true,
         "tijd": "09:59"
       },
       {
@@ -2583,8 +2583,8 @@
       }
     ],
     "date": "2026-09-21",
-    "generated_at": "2026-09-21T12:20:53Z",
-    "nietTerugGebeld": 5,
+    "generated_at": "2026-09-21T12:31:00Z",
+    "nietTerugGebeld": 3,
     "nietTerugGebeldNummers": [
       {
         "callResult": "abandoned",
@@ -2592,20 +2592,6 @@
         "nummer": "+31638513655",
         "teruggebeld": false,
         "tijd": "09:12"
-      },
-      {
-        "callResult": "overflowed",
-        "naam": "Onbekend",
-        "nummer": "+31620948349",
-        "teruggebeld": false,
-        "tijd": "09:49"
-      },
-      {
-        "callResult": "abandoned",
-        "naam": "Onbekend",
-        "nummer": "+31620948349",
-        "teruggebeld": false,
-        "tijd": "09:59"
       },
       {
         "callResult": "abandoned",
@@ -2622,7 +2608,7 @@
         "tijd": "10:53"
       }
     ],
-    "terugGebeld": 5,
+    "terugGebeld": 7,
     "totaalGemist": 10,
     "totaalInbound": 17
   }
