@@ -2510,13 +2510,29 @@
     "totaalInbound": 19
   },
   "2026-09-21": {
-    "alleGemistNummers": [],
+    "alleGemistNummers": [
+      {
+        "callResult": "abandoned",
+        "naam": "Onbekend",
+        "nummer": "+31638513655",
+        "teruggebeld": false,
+        "tijd": "09:12"
+      }
+    ],
     "date": "2026-09-21",
-    "generated_at": "2026-09-21T07:11:05Z",
-    "nietTerugGebeld": 0,
-    "nietTerugGebeldNummers": [],
+    "generated_at": "2026-09-21T07:21:00Z",
+    "nietTerugGebeld": 1,
+    "nietTerugGebeldNummers": [
+      {
+        "callResult": "abandoned",
+        "naam": "Onbekend",
+        "nummer": "+31638513655",
+        "teruggebeld": false,
+        "tijd": "09:12"
+      }
+    ],
     "terugGebeld": 0,
-    "totaalGemist": 0,
-    "totaalInbound": 0
+    "totaalGemist": 1,
+    "totaalInbound": 1
   }
 }
