@@ -1,9 +1,9 @@
 {
   "date": "2026-09-21",
-  "generated_at": "2026-09-21T10:10:56Z",
-  "totaalInbound": 14,
-  "totaalGemist": 7,
-  "terugGebeld": 2,
+  "generated_at": "2026-09-21T10:20:53Z",
+  "totaalInbound": 15,
+  "totaalGemist": 8,
+  "terugGebeld": 3,
   "nietTerugGebeld": 5,
   "nietTerugGebeldNummers": [
     {
@@ -91,6 +91,13 @@
       "tijd": "10:53",
       "callResult": "abandoned",
       "teruggebeld": false
+    },
+    {
+      "nummer": "+31648513312",
+      "naam": "Onbekend",
+      "tijd": "12:13",
+      "callResult": "abandoned",
+      "teruggebeld": true
     }
   ]
 }

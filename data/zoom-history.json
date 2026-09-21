@@ -2559,10 +2559,17 @@
         "nummer": "+31628870574",
         "teruggebeld": false,
         "tijd": "10:53"
+      },
+      {
+        "callResult": "abandoned",
+        "naam": "Onbekend",
+        "nummer": "+31648513312",
+        "teruggebeld": true,
+        "tijd": "12:13"
       }
     ],
     "date": "2026-09-21",
-    "generated_at": "2026-09-21T10:10:56Z",
+    "generated_at": "2026-09-21T10:20:53Z",
     "nietTerugGebeld": 5,
     "nietTerugGebeldNummers": [
       {
@@ -2601,8 +2608,8 @@
         "tijd": "10:53"
       }
     ],
-    "terugGebeld": 2,
-    "totaalGemist": 7,
-    "totaalInbound": 14
+    "terugGebeld": 3,
+    "totaalGemist": 8,
+    "totaalInbound": 15
   }
 }
