@@ -1,6 +1,6 @@
 {
   "date": "2026-09-21",
-  "generated_at": "2026-09-21T09:20:48Z",
+  "generated_at": "2026-09-21T09:30:52Z",
   "tickets": [
     {
       "ticketNumber": "2745",
@@ -39,18 +39,6 @@
       "doorgezetBrandmeester": false
     },
     {
-      "ticketNumber": "2749",
-      "tijd": "10:59",
-      "titel": "samenvoegen",
-      "klant": "I.A.R. Malmberg",
-      "status": "Open",
-      "statusType": "",
-      "prioriteit": "Niet ingesteld",
-      "webUrl": "https://desk.zoho.eu/support/htjzlancyr/ShowHomePage.do#Cases/dv/195464000014107001",
-      "channel": "Phone",
-      "doorgezetBrandmeester": false
-    },
-    {
       "ticketNumber": "2750",
       "tijd": "11:19",
       "titel": "Locatieverbod BSO en bezwaarprocedure met Simone de Ruiter",
@@ -61,21 +49,45 @@
       "webUrl": "https://desk.zoho.eu/support/htjzlancyr/ShowHomePage.do#Cases/dv/195464000014108001",
       "channel": "Phone",
       "doorgezetBrandmeester": false
+    },
+    {
+      "ticketNumber": "2751",
+      "tijd": "11:25",
+      "titel": "Harley Davidson letselschadezaak – voorrem ABS-probleem en vervolgstappen",
+      "klant": "O. van derEijk",
+      "status": "In de wacht",
+      "statusType": "",
+      "prioriteit": "Niet ingesteld",
+      "webUrl": "https://desk.zoho.eu/support/htjzlancyr/ShowHomePage.do#Cases/dv/195464000014109001",
+      "channel": "Phone",
+      "doorgezetBrandmeester": false
+    },
+    {
+      "ticketNumber": "2752",
+      "tijd": "11:28",
+      "titel": "Juridische hulplijn: ongewenste opname in rechtszaak en gevolgen voor werknemers",
+      "klant": "K.T. Nijveld",
+      "status": "Gesloten",
+      "statusType": "",
+      "prioriteit": "Niet ingesteld",
+      "webUrl": "https://desk.zoho.eu/support/htjzlancyr/ShowHomePage.do#Cases/dv/195464000014110001",
+      "channel": "Phone",
+      "doorgezetBrandmeester": false
     }
   ],
   "channelCounts": {
-    "Phone": 5
+    "Phone": 6
   },
   "brandmeesterCount": 0,
   "ticketStats": {
-    "nieuweVandaag": 5,
-    "geslotenVandaag": 4,
-    "totaalOpen": 41,
-    "inDeWacht": 14,
+    "nieuweVandaag": 6,
+    "geslotenVandaag": 6,
+    "totaalOpen": 38,
+    "inDeWacht": 15,
     "statusBreakdown": {
-      "Gesloten": 629,
-      "Open": 27,
-      "In de wacht": 14
+      "Gesloten": 631,
+      "In de wacht": 15,
+      "Open": 23
     },
     "capBereikt": false
   }
