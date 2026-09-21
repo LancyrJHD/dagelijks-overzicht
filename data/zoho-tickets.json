@@ -1,6 +1,6 @@
 {
   "date": "2026-09-21",
-  "generated_at": "2026-09-21T14:40:59Z",
+  "generated_at": "2026-09-21T14:50:50Z",
   "tickets": [
     {
       "ticketNumber": "2745",
@@ -133,34 +133,22 @@
       "webUrl": "https://desk.zoho.eu/support/htjzlancyr/ShowHomePage.do#Cases/dv/195464000014172067",
       "channel": "Email",
       "doorgezetBrandmeester": false
-    },
-    {
-      "ticketNumber": "2764",
-      "tijd": "16:34",
-      "titel": "(No Subject)",
-      "klant": "Q. Lin",
-      "status": "Open",
-      "statusType": "",
-      "prioriteit": "Niet ingesteld",
-      "webUrl": "https://desk.zoho.eu/support/htjzlancyr/ShowHomePage.do#Cases/dv/195464000014172122",
-      "channel": "Email",
-      "doorgezetBrandmeester": false
     }
   ],
   "channelCounts": {
     "Phone": 9,
-    "Email": 3
+    "Email": 2
   },
   "brandmeesterCount": 1,
   "ticketStats": {
-    "nieuweVandaag": 12,
-    "geslotenVandaag": 19,
-    "totaalOpen": 31,
-    "inDeWacht": 22,
+    "nieuweVandaag": 11,
+    "geslotenVandaag": 20,
+    "totaalOpen": 29,
+    "inDeWacht": 20,
     "statusBreakdown": {
+      "In de wacht": 20,
       "Open": 9,
-      "Gesloten": 641,
-      "In de wacht": 22
+      "Gesloten": 642
     },
     "capBereikt": false
   }
