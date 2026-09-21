@@ -1,6 +1,6 @@
 {
   "date": "2026-09-21",
-  "generated_at": "2026-09-21T09:10:50Z",
+  "generated_at": "2026-09-21T09:20:48Z",
   "tickets": [
     {
       "ticketNumber": "2745",
@@ -49,20 +49,32 @@
       "webUrl": "https://desk.zoho.eu/support/htjzlancyr/ShowHomePage.do#Cases/dv/195464000014107001",
       "channel": "Phone",
       "doorgezetBrandmeester": false
+    },
+    {
+      "ticketNumber": "2750",
+      "tijd": "11:19",
+      "titel": "Locatieverbod BSO en bezwaarprocedure met Simone de Ruiter",
+      "klant": "W. Heemskerk",
+      "status": "Gesloten",
+      "statusType": "",
+      "prioriteit": "Niet ingesteld",
+      "webUrl": "https://desk.zoho.eu/support/htjzlancyr/ShowHomePage.do#Cases/dv/195464000014108001",
+      "channel": "Phone",
+      "doorgezetBrandmeester": false
     }
   ],
   "channelCounts": {
-    "Phone": 4
+    "Phone": 5
   },
   "brandmeesterCount": 0,
   "ticketStats": {
-    "nieuweVandaag": 4,
-    "geslotenVandaag": 3,
+    "nieuweVandaag": 5,
+    "geslotenVandaag": 4,
     "totaalOpen": 41,
     "inDeWacht": 14,
     "statusBreakdown": {
+      "Gesloten": 629,
       "Open": 27,
-      "Gesloten": 628,
       "In de wacht": 14
     },
     "capBereikt": false
