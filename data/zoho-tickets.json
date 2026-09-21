@@ -1,6 +1,6 @@
 {
   "date": "2026-09-21",
-  "generated_at": "2026-09-21T09:40:47Z",
+  "generated_at": "2026-09-21T09:50:51Z",
   "tickets": [
     {
       "ticketNumber": "2745",
@@ -73,20 +73,45 @@
       "webUrl": "https://desk.zoho.eu/support/htjzlancyr/ShowHomePage.do#Cases/dv/195464000014110001",
       "channel": "Phone",
       "doorgezetBrandmeester": false
+    },
+    {
+      "ticketNumber": "2753",
+      "tijd": "11:44",
+      "titel": "Eneco jaarnota geschil: verdeling verbruik vorige bewoner",
+      "klant": "E. Kazarian",
+      "status": "Gesloten",
+      "statusType": "",
+      "prioriteit": "Niet ingesteld",
+      "webUrl": "https://desk.zoho.eu/support/htjzlancyr/ShowHomePage.do#Cases/dv/195464000014111001",
+      "channel": "Phone",
+      "doorgezetBrandmeester": false
+    },
+    {
+      "ticketNumber": "2754",
+      "tijd": "11:50",
+      "titel": "Aanvullende schademelding ",
+      "klant": "S. vanWesterlaak",
+      "status": "Open",
+      "statusType": "",
+      "prioriteit": "Niet ingesteld",
+      "webUrl": "https://desk.zoho.eu/support/htjzlancyr/ShowHomePage.do#Cases/dv/195464000014098001",
+      "channel": "Email",
+      "doorgezetBrandmeester": false
     }
   ],
   "channelCounts": {
-    "Phone": 6
+    "Phone": 7,
+    "Email": 1
   },
   "brandmeesterCount": 0,
   "ticketStats": {
-    "nieuweVandaag": 6,
-    "geslotenVandaag": 6,
-    "totaalOpen": 38,
+    "nieuweVandaag": 8,
+    "geslotenVandaag": 7,
+    "totaalOpen": 39,
     "inDeWacht": 14,
     "statusBreakdown": {
-      "Open": 24,
-      "Gesloten": 631,
+      "Open": 25,
+      "Gesloten": 632,
       "In de wacht": 14
     },
     "capBereikt": false
