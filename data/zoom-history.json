@@ -2531,11 +2531,25 @@
         "nummer": "+31611170193",
         "teruggebeld": false,
         "tijd": "09:39"
+      },
+      {
+        "callResult": "overflowed",
+        "naam": "Onbekend",
+        "nummer": "+31620948349",
+        "teruggebeld": false,
+        "tijd": "09:49"
+      },
+      {
+        "callResult": "abandoned",
+        "naam": "Onbekend",
+        "nummer": "+31620948349",
+        "teruggebeld": false,
+        "tijd": "09:59"
       }
     ],
     "date": "2026-09-21",
-    "generated_at": "2026-09-21T07:51:25Z",
-    "nietTerugGebeld": 3,
+    "generated_at": "2026-09-21T08:00:56Z",
+    "nietTerugGebeld": 5,
     "nietTerugGebeldNummers": [
       {
         "callResult": "abandoned",
@@ -2557,10 +2571,24 @@
         "nummer": "+31611170193",
         "teruggebeld": false,
         "tijd": "09:39"
+      },
+      {
+        "callResult": "overflowed",
+        "naam": "Onbekend",
+        "nummer": "+31620948349",
+        "teruggebeld": false,
+        "tijd": "09:49"
+      },
+      {
+        "callResult": "abandoned",
+        "naam": "Onbekend",
+        "nummer": "+31620948349",
+        "teruggebeld": false,
+        "tijd": "09:59"
       }
     ],
     "terugGebeld": 0,
-    "totaalGemist": 3,
-    "totaalInbound": 4
+    "totaalGemist": 5,
+    "totaalInbound": 7
   }
 }
