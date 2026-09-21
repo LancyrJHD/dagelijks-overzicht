@@ -1,6 +1,6 @@
 {
   "date": "2026-09-21",
-  "generated_at": "2026-09-21T08:50:43Z",
+  "generated_at": "2026-09-21T09:00:58Z",
   "tickets": [
     {
       "ticketNumber": "2745",
@@ -25,21 +25,45 @@
       "webUrl": "https://desk.zoho.eu/support/htjzlancyr/ShowHomePage.do#Cases/dv/195464000014102001",
       "channel": "Phone",
       "doorgezetBrandmeester": false
+    },
+    {
+      "ticketNumber": "2748",
+      "tijd": "10:52",
+      "titel": "Factuurgeschil failliet bedrijf en vervolgstappen met Brandmeester",
+      "klant": "R.J. vanZelm",
+      "status": "Gesloten",
+      "statusType": "",
+      "prioriteit": "Niet ingesteld",
+      "webUrl": "https://desk.zoho.eu/support/htjzlancyr/ShowHomePage.do#Cases/dv/195464000014105001",
+      "channel": "Phone",
+      "doorgezetBrandmeester": false
+    },
+    {
+      "ticketNumber": "2749",
+      "tijd": "10:59",
+      "titel": "samenvoegen",
+      "klant": "I.A.R. Malmberg",
+      "status": "Open",
+      "statusType": "",
+      "prioriteit": "Niet ingesteld",
+      "webUrl": "https://desk.zoho.eu/support/htjzlancyr/ShowHomePage.do#Cases/dv/195464000014107001",
+      "channel": "Phone",
+      "doorgezetBrandmeester": false
     }
   ],
   "channelCounts": {
-    "Phone": 2
+    "Phone": 4
   },
   "brandmeesterCount": 0,
   "ticketStats": {
-    "nieuweVandaag": 2,
-    "geslotenVandaag": 2,
-    "totaalOpen": 40,
+    "nieuweVandaag": 4,
+    "geslotenVandaag": 3,
+    "totaalOpen": 41,
     "inDeWacht": 14,
     "statusBreakdown": {
-      "Gesloten": 627,
-      "In de wacht": 14,
-      "Open": 26
+      "Open": 27,
+      "Gesloten": 628,
+      "In de wacht": 14
     },
     "capBereikt": false
   }

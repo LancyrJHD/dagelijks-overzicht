@@ -2552,11 +2552,18 @@
         "nummer": "+31628870574",
         "teruggebeld": false,
         "tijd": "10:25"
+      },
+      {
+        "callResult": "abandoned",
+        "naam": "Onbekend",
+        "nummer": "+31628870574",
+        "teruggebeld": false,
+        "tijd": "10:53"
       }
     ],
     "date": "2026-09-21",
-    "generated_at": "2026-09-21T08:50:45Z",
-    "nietTerugGebeld": 5,
+    "generated_at": "2026-09-21T09:01:00Z",
+    "nietTerugGebeld": 6,
     "nietTerugGebeldNummers": [
       {
         "callResult": "abandoned",
@@ -2592,10 +2599,17 @@
         "nummer": "+31628870574",
         "teruggebeld": false,
         "tijd": "10:25"
+      },
+      {
+        "callResult": "abandoned",
+        "naam": "Onbekend",
+        "nummer": "+31628870574",
+        "teruggebeld": false,
+        "tijd": "10:53"
       }
     ],
     "terugGebeld": 1,
-    "totaalGemist": 6,
-    "totaalInbound": 9
+    "totaalGemist": 7,
+    "totaalInbound": 12
   }
 }
