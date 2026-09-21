@@ -2545,11 +2545,18 @@
         "nummer": "+31620948349",
         "teruggebeld": false,
         "tijd": "09:59"
+      },
+      {
+        "callResult": "abandoned",
+        "naam": "Onbekend",
+        "nummer": "+31628870574",
+        "teruggebeld": false,
+        "tijd": "10:25"
       }
     ],
     "date": "2026-09-21",
-    "generated_at": "2026-09-21T08:20:43Z",
-    "nietTerugGebeld": 5,
+    "generated_at": "2026-09-21T08:31:04Z",
+    "nietTerugGebeld": 6,
     "nietTerugGebeldNummers": [
       {
         "callResult": "abandoned",
@@ -2585,10 +2592,17 @@
         "nummer": "+31620948349",
         "teruggebeld": false,
         "tijd": "09:59"
+      },
+      {
+        "callResult": "abandoned",
+        "naam": "Onbekend",
+        "nummer": "+31628870574",
+        "teruggebeld": false,
+        "tijd": "10:25"
       }
     ],
     "terugGebeld": 0,
-    "totaalGemist": 5,
-    "totaalInbound": 8
+    "totaalGemist": 6,
+    "totaalInbound": 9
   }
 }

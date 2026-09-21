@@ -1,25 +1,13 @@
 {
   "date": "2026-09-21",
-  "generated_at": "2026-09-21T08:20:41Z",
+  "generated_at": "2026-09-21T08:31:03Z",
   "tickets": [
-    {
-      "ticketNumber": "2746",
-      "tijd": "10:18",
-      "titel": "Lekkageproblematiek en verzekeringsclaim met Nationale Nederlanden",
-      "klant": "J.M. Stots",
-      "status": "Open",
-      "statusType": "",
-      "prioriteit": "Niet ingesteld",
-      "webUrl": "https://desk.zoho.eu/support/htjzlancyr/ShowHomePage.do#Cases/dv/195464000014087001",
-      "channel": "Phone",
-      "doorgezetBrandmeester": false
-    },
     {
       "ticketNumber": "2745",
       "tijd": "10:18",
       "titel": "Lekkageproblematiek en verzekeringsclaim met Nationale Nederlanden",
       "klant": "J.M. Stots",
-      "status": "Open",
+      "status": "In de wacht",
       "statusType": "",
       "prioriteit": "Niet ingesteld",
       "webUrl": "https://desk.zoho.eu/support/htjzlancyr/ShowHomePage.do#Cases/dv/195464000014083001",
@@ -28,17 +16,17 @@
     }
   ],
   "channelCounts": {
-    "Phone": 2
+    "Phone": 1
   },
   "brandmeesterCount": 0,
   "ticketStats": {
-    "nieuweVandaag": 2,
+    "nieuweVandaag": 1,
     "geslotenVandaag": 0,
-    "totaalOpen": 42,
-    "inDeWacht": 13,
+    "totaalOpen": 41,
+    "inDeWacht": 14,
     "statusBreakdown": {
-      "Open": 29,
-      "In de wacht": 13,
+      "In de wacht": 14,
+      "Open": 27,
       "Gesloten": 625
     },
     "capBereikt": false
