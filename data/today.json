@@ -1,6 +1,6 @@
 {
   "date": "2026-09-22",
-  "generated_at": "2026-09-22T16:51:04Z",
+  "generated_at": "2026-09-22T18:03:52Z",
   "drukte": "rustig",
   "gesprekken": 1,
   "stats": {
@@ -11,13 +11,13 @@
     "geenDekking": 0,
     "verkeerdNummer": 0
   },
-  "score": 6.5,
+  "score": 8.1,
   "conversations": [
     {
       "tijd": "11:06",
       "titel": "Nieuwe arbeidszaak aanmelden bij Brandmeester met Esther",
       "personen": "Verzekerde: W.C.B. deBruin · Dewi Verver | Juridisch Medewerker",
-      "samenvatting": "Esther van Mansier (niet de versicheringnemer zelf, maar een intermediair/advocaat) belt de helpdesk met de vraag hoe een vervolgzaak in arbeidsrecht kan worden aangemeld terwijl er al een zaak bij Brandmeester loopt. De medewerker geeft uitleg dat een nieuw verzoek kan worden ingediend en adviseert dat de verzekerder (klant) zelf kan bellen om een nieuwe zaak op te starten. Identiteit is automatisch geverifieerd via Zoho-koppeling; inhoudelijk juridisch advies is gegeven.",
+      "samenvatting": "Esther van Mansier belt namens een klant die al een arbeidszaak bij Brandmeester loopt en een nieuwe zaak moet aanmelden. De HTJZ-medewerker legt uit dat een vervolggeschil een nieuwe zaak kan rechtvaardigen en adviseert dat de verzekerder zelf kan bellen om dit in gang te zetten; de medewerker zal een nieuw verzoek naar Brandmeester sturen. Beller is geverifieerd via automatische systeemherkenning (W.C.B. deBruin), inhoudelijk advies is gegeven over de procedurele afhandeling van een vervolgzaak.",
       "tags": [
         [
           "tag-arbeidsrecht",
@@ -38,12 +38,12 @@
   "acties": [],
   "analyse": {
     "goed": [
-      "11:06 Arbeidszaak: Identiteit correct geverifieerd via Zoho-koppeling voordat advies werd gegeven.",
-      "11:06 Arbeidszaak: Helder vervolgadvies gegeven (verzekerder kan zelf nieuwe zaak openen bij Brandmeester)."
+      "11:06 Arbeidszaak: Identiteit correct geverifieerd via automatische systeemherkenning (W.C.B. deBruin)",
+      "11:06 Arbeidszaak: Inhoudelijk advies gegeven over vervolggeschillen en procedures bij Brandmeester",
+      "11:06 Arbeidszaak: Duidelijk vervolgplan afgesproken (medewerker stuurt nieuw verzoek naar Brandmeester)"
     ],
     "beter": [
-      "11:06 Arbeidszaak: Beller is intermediair/advocaat, niet de verzekerdingnemer zelf. Controleer of de intermediair bevoegd is om zaken aan te melden namens de verzekerdingnemer en documenteer deze toestemming.",
-      "11:06 Arbeidszaak: Geen concrete deadline vastgesteld voor vervolgstap (wanneer moet de verzekerder zelf contact opnemen met Brandmeester?)."
+      "11:06 Arbeidszaak: Geen concrete deadline genoemd voor versturen van het verzoek naar Brandmeester (vandaag, morgen, volgende werkdag?)"
     ]
   },
   "verkeerdVerbonden": {
