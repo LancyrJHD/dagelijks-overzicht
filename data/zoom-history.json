@@ -2690,11 +2690,18 @@
         "nummer": "+31627650351",
         "teruggebeld": false,
         "tijd": "14:59"
+      },
+      {
+        "callResult": "abandoned",
+        "naam": "Onbekend",
+        "nummer": "+31621627890",
+        "teruggebeld": false,
+        "tijd": "15:28"
       }
     ],
     "date": "2026-09-22",
-    "generated_at": "2026-09-22T13:30:56Z",
-    "nietTerugGebeld": 9,
+    "generated_at": "2026-09-22T13:40:43Z",
+    "nietTerugGebeld": 10,
     "nietTerugGebeldNummers": [
       {
         "callResult": "abandoned",
@@ -2758,10 +2765,17 @@
         "nummer": "+31627650351",
         "teruggebeld": false,
         "tijd": "14:59"
+      },
+      {
+        "callResult": "abandoned",
+        "naam": "Onbekend",
+        "nummer": "+31621627890",
+        "teruggebeld": false,
+        "tijd": "15:28"
       }
     ],
     "terugGebeld": 2,
-    "totaalGemist": 11,
-    "totaalInbound": 14
+    "totaalGemist": 12,
+    "totaalInbound": 15
   }
 }

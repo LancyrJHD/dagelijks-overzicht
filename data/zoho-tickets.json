@@ -1,6 +1,6 @@
 {
   "date": "2026-09-22",
-  "generated_at": "2026-09-22T13:30:54Z",
+  "generated_at": "2026-09-22T13:40:41Z",
   "tickets": [
     {
       "ticketNumber": "2766",
@@ -25,15 +25,27 @@
       "webUrl": "https://desk.zoho.eu/support/htjzlancyr/ShowHomePage.do#Cases/dv/195464000014225001",
       "channel": "Email",
       "doorgezetBrandmeester": false
+    },
+    {
+      "ticketNumber": "2768",
+      "tijd": "15:30",
+      "titel": "FW: reisuren vergoeding",
+      "klant": "De juridische helpdesk",
+      "status": "Open",
+      "statusType": "",
+      "prioriteit": "Niet ingesteld",
+      "webUrl": "https://desk.zoho.eu/support/htjzlancyr/ShowHomePage.do#Cases/dv/195464000014197132",
+      "channel": "Email",
+      "doorgezetBrandmeester": false
     }
   ],
   "channelCounts": {
     "Phone": 1,
-    "Email": 1
+    "Email": 2
   },
   "brandmeesterCount": 0,
   "ticketStats": {
-    "nieuweVandaag": 2,
+    "nieuweVandaag": 3,
     "geslotenVandaag": 3,
     "totaalOpen": 32,
     "inDeWacht": 15,
