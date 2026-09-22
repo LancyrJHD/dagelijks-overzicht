@@ -1,6 +1,6 @@
 {
   "date": "2026-09-22",
-  "generated_at": "2026-09-22T12:31:07Z",
+  "generated_at": "2026-09-22T12:41:03Z",
   "drukte": "rustig",
   "gesprekken": 1,
   "stats": {
@@ -11,13 +11,13 @@
     "geenDekking": 0,
     "verkeerdNummer": 0
   },
-  "score": 8.1,
+  "score": 7.8,
   "conversations": [
     {
       "tijd": "11:06",
       "titel": "Nieuwe arbeidszaak aanmelden bij Brandmeester met Esther",
       "personen": "Verzekerde: W.C.B. deBruin · Dewi Verver | Juridisch Medewerker",
-      "samenvatting": "Esther van Mansier belt namens een cliënt die al een arbeidszaak bij Brandmeester heeft lopen en opdracht heeft gekregen om een nieuwe zaak aan te melden. De medewerker legt uit dat een vervolg in het geschil inderdaad een nieuwe zaak kan vereisen en adviseert dat de cliënt zelf contact kan opnemen via hetzelfde nummer om een nieuw verzoek in te dienen bij Brandmeester. De beller is automatisch geverifieerd via telefoonnummer (Zoho-koppeling), maar er is geen inhoudelijk juridisch advies aan de beller zelf gegeven – het is procedureel advies over hoe een vervolgzaak kan worden aangemeld.",
+      "samenvatting": "Esther van Mansier belt namens een klant die al een arbeidszaak bij Brandmeester heeft lopen en opdracht kreeg om een nieuwe zaak aan te vragen. De medewerker legt uit dat een vervolggeschil inderdaad een nieuwe zaakregistratie kan vereisen en geeft het advies dat de klant zelf kan bellen of informatie per mail kan sturen, waarna een nieuw verzoek bij Brandmeester wordt ingediend. De beller (Esther) is geverifieerd via automatische herkenning, maar er is geen substantieel juridisch advies gegeven over de inhoud van de arbeidskwestie zelf.",
       "tags": [
         [
           "tag-arbeidsrecht",
@@ -38,12 +38,12 @@
   "acties": [],
   "analyse": {
     "goed": [
-      "11:06 Arbeidszaak: Identiteit correct geverifieerd via Zoho-koppeling (telefoonnummer)",
-      "11:06 Arbeidszaak: Duidelijk vervolgplan gegeven – cliënt kan zelf contact opnemen bij Brandmeester via hetzelfde nummer voor aanmelding nieuwe zaak",
-      "11:06 Arbeidszaak: Procedurele uitleg correct gegeven dat vervolg in geschil inderdaad nieuwe zaakopening kan vereisen"
+      "11:06 - Arbeidszaak: Identiteit correct geverifieerd via automatische herkenning (Esther van Mansier)",
+      "11:06 - Arbeidszaak: Medewerker geeft helder procedureel advies over nieuwe zaakregistratie bij vervolggeschillen",
+      "11:06 - Arbeidszaak: Duidelijke doorverwijzing naar Brandmeester met opties voor klant (zelf bellen of informatie per mail)"
     ],
     "beter": [
-      "11:06 Arbeidszaak: Geen concrete deadline benoemd voor vervolgcontact of aanmelding bij Brandmeester (bijv. 'binnen 5 werkdagen contact opnemen')"
+      "11:06 - Arbeidszaak: Geen concrete deadline genoemd voor vervolgstap (bijv. 'mail kan tot morgen 17:00 uur verstuurd worden') of deadline voor verwachting wanneer Brandmeester contact opneemt"
     ]
   },
   "verkeerdVerbonden": {
