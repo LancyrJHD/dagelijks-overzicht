@@ -1,15 +1,22 @@
 {
   "date": "2026-09-22",
-  "generated_at": "2026-09-22T07:40:41Z",
-  "totaalInbound": 1,
-  "totaalGemist": 1,
+  "generated_at": "2026-09-22T07:50:39Z",
+  "totaalInbound": 2,
+  "totaalGemist": 2,
   "terugGebeld": 0,
-  "nietTerugGebeld": 1,
+  "nietTerugGebeld": 2,
   "nietTerugGebeldNummers": [
     {
       "nummer": "+31762308081",
       "naam": "Onbekend",
       "tijd": "09:22",
+      "callResult": "abandoned",
+      "teruggebeld": false
+    },
+    {
+      "nummer": "+31639140021",
+      "naam": "Onbekend",
+      "tijd": "09:39",
       "callResult": "abandoned",
       "teruggebeld": false
     }
@@ -19,6 +26,13 @@
       "nummer": "+31762308081",
       "naam": "Onbekend",
       "tijd": "09:22",
+      "callResult": "abandoned",
+      "teruggebeld": false
+    },
+    {
+      "nummer": "+31639140021",
+      "naam": "Onbekend",
+      "tijd": "09:39",
       "callResult": "abandoned",
       "teruggebeld": false
     }

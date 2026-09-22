@@ -2620,11 +2620,18 @@
         "nummer": "+31762308081",
         "teruggebeld": false,
         "tijd": "09:22"
+      },
+      {
+        "callResult": "abandoned",
+        "naam": "Onbekend",
+        "nummer": "+31639140021",
+        "teruggebeld": false,
+        "tijd": "09:39"
       }
     ],
     "date": "2026-09-22",
-    "generated_at": "2026-09-22T07:40:41Z",
-    "nietTerugGebeld": 1,
+    "generated_at": "2026-09-22T07:50:39Z",
+    "nietTerugGebeld": 2,
     "nietTerugGebeldNummers": [
       {
         "callResult": "abandoned",
@@ -2632,10 +2639,17 @@
         "nummer": "+31762308081",
         "teruggebeld": false,
         "tijd": "09:22"
+      },
+      {
+        "callResult": "abandoned",
+        "naam": "Onbekend",
+        "nummer": "+31639140021",
+        "teruggebeld": false,
+        "tijd": "09:39"
       }
     ],
     "terugGebeld": 0,
-    "totaalGemist": 1,
-    "totaalInbound": 1
+    "totaalGemist": 2,
+    "totaalInbound": 2
   }
 }
