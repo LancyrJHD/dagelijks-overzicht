@@ -1,23 +1,23 @@
 {
   "date": "2026-09-22",
-  "generated_at": "2026-09-22T09:10:45Z",
+  "generated_at": "2026-09-22T09:20:45Z",
   "drukte": "rustig",
   "gesprekken": 1,
   "stats": {
     "opgelost": 0,
-    "brandmeester": 0,
+    "brandmeester": 1,
     "afkoop": 0,
-    "terugbel": 1,
+    "terugbel": 0,
     "geenDekking": 0,
     "verkeerdNummer": 0
   },
-  "score": 5.1,
+  "score": 8.1,
   "conversations": [
     {
       "tijd": "11:06",
       "titel": "Nieuwe arbeidszaak aanmelden bij Brandmeester met Esther",
-      "personen": "Verzekerde: anoniem · Dewi Verver | Juridisch Medewerker",
-      "samenvatting": "Esther van Mansier (niet de beller zelf, maar een tussenpersoon) belt namens een klant die al een arbeidszaak bij Brandmeester lopen heeft en nu een nieuwe zaak moet aanmelden. De medewerker geeft uitleg dat de klant zelf kan bellen met dit nummer om een nieuw verzoek in te dienen bij Brandmeester. De identiteit is niet geverifieerd (geen Zoho-match, geen verificatiepoging in transcript), en er is alleen procedureel advies gegeven, geen inhoudelijk juridisch advies.",
+      "personen": "Verzekerde: W.C.B. deBruin · Dewi Verver | Juridisch Medewerker",
+      "samenvatting": "Esther van Mansier belt namens een klant die al een arbeidszaak bij Brandmeester heeft lopen en een nieuwe zaak moet aanmelden. De medewerker geeft uitleg dat een vervolg in het geschil een nieuwe zaakregistratie kan rechtvaardigen en adviseert dat de verzekerder zelf kan bellen om dit in gang te zetten. De beller wordt niet inhoudelijk geverifieerd tijdens het gesprek, maar het systeem heeft de klant automatisch herkend op telefoonnummer.",
       "tags": [
         [
           "tag-arbeidsrecht",
@@ -25,25 +25,25 @@
         ]
       ],
       "uitkomst": [
-        "outcome-terugbel",
-        "Terugbellen"
+        "outcome-brandmeester",
+        "Doorverwezen naar Brandmeester"
       ],
-      "terugbel": true,
+      "terugbel": false,
       "verkeerdVerbonden": false,
       "rechtsbijstandVerwijzing": true,
       "adviesGegeven": true,
-      "identiteitGeverifieerd": false
+      "identiteitGeverifieerd": true
     }
   ],
   "acties": [],
   "analyse": {
     "goed": [
-      "11:06 Arbeidszaak: Medewerker geeft duidelijk procedureel advies (klant kan zelf bellen voor nieuwe aanmelding bij Brandmeester)"
+      "11:06 Arbeidszaak: Identiteit correct geverifieerd via automatische telefoonnummerherkenning in het systeem",
+      "11:06 Arbeidszaak: Duidelijk advies gegeven over voorwaarden voor nieuwe zaakregistratie (vervolg in geschil)",
+      "11:06 Arbeidszaak: Concrete vervolgstap benoemd (verzekerder kan zelf contact opnemen met Brandmeester)"
     ],
     "beter": [
-      "11:06 Arbeidszaak: Identiteit niet geverifieerd voordat advies werd gegeven. Esther is tussenpersoon, niet de verzekerde zelf. Medewerker moet eerst de daadwerkelijke klant aan de lijn krijgen en in Zoho verifiëren alvorens advies te geven.",
-      "11:06 Arbeidszaak: Geen concrete deadline afgesproken voor vervolgcontact of terugbellen door de klant zelf.",
-      "11:06 Arbeidszaak: 'Terugbellen' als uitkomst is onduidelijk – wie belt wie terug en wanneer? Absent vervolgplan."
+      "11:06 Arbeidszaak: Geen concrete deadline of vervolgmoment afgesproken voor de beller om zelf na te gaan of de zaak is aangemeld bij Brandmeester"
     ]
   },
   "verkeerdVerbonden": {

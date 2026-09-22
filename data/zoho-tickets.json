@@ -1,18 +1,33 @@
 {
   "date": "2026-09-22",
-  "generated_at": "2026-09-22T09:10:37Z",
-  "tickets": [],
-  "channelCounts": {},
+  "generated_at": "2026-09-22T09:20:38Z",
+  "tickets": [
+    {
+      "ticketNumber": "2766",
+      "tijd": "11:15",
+      "titel": "Bezwaar UWV besluit - vervolg reeds aangemelde zaak",
+      "klant": "W.C.B. deBruin",
+      "status": "In de wacht",
+      "statusType": "",
+      "prioriteit": "Niet ingesteld",
+      "webUrl": "https://desk.zoho.eu/support/htjzlancyr/ShowHomePage.do#Cases/dv/195464000014210013",
+      "channel": "Phone",
+      "doorgezetBrandmeester": false
+    }
+  ],
+  "channelCounts": {
+    "Phone": 1
+  },
   "brandmeesterCount": 0,
   "ticketStats": {
-    "nieuweVandaag": 0,
-    "geslotenVandaag": 0,
+    "nieuweVandaag": 1,
+    "geslotenVandaag": 1,
     "totaalOpen": 31,
-    "inDeWacht": 17,
+    "inDeWacht": 20,
     "statusBreakdown": {
-      "Open": 14,
-      "Gesloten": 641,
-      "In de wacht": 17
+      "In de wacht": 20,
+      "Gesloten": 642,
+      "Open": 11
     },
     "capBereikt": false
   }

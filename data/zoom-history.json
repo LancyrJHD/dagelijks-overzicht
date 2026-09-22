@@ -2634,11 +2634,18 @@
         "nummer": "+31762308080",
         "teruggebeld": false,
         "tijd": "10:20"
+      },
+      {
+        "callResult": "abandoned",
+        "naam": "Onbekend",
+        "nummer": "+31638116357",
+        "teruggebeld": false,
+        "tijd": "11:15"
       }
     ],
     "date": "2026-09-22",
-    "generated_at": "2026-09-22T09:10:38Z",
-    "nietTerugGebeld": 1,
+    "generated_at": "2026-09-22T09:20:38Z",
+    "nietTerugGebeld": 2,
     "nietTerugGebeldNummers": [
       {
         "callResult": "abandoned",
@@ -2646,10 +2653,17 @@
         "nummer": "+31762308080",
         "teruggebeld": false,
         "tijd": "10:20"
+      },
+      {
+        "callResult": "abandoned",
+        "naam": "Onbekend",
+        "nummer": "+31638116357",
+        "teruggebeld": false,
+        "tijd": "11:15"
       }
     ],
     "terugGebeld": 2,
-    "totaalGemist": 3,
-    "totaalInbound": 4
+    "totaalGemist": 4,
+    "totaalInbound": 6
   }
 }
