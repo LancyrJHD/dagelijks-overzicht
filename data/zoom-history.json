@@ -2697,11 +2697,25 @@
         "nummer": "+31621627890",
         "teruggebeld": false,
         "tijd": "15:28"
+      },
+      {
+        "callResult": "abandoned",
+        "naam": "Onbekend",
+        "nummer": "+31653969152",
+        "teruggebeld": false,
+        "tijd": "15:40"
+      },
+      {
+        "callResult": "abandoned",
+        "naam": "Onbekend",
+        "nummer": "+31628943608",
+        "teruggebeld": false,
+        "tijd": "15:48"
       }
     ],
     "date": "2026-09-22",
-    "generated_at": "2026-09-22T13:40:43Z",
-    "nietTerugGebeld": 10,
+    "generated_at": "2026-09-22T13:50:42Z",
+    "nietTerugGebeld": 12,
     "nietTerugGebeldNummers": [
       {
         "callResult": "abandoned",
@@ -2772,10 +2786,24 @@
         "nummer": "+31621627890",
         "teruggebeld": false,
         "tijd": "15:28"
+      },
+      {
+        "callResult": "abandoned",
+        "naam": "Onbekend",
+        "nummer": "+31653969152",
+        "teruggebeld": false,
+        "tijd": "15:40"
+      },
+      {
+        "callResult": "abandoned",
+        "naam": "Onbekend",
+        "nummer": "+31628943608",
+        "teruggebeld": false,
+        "tijd": "15:48"
       }
     ],
     "terugGebeld": 2,
-    "totaalGemist": 12,
-    "totaalInbound": 15
+    "totaalGemist": 14,
+    "totaalInbound": 17
   }
 }
