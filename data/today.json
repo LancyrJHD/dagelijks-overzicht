@@ -1,6 +1,6 @@
 {
   "date": "2026-09-22",
-  "generated_at": "2026-09-22T14:01:19Z",
+  "generated_at": "2026-09-22T14:10:29Z",
   "drukte": "rustig",
   "gesprekken": 1,
   "stats": {
@@ -17,7 +17,7 @@
       "tijd": "11:06",
       "titel": "Nieuwe arbeidszaak aanmelden bij Brandmeester met Esther",
       "personen": "Verzekerde: W.C.B. deBruin · Dewi Verver | Juridisch Medewerker",
-      "samenvatting": "Esther van Mansier belt namens een cliënt die al een arbeidszaak bij Brandmeester heeft lopen en nu een nieuwe zaak wil aanmelden. De medewerker legt uit dat de cliënt zelf kan bellen om een nieuw verzoek in te dienen. De beller is automatisch geverifieerd via het telefoonnummer, maar geen inhoudelijk juridisch advies is gegeven omdat dit een procedurevraag betreft die door Brandmeester zelf is geïnitieerd.",
+      "samenvatting": "Esther van Mansier belt namens een klant van haar die al een arbeidszaak bij Brandmeester heeft lopen en een nieuwe zaak wil aanmelden. De HTJZ-medewerker adviseert dat de klant zelf kan bellen naar het nummer van de juridisch helpdesk om een nieuw verzoek in te dienen, waarna Brandmeester dit zal opvangen. De beller is automatisch geverifieerd via Zoho-koppeling, maar er is geen inhoudelijk juridisch advies gegeven – het ging om procedurele informatieverstrekking over hoe een nieuwe arbeidszaak aangemeld wordt.",
       "tags": [
         [
           "tag-arbeidsrecht",
@@ -38,12 +38,12 @@
   "acties": [],
   "analyse": {
     "goed": [
-      "11:06 Arbeidszaak: Identiteit correct geverifieerd via telefoonnummer",
-      "11:06 Arbeidszaak: Helder vervolgproces uitgelegd (cliënt kan zelf contact opnemen met Brandmeester)",
-      "11:06 Arbeidszaak: Juiste doorverwijzing naar bevoegde partij (Brandmeester)"
+      "11:06 Nieuwe arbeidszaak: Identiteit correct geverifieerd via Zoho-koppeling",
+      "11:06 Nieuwe arbeidszaak: Duidelijke procedurele informatieverstrekking over aanmeldingsproces",
+      "11:06 Nieuwe arbeidszaak: Correcte doorverwijzing naar Brandmeester via helpdesk"
     ],
     "beter": [
-      "11:06 Arbeidszaak: Geen concrete deadline genoemd voor vervolgcontact of indiening bij Brandmeester"
+      "11:06 Nieuwe arbeidszaak: Geen concrete deadline genoemd voor het vervolgcontact/aanmelding door de klant zelf"
     ]
   },
   "verkeerdVerbonden": {
