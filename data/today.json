@@ -1,6 +1,6 @@
 {
   "date": "2026-09-22",
-  "generated_at": "2026-09-22T11:50:54Z",
+  "generated_at": "2026-09-22T12:01:20Z",
   "drukte": "rustig",
   "gesprekken": 1,
   "stats": {
@@ -11,13 +11,13 @@
     "geenDekking": 0,
     "verkeerdNummer": 0
   },
-  "score": 8.1,
+  "score": 7.8,
   "conversations": [
     {
       "tijd": "11:06",
       "titel": "Nieuwe arbeidszaak aanmelden bij Brandmeester met Esther",
       "personen": "Verzekerde: W.C.B. deBruin · Dewi Verver | Juridisch Medewerker",
-      "samenvatting": "Esther van Mansier (derde partij, niet de verzekerde zelf) belt over een arbeidszaak waarbij Brandmeester al betrokken is en waarbij opdracht is gegeven voor een nieuwe zaak. De HTJZ-medewerker adviseert dat de verzekerde zelf kan bellen om een nieuw verzoek in te dienen bij Brandmeester. De beller wordt niet geverifieerd als verzekerde, en inhoudelijk juridisch advies wordt niet gegeven — het gesprek richt zich op procedurele routering.",
+      "samenvatting": "Esther van Mansier (geen verzekerde, maar contactpersoon die namens een klant belt) vraagt hoe een nieuwe arbeidszaak kan worden aangemeld bij Brandmeester, omdat de bestaande zaak een vervolg heeft. De medewerker geeft uitleg dat een nieuw verzoek kan worden ingediend en adviseert dat de verzekerde zelf kan bellen om een nieuwe zaak op te starten. Identiteit is automatisch geverifieerd via Zoho-koppeling; inhoudelijk juridisch advies over de arbeidszaak zelf is niet gegeven (Esther weet zelf weinig over de zaak).",
       "tags": [
         [
           "tag-arbeidsrecht",
@@ -38,13 +38,12 @@
   "acties": [],
   "analyse": {
     "goed": [
-      "11:06 Arbeidszaak: Medewerker heeft correct herkend dat dit een procedurekwestie betreft en heeft passend doorverwezen naar de externe specialist (Brandmeester) in plaats van zelf inhoudelijk advies te geven.",
-      "11:06 Arbeidszaak: Identiteit is geverifieerd (derde partij correct geregistreerd), wat aantoont dat de beller in het systeem kon worden opgespoord.",
-      "11:06 Arbeidszaak: Medewerker geeft heldere routering: verzekerde kan zelf contact opnemen met Brandmeester voor nieuwe zaak, wat de volgende stap duidelijk maakt."
+      "11:06 Arbeidszaak: Identiteit correct geverifieerd via Zoho-koppeling",
+      "11:06 Arbeidszaak: Juist gehandeld door geen juridisch advies te geven aan contactpersoon zonder mandaat; medewerker heeft verzekerde als beller aangewezen",
+      "11:06 Arbeidszaak: Duidelijke doorverwijzing naar Brandmeester voor vervolgstappen"
     ],
     "beter": [
-      "11:06 Arbeidszaak: Geen concrete deadline genoemd voor vervolgactie of voor moment waarop de verzekerde contact zou moeten opnemen met Brandmeester (bijv. 'Deze week nog contact opnemen' of 'Volgende werkdag').",
-      "11:06 Arbeidszaak: Het zou helpen geweest zijn expliciet te benoemen of de medewerker zelf een vervolgcontact gaat inplannen met de verzekerde, of dat dit volledig de verantwoordelijkheid van Esther/de verzekerde is."
+      "11:06 Arbeidszaak: Geen concrete deadline/vervolgdatum afgesproken voor moment waarop verzekerde zelf contact opneemt met Brandmeester of wanneer medewerker vervolgstatus checkt"
     ]
   },
   "verkeerdVerbonden": {
