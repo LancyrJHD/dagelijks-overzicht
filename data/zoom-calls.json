@@ -1,10 +1,10 @@
 {
   "date": "2026-09-22",
-  "generated_at": "2026-09-22T13:50:42Z",
-  "totaalInbound": 17,
-  "totaalGemist": 14,
+  "generated_at": "2026-09-22T14:01:06Z",
+  "totaalInbound": 18,
+  "totaalGemist": 15,
   "terugGebeld": 2,
-  "nietTerugGebeld": 12,
+  "nietTerugGebeld": 13,
   "nietTerugGebeldNummers": [
     {
       "nummer": "+31762308080",
@@ -81,6 +81,13 @@
       "naam": "Onbekend",
       "tijd": "15:40",
       "callResult": "abandoned",
+      "teruggebeld": false
+    },
+    {
+      "nummer": "+31639533012",
+      "naam": "Onbekend",
+      "tijd": "15:45",
+      "callResult": "overflowed",
       "teruggebeld": false
     },
     {
@@ -181,6 +188,13 @@
       "naam": "Onbekend",
       "tijd": "15:40",
       "callResult": "abandoned",
+      "teruggebeld": false
+    },
+    {
+      "nummer": "+31639533012",
+      "naam": "Onbekend",
+      "tijd": "15:45",
+      "callResult": "overflowed",
       "teruggebeld": false
     },
     {

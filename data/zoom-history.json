@@ -2706,6 +2706,13 @@
         "tijd": "15:40"
       },
       {
+        "callResult": "overflowed",
+        "naam": "Onbekend",
+        "nummer": "+31639533012",
+        "teruggebeld": false,
+        "tijd": "15:45"
+      },
+      {
         "callResult": "abandoned",
         "naam": "Onbekend",
         "nummer": "+31628943608",
@@ -2714,8 +2721,8 @@
       }
     ],
     "date": "2026-09-22",
-    "generated_at": "2026-09-22T13:50:42Z",
-    "nietTerugGebeld": 12,
+    "generated_at": "2026-09-22T14:01:06Z",
+    "nietTerugGebeld": 13,
     "nietTerugGebeldNummers": [
       {
         "callResult": "abandoned",
@@ -2795,6 +2802,13 @@
         "tijd": "15:40"
       },
       {
+        "callResult": "overflowed",
+        "naam": "Onbekend",
+        "nummer": "+31639533012",
+        "teruggebeld": false,
+        "tijd": "15:45"
+      },
+      {
         "callResult": "abandoned",
         "naam": "Onbekend",
         "nummer": "+31628943608",
@@ -2803,7 +2817,7 @@
       }
     ],
     "terugGebeld": 2,
-    "totaalGemist": 14,
-    "totaalInbound": 17
+    "totaalGemist": 15,
+    "totaalInbound": 18
   }
 }
