@@ -2627,14 +2627,29 @@
         "nummer": "+31639140021",
         "teruggebeld": true,
         "tijd": "09:39"
+      },
+      {
+        "callResult": "abandoned",
+        "naam": "Onbekend",
+        "nummer": "+31762308080",
+        "teruggebeld": false,
+        "tijd": "10:20"
       }
     ],
     "date": "2026-09-22",
-    "generated_at": "2026-09-22T08:20:40Z",
-    "nietTerugGebeld": 0,
-    "nietTerugGebeldNummers": [],
+    "generated_at": "2026-09-22T08:30:54Z",
+    "nietTerugGebeld": 1,
+    "nietTerugGebeldNummers": [
+      {
+        "callResult": "abandoned",
+        "naam": "Onbekend",
+        "nummer": "+31762308080",
+        "teruggebeld": false,
+        "tijd": "10:20"
+      }
+    ],
     "terugGebeld": 2,
-    "totaalGemist": 2,
-    "totaalInbound": 2
+    "totaalGemist": 3,
+    "totaalInbound": 3
   }
 }

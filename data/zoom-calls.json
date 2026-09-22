@@ -1,11 +1,19 @@
 {
   "date": "2026-09-22",
-  "generated_at": "2026-09-22T08:20:40Z",
-  "totaalInbound": 2,
-  "totaalGemist": 2,
+  "generated_at": "2026-09-22T08:30:54Z",
+  "totaalInbound": 3,
+  "totaalGemist": 3,
   "terugGebeld": 2,
-  "nietTerugGebeld": 0,
-  "nietTerugGebeldNummers": [],
+  "nietTerugGebeld": 1,
+  "nietTerugGebeldNummers": [
+    {
+      "nummer": "+31762308080",
+      "naam": "Onbekend",
+      "tijd": "10:20",
+      "callResult": "abandoned",
+      "teruggebeld": false
+    }
+  ],
   "alleGemistNummers": [
     {
       "nummer": "+31762308081",
@@ -20,6 +28,13 @@
       "tijd": "09:39",
       "callResult": "abandoned",
       "teruggebeld": true
+    },
+    {
+      "nummer": "+31762308080",
+      "naam": "Onbekend",
+      "tijd": "10:20",
+      "callResult": "abandoned",
+      "teruggebeld": false
     }
   ]
 }
