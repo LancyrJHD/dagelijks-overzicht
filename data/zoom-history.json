@@ -2648,11 +2648,18 @@
         "nummer": "+31631256571",
         "teruggebeld": false,
         "tijd": "12:11"
+      },
+      {
+        "callResult": "abandoned",
+        "naam": "Onbekend",
+        "nummer": "+31610876306",
+        "teruggebeld": false,
+        "tijd": "13:09"
       }
     ],
     "date": "2026-09-22",
-    "generated_at": "2026-09-22T11:10:44Z",
-    "nietTerugGebeld": 3,
+    "generated_at": "2026-09-22T11:21:31Z",
+    "nietTerugGebeld": 4,
     "nietTerugGebeldNummers": [
       {
         "callResult": "abandoned",
@@ -2674,10 +2681,17 @@
         "nummer": "+31631256571",
         "teruggebeld": false,
         "tijd": "12:11"
+      },
+      {
+        "callResult": "abandoned",
+        "naam": "Onbekend",
+        "nummer": "+31610876306",
+        "teruggebeld": false,
+        "tijd": "13:09"
       }
     ],
     "terugGebeld": 2,
-    "totaalGemist": 5,
-    "totaalInbound": 8
+    "totaalGemist": 6,
+    "totaalInbound": 9
   }
 }
