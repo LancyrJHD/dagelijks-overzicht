@@ -1,6 +1,6 @@
 {
   "date": "2026-09-22",
-  "generated_at": "2026-09-22T15:50:59Z",
+  "generated_at": "2026-09-22T16:01:58Z",
   "drukte": "rustig",
   "gesprekken": 1,
   "stats": {
@@ -17,7 +17,7 @@
       "tijd": "11:06",
       "titel": "Nieuwe arbeidszaak aanmelden bij Brandmeester met Esther",
       "personen": "Verzekerde: W.C.B. deBruin · Dewi Verver | Juridisch Medewerker",
-      "samenvatting": "Esther van Mansier (geen klant zelf, maar vertegenwoordiger) belt namens een klant die al een arbeidszaak bij Brandmeester heeft lopen en een nieuwe zaak moet aanmelden. De medewerker geeft aan dat de klant zelf dit nummer kan bellen om een nieuw verzoek in te dienen; er is geen inhoudelijk juridisch advies gegeven. De beller is geverifieerd via automatische telefoonnummer-matching in het systeem.",
+      "samenvatting": "Esther van Mansier belt namens een cliënt die al een arbeidszaak bij Brandmeester loopt en een nieuwe zaak moet aanmelden. De medewerker legt uit dat de cliënt zelf kan bellen met dit nummer om een nieuw verzoek in te dienen, en dat Brandmeester zal worden ingelicht. De beller is automatisch geverifieerd via het telefoonnummer (Zoho-match), maar er is geen inhoudelijk juridisch advies aan een eindgebruiker gegeven; dit is een procedurevraag van een tussenpartij.",
       "tags": [
         [
           "tag-arbeidsrecht",
@@ -38,12 +38,13 @@
   "acties": [],
   "analyse": {
     "goed": [
-      "11:06 Arbeidszaak: Identiteit correct geverifieerd via automatische telefoonnummer-matching in het systeem",
-      "11:06 Arbeidszaak: Juist gehandeld door geen inhoudelijk advies te geven aan vertegenwoordiger; correct doorverwezen naar Brandmeester voor nieuwe aanmelding",
-      "11:06 Arbeidszaak: Adequaat om klant zelf aan te moedigen direct contact op te nemen voor nieuwe zaak"
+      "Identiteit geverifieerd via Zoho-match (11:06, arbeidszaak Brandmeester)",
+      "Duidelijk vervolgproces: cliënt kan zelf bellen voor nieuwe zaak-aanmelding",
+      "Juiste doorverwijzing naar Brandmeester als bevoegde partij",
+      "Tussenpartij (Esther) correct geadviseerd over procedure zonder onnodige juridische stellingnames"
     ],
     "beter": [
-      "11:06 Arbeidszaak: Niet duidelijk of een concrete vervolgdeadline of vervolgplan is afgesproken voor de klant zelf om contact op te nemen met Brandmeester"
+      "Zou duidelijker kunnen vermelden of Brandmeester proactief zal worden ingelicht (lijkt nu impliciet) – concrete bevestiging helpt vervolgcommunicatie"
     ]
   },
   "verkeerdVerbonden": {
