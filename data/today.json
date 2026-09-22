@@ -1,6 +1,6 @@
 {
   "date": "2026-09-22",
-  "generated_at": "2026-09-22T10:10:55Z",
+  "generated_at": "2026-09-22T10:21:00Z",
   "drukte": "rustig",
   "gesprekken": 1,
   "stats": {
@@ -11,13 +11,13 @@
     "geenDekking": 0,
     "verkeerdNummer": 0
   },
-  "score": 8.5,
+  "score": 8.1,
   "conversations": [
     {
       "tijd": "11:06",
       "titel": "Nieuwe arbeidszaak aanmelden bij Brandmeester met Esther",
       "personen": "Verzekerde: W.C.B. deBruin · Dewi Verver | Juridisch Medewerker",
-      "samenvatting": "Esther van Mansier belt namens een klant die al een arbeidszaak bij Brandmeester heeft lopen en wil weten hoe een nieuwe zaak kan worden aangemeld. De medewerker geeft procedureel advies: de klant kan zelf dit nummer bellen om een nieuw verzoek in te dienen bij Brandmeester. De beller is automatisch geverifieerd via telefoonnummer; inhoudelijk juridisch advies over de arbeidsgeschil zelf is niet gegeven (correct, want dit is een procedurele routeringvraag).",
+      "samenvatting": "Esther van Mansier belt namens een klant die al een arbeidszaak bij Brandmeester heeft lopen en opdracht heeft gekregen een nieuwe zaak aan te vragen. De medewerker legt uit dat een vervolggeschil inderdaad een nieuwe zaakregistratie kan rechtvaardigen en adviseert dat de verzekerder zelf kan bellen om een nieuw verzoek in te dienen. De identiteit is automatisch geverifieerd via systeemherkenning; inhoudelijk juridisch advies is niet gegeven maar procedureel advies over aanmelding.",
       "tags": [
         [
           "tag-arbeidsrecht",
@@ -38,13 +38,13 @@
   "acties": [],
   "analyse": {
     "goed": [
-      "11:06 Arbeidszaak: Identiteit correct geverifieerd via telefoonnummer (automatische verificatie)",
-      "11:06 Arbeidszaak: Procedureel advies gegeven (klant kan zelf Brandmeester bellen voor aanmelding nieuwe zaak)",
-      "11:06 Arbeidszaak: Juist niet ingegaan op inhoudelijk juridisch advies over arbeidsgeschil zelf - passende grensbewaking",
-      "11:06 Arbeidszaak: Duidelijke doorverwijzing naar bevoegde instantie (Brandmeester)"
+      "Identiteit correct geverifieerd via systeemherkenning (11:06 Arbeidszaak Brandmeester)",
+      "Procedureel advies gegeven over aanmeldingsproces voor vervolggeschil (11:06 Arbeidszaak Brandmeester)",
+      "Duidelijke doorverwijzing naar Brandmeester uitgevoerd (11:06 Arbeidszaak Brandmeester)"
     ],
     "beter": [
-      "11:06 Arbeidszaak: Geen concrete deadline/vervolgstap voor de beller zelf benoemd (bijv. 'belt u Brandmeester vandaag nog' of 'wij informeren u maandag')"
+      "Bij doorverwijzing naar Brandmeester zou een concrete deadline voor vervolgstappen nuttig zijn geweest (11:06 Arbeidszaak Brandmeester) – bijv. 'Zorg dat de verzekerder binnen 3 werkdagen belt'",
+      "Controleer of volledige contactgegevens Brandmeester zijn doorgegeven voor efficiënte vervolgafhandeling (11:06 Arbeidszaak Brandmeester)"
     ]
   },
   "verkeerdVerbonden": {
