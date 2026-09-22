@@ -1,6 +1,6 @@
 {
   "date": "2026-09-22",
-  "generated_at": "2026-09-22T12:01:20Z",
+  "generated_at": "2026-09-22T12:10:59Z",
   "drukte": "rustig",
   "gesprekken": 1,
   "stats": {
@@ -11,13 +11,13 @@
     "geenDekking": 0,
     "verkeerdNummer": 0
   },
-  "score": 7.8,
+  "score": 8.5,
   "conversations": [
     {
       "tijd": "11:06",
       "titel": "Nieuwe arbeidszaak aanmelden bij Brandmeester met Esther",
       "personen": "Verzekerde: W.C.B. deBruin · Dewi Verver | Juridisch Medewerker",
-      "samenvatting": "Esther van Mansier (geen verzekerde, maar contactpersoon die namens een klant belt) vraagt hoe een nieuwe arbeidszaak kan worden aangemeld bij Brandmeester, omdat de bestaande zaak een vervolg heeft. De medewerker geeft uitleg dat een nieuw verzoek kan worden ingediend en adviseert dat de verzekerde zelf kan bellen om een nieuwe zaak op te starten. Identiteit is automatisch geverifieerd via Zoho-koppeling; inhoudelijk juridisch advies over de arbeidszaak zelf is niet gegeven (Esther weet zelf weinig over de zaak).",
+      "samenvatting": "Esther van Mansier (rechtsbijstandsmedewerker van Brandmeester) belt de juridische helpdesk met vraag hoe een klant die al een arbeidszaak bij Brandmeester loopt een nieuwe arbeidszaak kan aanmelden. De medewerker geeft uit dat de klant zelf kan bellen om een nieuw verzoek in te dienen, en dat de medewerker dan een nieuwe zaak zal opstarten. Identiteit is automatisch geverifieerd via telefoonnummer; er is geen inhoudelijk juridisch advies aan een verzekerde gegeven, maar procedureel advies aan een derde partij (rechtsbijstandsmedewerker).",
       "tags": [
         [
           "tag-arbeidsrecht",
@@ -30,7 +30,7 @@
       ],
       "terugbel": false,
       "verkeerdVerbonden": false,
-      "rechtsbijstandVerwijzing": true,
+      "rechtsbijstandVerwijzing": false,
       "adviesGegeven": false,
       "identiteitGeverifieerd": true
     }
@@ -38,19 +38,19 @@
   "acties": [],
   "analyse": {
     "goed": [
-      "11:06 Arbeidszaak: Identiteit correct geverifieerd via Zoho-koppeling",
-      "11:06 Arbeidszaak: Juist gehandeld door geen juridisch advies te geven aan contactpersoon zonder mandaat; medewerker heeft verzekerde als beller aangewezen",
-      "11:06 Arbeidszaak: Duidelijke doorverwijzing naar Brandmeester voor vervolgstappen"
+      "11:06 Nieuwe arbeidszaak: Identiteit correct geverifieerd via telefoonnummer (Esther van Mansier, Brandmeester)",
+      "11:06 Nieuwe arbeidszaak: Juiste afbakening erkend – dit is procedureel advies aan een derde partij (rechtsbijstandsmedewerker), geen inhoudelijk juridisch advies aan verzekerde",
+      "11:06 Nieuwe arbeidszaak: Heldere doorverwijzing naar Brandmeester gegeven met duidelijk vervolgproces (klant belt zelf in voor nieuw verzoek)"
     ],
     "beter": [
-      "11:06 Arbeidszaak: Geen concrete deadline/vervolgdatum afgesproken voor moment waarop verzekerde zelf contact opneemt met Brandmeester of wanneer medewerker vervolgstatus checkt"
+      "11:06 Nieuwe arbeidszaak: Geen concrete deadline benoemd voor vervolgstap (wanneer kan klant bellen, of binnen welk aantal werkdagen wordt zaak opgestart)"
     ]
   },
   "verkeerdVerbonden": {
     "aantal": 0,
     "percentage": 0.0
   },
-  "rechtsbijstandVerwijzingen": 1,
+  "rechtsbijstandVerwijzingen": 0,
   "categorieen": [
     [
       "Arbeidsrecht",

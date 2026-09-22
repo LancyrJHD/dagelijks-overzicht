@@ -2655,11 +2655,25 @@
         "nummer": "+31610876306",
         "teruggebeld": false,
         "tijd": "13:09"
+      },
+      {
+        "callResult": "overflowed",
+        "naam": "Onbekend",
+        "nummer": "+31612125793",
+        "teruggebeld": false,
+        "tijd": "13:56"
+      },
+      {
+        "callResult": "abandoned",
+        "naam": "Onbekend",
+        "nummer": "+31612125793",
+        "teruggebeld": false,
+        "tijd": "14:06"
       }
     ],
     "date": "2026-09-22",
-    "generated_at": "2026-09-22T12:01:06Z",
-    "nietTerugGebeld": 4,
+    "generated_at": "2026-09-22T12:10:48Z",
+    "nietTerugGebeld": 6,
     "nietTerugGebeldNummers": [
       {
         "callResult": "abandoned",
@@ -2688,10 +2702,24 @@
         "nummer": "+31610876306",
         "teruggebeld": false,
         "tijd": "13:09"
+      },
+      {
+        "callResult": "overflowed",
+        "naam": "Onbekend",
+        "nummer": "+31612125793",
+        "teruggebeld": false,
+        "tijd": "13:56"
+      },
+      {
+        "callResult": "abandoned",
+        "naam": "Onbekend",
+        "nummer": "+31612125793",
+        "teruggebeld": false,
+        "tijd": "14:06"
       }
     ],
     "terugGebeld": 2,
-    "totaalGemist": 6,
-    "totaalInbound": 9
+    "totaalGemist": 8,
+    "totaalInbound": 11
   }
 }

@@ -1,10 +1,10 @@
 {
   "date": "2026-09-22",
-  "generated_at": "2026-09-22T12:01:06Z",
-  "totaalInbound": 9,
-  "totaalGemist": 6,
+  "generated_at": "2026-09-22T12:10:48Z",
+  "totaalInbound": 11,
+  "totaalGemist": 8,
   "terugGebeld": 2,
-  "nietTerugGebeld": 4,
+  "nietTerugGebeld": 6,
   "nietTerugGebeldNummers": [
     {
       "nummer": "+31762308080",
@@ -31,6 +31,20 @@
       "nummer": "+31610876306",
       "naam": "Onbekend",
       "tijd": "13:09",
+      "callResult": "abandoned",
+      "teruggebeld": false
+    },
+    {
+      "nummer": "+31612125793",
+      "naam": "Onbekend",
+      "tijd": "13:56",
+      "callResult": "overflowed",
+      "teruggebeld": false
+    },
+    {
+      "nummer": "+31612125793",
+      "naam": "Onbekend",
+      "tijd": "14:06",
       "callResult": "abandoned",
       "teruggebeld": false
     }
@@ -75,6 +89,20 @@
       "nummer": "+31610876306",
       "naam": "Onbekend",
       "tijd": "13:09",
+      "callResult": "abandoned",
+      "teruggebeld": false
+    },
+    {
+      "nummer": "+31612125793",
+      "naam": "Onbekend",
+      "tijd": "13:56",
+      "callResult": "overflowed",
+      "teruggebeld": false
+    },
+    {
+      "nummer": "+31612125793",
+      "naam": "Onbekend",
+      "tijd": "14:06",
       "callResult": "abandoned",
       "teruggebeld": false
     }
