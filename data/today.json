@@ -1,6 +1,6 @@
 {
   "date": "2026-09-22",
-  "generated_at": "2026-09-22T14:51:06Z",
+  "generated_at": "2026-09-22T15:01:33Z",
   "drukte": "rustig",
   "gesprekken": 1,
   "stats": {
@@ -11,13 +11,13 @@
     "geenDekking": 0,
     "verkeerdNummer": 0
   },
-  "score": 8.1,
+  "score": 8.5,
   "conversations": [
     {
       "tijd": "11:06",
       "titel": "Nieuwe arbeidszaak aanmelden bij Brandmeester met Esther",
       "personen": "Verzekerde: W.C.B. deBruin · Dewi Verver | Juridisch Medewerker",
-      "samenvatting": "Esther van Mansier belt namens een klant die al een arbeidszaak bij Brandmeester heeft lopen en een nieuwe zaak moet aanmelden. De medewerker geeft uitleg dat een vervolggeschil een nieuwe zaak kan vereisen en adviseert dat de klant zelf kan bellen om een nieuwe zaak in te dienen; geen inhoudelijk juridisch advies over de zaak zelf gegeven. De beller is automatisch geverifieerd via telefoonnummer (Zoho-match), maar omdat dit een routeringsvraag betreft en geen juridisch adviesverzoek van de uiteindelijke cliënt, is geen vervolgadvies gegeven.",
+      "samenvatting": "Esther van Mansier (HR-adviseur) belt namens een klant die reeds een arbeidszaak bij Brandmeester heeft lopen en een nieuwe zaak wil aanmelden. De medewerker legt uit dat een nieuw verzoek bij Brandmeester kan worden ingediend, hetzij via mail hetzij via rechtstreeks telefoonnummer, en dat de verzekerder zelf kan bellen om een nieuwe zaak op te starten. De beller is geverifieerd via Zoho-koppeling; inhoudelijk juridisch advies is niet gegeven omdat dit een routeringvraag betreft.",
       "tags": [
         [
           "tag-arbeidsrecht",
@@ -38,12 +38,12 @@
   "acties": [],
   "analyse": {
     "goed": [
-      "11:06 Nieuwe arbeidszaak: Identiteit correct geverifieerd via telefoonnummer (Zoho-match)",
-      "11:06 Nieuwe arbeidszaak: Passende routering naar Brandmeester voor aanmelding nieuwe zaak",
-      "11:06 Nieuwe arbeidszaak: Juiste inschatting dat routeringsvraag geen inhoudelijk juridisch advies vereist; geen advies gegeven zonder directe cliëntverificatie"
+      "11:06 - Arbeidszaak: Identiteit correct geverifieerd via Zoho-koppeling voordat informatie werd gegeven.",
+      "11:06 - Arbeidszaak: Medewerker heeft duidelijk routeringsadvies gegeven (mail of rechtstreeks telefoonnummer naar Brandmeester), zodat de klant weet hoe verder te gaan.",
+      "11:06 - Arbeidszaak: Passende afhandeling van een routeringvraag zonder onnodige inhoudelijke adviezen."
     ],
     "beter": [
-      "11:06 Nieuwe arbeidszaak: Geen concrete deadline of vervolgstap genoemd voor contact met Brandmeester (bijv. 'klant belt morgen' of 'binnen 2 werkdagen')"
+      "11:06 - Arbeidszaak: Het zou beter zijn geweest om expliciet een vervolgdeadline of vervolgstap af te spreken (bijv. 'verwacht u deze week contact van Brandmeester, bel ons op [datum] als u niets hoort')."
     ]
   },
   "verkeerdVerbonden": {
