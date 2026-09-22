@@ -1,27 +1,60 @@
 {
   "date": "2026-09-22",
-  "generated_at": "2026-09-22T09:00:59Z",
+  "generated_at": "2026-09-22T09:10:45Z",
   "drukte": "rustig",
-  "gesprekken": 0,
+  "gesprekken": 1,
   "stats": {
     "opgelost": 0,
     "brandmeester": 0,
     "afkoop": 0,
-    "terugbel": 0,
+    "terugbel": 1,
     "geenDekking": 0,
     "verkeerdNummer": 0
   },
-  "score": 0,
-  "conversations": [],
+  "score": 5.1,
+  "conversations": [
+    {
+      "tijd": "11:06",
+      "titel": "Nieuwe arbeidszaak aanmelden bij Brandmeester met Esther",
+      "personen": "Verzekerde: anoniem · Dewi Verver | Juridisch Medewerker",
+      "samenvatting": "Esther van Mansier (niet de beller zelf, maar een tussenpersoon) belt namens een klant die al een arbeidszaak bij Brandmeester lopen heeft en nu een nieuwe zaak moet aanmelden. De medewerker geeft uitleg dat de klant zelf kan bellen met dit nummer om een nieuw verzoek in te dienen bij Brandmeester. De identiteit is niet geverifieerd (geen Zoho-match, geen verificatiepoging in transcript), en er is alleen procedureel advies gegeven, geen inhoudelijk juridisch advies.",
+      "tags": [
+        [
+          "tag-arbeidsrecht",
+          "Arbeidsrecht"
+        ]
+      ],
+      "uitkomst": [
+        "outcome-terugbel",
+        "Terugbellen"
+      ],
+      "terugbel": true,
+      "verkeerdVerbonden": false,
+      "rechtsbijstandVerwijzing": true,
+      "adviesGegeven": true,
+      "identiteitGeverifieerd": false
+    }
+  ],
   "acties": [],
   "analyse": {
-    "goed": [],
-    "beter": []
+    "goed": [
+      "11:06 Arbeidszaak: Medewerker geeft duidelijk procedureel advies (klant kan zelf bellen voor nieuwe aanmelding bij Brandmeester)"
+    ],
+    "beter": [
+      "11:06 Arbeidszaak: Identiteit niet geverifieerd voordat advies werd gegeven. Esther is tussenpersoon, niet de verzekerde zelf. Medewerker moet eerst de daadwerkelijke klant aan de lijn krijgen en in Zoho verifiëren alvorens advies te geven.",
+      "11:06 Arbeidszaak: Geen concrete deadline afgesproken voor vervolgcontact of terugbellen door de klant zelf.",
+      "11:06 Arbeidszaak: 'Terugbellen' als uitkomst is onduidelijk – wie belt wie terug en wanneer? Absent vervolgplan."
+    ]
   },
   "verkeerdVerbonden": {
     "aantal": 0,
     "percentage": 0.0
   },
-  "rechtsbijstandVerwijzingen": 0,
-  "categorieen": []
+  "rechtsbijstandVerwijzingen": 1,
+  "categorieen": [
+    [
+      "Arbeidsrecht",
+      1
+    ]
+  ]
 }
