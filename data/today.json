@@ -1,23 +1,23 @@
 {
   "date": "2026-09-22",
-  "generated_at": "2026-09-22T16:31:03Z",
+  "generated_at": "2026-09-22T16:41:05Z",
   "drukte": "rustig",
   "gesprekken": 1,
   "stats": {
     "opgelost": 0,
-    "brandmeester": 1,
+    "brandmeester": 0,
     "afkoop": 0,
-    "terugbel": 0,
+    "terugbel": 1,
     "geenDekking": 0,
     "verkeerdNummer": 0
   },
-  "score": 8.1,
+  "score": 7.8,
   "conversations": [
     {
       "tijd": "11:06",
       "titel": "Nieuwe arbeidszaak aanmelden bij Brandmeester met Esther",
       "personen": "Verzekerde: W.C.B. deBruin · Dewi Verver | Juridisch Medewerker",
-      "samenvatting": "Esther van Mansier belt namens een cliënt die al een arbeidszaak bij Brandmeester heeft lopen en een nieuwe zaak moet aanmelden. De medewerker legt uit dat de cliënt zelf dit nummer kan bellen om een nieuw verzoek in te dienen, en dat Brandmeester zal zorgen voor verdere afhandeling. De beller is geverifieerd via automatische herkenning (Zoho-contactmatch), maar er is geen inhoudelijk juridisch advies gegeven aan de beller zelf – het gesprek is louter procedureel.",
+      "samenvatting": "Esther van Mansier belt namens een klant die al een arbeidszaak bij Brandmeester heeft lopen en een nieuwe zaak moet aanmelden. De medewerker geeft aan dat de klant zelf kan bellen naar de juridische helpdesk om een nieuw verzoek in te dienen, dat dan ter doorverwijzing naar Brandmeester wordt voorgelegd. De identiteit van de beller is automatisch geverifieerd via het telefoonnummer.",
       "tags": [
         [
           "tag-arbeidsrecht",
@@ -25,25 +25,25 @@
         ]
       ],
       "uitkomst": [
-        "outcome-brandmeester",
-        "Doorverwezen naar Brandmeester"
+        "outcome-terugbel",
+        "Terugbellen"
       ],
-      "terugbel": false,
+      "terugbel": true,
       "verkeerdVerbonden": false,
       "rechtsbijstandVerwijzing": true,
-      "adviesGegeven": false,
+      "adviesGegeven": true,
       "identiteitGeverifieerd": true
     }
   ],
   "acties": [],
   "analyse": {
     "goed": [
-      "11:06 Arbeidszaak: Identiteit correct geverifieerd via Zoho-contactmatch",
-      "11:06 Arbeidszaak: Medewerker geeft duidelijke procedurele instructie (cliënt belt zelf Brandmeester voor nieuwe zaak)",
-      "11:06 Arbeidszaak: Doorverwijzing naar Brandmeester is passend (cliënt heeft daar al lopende zaak)"
+      "11:06 Arbeidszaak: Identiteit correct geverifieerd via telefoonnummer",
+      "11:06 Arbeidszaak: Duidelijk procedureel advies gegeven over aanmeldingsproces (beller zelf contact opnemen met helpdesk voor doorverwijzing naar Brandmeester)",
+      "11:06 Arbeidszaak: Vervolgstap helder benoemd (terugbellen voor aanmelding)"
     ],
     "beter": [
-      "11:06 Arbeidszaak: Niet opgetekend of een concrete deadline/vervolgstap voor de beller is afgesproken (bijv. 'belt u vandaag nog, of helpen wij u direct verder?')"
+      "11:06 Arbeidszaak: Geen concrete deadline afgesproken voor het terugbellen naar de klant (wanneer exact zal contact worden opgenomen?)"
     ]
   },
   "verkeerdVerbonden": {
