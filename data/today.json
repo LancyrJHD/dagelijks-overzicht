@@ -1,6 +1,6 @@
 {
   "date": "2026-09-22",
-  "generated_at": "2026-09-22T11:31:03Z",
+  "generated_at": "2026-09-22T11:40:57Z",
   "drukte": "rustig",
   "gesprekken": 1,
   "stats": {
@@ -11,13 +11,13 @@
     "geenDekking": 0,
     "verkeerdNummer": 0
   },
-  "score": 8.1,
+  "score": 7.8,
   "conversations": [
     {
       "tijd": "11:06",
       "titel": "Nieuwe arbeidszaak aanmelden bij Brandmeester met Esther",
       "personen": "Verzekerde: W.C.B. deBruin · Dewi Verver | Juridisch Medewerker",
-      "samenvatting": "Esther van Mansier belt namens een cliënt die al een arbeidszaak bij Brandmeester heeft lopen en nu een nieuwe zaak wil aanmelden. De medewerker geeft uitleg dat een vervolg in het geschil een nieuwe aanmelding kan rechtvaardigen en adviseert dat de cliënt zelf kan bellen om een nieuw verzoek in te dienen. De beller is geverifieerd via automatische systeemkoppeling (W.C.B. deBruin), en er is informatief advies gegeven over de procedure.",
+      "samenvatting": "Esther van Mansier (advocate/raadsman) belt namens een cliënt die al een arbeidszaak bij Brandmeester heeft lopen en nu een nieuwe arbeidszaak moet aanmelden. De medewerker legt uit dat een nieuw verzoek bij Brandmeester kan worden ingediend en adviseert dat de cliënt zelf kan bellen om dit in gang te zetten. De beller is automatisch geverifieerd via Zoho (gekoppeld klantdossier), maar ontvangt geen inhoudelijk juridisch advies over de arbeidskwestie zelf – dit is zuiver een procedurele vraag over hoe een nieuwe zaak wordt aangemeld.",
       "tags": [
         [
           "tag-arbeidsrecht",
@@ -31,19 +31,19 @@
       "terugbel": false,
       "verkeerdVerbonden": false,
       "rechtsbijstandVerwijzing": true,
-      "adviesGegeven": true,
+      "adviesGegeven": false,
       "identiteitGeverifieerd": true
     }
   ],
   "acties": [],
   "analyse": {
     "goed": [
-      "11:06 Nieuwe arbeidszaak: Identiteit correct geverifieerd via automatische systeemkoppeling",
-      "11:06 Nieuwe arbeidszaak: Procedureel advies gegeven over aanmelding nieuwe zaak bij bestaande arbeidskwestie",
-      "11:06 Nieuwe arbeidszaak: Beller duidelijk doorverwezen naar Brandmeester"
+      "11:06 – Arbeidszaak: Identiteit correct geverifieerd via Zoho-koppeling (advocate Esther van Mansier)",
+      "11:06 – Arbeidszaak: Juiste procedure toegelicht (nieuw verzoek bij Brandmeester indienen)",
+      "11:06 – Arbeidszaak: Passende doorverwijzing naar Brandmeester als vakspecialist"
     ],
     "beter": [
-      "11:06 Nieuwe arbeidszaak: Geen concrete deadline genoemd voor vervolgstap (wanneer moet cliënt bellen naar Brandmeester?)"
+      "11:06 – Arbeidszaak: Bij doorverwijzing naar Brandmeester zou een concrete deadline of vervolgstap voor de cliënt helpen (bijv. 'binnen 3 werkdagen contact opnemen met Brandmeester')"
     ]
   },
   "verkeerdVerbonden": {
