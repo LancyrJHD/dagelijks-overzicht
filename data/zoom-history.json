@@ -2613,13 +2613,29 @@
     "totaalInbound": 19
   },
   "2026-09-22": {
-    "alleGemistNummers": [],
+    "alleGemistNummers": [
+      {
+        "callResult": "abandoned",
+        "naam": "Onbekend",
+        "nummer": "+31762308081",
+        "teruggebeld": false,
+        "tijd": "09:22"
+      }
+    ],
     "date": "2026-09-22",
-    "generated_at": "2026-09-22T07:20:45Z",
-    "nietTerugGebeld": 0,
-    "nietTerugGebeldNummers": [],
+    "generated_at": "2026-09-22T07:30:50Z",
+    "nietTerugGebeld": 1,
+    "nietTerugGebeldNummers": [
+      {
+        "callResult": "abandoned",
+        "naam": "Onbekend",
+        "nummer": "+31762308081",
+        "teruggebeld": false,
+        "tijd": "09:22"
+      }
+    ],
     "terugGebeld": 0,
-    "totaalGemist": 0,
-    "totaalInbound": 0
+    "totaalGemist": 1,
+    "totaalInbound": 1
   }
 }
