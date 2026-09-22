@@ -2618,37 +2618,22 @@
         "callResult": "abandoned",
         "naam": "Onbekend",
         "nummer": "+31762308081",
-        "teruggebeld": false,
+        "teruggebeld": true,
         "tijd": "09:22"
       },
       {
         "callResult": "abandoned",
         "naam": "Onbekend",
         "nummer": "+31639140021",
-        "teruggebeld": false,
+        "teruggebeld": true,
         "tijd": "09:39"
       }
     ],
     "date": "2026-09-22",
-    "generated_at": "2026-09-22T08:10:41Z",
-    "nietTerugGebeld": 2,
-    "nietTerugGebeldNummers": [
-      {
-        "callResult": "abandoned",
-        "naam": "Onbekend",
-        "nummer": "+31762308081",
-        "teruggebeld": false,
-        "tijd": "09:22"
-      },
-      {
-        "callResult": "abandoned",
-        "naam": "Onbekend",
-        "nummer": "+31639140021",
-        "teruggebeld": false,
-        "tijd": "09:39"
-      }
-    ],
-    "terugGebeld": 0,
+    "generated_at": "2026-09-22T08:20:40Z",
+    "nietTerugGebeld": 0,
+    "nietTerugGebeldNummers": [],
+    "terugGebeld": 2,
     "totaalGemist": 2,
     "totaalInbound": 2
   }
