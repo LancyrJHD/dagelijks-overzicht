@@ -1,10 +1,10 @@
 {
   "date": "2026-09-22",
-  "generated_at": "2026-09-22T12:20:43Z",
-  "totaalInbound": 11,
-  "totaalGemist": 8,
+  "generated_at": "2026-09-22T12:30:54Z",
+  "totaalInbound": 12,
+  "totaalGemist": 9,
   "terugGebeld": 2,
-  "nietTerugGebeld": 6,
+  "nietTerugGebeld": 7,
   "nietTerugGebeldNummers": [
     {
       "nummer": "+31762308080",
@@ -46,6 +46,13 @@
       "naam": "Onbekend",
       "tijd": "14:06",
       "callResult": "abandoned",
+      "teruggebeld": false
+    },
+    {
+      "nummer": "+31653969152",
+      "naam": "Onbekend",
+      "tijd": "14:16",
+      "callResult": "overflowed",
       "teruggebeld": false
     }
   ],
@@ -104,6 +111,13 @@
       "naam": "Onbekend",
       "tijd": "14:06",
       "callResult": "abandoned",
+      "teruggebeld": false
+    },
+    {
+      "nummer": "+31653969152",
+      "naam": "Onbekend",
+      "tijd": "14:16",
+      "callResult": "overflowed",
       "teruggebeld": false
     }
   ]
