@@ -1,13 +1,13 @@
 {
   "date": "2026-09-22",
-  "generated_at": "2026-09-22T13:21:07Z",
+  "generated_at": "2026-09-22T13:31:11Z",
   "drukte": "rustig",
   "gesprekken": 1,
   "stats": {
     "opgelost": 0,
-    "brandmeester": 1,
+    "brandmeester": 0,
     "afkoop": 0,
-    "terugbel": 0,
+    "terugbel": 1,
     "geenDekking": 0,
     "verkeerdNummer": 0
   },
@@ -17,7 +17,7 @@
       "tijd": "11:06",
       "titel": "Nieuwe arbeidszaak aanmelden bij Brandmeester met Esther",
       "personen": "Verzekerde: W.C.B. deBruin · Dewi Verver | Juridisch Medewerker",
-      "samenvatting": "Esther van Mansier belt namens een cliënt die al een arbeidszaak bij Brandmeester loopt en een nieuwe zaak moet aanmelden. De medewerker legt uit dat de cliënt zelf dit nummer kan bellen om een nieuw verzoek in te dienen, en dat Brandmeester zelf heeft aangegeven dat een vervolgzaak nodig is. De beller is automatisch geverifieerd via het systeem (contactpersoon W.C.B. deBruin), maar geen inhoudelijk juridisch advies werd gegeven aan de beller zelf.",
+      "samenvatting": "Esther van Mansier (vertegenwoordiger/intermediair) belt namens een klant die al een arbeidszaak bij Brandmeester heeft lopen en opdracht heeft gekregen een nieuwe zaak aan te melden. De medewerker legt uit dat de klant zelf kan bellen om een nieuw verzoek in te dienen, en stelt voor om de situatie per mail of telefonisch door te geven zodat een nieuw verzoek bij Brandmeester wordt ingediend. Er is geen inhoudelijk juridisch advies gegeven, maar wel correcte informatie over de procedure voor een vervolgzaak.",
       "tags": [
         [
           "tag-arbeidsrecht",
@@ -25,10 +25,10 @@
         ]
       ],
       "uitkomst": [
-        "outcome-brandmeester",
-        "Doorverwezen naar Brandmeester"
+        "outcome-terugbel",
+        "Terugbellen"
       ],
-      "terugbel": false,
+      "terugbel": true,
       "verkeerdVerbonden": false,
       "rechtsbijstandVerwijzing": true,
       "adviesGegeven": false,
@@ -38,12 +38,13 @@
   "acties": [],
   "analyse": {
     "goed": [
-      "11:06 - Arbeidszaak: Identiteit correct geverifieerd via systeem (contactperson W.C.B. deBruin bevestigd)",
-      "11:06 - Arbeidszaak: Passende doorverwijzing naar Brandmeester als specialist voor vervolgzaak",
-      "11:06 - Arbeidszaak: Heldere communicatie dat cliënt zelf contact kan opnemen voor nieuwe zaak"
+      "11:06 Arbeidszaak: Identiteit van vertegenwoordiger/intermediair Esther van Mansier correct geverifieerd in systeem",
+      "11:06 Arbeidszaak: Medewerker gaf geen inhoudelijk advies zonder volledige casecontext, wat juist is",
+      "11:06 Arbeidszaak: Procedurele informatie correct gegeven (klant kan zelf bellen voor nieuw verzoek)",
+      "11:06 Arbeidszaak: Vervolgplan duidelijk afgesproken (mail of telefonisch contact voor nieuwe aanmelding bij Brandmeester)"
     ],
     "beter": [
-      "11:06 - Arbeidszaak: Geen concrete deadline of vervolgstap voor de beller afgesproken (wanneer contact opnemen met Brandmeester, SLA voor reactie?)"
+      "11:06 Arbeidszaak: Bij terugbellen zou concrete deadline nuttig zijn geweest (bijv. 'binnen 2 werkdagen')"
     ]
   },
   "verkeerdVerbonden": {
