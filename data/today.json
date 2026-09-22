@@ -1,6 +1,6 @@
 {
   "date": "2026-09-22",
-  "generated_at": "2026-09-22T13:01:29Z",
+  "generated_at": "2026-09-22T13:10:57Z",
   "drukte": "rustig",
   "gesprekken": 1,
   "stats": {
@@ -11,13 +11,13 @@
     "geenDekking": 0,
     "verkeerdNummer": 0
   },
-  "score": 8.5,
+  "score": 7.8,
   "conversations": [
     {
       "tijd": "11:06",
       "titel": "Nieuwe arbeidszaak aanmelden bij Brandmeester met Esther",
       "personen": "Verzekerde: W.C.B. deBruin · Dewi Verver | Juridisch Medewerker",
-      "samenvatting": "Esther van Mansier (juridisch beroepsbeoefenaar/tussenpersoon) belt namens een cliënt die al een arbeidszaak bij Brandmeester in behandeling heeft en een nieuwe zaak moet aanmelden. De medewerker legt uit dat de cliënt zelf dit nummer kan bellen om een nieuw verzoek in te dienen; de medewerker zal ervoor zorgen dat het verzoek bij Brandmeester terechtkomt. Beller is automatisch geverifieerd via Zoho-koppeling, maar geen inhoudelijk juridisch advies over de zaak zelf is gegeven.",
+      "samenvatting": "Esther van Mansier (makelaar/intermediair) belt namens een cliënt die een lopende arbeidszaak bij Brandmeester heeft en een nieuwe zaak wil aanmelden. De medewerker legt uit dat een vervolgarguument kan leiden tot een nieuwe zaakregistratie en adviseert dat de cliënt zelf het helpdesknummer kan bellen om een nieuw verzoek in te dienen. Er is geen rechtstreekse beller met schadevergoedingsvraag geverifieerd; de intermediair werd automatisch herkend op telefoonnummer.",
       "tags": [
         [
           "tag-arbeidsrecht",
@@ -31,19 +31,19 @@
       "terugbel": false,
       "verkeerdVerbonden": false,
       "rechtsbijstandVerwijzing": true,
-      "adviesGegeven": false,
+      "adviesGegeven": true,
       "identiteitGeverifieerd": true
     }
   ],
   "acties": [],
   "analyse": {
     "goed": [
-      "11:06 - Identiteit correct geverifieerd via Zoho-koppeling (Esther van Mansier als juridisch beroepsbeoefenaar erkend)",
-      "11:06 - Juiste procedureaanwijzing gegeven: cliënt kan zelf bellen voor nieuwe zaak-aanmelding",
-      "11:06 - Duidelijke doorverwijzing naar Brandmeester zonder inhoudelijk advies af te geven waar niet nodig"
+      "11:06 Arbeidszaak: Identiteit correct geverifieerd via automatische herkenning telefoonnummer intermediair (Esther van Mansier).",
+      "11:06 Arbeidszaak: Medewerker geeft duidelijk advies over de mogelijkheid van vervolgarguument en nieuwe zaakregistratie.",
+      "11:06 Arbeidszaak: Passende doorverwijzing naar Brandmeester voor verdere behandeling."
     ],
     "beter": [
-      "11:06 - Geen concrete deadline afgesproken voor doormelding naar Brandmeester; wenselijk was geweest te vermelden wanneer Esther/cliënt kan verwachten dat Brandmeester bereikt is of contact opneemt"
+      "11:06 Arbeidszaak: Geen expliciete polis/schadebedrag vastgesteld voor de nieuwe zaak; bij een eventuele schadeclaim zou dekkingscontrole (franchise EUR 250) nog nodig zijn bij vervolgcontact."
     ]
   },
   "verkeerdVerbonden": {
