@@ -1,6 +1,6 @@
 {
   "date": "2026-09-23",
-  "generated_at": "2026-09-23T11:10:45Z",
+  "generated_at": "2026-09-23T11:20:44Z",
   "tickets": [
     {
       "ticketNumber": "2769",
@@ -49,19 +49,31 @@
       "webUrl": "https://desk.zoho.eu/support/htjzlancyr/ShowHomePage.do#Cases/dv/195464000014275001",
       "channel": "Phone",
       "doorgezetBrandmeester": false
+    },
+    {
+      "ticketNumber": "2776",
+      "tijd": "13:17",
+      "titel": "Reiskostenvergoeding dienstreis - tarief 25 of 35 cent per km",
+      "klant": "E.J. Maalderink",
+      "status": "Gesloten",
+      "statusType": "",
+      "prioriteit": "Niet ingesteld",
+      "webUrl": "https://desk.zoho.eu/support/htjzlancyr/ShowHomePage.do#Cases/dv/195464000014267010",
+      "channel": "Phone",
+      "doorgezetBrandmeester": false
     }
   ],
   "channelCounts": {
-    "Phone": 4
+    "Phone": 5
   },
   "brandmeesterCount": 0,
   "ticketStats": {
-    "nieuweVandaag": 4,
-    "geslotenVandaag": 14,
+    "nieuweVandaag": 5,
+    "geslotenVandaag": 15,
     "totaalOpen": 23,
     "inDeWacht": 21,
     "statusBreakdown": {
-      "Gesloten": 654,
+      "Gesloten": 655,
       "Open": 2,
       "In de wacht": 21
     },
