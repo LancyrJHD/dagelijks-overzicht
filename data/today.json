@@ -1,6 +1,6 @@
 {
   "date": "2026-09-23",
-  "generated_at": "2026-09-23T07:50:50Z",
+  "generated_at": "2026-09-23T08:01:10Z",
   "drukte": "rustig",
   "gesprekken": 1,
   "stats": {
@@ -17,7 +17,7 @@
       "tijd": "09:01",
       "titel": "Daily Huddle",
       "personen": "Verzekerde: De juridische helpdesk · Senne Duifhuis | Juridisch medewerker",
-      "samenvatting": "Dit is een interne daily huddle-meeting van HTJZ-medewerkers (geen klantgesprek). De deelnemers bespreken interne zaken zoals rechtszaken, administratieve processen, webinars en casuswerk. Er vindt geen externe klantverificatie plaats en er wordt geen juridisch advies aan een externe beller gegeven.",
+      "samenvatting": "Dit is een interne 'Daily Huddle' tussen HTJZ-medewerkers (geen extern telefonisch consumentenadvies). Het transcript bevat personeelsgesprekken over lopende zaken, administratieve procedures (digitaal procederen), bouwvorderingen en interne coördinatie. Er is geen externe beller, geen verificatie van een verzekerde, en geen inhoudelijk juridisch advies aan een klant gegeven.",
       "tags": [
         [
           "tag-overig",
@@ -38,10 +38,10 @@
   "acties": [],
   "analyse": {
     "goed": [
-      "09:01 Daily Huddle: Dit is een interne teammeeting, geen klantgesprek. Verificatie- en adviesnormen zijn hier niet van toepassing. Correct geregistreerd als 'Verkeerd nummer'."
+      "09:01 Daily Huddle: Correct geïdentificeerd als interne medewerkerscommunicatie, niet als externe klantinteractie. Geen verificatie- of adviesvereisten van toepassing daar geen extern consumentencontact plaatsvond."
     ],
     "beter": [
-      "Opmerking: Dit lijkt een administratieve registratiefout. Een interne daily huddle zou niet in de klantgesprekkenlijst thuishoren. Overweeg toekomstig deze intern meetings apart in te plannen of aan te geven als 'intern' in plaats van met externe klantgegevens."
+      "09:01 Daily Huddle: Dit lijkt een interne bijeenkomst te zijn die in de contactlijst is opgenomen. Verduidelijking: zorg dat alleen daadwerkelijke externe klantcontacten in deze qualitycheck worden meegenomen, om de analyse scherp te houden op werkelijke servicekwaliteit."
     ]
   },
   "verkeerdVerbonden": {
