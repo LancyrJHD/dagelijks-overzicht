@@ -1,6 +1,6 @@
 {
   "date": "2026-09-23",
-  "generated_at": "2026-09-23T09:20:46Z",
+  "generated_at": "2026-09-23T09:30:50Z",
   "tickets": [
     {
       "ticketNumber": "2769",
@@ -37,22 +37,34 @@
       "webUrl": "https://desk.zoho.eu/support/htjzlancyr/ShowHomePage.do#Cases/dv/195464000014269001",
       "channel": "Phone",
       "doorgezetBrandmeester": false
+    },
+    {
+      "ticketNumber": "2773",
+      "tijd": "11:23",
+      "titel": "Nieuwbouwhuis: drainage en hemelwaterafvoer geschillen",
+      "klant": "M.C.G. Swart",
+      "status": "In de wacht",
+      "statusType": "",
+      "prioriteit": "Niet ingesteld",
+      "webUrl": "https://desk.zoho.eu/support/htjzlancyr/ShowHomePage.do#Cases/dv/195464000014275001",
+      "channel": "Phone",
+      "doorgezetBrandmeester": false
     }
   ],
   "channelCounts": {
     "Email": 1,
-    "Phone": 2
+    "Phone": 3
   },
   "brandmeesterCount": 0,
   "ticketStats": {
-    "nieuweVandaag": 3,
-    "geslotenVandaag": 10,
+    "nieuweVandaag": 4,
+    "geslotenVandaag": 11,
     "totaalOpen": 25,
-    "inDeWacht": 19,
+    "inDeWacht": 20,
     "statusBreakdown": {
-      "Open": 6,
-      "Gesloten": 651,
-      "In de wacht": 19
+      "Open": 5,
+      "In de wacht": 20,
+      "Gesloten": 652
     },
     "capBereikt": false
   }
