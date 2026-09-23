@@ -1,6 +1,6 @@
 {
   "date": "2026-09-23",
-  "generated_at": "2026-09-23T07:40:39Z",
+  "generated_at": "2026-09-23T07:50:42Z",
   "tickets": [
     {
       "ticketNumber": "2769",
@@ -13,20 +13,33 @@
       "webUrl": "https://desk.zoho.eu/support/htjzlancyr/ShowHomePage.do#Cases/dv/195464000014197187",
       "channel": "Email",
       "doorgezetBrandmeester": false
+    },
+    {
+      "ticketNumber": "2770",
+      "tijd": "09:47",
+      "titel": "Leaseauto verlenging richting pensioen– juridisch advies",
+      "klant": "G. Gaalman",
+      "status": "Gesloten",
+      "statusType": "",
+      "prioriteit": "Niet ingesteld",
+      "webUrl": "https://desk.zoho.eu/support/htjzlancyr/ShowHomePage.do#Cases/dv/195464000014260001",
+      "channel": "Phone",
+      "doorgezetBrandmeester": false
     }
   ],
   "channelCounts": {
-    "Email": 1
+    "Email": 1,
+    "Phone": 1
   },
   "brandmeesterCount": 0,
   "ticketStats": {
-    "nieuweVandaag": 1,
-    "geslotenVandaag": 1,
+    "nieuweVandaag": 2,
+    "geslotenVandaag": 2,
     "totaalOpen": 32,
     "inDeWacht": 17,
     "statusBreakdown": {
+      "Gesloten": 644,
       "In de wacht": 17,
-      "Gesloten": 643,
       "Open": 15
     },
     "capBereikt": false
