@@ -1,6 +1,6 @@
 {
   "date": "2026-09-23",
-  "generated_at": "2026-09-23T08:01:10Z",
+  "generated_at": "2026-09-23T08:10:56Z",
   "drukte": "rustig",
   "gesprekken": 1,
   "stats": {
@@ -17,7 +17,7 @@
       "tijd": "09:01",
       "titel": "Daily Huddle",
       "personen": "Verzekerde: De juridische helpdesk · Senne Duifhuis | Juridisch medewerker",
-      "samenvatting": "Dit is een interne 'Daily Huddle' tussen HTJZ-medewerkers (geen extern telefonisch consumentenadvies). Het transcript bevat personeelsgesprekken over lopende zaken, administratieve procedures (digitaal procederen), bouwvorderingen en interne coördinatie. Er is geen externe beller, geen verificatie van een verzekerde, en geen inhoudelijk juridisch advies aan een klant gegeven.",
+      "samenvatting": "Dit is een interne dagelijkse huddle-meeting van HTJZ-medewerkers (geen cliëntgesprek), waarin juridische zaken en administratieve werkprocessen worden besproken, zoals een ILNT-hoorzitting, incassozaken, digitale procedering en document-uploading. Geen cliënt is geverifieerd en geen juridisch advies aan een externe partij is gegeven.",
       "tags": [
         [
           "tag-overig",
@@ -38,10 +38,10 @@
   "acties": [],
   "analyse": {
     "goed": [
-      "09:01 Daily Huddle: Correct geïdentificeerd als interne medewerkerscommunicatie, niet als externe klantinteractie. Geen verificatie- of adviesvereisten van toepassing daar geen extern consumentencontact plaatsvond."
+      "09:01 Daily Huddle: Dit is een interne teammeeting, geen cliëntcontact. Geen verificatie of advies vereist. Correct afgehandeld als interne afstemming."
     ],
     "beter": [
-      "09:01 Daily Huddle: Dit lijkt een interne bijeenkomst te zijn die in de contactlijst is opgenomen. Verduidelijking: zorg dat alleen daadwerkelijke externe klantcontacten in deze qualitycheck worden meegenomen, om de analyse scherp te houden op werkelijke servicekwaliteit."
+      "De 'uitkomst' 'Verkeerd nummer' lijkt niet van toepassing op een interne huddle. Verduidelijken in het logboek dat dit een interne meeting betreft, niet een telefonisch cliëntcontact."
     ]
   },
   "verkeerdVerbonden": {
