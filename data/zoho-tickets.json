@@ -1,6 +1,6 @@
 {
   "date": "2026-09-23",
-  "generated_at": "2026-09-23T12:50:44Z",
+  "generated_at": "2026-09-23T13:01:11Z",
   "tickets": [
     {
       "ticketNumber": "2769",
@@ -85,21 +85,33 @@
       "webUrl": "https://desk.zoho.eu/support/htjzlancyr/ShowHomePage.do#Cases/dv/195464000014282001",
       "channel": "Phone",
       "doorgezetBrandmeester": false
+    },
+    {
+      "ticketNumber": "2779",
+      "tijd": "14:58",
+      "titel": "Dakkapelschade en ingebreken­stelling",
+      "klant": "S. Verhoeven",
+      "status": "Gesloten",
+      "statusType": "",
+      "prioriteit": "Niet ingesteld",
+      "webUrl": "https://desk.zoho.eu/support/htjzlancyr/ShowHomePage.do#Cases/dv/195464000014259067",
+      "channel": "Phone",
+      "doorgezetBrandmeester": false
     }
   ],
   "channelCounts": {
-    "Phone": 7
+    "Phone": 8
   },
   "brandmeesterCount": 0,
   "ticketStats": {
-    "nieuweVandaag": 7,
-    "geslotenVandaag": 17,
+    "nieuweVandaag": 8,
+    "geslotenVandaag": 18,
     "totaalOpen": 23,
     "inDeWacht": 22,
     "statusBreakdown": {
+      "Gesloten": 658,
       "Open": 1,
-      "In de wacht": 22,
-      "Gesloten": 657
+      "In de wacht": 22
     },
     "capBereikt": false
   }
