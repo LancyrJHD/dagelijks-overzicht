@@ -1,6 +1,6 @@
 {
   "date": "2026-09-23",
-  "generated_at": "2026-09-23T08:40:48Z",
+  "generated_at": "2026-09-23T08:50:43Z",
   "tickets": [
     {
       "ticketNumber": "2769",
@@ -25,20 +25,32 @@
       "webUrl": "https://desk.zoho.eu/support/htjzlancyr/ShowHomePage.do#Cases/dv/195464000014260001",
       "channel": "Phone",
       "doorgezetBrandmeester": false
+    },
+    {
+      "ticketNumber": "2772",
+      "tijd": "10:49",
+      "titel": "Juridisch advies: privacyrechten dochter atletiekvereniging",
+      "klant": "M. Brommer",
+      "status": "Gesloten",
+      "statusType": "",
+      "prioriteit": "Niet ingesteld",
+      "webUrl": "https://desk.zoho.eu/support/htjzlancyr/ShowHomePage.do#Cases/dv/195464000014269001",
+      "channel": "Phone",
+      "doorgezetBrandmeester": false
     }
   ],
   "channelCounts": {
     "Email": 1,
-    "Phone": 1
+    "Phone": 2
   },
   "brandmeesterCount": 0,
   "ticketStats": {
-    "nieuweVandaag": 2,
-    "geslotenVandaag": 9,
+    "nieuweVandaag": 3,
+    "geslotenVandaag": 10,
     "totaalOpen": 24,
     "inDeWacht": 18,
     "statusBreakdown": {
-      "Gesloten": 651,
+      "Gesloten": 652,
       "In de wacht": 18,
       "Open": 6
     },

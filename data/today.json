@@ -1,6 +1,6 @@
 {
   "date": "2026-09-23",
-  "generated_at": "2026-09-23T08:40:55Z",
+  "generated_at": "2026-09-23T08:50:51Z",
   "drukte": "rustig",
   "gesprekken": 1,
   "stats": {
@@ -17,7 +17,7 @@
       "tijd": "09:01",
       "titel": "Daily Huddle",
       "personen": "Verzekerde: De juridische helpdesk · Senne Duifhuis | Juridisch medewerker",
-      "samenvatting": "Dit is een interne daily huddle-meeting van HTJZ-medewerkers (geen telefonisch klantgesprek met een verzekerden). De medewerkers bespreken interne zaken zoals een ILNT-hoorzitting, digitale procedering, incassozaken en bouwzaken. Er is geen externe beller geverifieerd en geen inhoudelijk juridisch advies aan een klant gegeven.",
+      "samenvatting": "Dit is een interne teammeeting (Daily Huddle) van medewerkers van HTJZ, geen klantgesprek. Er vindt geen verificatie van een beller plaats en er wordt geen juridisch advies aan een externe klant gegeven. Het gesprek betreft interne werkzaken, casemanagement en procedurele vraagstukken tussen collega's.",
       "tags": [
         [
           "tag-overig",
@@ -38,10 +38,10 @@
   "acties": [],
   "analyse": {
     "goed": [
-      "09:01 Daily Huddle: Correct geregistreerd als interne meeting zonder externe klant. Geen verificatie nodig omdat dit een interne bedrijfsmeeting is, geen klantgesprek."
+      "09:01 Daily Huddle: Correct herkend als interne teammeeting, geen klantverificatie of extern juridisch advies vereist. Medewerker heeft geen onnodige verificatiestappen toegepast op een intern proces."
     ],
     "beter": [
-      "09:01 Daily Huddle: Deze interne meeting zou idealiter niet in de klantgesprekkenlijst opgenomen moeten zijn. Dit verwaarloogt de kwaliteitsanalyse van echte klantinteracties. Zorg dat alleen externe klantgesprekken gerapporteerd worden."
+      "Opmerking voor procesclarificatie: Dit lijkt een interne meeting te zijn die per ongeluk in de klantcontactlijst is opgenomen. Voor toekomstige evaluaties dient onderscheid gemaakt tussen klantcontacten (waar de kwaliteitsnormen gelden) en interne bijeenkomsten (waar andere procedures van toepassing zijn)."
     ]
   },
   "verkeerdVerbonden": {
