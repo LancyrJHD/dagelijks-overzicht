@@ -1,23 +1,23 @@
 {
   "date": "2026-09-23",
-  "generated_at": "2026-09-23T09:51:32Z",
+  "generated_at": "2026-09-23T10:01:48Z",
   "drukte": "druk",
   "gesprekken": 7,
   "stats": {
-    "opgelost": 1,
+    "opgelost": 2,
     "brandmeester": 2,
     "afkoop": 1,
     "terugbel": 1,
     "geenDekking": 0,
-    "verkeerdNummer": 2
+    "verkeerdNummer": 1
   },
-  "score": 7.8,
+  "score": 8.1,
   "conversations": [
     {
       "tijd": "09:01",
       "titel": "Daily Huddle",
       "personen": "Verzekerde: J. Weide · Senne Duifhuis | Juridisch medewerker",
-      "samenvatting": "Dit is een interne Daily Huddle-meeting van HTJZ-medewerkers, geen gesprek met een verzekerde. De inhoud betreft interne werkoverleggen over lopende zaken, procedurevragen rond digitaal procederen, en administratieve afspraken tussen teamleden. Er is geen juridisch advies aan een beller gegeven en geen dekkingsvraag beoordeeld.",
+      "samenvatting": "Dit is een interne teamvergadering (Daily Huddle) van HTJZ-medewerkers, geen gesprek met een externe klant of beller. Er worden interne werkzaken besproken (hoorzittingen, incassozaken, digitale procedure, webinar-voorbereiding). Er is geen externe beller, geen juridisch advies aan een verzekerdenklant gegeven, en geen dekkingsvraag beoordeeld.",
       "tags": [
         [
           "tag-overig",
@@ -37,12 +37,33 @@
     {
       "tijd": "09:38",
       "titel": "Leaseauto verlenging tijdens sabbatical – juridisch advies",
-      "personen": "Verzekerde: G. Gaalman · Senne Duifhuis | Juridisch medewerker",
-      "samenvatting": "Beller (G. Gaalman) contacteerde de juridische helpdesk over een arbeidsconflict: zijn werkgever weigert zijn leaseauto te verlengen tijdens zijn sabbatical tot zijn pensioenleeftijd (eind november), ondanks dat dit in de CAO is geregeld. De medewerker gaf advies om eerst zelf een formele mail naar de werkgever te sturen met juridische argumenten, en daarna eventueel terug te bellen voor rechtsbijstand. Beller werd geverifieerd via postcode en naam; inhoudelijk advies is gegeven.",
+      "personen": "Verzekerde: G. Gaalman · Senne Duifhuis",
+      "samenvatting": "Beller (G. Gaalman) vraagt juridisch advies over arbeidsrechtelijke kwestie: werkgever weigert leaseauto-contract te verlengen tijdens sabbatical, ondanks dat beller tot einde arbeidscontract in dienst blijft. Medewerker geeft inhoudelijk advies (schrijf zakelijke mail naar directeur met argumenten en vermelding van mogelijke rechtsbijstand), beller wordt geverifieerd via postcode/huisnummer/naam, en adviseert eerst zelf contact met werkgever voordat rechtsbijstand wordt ingeschakeld.",
       "tags": [
         [
           "tag-arbeidsrecht",
           "Arbeidsrecht"
+        ]
+      ],
+      "uitkomst": [
+        "outcome-opgelost",
+        "Telefonisch opgelost"
+      ],
+      "terugbel": false,
+      "verkeerdVerbonden": false,
+      "rechtsbijstandVerwijzing": false,
+      "adviesGegeven": true,
+      "identiteitGeverifieerd": true
+    },
+    {
+      "tijd": "09:49",
+      "titel": "Afspraak verplaatst naar 12 uur met mevrouw Jansen",
+      "personen": "Verzekerde: G. Gaalman · Senne Duifhuis | Juridisch medewerker",
+      "samenvatting": "Dit was geen inhoudelijk juridisch advies, maar een administratief gesprek waarin de medewerker Sennen met mevrouw Jansen (automatisch herkend in het systeem als G. Gaalman) een eerder gemaakte belafspraak om 10:30 uur naar 12:00 uur verplaatste vanwege een bezichtigingsmogelijkheid voor een woning van haar dochter. De identiteit van de beller werd automatisch geverifieerd via telefoonnummer.",
+      "tags": [
+        [
+          "tag-overig",
+          "Afspraakbeheer"
         ]
       ],
       "uitkomst": [
@@ -52,27 +73,6 @@
       "terugbel": true,
       "verkeerdVerbonden": false,
       "rechtsbijstandVerwijzing": false,
-      "adviesGegeven": true,
-      "identiteitGeverifieerd": true
-    },
-    {
-      "tijd": "09:49",
-      "titel": "Afspraak verplaatst naar 12 uur met mevrouw Jansen",
-      "personen": "Verzekerde: G. Gaalman · Senne Duifhuis",
-      "samenvatting": "Dit is geen inhoudelijk juridisch advies-gesprek, maar een administratieve afspraakwijziging. De medewerker (Senne) bevestigt dat de geplande belafspraak met mevrouw Jansen is verplaatst van 09:30 naar 12:00 uur omdat mevrouw onverwachts haar dochter naar een huisbezichtiging moet brengen. De beller wordt automatisch herkend via het telefoonnummer (Zoho-match: G. Gaalman), maar geen juridisch advies wordt gegeven omdat dit uitsluitend een afspraakcoördinatie-oproep is.",
-      "tags": [
-        [
-          "tag-overig",
-          "Routering"
-        ]
-      ],
-      "uitkomst": [
-        "outcome-verkeerd",
-        "Verkeerd nummer"
-      ],
-      "terugbel": true,
-      "verkeerdVerbonden": true,
-      "rechtsbijstandVerwijzing": false,
       "adviesGegeven": false,
       "identiteitGeverifieerd": true
     },
@@ -80,7 +80,7 @@
       "tijd": "09:53",
       "titel": "Erfrechtkwestie mevrouw Verwijs en vrije advocaatkeuze",
       "personen": "Verzekerde: G. Gaalman · Senne Duifhuis | Juridisch medewerker",
-      "samenvatting": "Mevrouw Verwijs belt over een erfrechtkwestie waarbij zij executeur testamentair is en twijfelt over de vakbekwaamheid van de huisadvocaat van Brandmeester (die zich specialiseert in geld en aankopen, niet erfrecht). De medewerker informeert haar over het recht op vrije advocaatkeuze en adviseert haar deze kwestie en alle verdere stappen rechtstreeks met Brandmeester te bespreken. De beller is automatisch geverifieerd via het systeem (Zoho-match) en er is inhoudelijk juridisch advies gegeven over de procedure en haar rechten.",
+      "samenvatting": "Mevrouw Verwijs belt over een erfrechtkwestie waarbij zij executeur testamentair is en in conflict is met stiefkinderen van haar overleden man. Haar zaak ligt al bij Brandmeester (rechtsbijstand), en de medewerker adviseert haar om daar haar zorg over de deskundigheid van de juriste te bespreken en eventueel het recht op vrije advocaatkeuze aan te vragen. De beller is geverifieerd via automatische telefoonnummerherkenning (Zoho-match), en er is inhoudelijk juridisch advies gegeven over de procedure en rechten.",
       "tags": [
         [
           "tag-overig",
@@ -93,7 +93,7 @@
       ],
       "terugbel": false,
       "verkeerdVerbonden": false,
-      "rechtsbijstandVerwijzing": true,
+      "rechtsbijstandVerwijzing": false,
       "adviesGegeven": true,
       "identiteitGeverifieerd": true
     },
@@ -101,7 +101,7 @@
       "tijd": "10:06",
       "titel": "Telefonisch intakegesprek mevrouw van Biezen – mediation werkgever",
       "personen": "Verzekerde: G. Gaalman · Senne Duifhuis",
-      "samenvatting": "Mevrouw van Biezen (geverifieerd via postcode 1056 EA en naam) belde voor juridisch advies over een langdurig arbeidsconflict met haar werkgever, waaronder onveilig werkklimaat, eerdere rechtszaken en nu een vierde mediationtraject. De medewerker gaf geen inhoudelijk advies maar verwees de zaak direct door naar de rechtsbijstandsafdeling, aangezien het een arbeidsconflict betreft en mevrouw al eerder juridische bijstand van Lancyr heeft ontvangen.",
+      "samenvatting": "Mevrouw van Biezen belt de juridische helpdesk voor advies over een arbeidsconflict met haar werkgever: tien jaar onveilig werkklimaat, drie eerdere mediationtrajecten, één rechtszaak (eerder bijgestaan door Lancyr), en nu een vierde mediation gepland. De medewerker verifieert de beller via postcode en naam, constateert dat het een arbeidsconflict betreft, controleert dat zij de module 'Werk en Inkomen' heeft, en verwijst haar expliciet door naar de rechtsbijstandsafdeling via een schadenummer dat binnen 24 uur wordt toegezonden.",
       "tags": [
         [
           "tag-arbeidsrecht",
@@ -122,10 +122,10 @@
       "tijd": "10:37",
       "titel": "Juridisch advies: privacyrechten dochter atletiekvereniging",
       "personen": "Verzekerde: M. Brommer · Senne Duifhuis | Juridisch medewerker",
-      "samenvatting": "De beller (M. Brommer) vraagt juridisch advies over privacyrechten van haar dochter bij een atletiekvereniging die weigert foto's van het kind niet op social media te plaatsen. De medewerker verifieert de identiteit via postcode en naam, stelt adresgegevens bij, en geeft vervolgens inhoudelijk juridisch advies: de vereniging moet volgens de AVG het verzoek honoreren; de beller kan dit schriftelijk aangeven en eventueel verwijzen naar mogelijke AVG-schending en boetes. Het gesprek eindigt zonder verdere doorverwijzing.",
+      "samenvatting": "Beller M. Brommer werd geverifieerd via postcode en naam en vroeg juridisch advies over privacyrechten van haar dochter bij een atletiekvereniging die weigert foto's van haar kind niet op social media te plaatsen. De medewerker gaf inhoudelijk juridisch advies door uit te leggen dat de atletiekvereniging volgens de AVG het verzoek moet honoreren, en adviseerde de beller dit schriftelijk aan de vereniging kenbaar te maken; eventueel met vermelding van mogelijke AVG-schending en klachtmogelijkheden bij de autoriteit persoonsgegevens.",
       "tags": [
         [
-          "tag-overig",
+          "tag-bestuursrecht",
           "Privacyrecht / AVG"
         ]
       ],
@@ -143,7 +143,7 @@
       "tijd": "10:49",
       "titel": "Schadeclaim Luttekerk – afkoop 418 euro",
       "personen": "Verzekerde: M. Brommer · Senne Duifhuis | Juridisch medewerker",
-      "samenvatting": "Beller uit Luttekerk werd geverifieerd via postcode en adres en heeft samen met zijn partner besloten tot afkoop van een schadeclaim voor een bed van EUR 418. De medewerker heeft concrete stappen uitgelegd: schriftelijk akkoord via e-mail en indiening van aankoopbon als bewijs. Er is geen inhoudelijk juridisch advies gegeven, maar wel een concrete afkopprocedure in gang gezet.",
+      "samenvatting": "Beller (M. Brommer, postcode 2061) werd geverifieerd via postcode en adres. Het gesprek betrof een eerder afgesproken terugbelmoment over een schadeclaim voor een bed (€418). Beller en partner hebben gekozen voor afkoop van €418 in plaats van doorverwijzing naar rechtsbijstand. Medewerker heeft de afkoop in gang gezet en instructies gegeven voor het versturen van schriftelijk akkoord en aankoopbon per e-mail.",
       "tags": [
         [
           "tag-consument",
@@ -157,37 +157,41 @@
       "terugbel": false,
       "verkeerdVerbonden": false,
       "rechtsbijstandVerwijzing": false,
-      "adviesGegeven": false,
+      "adviesGegeven": true,
       "identiteitGeverifieerd": true
     }
   ],
   "acties": [],
   "analyse": {
     "goed": [
-      "09:38 (Gaalman leaseauto): identiteit correct geverifieerd (postcode + naam), inhoudelijk juridisch advies gegeven over CAO-rechten en vervolgstappen duidelijk benoemd",
-      "09:53 (Verwijs erfrecht): identiteit geverifieerd via systeem, inhoudelijk advies gegeven over vrije advocaatkeuze en procedure met duidelijke vervolgstap naar Brandmeester",
-      "10:06 (Van Biezen arbeidsconflict): identiteit correct geverifieerd (postcode + naam), medewerker herkent complexiteit van zaak en verwijst terecht door naar rechtsbijstandsafdeling zonder ongefundeerd advies te geven",
-      "10:37 (Brommer privacyrechten): identiteit geverifieerd (postcode + naam), inhoudelijk advies gegeven over AVG-rechten en concrete vervolgstappen benoemd (schriftelijk verzoek, mogelijke verwijzing naar boetes)",
-      "10:49 (Luttekerk schadeclaim): identiteit correct geverifieerd (postcode + adres), concrete afkoopprocedure uitgelegd (schriftelijk akkoord e-mail, aankoopbon als bewijs), duidelijke volgende stappen"
+      "09:38 Leaseauto verlenging: identiteit correct geverifieerd (postcode/huisnummer/naam), inhoudelijk juridisch advies gegeven met concreet vervolgplan (zelf contact werkgever voordat rechtsbijstand).",
+      "09:53 Erfrechtkwestie: identiteit automatisch geverifieerd via telefoonnummer, inhoudelijk advies gegeven over vrije advocaatkeuze en procedures, passende doorverwijzing naar Brandmeester.",
+      "10:06 Mediation werkgever: identiteit correct geverifieerd (postcode/naam), arbeidsconflict herkend en terecht niet zelf afgehandeld, expliciete doorverwijzing naar rechtsbijstandsafdeling met concrete deadline (schadenummer binnen 24 uur).",
+      "10:37 Privacyrechten atletiekvereniging: identiteit geverifieerd, inhoudelijk advies gegeven over AVG-verplichtingen, concreet vervolgplan (schriftelijk contact + vermelding klachtmogelijkheden).",
+      "10:49 Schadeclaim bed €418: identiteit geverifieerd, dekkingscontrole niet nodig (afkoop gekozen, geen rechtsbijstandstraject), proces correct in gang gezet met schriftelijk vervolgstap."
     ],
     "beter": [
-      "09:38 (Gaalman leaseauto): geen concrete deadline benoemd voor vervolgcontact of voor moment waarop beller terug kan bellen voor rechtsbijstand – alleen 'eventueel terugbellen' is te vaag",
-      "10:49 (Luttekerk schadeclaim): dekkingsconcrole/franchise (EUR 250) niet expliciet vastgelegd in het overzicht – bij schadebedrag van EUR 418 dient de franchise van EUR 250 concreet te worden gecontroleerd en gedocumenteerd"
+      "09:49 Afspraak verplaatst: systeem identificeerde beller als 'G. Gaalman' maar medewerker Sennen spreekt van 'mevrouw Jansen' – mogelijke naamvariatie/verwarring die beter zou moeten worden opgehelderd aan het begin van het gesprek voor volledige duidelijkheid.",
+      "Dagperspectief: gesprek 09:01 (Daily Huddle) staat in de klantenlijst maar is intern – deze zou uit de kwaliteitsbeoordeling moeten worden gefilterd (niet relevant voor servicestandaarden naar klanten)."
     ]
   },
   "verkeerdVerbonden": {
-    "aantal": 2,
-    "percentage": 28.6
+    "aantal": 1,
+    "percentage": 14.3
   },
-  "rechtsbijstandVerwijzingen": 2,
+  "rechtsbijstandVerwijzingen": 1,
   "categorieen": [
-    [
-      "Routering",
-      2
-    ],
     [
       "Arbeidsrecht",
       2
+    ],
+    [
+      "Routering",
+      1
+    ],
+    [
+      "Afspraakbeheer",
+      1
     ],
     [
       "Erfrecht",
