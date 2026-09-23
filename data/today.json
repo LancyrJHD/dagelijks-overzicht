@@ -1,6 +1,6 @@
 {
   "date": "2026-09-23",
-  "generated_at": "2026-09-23T08:31:01Z",
+  "generated_at": "2026-09-23T08:40:55Z",
   "drukte": "rustig",
   "gesprekken": 1,
   "stats": {
@@ -11,13 +11,13 @@
     "geenDekking": 0,
     "verkeerdNummer": 1
   },
-  "score": 0.0,
+  "score": 8.5,
   "conversations": [
     {
       "tijd": "09:01",
       "titel": "Daily Huddle",
       "personen": "Verzekerde: De juridische helpdesk · Senne Duifhuis | Juridisch medewerker",
-      "samenvatting": "Dit is een interne bedrijfsmeeting (daily huddle) van HTJZ-medewerkers, geen gesprek met een externe beller of verzekerde. Er is geen juridische vraag van een klant, geen polis- of identiteitsverificatie van een beller, en geen klantenadvies gegeven. Het transcript bevat alleen interne discussies over werkzaken, hoorzittingen, digitaal procederen en dossierondersteuning tussen collega's.",
+      "samenvatting": "Dit is een interne daily huddle-meeting van HTJZ-medewerkers (geen telefonisch klantgesprek met een verzekerden). De medewerkers bespreken interne zaken zoals een ILNT-hoorzitting, digitale procedering, incassozaken en bouwzaken. Er is geen externe beller geverifieerd en geen inhoudelijk juridisch advies aan een klant gegeven.",
       "tags": [
         [
           "tag-overig",
@@ -37,9 +37,11 @@
   ],
   "acties": [],
   "analyse": {
-    "goed": [],
+    "goed": [
+      "09:01 Daily Huddle: Correct geregistreerd als interne meeting zonder externe klant. Geen verificatie nodig omdat dit een interne bedrijfsmeeting is, geen klantgesprek."
+    ],
     "beter": [
-      "De 'Daily Huddle' (09:01) is een interne bedrijfsmeeting en geen klantencontact. Dit mag niet in de kwaliteitscontrole van externe bellers/verzekerdenclaims worden opgenomen. Controleer of deze interne activiteiten uit de evaluatielijst moeten worden gefilterd."
+      "09:01 Daily Huddle: Deze interne meeting zou idealiter niet in de klantgesprekkenlijst opgenomen moeten zijn. Dit verwaarloogt de kwaliteitsanalyse van echte klantinteracties. Zorg dat alleen externe klantgesprekken gerapporteerd worden."
     ]
   },
   "verkeerdVerbonden": {
