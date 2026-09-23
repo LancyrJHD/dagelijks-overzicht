@@ -1,17 +1,17 @@
 {
   "date": "2026-09-23",
-  "generated_at": "2026-09-23T09:42:03Z",
+  "generated_at": "2026-09-23T09:50:46Z",
   "tickets": [
     {
       "ticketNumber": "2769",
       "tijd": "09:02",
       "titel": "FW: 84215902_vd Weide: Een vraag stellen: Legaat en bijstandsuitkering/schuldsanering/bewind",
-      "klant": "De juridische helpdesk",
+      "klant": "J. Weide",
       "status": "Open",
       "statusType": "",
       "prioriteit": "Niet ingesteld",
       "webUrl": "https://desk.zoho.eu/support/htjzlancyr/ShowHomePage.do#Cases/dv/195464000014197187",
-      "channel": "Email",
+      "channel": "Phone",
       "doorgezetBrandmeester": false
     },
     {
@@ -52,8 +52,7 @@
     }
   ],
   "channelCounts": {
-    "Email": 1,
-    "Phone": 3
+    "Phone": 4
   },
   "brandmeesterCount": 0,
   "ticketStats": {
@@ -62,9 +61,9 @@
     "totaalOpen": 23,
     "inDeWacht": 20,
     "statusBreakdown": {
+      "Open": 3,
       "Gesloten": 654,
-      "In de wacht": 20,
-      "Open": 3
+      "In de wacht": 20
     },
     "capBereikt": false
   }
