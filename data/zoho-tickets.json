@@ -1,6 +1,6 @@
 {
   "date": "2026-09-23",
-  "generated_at": "2026-09-23T12:01:04Z",
+  "generated_at": "2026-09-23T12:10:48Z",
   "tickets": [
     {
       "ticketNumber": "2769",
@@ -61,21 +61,33 @@
       "webUrl": "https://desk.zoho.eu/support/htjzlancyr/ShowHomePage.do#Cases/dv/195464000014267010",
       "channel": "Phone",
       "doorgezetBrandmeester": false
+    },
+    {
+      "ticketNumber": "2777",
+      "tijd": "14:08",
+      "titel": "Hulphond sterilisatie geschil met dierenarts en verzekeraar",
+      "klant": "J. Harkema",
+      "status": "In de wacht",
+      "statusType": "",
+      "prioriteit": "Niet ingesteld",
+      "webUrl": "https://desk.zoho.eu/support/htjzlancyr/ShowHomePage.do#Cases/dv/195464000014260151",
+      "channel": "Phone",
+      "doorgezetBrandmeester": false
     }
   ],
   "channelCounts": {
-    "Phone": 5
+    "Phone": 6
   },
   "brandmeesterCount": 0,
   "ticketStats": {
-    "nieuweVandaag": 5,
+    "nieuweVandaag": 6,
     "geslotenVandaag": 15,
-    "totaalOpen": 23,
-    "inDeWacht": 20,
+    "totaalOpen": 24,
+    "inDeWacht": 21,
     "statusBreakdown": {
+      "In de wacht": 21,
       "Open": 3,
-      "Gesloten": 655,
-      "In de wacht": 20
+      "Gesloten": 655
     },
     "capBereikt": false
   }
