@@ -1,6 +1,6 @@
 {
   "date": "2026-09-23",
-  "generated_at": "2026-09-23T08:10:56Z",
+  "generated_at": "2026-09-23T08:20:57Z",
   "drukte": "rustig",
   "gesprekken": 1,
   "stats": {
@@ -17,7 +17,7 @@
       "tijd": "09:01",
       "titel": "Daily Huddle",
       "personen": "Verzekerde: De juridische helpdesk · Senne Duifhuis | Juridisch medewerker",
-      "samenvatting": "Dit is een interne dagelijkse huddle-meeting van HTJZ-medewerkers (geen cliëntgesprek), waarin juridische zaken en administratieve werkprocessen worden besproken, zoals een ILNT-hoorzitting, incassozaken, digitale procedering en document-uploading. Geen cliënt is geverifieerd en geen juridisch advies aan een externe partij is gegeven.",
+      "samenvatting": "Dit is een interne daily huddle-meeting van HTJZ-medewerkers (geen gesprek met een externe beller). De inhoud betreft interne werkoverleggen over lopende zaken, administratieve processen rond digitaal procederen, en doorverwijzingen tussen collega's. Er is geen externe klant geverifieerd en geen juridisch advies aan een beller gegeven.",
       "tags": [
         [
           "tag-overig",
@@ -38,10 +38,10 @@
   "acties": [],
   "analyse": {
     "goed": [
-      "09:01 Daily Huddle: Dit is een interne teammeeting, geen cliëntcontact. Geen verificatie of advies vereist. Correct afgehandeld als interne afstemming."
+      "09:01 Daily Huddle: Dit is een interne bedrijfsmeeting, geen klantcontact. Correct geregistreerd als 'Verkeerd nummer' (no external client interaction). Geen verificatie of adviesplicht van toepassing op interne overleggen."
     ],
     "beter": [
-      "De 'uitkomst' 'Verkeerd nummer' lijkt niet van toepassing op een interne huddle. Verduidelijken in het logboek dat dit een interne meeting betreft, niet een telefonisch cliëntcontact."
+      "Opmerking voor toekomstige registratie: Interne huddles kunnen beter onder een aparte categorie worden geregistreerd (bijv. 'Intern overleg') in plaats van 'Verkeerd nummer', voor duidelijker administratie van daadwerkelijk klantcontact."
     ]
   },
   "verkeerdVerbonden": {
