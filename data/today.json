@@ -1,60 +1,27 @@
 {
-  "date": "2026-09-22",
-  "generated_at": "2026-09-22T18:03:52Z",
+  "date": "2026-09-23",
+  "generated_at": "2026-09-23T05:00:57Z",
   "drukte": "rustig",
-  "gesprekken": 1,
+  "gesprekken": 0,
   "stats": {
     "opgelost": 0,
-    "brandmeester": 1,
+    "brandmeester": 0,
     "afkoop": 0,
     "terugbel": 0,
     "geenDekking": 0,
     "verkeerdNummer": 0
   },
-  "score": 8.1,
-  "conversations": [
-    {
-      "tijd": "11:06",
-      "titel": "Nieuwe arbeidszaak aanmelden bij Brandmeester met Esther",
-      "personen": "Verzekerde: W.C.B. deBruin · Dewi Verver | Juridisch Medewerker",
-      "samenvatting": "Esther van Mansier belt namens een klant die al een arbeidszaak bij Brandmeester loopt en een nieuwe zaak moet aanmelden. De HTJZ-medewerker legt uit dat een vervolggeschil een nieuwe zaak kan rechtvaardigen en adviseert dat de verzekerder zelf kan bellen om dit in gang te zetten; de medewerker zal een nieuw verzoek naar Brandmeester sturen. Beller is geverifieerd via automatische systeemherkenning (W.C.B. deBruin), inhoudelijk advies is gegeven over de procedurele afhandeling van een vervolgzaak.",
-      "tags": [
-        [
-          "tag-arbeidsrecht",
-          "Arbeidsrecht"
-        ]
-      ],
-      "uitkomst": [
-        "outcome-brandmeester",
-        "Doorverwezen naar Brandmeester"
-      ],
-      "terugbel": false,
-      "verkeerdVerbonden": false,
-      "rechtsbijstandVerwijzing": true,
-      "adviesGegeven": true,
-      "identiteitGeverifieerd": true
-    }
-  ],
+  "score": 0,
+  "conversations": [],
   "acties": [],
   "analyse": {
-    "goed": [
-      "11:06 Arbeidszaak: Identiteit correct geverifieerd via automatische systeemherkenning (W.C.B. deBruin)",
-      "11:06 Arbeidszaak: Inhoudelijk advies gegeven over vervolggeschillen en procedures bij Brandmeester",
-      "11:06 Arbeidszaak: Duidelijk vervolgplan afgesproken (medewerker stuurt nieuw verzoek naar Brandmeester)"
-    ],
-    "beter": [
-      "11:06 Arbeidszaak: Geen concrete deadline genoemd voor versturen van het verzoek naar Brandmeester (vandaag, morgen, volgende werkdag?)"
-    ]
+    "goed": [],
+    "beter": []
   },
   "verkeerdVerbonden": {
     "aantal": 0,
     "percentage": 0.0
   },
-  "rechtsbijstandVerwijzingen": 1,
-  "categorieen": [
-    [
-      "Arbeidsrecht",
-      1
-    ]
-  ]
+  "rechtsbijstandVerwijzingen": 0,
+  "categorieen": []
 }
