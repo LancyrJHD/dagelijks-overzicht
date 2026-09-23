@@ -2833,13 +2833,13 @@
         "callResult": "abandoned",
         "naam": "Onbekend",
         "nummer": "+31625185520",
-        "teruggebeld": false,
+        "teruggebeld": true,
         "tijd": "15:09"
       }
     ],
     "date": "2026-09-23",
-    "generated_at": "2026-09-23T13:40:53Z",
-    "nietTerugGebeld": 2,
+    "generated_at": "2026-09-23T13:50:51Z",
+    "nietTerugGebeld": 1,
     "nietTerugGebeldNummers": [
       {
         "callResult": "abandoned",
@@ -2847,17 +2847,10 @@
         "nummer": "+31615433088",
         "teruggebeld": false,
         "tijd": "14:11"
-      },
-      {
-        "callResult": "abandoned",
-        "naam": "Onbekend",
-        "nummer": "+31625185520",
-        "teruggebeld": false,
-        "tijd": "15:09"
       }
     ],
-    "terugGebeld": 0,
+    "terugGebeld": 1,
     "totaalGemist": 2,
-    "totaalInbound": 17
+    "totaalInbound": 18
   }
 }
