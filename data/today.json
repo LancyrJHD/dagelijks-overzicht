@@ -1,27 +1,58 @@
 {
   "date": "2026-09-23",
-  "generated_at": "2026-09-23T07:10:39Z",
+  "generated_at": "2026-09-23T07:20:46Z",
   "drukte": "rustig",
-  "gesprekken": 0,
+  "gesprekken": 1,
   "stats": {
     "opgelost": 0,
     "brandmeester": 0,
     "afkoop": 0,
     "terugbel": 0,
     "geenDekking": 0,
-    "verkeerdNummer": 0
+    "verkeerdNummer": 1
   },
-  "score": 0,
-  "conversations": [],
+  "score": 8.5,
+  "conversations": [
+    {
+      "tijd": "09:01",
+      "titel": "Daily Huddle",
+      "personen": "Verzekerde: De juridische helpdesk · Senne Duifhuis | Juridisch medewerker",
+      "samenvatting": "Dit is een interne daily huddle-meeting van HTJZ-medewerkers, geen telefonisch gesprek met een verzekeringsklant. Er wordt gesproken over interne werkzaken, caseloading, digitale procedurestappen en verschillende lopende zaken. Geen juridisch advies aan een beller gegeven, geen klant geverifieerd, geen dekkingsvraag beoordeeld.",
+      "tags": [
+        [
+          "tag-overig",
+          "Routering"
+        ]
+      ],
+      "uitkomst": [
+        "outcome-verkeerd",
+        "Verkeerd nummer"
+      ],
+      "terugbel": false,
+      "verkeerdVerbonden": true,
+      "rechtsbijstandVerwijzing": false,
+      "adviesGegeven": false,
+      "identiteitGeverifieerd": false
+    }
+  ],
   "acties": [],
   "analyse": {
-    "goed": [],
-    "beter": []
+    "goed": [
+      "09:01 Daily Huddle: Dit is een interne teammeeting, geen klantcontact. Correct ingedeeld als 'Verkeerd nummer' – geen verificatie- of adviesnormen van toepassing."
+    ],
+    "beter": [
+      "Dit item zou niet in de kwaliteitscontrole van klantgesprekken moeten voorkomen. Zorg dat interne meetings of niet-klantcontacten vooraf gefilterd worden uit de analyselijst, zodat alleen daadwerkelijke klantinteracties worden beoordeeld."
+    ]
   },
   "verkeerdVerbonden": {
-    "aantal": 0,
-    "percentage": 0.0
+    "aantal": 1,
+    "percentage": 100.0
   },
   "rechtsbijstandVerwijzingen": 0,
-  "categorieen": []
+  "categorieen": [
+    [
+      "Routering",
+      1
+    ]
+  ]
 }
