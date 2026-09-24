@@ -2868,11 +2868,18 @@
         "nummer": "+31651077821",
         "teruggebeld": false,
         "tijd": "10:02"
+      },
+      {
+        "callResult": "overflowed",
+        "naam": "Onbekend",
+        "nummer": "+31651077821",
+        "teruggebeld": false,
+        "tijd": "10:07"
       }
     ],
     "date": "2026-09-24",
-    "generated_at": "2026-09-24T08:10:58Z",
-    "nietTerugGebeld": 2,
+    "generated_at": "2026-09-24T08:20:40Z",
+    "nietTerugGebeld": 3,
     "nietTerugGebeldNummers": [
       {
         "callResult": "abandoned",
@@ -2887,10 +2894,17 @@
         "nummer": "+31651077821",
         "teruggebeld": false,
         "tijd": "10:02"
+      },
+      {
+        "callResult": "overflowed",
+        "naam": "Onbekend",
+        "nummer": "+31651077821",
+        "teruggebeld": false,
+        "tijd": "10:07"
       }
     ],
     "terugGebeld": 0,
-    "totaalGemist": 2,
-    "totaalInbound": 2
+    "totaalGemist": 3,
+    "totaalInbound": 3
   }
 }
