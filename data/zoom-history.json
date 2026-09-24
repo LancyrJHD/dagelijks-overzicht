@@ -2882,11 +2882,18 @@
         "nummer": "+31620548197",
         "teruggebeld": false,
         "tijd": "10:34"
+      },
+      {
+        "callResult": "overflowed",
+        "naam": "Onbekend",
+        "nummer": "+31627186104",
+        "teruggebeld": false,
+        "tijd": "11:05"
       }
     ],
     "date": "2026-09-24",
-    "generated_at": "2026-09-24T09:10:41Z",
-    "nietTerugGebeld": 4,
+    "generated_at": "2026-09-24T09:20:46Z",
+    "nietTerugGebeld": 5,
     "nietTerugGebeldNummers": [
       {
         "callResult": "abandoned",
@@ -2915,10 +2922,17 @@
         "nummer": "+31620548197",
         "teruggebeld": false,
         "tijd": "10:34"
+      },
+      {
+        "callResult": "overflowed",
+        "naam": "Onbekend",
+        "nummer": "+31627186104",
+        "teruggebeld": false,
+        "tijd": "11:05"
       }
     ],
     "terugGebeld": 0,
-    "totaalGemist": 4,
-    "totaalInbound": 4
+    "totaalGemist": 5,
+    "totaalInbound": 5
   }
 }
