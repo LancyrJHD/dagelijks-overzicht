@@ -2875,11 +2875,18 @@
         "nummer": "+31651077821",
         "teruggebeld": false,
         "tijd": "10:07"
+      },
+      {
+        "callResult": "abandoned",
+        "naam": "Onbekend",
+        "nummer": "+31620548197",
+        "teruggebeld": false,
+        "tijd": "10:34"
       }
     ],
     "date": "2026-09-24",
-    "generated_at": "2026-09-24T08:30:54Z",
-    "nietTerugGebeld": 3,
+    "generated_at": "2026-09-24T08:40:43Z",
+    "nietTerugGebeld": 4,
     "nietTerugGebeldNummers": [
       {
         "callResult": "abandoned",
@@ -2901,10 +2908,17 @@
         "nummer": "+31651077821",
         "teruggebeld": false,
         "tijd": "10:07"
+      },
+      {
+        "callResult": "abandoned",
+        "naam": "Onbekend",
+        "nummer": "+31620548197",
+        "teruggebeld": false,
+        "tijd": "10:34"
       }
     ],
     "terugGebeld": 0,
-    "totaalGemist": 3,
-    "totaalInbound": 3
+    "totaalGemist": 4,
+    "totaalInbound": 4
   }
 }

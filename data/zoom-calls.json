@@ -1,10 +1,10 @@
 {
   "date": "2026-09-24",
-  "generated_at": "2026-09-24T08:30:54Z",
-  "totaalInbound": 3,
-  "totaalGemist": 3,
+  "generated_at": "2026-09-24T08:40:43Z",
+  "totaalInbound": 4,
+  "totaalGemist": 4,
   "terugGebeld": 0,
-  "nietTerugGebeld": 3,
+  "nietTerugGebeld": 4,
   "nietTerugGebeldNummers": [
     {
       "nummer": "+31203084888",
@@ -25,6 +25,13 @@
       "naam": "Onbekend",
       "tijd": "10:07",
       "callResult": "overflowed",
+      "teruggebeld": false
+    },
+    {
+      "nummer": "+31620548197",
+      "naam": "Onbekend",
+      "tijd": "10:34",
+      "callResult": "abandoned",
       "teruggebeld": false
     }
   ],
@@ -48,6 +55,13 @@
       "naam": "Onbekend",
       "tijd": "10:07",
       "callResult": "overflowed",
+      "teruggebeld": false
+    },
+    {
+      "nummer": "+31620548197",
+      "naam": "Onbekend",
+      "tijd": "10:34",
+      "callResult": "abandoned",
       "teruggebeld": false
     }
   ]
