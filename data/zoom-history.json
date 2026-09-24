@@ -2945,11 +2945,18 @@
         "nummer": "+31652729385",
         "teruggebeld": false,
         "tijd": "15:10"
+      },
+      {
+        "callResult": "overflowed",
+        "naam": "Onbekend",
+        "nummer": "+31614477323",
+        "teruggebeld": false,
+        "tijd": "15:25"
       }
     ],
     "date": "2026-09-24",
-    "generated_at": "2026-09-24T13:31:07Z",
-    "nietTerugGebeld": 13,
+    "generated_at": "2026-09-24T13:40:46Z",
+    "nietTerugGebeld": 14,
     "nietTerugGebeldNummers": [
       {
         "callResult": "abandoned",
@@ -3041,10 +3048,17 @@
         "nummer": "+31652729385",
         "teruggebeld": false,
         "tijd": "15:10"
+      },
+      {
+        "callResult": "overflowed",
+        "naam": "Onbekend",
+        "nummer": "+31614477323",
+        "teruggebeld": false,
+        "tijd": "15:25"
       }
     ],
     "terugGebeld": 0,
-    "totaalGemist": 13,
-    "totaalInbound": 13
+    "totaalGemist": 14,
+    "totaalInbound": 14
   }
 }
