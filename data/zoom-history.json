@@ -2896,11 +2896,18 @@
         "nummer": "+31619955158",
         "teruggebeld": false,
         "tijd": "12:36"
+      },
+      {
+        "callResult": "abandoned",
+        "naam": "Onbekend",
+        "nummer": "+31611301313",
+        "teruggebeld": false,
+        "tijd": "13:17"
       }
     ],
     "date": "2026-09-24",
-    "generated_at": "2026-09-24T11:10:40Z",
-    "nietTerugGebeld": 6,
+    "generated_at": "2026-09-24T11:20:42Z",
+    "nietTerugGebeld": 7,
     "nietTerugGebeldNummers": [
       {
         "callResult": "abandoned",
@@ -2943,10 +2950,17 @@
         "nummer": "+31619955158",
         "teruggebeld": false,
         "tijd": "12:36"
+      },
+      {
+        "callResult": "abandoned",
+        "naam": "Onbekend",
+        "nummer": "+31611301313",
+        "teruggebeld": false,
+        "tijd": "13:17"
       }
     ],
     "terugGebeld": 0,
-    "totaalGemist": 6,
-    "totaalInbound": 6
+    "totaalGemist": 7,
+    "totaalInbound": 7
   }
 }
