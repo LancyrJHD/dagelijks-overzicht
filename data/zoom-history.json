@@ -2938,11 +2938,18 @@
         "nummer": "+31652729385",
         "teruggebeld": false,
         "tijd": "14:08"
+      },
+      {
+        "callResult": "abandoned",
+        "naam": "Onbekend",
+        "nummer": "+31652729385",
+        "teruggebeld": false,
+        "tijd": "15:10"
       }
     ],
     "date": "2026-09-24",
-    "generated_at": "2026-09-24T13:10:43Z",
-    "nietTerugGebeld": 12,
+    "generated_at": "2026-09-24T13:20:46Z",
+    "nietTerugGebeld": 13,
     "nietTerugGebeldNummers": [
       {
         "callResult": "abandoned",
@@ -3027,10 +3034,17 @@
         "nummer": "+31652729385",
         "teruggebeld": false,
         "tijd": "14:08"
+      },
+      {
+        "callResult": "abandoned",
+        "naam": "Onbekend",
+        "nummer": "+31652729385",
+        "teruggebeld": false,
+        "tijd": "15:10"
       }
     ],
     "terugGebeld": 0,
-    "totaalGemist": 12,
-    "totaalInbound": 12
+    "totaalGemist": 13,
+    "totaalInbound": 13
   }
 }
