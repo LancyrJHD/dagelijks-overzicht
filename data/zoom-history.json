@@ -2903,11 +2903,18 @@
         "nummer": "+31611301313",
         "teruggebeld": false,
         "tijd": "13:17"
+      },
+      {
+        "callResult": "abandoned",
+        "naam": "Onbekend",
+        "nummer": "+31638649606",
+        "teruggebeld": false,
+        "tijd": "13:38"
       }
     ],
     "date": "2026-09-24",
-    "generated_at": "2026-09-24T11:30:56Z",
-    "nietTerugGebeld": 7,
+    "generated_at": "2026-09-24T11:40:42Z",
+    "nietTerugGebeld": 8,
     "nietTerugGebeldNummers": [
       {
         "callResult": "abandoned",
@@ -2957,10 +2964,17 @@
         "nummer": "+31611301313",
         "teruggebeld": false,
         "tijd": "13:17"
+      },
+      {
+        "callResult": "abandoned",
+        "naam": "Onbekend",
+        "nummer": "+31638649606",
+        "teruggebeld": false,
+        "tijd": "13:38"
       }
     ],
     "terugGebeld": 0,
-    "totaalGemist": 7,
-    "totaalInbound": 7
+    "totaalGemist": 8,
+    "totaalInbound": 8
   }
 }
