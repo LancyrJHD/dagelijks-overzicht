@@ -2924,11 +2924,25 @@
         "nummer": "+31611301313",
         "teruggebeld": false,
         "tijd": "13:43"
+      },
+      {
+        "callResult": "overflowed",
+        "naam": "Onbekend",
+        "nummer": "+31630141990",
+        "teruggebeld": false,
+        "tijd": "14:05"
+      },
+      {
+        "callResult": "abandoned",
+        "naam": "Onbekend",
+        "nummer": "+31652729385",
+        "teruggebeld": false,
+        "tijd": "14:08"
       }
     ],
     "date": "2026-09-24",
-    "generated_at": "2026-09-24T12:10:39Z",
-    "nietTerugGebeld": 10,
+    "generated_at": "2026-09-24T12:20:42Z",
+    "nietTerugGebeld": 12,
     "nietTerugGebeldNummers": [
       {
         "callResult": "abandoned",
@@ -2999,10 +3013,24 @@
         "nummer": "+31611301313",
         "teruggebeld": false,
         "tijd": "13:43"
+      },
+      {
+        "callResult": "overflowed",
+        "naam": "Onbekend",
+        "nummer": "+31630141990",
+        "teruggebeld": false,
+        "tijd": "14:05"
+      },
+      {
+        "callResult": "abandoned",
+        "naam": "Onbekend",
+        "nummer": "+31652729385",
+        "teruggebeld": false,
+        "tijd": "14:08"
       }
     ],
     "terugGebeld": 0,
-    "totaalGemist": 10,
-    "totaalInbound": 10
+    "totaalGemist": 12,
+    "totaalInbound": 12
   }
 }
