@@ -1,10 +1,26 @@
 {
   "date": "2026-09-24",
-  "generated_at": "2026-09-24T07:21:19Z",
-  "totaalInbound": 0,
-  "totaalGemist": 0,
+  "generated_at": "2026-09-24T07:31:24Z",
+  "totaalInbound": 1,
+  "totaalGemist": 1,
   "terugGebeld": 0,
-  "nietTerugGebeld": 0,
-  "nietTerugGebeldNummers": [],
-  "alleGemistNummers": []
+  "nietTerugGebeld": 1,
+  "nietTerugGebeldNummers": [
+    {
+      "nummer": "+31203084888",
+      "naam": "Onbekend",
+      "tijd": "09:20",
+      "callResult": "abandoned",
+      "teruggebeld": false
+    }
+  ],
+  "alleGemistNummers": [
+    {
+      "nummer": "+31203084888",
+      "naam": "Onbekend",
+      "tijd": "09:20",
+      "callResult": "abandoned",
+      "teruggebeld": false
+    }
+  ]
 }

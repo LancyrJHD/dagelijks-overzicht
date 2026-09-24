@@ -2854,13 +2854,29 @@
     "totaalInbound": 18
   },
   "2026-09-24": {
-    "alleGemistNummers": [],
+    "alleGemistNummers": [
+      {
+        "callResult": "abandoned",
+        "naam": "Onbekend",
+        "nummer": "+31203084888",
+        "teruggebeld": false,
+        "tijd": "09:20"
+      }
+    ],
     "date": "2026-09-24",
-    "generated_at": "2026-09-24T07:21:19Z",
-    "nietTerugGebeld": 0,
-    "nietTerugGebeldNummers": [],
+    "generated_at": "2026-09-24T07:31:24Z",
+    "nietTerugGebeld": 1,
+    "nietTerugGebeldNummers": [
+      {
+        "callResult": "abandoned",
+        "naam": "Onbekend",
+        "nummer": "+31203084888",
+        "teruggebeld": false,
+        "tijd": "09:20"
+      }
+    ],
     "terugGebeld": 0,
-    "totaalGemist": 0,
-    "totaalInbound": 0
+    "totaalGemist": 1,
+    "totaalInbound": 1
   }
 }
