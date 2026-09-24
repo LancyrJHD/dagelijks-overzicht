@@ -1,15 +1,22 @@
 {
   "date": "2026-09-24",
-  "generated_at": "2026-09-24T08:00:54Z",
-  "totaalInbound": 1,
-  "totaalGemist": 1,
+  "generated_at": "2026-09-24T08:10:58Z",
+  "totaalInbound": 2,
+  "totaalGemist": 2,
   "terugGebeld": 0,
-  "nietTerugGebeld": 1,
+  "nietTerugGebeld": 2,
   "nietTerugGebeldNummers": [
     {
       "nummer": "+31203084888",
       "naam": "Onbekend",
       "tijd": "09:20",
+      "callResult": "abandoned",
+      "teruggebeld": false
+    },
+    {
+      "nummer": "+31651077821",
+      "naam": "Onbekend",
+      "tijd": "10:02",
       "callResult": "abandoned",
       "teruggebeld": false
     }
@@ -19,6 +26,13 @@
       "nummer": "+31203084888",
       "naam": "Onbekend",
       "tijd": "09:20",
+      "callResult": "abandoned",
+      "teruggebeld": false
+    },
+    {
+      "nummer": "+31651077821",
+      "naam": "Onbekend",
+      "tijd": "10:02",
       "callResult": "abandoned",
       "teruggebeld": false
     }

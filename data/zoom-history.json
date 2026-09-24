@@ -2861,11 +2861,18 @@
         "nummer": "+31203084888",
         "teruggebeld": false,
         "tijd": "09:20"
+      },
+      {
+        "callResult": "abandoned",
+        "naam": "Onbekend",
+        "nummer": "+31651077821",
+        "teruggebeld": false,
+        "tijd": "10:02"
       }
     ],
     "date": "2026-09-24",
-    "generated_at": "2026-09-24T08:00:54Z",
-    "nietTerugGebeld": 1,
+    "generated_at": "2026-09-24T08:10:58Z",
+    "nietTerugGebeld": 2,
     "nietTerugGebeldNummers": [
       {
         "callResult": "abandoned",
@@ -2873,10 +2880,17 @@
         "nummer": "+31203084888",
         "teruggebeld": false,
         "tijd": "09:20"
+      },
+      {
+        "callResult": "abandoned",
+        "naam": "Onbekend",
+        "nummer": "+31651077821",
+        "teruggebeld": false,
+        "tijd": "10:02"
       }
     ],
     "terugGebeld": 0,
-    "totaalGemist": 1,
-    "totaalInbound": 1
+    "totaalGemist": 2,
+    "totaalInbound": 2
   }
 }
