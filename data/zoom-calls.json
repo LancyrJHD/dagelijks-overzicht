@@ -1,10 +1,10 @@
 {
   "date": "2026-09-24",
-  "generated_at": "2026-09-24T10:30:54Z",
-  "totaalInbound": 5,
-  "totaalGemist": 5,
+  "generated_at": "2026-09-24T10:40:49Z",
+  "totaalInbound": 6,
+  "totaalGemist": 6,
   "terugGebeld": 0,
-  "nietTerugGebeld": 5,
+  "nietTerugGebeld": 6,
   "nietTerugGebeldNummers": [
     {
       "nummer": "+31203084888",
@@ -39,6 +39,13 @@
       "naam": "Onbekend",
       "tijd": "11:05",
       "callResult": "overflowed",
+      "teruggebeld": false
+    },
+    {
+      "nummer": "+31619955158",
+      "naam": "Onbekend",
+      "tijd": "12:36",
+      "callResult": "abandoned",
       "teruggebeld": false
     }
   ],
@@ -76,6 +83,13 @@
       "naam": "Onbekend",
       "tijd": "11:05",
       "callResult": "overflowed",
+      "teruggebeld": false
+    },
+    {
+      "nummer": "+31619955158",
+      "naam": "Onbekend",
+      "tijd": "12:36",
+      "callResult": "abandoned",
       "teruggebeld": false
     }
   ]

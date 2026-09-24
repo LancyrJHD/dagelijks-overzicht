@@ -2889,11 +2889,18 @@
         "nummer": "+31627186104",
         "teruggebeld": false,
         "tijd": "11:05"
+      },
+      {
+        "callResult": "abandoned",
+        "naam": "Onbekend",
+        "nummer": "+31619955158",
+        "teruggebeld": false,
+        "tijd": "12:36"
       }
     ],
     "date": "2026-09-24",
-    "generated_at": "2026-09-24T10:30:54Z",
-    "nietTerugGebeld": 5,
+    "generated_at": "2026-09-24T10:40:49Z",
+    "nietTerugGebeld": 6,
     "nietTerugGebeldNummers": [
       {
         "callResult": "abandoned",
@@ -2929,10 +2936,17 @@
         "nummer": "+31627186104",
         "teruggebeld": false,
         "tijd": "11:05"
+      },
+      {
+        "callResult": "abandoned",
+        "naam": "Onbekend",
+        "nummer": "+31619955158",
+        "teruggebeld": false,
+        "tijd": "12:36"
       }
     ],
     "terugGebeld": 0,
-    "totaalGemist": 5,
-    "totaalInbound": 5
+    "totaalGemist": 6,
+    "totaalInbound": 6
   }
 }
