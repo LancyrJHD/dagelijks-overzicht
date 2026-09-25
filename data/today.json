@@ -1,34 +1,34 @@
 {
   "date": "2026-09-25",
-  "generated_at": "2026-09-25T09:10:56Z",
+  "generated_at": "2026-09-25T09:20:58Z",
   "drukte": "rustig",
   "gesprekken": 2,
   "stats": {
     "opgelost": 0,
-    "brandmeester": 2,
+    "brandmeester": 1,
     "afkoop": 0,
-    "terugbel": 0,
+    "terugbel": 1,
     "geenDekking": 0,
     "verkeerdNummer": 0
   },
-  "score": 8.1,
+  "score": 7.8,
   "conversations": [
     {
       "tijd": "09:41",
       "titel": "Focustijd",
       "personen": "Verzekerde: Fernando van Wijk · Edgar Stam",
-      "samenvatting": "Beller Fernando van Wijk (geverifieerd via telefoonnummer/Zoho) heeft een geschil met een aannemer over raamkozijnen die op 17 juli zijn besteld en volledig vooruitbetaald. De aannemer is moeilijk bereikbaar, weigert de installatie uit te voeren, en laat de beller zelf verantwoordelijk voor transportschadeinspectie. Edgar geeft praktisch advies: de kozijnen aanvaarden bij levering, deze documenteren, en contact opnemen met de aannemer/fabrikant over het niet-nakomen van verplichtingen. Dit is bouwgerelateerd consumentenrecht maar geen formeel juridisch advies.",
+      "samenvatting": "Beller Fernando van Wijk (geverifieerd via Zoho op telefoonnummer) belt over een consumentenkwestie met aannemer/leverancier: hij en zijn partner hebben op 17 juli kozijnen en een schuifbui volledig vooruitbetaald (100%), maar de aannemer is moeilijk bereikbaar, komt niet ter plaatse voor inname/controle op transportschade, en geeft aan niet meer de installatie uit te voeren. Beller vraagt juridisch advies over wat te doen. Edgar geeft praktisch advies: de kozijnen toch in ontvangst nemen (niet weigeren), want anders verdwijnen ze; legt uit dat ze al betaald hebben dus het hun eigendom is; adviseert voorzichtig te fotograferen bij levering. Geen expliciete doorverwijzing naar rechtsbijstand gegeven; gesprek wordt afgekapt (transcript eindigt abrupt middelzin).",
       "tags": [
         [
-          "tag-bouw",
-          "Bouwrecht"
+          "tag-consument",
+          "Consumentenrecht"
         ]
       ],
       "uitkomst": [
-        "outcome-brandmeester",
-        "Doorverwezen naar Brandmeester"
+        "outcome-terugbel",
+        "Terugbellen"
       ],
-      "terugbel": false,
+      "terugbel": true,
       "verkeerdVerbonden": false,
       "rechtsbijstandVerwijzing": false,
       "adviesGegeven": true,
@@ -38,7 +38,7 @@
       "tijd": "10:51",
       "titel": "Daklekkage zaak: schadeclaim aanmelden bij Brandmeester",
       "personen": "Verzekerde: anoniem · Edgar Stam",
-      "samenvatting": "Hans Stots belt over een daklekkagezaak die sinds 17 september in behandeling is. De beller is geverifieerd via naam en e-mailadres (Hans.Stots@hotmail.com). Edgar Stam geeft inhoudelijk advies: het schadenummer is gisteren binnengekomen, wat nodig was voor aanmelding bij Brandmeester. Edgar zet de zaak nu direct door naar Brandmeester (rechtsbijstandsuitvoerder) en stuurt de beller contactgegevens toe.",
+      "samenvatting": "Hans Stots belt over een daklekkage-schadeclaim die sinds 17 september in behandeling is. De medewerker stelt vast dat het schadenummer gisteren pas binnen is gekomen (nodig voor verdere behandeling) en meldt de zaak nu direct aan bij Brandmeester, het advocatenbureau dat de rechtsbijstand uitvoert. De beller wordt geverifieerd via naam en e-mailadres; inhoudelijk juridisch advies is niet gegeven, maar de zaak is correct doorverwezen naar rechtsbijstand.",
       "tags": [
         [
           "tag-bouw",
@@ -52,21 +52,23 @@
       "terugbel": false,
       "verkeerdVerbonden": false,
       "rechtsbijstandVerwijzing": true,
-      "adviesGegeven": true,
+      "adviesGegeven": false,
       "identiteitGeverifieerd": true
     }
   ],
   "acties": [],
   "analyse": {
     "goed": [
-      "09:41 Focustijd: Identiteit geverifieerd via telefoonnummer/Zoho-verificatie; praktisch advies gegeven over documentatie en vervolgstappen bij consumentengeschil raamkozijnen",
-      "09:41 Focustijd: Duidelijk vervolgplan: aanvaarden bij levering, documenteren, contact opnemen met aannemer/fabrikant",
-      "10:51 Daklekkage zaak: Identiteit geverifieerd via naam en e-mailadres; schadenummer correct vastgesteld als voorwaarde voor Brandmeester-aanmelding",
-      "10:51 Daklekkage zaak: Efficiënte doorverwijzing naar Brandmeester met contactgegevens direct aan beller toegestuurd"
+      "09:41 Focustijd: Identiteit correct geverifieerd via Zoho op telefoonnummer (Fernando van Wijk)",
+      "09:41 Focustijd: Praktisch juridisch advies gegeven over eigendomsrecht na volledige betaling en aanbevolen voorzorgmaatregelen (fotografering)",
+      "10:51 Daklekkage: Identiteit correct geverifieerd via naam en e-mailadres (Hans Stots)",
+      "10:51 Daklekkage: Zaak correct en direct doorverwezen naar rechtsbijstand (Brandmeester) na vaststelling dat schadenummer beschikbaar was",
+      "10:51 Daklekkage: Logische zaaksvoortgang - medewerker heeft actief opvolgingsgegevens (schadenummer) gecontroleerd voordat doorverwijzing plaatsvond"
     ],
     "beter": [
-      "09:41 Focustijd: Geen concrete deadline/vervolgmoment benoemd voor contact met aannemer/fabrikant (advies blijft open)",
-      "10:51 Daklekkage zaak: Dekkingscontrole (franchise EUR 250) niet expliciet in samenvattung vermeld; onduidelijk of dit bij schadeclaim is vastgelegd voordat doorverwijzing plaatsvond"
+      "09:41 Focustijd: Gesprek eindigt abrupt middelzin - transcript onvolledig. Onduidelijk of vervolgcontact/deadline expliciet is afgesproken of of doorverwijzing naar rechtsbijstand voor escalatie heeft plaatsgehad. Aanbeveling: zorg dat alle gesprekken volledig worden gedocumenteerd en vervolgstappen concreet worden benoemd.",
+      "09:41 Focustijd: Bij consumentenkwestie met leverancier zou explicietere verwijzing naar rechtsbijstand/escalatiemogelijkheden passend zijn geweest, gegeven de complexiteit (non-performance na voorbetaling). Dit valt buiten de Lancyr-scope maar verdient voornoting.",
+      "09:41 Focustijd: Geen concrete deadline genoemd voor vervolgcontact (uitkomst 'Terugbellen' staat open) - verduidelijking wanneer beller terugbelt of medewerker belt zou kwaliteit versterken"
     ]
   },
   "verkeerdVerbonden": {
@@ -76,8 +78,12 @@
   "rechtsbijstandVerwijzingen": 1,
   "categorieen": [
     [
+      "Consumentenrecht",
+      1
+    ],
+    [
       "Bouwrecht",
-      2
+      1
     ]
   ]
 }
