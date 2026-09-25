@@ -1,10 +1,10 @@
 {
   "date": "2026-09-25",
-  "generated_at": "2026-09-25T13:01:04Z",
-  "totaalInbound": 12,
-  "totaalGemist": 4,
+  "generated_at": "2026-09-25T13:10:47Z",
+  "totaalInbound": 13,
+  "totaalGemist": 5,
   "terugGebeld": 1,
-  "nietTerugGebeld": 3,
+  "nietTerugGebeld": 4,
   "nietTerugGebeldNummers": [
     {
       "nummer": "Anonymous",
@@ -24,6 +24,13 @@
       "nummer": "+31628522566",
       "naam": "Onbekend",
       "tijd": "14:36",
+      "callResult": "overflowed",
+      "teruggebeld": false
+    },
+    {
+      "nummer": "+31640568667",
+      "naam": "Onbekend",
+      "tijd": "14:53",
       "callResult": "overflowed",
       "teruggebeld": false
     }
@@ -54,6 +61,13 @@
       "nummer": "+31628522566",
       "naam": "Onbekend",
       "tijd": "14:36",
+      "callResult": "overflowed",
+      "teruggebeld": false
+    },
+    {
+      "nummer": "+31640568667",
+      "naam": "Onbekend",
+      "tijd": "14:53",
       "callResult": "overflowed",
       "teruggebeld": false
     }
