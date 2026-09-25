@@ -1,11 +1,19 @@
 {
   "date": "2026-09-25",
-  "generated_at": "2026-09-25T10:50:43Z",
-  "totaalInbound": 8,
-  "totaalGemist": 1,
+  "generated_at": "2026-09-25T11:01:03Z",
+  "totaalInbound": 9,
+  "totaalGemist": 2,
   "terugGebeld": 1,
-  "nietTerugGebeld": 0,
-  "nietTerugGebeldNummers": [],
+  "nietTerugGebeld": 1,
+  "nietTerugGebeldNummers": [
+    {
+      "nummer": "Anonymous",
+      "naam": "Anonymous",
+      "tijd": "12:49",
+      "callResult": "overflowed",
+      "teruggebeld": false
+    }
+  ],
   "alleGemistNummers": [
     {
       "nummer": "+31610875765",
@@ -13,6 +21,13 @@
       "tijd": "09:01",
       "callResult": "overflowed",
       "teruggebeld": true
+    },
+    {
+      "nummer": "Anonymous",
+      "naam": "Anonymous",
+      "tijd": "12:49",
+      "callResult": "overflowed",
+      "teruggebeld": false
     }
   ]
 }
