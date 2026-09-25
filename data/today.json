@@ -1,6 +1,6 @@
 {
   "date": "2026-09-25",
-  "generated_at": "2026-09-25T08:10:49Z",
+  "generated_at": "2026-09-25T08:20:49Z",
   "drukte": "rustig",
   "gesprekken": 1,
   "stats": {
@@ -11,13 +11,13 @@
     "geenDekking": 0,
     "verkeerdNummer": 0
   },
-  "score": 7.8,
+  "score": 6.8,
   "conversations": [
     {
       "tijd": "09:41",
       "titel": "Focustijd",
       "personen": "Verzekerde: Fernando van Wijk · Edgar Stam",
-      "samenvatting": "Fernando van Wijk (AB Bosje van Wijk) belt over een bouwkwestie: zij hebben vooruitbetaald voor op maat gemaakte kozijnen en schuifdeuren die vandaag worden geleverd, maar de aannemer is onbereikbaar en weigert de installatie uit te voeren. De beller vraagt juridisch advies over wat te doen met de levering en het risico op beschadiging, gegeven het dreigende geschil met de aannemer. De medewerker Edgar heeft de beller geverifieerd via adresgegevens en heeft praktisch advies gegeven (aanvaarden van de levering, documentatie van schade), maar geen formeel juridisch advies over de geschilkwestie zelf gegeven.",
+      "samenvatting": "Fernando van Wijk (geverifieerd via telefoonnummer en adresgegevens) belt met een bouwgerelateerde geschil over kozijnen en schuifdeuren die hij volledig vooruitbetaald heeft besteld via een aannemer. De aannemer weigert nu mee te werken bij de levering en installatie. Edgar geeft praktisch advies om de kozijnen in ontvangst te nemen en te documenteren, maar stelt geen juridische strategie voor de geschillenbeslechting met de aannemer voor. De zaak vereist doorverwijzing naar rechtsbijstand vanwege het complexe consumentenbouwrecht en het bedrag.",
       "tags": [
         [
           "tag-bouw",
@@ -30,7 +30,7 @@
       ],
       "terugbel": false,
       "verkeerdVerbonden": false,
-      "rechtsbijstandVerwijzing": false,
+      "rechtsbijstandVerwijzing": true,
       "adviesGegeven": true,
       "identiteitGeverifieerd": true
     }
@@ -38,19 +38,21 @@
   "acties": [],
   "analyse": {
     "goed": [
-      "09:41 Focustijd: Identiteit correct geverifieerd via adresgegevens voordat advies werd gegeven",
-      "09:41 Focustijd: Praktisch en handelingsgerichte aanpak geboden (aanvaarden levering, documentatie schade)",
-      "09:41 Focustijd: Passende doorverwijzing naar Brandmeester voor formeel juridisch advies over het geschil"
+      "09:41 Focustijd: Identiteit correct geverifieerd via telefoonnummer en adresgegevens voordat advies werd gegeven",
+      "09:41 Focustijd: Praktisch advies gegeven (documentatie van ontvangstsituatie) is passend en nuttig voor de klant",
+      "09:41 Focustijd: Correct doorverwezen naar Brandmeester (rechtsbijstand) gezien complexiteit consumentenbouwrecht"
     ],
     "beter": [
-      "09:41 Focustijd: Geen concrete deadline of vervolgafspraak genoemd voor contact met Brandmeester (wanneer verwacht terugbericht?)"
+      "09:41 Focustijd: Geen concrete deadline afgesproken voor vervolgstap bij Brandmeester; adviseer klant om binnen X werkdagen contact op te nemen",
+      "09:41 Focustijd: Geen juridische strategie-opties besproken voor geschillenbeslechting (bijv. garantieclausules nagaan, ombudsman, rechtbank); dit had voorafgaand aan doorverwijzing duidelijk moeten worden gemaakt",
+      "09:41 Focustijd: Geen aantekening dat klant dient vast te stellen of verzekering de vooruitbetaalde bedragen dekt onder algemene rechtsbijstand"
     ]
   },
   "verkeerdVerbonden": {
     "aantal": 0,
     "percentage": 0.0
   },
-  "rechtsbijstandVerwijzingen": 0,
+  "rechtsbijstandVerwijzingen": 1,
   "categorieen": [
     [
       "Bouwrecht",
