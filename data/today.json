@@ -1,34 +1,34 @@
 {
   "date": "2026-09-25",
-  "generated_at": "2026-09-25T09:20:58Z",
+  "generated_at": "2026-09-25T09:31:13Z",
   "drukte": "rustig",
   "gesprekken": 2,
   "stats": {
-    "opgelost": 0,
+    "opgelost": 1,
     "brandmeester": 1,
     "afkoop": 0,
-    "terugbel": 1,
+    "terugbel": 0,
     "geenDekking": 0,
     "verkeerdNummer": 0
   },
-  "score": 7.8,
+  "score": 8.5,
   "conversations": [
     {
       "tijd": "09:41",
       "titel": "Focustijd",
       "personen": "Verzekerde: Fernando van Wijk · Edgar Stam",
-      "samenvatting": "Beller Fernando van Wijk (geverifieerd via Zoho op telefoonnummer) belt over een consumentenkwestie met aannemer/leverancier: hij en zijn partner hebben op 17 juli kozijnen en een schuifbui volledig vooruitbetaald (100%), maar de aannemer is moeilijk bereikbaar, komt niet ter plaatse voor inname/controle op transportschade, en geeft aan niet meer de installatie uit te voeren. Beller vraagt juridisch advies over wat te doen. Edgar geeft praktisch advies: de kozijnen toch in ontvangst nemen (niet weigeren), want anders verdwijnen ze; legt uit dat ze al betaald hebben dus het hun eigendom is; adviseert voorzichtig te fotograferen bij levering. Geen expliciete doorverwijzing naar rechtsbijstand gegeven; gesprek wordt afgekapt (transcript eindigt abrupt middelzin).",
+      "samenvatting": "Fernando van Wijk (geverifieerd via telefoonnummer/Zoho-koppeling) belt over een geschil met zijn aannemer rond bestelde en vooruitbetaalde kozijnen die vandaag worden geleverd. De aannemer weigert bij levering aanwezig te zijn en heeft aangegeven niet tot installatie over te gaan. Edgar geeft praktisch juridisch advies: de kozijnen in ontvangst nemen (omdat al betaald), controleren op transportschade met foto's/video, en de installatie-problematiek apart aanpakken. Het is een bouwgerelateerde zaak met potentieel conflict.",
       "tags": [
         [
-          "tag-consument",
-          "Consumentenrecht"
+          "tag-bouw",
+          "Bouwrecht"
         ]
       ],
       "uitkomst": [
-        "outcome-terugbel",
-        "Terugbellen"
+        "outcome-opgelost",
+        "Telefonisch opgelost"
       ],
-      "terugbel": true,
+      "terugbel": false,
       "verkeerdVerbonden": false,
       "rechtsbijstandVerwijzing": false,
       "adviesGegeven": true,
@@ -38,7 +38,7 @@
       "tijd": "10:51",
       "titel": "Daklekkage zaak: schadeclaim aanmelden bij Brandmeester",
       "personen": "Verzekerde: anoniem · Edgar Stam",
-      "samenvatting": "Hans Stots belt over een daklekkage-schadeclaim die sinds 17 september in behandeling is. De medewerker stelt vast dat het schadenummer gisteren pas binnen is gekomen (nodig voor verdere behandeling) en meldt de zaak nu direct aan bij Brandmeester, het advocatenbureau dat de rechtsbijstand uitvoert. De beller wordt geverifieerd via naam en e-mailadres; inhoudelijk juridisch advies is niet gegeven, maar de zaak is correct doorverwezen naar rechtsbijstand.",
+      "samenvatting": "Hans Stots belt over een daklekkage-zaak die sinds 17 september in behandeling is. De beller is geverifieerd via naam en e-mailadres (Hans.Stots@hotmail.com). Edgar (medewerker) stelt vast dat het schadenummer pas gistermiddag is binnengekomen, wat de vertraging verklaart, en zet de zaak nu direct door naar Brandmeester (rechtsbijstandsuitvoerder) voor verdere behandeling. Inhoudelijk juridisch advies is niet gegeven; het gesprek betrof triage en doorverwijzing.",
       "tags": [
         [
           "tag-bouw",
@@ -59,16 +59,13 @@
   "acties": [],
   "analyse": {
     "goed": [
-      "09:41 Focustijd: Identiteit correct geverifieerd via Zoho op telefoonnummer (Fernando van Wijk)",
-      "09:41 Focustijd: Praktisch juridisch advies gegeven over eigendomsrecht na volledige betaling en aanbevolen voorzorgmaatregelen (fotografering)",
-      "10:51 Daklekkage: Identiteit correct geverifieerd via naam en e-mailadres (Hans Stots)",
-      "10:51 Daklekkage: Zaak correct en direct doorverwezen naar rechtsbijstand (Brandmeester) na vaststelling dat schadenummer beschikbaar was",
-      "10:51 Daklekkage: Logische zaaksvoortgang - medewerker heeft actief opvolgingsgegevens (schadenummer) gecontroleerd voordat doorverwijzing plaatsvond"
+      "09:41 Focustijd: identiteit correct geverifieerd via telefoonnummer/Zoho-koppeling; praktisch juridisch advies gegeven (ontvangst, controle, fotodocumentatie, scheiding problematiek)",
+      "09:41 Focustijd: advies is concreet en actionable voor de beller (stappen voor vandaag/direct)",
+      "10:51 Daklekkage: identiteit geverifieerd via naam en e-mailadres; geen advies gegeven vóór verificatie",
+      "10:51 Daklekkage: medewerker stelt vertraging vast en zet zaak direct door naar rechtsbijstandsuitvoerder; triage correct uitgevoerd"
     ],
     "beter": [
-      "09:41 Focustijd: Gesprek eindigt abrupt middelzin - transcript onvolledig. Onduidelijk of vervolgcontact/deadline expliciet is afgesproken of of doorverwijzing naar rechtsbijstand voor escalatie heeft plaatsgehad. Aanbeveling: zorg dat alle gesprekken volledig worden gedocumenteerd en vervolgstappen concreet worden benoemd.",
-      "09:41 Focustijd: Bij consumentenkwestie met leverancier zou explicietere verwijzing naar rechtsbijstand/escalatiemogelijkheden passend zijn geweest, gegeven de complexiteit (non-performance na voorbetaling). Dit valt buiten de Lancyr-scope maar verdient voornoting.",
-      "09:41 Focustijd: Geen concrete deadline genoemd voor vervolgcontact (uitkomst 'Terugbellen' staat open) - verduidelijking wanneer beller terugbelt of medewerker belt zou kwaliteit versterken"
+      "10:51 Daklekkage: geen concrete deadline/vervolgmoment benoemd voor klant (wanneer mag hij uitkomst van Brandmeester verwachten?)"
     ]
   },
   "verkeerdVerbonden": {
@@ -78,12 +75,8 @@
   "rechtsbijstandVerwijzingen": 1,
   "categorieen": [
     [
-      "Consumentenrecht",
-      1
-    ],
-    [
       "Bouwrecht",
-      1
+      2
     ]
   ]
 }
