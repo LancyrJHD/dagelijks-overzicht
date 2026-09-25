@@ -3076,13 +3076,21 @@
     "totaalInbound": 15
   },
   "2026-09-25": {
-    "alleGemistNummers": [],
+    "alleGemistNummers": [
+      {
+        "callResult": "overflowed",
+        "naam": "Onbekend",
+        "nummer": "+31610875765",
+        "teruggebeld": true,
+        "tijd": "09:01"
+      }
+    ],
     "date": "2026-09-25",
-    "generated_at": "2026-09-25T07:10:59Z",
+    "generated_at": "2026-09-25T07:20:43Z",
     "nietTerugGebeld": 0,
     "nietTerugGebeldNummers": [],
-    "terugGebeld": 0,
-    "totaalGemist": 0,
-    "totaalInbound": 0
+    "terugGebeld": 1,
+    "totaalGemist": 1,
+    "totaalInbound": 1
   }
 }

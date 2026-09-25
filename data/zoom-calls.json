@@ -1,10 +1,18 @@
 {
   "date": "2026-09-25",
-  "generated_at": "2026-09-25T07:10:59Z",
-  "totaalInbound": 0,
-  "totaalGemist": 0,
-  "terugGebeld": 0,
+  "generated_at": "2026-09-25T07:20:43Z",
+  "totaalInbound": 1,
+  "totaalGemist": 1,
+  "terugGebeld": 1,
   "nietTerugGebeld": 0,
   "nietTerugGebeldNummers": [],
-  "alleGemistNummers": []
+  "alleGemistNummers": [
+    {
+      "nummer": "+31610875765",
+      "naam": "Onbekend",
+      "tijd": "09:01",
+      "callResult": "overflowed",
+      "teruggebeld": true
+    }
+  ]
 }
