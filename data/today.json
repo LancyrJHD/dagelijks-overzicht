@@ -1,6 +1,6 @@
 {
   "date": "2026-09-25",
-  "generated_at": "2026-09-25T08:20:49Z",
+  "generated_at": "2026-09-25T08:31:01Z",
   "drukte": "rustig",
   "gesprekken": 1,
   "stats": {
@@ -11,13 +11,13 @@
     "geenDekking": 0,
     "verkeerdNummer": 0
   },
-  "score": 6.8,
+  "score": 7.5,
   "conversations": [
     {
       "tijd": "09:41",
       "titel": "Focustijd",
       "personen": "Verzekerde: Fernando van Wijk · Edgar Stam",
-      "samenvatting": "Fernando van Wijk (geverifieerd via telefoonnummer en adresgegevens) belt met een bouwgerelateerde geschil over kozijnen en schuifdeuren die hij volledig vooruitbetaald heeft besteld via een aannemer. De aannemer weigert nu mee te werken bij de levering en installatie. Edgar geeft praktisch advies om de kozijnen in ontvangst te nemen en te documenteren, maar stelt geen juridische strategie voor de geschillenbeslechting met de aannemer voor. De zaak vereist doorverwijzing naar rechtsbijstand vanwege het complexe consumentenbouwrecht en het bedrag.",
+      "samenvatting": "Fernando van Wijk (geverifieerd via Zoho-koppeling op telefoonnummer) belt over een bouwgeschil met een aannemer betreffende vooruitbetaalde kozijnen en schuifdeuren. De medewerker Edgar geeft praktisch advies: de kozijnen in ontvangst nemen bij levering, documenteren met foto's/video en contact opnemen met rechtsbijstand voor verdere stappen tegen de aannemer. Er wordt inhoudelijk juridisch advies gegeven over aanvaarding van goederen en bewijsvoering.",
       "tags": [
         [
           "tag-bouw",
@@ -38,14 +38,13 @@
   "acties": [],
   "analyse": {
     "goed": [
-      "09:41 Focustijd: Identiteit correct geverifieerd via telefoonnummer en adresgegevens voordat advies werd gegeven",
-      "09:41 Focustijd: Praktisch advies gegeven (documentatie van ontvangstsituatie) is passend en nuttig voor de klant",
-      "09:41 Focustijd: Correct doorverwezen naar Brandmeester (rechtsbijstand) gezien complexiteit consumentenbouwrecht"
+      "09:41 Focustijd: Identiteit correct geverifieerd via Zoho-koppeling op telefoonnummer (Fernando van Wijk)",
+      "09:41 Focustijd: Praktisch juridisch advies gegeven over aanvaarding van goederen en bewijsvoering (foto's/video-documentatie)",
+      "09:41 Focustijd: Passende doorverwijzing naar Brandmeester voor verdere juridische ondersteuning"
     ],
     "beter": [
-      "09:41 Focustijd: Geen concrete deadline afgesproken voor vervolgstap bij Brandmeester; adviseer klant om binnen X werkdagen contact op te nemen",
-      "09:41 Focustijd: Geen juridische strategie-opties besproken voor geschillenbeslechting (bijv. garantieclausules nagaan, ombudsman, rechtbank); dit had voorafgaand aan doorverwijzing duidelijk moeten worden gemaakt",
-      "09:41 Focustijd: Geen aantekening dat klant dient vast te stellen of verzekering de vooruitbetaalde bedragen dekt onder algemene rechtsbijstand"
+      "09:41 Focustijd: Geen concrete deadline afgesproken voor vervolgcontact met Brandmeester of voor eigenmaatregelen (wanneer kozijnen verwacht, wanneer contact opnemen met rechtsbijstand)",
+      "09:41 Focustijd: Geen schriftelijke bevestiging of vervolgstappen gedocumenteerd (beller had beter een duidelijk actieplan op papier kunnen krijgen)"
     ]
   },
   "verkeerdVerbonden": {
