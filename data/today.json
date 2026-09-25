@@ -1,11 +1,11 @@
 {
   "date": "2026-09-25",
-  "generated_at": "2026-09-25T09:01:17Z",
+  "generated_at": "2026-09-25T09:10:56Z",
   "drukte": "rustig",
-  "gesprekken": 1,
+  "gesprekken": 2,
   "stats": {
     "opgelost": 0,
-    "brandmeester": 1,
+    "brandmeester": 2,
     "afkoop": 0,
     "terugbel": 0,
     "geenDekking": 0,
@@ -17,7 +17,7 @@
       "tijd": "09:41",
       "titel": "Focustijd",
       "personen": "Verzekerde: Fernando van Wijk · Edgar Stam",
-      "samenvatting": "Beller Fernando van Wijk (geverifieerd via telefoonnummer, Zoho-koppeling) heeft een geschil met zijn aannemer over schuifpuien/kozijnen die op 17 juli zijn besteld en waarvan 100% van het materiaal vooruitbetaald is. De aannemer is moeilijk bereiken, wil niet meer installeren, en kozijnen worden vandaag geleverd zonder zijn aanwezigheid. Edgar gaf praktisch advies: kozijnen in ontvangst nemen (omdat ze al betaald zijn) en deze goed documenteren met foto's/filmen, en eventueel naar een alternatieve locatie zoeken. Dit is een bouwkwestie (geschil aannemer/materiaallevering) met rechtsbijstandsdekking.",
+      "samenvatting": "Beller Fernando van Wijk (geverifieerd via telefoonnummer/Zoho) heeft een geschil met een aannemer over raamkozijnen die op 17 juli zijn besteld en volledig vooruitbetaald. De aannemer is moeilijk bereikbaar, weigert de installatie uit te voeren, en laat de beller zelf verantwoordelijk voor transportschadeinspectie. Edgar geeft praktisch advies: de kozijnen aanvaarden bij levering, deze documenteren, en contact opnemen met de aannemer/fabrikant over het niet-nakomen van verplichtingen. Dit is bouwgerelateerd consumentenrecht maar geen formeel juridisch advies.",
       "tags": [
         [
           "tag-bouw",
@@ -33,29 +33,51 @@
       "rechtsbijstandVerwijzing": false,
       "adviesGegeven": true,
       "identiteitGeverifieerd": true
+    },
+    {
+      "tijd": "10:51",
+      "titel": "Daklekkage zaak: schadeclaim aanmelden bij Brandmeester",
+      "personen": "Verzekerde: anoniem · Edgar Stam",
+      "samenvatting": "Hans Stots belt over een daklekkagezaak die sinds 17 september in behandeling is. De beller is geverifieerd via naam en e-mailadres (Hans.Stots@hotmail.com). Edgar Stam geeft inhoudelijk advies: het schadenummer is gisteren binnengekomen, wat nodig was voor aanmelding bij Brandmeester. Edgar zet de zaak nu direct door naar Brandmeester (rechtsbijstandsuitvoerder) en stuurt de beller contactgegevens toe.",
+      "tags": [
+        [
+          "tag-bouw",
+          "Bouwrecht"
+        ]
+      ],
+      "uitkomst": [
+        "outcome-brandmeester",
+        "Doorverwezen naar Brandmeester"
+      ],
+      "terugbel": false,
+      "verkeerdVerbonden": false,
+      "rechtsbijstandVerwijzing": true,
+      "adviesGegeven": true,
+      "identiteitGeverifieerd": true
     }
   ],
   "acties": [],
   "analyse": {
     "goed": [
-      "09:41 Focustijd: Identiteit correct geverifieerd via telefoonnummer en Zoeksysteem (Zoho-koppeling)",
-      "09:41 Focustijd: Praktisch en dekkingsrelevant advies gegeven (materiaal documenteren, foto's/video's maken) passend bij rechtsbijstandsdekking voor bouwkwesties",
-      "09:41 Focustijd: Escalatie naar Brandmeester (gespecialiseerde aannemer/bouwrecht) is juiste vervolgstap voor dit geschil"
+      "09:41 Focustijd: Identiteit geverifieerd via telefoonnummer/Zoho-verificatie; praktisch advies gegeven over documentatie en vervolgstappen bij consumentengeschil raamkozijnen",
+      "09:41 Focustijd: Duidelijk vervolgplan: aanvaarden bij levering, documenteren, contact opnemen met aannemer/fabrikant",
+      "10:51 Daklekkage zaak: Identiteit geverifieerd via naam en e-mailadres; schadenummer correct vastgesteld als voorwaarde voor Brandmeester-aanmelding",
+      "10:51 Daklekkage zaak: Efficiënte doorverwijzing naar Brandmeester met contactgegevens direct aan beller toegestuurd"
     ],
     "beter": [
-      "09:41 Focustijd: Concrete vervolgdeadline ontbreekt — afgesproken moment waarop Brandmeester contact opneemt niet expliciet benoemd",
-      "09:41 Focustijd: Geen schriftelijke bevestiging (e-mail/sms) van vervolgstap vermeld — beller heeft geen controleerbare confirmatie van doorverwijzing"
+      "09:41 Focustijd: Geen concrete deadline/vervolgmoment benoemd voor contact met aannemer/fabrikant (advies blijft open)",
+      "10:51 Daklekkage zaak: Dekkingscontrole (franchise EUR 250) niet expliciet in samenvattung vermeld; onduidelijk of dit bij schadeclaim is vastgelegd voordat doorverwijzing plaatsvond"
     ]
   },
   "verkeerdVerbonden": {
     "aantal": 0,
     "percentage": 0.0
   },
-  "rechtsbijstandVerwijzingen": 0,
+  "rechtsbijstandVerwijzingen": 1,
   "categorieen": [
     [
       "Bouwrecht",
-      1
+      2
     ]
   ]
 }
