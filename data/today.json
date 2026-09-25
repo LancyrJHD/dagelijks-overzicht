@@ -1,11 +1,11 @@
 {
   "date": "2026-09-25",
-  "generated_at": "2026-09-25T08:40:56Z",
+  "generated_at": "2026-09-25T08:50:53Z",
   "drukte": "rustig",
   "gesprekken": 1,
   "stats": {
-    "opgelost": 1,
-    "brandmeester": 0,
+    "opgelost": 0,
+    "brandmeester": 1,
     "afkoop": 0,
     "terugbel": 0,
     "geenDekking": 0,
@@ -17,7 +17,7 @@
       "tijd": "09:41",
       "titel": "Focustijd",
       "personen": "Verzekerde: Fernando van Wijk · Edgar Stam",
-      "samenvatting": "Fernando van Wijk (geverifieerd via Zoho-koppeling op telefoonnummer, polis bekend) belt over een bouwconflict met zijn aannemer: hij heeft vooruitbetaald voor op maat gemaakte kozijnen/schuifdeuren, maar de aannemer wil niet meer installeren en laat de levering vandaag plaatsvinden zonder toezicht. Edgar Stam geeft praktisch advies (kozijnen toch in ontvangst nemen, controleren op transportschade, documenteren) en zet in op probleemoplossing, maar geen juridische rechtsbijstand of doorverwijzing volgt in dit transcript.",
+      "samenvatting": "Beller Fernando van Wijk (geverifieerd via telefoonnummer/Zoho-koppeling) heeft een bouwgeschil met aannemer over kozijnen waarvoor hij volledig vooruit heeft betaald (17 juli). Aannemer levert nu niet en laat beller zelf transportschade controleren en risico's dragen; bovendien weigert aannemer installatie uit te voeren. Edgar (medewerker) gaf praktisch advies om kozijnen toch in ontvangst te nemen en besproken logistieke/opslagproblemen, maar geen inhoudelijk juridisch advies over de zaak zelf (geschil, vorderingen, rechtsmiddelen).",
       "tags": [
         [
           "tag-bouw",
@@ -25,26 +25,26 @@
         ]
       ],
       "uitkomst": [
-        "outcome-opgelost",
-        "Telefonisch opgelost"
+        "outcome-brandmeester",
+        "Doorverwezen naar Brandmeester"
       ],
       "terugbel": false,
       "verkeerdVerbonden": false,
       "rechtsbijstandVerwijzing": false,
-      "adviesGegeven": true,
+      "adviesGegeven": false,
       "identiteitGeverifieerd": true
     }
   ],
   "acties": [],
   "analyse": {
     "goed": [
-      "09:41 Bouwconflict: Identiteit correct geverifieerd via Zoho-koppeling op telefoonnummer en polis bevestigd voordat advies werd gegeven",
-      "09:41 Bouwconflict: Praktisch en direct advies gegeven (ontvangst kozijnen, controleprocedure, documentatie) dat direct helpt bij probleemoplossing",
-      "09:41 Bouwconflict: Proactieve aanpak gericht op directe schadebeperkingsmaatregelen"
+      "09:41 Focustijd: Identiteit correct geverifieerd via telefoonnummer/Zoho-koppeling (Fernando van Wijk).",
+      "09:41 Focustijd: Medewerker Edgar herkende terecht dat dit een complex bouwgeschil is dat inhoudelijk juridisch advies vereist en verwees door naar Brandmeester.",
+      "09:41 Focustijd: Praktisch advies over logistieke/opslagkwesties was nuttig en passend voordat zaak wordt geëscaleerd."
     ],
     "beter": [
-      "09:41 Bouwconflict: Geen franchise-controle (EUR 250) vastgelegd ondanks mogelijk schadebedrag (vooruitbetaling voor op maat gemaakte kozijnen/schuifdeuren)",
-      "09:41 Bouwconflict: Geen duidelijke vervolgstap of deadline afgesproken voor juridische begeleiding; klant had mogelijk behoefte aan formele rechtsbijstand gegeven de ernst van het conflict (geweigerde installatie, vooruitbetaling) – advies lijkt beperkt tot tactische tips zonder verdere ondersteuning"
+      "09:41 Focustijd: Geen concrete deadline/vervolgmoment afgesproken met Brandmeester (wanneer kan beller contact verwachten, wie neemt contact op).",
+      "09:41 Focustijd: Bij doorverwijzing ontbreekt duidelijkheid over wat beller zelf moet doen of meenemen naar Brandmeester (bijv. aankoopbewijs 17 juli, communicatie met aannemer, foto's transportschade)."
     ]
   },
   "verkeerdVerbonden": {
