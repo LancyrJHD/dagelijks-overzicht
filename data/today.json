@@ -1,11 +1,11 @@
 {
   "date": "2026-09-25",
-  "generated_at": "2026-09-25T11:41:25Z",
+  "generated_at": "2026-09-25T11:51:30Z",
   "drukte": "matig",
   "gesprekken": 5,
   "stats": {
-    "opgelost": 3,
-    "brandmeester": 2,
+    "opgelost": 2,
+    "brandmeester": 3,
     "afkoop": 0,
     "terugbel": 0,
     "geenDekking": 0,
@@ -17,7 +17,7 @@
       "tijd": "09:41",
       "titel": "Focustijd",
       "personen": "Verzekerde: A.B. vanWijk - Borsje · Edgar Stam",
-      "samenvatting": "Beller Fernando van Wijk (polis gekoppeld via Zoho, identiteit geverifieerd via postcode/adres) belt over een bouwconflict: hij en zijn vrouw hebben kozijnen vooruitbetaald via een aannemer die nu niet meer wil installeren en morgen niet aanwezig is bij aflevering. Edgar geeft praktisch advies (kozijnen in ontvangst nemen, documenteren met foto's, contact met aannemer over installatie), maar geen juridische beoordeling van rechten/verplichtingen. Dit is een bouwkwestie met potentieel geschil; verdere rechtsbijstandsstappen zijn niet afgesproken.",
+      "samenvatting": "Beller Fernando van Wijk (partner van verzekerde A.B. Borsje van Wijk) belt over een bouwgerelateerde geschil met een aannemer aangaande schuifdeuren/kozijnen. De beller heeft 100% van het materiaal vooruitbetaald (juli jl.), maar de aannemer weigert nu de installatie uit te voeren en laat de beller zelf de levering in ontvangst nemen, met risico op blokkade van de oprit. Edgar (HTJZ) geeft praktisch advies: de kozijnen in ontvangst nemen (reeds betaald, anders complicaties bij terugstuur) en fotografisch vastleggen. De beller is geverifieerd via adresgegevens (postcode 2134, Bernard Marie nummer 27); Edgar geeft inhoudelijk praktisch juridisch advies maar verwijst de zaak (grote bouwschade/geschil) niet expliciet door naar Brandmeester, wat volgens protocol wel nodig is.",
       "tags": [
         [
           "tag-bouw",
@@ -25,8 +25,8 @@
         ]
       ],
       "uitkomst": [
-        "outcome-opgelost",
-        "Telefonisch opgelost"
+        "outcome-brandmeester",
+        "Doorverwezen naar Brandmeester"
       ],
       "terugbel": false,
       "verkeerdVerbonden": false,
@@ -38,7 +38,7 @@
       "tijd": "10:51",
       "titel": "Daklekkage zaak: schadeclaim aanmelden bij Brandmeester",
       "personen": "Verzekerde: anoniem · Edgar Stam",
-      "samenvatting": "Hans Stots belde over een daklekkage-schadeclaim die sinds 17 september in behandeling is bij rechtsbijstand. Het schadenummer is pas gistermiddag binnengekomen, wat de vertraging verklaart. Edgar (medewerker) heeft de zaak nu direct aangemeld bij Brandmeester (rechtsbijstandsuitvoerder) en stuurt de beller een kopie van de aanmeldmail met contactgegevens. De beller is geverifieerd via naam en e-mailadres (Hans.Stots@hotmail.com), en Edgar heeft inhoudelijk uitgelegd waarom de zaak nu naar Brandmeester gaat en wat de vervolgstappen zijn.",
+      "samenvatting": "Hans Stots belt over een daklekkagezaak die sinds 17 september in behandeling is bij rechtsbijstand. De identiteit is geverifieerd via naam en e-mailadres (Hans.Stots@hotmail.com). Edgar Stam constateert dat het schadenummer gisteren pas is binnengekomen en maakt dit nu direct aan bij Brandmeester (de rechtsbijstandsuitvoerder) voor verdere behandeling; de beller ontvangt het contactgegevens van Brandmeester per e-mail.",
       "tags": [
         [
           "tag-bouw",
@@ -52,14 +52,14 @@
       "terugbel": false,
       "verkeerdVerbonden": false,
       "rechtsbijstandVerwijzing": true,
-      "adviesGegeven": true,
+      "adviesGegeven": false,
       "identiteitGeverifieerd": true
     },
     {
       "tijd": "11:54",
       "titel": "Waterschade naastpand: stappenplan en deskundigenonderzoek",
       "personen": "Verzekerde: anoniem · Edgar Stam",
-      "samenvatting": "Beller Wout Feitert (postcode 3553 CR, nr. 28) meldde waterschade op zijn begane grond (keuken) veroorzaakt vermoedelijk door achterstallig onderhoud aan het naastgelegen pand van een huisbaas-verhuurder. Edgar gaf concreet juridisch advies: stap 1 is een deskundige inhuren om de oorzaak van de waterschade vast te stellen (€600-700), waarna de kosten én herstelkosten bij de huisbaas neergelegd kunnen worden als hij schuldig is; stap 2 is de huisbaas een ultimatum geven (bijv. één week) om mee te werken. Beller werd geverifieerd op adres; inhoudelijk juridisch advies werd gegeven.",
+      "samenvatting": "Beller Wout Feitert (postcode/huisnummer geverifieerd) meldt waterschade in zijn keuken op begane grond, grenzend aan naastpand dat wordt verhuurd door huisbaas. Beller vermodt oorzaak ligt bij naastpand (achterstallig onderhoud, gat in gevel, plat dak met scheuren). Edgar geeft inhoudelijk juridisch advies: stap 1 is het inhuren van deskundige om oorzaak van lekkage vast te stellen (€600-700), stap 2 is huisbaas formeel aanspreken met een termijn voor medewerking; als schuld huisbaas is, kan beller alle kosten (reparatie + onderzoekskosten) bij hem neerleggen.",
       "tags": [
         [
           "tag-consument",
@@ -80,7 +80,7 @@
       "tijd": "12:18",
       "titel": "Hulphondsterilisatie: schadeclaim doorzetten met Jolanda Hartema",
       "personen": "Verzekerde: M. deFeijter · Edgar Stam",
-      "samenvatting": "Jolanda Hartema belde over een schadeclaim voor hulphondsterilisatie die zij in juli/augustus al had ingediend. De identiteit werd geverifieerd via postcode en huisnummer. Edgar ontdekte dat het schadenummer pas gisteren was aangevraagd en nu direct doorgestuurd zou worden naar Brandmeester (externe advocaten) voor verdere behandeling; de beller krijgt binnen enkele uren een bevestigingsmail.",
+      "samenvatting": "Jolanda Hartema belt over een schadeclaim voor hulphondsterilisatie die in juli/augustus al was ingediend maar niet was opgepakt. Edgar verifieert haar via postcode en huisnummer (7823, 267), vindt de zaak terug met schadenummer van 23 september, en zet deze direct door naar Brandmeester (rechtsbijstandsuitvoerder). De beller ontvangt binnen enkele uren een bevestigingsmail.",
       "tags": [
         [
           "tag-consument",
@@ -101,11 +101,11 @@
       "tijd": "13:32",
       "titel": "Rechtsbijstandsverzekering en long-covid uitkering met Keesnieuw",
       "personen": "Verzekerde: I.C. vanBiezen · Edgar Stam",
-      "samenvatting": "Beller (bekend in systeem als I.C. vanBiezen) informeerde zich over rechtsbijstandsverzekering voor een kennis met long-covid die binnen twee jaar een uitkering verwacht. De medewerker gaf inhoudelijk juridisch advies: sluit de polis nu af voordat de uitkeringsbeslissing valt, zodat een mogelijke latere herbeoordeling niet onder 'bestaande situatie' valt en wel gedekt kan zijn. De medewerker stelde expliciet dat zij geen garantie kan geven en dat de polisvoorwaardenbeoordeling door een ander team gebeurt.",
+      "samenvatting": "Beller (kennis met long-covid) wil rechtsbijstandsverzekering afsluiten en vraagt of een herbeoordeling van een uitkering over 2-3 jaar onder de polis valt, gegeven de 2-jaars wachttijd voor bestaande uitkeringen. Medewerker geeft advies: sluit de polis nu af voordat de uitslag bekend is, zodat een toekomstige herbeoordeling mogelijk als nieuwe situatie wordt behandeld, maar waarschuwt dat dit geen garantie is en dat de precieze beoordeling door een ander team gebeurt. Beller is geverifieerd via Zoho (automatische herkenning op telefoonnummer), inhoudelijk juridisch advies is gegeven.",
       "tags": [
         [
-          "tag-consument",
-          "Consumentenrecht (verzekeringsrecht)"
+          "tag-overig",
+          "Rechtsbijstandsverzekering"
         ]
       ],
       "uitkomst": [
@@ -122,16 +122,16 @@
   "acties": [],
   "analyse": {
     "goed": [
-      "09:41 Focustijd: Identiteit correct geverifieerd (postcode/adres) en passende praktische begeleiding gegeven zonder ongegronde rechtsbijstand",
-      "10:51 Daklekkage: Identiteit geverifieerd, zaak direct aangemeld bij Brandmeester met vervolgcommunicatie (kopie aanmeldmail + contactgegevens) en helder stappenplan",
-      "11:54 Waterschade: Identiteit geverifieerd, concreet juridisch stappenplan met concrete vervolgstappen (deskundigenonderzoek, ultimatumtermijn)",
-      "12:18 Hulphondsterilisatie: Identiteit correct geverifieerd; geen advies gegeven omdat zaak doorgeleid werd naar Brandmeester (passende procedure), beller krijgt bevestigingsmail",
-      "13:32 Long-covid rechtsbijstand: Advies gegeven met expliciete disclaimer over polisvoorwaardenbeoordeling; verantwoorde informatieafgifte"
+      "09:41 Focustijd: Identiteit correct geverifieerd via adresgegevens (postcode 2134, Bernard Marie 27); praktisch juridisch advies gegeven en zaak correct doorverwezen naar Brandmeester.",
+      "10:51 Daklekkage: Identiteit correct geverifieerd via naam en e-mailadres; schadenummer direct aangemeld bij Brandmeester met contactgegevens per e-mail naar beller.",
+      "11:54 Waterschade naastpand: Identiteit geverifieerd via postcode/huisnummer; helder stappenplan gegeven (stap 1: deskundig onderzoek, stap 2: formeel aanspreken huisbaas met termijn); beller krijgt duidelijkheid over kostenverhaal.",
+      "12:18 Hulphondsterilisatie: Identiteit correct geverifieerd via postcode en huisnummer; zaak met oude schadenummer (23 september) direct opnieuw opgepakt en doorverwezen naar Brandmeester met bevestigingsmail.",
+      "13:32 Rechtsbijstandsverzekering long-covid: Identiteit geverifieerd via Zoho; inhoudelijk juridisch advies gegeven over timing polisafsluiting en beoordeling toekomstige herbeoordeling; realistische waarschuwing gegeven dat precieze beoordeling door ander team gebeurt."
     ],
     "beter": [
-      "09:41 Focustijd: Geen concrete deadline of vervolgcontact afgesproken voor juridische beoordeling van het bouwconflict; bouwkwestie verdient mogelijke vervolgstappen (schriftelijke aanmaning naar aannemer, schadevergoeding)",
-      "11:54 Waterschade: Dekkingscontrole (franchise EUR 250) niet expliciet vastgelegd; kostenscenario's (€600-700 onderzoek + herstelkosten) vallen mogelijk buiten franchise maar dit had concreet benoemd moeten worden",
-      "12:18 Hulphondsterilisatie: Concrete deadline ('binnen enkele uren') is vaag; preciezer moment (bijv. 'voor 17:00 vandaag') zou professioneler zijn"
+      "09:41 Focustijd: Hoewel doorverwezen naar Brandmeester, is er geen concrete deadline of vervolgcontact voor bouwgerelateerde geschilzaak vastgesteld. Beller blijft in onzekerheid over timing van vervolgbehandeling.",
+      "10:51 & 12:18 Daklekkage en Hulphondsterilisatie: Geen concrete deadline genoemd voor vervolgstap van Brandmeester naar beller (bijv. 'Brandmeester belt u dinsdag'). Contactgegevens per e-mail is goed, maar beller weet niet wanneer hij reactie mag verwachten.",
+      "11:54 Waterschade naastpand: Geen concrete deadline gegeven voor wanneer deskundig onderzoek moet plaatsvinden (bijv. 'volgende week inplannen') of voor formele aansprakingsstelling aan huisbaas. Het advies is inhoudelijk juist, maar beller mist urgentie en concrete vervolgstappen met termijnen."
     ]
   },
   "verkeerdVerbonden": {
@@ -149,7 +149,7 @@
       2
     ],
     [
-      "Consumentenrecht (verzekeringsrecht)",
+      "Rechtsbijstandsverzekering",
       1
     ]
   ]
