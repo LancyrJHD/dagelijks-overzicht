@@ -1,6 +1,6 @@
 {
   "date": "2026-09-25",
-  "generated_at": "2026-09-25T12:10:46Z",
+  "generated_at": "2026-09-25T12:20:41Z",
   "tickets": [
     {
       "ticketNumber": "2780",
@@ -37,20 +37,56 @@
       "webUrl": "https://desk.zoho.eu/support/htjzlancyr/ShowHomePage.do#Cases/dv/195464000014289015",
       "channel": "Email",
       "doorgezetBrandmeester": false
+    },
+    {
+      "ticketNumber": "2784",
+      "tijd": "14:15",
+      "titel": "Verzoek inschakelen deskundige voor onderzoek naar lekkage, uiterlijk 2 oktober 12:00 uur",
+      "klant": "M. deFeijter",
+      "status": "Open",
+      "statusType": "",
+      "prioriteit": "Niet ingesteld",
+      "webUrl": "https://desk.zoho.eu/support/htjzlancyr/ShowHomePage.do#Cases/dv/195464000014278157",
+      "channel": "Email",
+      "doorgezetBrandmeester": false
+    },
+    {
+      "ticketNumber": "2785",
+      "tijd": "14:17",
+      "titel": "Fwd: Graag juridisch advies over conflict over lekkage met buurman",
+      "klant": "M. deFeijter",
+      "status": "Open",
+      "statusType": "",
+      "prioriteit": "Niet ingesteld",
+      "webUrl": "https://desk.zoho.eu/support/htjzlancyr/ShowHomePage.do#Cases/dv/195464000014278210",
+      "channel": "Email",
+      "doorgezetBrandmeester": false
+    },
+    {
+      "ticketNumber": "2786",
+      "tijd": "14:18",
+      "titel": "Fwd: Telefonisch overleg lekkage",
+      "klant": "M. deFeijter",
+      "status": "Open",
+      "statusType": "",
+      "prioriteit": "Niet ingesteld",
+      "webUrl": "https://desk.zoho.eu/support/htjzlancyr/ShowHomePage.do#Cases/dv/195464000014274122",
+      "channel": "Email",
+      "doorgezetBrandmeester": false
     }
   ],
   "channelCounts": {
     "Phone": 2,
-    "Email": 1
+    "Email": 4
   },
   "brandmeesterCount": 0,
   "ticketStats": {
-    "nieuweVandaag": 3,
+    "nieuweVandaag": 6,
     "geslotenVandaag": 3,
-    "totaalOpen": 25,
+    "totaalOpen": 28,
     "inDeWacht": 13,
     "statusBreakdown": {
-      "Open": 12,
+      "Open": 15,
       "Gesloten": 659,
       "In de wacht": 13
     },
