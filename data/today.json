@@ -1,6 +1,6 @@
 {
   "date": "2026-09-25",
-  "generated_at": "2026-09-25T09:58:33Z",
+  "generated_at": "2026-09-25T10:01:24Z",
   "drukte": "rustig",
   "gesprekken": 2,
   "stats": {
@@ -11,13 +11,13 @@
     "geenDekking": 0,
     "verkeerdNummer": 0
   },
-  "score": 6.5,
+  "score": 7.8,
   "conversations": [
     {
       "tijd": "09:41",
       "titel": "Focustijd",
       "personen": "Verzekerde: A.B. vanWijk - Borsje · Edgar Stam",
-      "samenvatting": "Fernando van Wijk (eigenlijk spreekt zijn partner A.B. van Wijk-Borsje, verifieerd via postcode/huisnummer en Zoho-koppeling) heeft een geschil met zijn aannemer over aangepaste kozijnen die op 17 juli zijn vooruitbetaald (100% van materiaalkosten). De aannemer weigert de installatie en laat de leverantier de kozijnen vandaag afleveren zonder toezicht. Edgar geeft praktisch advies: accepteer de levering (het materiaal is al betaald en van hen), controleer op transportschade, en zet juridische stappen tegen de aannemer via rechtsbijstand voor het terugkrijgen van het installatiewerk of schadevergoeding.",
+      "samenvatting": "Fernando van Wijk (en zijn echtgenote A.B. van Wijk) hebben via hun rechtsbijstandsverzekering (A-Z pakket privé) contact gezocht over een geschil met een aannemer. Zij hebben vooruitbetaald voor op maat gemaakte kozijnen en schuifdeur, maar de aannemer voert nu niet uit en is moeilijk bereikbaar. Vandaag worden de kozijnen geleverd, waardoor praktische en juridische problemen ontstaan. De beller is via Zoho automatisch geverifieerd. Edgar gaf inhoudelijk praktisch advies (kozijnen in ontvangst nemen, documenteren met foto's/video) maar geen juridisch advies over de geschilkwestie zelf; dit vereist verdere behandeling door rechtsbijstand.",
       "tags": [
         [
           "tag-bouw",
@@ -38,7 +38,7 @@
       "tijd": "10:51",
       "titel": "Daklekkage zaak: schadeclaim aanmelden bij Brandmeester",
       "personen": "Verzekerde: anoniem · Edgar Stam",
-      "samenvatting": "Beller Hans Stots belt over een daklekkage-schadeclaim die op 17 september is ingediend. De beller is geverifieerd via naam en e-mailadres (Hans.Stots@hotmail.com). Edgar heeft inhoudelijk advies gegeven: het schadenummer is gisteren pas binnengekomen (nodig voor verder behandeling), en de zaak wordt nu direct aangemeld bij Brandmeester (rechtsbijstandsuitvoerder) voor verdere behandeling.",
+      "samenvatting": "Hans Stots belt over een daklekkage-schadeclaim die sinds 17 september in behandeling is. De beller is geverifieerd via naam en e-mailadres (Hans.Stots@hotmail.com). Edgar (medewerker) geeft advies dat het schadenummer gisteren is binnengekomen en verwijst de zaak direct door naar Brandmeester (rechtsbijstandsuitvoerder) voor verdere juridische behandeling, met verwachting van reactie binnen 1-5 werkdagen.",
       "tags": [
         [
           "tag-bouw",
@@ -59,16 +59,13 @@
   "acties": [],
   "analyse": {
     "goed": [
-      "09:41 Focustijd: Identiteit correct geverifieerd via postcode/huisnummer en Zoho-koppeling (partner A.B. van Wijk-Borsje)",
-      "09:41 Focustijd: Praktisch en juridisch advies gegeven (accepteer levering, controleer op transportschade, zet juridische stappen in)",
-      "09:41 Focustijd: Passende doorverwijzing naar Brandmeester voor rechtsbijstand",
-      "10:51 Daklekkage zaak: Identiteit geverifieerd via naam en e-mailadres",
-      "10:51 Daklekkage zaak: Correcte procedure gevolgd (schadenummer binnengekomen, zaak aangemeld bij Brandmeester)"
+      "09:41 Focustijd: Identiteit correct geverifieerd via Zoho-systeem; medewerker gaf passend praktisch advies (documenteren met foto's/video) en erkende terecht dat juridisch advies verdere rechtsbijstandsbehandeling vereist; correcte doorverwijzing naar Brandmeester.",
+      "10:51 Daklekkage: Identiteit geverifieerd via naam en e-mailadres; medewerker gaf duidelijke update (schadenummer binnengekomen) en verwachting van reactie binnen 1-5 werkdagen concreet benoemd; correcte doorverwijzing naar Brandmeester.",
+      "Geen herhaalcontacten geregistreerd over dezelfde onderwerpen op dezelfde dag."
     ],
     "beter": [
-      "10:51 Daklekkage zaak: Dekkingscontrole franchise (EUR 250) niet expliciet vastgelegd in gesprek ondanks concrete schadeclaim",
-      "10:51 Daklekkage zaak: Geen concrete deadline afgesproken voor verdere behandeling bij Brandmeester (volgen op voortgang?)",
-      "Beide gesprekken: Geen melding van herhaalcontact-check (klant belt vandaag al eerder over hetzelfde onderwerp) – niet uit gegeven data op te maken, maar best practice ontbreekt"
+      "10:51 Daklekkage: Bij schadeclaim (daklekkage) ontbreekt vastlegging van dekkingscontrole (franchise EUR 250) in de samenvatting; dit moet bij schadebedragen altijd expliciet worden gecontroleerd en gedocumenteerd.",
+      "09:41 Focustijd: Concrete vervolgdeadline voor rechtsbijstandsbehandeling zou kunnen helpen (bijv. klant verwacht contact van Brandmeester binnen X werkdagen, zoals in het daklekkagegesprek)."
     ]
   },
   "verkeerdVerbonden": {
