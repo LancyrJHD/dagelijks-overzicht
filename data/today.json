@@ -1,11 +1,11 @@
 {
   "date": "2026-09-25",
-  "generated_at": "2026-09-25T10:10:58Z",
+  "generated_at": "2026-09-25T10:21:07Z",
   "drukte": "rustig",
-  "gesprekken": 2,
+  "gesprekken": 3,
   "stats": {
     "opgelost": 1,
-    "brandmeester": 1,
+    "brandmeester": 2,
     "afkoop": 0,
     "terugbel": 0,
     "geenDekking": 0,
@@ -17,7 +17,7 @@
       "tijd": "09:41",
       "titel": "Focustijd",
       "personen": "Verzekerde: A.B. vanWijk - Borsje · Edgar Stam",
-      "samenvatting": "Beller (Fernando van Wijk, geverifieerd via postcode/huisnummer en Zoho-contactkoppeling) meldt een geschil met aannemer over bestelde kozijnen op maat: 100% vooruitbetaald, maar aannemer wil niet meer installeren en laat vandaag af zonder toezicht. Edgar geeft praktisch advies: kozijnen in ontvangst nemen (omdat al betaald en eigendom van beller), foto's maken van staat/transportschade, en daarna juridische stappen tegen aannemer overwegen voor niet-nakoming installatie. Dit is inhoudelijk juridisch advies gegeven over een consumentenkwestie (bouwgerelateerd) met vooruitbetaling.",
+      "samenvatting": "Beller Fernando van Wijk (op naam echtgenote A.B. van Wijk) heeft een A-tot-Z rechtsbijstandspakket en belt over een geschil met een aannemer betreffende aangekochte schuiframen/kozijnen. Beller heeft 100% vooruitbetaald voor de kozijnen (alleen materiaal, niet installatie), de aannemer is onbereikbaar en weigert installatie uit te voeren, en vandaag wordt de zending geleverd. Edgar geeft praktisch advies (kozijnen in ontvangst nemen, documenteren met foto's/video) maar geen juridisch advies over de geschilkwestie zelf. Identiteit geverifieerd via adresgegevens.",
       "tags": [
         [
           "tag-bouw",
@@ -25,20 +25,20 @@
         ]
       ],
       "uitkomst": [
-        "outcome-opgelost",
-        "Telefonisch opgelost"
+        "outcome-brandmeester",
+        "Doorverwezen naar Brandmeester"
       ],
       "terugbel": false,
       "verkeerdVerbonden": false,
       "rechtsbijstandVerwijzing": false,
-      "adviesGegeven": true,
+      "adviesGegeven": false,
       "identiteitGeverifieerd": true
     },
     {
       "tijd": "10:51",
       "titel": "Daklekkage zaak: schadeclaim aanmelden bij Brandmeester",
       "personen": "Verzekerde: anoniem · Edgar Stam",
-      "samenvatting": "Hans Stots belt over een daklekkage-schadeclaim die sinds 17 september in behandeling is. De beller werd geverifieerd via naam en e-mailadres (Hans Stots, hans.stots@hotmail.com). Edgar Stam heeft het schadenummer gisteren ontvangen en verwerkt dit nu direct door naar Brandmeester (advocatenbureau voor rechtsbijstandszaken), waarna Brandmeester de contactpersoon voor vervolgbehandeling wordt.",
+      "samenvatting": "Hans Stots belt over een daklekkagezaak die sinds 17 september in behandeling is. De identiteit is geverifieerd via naam en e-mailadres (Hans Stots, hans.stots@hotmail.com). Edgar (de medewerker) stelt vast dat het schadenummer pas gistermiddag is binnengekomen, wat de vertraging verklaart, en zet de zaak nu onmiddellijk door naar Brandmeester (de rechtsbijstandsuitvoerder) met contactgegevens.",
       "tags": [
         [
           "tag-bouw",
@@ -54,20 +54,38 @@
       "rechtsbijstandVerwijzing": true,
       "adviesGegeven": false,
       "identiteitGeverifieerd": true
+    },
+    {
+      "tijd": "11:54",
+      "titel": "Waterschade naastpand: stappenplan en deskundigenonderzoek",
+      "personen": "Verzekerde: anoniem · Edgar Stam",
+      "samenvatting": "Beller Wout Feitert (postcode/huisnummer geverifieerd) meldt waterschade in zijn begane grond, vermoedelijk veroorzaakt door achterstallig onderhoud aan het naastgelegen pand van een huisbaas. De medewerker gaf concreet juridisch advies: eerst een gespecialiseerde deskundige inschakelen om de oorzaak vast te stellen (stap 1), vervolgens schriftelijk ultimatum aan de huisbaas stellen (stap 2), en daarna eventueel schadevergoeding (inclusief onderzoekskosten) vorderen als schuld vastgesteld.",
+      "tags": [
+        [
+          "tag-bouw",
+          "Bouwrecht"
+        ]
+      ],
+      "uitkomst": [
+        "outcome-opgelost",
+        "Telefonisch opgelost"
+      ],
+      "terugbel": false,
+      "verkeerdVerbonden": false,
+      "rechtsbijstandVerwijzing": false,
+      "adviesGegeven": true,
+      "identiteitGeverifieerd": true
     }
   ],
   "acties": [],
   "analyse": {
     "goed": [
-      "09:41 Focustijd: identiteit correct geverifieerd via postcode/huisnummer en Zoho-contactkoppeling voordat advies werd gegeven",
-      "09:41 Focustijd: juridisch advies over eigendomsrecht en vervolgstappen (schadeclaim) inhoudelijk correct en praktisch bruikbaar",
-      "10:51 Daklekkage: identiteit geverifieerd via naam en e-mailadres voordat zaak werd afgehandeld",
-      "10:51 Daklekkage: zaak professioneel doorverwezen naar Brandmeester met schadenummer als vervolgstap",
-      "Geen herhaalcontacten geregistreerd: beide zaken afgehandeld zonder dubbele belasting"
+      "09:41 Focustijd: Identiteit correct geverifieerd via adresgegevens voordat advies werd gegeven; praktisch advies (documentatie) gegeven zonder juridische standpuntname, passend bij de fase van de zaak",
+      "10:51 Daklekkage: Identiteit correct geverifieerd via naam en e-mailadres; vertraging adequaat opgehelderd (schadenummer gistermiddag binnengekomen); zaak onmiddellijk doorverwezen naar Brandmeester met contactgegevens",
+      "11:54 Waterschade: Identiteit geverifieerd via postcode/huisnummer; concreet juridisch stappenplan gegeven (deskundigenonderzoek → schriftelijk ultimatum → schadevergoeding); logische volgorde en handelingsgerichte adviezen"
     ],
     "beter": [
-      "09:41 Focustijd: dekkingscontrole franchise EUR 250 niet expliciet vastgelegd in samenvatting, hoewel schadeclaim (niet-nakoming installatie) een potentieel schadebedrag betreft",
-      "10:51 Daklekkage: geen concrete deadline genoemd voor vervolgstappen door Brandmeester of moment waarop beller contact mag verwachten"
+      "11:54 Waterschade: Bij schadeclaim (waterschade met potentieel schadebedrag) ontbreekt documentatie van dekkingscontrole/franchise (EUR 250); onbekend of dit is besproken of vastgelegd"
     ]
   },
   "verkeerdVerbonden": {
@@ -78,7 +96,7 @@
   "categorieen": [
     [
       "Bouwrecht",
-      2
+      3
     ]
   ]
 }
