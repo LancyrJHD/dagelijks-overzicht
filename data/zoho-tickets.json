@@ -1,16 +1,31 @@
 {
   "date": "2026-09-25",
-  "generated_at": "2026-09-25T07:30:49Z",
-  "tickets": [],
-  "channelCounts": {},
+  "generated_at": "2026-09-25T07:40:40Z",
+  "tickets": [
+    {
+      "ticketNumber": "2780",
+      "tijd": "09:37",
+      "titel": "Urgente juridische hulpvraag wat betreft levering vandaag",
+      "klant": "Fernando van Wijk",
+      "status": "Open",
+      "statusType": "",
+      "prioriteit": "Niet ingesteld",
+      "webUrl": "https://desk.zoho.eu/support/htjzlancyr/ShowHomePage.do#Cases/dv/195464000014278104",
+      "channel": "Email",
+      "doorgezetBrandmeester": false
+    }
+  ],
+  "channelCounts": {
+    "Email": 1
+  },
   "brandmeesterCount": 0,
   "ticketStats": {
-    "nieuweVandaag": 0,
+    "nieuweVandaag": 1,
     "geslotenVandaag": 0,
-    "totaalOpen": 25,
+    "totaalOpen": 26,
     "inDeWacht": 13,
     "statusBreakdown": {
-      "Open": 12,
+      "Open": 13,
       "Gesloten": 656,
       "In de wacht": 13
     },
