@@ -1,45 +1,32 @@
 {
   "date": "2026-09-25",
-  "generated_at": "2026-09-25T09:30:54Z",
+  "generated_at": "2026-09-25T09:40:46Z",
   "tickets": [
     {
       "ticketNumber": "2780",
       "tijd": "09:37",
       "titel": "Urgente juridische hulpvraag wat betreft levering vandaag",
-      "klant": "Fernando van Wijk",
-      "status": "Open",
-      "statusType": "",
-      "prioriteit": "Niet ingesteld",
-      "webUrl": "https://desk.zoho.eu/support/htjzlancyr/ShowHomePage.do#Cases/dv/195464000014278104",
-      "channel": "Email",
-      "doorgezetBrandmeester": false
-    },
-    {
-      "ticketNumber": "2781",
-      "tijd": "10:06",
-      "titel": "Aannemer weigert na te komen plaatsen kozijnen",
       "klant": "A.B. vanWijk - Borsje",
       "status": "Open",
       "statusType": "",
       "prioriteit": "Niet ingesteld",
-      "webUrl": "https://desk.zoho.eu/support/htjzlancyr/ShowHomePage.do#Cases/dv/195464000014294001",
+      "webUrl": "https://desk.zoho.eu/support/htjzlancyr/ShowHomePage.do#Cases/dv/195464000014278104",
       "channel": "Phone",
       "doorgezetBrandmeester": false
     }
   ],
   "channelCounts": {
-    "Email": 1,
     "Phone": 1
   },
   "brandmeesterCount": 0,
   "ticketStats": {
-    "nieuweVandaag": 2,
+    "nieuweVandaag": 1,
     "geslotenVandaag": 1,
-    "totaalOpen": 26,
+    "totaalOpen": 25,
     "inDeWacht": 13,
     "statusBreakdown": {
+      "Open": 12,
       "Gesloten": 657,
-      "Open": 13,
       "In de wacht": 13
     },
     "capBereikt": false
