@@ -1,6 +1,6 @@
 {
   "date": "2026-09-25",
-  "generated_at": "2026-09-25T10:30:48Z",
+  "generated_at": "2026-09-25T10:40:42Z",
   "tickets": [
     {
       "ticketNumber": "2780",
@@ -13,19 +13,31 @@
       "webUrl": "https://desk.zoho.eu/support/htjzlancyr/ShowHomePage.do#Cases/dv/195464000014278104",
       "channel": "Phone",
       "doorgezetBrandmeester": false
+    },
+    {
+      "ticketNumber": "2782",
+      "tijd": "12:34",
+      "titel": "Waterschade naastpand: stappenplan en deskundigenonderzoek",
+      "klant": "M. deFeijter",
+      "status": "Gesloten",
+      "statusType": "",
+      "prioriteit": "Niet ingesteld",
+      "webUrl": "https://desk.zoho.eu/support/htjzlancyr/ShowHomePage.do#Cases/dv/195464000014299001",
+      "channel": "Phone",
+      "doorgezetBrandmeester": false
     }
   ],
   "channelCounts": {
-    "Phone": 1
+    "Phone": 2
   },
   "brandmeesterCount": 0,
   "ticketStats": {
-    "nieuweVandaag": 1,
-    "geslotenVandaag": 2,
+    "nieuweVandaag": 2,
+    "geslotenVandaag": 3,
     "totaalOpen": 24,
     "inDeWacht": 13,
     "statusBreakdown": {
-      "Gesloten": 658,
+      "Gesloten": 659,
       "Open": 11,
       "In de wacht": 13
     },
