@@ -1,6 +1,6 @@
 {
   "date": "2026-09-25",
-  "generated_at": "2026-09-25T15:11:17Z",
+  "generated_at": "2026-09-25T15:20:45Z",
   "tickets": [
     {
       "ticketNumber": "2780",
@@ -39,18 +39,6 @@
       "doorgezetBrandmeester": false
     },
     {
-      "ticketNumber": "2788",
-      "tijd": "15:17",
-      "titel": "RE: emailbericht rechtsbijstand particulier",
-      "klant": "J. deJonge",
-      "status": "Open",
-      "statusType": "",
-      "prioriteit": "Niet ingesteld",
-      "webUrl": "https://desk.zoho.eu/support/htjzlancyr/ShowHomePage.do#Cases/dv/195464000014289070",
-      "channel": "Email",
-      "doorgezetBrandmeester": false
-    },
-    {
       "ticketNumber": "2789",
       "tijd": "16:07",
       "titel": "FW: 84215836 (Paska, Q.L.): Verzoek om juridisch advies – overeenkomst Comfort Isolatie",
@@ -77,17 +65,17 @@
   ],
   "channelCounts": {
     "Phone": 2,
-    "Email": 4
+    "Email": 3
   },
   "brandmeesterCount": 0,
   "ticketStats": {
-    "nieuweVandaag": 6,
-    "geslotenVandaag": 5,
-    "totaalOpen": 26,
+    "nieuweVandaag": 5,
+    "geslotenVandaag": 6,
+    "totaalOpen": 24,
     "inDeWacht": 13,
     "statusBreakdown": {
-      "Open": 13,
-      "Gesloten": 661,
+      "Gesloten": 662,
+      "Open": 11,
       "In de wacht": 13
     },
     "capBereikt": false
