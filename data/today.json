@@ -1,6 +1,6 @@
 {
   "date": "2026-09-28",
-  "generated_at": "2026-09-28T11:51:05Z",
+  "generated_at": "2026-09-28T12:01:32Z",
   "drukte": "rustig",
   "gesprekken": 1,
   "stats": {
@@ -17,7 +17,7 @@
       "tijd": "11:15",
       "titel": "Schadeverwerking vertraging en autoverzekeringsvragen",
       "personen": "Verzekerde: M.G. Gowda · Dewi Verver | Juridisch Medewerker",
-      "samenvatting": "Dit is een intern bedrijfsgesprek tussen twee HTJZ-medewerkers (geen klantgesprek met een verzekerde). Ze bespreken werkzaken zoals vertraging in schadeverwerking, autoverzekeringsbelletjes, afkoopfrequentie en samenwerking met Brandmeester. Er is geen inhoudelijk juridisch advies gegeven aan een verzekerde, en geen dekkingsvraag behandeld.",
+      "samenvatting": "Dit is een intern overleg tussen twee medewerkers van HTJZ/Lancyr over werkprocessen, schadeverwerking en callvolumes – geen gesprek met een verzekeringsklant. De beller wordt automatisch herkend in het systeem (M.G. Gowda), maar er is geen juridische advisering aan een klant gegeven. Het gesprek betreft administratieve en operationele kwesties (vertragingen in schadeverwerking, afkoopfrequentie, dashboard-tracking).",
       "tags": [
         [
           "tag-overig",
@@ -32,16 +32,16 @@
       "verkeerdVerbonden": true,
       "rechtsbijstandVerwijzing": false,
       "adviesGegeven": false,
-      "identiteitGeverifieerd": false
+      "identiteitGeverifieerd": true
     }
   ],
   "acties": [],
   "analyse": {
     "goed": [
-      "11:15 - Schadeverwerking: Correct intern bedrijfsgesprek geïdentificeerd. Geen klant werd zonder verificatie geholpen, dus geen verificatiefout."
+      "11:15 Schadeverwerking: Intern overleg correct herkend en afgehandeld – geen klantadvies gegeven, dus geen verificatie- of dekkingscontrolevereisten van toepassing."
     ],
     "beter": [
-      "11:15 - Schadeverwerking: Dit was een 'verkeerd nummer'-situatie (intern bedrijfsgesprek in plaats van klantgesprek). Voor toekomstige roteringsefficiëntie: zorg dat het nummer wordt doorverbonden naar de juiste afdeling, zodat werkzaken sneller worden afgehandeld en interne oproepen niet via de helpdesk lopen."
+      "11:15 Schadeverwerking: Dit was een intern gesprek (verkeerd nummer). Controleer telefonische routering om toekomstige interne verrichtingen niet via de klantenlijn af te handelen."
     ]
   },
   "verkeerdVerbonden": {
