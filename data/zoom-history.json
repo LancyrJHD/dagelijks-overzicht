@@ -3165,13 +3165,29 @@
     "totaalInbound": 15
   },
   "2026-09-28": {
-    "alleGemistNummers": [],
+    "alleGemistNummers": [
+      {
+        "callResult": "abandoned",
+        "naam": "Onbekend",
+        "nummer": "+31622197009",
+        "teruggebeld": false,
+        "tijd": "13:36"
+      }
+    ],
     "date": "2026-09-28",
-    "generated_at": "2026-09-28T11:31:07Z",
-    "nietTerugGebeld": 0,
-    "nietTerugGebeldNummers": [],
+    "generated_at": "2026-09-28T11:40:56Z",
+    "nietTerugGebeld": 1,
+    "nietTerugGebeldNummers": [
+      {
+        "callResult": "abandoned",
+        "naam": "Onbekend",
+        "nummer": "+31622197009",
+        "teruggebeld": false,
+        "tijd": "13:36"
+      }
+    ],
     "terugGebeld": 0,
-    "totaalGemist": 0,
-    "totaalInbound": 14
+    "totaalGemist": 1,
+    "totaalInbound": 15
   }
 }
