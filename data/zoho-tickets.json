@@ -1,30 +1,18 @@
 {
   "date": "2026-09-28",
-  "generated_at": "2026-09-28T12:20:50Z",
+  "generated_at": "2026-09-28T12:31:01Z",
   "tickets": [
-    {
-      "ticketNumber": "2792",
-      "tijd": "09:51",
-      "titel": "5607-3261213 Nieuw dossier ",
-      "klant": "Schade Particulier | Nedvol",
-      "status": "Gesloten",
-      "statusType": "",
-      "prioriteit": "Niet ingesteld",
-      "webUrl": "https://desk.zoho.eu/support/htjzlancyr/ShowHomePage.do#Cases/dv/195464000014285285",
-      "channel": "Email",
-      "doorgezetBrandmeester": false
-    },
     {
       "ticketNumber": "2793",
       "tijd": "10:06",
       "titel": "Erfenis en schenking: advies bij moeder in verzorgingstehuis",
       "klant": "M.H. Gubbels",
-      "status": "In de wacht",
+      "status": "Gesloten",
       "statusType": "",
       "prioriteit": "Niet ingesteld",
       "webUrl": "https://desk.zoho.eu/support/htjzlancyr/ShowHomePage.do#Cases/dv/195464000014259142",
       "channel": "Phone",
-      "doorgezetBrandmeester": false
+      "doorgezetBrandmeester": true
     },
     {
       "ticketNumber": "2798",
@@ -43,60 +31,12 @@
       "tijd": "12:08",
       "titel": "VVE-geschil en verzekeringskwestie met Gerard Kuuman",
       "klant": "G. Schuurman",
-      "status": "In de wacht",
+      "status": "Gesloten",
       "statusType": "",
       "prioriteit": "Niet ingesteld",
       "webUrl": "https://desk.zoho.eu/support/htjzlancyr/ShowHomePage.do#Cases/dv/195464000014292046",
       "channel": "Phone",
-      "doorgezetBrandmeester": false
-    },
-    {
-      "ticketNumber": "2800",
-      "tijd": "12:26",
-      "titel": "2799 Nieuw dossier 5607-8128294 ",
-      "klant": "Schade Particulier | Nedvol",
-      "status": "Open",
-      "statusType": "",
-      "prioriteit": "Niet ingesteld",
-      "webUrl": "https://desk.zoho.eu/support/htjzlancyr/ShowHomePage.do#Cases/dv/195464000014274186",
-      "channel": "Email",
-      "doorgezetBrandmeester": false
-    },
-    {
-      "ticketNumber": "2801",
-      "tijd": "12:30",
-      "titel": "2787 Nieuw dossier 5607-8152758 ",
-      "klant": "Schade Particulier | Nedvol",
-      "status": "Open",
-      "statusType": "",
-      "prioriteit": "Niet ingesteld",
-      "webUrl": "https://desk.zoho.eu/support/htjzlancyr/ShowHomePage.do#Cases/dv/195464000014289224",
-      "channel": "Email",
-      "doorgezetBrandmeester": false
-    },
-    {
-      "ticketNumber": "2802",
-      "tijd": "12:39",
-      "titel": "2793 Nieuw dossier 5607-3283722 ",
-      "klant": "Schade Particulier | Nedvol",
-      "status": "Open",
-      "statusType": "",
-      "prioriteit": "Niet ingesteld",
-      "webUrl": "https://desk.zoho.eu/support/htjzlancyr/ShowHomePage.do#Cases/dv/195464000014289273",
-      "channel": "Email",
-      "doorgezetBrandmeester": false
-    },
-    {
-      "ticketNumber": "2803",
-      "tijd": "12:42",
-      "titel": "2769 Nieuw dossier 5607-3291442 ",
-      "klant": "Schade Particulier | Nedvol",
-      "status": "Open",
-      "statusType": "",
-      "prioriteit": "Niet ingesteld",
-      "webUrl": "https://desk.zoho.eu/support/htjzlancyr/ShowHomePage.do#Cases/dv/195464000014274235",
-      "channel": "Email",
-      "doorgezetBrandmeester": false
+      "doorgezetBrandmeester": true
     },
     {
       "ticketNumber": "2804",
@@ -136,19 +76,18 @@
     }
   ],
   "channelCounts": {
-    "Email": 5,
     "Phone": 6
   },
-  "brandmeesterCount": 0,
+  "brandmeesterCount": 2,
   "ticketStats": {
-    "nieuweVandaag": 11,
-    "geslotenVandaag": 13,
-    "totaalOpen": 23,
-    "inDeWacht": 18,
+    "nieuweVandaag": 6,
+    "geslotenVandaag": 16,
+    "totaalOpen": 15,
+    "inDeWacht": 14,
     "statusBreakdown": {
-      "In de wacht": 18,
-      "Gesloten": 674,
-      "Open": 5
+      "In de wacht": 14,
+      "Gesloten": 677,
+      "Open": 1
     },
     "capBereikt": false
   }
