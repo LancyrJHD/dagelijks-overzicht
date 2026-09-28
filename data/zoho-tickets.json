@@ -1,6 +1,6 @@
 {
   "date": "2026-09-28",
-  "generated_at": "2026-09-28T14:20:47Z",
+  "generated_at": "2026-09-28T14:31:05Z",
   "tickets": [
     {
       "ticketNumber": "2793",
@@ -133,20 +133,32 @@
       "webUrl": "https://desk.zoho.eu/support/htjzlancyr/ShowHomePage.do#Cases/dv/195464000014274339",
       "channel": "Email",
       "doorgezetBrandmeester": false
+    },
+    {
+      "ticketNumber": "2812",
+      "tijd": "16:21",
+      "titel": "2808 Nieuw dossier 5607-8142344 ",
+      "klant": "Schade Particulier | Nedvol",
+      "status": "Open",
+      "statusType": "",
+      "prioriteit": "Niet ingesteld",
+      "webUrl": "https://desk.zoho.eu/support/htjzlancyr/ShowHomePage.do#Cases/dv/195464000014278380",
+      "channel": "Email",
+      "doorgezetBrandmeester": false
     }
   ],
   "channelCounts": {
     "Phone": 7,
-    "Email": 4
+    "Email": 5
   },
   "brandmeesterCount": 2,
   "ticketStats": {
-    "nieuweVandaag": 11,
+    "nieuweVandaag": 12,
     "geslotenVandaag": 18,
-    "totaalOpen": 18,
+    "totaalOpen": 19,
     "inDeWacht": 15,
     "statusBreakdown": {
-      "Open": 3,
+      "Open": 4,
       "In de wacht": 15,
       "Gesloten": 679
     },
