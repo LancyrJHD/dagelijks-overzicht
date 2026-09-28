@@ -1,6 +1,6 @@
 {
   "date": "2026-09-28",
-  "generated_at": "2026-09-28T11:41:05Z",
+  "generated_at": "2026-09-28T11:51:05Z",
   "drukte": "rustig",
   "gesprekken": 1,
   "stats": {
@@ -17,7 +17,7 @@
       "tijd": "11:15",
       "titel": "Schadeverwerking vertraging en autoverzekeringsvragen",
       "personen": "Verzekerde: M.G. Gowda · Dewi Verver | Juridisch Medewerker",
-      "samenvatting": "Dit is een intern werkoverleg tussen twee HTJZ-medewerkers over procesgang, niet een klantgesprek met een beller. De medewerkers bespreken vertragingen in schadeverwerking (>24 uur voor schadenummer), autoverzekeringsbellen, en afkoopfrequentie. Er is geen juridische vraag van een verzekerde beller, geen identiteitsverificatie nodig en geen inhoudelijk advies gegeven aan een klant.",
+      "samenvatting": "Dit is een intern bedrijfsgesprek tussen twee HTJZ-medewerkers (geen klantgesprek met een verzekerde). Ze bespreken werkzaken zoals vertraging in schadeverwerking, autoverzekeringsbelletjes, afkoopfrequentie en samenwerking met Brandmeester. Er is geen inhoudelijk juridisch advies gegeven aan een verzekerde, en geen dekkingsvraag behandeld.",
       "tags": [
         [
           "tag-overig",
@@ -38,10 +38,10 @@
   "acties": [],
   "analyse": {
     "goed": [
-      "11:15 Schadeverwerking: Correct herkend dat dit een intern werkoverleg is, niet een klantgesprek. Geen verificatie of advies vereist."
+      "11:15 - Schadeverwerking: Correct intern bedrijfsgesprek geïdentificeerd. Geen klant werd zonder verificatie geholpen, dus geen verificatiefout."
     ],
     "beter": [
-      "11:15 Schadeverwerking: Dit lijkt een doorverwijzingsfout (verkeerd nummer). Zorg dat interne gesprekken niet in de klantlijst terechtkomen, of markeer duidelijker als 'niet van toepassing'."
+      "11:15 - Schadeverwerking: Dit was een 'verkeerd nummer'-situatie (intern bedrijfsgesprek in plaats van klantgesprek). Voor toekomstige roteringsefficiëntie: zorg dat het nummer wordt doorverbonden naar de juiste afdeling, zodat werkzaken sneller worden afgehandeld en interne oproepen niet via de helpdesk lopen."
     ]
   },
   "verkeerdVerbonden": {

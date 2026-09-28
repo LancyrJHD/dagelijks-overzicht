@@ -3172,11 +3172,18 @@
         "nummer": "+31622197009",
         "teruggebeld": false,
         "tijd": "13:36"
+      },
+      {
+        "callResult": "abandoned",
+        "naam": "Onbekend",
+        "nummer": "+31627650351",
+        "teruggebeld": false,
+        "tijd": "13:46"
       }
     ],
     "date": "2026-09-28",
-    "generated_at": "2026-09-28T11:40:56Z",
-    "nietTerugGebeld": 1,
+    "generated_at": "2026-09-28T11:50:55Z",
+    "nietTerugGebeld": 2,
     "nietTerugGebeldNummers": [
       {
         "callResult": "abandoned",
@@ -3184,10 +3191,17 @@
         "nummer": "+31622197009",
         "teruggebeld": false,
         "tijd": "13:36"
+      },
+      {
+        "callResult": "abandoned",
+        "naam": "Onbekend",
+        "nummer": "+31627650351",
+        "teruggebeld": false,
+        "tijd": "13:46"
       }
     ],
     "terugGebeld": 0,
-    "totaalGemist": 1,
-    "totaalInbound": 15
+    "totaalGemist": 2,
+    "totaalInbound": 16
   }
 }
