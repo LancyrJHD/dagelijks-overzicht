@@ -1,6 +1,6 @@
 {
   "date": "2026-09-28",
-  "generated_at": "2026-09-28T12:40:59Z",
+  "generated_at": "2026-09-28T12:51:08Z",
   "drukte": "rustig",
   "gesprekken": 1,
   "stats": {
@@ -11,13 +11,13 @@
     "geenDekking": 0,
     "verkeerdNummer": 1
   },
-  "score": 0.0,
+  "score": 8.5,
   "conversations": [
     {
       "tijd": "11:15",
       "titel": "Schadeverwerking vertraging en autoverzekeringsvragen",
       "personen": "Verzekerde: M.G. Gowda · Dewi Verver | Juridisch Medewerker",
-      "samenvatting": "Dit is een intern teamgesprek tussen twee HTJZ-medewerkers over werkzaamheden en procesgang, niet een gesprek met een verzekerdenklant. De beller (werknemers-perspectief) meldt vertraging in schadeverwerking (>24 uur voor schadenummers) en veel autoverzekeringsbelletjes; de ander belooft dit door te geven aan de schadeasfdeling. Er is geen juridische advisering aan een klant gegeven. Identiteit is niet geverifieerd omdat dit geen klantgesprek is.",
+      "samenvatting": "Dit is een intern teamgesprek tussen twee HTJZ-medewerkers over operationele en werkzaken (schadeverwerking, autoverzekeringsbelletjes, afkoop, samenwerking met Brandmeester), niet een juridisch adviesgesprek met een verzekerdecliente. De beller werd automatisch herkend in het systeem, maar er is geen inhoudelijk juridisch advies gegeven aan een klant.",
       "tags": [
         [
           "tag-overig",
@@ -32,15 +32,17 @@
       "verkeerdVerbonden": true,
       "rechtsbijstandVerwijzing": false,
       "adviesGegeven": false,
-      "identiteitGeverifieerd": false
+      "identiteitGeverifieerd": true
     }
   ],
   "acties": [],
   "analyse": {
-    "goed": [],
+    "goed": [
+      "11:15 Schadeverwerking: Beller werd automatisch in het systeem herkend (identiteit_geverifieerd = true)",
+      "11:15 Schadeverwerking: Medewerker heeft correct gereageerd op 'verkeerd nummer' en geen ongepast advies gegeven aan intern gesprek"
+    ],
     "beter": [
-      "11:15 'Schadeverwerking vertraging en autoverzekeringsvragen': Dit is geen klantgesprek maar een intern teamgesprek tussen HTJZ-medewerkers. Voor de kwaliteitsbeoordeling van de Lancyr Juridische Helpdesk zijn alleen gesprekken met verzekerdenklanten relevant. Dit gesprek had niet in de analyselijst opgenomen moeten worden.",
-      "Controleer het routeringsproces: interne gesprekken en 'verkeerd nummer'-gesprekken horen niet thuis in het kwaliteitsrapport voor juridische klantadvisering."
+      "11:15 Schadeverwerking: Dit was een intern teamgesprek, geen klantencontact – zorg dat dergelijke gesprekken via interne kanalen lopen en niet via de helpdesk-lijn"
     ]
   },
   "verkeerdVerbonden": {
