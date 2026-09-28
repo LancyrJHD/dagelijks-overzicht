@@ -1,6 +1,6 @@
 {
   "date": "2026-09-28",
-  "generated_at": "2026-09-28T08:50:45Z",
+  "generated_at": "2026-09-28T09:01:05Z",
   "tickets": [
     {
       "ticketNumber": "2792",
@@ -25,20 +25,32 @@
       "webUrl": "https://desk.zoho.eu/support/htjzlancyr/ShowHomePage.do#Cases/dv/195464000014259142",
       "channel": "Phone",
       "doorgezetBrandmeester": false
+    },
+    {
+      "ticketNumber": "2798",
+      "tijd": "10:59",
+      "titel": "Werkgever ontslag en juridische bijstand met Gowda",
+      "klant": "M.G. Gowda",
+      "status": "Gesloten",
+      "statusType": "",
+      "prioriteit": "Niet ingesteld",
+      "webUrl": "https://desk.zoho.eu/support/htjzlancyr/ShowHomePage.do#Cases/dv/195464000014259214",
+      "channel": "Phone",
+      "doorgezetBrandmeester": false
     }
   ],
   "channelCounts": {
     "Email": 1,
-    "Phone": 1
+    "Phone": 2
   },
   "brandmeesterCount": 0,
   "ticketStats": {
-    "nieuweVandaag": 2,
-    "geslotenVandaag": 9,
+    "nieuweVandaag": 3,
+    "geslotenVandaag": 10,
     "totaalOpen": 18,
     "inDeWacht": 18,
     "statusBreakdown": {
-      "Gesloten": 670,
+      "Gesloten": 671,
       "In de wacht": 18
     },
     "capBereikt": false
