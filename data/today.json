@@ -1,6 +1,6 @@
 {
   "date": "2026-09-28",
-  "generated_at": "2026-09-28T14:01:41Z",
+  "generated_at": "2026-09-28T14:11:07Z",
   "drukte": "rustig",
   "gesprekken": 1,
   "stats": {
@@ -11,13 +11,13 @@
     "geenDekking": 0,
     "verkeerdNummer": 1
   },
-  "score": 9.5,
+  "score": 8.5,
   "conversations": [
     {
       "tijd": "11:15",
       "titel": "Schadeverwerking vertraging en autoverzekeringsvragen",
       "personen": "Verzekerde: M.G. Gowda · Dewi Verver | Juridisch Medewerker",
-      "samenvatting": "Dit is een intern werkgesprek tussen twee HTJZ-medewerkers (geen rechtzoekende beller), waarin ze operationele zaken bespreken: vertraging in schadeverwerking (>24 uur), het lage aantal afkoopaanbiedingen, en algemene werkzaken. De identiteit van een klant ('M.G. Gowda') staat weliswaar in Zoho gekoppeld, maar deze persoon is niet aan het woord in het gesprek; het zijn twee medewerkers die met elkaar spreken. Er is geen inhoudelijk juridisch advies gegeven aan een klant.",
+      "samenvatting": "Dit is een intern overleg tussen twee HTJZ-medewerkers over operationele zaken (schadeverwerking, autoverzekeringsbelletjes, afkoopfrequentie, afstemming met Brandmeester), niet een gesprek met een verzekerde/klant. De beller is automatisch herkend in het systeem (M.G. Gowda), maar er wordt geen inhoudelijk juridisch advies gegeven aan een klant. Dit is een administratief/operationeel gesprek.",
       "tags": [
         [
           "tag-overig",
@@ -32,17 +32,16 @@
       "verkeerdVerbonden": true,
       "rechtsbijstandVerwijzing": false,
       "adviesGegeven": false,
-      "identiteitGeverifieerd": false
+      "identiteitGeverifieerd": true
     }
   ],
   "acties": [],
   "analyse": {
     "goed": [
-      "11:15 'Schadeverwerking vertraging': Juist ingedeeld als intern werkgesprek tussen medewerkers, niet als rechtzoekendencall. Geen juridisch advies gegeven aan extern persoon, dus verificatie- en dekkingsnormen zijn hier niet van toepassing.",
-      "Geen onnodig advies gegeven zonder verificatie – het gesprek betrof interne werkcoördinatie, niet rechtsbijstand aan een klant."
+      "11:15 Schadeverwerking: Intern overleg correct afgehandeld – geen klantenadvies gegeven, dus geen verificatie/dekkingscontrole-eisen van toepassing. Beller (M.G. Gowda) was automatisch herkend in systeem."
     ],
     "beter": [
-      "11:15 'Schadeverwerking vertraging': Hoewel het gesprek intern was, verdient het aanbeveling om dergelijke gesprekken beter te segmenteren of apart te noteren in het systeem, zodat het duidelijk is dat dit geen klantcontact betrof en geen kwaliteitsstandaarden voor rechtzoekenden gelden."
+      "11:15 Schadeverwerking: Geen concrete vervolgdeadline genoemd voor het 'verkeerd nummer'-scenario. Helderheid over wie wél moet worden bereikt zou de zaak hebben versneld."
     ]
   },
   "verkeerdVerbonden": {
