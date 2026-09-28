@@ -1,6 +1,6 @@
 {
   "date": "2026-09-28",
-  "generated_at": "2026-09-28T11:21:04Z",
+  "generated_at": "2026-09-28T11:24:31Z",
   "drukte": "rustig",
   "gesprekken": 1,
   "stats": {
@@ -17,7 +17,7 @@
       "tijd": "11:15",
       "titel": "Schadeverwerking vertraging en autoverzekeringsvragen",
       "personen": "Verzekerde: M.G. Gowda · Dewi Verver | Juridisch Medewerker",
-      "samenvatting": "Dit is geen gesprek tussen een juridische helpdesk en een verzekerded-klant, maar een intern werkoverleg tussen twee HTJZ-medewerkers over operationele zaken (vertraging in schadeverwerking, autoverzekeringsbelletjes, afkoopstatistieken en samenwerking met Brandmeester). De beller wordt automatisch herkend in het systeem, maar er wordt geen inhoudelijk juridisch advies gegeven aan een verzekerdenklant.",
+      "samenvatting": "Dit is een intern teamgesprek tussen HTJZ-medewerkers over werkprocessen, niet een gesprek met een beller/verzekerden. De onderwerpen zijn: vertraging in schadeverwerking (langer dan 24 uur voor schadenummers), veel inkomende autoverzekeringsbelletjes, afkoopfrequentie, en samenwerking met Brandmeester. Er is geen inhoudelijk juridisch advies gegeven aan een verzekerden, geen identiteitsverificatie van een beller gedaan, en geen dekkingsvraag beoordeeld.",
       "tags": [
         [
           "tag-overig",
@@ -32,16 +32,16 @@
       "verkeerdVerbonden": true,
       "rechtsbijstandVerwijzing": false,
       "adviesGegeven": false,
-      "identiteitGeverifieerd": true
+      "identiteitGeverifieerd": false
     }
   ],
   "acties": [],
   "analyse": {
     "goed": [
-      "11:15 Schadeverwerking: Automatische systeemherkenning van interne beller werkte correct, geen tijd verspild aan verificatie"
+      "11:15 - Schadeverwerking: Juist afgehandeld als intern teamgesprek zonder geldige klantinteractie; geen verificatie of advies vereist"
     ],
     "beter": [
-      "11:15 Schadeverwerking: Het lijkt erop dat een intern werkoverleg via de externe helpdesk-lijn is gerouleerd. Zorg voor betere routering van interne vragen naar interne kanalen om telefooncapaciteit voor externe klanten vrij te houden"
+      "11:15 - Schadeverwerking: Overweeg procesmaatregelen voor de geconstateerde vertragingen (schadenummers >24 uur) om toekomstige klantencontacten voortaan sneller af te handelen"
     ]
   },
   "verkeerdVerbonden": {
