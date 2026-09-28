@@ -1,6 +1,6 @@
 {
   "date": "2026-09-28",
-  "generated_at": "2026-09-28T10:00:59Z",
+  "generated_at": "2026-09-28T10:10:47Z",
   "tickets": [
     {
       "ticketNumber": "2792",
@@ -37,22 +37,34 @@
       "webUrl": "https://desk.zoho.eu/support/htjzlancyr/ShowHomePage.do#Cases/dv/195464000014259214",
       "channel": "Phone",
       "doorgezetBrandmeester": false
+    },
+    {
+      "ticketNumber": "2799",
+      "tijd": "12:08",
+      "titel": "VVE-geschil en verzekeringskwestie met Gerard Kuuman",
+      "klant": "G. Schuurman",
+      "status": "Open",
+      "statusType": "",
+      "prioriteit": "Niet ingesteld",
+      "webUrl": "https://desk.zoho.eu/support/htjzlancyr/ShowHomePage.do#Cases/dv/195464000014292046",
+      "channel": "Phone",
+      "doorgezetBrandmeester": false
     }
   ],
   "channelCounts": {
     "Email": 1,
-    "Phone": 2
+    "Phone": 3
   },
   "brandmeesterCount": 0,
   "ticketStats": {
-    "nieuweVandaag": 3,
+    "nieuweVandaag": 4,
     "geslotenVandaag": 10,
-    "totaalOpen": 18,
-    "inDeWacht": 17,
+    "totaalOpen": 19,
+    "inDeWacht": 18,
     "statusBreakdown": {
+      "In de wacht": 18,
       "Open": 1,
-      "Gesloten": 671,
-      "In de wacht": 17
+      "Gesloten": 671
     },
     "capBereikt": false
   }
