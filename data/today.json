@@ -1,6 +1,6 @@
 {
   "date": "2026-09-28",
-  "generated_at": "2026-09-28T13:21:07Z",
+  "generated_at": "2026-09-28T13:31:10Z",
   "drukte": "rustig",
   "gesprekken": 1,
   "stats": {
@@ -17,7 +17,7 @@
       "tijd": "11:15",
       "titel": "Schadeverwerking vertraging en autoverzekeringsvragen",
       "personen": "Verzekerde: M.G. Gowda · Dewi Verver | Juridisch Medewerker",
-      "samenvatting": "Dit is een intern teamgesprek tussen twee HTJZ-medewerkers over operationele zaken (vertraging in schadeverwerking, autoverzekeringsbelletjes, afkoopfrequentie, dashboard-issues). Er is geen externe beller met een juridische vraag. De beller (M.G. Gowda) is wel geverifieerd via automatische Zoho-herkenning, maar dit is geen klantcontact van een juridische helpdesk, dus verkeerd verbonden.",
+      "samenvatting": "Dit is een intern teamgesprek tussen twee HTJZ-medewerkers (geen inkomend klantenbel) waarin zij werkzaken bespreken: vertraging bij schadeverwerking (>24 uur voor schadenummer), veel autoverzekeringsbellen, afkoopfrequentie, en samenwerking met Brandmeester. Er is geen externe beller, geen polis- of identiteitsverificatie van een klant nodig geweest, en geen inhoudelijk juridisch advies aan een cliënt gegeven.",
       "tags": [
         [
           "tag-overig",
@@ -32,17 +32,16 @@
       "verkeerdVerbonden": true,
       "rechtsbijstandVerwijzing": false,
       "adviesGegeven": false,
-      "identiteitGeverifieerd": true
+      "identiteitGeverifieerd": false
     }
   ],
   "acties": [],
   "analyse": {
     "goed": [
-      "11:15 Schadeverwerking: Medewerker heeft correct herkend dat dit een intern teamgesprek betreft en geen juridische cliëntvraag. Geen onnodig advies gegeven aan verkeerd nummer.",
-      "11:15 Schadeverwerking: Identiteit correct geverifieerd via Zoho-systeem (M.G. Gowda)."
+      "11:15 Schadeverwerking: Intern teamgesprek, geen externe klant – polis/identiteitsverificatie terecht niet van toepassing"
     ],
     "beter": [
-      "11:15 Schadeverwerking: Dit gesprek had eerder in het callflow moeten worden herkend als intern/operationeel en doorverbonden naar de juiste afdeling. Zorg voor duidelijke triage-procedures om team-interne vragen niet naar de juridische helpdesk te routeren."
+      "11:15 Schadeverwerking: Dit is een intern teamgesprek, geen klantenbel. Voor toekomstige kwaliteitsbeoordeling: alleen inkomende klantengesprekken evalueren (waar verificatie, advies en dekkingscontrole relevant zijn)"
     ]
   },
   "verkeerdVerbonden": {

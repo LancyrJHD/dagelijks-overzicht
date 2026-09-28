@@ -1,6 +1,6 @@
 {
   "date": "2026-09-28",
-  "generated_at": "2026-09-28T13:20:53Z",
+  "generated_at": "2026-09-28T13:30:57Z",
   "tickets": [
     {
       "ticketNumber": "2793",
@@ -85,21 +85,33 @@
       "webUrl": "https://desk.zoho.eu/support/htjzlancyr/ShowHomePage.do#Cases/dv/195464000014274284",
       "channel": "Email",
       "doorgezetBrandmeester": false
+    },
+    {
+      "ticketNumber": "2808",
+      "tijd": "15:26",
+      "titel": "VSO check BR",
+      "klant": "E. deVries",
+      "status": "In de wacht",
+      "statusType": "",
+      "prioriteit": "Niet ingesteld",
+      "webUrl": "https://desk.zoho.eu/support/htjzlancyr/ShowHomePage.do#Cases/dv/195464000014306001",
+      "channel": "Phone",
+      "doorgezetBrandmeester": false
     }
   ],
   "channelCounts": {
-    "Phone": 6,
+    "Phone": 7,
     "Email": 1
   },
   "brandmeesterCount": 2,
   "ticketStats": {
-    "nieuweVandaag": 7,
+    "nieuweVandaag": 8,
     "geslotenVandaag": 18,
-    "totaalOpen": 14,
-    "inDeWacht": 14,
+    "totaalOpen": 15,
+    "inDeWacht": 15,
     "statusBreakdown": {
-      "Gesloten": 679,
-      "In de wacht": 14
+      "In de wacht": 15,
+      "Gesloten": 679
     },
     "capBereikt": false
   }
