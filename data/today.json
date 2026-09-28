@@ -1,6 +1,6 @@
 {
   "date": "2026-09-28",
-  "generated_at": "2026-09-28T11:24:31Z",
+  "generated_at": "2026-09-28T11:31:18Z",
   "drukte": "rustig",
   "gesprekken": 1,
   "stats": {
@@ -17,7 +17,7 @@
       "tijd": "11:15",
       "titel": "Schadeverwerking vertraging en autoverzekeringsvragen",
       "personen": "Verzekerde: M.G. Gowda · Dewi Verver | Juridisch Medewerker",
-      "samenvatting": "Dit is een intern teamgesprek tussen HTJZ-medewerkers over werkprocessen, niet een gesprek met een beller/verzekerden. De onderwerpen zijn: vertraging in schadeverwerking (langer dan 24 uur voor schadenummers), veel inkomende autoverzekeringsbelletjes, afkoopfrequentie, en samenwerking met Brandmeester. Er is geen inhoudelijk juridisch advies gegeven aan een verzekerden, geen identiteitsverificatie van een beller gedaan, en geen dekkingsvraag beoordeeld.",
+      "samenvatting": "Dit is een intern teamgesprek tussen medewerkers, geen beller met juridische vraag. De spreker bespreekt operationele zaken zoals vertraging in schadeverwerking, autoverzekeringsbelletjes, en afkoopcijfers. Er is geen inhoudelijk juridisch advies gegeven aan een cliënt.",
       "tags": [
         [
           "tag-overig",
@@ -38,10 +38,10 @@
   "acties": [],
   "analyse": {
     "goed": [
-      "11:15 - Schadeverwerking: Juist afgehandeld als intern teamgesprek zonder geldige klantinteractie; geen verificatie of advies vereist"
+      "11:15 Schadeverwerking: Correct geregistreerd dat dit een intern teamgesprek betrof (geen cliënt), dus geen verificatie- of adviesverplichting van toepassing."
     ],
     "beter": [
-      "11:15 - Schadeverwerking: Overweeg procesmaatregelen voor de geconstateerde vertragingen (schadenummers >24 uur) om toekomstige klantencontacten voortaan sneller af te handelen"
+      "11:15 Schadeverwerking: Dit gesprek had niet in de cliëntlog thuis hoort (geen juridische cliëntvraag). Zorg voor duidelijkere scheiding tussen interne operationele gesprekken en cliëntkwesties in toekomstige rapportage."
     ]
   },
   "verkeerdVerbonden": {
