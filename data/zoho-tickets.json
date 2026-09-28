@@ -1,6 +1,6 @@
 {
   "date": "2026-09-28",
-  "generated_at": "2026-09-28T09:40:42Z",
+  "generated_at": "2026-09-28T09:50:44Z",
   "tickets": [
     {
       "ticketNumber": "2792",
@@ -48,10 +48,11 @@
     "nieuweVandaag": 3,
     "geslotenVandaag": 10,
     "totaalOpen": 18,
-    "inDeWacht": 18,
+    "inDeWacht": 17,
     "statusBreakdown": {
+      "Open": 1,
       "Gesloten": 671,
-      "In de wacht": 18
+      "In de wacht": 17
     },
     "capBereikt": false
   }
