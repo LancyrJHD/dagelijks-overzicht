@@ -1,6 +1,6 @@
 {
   "date": "2026-09-28",
-  "generated_at": "2026-09-28T12:31:15Z",
+  "generated_at": "2026-09-28T12:40:59Z",
   "drukte": "rustig",
   "gesprekken": 1,
   "stats": {
@@ -17,7 +17,7 @@
       "tijd": "11:15",
       "titel": "Schadeverwerking vertraging en autoverzekeringsvragen",
       "personen": "Verzekerde: M.G. Gowda · Dewi Verver | Juridisch Medewerker",
-      "samenvatting": "Dit is een intern werkgesprek tussen twee HTJZ-medewerkers over operationele zaken (schadeverwerking, vertraging in schadenummers, autoverzekeringsbelletjes, afkoop en samenwerking met Brandmeester), niet een gesprek met een externe beller/verzekerde. Er is geen inhoudelijk juridisch advies gegeven aan een cliënt, geen identiteitsverificatie van een verzekerde nodig geweest, en geen juridische dekkingsvraag beoordeeld.",
+      "samenvatting": "Dit is een intern teamgesprek tussen twee HTJZ-medewerkers over werkzaamheden en procesgang, niet een gesprek met een verzekerdenklant. De beller (werknemers-perspectief) meldt vertraging in schadeverwerking (>24 uur voor schadenummers) en veel autoverzekeringsbelletjes; de ander belooft dit door te geven aan de schadeasfdeling. Er is geen juridische advisering aan een klant gegeven. Identiteit is niet geverifieerd omdat dit geen klantgesprek is.",
       "tags": [
         [
           "tag-overig",
@@ -39,7 +39,8 @@
   "analyse": {
     "goed": [],
     "beter": [
-      "Dit is geen extern beller-gesprek, maar een intern werkgesprek tussen HTJZ-medewerkers. Dit mag niet in de kwaliteitsanalyse voor de Lancyr Juridische Helpdesk worden opgenomen. De focus van deze analyse moet liggen op daadwerkelijke contact met verzekeringnemers/bellers waar juridische kwaliteitsnormen (identiteitsverificatie, dekkingscontrole, deadline-afspraken) van toepassing zijn."
+      "11:15 'Schadeverwerking vertraging en autoverzekeringsvragen': Dit is geen klantgesprek maar een intern teamgesprek tussen HTJZ-medewerkers. Voor de kwaliteitsbeoordeling van de Lancyr Juridische Helpdesk zijn alleen gesprekken met verzekerdenklanten relevant. Dit gesprek had niet in de analyselijst opgenomen moeten worden.",
+      "Controleer het routeringsproces: interne gesprekken en 'verkeerd nummer'-gesprekken horen niet thuis in het kwaliteitsrapport voor juridische klantadvisering."
     ]
   },
   "verkeerdVerbonden": {
