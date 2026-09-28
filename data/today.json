@@ -1,6 +1,6 @@
 {
   "date": "2026-09-28",
-  "generated_at": "2026-09-28T13:31:10Z",
+  "generated_at": "2026-09-28T13:41:01Z",
   "drukte": "rustig",
   "gesprekken": 1,
   "stats": {
@@ -11,13 +11,13 @@
     "geenDekking": 0,
     "verkeerdNummer": 1
   },
-  "score": 8.5,
+  "score": 0.0,
   "conversations": [
     {
       "tijd": "11:15",
       "titel": "Schadeverwerking vertraging en autoverzekeringsvragen",
       "personen": "Verzekerde: M.G. Gowda · Dewi Verver | Juridisch Medewerker",
-      "samenvatting": "Dit is een intern teamgesprek tussen twee HTJZ-medewerkers (geen inkomend klantenbel) waarin zij werkzaken bespreken: vertraging bij schadeverwerking (>24 uur voor schadenummer), veel autoverzekeringsbellen, afkoopfrequentie, en samenwerking met Brandmeester. Er is geen externe beller, geen polis- of identiteitsverificatie van een klant nodig geweest, en geen inhoudelijk juridisch advies aan een cliënt gegeven.",
+      "samenvatting": "Dit is een intern teambesprekingsgesprek tussen medewerkers van HTJZ/Lancyr, niet een gesprek met een verzekeringsklant. Er wordt gesproken over operationele zaken zoals vertragingen in schadeverwerking, autoverzekeringsbelletjes, afkoopfrequentie en samenwerking met de Brandmeester-afdeling. Geen juridisch advies is gegeven aan een klant, geen identiteitsverificatie van een klant heeft plaatsgevonden.",
       "tags": [
         [
           "tag-overig",
@@ -37,11 +37,9 @@
   ],
   "acties": [],
   "analyse": {
-    "goed": [
-      "11:15 Schadeverwerking: Intern teamgesprek, geen externe klant – polis/identiteitsverificatie terecht niet van toepassing"
-    ],
+    "goed": [],
     "beter": [
-      "11:15 Schadeverwerking: Dit is een intern teamgesprek, geen klantenbel. Voor toekomstige kwaliteitsbeoordeling: alleen inkomende klantengesprekken evalueren (waar verificatie, advies en dekkingscontrole relevant zijn)"
+      "11:15 – 'Schadeverwerking vertraging en autoverzekeringsvragen': Dit was een intern teambesprekingsgesprek, geen klantcontact. Dit mag niet als een klantenservicegesprek worden geregistreerd in het kwaliteitssysteem. Zorg ervoor dat interne gesprekken en externe klantcontacten strikt gescheiden worden gehouden."
     ]
   },
   "verkeerdVerbonden": {
