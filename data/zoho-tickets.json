@@ -1,6 +1,6 @@
 {
   "date": "2026-09-28",
-  "generated_at": "2026-09-28T12:10:49Z",
+  "generated_at": "2026-09-28T12:20:50Z",
   "tickets": [
     {
       "ticketNumber": "2792",
@@ -121,22 +121,34 @@
       "webUrl": "https://desk.zoho.eu/support/htjzlancyr/ShowHomePage.do#Cases/dv/195464000014304066",
       "channel": "Phone",
       "doorgezetBrandmeester": false
+    },
+    {
+      "ticketNumber": "2806",
+      "tijd": "14:18",
+      "titel": "Raamregels op kantoor en escalatie naar HR",
+      "klant": "E.S. Start",
+      "status": "Gesloten",
+      "statusType": "",
+      "prioriteit": "Niet ingesteld",
+      "webUrl": "https://desk.zoho.eu/support/htjzlancyr/ShowHomePage.do#Cases/dv/195464000014296013",
+      "channel": "Phone",
+      "doorgezetBrandmeester": false
     }
   ],
   "channelCounts": {
     "Email": 5,
-    "Phone": 5
+    "Phone": 6
   },
   "brandmeesterCount": 0,
   "ticketStats": {
-    "nieuweVandaag": 10,
-    "geslotenVandaag": 12,
+    "nieuweVandaag": 11,
+    "geslotenVandaag": 13,
     "totaalOpen": 23,
     "inDeWacht": 18,
     "statusBreakdown": {
-      "Gesloten": 673,
-      "Open": 5,
-      "In de wacht": 18
+      "In de wacht": 18,
+      "Gesloten": 674,
+      "Open": 5
     },
     "capBereikt": false
   }
