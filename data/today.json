@@ -1,6 +1,6 @@
 {
   "date": "2026-09-28",
-  "generated_at": "2026-09-28T13:01:26Z",
+  "generated_at": "2026-09-28T13:11:06Z",
   "drukte": "rustig",
   "gesprekken": 1,
   "stats": {
@@ -11,13 +11,13 @@
     "geenDekking": 0,
     "verkeerdNummer": 1
   },
-  "score": 8.5,
+  "score": 0.0,
   "conversations": [
     {
       "tijd": "11:15",
       "titel": "Schadeverwerking vertraging en autoverzekeringsvragen",
       "personen": "Verzekerde: M.G. Gowda · Dewi Verver | Juridisch Medewerker",
-      "samenvatting": "Dit is een intern werkgesprek tussen HTJZ-medewerkers (geen klantgesprek) waarin ze operationele zaken bespreken: vertraging in schadeverwerking (>24 uur voor schadenummer), veel inkomende autoverzekeringsbelletjes, afkoopfrequentie en samenwerking met Brandmeester. Er is geen sprake van juridisch advies aan een verzekerde, geen verificatie van een klant en geen inhoudelijke juridische beoordeling van een zaak.",
+      "samenvatting": "Dit is een intern collegegesprek tussen twee HTJZ-medewerkers, geen echte klantinteractie. Ze bespreken operationele zaken zoals vertragingen in schadeverwerking, autoverzekeringsbelletjes en afkoopfrequentie. Er is geen inhoudelijk juridisch advies gegeven aan een verzekerde; de beller is niet geverifieerd omdat dit geen daadwerkelijk klantgesprek is.",
       "tags": [
         [
           "tag-overig",
@@ -37,11 +37,9 @@
   ],
   "acties": [],
   "analyse": {
-    "goed": [
-      "11:15 Schadeverwerking: Intern werkgesprek correct herkend als niet-klantgesprek. Geen verificatie- of adviesvereisten van toepassing omdat dit een operationele afstemming tussen HTJZ-medewerkers is, geen juridische advisering aan een verzekerde."
-    ],
+    "goed": [],
     "beter": [
-      "11:15 Schadeverwerking: Zorg dat inkomende oproepen beter worden gerouted of geclassificeerd, gegeven de frequent voorkomende autoverzekeringsbelletjes. Dit voorkomt verdere doorverbindingen naar intern werkoverleg."
+      "11:15 'Schadeverwerking vertraging en autoverzekeringsvragen': Dit is geen klantgesprek maar een intern collegegesprek. Dit zou niet in de kwaliteitsaudit voor klantinteracties opgenomen moeten zijn. Zorg dat interne gesprekken en 'verkeerd nummer'-situaties uit de analyseset worden gefilterd voordat ze ter beoordeling worden aangeboden."
     ]
   },
   "verkeerdVerbonden": {
