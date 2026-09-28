@@ -1,6 +1,6 @@
 {
   "date": "2026-09-28",
-  "generated_at": "2026-09-28T13:41:01Z",
+  "generated_at": "2026-09-28T13:51:20Z",
   "drukte": "rustig",
   "gesprekken": 1,
   "stats": {
@@ -11,13 +11,13 @@
     "geenDekking": 0,
     "verkeerdNummer": 1
   },
-  "score": 0.0,
+  "score": 8.5,
   "conversations": [
     {
       "tijd": "11:15",
       "titel": "Schadeverwerking vertraging en autoverzekeringsvragen",
       "personen": "Verzekerde: M.G. Gowda · Dewi Verver | Juridisch Medewerker",
-      "samenvatting": "Dit is een intern teambesprekingsgesprek tussen medewerkers van HTJZ/Lancyr, niet een gesprek met een verzekeringsklant. Er wordt gesproken over operationele zaken zoals vertragingen in schadeverwerking, autoverzekeringsbelletjes, afkoopfrequentie en samenwerking met de Brandmeester-afdeling. Geen juridisch advies is gegeven aan een klant, geen identiteitsverificatie van een klant heeft plaatsgevonden.",
+      "samenvatting": "Dit is een intern teamgesprek tussen twee HTJZ-medewerkers over werkprocessen, niet een gesprek met een verzekeringsklant. Er worden geen juridische vragen van klanten behandeld, maar alleen interne operationele zaken besproken (schadeverwerking, autoverzekeringsbelletjes, afkoopfrequentie en samenwerking met Brandmeester). Er is geen identiteitsverificatie van een klant nodig geweest en geen inhoudelijk juridisch advies aan een klant gegeven.",
       "tags": [
         [
           "tag-overig",
@@ -37,9 +37,11 @@
   ],
   "acties": [],
   "analyse": {
-    "goed": [],
+    "goed": [
+      "11:15 'Schadeverwerking vertraging en autoverzekeringsvragen': Medewerker heeft correct herkend dat dit een intern teamgesprek betreft en niet een klantcontact. Geen verificatie of advies nodig geweest; correct afgehandeld."
+    ],
     "beter": [
-      "11:15 – 'Schadeverwerking vertraging en autoverzekeringsvragen': Dit was een intern teambesprekingsgesprek, geen klantcontact. Dit mag niet als een klantenservicegesprek worden geregistreerd in het kwaliteitssysteem. Zorg ervoor dat interne gesprekken en externe klantcontacten strikt gescheiden worden gehouden."
+      "Let op voor toekomstige gesprekken: zorg dat interne teamgesprekken via interne kanalen plaatsvinden en niet via de externe klantenlijn. Dit helpt inefficiënte gesprekken te voorkomen en de klantenlijn beschikbaar te houden."
     ]
   },
   "verkeerdVerbonden": {
