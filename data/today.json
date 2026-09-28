@@ -1,6 +1,6 @@
 {
   "date": "2026-09-28",
-  "generated_at": "2026-09-28T12:51:08Z",
+  "generated_at": "2026-09-28T13:01:26Z",
   "drukte": "rustig",
   "gesprekken": 1,
   "stats": {
@@ -17,7 +17,7 @@
       "tijd": "11:15",
       "titel": "Schadeverwerking vertraging en autoverzekeringsvragen",
       "personen": "Verzekerde: M.G. Gowda · Dewi Verver | Juridisch Medewerker",
-      "samenvatting": "Dit is een intern teamgesprek tussen twee HTJZ-medewerkers over operationele en werkzaken (schadeverwerking, autoverzekeringsbelletjes, afkoop, samenwerking met Brandmeester), niet een juridisch adviesgesprek met een verzekerdecliente. De beller werd automatisch herkend in het systeem, maar er is geen inhoudelijk juridisch advies gegeven aan een klant.",
+      "samenvatting": "Dit is een intern werkgesprek tussen HTJZ-medewerkers (geen klantgesprek) waarin ze operationele zaken bespreken: vertraging in schadeverwerking (>24 uur voor schadenummer), veel inkomende autoverzekeringsbelletjes, afkoopfrequentie en samenwerking met Brandmeester. Er is geen sprake van juridisch advies aan een verzekerde, geen verificatie van een klant en geen inhoudelijke juridische beoordeling van een zaak.",
       "tags": [
         [
           "tag-overig",
@@ -32,17 +32,16 @@
       "verkeerdVerbonden": true,
       "rechtsbijstandVerwijzing": false,
       "adviesGegeven": false,
-      "identiteitGeverifieerd": true
+      "identiteitGeverifieerd": false
     }
   ],
   "acties": [],
   "analyse": {
     "goed": [
-      "11:15 Schadeverwerking: Beller werd automatisch in het systeem herkend (identiteit_geverifieerd = true)",
-      "11:15 Schadeverwerking: Medewerker heeft correct gereageerd op 'verkeerd nummer' en geen ongepast advies gegeven aan intern gesprek"
+      "11:15 Schadeverwerking: Intern werkgesprek correct herkend als niet-klantgesprek. Geen verificatie- of adviesvereisten van toepassing omdat dit een operationele afstemming tussen HTJZ-medewerkers is, geen juridische advisering aan een verzekerde."
     ],
     "beter": [
-      "11:15 Schadeverwerking: Dit was een intern teamgesprek, geen klantencontact – zorg dat dergelijke gesprekken via interne kanalen lopen en niet via de helpdesk-lijn"
+      "11:15 Schadeverwerking: Zorg dat inkomende oproepen beter worden gerouted of geclassificeerd, gegeven de frequent voorkomende autoverzekeringsbelletjes. Dit voorkomt verdere doorverbindingen naar intern werkoverleg."
     ]
   },
   "verkeerdVerbonden": {
