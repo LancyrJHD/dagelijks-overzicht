@@ -1,23 +1,23 @@
 {
   "date": "2026-09-28",
-  "generated_at": "2026-09-28T14:32:59Z",
+  "generated_at": "2026-09-28T14:42:49Z",
   "drukte": "druk",
   "gesprekken": 20,
   "stats": {
-    "opgelost": 5,
+    "opgelost": 3,
     "brandmeester": 7,
     "afkoop": 0,
-    "terugbel": 0,
-    "geenDekking": 0,
+    "terugbel": 1,
+    "geenDekking": 1,
     "verkeerdNummer": 8
   },
-  "score": 7.8,
+  "score": 7.4,
   "conversations": [
     {
       "tijd": "09:32",
       "titel": "Verkeerde nummer: reisverzekeringsclaim bij juridische helpdesk",
       "personen": "Verzekerde: anoniem · Senne Duifhuis | Juridisch medewerker",
-      "samenvatting": "Beller belt de juridische helpdesk met een vraag over schadeclaim voor reisverzekering. De medewerker stelt vast dat de beller geen rechtsbijstandsverzekering maar een reisverzekering heeft, en dat dit het verkeerde nummer is. De beller wordt niet geverifieerd in het systeem en krijgt geen juridisch advies, maar wordt doorverwezen naar zelfhulp (Google) voor het juiste telefoonnummer van de reisverzekering.",
+      "samenvatting": "Beller belt verkeerd nummer: hij heeft een reisverzekeringsclaim en werd door AI doorverwezen naar de juridische helpdesk (rechtsbijstandsverzekering), maar hoort bij het schadeclaim-callcenter van de reisverzekering. De medewerker realiseert zich snel dat dit een verkeerd nummer is, geeft geen inhoudelijk juridisch advies, en adviseert de beller zelf het juiste nummer op te zoeken. Identiteit is niet geverifieerd in het systeem.",
       "tags": [
         [
           "tag-overig",
@@ -37,12 +37,12 @@
     {
       "tijd": "09:48",
       "titel": "Erfenis en schenking: advies bij moeder in verzorgingstehuis",
-      "personen": "Verzekerde: M.H. Gubbels · Senne Duifhuis",
-      "samenvatting": "Beller (geverifieerd via postcode/naam) vraagt juridisch advies over erfenisaanvaarding versus afstand van erfenis wanneer zijn moeder spoedig zal overlijden. Beller heeft al spullen uit moederserf huis gehaald en wil weten of hij deze mag behouden zonder erfenis aan te vaarden, en hoe schenking vast te leggen. Medewerker gaf basisadvies (schenking vastleggen via schriftelijke verklaring van moeder) maar verwees zaak vanwege complexiteit (erfrecht, uiterste wilsbeschikking, mogelijk erfbelasting) door naar rechtsbijstandsafdeling Brandmeester.",
+      "personen": "Verzekerde: M.H. Gubbels · Senne Duifhuis | Juridisch medewerker",
+      "samenvatting": "Beller (geverifieerd via postcode en naam Kribbels) belt over de erfenis van zijn moeder, die zojuist in een verzorgingstehuis is opgenomen en naar verwachting spoedig zal overlijden. Hij heeft al spullen met emotionele waarde uit haar woning gehaald en wil weten of hij, indien hij de erfenis afslaat, aansprakelijk is voor de resterende woningschulden (ca. EUR 20.000 voor oplevering). De medewerker gaf enig advies over schenking vastleggen, maar verwees de zaak vervolgens door naar Brandmeester (rechtsbijstand) omdat de juridische vraag complex is en een artikel-interpretatie nodig is.",
       "tags": [
         [
           "tag-overig",
-          "Erfrecht"
+          "Erfenisrecht"
         ]
       ],
       "uitkomst": [
@@ -59,7 +59,7 @@
       "tijd": "10:06",
       "titel": "Verkeerde nummer: doorverwijzing naar autoverzekeringsteam",
       "personen": "Verzekerde: M.H. Gubbels · Senne Duifhuis | Juridisch medewerker",
-      "samenvatting": "Beller Adriaan Raagvoog belde de Juridische Helpdesk maar had eigenlijk een vraag over autoverzekering. De medewerker stelde vast dat de beller verkeerd verbonden was en verwees hem door naar het autoverzekeringsteam. De beller is geverifieerd via postcode en naam, maar geen inhoudelijk juridisch advies is gegeven omdat het onderwerp niet onder de juridische helpdesk valt.",
+      "samenvatting": "Beller Adriaan Raagvoog belt met een vraag over autoverzekering en is daardoor verkeerd verbonden met de Juridische Helpdesk. De medewerker identificeert snel dat het om autoverzekering gaat (niet rechtsbijstand) en verwijst de beller door naar het autoverzekeringsteam. Geen inhoudelijk juridisch advies is gegeven; dit is een routeringsfout.",
       "tags": [
         [
           "tag-overig",
@@ -80,7 +80,7 @@
       "tijd": "10:08",
       "titel": "Verkeerde afdeling doorverwezen – autoverzekering",
       "personen": "Verzekerde: M.H. Gubbels · Senne Duifhuis | Juridisch medewerker",
-      "samenvatting": "Beller belt voor autoverzekeringszaak (vermoedelijk schadeclaim/accident department), niet voor juridische rechtsbijstandsverzekering. Medewerker Senna heeft correct geïdentificeerd dat dit de verkeerde afdeling is en heeft beller doorverwezen naar de autoverzekeringspagina van Lancyr website. Beller is via telefoonnummer automatisch geverifieerd in het systeem (M.H. Gubbels), maar er is geen inhoudelijk juridisch advies gegeven omdat het onderwerp niet onder juridische rechtsbijstand valt.",
+      "samenvatting": "Beller belt voor een autoverzekeringskwestie (schadeclaim/ongelukken-afdeling), niet voor juridische rechtsbijstand. De medewerker (Senna) stelt correct vast dat dit een autoverzekeringsvraag is en niet onder de juridische helpdesk valt, en verwijst de beller door naar de juiste afdeling (autoverzekeringspagina op de Lancyr-website). De beller is automatisch geverifieerd via telefoonnummer (Zoho-match M.H. Gubbels), maar geen inhoudelijk juridisch advies is gegeven omdat het onderwerp niet relevant is voor deze helpdesk.",
       "tags": [
         [
           "tag-overig",
@@ -101,16 +101,16 @@
       "tijd": "10:43",
       "titel": "Geldleningsovereenkomst: ingebreken stelling en wanprestatie met mevrouw Van Maassen",
       "personen": "Verzekerde: M.G. Gowda · Senne Duifhuis | Juridisch medewerker",
-      "samenvatting": "Mevrouw Van Maassen belt over een particuliere geldleningsovereenkomst waarbij de wederpartij tussentijdse afspraken niet nakomt. De medewerker stelt vast dat particuliere leningen niet onder de polis vallen (artikel 9.3.2), maar geeft wel eerstelijns juridisch advies: het sturen van een ingebrekenstelling, waarna de wederpartij in verzuim komt en wanprestatie kan worden vastgesteld onder artikel 674 BW, met mogelijkheid schadevergoeding in te vorderen. De beller is automatisch geverifieerd via telefoonnummer en ontvangt inhoudelijk juridisch advies.",
+      "samenvatting": "Mevrouw Van Maassen belt over een particuliere geldleningsovereenkomst waarbij de wederpartij tussentijdse afspraken niet nakomt. De medewerker stelt vast dat particuliere leningen niet onder de polis vallen (artikel 9.3.2), maar geeft wel eerstelijns juridisch advies: het opstellen van een ingebreken­stelling, uitleg over wanprestatie (artikel 674 BW), en hoe verzuim ontstaat. De beller wordt niet geverifieerd in het gesprek zelf, maar het systeem herkent haar automatisch op telefoonnummer; advies is wel gegeven.",
       "tags": [
         [
           "tag-overig",
-          "Contractenrecht / Geldleningsovereenkomst"
+          "Geldleningsovereenkomst / contractuele geschillen"
         ]
       ],
       "uitkomst": [
-        "outcome-opgelost",
-        "Telefonisch opgelost"
+        "outcome-geen-dekking",
+        "Geen dekking"
       ],
       "terugbel": false,
       "verkeerdVerbonden": false,
@@ -122,7 +122,7 @@
       "tijd": "10:53",
       "titel": "Werkgever ontslag en juridische bijstand met Gowda",
       "personen": "Verzekerde: M.G. Gowda · Senne Duifhuis | Juridisch medewerker",
-      "samenvatting": "Beller Gowda (geverifieerd via Zoho-automatische herkenning op telefoonnummer) belde met een arbeidsconflict: werkgever dreigt mogelijk ontslag in context van personeelsreductie. Medewerker gaf advies dat er momenteel geen concrete aanleiding voor juridische stappen is omdat de beller nog geen formeel ontslagbericht heeft ontvangen, en stelde voor later opnieuw contact op te nemen zodra er bewijs van ontslag is. Geen rechtsbijstand verwijzing gegeven.",
+      "samenvatting": "Beller Gowda (geverifieerd via Zoho automatische herkenning) raadpleegde de helpdesk over mogelijke ontslag door werkgever, vergelijkbaar met een vorig jaar opgelost arbeidsconflict. De medewerker adviseerde dat zonder concreet bewijs van ontslag (zoals een officiële medeling van HR) er nog geen juridische basis bestaat om rechtsbijstand in te zetten, en stelde voor dat Gowda later opnieuw contact opneemt zodra hij een concrete mededeling van HR ontvangt. Geen inhoudelijk juridisch advies gegeven, maar wel een correcte triage-uitkomst.",
       "tags": [
         [
           "tag-arbeidsrecht",
@@ -130,20 +130,20 @@
         ]
       ],
       "uitkomst": [
-        "outcome-opgelost",
-        "Telefonisch opgelost"
+        "outcome-terugbel",
+        "Terugbellen"
       ],
-      "terugbel": false,
+      "terugbel": true,
       "verkeerdVerbonden": false,
       "rechtsbijstandVerwijzing": false,
-      "adviesGegeven": true,
+      "adviesGegeven": false,
       "identiteitGeverifieerd": true
     },
     {
       "tijd": "11:04",
       "titel": "Telefoongesprek verzekeringsklant doorverwezen naar juiste afdeling",
       "personen": "Verzekerde: M.G. Gowda · Senne Duifhuis | Juridisch medewerker",
-      "samenvatting": "Beller beide de juridische helpdesk met een vraag over annulering van autoverzekering. De medewerker (Senna) stelde vast dat dit een verzekeringsadministratieve vraag is die niet onder de juridische helpdesk valt, en verwees de beller door naar de website voor de juiste afdeling. De beller is via telefoonnummer automatisch geverifieerd in het systeem, maar er is geen inhoudelijk juridisch advies gegeven omdat het onderwerp niet onder de juridische helpdesk hoort.",
+      "samenvatting": "De beller belt de juridische helpdesk van Lancyr met een vraag over de status van zijn autoverzekering (of deze is geannuleerd). De medewerker Senna verifiëert de beller via postcode en naam, stelt vast dat het om autoverzekeringszaken gaat, en verklaart dat dit niet onder de juridische afdeling valt. De beller wordt doorverwezen naar de website/juiste afdeling voor autoverzekeringskwesties.",
       "tags": [
         [
           "tag-overig",
@@ -164,7 +164,7 @@
       "tijd": "11:15",
       "titel": "Schadeverwerking vertraging en autoverzekeringsvragen",
       "personen": "Verzekerde: M.G. Gowda · Dewi Verver | Juridisch Medewerker",
-      "samenvatting": "Dit is een intern werkgesprek tussen twee HTJZ-medewerkers, geen gesprek met een verzekerden-beller. De medewerkers bespreken operationele zaken zoals vertraging bij schadeverwerking, autoverzekeringsbelletjes, afkoopfrequentie en samenwerking met Brandmeester. Er is geen inhoudelijk juridisch advies gegeven aan een klant en geen dekkingsvraag beoordeeld.",
+      "samenvatting": "Dit is een intern teamgesprek tussen HTJZ-medewerkers over werkprocessen en niet een gesprek met een verzekerde. De onderwerpen zijn: vertraging bij schadeverwerking (>24 uur wachten op schadenummer), frequentie van autoverzekeringsbelletjes, afkoopzaken en samenwerking met Brandmeester. Er is geen juridische vraag van een verzekerde behandeld en geen inhoudelijk juridisch advies gegeven.",
       "tags": [
         [
           "tag-overig",
@@ -185,11 +185,11 @@
       "tijd": "12:04",
       "titel": "VVE-geschil en verzekeringskwestie met Gerard Kuuman",
       "personen": "Verzekerde: G. Schuurman · Senne Duifhuis | Juridisch medewerker",
-      "samenvatting": "Beller Gerard Kuuman belt over een VVE-geschil met een claim van 2,5 miljoen en agressieve correspondentie van de nieuwe VVE-voorzitter. De medewerker verklaart dat dit buiten zijn expertise valt en verwist de beller door naar de rechtsbijstandsafdeling. Daarnaast signaleert de beller dat hij sinds april een BV is (geen ZZP meer), waarvoor de medewerker hem naar het informatiepunt verwijst. Identiteit is automatisch geverifieerd via telefoonnummer; geen inhoudelijk juridisch advies is gegeven.",
+      "samenvatting": "Beller Gerard Kuuman belt met een VVE-geschil (conflict met voorzitter over claim van €2,5 miljoen en verzoek om projectcommunicatie). De medewerker verklaart dit buiten eigen expertise te vallen en verwijst naar rechtsbijstand. Daarnaast komt naar voren dat beller in april van ZZP naar BV is overgegaan, wat een verzekeringsadministratieve kwestie oplevert. Beller wordt naar info.lancerverzekeringen.nl doorverwezen voor die administratieve vraag. Identiteit is via Zoho automatisch geverifieerd, maar inhoudelijk juridisch advies over het geschil zelf is niet gegeven.",
       "tags": [
         [
-          "tag-overig",
-          "VVE-geschil / rechtsbijstandsvraag"
+          "tag-bouw",
+          "Bouwrecht / VVE-geschil"
         ]
       ],
       "uitkomst": [
@@ -206,11 +206,11 @@
       "tijd": "12:09",
       "titel": "Rechtsbijstand aanvraag en doorverwijzing naar Brandmeester",
       "personen": "Verzekerde: G. Schuurman · Senne Duifhuis | Juridisch medewerker",
-      "samenvatting": "Beller Guido (G. Schuurman) werd automatisch herkend via het systeem. De medewerker heeft de zaak zonder inhoudelijk juridisch advies te geven doorverwezen naar Brandmeester (rechtsbijstandsuitvoerder) voor verdere behandeling, met een schadenummer aangevraagd en een vervolgmail beloofd.",
+      "samenvatting": "Beller (G. Schuurman) werd automatisch herkend via telefoonnummer. De medewerker heeft de zaak zonder inhoudelijk advies te geven doorverwezen naar Brandmeester (rechtsbijstandsuitvoerder) via e-mail na ontvangst van een schadenummer. Geen juridisch advies is gegeven.",
       "tags": [
         [
           "tag-overig",
-          "Routering naar rechtsbijstand"
+          "Rechtsbijstandsdoorverwijzing"
         ]
       ],
       "uitkomst": [
@@ -227,11 +227,11 @@
       "tijd": "12:11",
       "titel": "Rechtsbijstandsverzekering en advocaatkosten met Scott Hamers",
       "personen": "Verzekerde: G. Schuurman · Senne Duifhuis | Juridisch medewerker",
-      "samenvatting": "Beller Scott Hamers (postcode 6067, polis op naam Wogen) werd automatisch geverifieerd via telefoonnummer. Hij vroeg naar dekkingsvoorwaarden van zijn rechtsbijstandsverzekering voor advocaatkosten in het kader van een VSO-onderhandeling. De medewerker gaf geen inhoudelijk advies over de dekkingsomvang, maar verwees hem door naar Davy (rechtsbijstandsmedewerker) voor verdere behandeling van deze specifieke dekkingsvraag.",
+      "samenvatting": "Beller Scott Hamers (postcode 6067, polis op naam Wogen) heeft rechtsbijstandsverzekering en vraagt of zijn advocaatkosten worden vergoed in het kader van onderhandelingen over een vaststellingsovereenkomst (VSO). De medewerker verifieert de beller via postcode en polisnummer, maar geeft geen inhoudelijk advies over de dekkingsvraag. In plaats daarvan verwijst de medewerker de beller door naar Davy (rechtsbijstandsafdeling) voor beantwoording van deze specifieke dekkingsvraag.",
       "tags": [
         [
           "tag-overig",
-          "Rechtsbijstandsverzekering"
+          "Rechtsbijstandsverzekering - advocaatkosten"
         ]
       ],
       "uitkomst": [
@@ -248,7 +248,7 @@
       "tijd": "12:16",
       "titel": "Verzekeringaanvraag doorverwijzing naar juiste afdeling",
       "personen": "Verzekerde: G. Schuurman · Senne Duifhuis | Juridisch medewerker",
-      "samenvatting": "Beller Adria Schenko belt met een vraag over een lopende verzekeringaanvraag. De medewerker Senna realiseert zich dat dit een administratieve/verzekeringstechnische kwestie is die niet onder de juridische helpdesk valt, en verwijst de beller door naar de Lancyr-website om van daaruit het juiste nummer te bellen. De beller wordt niet geverifieerd en krijgt geen juridisch advies.",
+      "samenvatting": "Beller belt met een vraag over een lopende verzekeringaanvraag. De medewerker Senna realiseert zich dat dit geen juridische kwestie is maar een verzekeringsadministratieve aangelegenheid en verwijst de beller door naar de juiste afdeling (via de Lancyr-website). De beller is niet geverifieerd onder de naam Adria Schenko (Zoho toont 'G. Schuurman'), en er is geen inhoudelijk juridisch advies gegeven.",
       "tags": [
         [
           "tag-overig",
@@ -263,17 +263,17 @@
       "verkeerdVerbonden": true,
       "rechtsbijstandVerwijzing": false,
       "adviesGegeven": false,
-      "identiteitGeverifieerd": true
+      "identiteitGeverifieerd": false
     },
     {
       "tijd": "12:45",
       "titel": "KLM-vluchtvertraging: vergoeding en compensatie aanvragen",
       "personen": "Verzekerde: G.E. Vries · Senne Duifhuis | Juridisch medewerker",
-      "samenvatting": "Beller belt over een KLM-vluchtvertraging van 19 uur (Sicilië-Amsterdam, weekend). Medewerker heeft beller geverifieerd via postcode en achternaam (achteraf bevestigd via Zoho-systeemkoppeling). Medewerker geeft inhoudelijk advies: KLM volgt Europese richtlijn voor compensatie; beller moet eerst vergoeding aanvragen bij KLM, en bij onenigheid opnieuw contact opnemen. Geen doorverwijzing naar rechtsbijstand.",
+      "samenvatting": "Beller Vries belt over KLM-vluchtvertraging (19 uur) met mededelingsfalen (vliegveld dicht niet gecommuniceerd) en vraagt of hij recht heeft op meer dan standaardvergoeding naast hotelkosten. Identiteit geverifieerd via systeem (automatische Zoho-koppeling op telefoonnummer). Medewerker geeft advies dat KLM conform Europese richtlijn vergoeding uitkeert, raadt aan eerst compensatie aan te vragen en bij onenigheid opnieuw contact op te nemen.",
       "tags": [
         [
           "tag-overig",
-          "Vluchtvertraging (consumentenrecht)"
+          "Vluchtvertraging / Consumentenrecht"
         ]
       ],
       "uitkomst": [
@@ -290,7 +290,7 @@
       "tijd": "13:19",
       "titel": "Corendon vluchtclaim: ingebreken stelling en vervolgstappen",
       "personen": "Verzekerde: J. Ragamin · Senne Duifhuis | Juridisch medewerker",
-      "samenvatting": "Beller Rachamin belt met een vraag over een afgewezen vluchtclaim bij Corendon. De medewerker (Senna) heeft de beller geverifieerd via postcode en naam. Er is inhoudelijk juridisch advies gegeven: de medewerker adviseert een ingebreken stelling per aangetekende mail in te dienen om de wederpartij in verzuim te laten treden, en licht toe dat non-respons of onvoldoende reactie automatisch tot verzuim leidt. De beller zal dit advies opvolgen en kan indien nodig later terugbellen.",
+      "samenvatting": "Beller Rachamin heeft een geschil met luchtvaartmaatschappij Corendon over een vluchtclaim die meerdere keren is afgewezen zonder duidelijke onderbouwing. De medewerker (Senna) adviseert een ingebreken stelling per aangetekende e-mail naar alle relevante Corendon-afdelingen te sturen om de wederpartij in verzuim te laten treden; als Corendon niet reageert of niet inhoudelijk ingaat, ontstaat automatisch verzuim. Beller is geverifieerd via postcode en achternaam, en er is inhoudelijk juridisch advies gegeven over proceduregang.",
       "tags": [
         [
           "tag-consument",
@@ -311,7 +311,7 @@
       "tijd": "13:48",
       "titel": "Raamregels op kantoor en escalatie naar HR",
       "personen": "Verzekerde: J. Ragamin · Senne Duifhuis | Juridisch medewerker",
-      "samenvatting": "Beller Evert Jan Stark (geverifieerd via postcode en Zoho-koppeling) belt over een conflict met collega's op het kantoor over raamregels en ventilatie. De medewerker geeft geen inhoudelijk juridisch advies, maar adviseert de beller om contact op te nemen met de HR-afdeling van zijn eigen bedrijf, aangezien het hier gaat om een interne werknemersconflict dat niet onder de juridische helpdesk valt.",
+      "samenvatting": "Beller (Evert Jan Stark, geverifieerd via postcode/adres) belt over een werkplekconflict op kantoor over raamregels en ventilatie. De medewerker (Senna) geeft geen inhoudelijk juridisch advies maar adviseert de beller om rechtstreeks contact op te nemen met de HR-afdeling van zijn eigen bedrijf, aangezien dit een intern arbeidsconflict tussen werknemers betreft dat niet onder de dekking van de rechtsbijstandsverzekering valt.",
       "tags": [
         [
           "tag-arbeidsrecht",
@@ -332,11 +332,11 @@
       "tijd": "14:28",
       "titel": "Rechtsbijstand doorverwijzing: kozijnaannemer en ingebreken stelling",
       "personen": "Verzekerde: E.S. Start · Senne Duifhuis | Juridisch medewerker",
-      "samenvatting": "Beller belt over een geschil met een kozijnaannemer die niet nakkomt aan afspraken en niet reageert. De medewerker geeft inhoudelijk juridisch advies over ingebreken stelling (termijn twee weken volgens jurisprudentie) en ontbinding van de overeenkomst. Beller is geverifieerd via automatische herkenning op telefoonnummer (Zoho-koppeling). De medewerker verwijst de zaak vervolgens door naar de rechtsbijstandsafdeling voor verdere behandeling en stelt dit met spoed in.",
+      "samenvatting": "Beller heeft rechtsbijstandsverzekering en belt over een geschil met een kozijnaannemer die niet nakwam aan afspraken. De medewerker gaf inhoudelijk juridisch advies over ingebreken stelling en redelijke termijnen (jurisprudentie twee weken), en verwees de zaak vervolgens expliciet door naar de rechtsbijstandsafdeling met spoedindicatie. Beller is geverifieerd via automatische herkenning (Zoho-match op telefoonnummer).",
       "tags": [
         [
-          "tag-bouw",
-          "Bouwrecht"
+          "tag-overig",
+          "Bouwrecht / Contractenrecht"
         ]
       ],
       "uitkomst": [
@@ -353,11 +353,11 @@
       "tijd": "14:48",
       "titel": "Rechtsbijstand voor erfenis en schuldhulpverlening",
       "personen": "Verzekerde: P.T.S. Gerritsma · Senne Duifhuis | Juridisch medewerker",
-      "samenvatting": "Beller (geverifieerd via postcode/naam in systeem) belt over erfenis en schuldhulpverlening van zijn zoon. De medewerker informeert dat de beller reeds 20-30 minuten eerder naar de rechtsbijstandsafdeling is doorverwezen en deze zal contact opnemen. Geen inhoudelijk juridisch advies gegeven tijdens dit gesprek.",
+      "samenvatting": "Beller (geverifieerd via postcode en achternaam Van der Weijden, automatisch herkend op telefoonnummer) belde met een erfenis- en schuldhulpvraag: moeder overleden, kleinkinderen krijgen een legaat, zoon zit in schuldhulpverlening met huis onder bewind. De medewerker stelde vast dat de beller ongeveer 20-30 minuten eerder al naar de rechtsbijstandsafdeling was doorgestuurd en bevestigde dat zij contact zullen opnemen. Geen inhoudelijk juridisch advies gegeven, alleen triage en verwijzing naar rechtsbijstand.",
       "tags": [
         [
           "tag-overig",
-          "Erfenisrecht en schuldhulpverlening"
+          "Erfenisrecht / Schuldhulpverlening"
         ]
       ],
       "uitkomst": [
@@ -374,7 +374,7 @@
       "tijd": "14:55",
       "titel": "Helpdesk doorverwijzing: premie-uitbetaling Golfie",
       "personen": "Verzekerde: P.T.S. Gerritsma · Senne Duifhuis | Juridisch medewerker",
-      "samenvatting": "De beller belt de juridische helpdesk met een vraag over premie-uitbetaling (170 euro retour), wat geen juridische aangelegenheid is. De medewerker stelt vast dat dit niet het juiste nummer is en verwijst de beller door naar de Landschier-afdeling via het keuzemenu. De beller wordt niet geverifieerd op naam/adres en krijgt geen inhoudelijk juridisch advies.",
+      "samenvatting": "Beller belt de juridische helpdesk met een vraag over premie-uitbetaling (170 euro terugvordering). De medewerker stelt vast dat dit geen juridische zaak is, maar een administratieve/financiële aangelegenheid van de verzekeringsafdeling, en verwijst de beller door naar het juiste nummer (Landschier) met instructie om het keuzemenu goed te volgen. Beller is niet geverifieerd (naam Golfie opgegeven, maar gekoppelde Zoho-contactpersoon is Gerritsma; geen match) en geen inhoudelijk juridisch advies gegeven.",
       "tags": [
         [
           "tag-overig",
@@ -389,13 +389,13 @@
       "verkeerdVerbonden": true,
       "rechtsbijstandVerwijzing": false,
       "adviesGegeven": false,
-      "identiteitGeverifieerd": true
+      "identiteitGeverifieerd": false
     },
     {
       "tijd": "15:19",
       "titel": "Vaststellingsovereenkomst ontslag en rechtsbijstand met Elko de Vries",
       "personen": "Verzekerde: E. deVries · Senne Duifhuis | Juridisch medewerker",
-      "samenvatting": "Beller Elko de Vries (geverifieerd via Zoho op telefoonnummer en postcode 1333) heeft een vaststellingsovereenkomst ontslag van zijn werkgever ontvangen en wil juridisch advies over zijn rechten en uitkeringsperspectief bij UWV. De medewerker heeft vastgesteld dat beller verzekerd is voor de module inkomen en heeft hem expliciet doorverwezen naar de rechtsbijstandsafdeling van Lancyr, die contact zal opnemen. Geen inhoudelijk juridisch advies is gegeven, maar een correcte triage naar rechtsbijstand heeft plaatsgevonden.",
+      "samenvatting": "Beller Elko de Vries (geverifieerd via systeem op telefoonnummer) belt met vragen over een vaststellingsovereenkomst ontslag aangeboden door werkgever. Medewerker stelt vast dat beller verzekerd is voor de module inkomen en verwijst de zaak expliciet door naar de rechtsbijstandsafdeling voor verdere behandeling, met uitleg dat rechtsbijstand contact zal opnemen via e-mail. Geen inhoudelijk juridisch advies gegeven door eerstelijns medewerker.",
       "tags": [
         [
           "tag-arbeidsrecht",
@@ -416,7 +416,7 @@
       "tijd": "15:43",
       "titel": "Doorverwijzing autoschade naar speciale helpdesk",
       "personen": "Verzekerde: E. deVries · Senne Duifhuis | Juridisch medewerker",
-      "samenvatting": "Beller beide met vraag over autoschade waarbij de andere partij schade heeft veroorzaakt. De medewerker stelde vast dat dit niet onder de juridische helpdesk valt en verwees de beller door naar de Lancyr-website voor autoschade. Beller werd niet geverifieerd in het gesprek zelf, hoewel het systeem de beller automatisch herkende op telefoonnummer.",
+      "samenvatting": "Beller belt met autoschade-vraag naar de juridische helpdesk, wat niet het juiste nummer is. De medewerker geeft correct aan dat autoschade niet onder de juridische helpdesk valt en verwijst de beller door naar de Lancyr-website voor autoschade. Beller is wel herkend in het systeem (E. deVries), maar geen juridisch advies gegeven omdat dit een verkeerde afdeling betreft.",
       "tags": [
         [
           "tag-overig",
@@ -437,24 +437,27 @@
   "acties": [],
   "analyse": {
     "goed": [
-      "09:48 Erfenis: correcte identiteitsverificatie en passend eerstelijns advies (schriftelijke verklaring schenking) alvorens complexe zaak door te verwijzen naar Brandmeester",
-      "10:43 Geldlening Van Maassen: juiste afweging dat particuliere leningen buiten polis vallen, maar toch waardevolle eerstelijns juridisch advies gegeven (ingebreken stelling, artikel 674 BW, schadevergoeding)",
-      "12:45 KLM-vluchtvertraging: identiteitsverificatie via postcode/naam, inhoudelijk advies over Europese richtlijn en actiestappen gegeven, zaak telefonisch opgelost",
-      "13:19 Corendon-vluchtclaim: correcte verwijzing naar ingebreken stelling per aangetekende mail met duidelijke juridische basis (verzuim), praktisch en concreet",
-      "14:28 Kozijnaannemer: solide eerstelijns juridisch advies (ingebreken stelling met twee weken termijn) voorafgaand aan doorverwijzing naar rechtsbijstand met spoed",
-      "Medewerkers herkennen consequent wanneer onderwerpen buiten juridische helpdesk vallen (autoverzekering, verzekeringsadministratie, HR-conflicten) en verwijzen correct door",
-      "Bij doorverwijzingen naar Brandmeester gebeurt dit doorgaans gegrond en getimeerd (09:48, 14:28 'met spoed', 15:19)"
+      "09:32 Verkeerde nummer reisverzekering: medewerker herkende snel dat dit een verkeerd nummer betrof en gaf geen inhoudelijk advies",
+      "09:48 Erfenis Van Maassen: identiteit geverifieerd (postcode/naam), zaak correct geëscaleerd naar Brandmeester vanwege complexiteit",
+      "10:06 Autoverzekering Raagvoog: routeringsfout snel opgelost, doorverwijzing naar juiste team",
+      "10:43 Geldleningsovereenkomst Van Maassen: identiteit automatisch geverifieerd, eerste-lijns juridisch advies gegeven (ingebreken stelling, wanprestatie artikel 674 BW) ondanks geen dekking",
+      "10:53 Werkgever ontslag Gowda: correcte triage, beller geverifieerd, duidelijk vervolgplan (terugbellen zodra officiële HR-mededeling binnenkomt)",
+      "12:45 KLM-vluchtvertraging Vries: identiteit geverifieerd, concrete juridische advies gegeven over EU-richtlijn en vervolgstappen",
+      "13:19 Corendon vluchtclaim Rachamin: identiteit geverifieerd, uitstekend juridisch advies gegeven over ingebreken stelling per aangetekende e-mail en verzuim",
+      "14:28 Kozijnaannemer rechtsbijstand: identiteit geverifieerd, inhoudelijk advies gegeven (ingebreken stelling, twee weken jurisprudentie), spoedindicatie naar rechtsbijstand",
+      "13:48 Raamregels kantoor Stark: identiteit geverifieerd, correcte triage (intern arbeidsconflict niet onder dekking) met advies HR in te schakelen",
+      "14:48 Erfenis schuldhulpverlening Van der Weijden: identiteit geverifieerd, herkende herhaalcontact (20-30 min eerder al doorgestuurd), geen dubbele verwerking"
     ],
     "beter": [
-      "09:32 Reisverzekering: beller wordt doorverwezen naar 'Google' voor telefoonnummer reisverzekering – zelfhulp is onvoldoende; bij twijfel contact-opties van het bedrijf verstrekken",
-      "10:08 & 10:06 Autoverzekering (Gubbels/Senna): verificatie gebeurde, maar beide keren wordt beller naar 'website' doorverwezen zonder concreet telefoonnummer/afdeling – minder klantvrij",
-      "11:15 Interne werkdiscussie: geen kwaliteitsissue, maar dit is geen klantgesprek en hoort niet in de kwaliteitstoets thuis",
-      "12:04 VVE Gerard Kuuman: zaak met miljoenclaim en agressie-signaal doorverwezen zonder vervolgdeadline; BV-statuswijziging (sinds april) verdient prompter informatiepunt-contact",
-      "12:09 Guido Schuurman: schadenummer aangevraagd en vervolgmail beloofd, maar geen concrete deadline voor vervolgcontact afgesproken",
-      "12:11 Scott Hamers: dekkingsvraag rechtsbijstand → doorverwijzing naar 'Davy (rechtsbijstandsmedewerker)', maar geen concrete deadline afgesproken",
-      "12:16 Adria Schenko: beller wordt naar website doorverwezen zonder concreet telefoonnummer; wel geverifieerd, dus contact-opties konden beter zijn gegeven",
-      "14:48 Erfenis-vervolgbeller: beller belt opnieuw over erfenis/schuldhulp en wordt verteld dat hij al 20-30 minuten eerder is doorverwezen – herhaalcontact-signaal dat rechtsbijstand niet snel contact opneem (geen deadline genoemd in vorig gesprek 12:09?); geen concrete vervolgdeadline afgesproken",
-      "Franchisecontrole (EUR 250): in geen enkel gesprek met schadebedrag (KLM 19-uur vertraging, Corendon-claim, kozijnaannemer-geschil) is expliciet de franchisedrempel vastgesteld; dit mag voor klantgerichtheid beter"
+      "10:08 Autoverzekering Gubbels: geen concrete doorverwijzingsdeadline of vervolgplan genoemd naar autoverzekeringspagina",
+      "11:04 Autoverzekering status: geen concrete deadline of vervolgstappen gegeven voor doorverwijzing naar autoverzekeringsafdeling",
+      "12:04 VVE-geschil Kuuman: geen deadline afgesproken voor vervolgcontact na doorverwijzing naar Brandmeester",
+      "12:09 Rechtsbijstand Schuurman: zaak doorverwezen zonder verificatie van polisnummer/dekking vooraf; onduidelijk of dekkingscheck is gedaan",
+      "12:11 Advocaatkosten Scott Hamers: identiteit geverifieerd maar geen concrete deadline afgesproken voor Brandmeester-contact; dekkingsvraag niet zelf afgerond",
+      "12:16 Verzekeringaanvraag Schenko/Schuurman: identiteitsmatch problematisch (Adria Schenko ≠ G. Schuurman in Zoho); geen verificatie afgerond alvorens door te verwijzen",
+      "14:55 Premie-uitbetaling Golfie: identiteit niet geverifieerd (Golfie ≠ Gerritsma in systeem); doorverwijzing naar ander nummer zonder verificatie",
+      "15:19 Vaststellingsovereenkomst De Vries: geen concrete deadline gegeven voor verwacht Brandmeester-contact via e-mail",
+      "15:43 Autoschade De Vries: geen concrete deadline gegeven voor Lancyr-website doorverwijzing"
     ]
   },
   "verkeerdVerbonden": {
@@ -472,27 +475,27 @@
       3
     ],
     [
-      "Erfrecht",
+      "Erfenisrecht",
       1
     ],
     [
-      "Contractenrecht / Geldleningsovereenkomst",
+      "Geldleningsovereenkomst / contractuele geschillen",
       1
     ],
     [
-      "VVE-geschil / rechtsbijstandsvraag",
+      "Bouwrecht / VVE-geschil",
       1
     ],
     [
-      "Routering naar rechtsbijstand",
+      "Rechtsbijstandsdoorverwijzing",
       1
     ],
     [
-      "Rechtsbijstandsverzekering",
+      "Rechtsbijstandsverzekering - advocaatkosten",
       1
     ],
     [
-      "Vluchtvertraging (consumentenrecht)",
+      "Vluchtvertraging / Consumentenrecht",
       1
     ],
     [
@@ -500,11 +503,11 @@
       1
     ],
     [
-      "Bouwrecht",
+      "Bouwrecht / Contractenrecht",
       1
     ],
     [
-      "Erfenisrecht en schuldhulpverlening",
+      "Erfenisrecht / Schuldhulpverlening",
       1
     ]
   ]

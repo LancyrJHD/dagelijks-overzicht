@@ -1,6 +1,6 @@
 {
   "date": "2026-09-28",
-  "generated_at": "2026-09-28T14:31:05Z",
+  "generated_at": "2026-09-28T14:40:52Z",
   "tickets": [
     {
       "ticketNumber": "2793",
@@ -91,19 +91,19 @@
       "tijd": "15:26",
       "titel": "VSO check BR",
       "klant": "E. deVries",
-      "status": "In de wacht",
+      "status": "Gesloten",
       "statusType": "",
       "prioriteit": "Niet ingesteld",
       "webUrl": "https://desk.zoho.eu/support/htjzlancyr/ShowHomePage.do#Cases/dv/195464000014306001",
       "channel": "Phone",
-      "doorgezetBrandmeester": false
+      "doorgezetBrandmeester": true
     },
     {
       "ticketNumber": "2810",
       "tijd": "16:13",
       "titel": "FW: 84217482 (Vries, G.E.): Graag doorzetten naar de Juridische Helpdesk / rechtsbijstand",
       "klant": "De juridische helpdesk",
-      "status": "Open",
+      "status": "Gesloten",
       "statusType": "",
       "prioriteit": "Niet ingesteld",
       "webUrl": "https://desk.zoho.eu/support/htjzlancyr/ShowHomePage.do#Cases/dv/195464000014285334",
@@ -114,53 +114,29 @@
       "ticketNumber": "2809",
       "tijd": "16:13",
       "titel": "FW: 84180061_Teeuwen: Een vraag stellen",
-      "klant": "De juridische helpdesk",
+      "klant": "G.A.H. Teeuwen",
       "status": "Open",
       "statusType": "",
       "prioriteit": "Niet ingesteld",
       "webUrl": "https://desk.zoho.eu/support/htjzlancyr/ShowHomePage.do#Cases/dv/195464000014278325",
-      "channel": "Email",
-      "doorgezetBrandmeester": false
-    },
-    {
-      "ticketNumber": "2811",
-      "tijd": "16:19",
-      "titel": "2789 Nieuw dossier 5607-8129874 ",
-      "klant": "Schade Particulier | Nedvol",
-      "status": "Open",
-      "statusType": "",
-      "prioriteit": "Niet ingesteld",
-      "webUrl": "https://desk.zoho.eu/support/htjzlancyr/ShowHomePage.do#Cases/dv/195464000014274339",
-      "channel": "Email",
-      "doorgezetBrandmeester": false
-    },
-    {
-      "ticketNumber": "2812",
-      "tijd": "16:21",
-      "titel": "2808 Nieuw dossier 5607-8142344 ",
-      "klant": "Schade Particulier | Nedvol",
-      "status": "Open",
-      "statusType": "",
-      "prioriteit": "Niet ingesteld",
-      "webUrl": "https://desk.zoho.eu/support/htjzlancyr/ShowHomePage.do#Cases/dv/195464000014278380",
-      "channel": "Email",
+      "channel": "Phone",
       "doorgezetBrandmeester": false
     }
   ],
   "channelCounts": {
-    "Phone": 7,
-    "Email": 5
+    "Phone": 8,
+    "Email": 2
   },
-  "brandmeesterCount": 2,
+  "brandmeesterCount": 3,
   "ticketStats": {
-    "nieuweVandaag": 12,
-    "geslotenVandaag": 18,
-    "totaalOpen": 19,
-    "inDeWacht": 15,
+    "nieuweVandaag": 10,
+    "geslotenVandaag": 21,
+    "totaalOpen": 14,
+    "inDeWacht": 13,
     "statusBreakdown": {
-      "Open": 4,
-      "In de wacht": 15,
-      "Gesloten": 679
+      "Open": 1,
+      "Gesloten": 682,
+      "In de wacht": 13
     },
     "capBereikt": false
   }
