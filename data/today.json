@@ -1,6 +1,6 @@
 {
   "date": "2026-09-28",
-  "generated_at": "2026-09-28T13:11:06Z",
+  "generated_at": "2026-09-28T13:21:07Z",
   "drukte": "rustig",
   "gesprekken": 1,
   "stats": {
@@ -11,13 +11,13 @@
     "geenDekking": 0,
     "verkeerdNummer": 1
   },
-  "score": 0.0,
+  "score": 8.5,
   "conversations": [
     {
       "tijd": "11:15",
       "titel": "Schadeverwerking vertraging en autoverzekeringsvragen",
       "personen": "Verzekerde: M.G. Gowda · Dewi Verver | Juridisch Medewerker",
-      "samenvatting": "Dit is een intern collegegesprek tussen twee HTJZ-medewerkers, geen echte klantinteractie. Ze bespreken operationele zaken zoals vertragingen in schadeverwerking, autoverzekeringsbelletjes en afkoopfrequentie. Er is geen inhoudelijk juridisch advies gegeven aan een verzekerde; de beller is niet geverifieerd omdat dit geen daadwerkelijk klantgesprek is.",
+      "samenvatting": "Dit is een intern teamgesprek tussen twee HTJZ-medewerkers over operationele zaken (vertraging in schadeverwerking, autoverzekeringsbelletjes, afkoopfrequentie, dashboard-issues). Er is geen externe beller met een juridische vraag. De beller (M.G. Gowda) is wel geverifieerd via automatische Zoho-herkenning, maar dit is geen klantcontact van een juridische helpdesk, dus verkeerd verbonden.",
       "tags": [
         [
           "tag-overig",
@@ -32,14 +32,17 @@
       "verkeerdVerbonden": true,
       "rechtsbijstandVerwijzing": false,
       "adviesGegeven": false,
-      "identiteitGeverifieerd": false
+      "identiteitGeverifieerd": true
     }
   ],
   "acties": [],
   "analyse": {
-    "goed": [],
+    "goed": [
+      "11:15 Schadeverwerking: Medewerker heeft correct herkend dat dit een intern teamgesprek betreft en geen juridische cliëntvraag. Geen onnodig advies gegeven aan verkeerd nummer.",
+      "11:15 Schadeverwerking: Identiteit correct geverifieerd via Zoho-systeem (M.G. Gowda)."
+    ],
     "beter": [
-      "11:15 'Schadeverwerking vertraging en autoverzekeringsvragen': Dit is geen klantgesprek maar een intern collegegesprek. Dit zou niet in de kwaliteitsaudit voor klantinteracties opgenomen moeten zijn. Zorg dat interne gesprekken en 'verkeerd nummer'-situaties uit de analyseset worden gefilterd voordat ze ter beoordeling worden aangeboden."
+      "11:15 Schadeverwerking: Dit gesprek had eerder in het callflow moeten worden herkend als intern/operationeel en doorverbonden naar de juiste afdeling. Zorg voor duidelijke triage-procedures om team-interne vragen niet naar de juridische helpdesk te routeren."
     ]
   },
   "verkeerdVerbonden": {
