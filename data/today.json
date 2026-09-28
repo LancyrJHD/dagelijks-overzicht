@@ -1,6 +1,6 @@
 {
   "date": "2026-09-28",
-  "generated_at": "2026-09-28T12:01:32Z",
+  "generated_at": "2026-09-28T12:11:03Z",
   "drukte": "rustig",
   "gesprekken": 1,
   "stats": {
@@ -11,13 +11,13 @@
     "geenDekking": 0,
     "verkeerdNummer": 1
   },
-  "score": 8.5,
+  "score": 9.0,
   "conversations": [
     {
       "tijd": "11:15",
       "titel": "Schadeverwerking vertraging en autoverzekeringsvragen",
       "personen": "Verzekerde: M.G. Gowda · Dewi Verver | Juridisch Medewerker",
-      "samenvatting": "Dit is een intern overleg tussen twee medewerkers van HTJZ/Lancyr over werkprocessen, schadeverwerking en callvolumes – geen gesprek met een verzekeringsklant. De beller wordt automatisch herkend in het systeem (M.G. Gowda), maar er is geen juridische advisering aan een klant gegeven. Het gesprek betreft administratieve en operationele kwesties (vertragingen in schadeverwerking, afkoopfrequentie, dashboard-tracking).",
+      "samenvatting": "Dit is een intern werkgesprek tussen twee HTJZ-medewerkers over operationele zaken (vertraging in schadeverwerking, autoverzekeringsbelletjes, afkoopfrequentie en samenwerking met Brandmeester), niet een gesprek met een verzekerde beller. Er is geen juridische vraag of advies gegeven aan een cliënt; de identiteit van een verzekerde is niet geverifieerd omdat dit geen klantcontact is.",
       "tags": [
         [
           "tag-overig",
@@ -32,16 +32,16 @@
       "verkeerdVerbonden": true,
       "rechtsbijstandVerwijzing": false,
       "adviesGegeven": false,
-      "identiteitGeverifieerd": true
+      "identiteitGeverifieerd": false
     }
   ],
   "acties": [],
   "analyse": {
     "goed": [
-      "11:15 Schadeverwerking: Intern overleg correct herkend en afgehandeld – geen klantadvies gegeven, dus geen verificatie- of dekkingscontrolevereisten van toepassing."
+      "11:15 'Schadeverwerking vertraging en autoverzekeringsvragen': Correct geïdentificeerd als intern werkgesprek (geen klantcontact), dus verificatie- en adviesvereisten zijn niet van toepassing. Geen onnodig advies gegeven zonder verificatie."
     ],
     "beter": [
-      "11:15 Schadeverwerking: Dit was een intern gesprek (verkeerd nummer). Controleer telefonische routering om toekomstige interne verrichtingen niet via de klantenlijn af te handelen."
+      "De notering 'Verkeerd nummer' als uitkomst suggereert mogelijk routeringsverwarring. Zorg voor interne communicatie dat dergelijke gesprekken (als ze extern waren) meteen correct doorgeleid worden naar de juiste afdeling."
     ]
   },
   "verkeerdVerbonden": {
