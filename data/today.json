@@ -1,6 +1,6 @@
 {
   "date": "2026-09-28",
-  "generated_at": "2026-09-28T14:11:07Z",
+  "generated_at": "2026-09-28T14:21:04Z",
   "drukte": "rustig",
   "gesprekken": 1,
   "stats": {
@@ -17,7 +17,7 @@
       "tijd": "11:15",
       "titel": "Schadeverwerking vertraging en autoverzekeringsvragen",
       "personen": "Verzekerde: M.G. Gowda · Dewi Verver | Juridisch Medewerker",
-      "samenvatting": "Dit is een intern overleg tussen twee HTJZ-medewerkers over operationele zaken (schadeverwerking, autoverzekeringsbelletjes, afkoopfrequentie, afstemming met Brandmeester), niet een gesprek met een verzekerde/klant. De beller is automatisch herkend in het systeem (M.G. Gowda), maar er wordt geen inhoudelijk juridisch advies gegeven aan een klant. Dit is een administratief/operationeel gesprek.",
+      "samenvatting": "Dit is een intern werkgesprek tussen twee HTJZ-medewerkers (geen klantgesprek). De ene medewerker rapporteert over een toename van autoverzekeringsbelletjes en vertraging in schadeverwerking (>24 uur voor schadenummers), en de ander belooft dit door te geven aan de schadekantoor. Er worden ook trends besproken zoals afkopen en conflicten met aannemers. Geen klant wordt geadviseerd, geen polis wordt geverifieerd.",
       "tags": [
         [
           "tag-overig",
@@ -32,16 +32,17 @@
       "verkeerdVerbonden": true,
       "rechtsbijstandVerwijzing": false,
       "adviesGegeven": false,
-      "identiteitGeverifieerd": true
+      "identiteitGeverifieerd": false
     }
   ],
   "acties": [],
   "analyse": {
     "goed": [
-      "11:15 Schadeverwerking: Intern overleg correct afgehandeld – geen klantenadvies gegeven, dus geen verificatie/dekkingscontrole-eisen van toepassing. Beller (M.G. Gowda) was automatisch herkend in systeem."
+      "11:15 Schadeverwerking: Dit was een intern werkgesprek tussen HTJZ-medewerkers, geen klantcontact. Correct geen klantadvies gegeven en geen verificatie nodig. Interne communicatie over procesknelpunten (vertraging >24 uur schadenummers) werd op passende wijze afgehandeld.",
+      "Juiste interne escalatie: De medewerker heeft de rapportage over vertragingen doorgegeven aan het schadekantoor, wat aangeeft dat interne communicatiekanalen correct worden gebruikt."
     ],
     "beter": [
-      "11:15 Schadeverwerking: Geen concrete vervolgdeadline genoemd voor het 'verkeerd nummer'-scenario. Helderheid over wie wél moet worden bereikt zou de zaak hebben versneld."
+      "11:15 Schadeverwerking: Hoewel dit een intern gesprek was, ontbreekt duidelijkheid over wie verantwoordelijk is voor opvolging en wanneer verwacht vervolgactie plaatsvindt. Bij interne rapportages kunnen concrete deadline-afspraken (bijv. 'schadekantoor reageert binnen 2 werkdagen') processen verbeteren."
     ]
   },
   "verkeerdVerbonden": {

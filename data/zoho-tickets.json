@@ -1,6 +1,6 @@
 {
   "date": "2026-09-28",
-  "generated_at": "2026-09-28T14:10:51Z",
+  "generated_at": "2026-09-28T14:20:47Z",
   "tickets": [
     {
       "ticketNumber": "2793",
@@ -97,19 +97,56 @@
       "webUrl": "https://desk.zoho.eu/support/htjzlancyr/ShowHomePage.do#Cases/dv/195464000014306001",
       "channel": "Phone",
       "doorgezetBrandmeester": false
+    },
+    {
+      "ticketNumber": "2810",
+      "tijd": "16:13",
+      "titel": "FW: 84217482 (Vries, G.E.): Graag doorzetten naar de Juridische Helpdesk / rechtsbijstand",
+      "klant": "De juridische helpdesk",
+      "status": "Open",
+      "statusType": "",
+      "prioriteit": "Niet ingesteld",
+      "webUrl": "https://desk.zoho.eu/support/htjzlancyr/ShowHomePage.do#Cases/dv/195464000014285334",
+      "channel": "Email",
+      "doorgezetBrandmeester": false
+    },
+    {
+      "ticketNumber": "2809",
+      "tijd": "16:13",
+      "titel": "FW: 84180061_Teeuwen: Een vraag stellen",
+      "klant": "De juridische helpdesk",
+      "status": "Open",
+      "statusType": "",
+      "prioriteit": "Niet ingesteld",
+      "webUrl": "https://desk.zoho.eu/support/htjzlancyr/ShowHomePage.do#Cases/dv/195464000014278325",
+      "channel": "Email",
+      "doorgezetBrandmeester": false
+    },
+    {
+      "ticketNumber": "2811",
+      "tijd": "16:19",
+      "titel": "2789 Nieuw dossier 5607-8129874 ",
+      "klant": "Schade Particulier | Nedvol",
+      "status": "Open",
+      "statusType": "",
+      "prioriteit": "Niet ingesteld",
+      "webUrl": "https://desk.zoho.eu/support/htjzlancyr/ShowHomePage.do#Cases/dv/195464000014274339",
+      "channel": "Email",
+      "doorgezetBrandmeester": false
     }
   ],
   "channelCounts": {
     "Phone": 7,
-    "Email": 1
+    "Email": 4
   },
   "brandmeesterCount": 2,
   "ticketStats": {
-    "nieuweVandaag": 8,
+    "nieuweVandaag": 11,
     "geslotenVandaag": 18,
-    "totaalOpen": 15,
+    "totaalOpen": 18,
     "inDeWacht": 15,
     "statusBreakdown": {
+      "Open": 3,
       "In de wacht": 15,
       "Gesloten": 679
     },
