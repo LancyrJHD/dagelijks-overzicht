@@ -1,27 +1,58 @@
 {
   "date": "2026-09-28",
-  "generated_at": "2026-09-28T11:10:53Z",
+  "generated_at": "2026-09-28T11:21:04Z",
   "drukte": "rustig",
-  "gesprekken": 0,
+  "gesprekken": 1,
   "stats": {
     "opgelost": 0,
     "brandmeester": 0,
     "afkoop": 0,
     "terugbel": 0,
     "geenDekking": 0,
-    "verkeerdNummer": 0
+    "verkeerdNummer": 1
   },
-  "score": 0,
-  "conversations": [],
+  "score": 8.5,
+  "conversations": [
+    {
+      "tijd": "11:15",
+      "titel": "Schadeverwerking vertraging en autoverzekeringsvragen",
+      "personen": "Verzekerde: M.G. Gowda · Dewi Verver | Juridisch Medewerker",
+      "samenvatting": "Dit is geen gesprek tussen een juridische helpdesk en een verzekerded-klant, maar een intern werkoverleg tussen twee HTJZ-medewerkers over operationele zaken (vertraging in schadeverwerking, autoverzekeringsbelletjes, afkoopstatistieken en samenwerking met Brandmeester). De beller wordt automatisch herkend in het systeem, maar er wordt geen inhoudelijk juridisch advies gegeven aan een verzekerdenklant.",
+      "tags": [
+        [
+          "tag-overig",
+          "Routering"
+        ]
+      ],
+      "uitkomst": [
+        "outcome-verkeerd",
+        "Verkeerd nummer"
+      ],
+      "terugbel": false,
+      "verkeerdVerbonden": true,
+      "rechtsbijstandVerwijzing": false,
+      "adviesGegeven": false,
+      "identiteitGeverifieerd": true
+    }
+  ],
   "acties": [],
   "analyse": {
-    "goed": [],
-    "beter": []
+    "goed": [
+      "11:15 Schadeverwerking: Automatische systeemherkenning van interne beller werkte correct, geen tijd verspild aan verificatie"
+    ],
+    "beter": [
+      "11:15 Schadeverwerking: Het lijkt erop dat een intern werkoverleg via de externe helpdesk-lijn is gerouleerd. Zorg voor betere routering van interne vragen naar interne kanalen om telefooncapaciteit voor externe klanten vrij te houden"
+    ]
   },
   "verkeerdVerbonden": {
-    "aantal": 0,
-    "percentage": 0.0
+    "aantal": 1,
+    "percentage": 100.0
   },
   "rechtsbijstandVerwijzingen": 0,
-  "categorieen": []
+  "categorieen": [
+    [
+      "Routering",
+      1
+    ]
+  ]
 }
