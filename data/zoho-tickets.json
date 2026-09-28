@@ -1,6 +1,6 @@
 {
   "date": "2026-09-28",
-  "generated_at": "2026-09-28T14:40:52Z",
+  "generated_at": "2026-09-28T14:50:50Z",
   "tickets": [
     {
       "ticketNumber": "2793",
@@ -115,7 +115,7 @@
       "tijd": "16:13",
       "titel": "FW: 84180061_Teeuwen: Een vraag stellen",
       "klant": "G.A.H. Teeuwen",
-      "status": "Open",
+      "status": "In de wacht",
       "statusType": "",
       "prioriteit": "Niet ingesteld",
       "webUrl": "https://desk.zoho.eu/support/htjzlancyr/ShowHomePage.do#Cases/dv/195464000014278325",
@@ -132,11 +132,10 @@
     "nieuweVandaag": 10,
     "geslotenVandaag": 21,
     "totaalOpen": 14,
-    "inDeWacht": 13,
+    "inDeWacht": 14,
     "statusBreakdown": {
-      "Open": 1,
-      "Gesloten": 682,
-      "In de wacht": 13
+      "In de wacht": 14,
+      "Gesloten": 682
     },
     "capBereikt": false
   }
