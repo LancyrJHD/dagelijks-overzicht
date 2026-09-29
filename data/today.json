@@ -1,6 +1,6 @@
 {
   "date": "2026-09-29",
-  "generated_at": "2026-09-29T10:20:52Z",
+  "generated_at": "2026-09-29T10:31:03Z",
   "drukte": "rustig",
   "gesprekken": 1,
   "stats": {
@@ -11,13 +11,13 @@
     "geenDekking": 0,
     "verkeerdNummer": 0
   },
-  "score": 8.5,
+  "score": 8.1,
   "conversations": [
     {
       "tijd": "09:29",
       "titel": "Deep CEO Work (strategie, funnelkeuzes, abonnementen, pricing)",
       "personen": "Verzekerde: anoniem · Edgar Stam",
-      "samenvatting": "Beller (Gowda, postcode 1017 TA, apt 17F) belt over ontslag en wil juridisch advies. Medewerker verifieert identiteit via postcode/naam/adresgegeven en bevestigt dat beller rechtsbijstandsverzekering heeft (alle modules behalve belastingen/vermogen). Medewerker stuurt beller een e-mail om termijnacceptatiebesluit in te dienen en zet zaak door naar rechtsbijstandsteam voor vervolgbehandeling.",
+      "samenvatting": "Beller met arbeidsconflict (ontslagaanbieding) belt juridische helpdesk. Identiteit geverifieerd via postcode (1017 TA), naam (Gowda) en huisnummer (17F). Medewerker bevestigt dat beller rechtsbijstandsverzekering heeft en stuurt hem een e-mail om ontslag-documenten in te dienen; beller wordt verwacht door het juridisch team te worden gebeld voor verdere behandeling.",
       "tags": [
         [
           "tag-arbeidsrecht",
@@ -38,13 +38,12 @@
   "acties": [],
   "analyse": {
     "goed": [
-      "09:29 Deep CEO Work: Identiteit correct geverifieerd via postcode, naam en adresgegeven",
-      "09:29 Deep CEO Work: Dekking controleren gebeurd — rechtsbijstandsverzekering bevestigd en relevant (ontslag valt onder arbeidsrecht, niet onder uitgesloten modules belastingen/vermogen)",
-      "09:29 Deep CEO Work: Helder vervolgplan — e-mail verzonden voor termijnacceptatiebesluit en zaak doorverwezen naar rechtsbijstandsteam",
-      "09:29 Deep CEO Work: Duidelijke doorverwijzing naar Brandmeester (gespecialiseerd team)"
+      "09:29 Deep CEO Work: Identiteit correct geverifieerd via meerdere criteria (postcode 1017 TA, naam Gowda, huisnummer 17F) voordat vervolgstappen werden ingeleidt",
+      "09:29 Deep CEO Work: Polis bevestigd en rechtsbijstandsverzekering gevalideerd",
+      "09:29 Deep CEO Work: Duidelijk vervolgplan afgesproken (beller stuurt documenten in, juridisch team belt voor verdere behandeling)"
     ],
     "beter": [
-      "09:29 Deep CEO Work: Concrete vervolgdeadline ontbreekt — geen expliciete datum genoemd waarop beller reactie moet geven of wanneer rechtsbijstandsteam contact opneemt"
+      "09:29 Deep CEO Work: Geen concrete deadline genoemd voor vervolgcontact door juridisch team – 'wordt verwacht te worden gebeld' is onvoldoende specifiek; aanbeveling: concrete afspraakmogelijkheden of deadline (bijv. 'u hoort van ons binnen 2 werkdagen') benoemen"
     ]
   },
   "verkeerdVerbonden": {
