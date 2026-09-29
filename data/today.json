@@ -1,6 +1,6 @@
 {
   "date": "2026-09-29",
-  "generated_at": "2026-09-29T10:10:54Z",
+  "generated_at": "2026-09-29T10:20:52Z",
   "drukte": "rustig",
   "gesprekken": 1,
   "stats": {
@@ -11,13 +11,13 @@
     "geenDekking": 0,
     "verkeerdNummer": 0
   },
-  "score": 8.1,
+  "score": 8.5,
   "conversations": [
     {
       "tijd": "09:29",
       "titel": "Deep CEO Work (strategie, funnelkeuzes, abonnementen, pricing)",
       "personen": "Verzekerde: anoniem · Edgar Stam",
-      "samenvatting": "Beller (Gowda, postcode 1017 TA, apt 17F) belt over ontslag via werkgever en wil juridisch advies. Identiteit geverifieerd via postcode, naam en adresinformatie. Medewerker bevestigt dat beller rechtsbijstandsverzekering heeft (alle modules behalve belastingen/vermogen) en stuurt een email zodat beller de ontslagovereenkomst kan insturen voor vervolgbehandeling door de juridische afdeling.",
+      "samenvatting": "Beller (Gowda, postcode 1017 TA, apt 17F) belt over ontslag en wil juridisch advies. Medewerker verifieert identiteit via postcode/naam/adresgegeven en bevestigt dat beller rechtsbijstandsverzekering heeft (alle modules behalve belastingen/vermogen). Medewerker stuurt beller een e-mail om termijnacceptatiebesluit in te dienen en zet zaak door naar rechtsbijstandsteam voor vervolgbehandeling.",
       "tags": [
         [
           "tag-arbeidsrecht",
@@ -38,12 +38,13 @@
   "acties": [],
   "analyse": {
     "goed": [
-      "09:29 Deep CEO Work: Identiteit correct geverifieerd via postcode, naam en adresinformatie",
-      "09:29 Deep CEO Work: Dekking geverifieerd (rechtsbijstandsverzekering bevestigd, modules gecontroleerd)",
-      "09:29 Deep CEO Work: Duidelijk vervolgplan afgesproken (email voor inzending ontslagovereenkomst naar juridische afdeling)"
+      "09:29 Deep CEO Work: Identiteit correct geverifieerd via postcode, naam en adresgegeven",
+      "09:29 Deep CEO Work: Dekking controleren gebeurd — rechtsbijstandsverzekering bevestigd en relevant (ontslag valt onder arbeidsrecht, niet onder uitgesloten modules belastingen/vermogen)",
+      "09:29 Deep CEO Work: Helder vervolgplan — e-mail verzonden voor termijnacceptatiebesluit en zaak doorverwezen naar rechtsbijstandsteam",
+      "09:29 Deep CEO Work: Duidelijke doorverwijzing naar Brandmeester (gespecialiseerd team)"
     ],
     "beter": [
-      "09:29 Deep CEO Work: Geen concrete deadline genoemd voor inzending ontslagovereenkomst door beller (aanbeveling: e.g. 'stuur dit binnen 2 werkdagen in')"
+      "09:29 Deep CEO Work: Concrete vervolgdeadline ontbreekt — geen expliciete datum genoemd waarop beller reactie moet geven of wanneer rechtsbijstandsteam contact opneemt"
     ]
   },
   "verkeerdVerbonden": {
