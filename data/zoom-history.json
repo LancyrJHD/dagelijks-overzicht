@@ -3247,11 +3247,18 @@
         "nummer": "+31651829693",
         "teruggebeld": false,
         "tijd": "10:15"
+      },
+      {
+        "callResult": "overflowed",
+        "naam": "Onbekend",
+        "nummer": "+31630683338",
+        "teruggebeld": false,
+        "tijd": "10:18"
       }
     ],
     "date": "2026-09-29",
-    "generated_at": "2026-09-29T08:20:44Z",
-    "nietTerugGebeld": 2,
+    "generated_at": "2026-09-29T08:30:53Z",
+    "nietTerugGebeld": 3,
     "nietTerugGebeldNummers": [
       {
         "callResult": "overflowed",
@@ -3266,10 +3273,17 @@
         "nummer": "+31651829693",
         "teruggebeld": false,
         "tijd": "10:15"
+      },
+      {
+        "callResult": "overflowed",
+        "naam": "Onbekend",
+        "nummer": "+31630683338",
+        "teruggebeld": false,
+        "tijd": "10:18"
       }
     ],
     "terugGebeld": 0,
-    "totaalGemist": 2,
-    "totaalInbound": 3
+    "totaalGemist": 3,
+    "totaalInbound": 4
   }
 }
