@@ -3275,11 +3275,18 @@
         "nummer": "+31629700487",
         "teruggebeld": false,
         "tijd": "11:41"
+      },
+      {
+        "callResult": "overflowed",
+        "naam": "Onbekend",
+        "nummer": "+31634531105",
+        "teruggebeld": false,
+        "tijd": "13:02"
       }
     ],
     "date": "2026-09-29",
-    "generated_at": "2026-09-29T11:01:54Z",
-    "nietTerugGebeld": 6,
+    "generated_at": "2026-09-29T11:10:42Z",
+    "nietTerugGebeld": 7,
     "nietTerugGebeldNummers": [
       {
         "callResult": "overflowed",
@@ -3322,10 +3329,17 @@
         "nummer": "+31629700487",
         "teruggebeld": false,
         "tijd": "11:41"
+      },
+      {
+        "callResult": "overflowed",
+        "naam": "Onbekend",
+        "nummer": "+31634531105",
+        "teruggebeld": false,
+        "tijd": "13:02"
       }
     ],
     "terugGebeld": 0,
-    "totaalGemist": 6,
-    "totaalInbound": 7
+    "totaalGemist": 7,
+    "totaalInbound": 8
   }
 }
