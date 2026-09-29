@@ -1,6 +1,6 @@
 {
   "date": "2026-09-29",
-  "generated_at": "2026-09-29T11:01:10Z",
+  "generated_at": "2026-09-29T11:02:03Z",
   "drukte": "rustig",
   "gesprekken": 1,
   "stats": {
@@ -11,13 +11,13 @@
     "geenDekking": 0,
     "verkeerdNummer": 0
   },
-  "score": 8.1,
+  "score": 8.5,
   "conversations": [
     {
       "tijd": "09:29",
       "titel": "Deep CEO Work (strategie, funnelkeuzes, abonnementen, pricing)",
       "personen": "Verzekerde: anoniem · Edgar Stam",
-      "samenvatting": "Beller met arbeidsconflict (ontslag) belt Lancyr juridische helpdesk. Identiteit geverifieerd via postcode (1017 TA), naam (Gowda) en appartementnummer (17F). Beller heeft rechtsbijstandsverzekering; medewerker verwijst door naar rechtsbijstandsafdeling met verzoek ontslag-documenten in te dienen via email.",
+      "samenvatting": "Beller belt over ontslag/beëindiging van arbeidsovereenkomst en wil juridisch advies. Identiteit geverifieerd via postcode (1017 TA), naam (Gowda) en appartementsummer (17F). Medewerker bevestigt dat beller rechtsbijstandsverzekering heeft (alle modules behalve belastingen/vermogen) en verwijst door naar de rechtsbijstandsafdeling, die via email contact zal opnemen nadat beller de ontslagovereenkomst opstuurt.",
       "tags": [
         [
           "tag-arbeidsrecht",
@@ -38,12 +38,13 @@
   "acties": [],
   "analyse": {
     "goed": [
-      "09:29 Deep CEO Work: Identiteit correct geverifieerd via meerdere controlegegevens (postcode 1017 TA, naam Gowda, appartementnummer 17F) voordat vervolgstappen werden bepaald",
-      "09:29 Deep CEO Work: Rechtsbijstandsverzekering aanwezig; passende doorverwijzing naar gespecialiseerde rechtsbijstandsafdeling (Brandmeester) uitgevoerd",
-      "09:29 Deep CEO Work: Duidelijk vervolgstap gecommuniceerd (indiening ontslag-documenten via email)"
+      "09:29 Deep CEO Work: Identiteit correct geverifieerd via meerdere gegevens (postcode 1017 TA, naam Gowda, appartementsummer 17F)",
+      "09:29 Deep CEO Work: Rechtsbijstandsverzekering gecontroleerd en bevestigd (alle modules behalve belastingen/vermogen)",
+      "09:29 Deep CEO Work: Passende doorverwijzing naar gespecialiseerde rechtsbijstandsafdeling voor arbeidsrechtskwestie",
+      "09:29 Deep CEO Work: Duidelijk vervolgplan: beller stuurt ontslagovereenkomst op, Brandmeester neemt via email contact op"
     ],
     "beter": [
-      "09:29 Deep CEO Work: Geen concrete deadline genoemd voor indiening van ontslag-documenten via email (bijv. 'graag binnen 48 uur' of 'uiterlijk morgen 17:00'). Dit helpt klant om prioriteit in te schatten en voorkomt vertraging in behandeling"
+      "09:29 Deep CEO Work: Geen concrete deadline gegeven voor wanneer Brandmeester contact zal opnemen of wanneer beller de ontslagovereenkomst moet inzenden (aanbeveling: bijvoorbeeld 'binnen 2 werkdagen')"
     ]
   },
   "verkeerdVerbonden": {
