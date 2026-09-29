@@ -1,6 +1,6 @@
 {
   "date": "2026-09-29",
-  "generated_at": "2026-09-29T16:20:52Z",
+  "generated_at": "2026-09-29T16:31:05Z",
   "drukte": "rustig",
   "gesprekken": 1,
   "stats": {
@@ -11,13 +11,13 @@
     "geenDekking": 0,
     "verkeerdNummer": 0
   },
-  "score": 8.1,
+  "score": 8.5,
   "conversations": [
     {
       "tijd": "09:29",
       "titel": "Deep CEO Work (strategie, funnelkeuzes, abonnementen, pricing)",
       "personen": "Verzekerde: anoniem · Edgar Stam",
-      "samenvatting": "Beller (Gowda, postcode 1017 TA, Amsterdam) belde met een arbeidsrechtelijke vraag over een ontslagaanbieding van zijn werkgever. De medewerker verifieerde de identiteit via postcode, naam en huisnummer, controleerde de polis en bevestigde dat de beller rechtsbijstandsdekking heeft (alle modules behalve belastingen/vermogen). De medewerker diende geen inhoudelijk advies in, maar verwees de beller door naar de rechtsbijstandsafdeling via e-mail, waarna de beller zijn ontslagdocumenten moet insturen voor verdere behandeling.",
+      "samenvatting": "Beller (Gowda) belt over ontslag via werkgever en wil juridisch advies. Identiteit geverifieerd via postcode (1017 TA), achternaam en appartementsummer. Medewerker bevestigt dat beller rechtsbijstandsverzekering heeft (alle modules behalve belastingen/vermogen) en verwijst door naar rechtsbijstandsteam via e-mail voor verdere behandeling van ontslagkwestie; geen inhoudelijk juridisch advies gegeven, maar wel correcte triage naar rechtsbijstand.",
       "tags": [
         [
           "tag-arbeidsrecht",
@@ -38,13 +38,12 @@
   "acties": [],
   "analyse": {
     "goed": [
-      "09:29 Deep CEO Work: Identiteit correct geverifieerd via postcode, naam en huisnummer",
-      "09:29 Deep CEO Work: Poliscontrole uitgevoerd en dekkingsmodules bevestigd (inclusief arbeidsrecht)",
-      "09:29 Deep CEO Work: Passende doorverwijzing naar gespecialiseerde afdeling (Brandmeester) voor arbeidsrechtelijke casus",
-      "09:29 Deep CEO Work: Duidelijk vervolgplan gecommuniceerd (documenten insturen via e-mail)"
+      "09:29 Deep CEO Work: Identiteit correct geverifieerd via postcode (1017 TA), achternaam en appartementsummer",
+      "09:29 Deep CEO Work: Dekkingscontrole uitgevoerd – medewerker bevestigd dat rechtsbijstandsverzekering aanwezig is (alle modules behalve belastingen/vermogen)",
+      "09:29 Deep CEO Work: Correcte triage uitgevoerd – zaak doorverwezen naar gespecialiseerd rechtsbijstandsteam via e-mail voor ontslagkwestie"
     ],
     "beter": [
-      "09:29 Deep CEO Work: Geen concrete deadline genoemd voor het insturen van ontslagdocumenten (bijv. 'binnen 3 werkdagen') – dit verheldert de urgentie voor de beller"
+      "09:29 Deep CEO Work: Geen concrete deadline benoemd voor vervolgcontact via rechtsbijstandsteam – wenselijk om beller duidelijkheid te geven over verwachte responstijd (bijv. 'u hoort binnen 2 werkdagen')"
     ]
   },
   "verkeerdVerbonden": {
