@@ -1,10 +1,26 @@
 {
   "date": "2026-09-29",
-  "generated_at": "2026-09-29T07:10:42Z",
-  "totaalInbound": 0,
-  "totaalGemist": 0,
+  "generated_at": "2026-09-29T07:20:38Z",
+  "totaalInbound": 1,
+  "totaalGemist": 1,
   "terugGebeld": 0,
-  "nietTerugGebeld": 0,
-  "nietTerugGebeldNummers": [],
-  "alleGemistNummers": []
+  "nietTerugGebeld": 1,
+  "nietTerugGebeldNummers": [
+    {
+      "nummer": "+31645350002",
+      "naam": "Onbekend",
+      "tijd": "09:11",
+      "callResult": "overflowed",
+      "teruggebeld": false
+    }
+  ],
+  "alleGemistNummers": [
+    {
+      "nummer": "+31645350002",
+      "naam": "Onbekend",
+      "tijd": "09:11",
+      "callResult": "overflowed",
+      "teruggebeld": false
+    }
+  ]
 }
