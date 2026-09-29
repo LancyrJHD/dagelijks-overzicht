@@ -1,16 +1,23 @@
 {
   "date": "2026-09-29",
-  "generated_at": "2026-09-29T08:10:42Z",
-  "totaalInbound": 2,
-  "totaalGemist": 1,
+  "generated_at": "2026-09-29T08:20:44Z",
+  "totaalInbound": 3,
+  "totaalGemist": 2,
   "terugGebeld": 0,
-  "nietTerugGebeld": 1,
+  "nietTerugGebeld": 2,
   "nietTerugGebeldNummers": [
     {
       "nummer": "+31645350002",
       "naam": "Onbekend",
       "tijd": "09:11",
       "callResult": "overflowed",
+      "teruggebeld": false
+    },
+    {
+      "nummer": "+31651829693",
+      "naam": "Onbekend",
+      "tijd": "10:15",
+      "callResult": "abandoned",
       "teruggebeld": false
     }
   ],
@@ -20,6 +27,13 @@
       "naam": "Onbekend",
       "tijd": "09:11",
       "callResult": "overflowed",
+      "teruggebeld": false
+    },
+    {
+      "nummer": "+31651829693",
+      "naam": "Onbekend",
+      "tijd": "10:15",
+      "callResult": "abandoned",
       "teruggebeld": false
     }
   ]

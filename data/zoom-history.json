@@ -3240,11 +3240,18 @@
         "nummer": "+31645350002",
         "teruggebeld": false,
         "tijd": "09:11"
+      },
+      {
+        "callResult": "abandoned",
+        "naam": "Onbekend",
+        "nummer": "+31651829693",
+        "teruggebeld": false,
+        "tijd": "10:15"
       }
     ],
     "date": "2026-09-29",
-    "generated_at": "2026-09-29T08:10:42Z",
-    "nietTerugGebeld": 1,
+    "generated_at": "2026-09-29T08:20:44Z",
+    "nietTerugGebeld": 2,
     "nietTerugGebeldNummers": [
       {
         "callResult": "overflowed",
@@ -3252,10 +3259,17 @@
         "nummer": "+31645350002",
         "teruggebeld": false,
         "tijd": "09:11"
+      },
+      {
+        "callResult": "abandoned",
+        "naam": "Onbekend",
+        "nummer": "+31651829693",
+        "teruggebeld": false,
+        "tijd": "10:15"
       }
     ],
     "terugGebeld": 0,
-    "totaalGemist": 1,
-    "totaalInbound": 2
+    "totaalGemist": 2,
+    "totaalInbound": 3
   }
 }
