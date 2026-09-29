@@ -3254,11 +3254,18 @@
         "nummer": "+31630683338",
         "teruggebeld": false,
         "tijd": "10:18"
+      },
+      {
+        "callResult": "abandoned",
+        "naam": "Onbekend",
+        "nummer": "+31645822609",
+        "teruggebeld": false,
+        "tijd": "10:52"
       }
     ],
     "date": "2026-09-29",
-    "generated_at": "2026-09-29T08:50:41Z",
-    "nietTerugGebeld": 3,
+    "generated_at": "2026-09-29T09:00:59Z",
+    "nietTerugGebeld": 4,
     "nietTerugGebeldNummers": [
       {
         "callResult": "overflowed",
@@ -3280,10 +3287,17 @@
         "nummer": "+31630683338",
         "teruggebeld": false,
         "tijd": "10:18"
+      },
+      {
+        "callResult": "abandoned",
+        "naam": "Onbekend",
+        "nummer": "+31645822609",
+        "teruggebeld": false,
+        "tijd": "10:52"
       }
     ],
     "terugGebeld": 0,
-    "totaalGemist": 3,
-    "totaalInbound": 4
+    "totaalGemist": 4,
+    "totaalInbound": 5
   }
 }
