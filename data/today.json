@@ -1,6 +1,6 @@
 {
   "date": "2026-09-29",
-  "generated_at": "2026-09-29T16:40:53Z",
+  "generated_at": "2026-09-29T16:50:33Z",
   "drukte": "rustig",
   "gesprekken": 1,
   "stats": {
@@ -17,7 +17,7 @@
       "tijd": "09:29",
       "titel": "Deep CEO Work (strategie, funnelkeuzes, abonnementen, pricing)",
       "personen": "Verzekerde: anoniem · Edgar Stam",
-      "samenvatting": "Beller belde over een ontslag en wilde juridisch advies. De medewerker heeft de beller geverifieerd via postcode (1017 TA), naam (Gowda) en huisnummer (17F) en vastgesteld dat de beller rechtsbijstandsverzekering heeft (alle modules behalve belastingen/vermogen). De zaak is doorverwezen naar de rechtsbijstandsafdeling; de beller moet de ontslagdocumenten per mail insturen, waarna de juridische afdeling contact zal opnemen.",
+      "samenvatting": "Beller belt over ontslag en vraagt juridische bijstand. Identiteit geverifieerd via postcode (1017 TA), naam (Gowda) en huisnummer (17F). Medewerker controleert polis, bevestigt dat beller rechtsbijstandsverzekering heeft (alle modules behalve belastingen/vermogen), en verwijst beller door naar rechtsbijstandsteam via e-mail met vervolgproces: beller stuurt ontslagbesluit in, rechtsbijstandsteam belt terug.",
       "tags": [
         [
           "tag-arbeidsrecht",
@@ -28,7 +28,7 @@
         "outcome-brandmeester",
         "Doorverwezen naar Brandmeester"
       ],
-      "terugbel": false,
+      "terugbel": true,
       "verkeerdVerbonden": false,
       "rechtsbijstandVerwijzing": true,
       "adviesGegeven": false,
@@ -38,13 +38,12 @@
   "acties": [],
   "analyse": {
     "goed": [
-      "09:29 Ontslag: Identiteit correct geverifieerd via postcode (1017 TA), naam (Gowda) en huisnummer (17F)",
-      "09:29 Ontslag: Rechtsbijstandsdekking gecontroleerd en vastgesteld dat alle relevante modules actief zijn",
-      "09:29 Ontslag: Juiste doorverwijzing naar gespecialiseerde rechtsbijstandsafdeling (Brandmeester)",
-      "09:29 Ontslag: Helder vervolgplan afgesproken (documenten per mail insturen, juridische afdeling neemt contact op)"
+      "09:29 Ontslag: Identiteit correct geverifieerd via postcode (1017 TA), naam (Gowda) en huisnummer (17F) conform standaard",
+      "09:29 Ontslag: Poliscontrole uitgevoerd en dekkingsomvang duidelijk vastgesteld (alle modules behalve belastingen/vermogen)",
+      "09:29 Ontslag: Vervolgproces helder gestructureerd met concrete stappen (beller stuurt ontslagbesluit in, rechtsbijstandsteam belt terug) en kanaal aangegeven (e-mail)"
     ],
     "beter": [
-      "09:29 Ontslag: Concrete deadline ontbreekt voor wanneer de juridische afdeling contact zal opnemen na ontvangst documenten"
+      "09:29 Ontslag: In vervolgcommunicatie per e-mail zou een concrete deadline nuttig zijn geweest (bijv. 'stuur ontslagbesluit binnen 5 werkdagen in' of 'we nemen contact op binnen 2 werkdagen')"
     ]
   },
   "verkeerdVerbonden": {
