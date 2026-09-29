@@ -3268,11 +3268,18 @@
         "nummer": "+31687884497",
         "teruggebeld": false,
         "tijd": "11:17"
+      },
+      {
+        "callResult": "overflowed",
+        "naam": "Onbekend",
+        "nummer": "+31629700487",
+        "teruggebeld": false,
+        "tijd": "11:41"
       }
     ],
     "date": "2026-09-29",
-    "generated_at": "2026-09-29T09:40:43Z",
-    "nietTerugGebeld": 5,
+    "generated_at": "2026-09-29T09:50:43Z",
+    "nietTerugGebeld": 6,
     "nietTerugGebeldNummers": [
       {
         "callResult": "overflowed",
@@ -3308,10 +3315,17 @@
         "nummer": "+31687884497",
         "teruggebeld": false,
         "tijd": "11:17"
+      },
+      {
+        "callResult": "overflowed",
+        "naam": "Onbekend",
+        "nummer": "+31629700487",
+        "teruggebeld": false,
+        "tijd": "11:41"
       }
     ],
     "terugGebeld": 0,
-    "totaalGemist": 5,
-    "totaalInbound": 6
+    "totaalGemist": 6,
+    "totaalInbound": 7
   }
 }
