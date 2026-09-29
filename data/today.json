@@ -1,6 +1,6 @@
 {
   "date": "2026-09-29",
-  "generated_at": "2026-09-29T13:50:48Z",
+  "generated_at": "2026-09-29T14:01:05Z",
   "drukte": "rustig",
   "gesprekken": 1,
   "stats": {
@@ -17,7 +17,7 @@
       "tijd": "09:29",
       "titel": "Deep CEO Work (strategie, funnelkeuzes, abonnementen, pricing)",
       "personen": "Verzekerde: anoniem · Edgar Stam",
-      "samenvatting": "Beller (Gowda, postcode 1017TA) belt over ontslag van werkgever en wil juridisch advies. Medewerker verifieerde identiteit via postcode/naam/huisnummer en bevestigde dat beller rechtsbijstandsverzekering heeft (met uitzondering van belasting/vermogen-module). Medewerker verwees beller door naar rechtsbijstandsteam via e-mail voor verdere behandeling van ontslag-zaak; geen inhoudelijk juridisch advies gegeven, maar correcte triage naar rechtsbijstand.",
+      "samenvatting": "Beller met ontslag­aanbieding belt de juridische helpdesk voor arbeidsrecht­bijstand. Identiteit geverifieerd via postcode (1017 TA), naam (Gowda) en huisnummer (17F). Medewerker bevestigt dat beller rechtsbijstandsverzekering heeft (alle modules behalve belastingen/vermogen) en verwijst zaak door naar rechtsbijstandsteam via email met verzoek om termina­tieovereenkomst in te dienen.",
       "tags": [
         [
           "tag-arbeidsrecht",
@@ -38,12 +38,13 @@
   "acties": [],
   "analyse": {
     "goed": [
-      "09:29 Deep CEO Work: Identiteit correct geverifieerd via postcode/naam/huisnummer voordat vervolgstappen werden ondernomen",
-      "09:29 Deep CEO Work: Dekking van rechtsbijstandsverzekering correct gecontroleerd en uitzonderingen (belasting/vermogen) vastgesteld",
-      "09:29 Deep CEO Work: Correcte triage naar gespecialiseerd rechtsbijstandsteam (Brandmeester) voor ontslagzaak — medewerker gaf terecht geen inhoudelijk advies"
+      "09:29 Deep CEO Work: Identiteit correct geverifieerd via meerdere criteria (postcode 1017 TA, naam Gowda, huisnummer 17F)",
+      "09:29 Deep CEO Work: Dekkingscontrole uitgevoerd - rechtsbijstandsverzekering bevestigd met juiste modulekeuze vastgesteld (alle behalve belastingen/vermogen)",
+      "09:29 Deep CEO Work: Geen advies gegeven zonder volledige verificatie - zaak direct doorverwezen naar gespecialiseerd team (Brandmeester) via email",
+      "09:29 Deep CEO Work: Vervolgstap duidelijk vastgesteld (doorverwijzing naar rechtsbijstandsteam voor termina­tieovereenkomst)"
     ],
     "beter": [
-      "09:29 Deep CEO Work: Geen concrete deadline genoemd voor vervolgcontact door Brandmeester-team — wenselijk om beller inzicht te geven in verwachte reactietijd"
+      "09:29 Deep CEO Work: Geen concrete deadline genoemd voor vervolgcontact door Brandmeester - aanbevolen: bijvoorbeeld 'Brandmeester zal u binnen 2 werkdagen benaderen' toevoegen in bevestiging aan klant"
     ]
   },
   "verkeerdVerbonden": {
