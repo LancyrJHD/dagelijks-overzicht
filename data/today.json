@@ -1,27 +1,60 @@
 {
   "date": "2026-09-29",
-  "generated_at": "2026-09-29T07:30:48Z",
+  "generated_at": "2026-09-29T07:40:49Z",
   "drukte": "rustig",
-  "gesprekken": 0,
+  "gesprekken": 1,
   "stats": {
     "opgelost": 0,
-    "brandmeester": 0,
+    "brandmeester": 1,
     "afkoop": 0,
     "terugbel": 0,
     "geenDekking": 0,
     "verkeerdNummer": 0
   },
-  "score": 0,
-  "conversations": [],
+  "score": 9.1,
+  "conversations": [
+    {
+      "tijd": "09:29",
+      "titel": "Deep CEO Work (strategie, funnelkeuzes, abonnementen, pricing)",
+      "personen": "Verzekerde: anoniem · Edgar Stam",
+      "samenvatting": "Beller (Gowda, 1017 TA, Amsterdam) belde met een arbeidsrechtelijke vraag over een ontslagartikel van zijn werkgever. Identiteit werd geverifieerd via postcode, naam en huisnummer. De medewerker (Edgar) controleerde het rechtsbijstandsdossier, bevestigde dat de beller rechtsbijstandsdekking heeft (alle modules behalve belastingen/vermogen), en regelde doorverwijzing naar de rechtsbijstandsteam via email met documenten—geen inhoudelijk advies gegeven, maar correcte triage naar rechtsbijstand.",
+      "tags": [
+        [
+          "tag-arbeidsrecht",
+          "Arbeidsrecht"
+        ]
+      ],
+      "uitkomst": [
+        "outcome-brandmeester",
+        "Doorverwezen naar Brandmeester"
+      ],
+      "terugbel": false,
+      "verkeerdVerbonden": false,
+      "rechtsbijstandVerwijzing": true,
+      "adviesGegeven": false,
+      "identiteitGeverifieerd": true
+    }
+  ],
   "acties": [],
   "analyse": {
-    "goed": [],
-    "beter": []
+    "goed": [
+      "09:29 Deep CEO Work: Identiteit correct geverifieerd via postcode, naam en huisnummer",
+      "09:29 Deep CEO Work: Rechtsbijstandsdossier gecontroleerd en dekkingsverificatie uitgevoerd (alle modules behalve belastingen/vermogen)",
+      "09:29 Deep CEO Work: Correcte triage – arbeidsrechtelijke zaak professioneel doorverwezen naar rechtsbijstandsteam Brandmeester met volledige documentatie"
+    ],
+    "beter": [
+      "09:29 Deep CEO Work: Geen concrete vervolgdeadline vermeld voor opvolging door rechtsbijstandsteam – advies te geven wanneer beller kan verwachten contact van Brandmeester"
+    ]
   },
   "verkeerdVerbonden": {
     "aantal": 0,
     "percentage": 0.0
   },
-  "rechtsbijstandVerwijzingen": 0,
-  "categorieen": []
+  "rechtsbijstandVerwijzingen": 1,
+  "categorieen": [
+    [
+      "Arbeidsrecht",
+      1
+    ]
+  ]
 }
