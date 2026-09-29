@@ -1,6 +1,6 @@
 {
   "date": "2026-09-29",
-  "generated_at": "2026-09-29T16:01:19Z",
+  "generated_at": "2026-09-29T16:10:54Z",
   "drukte": "rustig",
   "gesprekken": 1,
   "stats": {
@@ -17,7 +17,7 @@
       "tijd": "09:29",
       "titel": "Deep CEO Work (strategie, funnelkeuzes, abonnementen, pricing)",
       "personen": "Verzekerde: anoniem · Edgar Stam",
-      "samenvatting": "Beller (Gowda) beide geverifieerd via postcode 1017 TA en appartementnummer 17F en heeft een arbeidsconflict: werkgever stuurt ontslag met vervangingsaanbod. De medewerker heeft vastgesteld dat de beller rechtsbijstandsverzekering heeft (alle modules behalve belastingen/vermogen) en stuurt een e-mail waardoor de beller documenten kan indienen voor doorverwijzing naar het juridische team. Arbeidsconflict → correcte triage naar rechtsbijstand.",
+      "samenvatting": "Beller (Gowda, postcode 1017 TA, apt 17F) belde over arbeidsconflict (ontslagaanbod van werkgever) en was al geverifieerd in het systeem. De medewerker bevestigde dat de beller rechtsbijstandsverzekering heeft (alle modules behalve belastingen/vermogen) en verwees de zaak door naar de rechtsbijstandsafdeling met verzoek documenten per e-mail in te dienen; geen inhoudelijk juridisch advies werd gegeven.",
       "tags": [
         [
           "tag-arbeidsrecht",
@@ -38,13 +38,13 @@
   "acties": [],
   "analyse": {
     "goed": [
-      "09:29 Deep CEO Work: Identiteit correct geverifieerd via postcode en appartementnummer voordat verdere stappen werden ondernomen",
-      "09:29 Deep CEO Work: Juiste triage uitgevoerd - arbeidsconflict correct herkend en doorverwezen naar gespecialiseerde rechtsbijstand (Brandmeester)",
-      "09:29 Deep CEO Work: Dekkingscontrole uitgevoerd - vastgesteld dat beller rechtsbijstandsverzekering heeft met relevante modules",
-      "09:29 Deep CEO Work: Duidelijk vervolgplan opgezet - e-mail verstuurd waarmee beller documenten kan indienen voor doorverwijzing"
+      "09:29 Deep CEO Work: Identiteit correct geverifieerd (Gowda, postcode 1017 TA, apt 17F) en in systeem bevestigd",
+      "09:29 Deep CEO Work: Dekkingscontrole uitgevoerd – rechtsbijstandsverzekering bevestigd met duidelijke specificatie van inbegrepen modules",
+      "09:29 Deep CEO Work: Geen advies gegeven zonder volledige verificatie (juiste protocol gevolgd)",
+      "09:29 Deep CEO Work: Zaak correct doorverwezen naar rechtsbijstandsafdeling (Brandmeester) met duidelijk vervolgplan"
     ],
     "beter": [
-      "09:29 Deep CEO Work: Concrete deadline ontbreekt - geen specifieke uiterste datum genoemd voor indiening van documenten door beller (bijv. 'uiterlijk 5 werkdagen') om doorverwijzing voort te zetten"
+      "09:29 Deep CEO Work: Bij doorverwijzing zou een concrete deadline voor indiening documenten per e-mail nuttig zijn geweest (bijv. 'uiterlijk woensdag 14:00') ter voorkoming van vertragingen"
     ]
   },
   "verkeerdVerbonden": {
