@@ -1,6 +1,6 @@
 {
   "date": "2026-09-30",
-  "generated_at": "2026-09-30T12:40:47Z",
+  "generated_at": "2026-09-30T12:50:49Z",
   "tickets": [
     {
       "ticketNumber": "2814",
@@ -49,19 +49,31 @@
       "webUrl": "https://desk.zoho.eu/support/htjzlancyr/ShowHomePage.do#Cases/dv/195464000014354001",
       "channel": "Phone",
       "doorgezetBrandmeester": false
+    },
+    {
+      "ticketNumber": "2818",
+      "tijd": "14:42",
+      "titel": "Webwinkel aankoop en ANWB dekking met meneer Roerding",
+      "klant": "A. Roerdink",
+      "status": "Gesloten",
+      "statusType": "",
+      "prioriteit": "Niet ingesteld",
+      "webUrl": "https://desk.zoho.eu/support/htjzlancyr/ShowHomePage.do#Cases/dv/195464000014311002",
+      "channel": "Phone",
+      "doorgezetBrandmeester": false
     }
   ],
   "channelCounts": {
-    "Phone": 4
+    "Phone": 5
   },
   "brandmeesterCount": 0,
   "ticketStats": {
-    "nieuweVandaag": 4,
-    "geslotenVandaag": 4,
+    "nieuweVandaag": 5,
+    "geslotenVandaag": 5,
     "totaalOpen": 17,
     "inDeWacht": 15,
     "statusBreakdown": {
-      "Gesloten": 680,
+      "Gesloten": 681,
       "Open": 2,
       "In de wacht": 15
     },
