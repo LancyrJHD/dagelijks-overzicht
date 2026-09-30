@@ -3392,11 +3392,18 @@
         "nummer": "+31641775606",
         "teruggebeld": false,
         "tijd": "09:17"
+      },
+      {
+        "callResult": "overflowed",
+        "naam": "Onbekend",
+        "nummer": "+31646466762",
+        "teruggebeld": false,
+        "tijd": "10:58"
       }
     ],
     "date": "2026-09-30",
-    "generated_at": "2026-09-30T09:01:00Z",
-    "nietTerugGebeld": 1,
+    "generated_at": "2026-09-30T09:10:43Z",
+    "nietTerugGebeld": 2,
     "nietTerugGebeldNummers": [
       {
         "callResult": "abandoned",
@@ -3404,10 +3411,17 @@
         "nummer": "+31641775606",
         "teruggebeld": false,
         "tijd": "09:17"
+      },
+      {
+        "callResult": "overflowed",
+        "naam": "Onbekend",
+        "nummer": "+31646466762",
+        "teruggebeld": false,
+        "tijd": "10:58"
       }
     ],
     "terugGebeld": 0,
-    "totaalGemist": 1,
-    "totaalInbound": 3
+    "totaalGemist": 2,
+    "totaalInbound": 4
   }
 }
