@@ -1,6 +1,6 @@
 {
   "date": "2026-09-30",
-  "generated_at": "2026-09-30T16:02:06Z",
+  "generated_at": "2026-09-30T16:11:40Z",
   "drukte": "druk",
   "gesprekken": 10,
   "stats": {
@@ -17,7 +17,7 @@
       "tijd": "09:38",
       "titel": "Telefoontje Lancia autoverzekering doorverwijzing",
       "personen": "Verzekerde: M. Awees · Senne Duifhuis | Juridisch medewerker",
-      "samenvatting": "Beller belde de juridische helpdesk met een vraag over autoverzekering (Lancia car insurance). De medewerker stelde vast dat dit niet het juiste nummer is en verwees de beller door naar de Lancia-website en het juiste telefoonnummer voor verzekeringsadministratie. De beller werd niet geverifieerd voor een juridische zaak, en er is geen inhoudelijk juridisch advies gegeven.",
+      "samenvatting": "Beller belt de juridische helpdesk van Lancyr maar heeft een vraag over autoverzekering van Lancia, wat niet bij deze helpdesk hoort. De medewerker (Sven) herkenning dit als verkeerd nummer en verwijst de beller correct door naar de Lancia-website met instructie om daar opnieuw te bellen. Geen inhoudelijk juridisch advies gegeven.",
       "tags": [
         [
           "tag-overig",
@@ -38,7 +38,7 @@
       "tijd": "09:50",
       "titel": "Ziekteverlof en vakantieuren bij persoonlijke problemen",
       "personen": "Verzekerde: M. Awees · Senne Duifhuis | Juridisch medewerker",
-      "samenvatting": "Beller mevrouw de Wees (M. Awees) belt over arbeidsconflict: zij meldde zich ziek wegens familieproblemen/scheiding, maar haar werkgever trekt vakantieuren af in plaats van ziekteverlof toe te kennen. De medewerker geeft inhoudelijk advies dat ziekteverlof alleen geldt bij medische klachten (stress, overspanning, slapeloosheid) en raadt aan een officieel gesprek met HR in te plannen en eventueel naar de bedrijfsarts te gaan. Beller is geverifieerd via Zoho-systeem (telefoonnummer gekoppeld aan polis).",
+      "samenvatting": "Beller (mevrouw de Wees) belt met een arbeidsrechtelijke vraag over ziekteverlof versus vakantieuren bij persoonlijke problemen (scheiding). De medewerker geeft inhoudelijk advies dat ziekteverlof alleen geldt als er concrete klachten zijn (stress, slapeloosheid, concentratieproblemen) en adviseert een gesprek met HR en mogelijk bedrijfsarts. Beller is geverifieerd via adresgegevens en automatische Zoho-herkenning; inhoudelijk advies is gegeven.",
       "tags": [
         [
           "tag-arbeidsrecht",
@@ -51,15 +51,15 @@
       ],
       "terugbel": false,
       "verkeerdVerbonden": false,
-      "rechtsbijstandVerwijzing": true,
+      "rechtsbijstandVerwijzing": false,
       "adviesGegeven": true,
       "identiteitGeverifieerd": true
     },
     {
       "tijd": "11:14",
       "titel": "Infoaanvraag ondiamantenpakket en juridische intake",
-      "personen": "Verzekerde: anoniem · Senne Duifhuis | Juridisch medewerker",
-      "samenvatting": "De beller had een vraag over het 'ondiamantenpakket' maar beschikt niet over een verzekering bij Lancyr. De medewerker heeft vastgesteld dat de beller geen polis heeft en daarom niet binnen het bereik van de Juridische Helpdesk valt. De beller is doorverwezen naar het team juridische zaken voor een ad hoc gesprek. Identiteit is niet geverifieerd (geen polis, niet in systeem), en er is geen inhoudelijk juridisch advies gegeven.",
+      "personen": "Verzekerde: anoniem · Senne Duifhuis",
+      "samenvatting": "Beller belde eerder en werd doorverwezen naar online afspraakplanning. Beller heeft geen verzekering bij Lancyr en heeft een informatievraag over het 'ondiamantenpakket'. De medewerker stelde vast dat beller niet geverifieerd kon worden (geen polis) en verwees door naar het team juridische zaken voor verdere afhandeling. Geen inhoudelijk juridisch advies is gegeven.",
       "tags": [
         [
           "tag-overig",
@@ -80,11 +80,11 @@
       "tijd": "12:15",
       "titel": "Klacht notariskantoor overdrachtsbelasting en teruggaafprocedure",
       "personen": "Verzekerde: J.J. Nusse · Senne Duifhuis",
-      "samenvatting": "Beller J.J. Nusse diende in 2021 een huis op voormalig vakantiepark met permanente bewoning. Het notariskantoor rekende 8% overdrachtsbelasting, terwijl vergelijkbare gevallen 2% betaalden. Na jaren merkte beller het verschil op en diende formele klacht en aansprakelijkstelling in bij notariskantoor. De Belastingdienst wees teruggaafverzoek af. Beller is geverifieerd via Zoho-systeemkoppeling en Senne heeft inhoudelijk advies gegeven door de zaak als juridisch geschil te erkennen en door te verwijzen naar rechtsbijstand.",
+      "samenvatting": "Beller J.J. Nusse werd automatisch geverifieerd via telefoonnummer en klantdossier. Hij diende een klacht in tegen een notariskantoor omdat hij in 2021 foutief 8% overdrachtsbelasting betaalde in plaats van 2% voor permanent bewoonde vakantiehuisaankoop; het notariskantoor weigerde verantwoordelijkheid en de teruggaafaanvraag bij de Belastingdienst werd afgewezen. De medewerker gaf geen inhoudelijk juridisch advies, maar verwees de beller expliciet door naar de rechtsbijstandsafdeling (Brandmeester) voor verdere behandeling met toezegging van een schadenummer en intakegesprek.",
       "tags": [
         [
-          "tag-consument",
-          "Consumentenrecht"
+          "tag-overig",
+          "Belastingrecht / Notarieel recht"
         ]
       ],
       "uitkomst": [
@@ -94,14 +94,14 @@
       "terugbel": false,
       "verkeerdVerbonden": false,
       "rechtsbijstandVerwijzing": true,
-      "adviesGegeven": true,
+      "adviesGegeven": false,
       "identiteitGeverifieerd": true
     },
     {
       "tijd": "13:07",
       "titel": "Verkeerd nummer – doorverwijzing naar autoverzekeringsteam",
       "personen": "Verzekerde: E.B. Lemckert · Senne Duifhuis | Juridisch medewerker",
-      "samenvatting": "Beller belt met autoverzekeringsvraag en wordt doorverbonden naar de juridische helpdesk. De medewerker stelt vast dat dit het verkeerde nummer is en verwijst de beller door naar het autoverzekeringsteam. Identiteit is geverifieerd via automatische telefoonnummerherkenning (Zoho), maar geen inhoudelijk juridisch advies is gegeven omdat het onderwerp buiten de juridische helpdesk valt.",
+      "samenvatting": "De beller belde met een vraag over autoverzekering en is daarmee verkeerd verbonden bij de juridische helpdesk. De medewerker (Senna) stelde vast dat dit niet het juiste team is en adviseerde de beller om opnieuw te bellen en het juiste keuzemenu-optie te selecteren. De beller is wel herkend in het systeem (via telefoonnummer gekoppeld aan contactpersoon E.B. Lemckert), maar er is geen inhoudelijk juridisch advies gegeven omdat het onderwerp niet onder de juridische helpdesk valt.",
       "tags": [
         [
           "tag-overig",
@@ -121,8 +121,8 @@
     {
       "tijd": "13:13",
       "titel": "Arbeidscontract flexibiliteit en ouderschapsverlof met Tempo Team",
-      "personen": "Verzekerde: E.B. Lemckert · Senne Duifhuis",
-      "samenvatting": "Beller, zwanger en werkzaam via Tempo Team op een flexibel 24-32 uur contract, heeft een conflict met de werkgever over ouderschapsverlof en roosterbepaling. De werkgever heeft standaard 16 uur betaald ouderschapsverlof in de planning ingevoerd zonder instemming, waardoor beller minder uren wordt ingepland. Identiteit is geverifieerd via Zoho (automatische herkenning op telefoonnummer); medewerker heeft advies gegeven om opnieuw contact met HR op te nemen en met inzet van rechtsbijstandsverzekering te dreigen, met mogelijkheid tot terugbellen indien nodig.",
+      "personen": "Verzekerde: E.B. Lemckert · Senne Duifhuis | Juridisch medewerker",
+      "samenvatting": "Beller (zwanger, werkzaam bij uitzendbureau via Tempo Team met flexibel 24-32 uurs contract) heeft een arbeidsconflict over onderschapsverlof en roosterflexibiliteit: werkgever heeft zonder akkoord 16 uur betaald ouderschapsverlof in de planning gezet, waardoor beller onvoldoende uren wordt ingepland. Medewerker heeft advies gegeven om nogmaals naar HR van Tempo Team te gaan, eventueel met vermelding van rechtsbijstandsinschakeling, en heeft aangeboden terugbel mogelijk te maken. Beller is geverifieerd via automatische koppeling in Zoho, en er is inhoudelijk advies gegeven over de vervolgstappen.",
       "tags": [
         [
           "tag-arbeidsrecht",
@@ -143,7 +143,7 @@
       "tijd": "13:23",
       "titel": "Doorverwijzing autoverzekering weigering naar juiste afdeling",
       "personen": "Verzekerde: E.B. Lemckert · Senne Duifhuis | Juridisch medewerker",
-      "samenvatting": "Beller belt de juridische helpdesk met een vraag over een geweigerde autoverzekering. De medewerker stelt vast dat de beller geen rechtsbijstandsverzekering heeft en dat het onderwerp (autoverzekering) niet onder de juridische helpdesk valt. Beller wordt doorverwezen naar de autoverzekeringskeuze in hetzelfde keuzemenu; geen juridisch advies gegeven.",
+      "samenvatting": "Beller belt de juridische helpdesk met een vraag over weigering van een autoverzekering. De medewerker stelt vast dat de beller geen rechtsbijstandsverzekering heeft en dat de juridische helpdesk niet bevoegd is voor autoverzekeringskwesties. De beller wordt verwezen naar de autoverzekeringafdeling via het keuzemenu van hetzelfde telefoonnummer; geen inhoudelijk juridisch advies is gegeven.",
       "tags": [
         [
           "tag-overig",
@@ -164,11 +164,11 @@
       "tijd": "14:26",
       "titel": "Rechtsbijstandsverzekering: WOZ-aanslag en DAS-zaak met Tim Ooms",
       "personen": "Verzekerde: T. Ooms · Senne Duifhuis | Juridisch medewerker",
-      "samenvatting": "Tim Ooms belt over een WOZ-aanslag-zaak met een incassobureau (€249,65) en een reeds lopende zaak via DAS-rechtsbijstand. De medewerker stelt vast dat het bedrag onder de franchise van €250 valt en dus niet onder de dekking van Lancyr valt. Beller is geverifieerd via adresgegevens en Zoho-match; inhoudelijk advies is gegeven (franchise-uitleg en suggestie voor externe juridische hulp), maar geen dekking voor deze zaak.",
+      "samenvatting": "Tim Ooms belt over een WOZ-zaak (€249,65 inclusief incassokosten) waarin hij bezwaar maakte tegen een WOZ-aanslag, maar de WOZ-bureau claimt dit gedaan te hebben terwijl de gemeente zegt het bezwaar niet te hebben ontvangen. De identiteit is geverifieerd via het systeem (Zoho-match op telefoonnummer). De medewerker geeft inhoudelijk advies: het bedrag van €249,65 valt net onder de dekkingsdrempel van €250, dus geen rechtsbijstandsdekking; als alternatief zou de beller externe juridische hulp kunnen inschakelen of een advocaat een waarschuwingsbrief laten sturen. De beller meldt aan het einde dat hij nog een lopende zaak heeft bij DAS (rechtsbijstandsverzekeraar), waarover hij ook vragen heeft.",
       "tags": [
         [
           "tag-bestuursrecht",
-          "Bestuursrecht (WOZ)"
+          "Belastingrecht / WOZ-aanslag"
         ]
       ],
       "uitkomst": [
@@ -185,7 +185,7 @@
       "tijd": "14:38",
       "titel": "Webwinkel aankoop en ANWB dekking met meneer Roerding",
       "personen": "Verzekerde: T. Ooms · Senne Duifhuis",
-      "samenvatting": "Meneer Roerding belde over een webwinkelgeschil en ANWB-dekking. De medewerker legde uit dat voor consumentenzaken een franchise van EUR 250 geldt, en omdat het geschil onder deze drempel valt, is er geen dekking. De identiteit werd geverifieerd via postcode en naam, en inhoudelijk advies werd gegeven over de franchise en alternatieve opties (onderzoek afwachten, later een ingebrekenstelling).",
+      "samenvatting": "Meneer Roerding belde met een afspraak over een webwinkel-aankoop en ANWB-dekking. De identiteit werd geverifieerd via postcode en naam. De medewerker legde uit dat de webwinkel-aankoop onder de franchise van EUR 250 valt en daarom geen dekking heeft; wel werd advies gegeven om het onderzoek af te wachten en later eventueel een ingebrekenstelling te sturen.",
       "tags": [
         [
           "tag-consument",
@@ -206,7 +206,7 @@
       "tijd": "16:46",
       "titel": "Verkeerde afdeling – doorverwijzing autoverzekering",
       "personen": "Verzekerde: anoniem · Senne Duifhuis | Juridisch medewerker",
-      "samenvatting": "Beller beide de juridische helpdesk maar had een vraag over autoverzekering, wat niet tot het juridische aanbod behoort. De medewerker Senna identificeerde dit en verwees de beller door naar de juiste afdeling (autoverzekering) met het advies opnieuw te bellen en voor 'auto' of 'autoverzekering' te kiezen. De beller is niet geverifieerd en er is geen inhoudelijk juridisch advies gegeven.",
+      "samenvatting": "Beller belde voor een autoverzekeringsvraag en werd correct geïnformeerd dat hij/zij bij de Juridische Helpdesk was aangekomen. De medewerker verklaarde dat autoverzekering niet binnen het bereik van de juridische helpdesk valt en adviseerde de beller opnieuw te bellen en een ander menuitem te kiezen. Identiteit werd niet geverifieerd en geen juridisch advies werd gegeven.",
       "tags": [
         [
           "tag-overig",
@@ -227,25 +227,25 @@
   "acties": [],
   "analyse": {
     "goed": [
-      "09:38 Lancia autoverzekering: Juiste doorverwijzing naar specialistische afdeling met concreet telefoonnummer.",
-      "09:50 Ziekteverlof De Wees: Identiteit geverifieerd via Zoho, inhoudelijk advies gegeven over medische vereisten ziekteverlof, doorverwezen naar Brandmeester voor vervolgstappen.",
-      "12:15 Notariskantoor Nusse: Identiteit geverifieerd, juridisch geschil correct herkend, passende doorverwijzing naar rechtsbijstand zonder onnodige vertragingen.",
-      "13:07 Autoverzekering herkenning: Snelle herkenning van verkeerde afdeling, beller al geverifieerd via Zoho-systeem.",
-      "13:13 Tempo Team Ouderschapsverlof: Identiteit geverifieerd, concreet advies gegeven (HR opnieuw benaderen, rechtsbijstandsdreiging), mogelijkheid tot terugbellen afgesproken.",
-      "14:26 WOZ-aanslag Ooms: Franchise korrekt toegepast (€249,65 onder €250 drempel), identiteit geverifieerd, advies over alternatieve juridische hulp gegeven.",
-      "14:38 Webwinkel Roerding: Franchise correct gecontroleerd en uitgelegd, identiteit via postcode/naam geverifieerd, advies over alternatieve stapjes gegeven."
+      "09:38 Lancia autoverzekering: correcte herkenning verkeerd nummer en efficiënte doorverwijzing",
+      "09:50 Ziekteverlof: identiteit geverifieerd, inhoudelijk arbeidsrechtelijk advies gegeven met concrete vervolgstappen (HR en bedrijfsarts)",
+      "12:15 Notariskantoor/overdrachtsbelasting: identiteit geverifieerd, terecht geen inhoudelijk advies gegeven maar directe doorverwijzing naar Brandmeester met toezegging schadenummer en intake",
+      "13:13 Ouderschapsverlof Tempo Team: identiteit geverifieerd, advies gegeven over vervolgstappen en terugbeloptie aangeboden",
+      "14:26 WOZ-zaak Tim Ooms: identiteit geverifieerd, correct geconstateerd dat schade (€249,65) onder dekkingsdrempel EUR 250 valt, alternatieve oplossingen (externe juridische hulp) geboden",
+      "14:38 Webwinkel aankoop Roerding: identiteit geverifieerd, franchise EUR 250 correct vastgesteld en toegepast, alternatief advies gegeven",
+      "Drie doorverwijzingen (09:38, 13:07, 13:23) correct uitgevoerd als verkeerd nummer naar juiste afdelingen"
     ],
     "beter": [
-      "11:14 Ondiamantenpakket: Beller zonder polis terecht niet geverifieerd, maar doorverwijzing naar 'team juridische zaken voor ad hoc gesprek' is vaag – concrete vervolgstap en eventuele deadline ontbreekt.",
-      "13:23 Autoverzekering weigering: Beller geverifieerd maar geen concrete vervolgstap genoemd (welk keuzemenu-item precies, of telefoonnummer van juiste afdeling?).",
-      "16:46 Autoverzekering 16:46: Beller niet geverifieerd en geen concrete vervolggegevens gegeven ('opnieuw bellen en kiezen voor auto' is onvoldoende specifiek – welk nummer, welke stap precies?). Verbetermogelijkheid: Direct telefoonnummer of intern doorverbindingscode geven."
+      "11:14 Ondiamantenpakket: beller kon niet geverifieerd worden (geen polis) en werd correct doorverwezen, maar geen concrete deadline of vervolgcontact-afspraak is vastgelegd in samenvatting",
+      "14:26 WOZ-zaak: beller geeft aan einde aan dat hij nog een DAS-zaak heeft waarover vragen zijn, maar medewerker lijkt hierop niet in te gaan; vervolgcontact hiervoor kon/moest worden afgesproken",
+      "16:46 Autoverzekering laatste oproep: identiteit niet geverifieerd bij verkeerd nummer - bij routeerfunctie acceptabel, maar geen opnamegegevens vastgelegd voor terugbel indien nodig"
     ]
   },
   "verkeerdVerbonden": {
     "aantal": 5,
     "percentage": 50.0
   },
-  "rechtsbijstandVerwijzingen": 3,
+  "rechtsbijstandVerwijzingen": 2,
   "categorieen": [
     [
       "Routering",
@@ -256,11 +256,15 @@
       2
     ],
     [
-      "Consumentenrecht",
-      2
+      "Belastingrecht / Notarieel recht",
+      1
     ],
     [
-      "Bestuursrecht (WOZ)",
+      "Belastingrecht / WOZ-aanslag",
+      1
+    ],
+    [
+      "Consumentenrecht",
       1
     ]
   ]
