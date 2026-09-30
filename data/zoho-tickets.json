@@ -1,6 +1,6 @@
 {
   "date": "2026-09-30",
-  "generated_at": "2026-09-30T12:30:51Z",
+  "generated_at": "2026-09-30T12:40:47Z",
   "tickets": [
     {
       "ticketNumber": "2814",
@@ -37,19 +37,31 @@
       "webUrl": "https://desk.zoho.eu/support/htjzlancyr/ShowHomePage.do#Cases/dv/195464000014352001",
       "channel": "Phone",
       "doorgezetBrandmeester": false
+    },
+    {
+      "ticketNumber": "2817",
+      "tijd": "14:37",
+      "titel": "Rechtsbijstandsverzekering: WOZ-aanslag en DAS-zaak met Tim Ooms",
+      "klant": "T. Ooms",
+      "status": "Gesloten",
+      "statusType": "",
+      "prioriteit": "Niet ingesteld",
+      "webUrl": "https://desk.zoho.eu/support/htjzlancyr/ShowHomePage.do#Cases/dv/195464000014354001",
+      "channel": "Phone",
+      "doorgezetBrandmeester": false
     }
   ],
   "channelCounts": {
-    "Phone": 3
+    "Phone": 4
   },
   "brandmeesterCount": 0,
   "ticketStats": {
-    "nieuweVandaag": 3,
-    "geslotenVandaag": 3,
+    "nieuweVandaag": 4,
+    "geslotenVandaag": 4,
     "totaalOpen": 17,
     "inDeWacht": 15,
     "statusBreakdown": {
-      "Gesloten": 679,
+      "Gesloten": 680,
       "Open": 2,
       "In de wacht": 15
     },
