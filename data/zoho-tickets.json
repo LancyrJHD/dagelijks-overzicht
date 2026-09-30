@@ -1,6 +1,6 @@
 {
   "date": "2026-09-30",
-  "generated_at": "2026-09-30T10:20:43Z",
+  "generated_at": "2026-09-30T10:30:51Z",
   "tickets": [
     {
       "ticketNumber": "2814",
@@ -13,20 +13,33 @@
       "webUrl": "https://desk.zoho.eu/support/htjzlancyr/ShowHomePage.do#Cases/dv/195464000014337001",
       "channel": "Phone",
       "doorgezetBrandmeester": false
+    },
+    {
+      "ticketNumber": "2815",
+      "tijd": "12:20",
+      "titel": "Beroepsfout notaris kantoor",
+      "klant": "J.J. Nusse",
+      "status": "In de wacht",
+      "statusType": "",
+      "prioriteit": "Niet ingesteld",
+      "webUrl": "https://desk.zoho.eu/support/htjzlancyr/ShowHomePage.do#Cases/dv/195464000014336013",
+      "channel": "Phone",
+      "doorgezetBrandmeester": false
     }
   ],
   "channelCounts": {
-    "Phone": 1
+    "Phone": 2
   },
   "brandmeesterCount": 0,
   "ticketStats": {
-    "nieuweVandaag": 1,
+    "nieuweVandaag": 2,
     "geslotenVandaag": 2,
-    "totaalOpen": 14,
-    "inDeWacht": 14,
+    "totaalOpen": 16,
+    "inDeWacht": 15,
     "statusBreakdown": {
-      "Gesloten": 681,
-      "In de wacht": 14
+      "In de wacht": 15,
+      "Open": 1,
+      "Gesloten": 681
     },
     "capBereikt": false
   }
