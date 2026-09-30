@@ -1,18 +1,33 @@
 {
   "date": "2026-09-30",
-  "generated_at": "2026-09-30T07:50:44Z",
-  "tickets": [],
-  "channelCounts": {},
+  "generated_at": "2026-09-30T08:01:01Z",
+  "tickets": [
+    {
+      "ticketNumber": "2814",
+      "tijd": "09:58",
+      "titel": "Ziekteverlof en vakantieuren bij persoonlijke problemen",
+      "klant": "M. Awees",
+      "status": "Gesloten",
+      "statusType": "",
+      "prioriteit": "Niet ingesteld",
+      "webUrl": "https://desk.zoho.eu/support/htjzlancyr/ShowHomePage.do#Cases/dv/195464000014337001",
+      "channel": "Phone",
+      "doorgezetBrandmeester": false
+    }
+  ],
+  "channelCounts": {
+    "Phone": 1
+  },
   "brandmeesterCount": 0,
   "ticketStats": {
-    "nieuweVandaag": 0,
-    "geslotenVandaag": 0,
+    "nieuweVandaag": 1,
+    "geslotenVandaag": 1,
     "totaalOpen": 15,
-    "inDeWacht": 13,
+    "inDeWacht": 14,
     "statusBreakdown": {
-      "Open": 2,
-      "Gesloten": 679,
-      "In de wacht": 13
+      "In de wacht": 14,
+      "Gesloten": 680,
+      "Open": 1
     },
     "capBereikt": false
   }
