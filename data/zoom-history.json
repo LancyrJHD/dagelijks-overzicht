@@ -3385,13 +3385,29 @@
     "totaalInbound": 11
   },
   "2026-09-30": {
-    "alleGemistNummers": [],
+    "alleGemistNummers": [
+      {
+        "callResult": "abandoned",
+        "naam": "Onbekend",
+        "nummer": "+31641775606",
+        "teruggebeld": false,
+        "tijd": "09:17"
+      }
+    ],
     "date": "2026-09-30",
-    "generated_at": "2026-09-30T07:10:38Z",
-    "nietTerugGebeld": 0,
-    "nietTerugGebeldNummers": [],
+    "generated_at": "2026-09-30T07:20:43Z",
+    "nietTerugGebeld": 1,
+    "nietTerugGebeldNummers": [
+      {
+        "callResult": "abandoned",
+        "naam": "Onbekend",
+        "nummer": "+31641775606",
+        "teruggebeld": false,
+        "tijd": "09:17"
+      }
+    ],
     "terugGebeld": 0,
-    "totaalGemist": 0,
-    "totaalInbound": 0
+    "totaalGemist": 1,
+    "totaalInbound": 1
   }
 }
