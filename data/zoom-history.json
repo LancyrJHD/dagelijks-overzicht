@@ -3397,13 +3397,13 @@
         "callResult": "overflowed",
         "naam": "Onbekend",
         "nummer": "+31646466762",
-        "teruggebeld": false,
+        "teruggebeld": true,
         "tijd": "10:58"
       }
     ],
     "date": "2026-09-30",
-    "generated_at": "2026-09-30T09:10:43Z",
-    "nietTerugGebeld": 2,
+    "generated_at": "2026-09-30T09:20:40Z",
+    "nietTerugGebeld": 1,
     "nietTerugGebeldNummers": [
       {
         "callResult": "abandoned",
@@ -3411,16 +3411,9 @@
         "nummer": "+31641775606",
         "teruggebeld": false,
         "tijd": "09:17"
-      },
-      {
-        "callResult": "overflowed",
-        "naam": "Onbekend",
-        "nummer": "+31646466762",
-        "teruggebeld": false,
-        "tijd": "10:58"
       }
     ],
-    "terugGebeld": 0,
+    "terugGebeld": 1,
     "totaalGemist": 2,
     "totaalInbound": 4
   }

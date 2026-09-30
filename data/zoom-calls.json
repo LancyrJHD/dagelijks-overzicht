@@ -1,23 +1,16 @@
 {
   "date": "2026-09-30",
-  "generated_at": "2026-09-30T09:10:43Z",
+  "generated_at": "2026-09-30T09:20:40Z",
   "totaalInbound": 4,
   "totaalGemist": 2,
-  "terugGebeld": 0,
-  "nietTerugGebeld": 2,
+  "terugGebeld": 1,
+  "nietTerugGebeld": 1,
   "nietTerugGebeldNummers": [
     {
       "nummer": "+31641775606",
       "naam": "Onbekend",
       "tijd": "09:17",
       "callResult": "abandoned",
-      "teruggebeld": false
-    },
-    {
-      "nummer": "+31646466762",
-      "naam": "Onbekend",
-      "tijd": "10:58",
-      "callResult": "overflowed",
       "teruggebeld": false
     }
   ],
@@ -34,7 +27,7 @@
       "naam": "Onbekend",
       "tijd": "10:58",
       "callResult": "overflowed",
-      "teruggebeld": false
+      "teruggebeld": true
     }
   ]
 }
