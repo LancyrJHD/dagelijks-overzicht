@@ -1,15 +1,22 @@
 {
   "date": "2026-10-01",
-  "generated_at": "2026-10-01T07:30:46Z",
-  "totaalInbound": 1,
-  "totaalGemist": 1,
+  "generated_at": "2026-10-01T07:40:40Z",
+  "totaalInbound": 2,
+  "totaalGemist": 2,
   "terugGebeld": 0,
-  "nietTerugGebeld": 1,
+  "nietTerugGebeld": 2,
   "nietTerugGebeldNummers": [
     {
       "nummer": "+31624659057",
       "naam": "Onbekend",
       "tijd": "09:00",
+      "callResult": "overflowed",
+      "teruggebeld": false
+    },
+    {
+      "nummer": "+31683570128",
+      "naam": "Onbekend",
+      "tijd": "09:27",
       "callResult": "overflowed",
       "teruggebeld": false
     }
@@ -19,6 +26,13 @@
       "nummer": "+31624659057",
       "naam": "Onbekend",
       "tijd": "09:00",
+      "callResult": "overflowed",
+      "teruggebeld": false
+    },
+    {
+      "nummer": "+31683570128",
+      "naam": "Onbekend",
+      "tijd": "09:27",
       "callResult": "overflowed",
       "teruggebeld": false
     }

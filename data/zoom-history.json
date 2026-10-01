@@ -3439,11 +3439,18 @@
         "nummer": "+31624659057",
         "teruggebeld": false,
         "tijd": "09:00"
+      },
+      {
+        "callResult": "overflowed",
+        "naam": "Onbekend",
+        "nummer": "+31683570128",
+        "teruggebeld": false,
+        "tijd": "09:27"
       }
     ],
     "date": "2026-10-01",
-    "generated_at": "2026-10-01T07:30:46Z",
-    "nietTerugGebeld": 1,
+    "generated_at": "2026-10-01T07:40:40Z",
+    "nietTerugGebeld": 2,
     "nietTerugGebeldNummers": [
       {
         "callResult": "overflowed",
@@ -3451,10 +3458,17 @@
         "nummer": "+31624659057",
         "teruggebeld": false,
         "tijd": "09:00"
+      },
+      {
+        "callResult": "overflowed",
+        "naam": "Onbekend",
+        "nummer": "+31683570128",
+        "teruggebeld": false,
+        "tijd": "09:27"
       }
     ],
     "terugGebeld": 0,
-    "totaalGemist": 1,
-    "totaalInbound": 1
+    "totaalGemist": 2,
+    "totaalInbound": 2
   }
 }
