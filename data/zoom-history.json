@@ -3446,11 +3446,18 @@
         "nummer": "+31683570128",
         "teruggebeld": false,
         "tijd": "09:27"
+      },
+      {
+        "callResult": "overflowed",
+        "naam": "Onbekend",
+        "nummer": "+31639140021",
+        "teruggebeld": false,
+        "tijd": "09:50"
       }
     ],
     "date": "2026-10-01",
-    "generated_at": "2026-10-01T07:50:45Z",
-    "nietTerugGebeld": 2,
+    "generated_at": "2026-10-01T08:00:58Z",
+    "nietTerugGebeld": 3,
     "nietTerugGebeldNummers": [
       {
         "callResult": "overflowed",
@@ -3465,10 +3472,17 @@
         "nummer": "+31683570128",
         "teruggebeld": false,
         "tijd": "09:27"
+      },
+      {
+        "callResult": "overflowed",
+        "naam": "Onbekend",
+        "nummer": "+31639140021",
+        "teruggebeld": false,
+        "tijd": "09:50"
       }
     ],
     "terugGebeld": 0,
-    "totaalGemist": 2,
-    "totaalInbound": 2
+    "totaalGemist": 3,
+    "totaalInbound": 3
   }
 }
