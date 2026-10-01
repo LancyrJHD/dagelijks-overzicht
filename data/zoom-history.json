@@ -3474,11 +3474,25 @@
         "nummer": "+31614181470",
         "teruggebeld": false,
         "tijd": "11:47"
+      },
+      {
+        "callResult": "abandoned",
+        "naam": "Onbekend",
+        "nummer": "+31614181470",
+        "teruggebeld": false,
+        "tijd": "11:50"
+      },
+      {
+        "callResult": "abandoned",
+        "naam": "Onbekend",
+        "nummer": "+31614181470",
+        "teruggebeld": false,
+        "tijd": "11:52"
       }
     ],
     "date": "2026-10-01",
-    "generated_at": "2026-10-01T09:50:45Z",
-    "nietTerugGebeld": 6,
+    "generated_at": "2026-10-01T10:01:02Z",
+    "nietTerugGebeld": 8,
     "nietTerugGebeldNummers": [
       {
         "callResult": "overflowed",
@@ -3521,10 +3535,24 @@
         "nummer": "+31614181470",
         "teruggebeld": false,
         "tijd": "11:47"
+      },
+      {
+        "callResult": "abandoned",
+        "naam": "Onbekend",
+        "nummer": "+31614181470",
+        "teruggebeld": false,
+        "tijd": "11:50"
+      },
+      {
+        "callResult": "abandoned",
+        "naam": "Onbekend",
+        "nummer": "+31614181470",
+        "teruggebeld": false,
+        "tijd": "11:52"
       }
     ],
     "terugGebeld": 0,
-    "totaalGemist": 6,
-    "totaalInbound": 6
+    "totaalGemist": 8,
+    "totaalInbound": 8
   }
 }
