@@ -3467,11 +3467,18 @@
         "nummer": "+31626328994",
         "teruggebeld": false,
         "tijd": "11:15"
+      },
+      {
+        "callResult": "abandoned",
+        "naam": "Onbekend",
+        "nummer": "+31614181470",
+        "teruggebeld": false,
+        "tijd": "11:47"
       }
     ],
     "date": "2026-10-01",
-    "generated_at": "2026-10-01T09:40:42Z",
-    "nietTerugGebeld": 5,
+    "generated_at": "2026-10-01T09:50:45Z",
+    "nietTerugGebeld": 6,
     "nietTerugGebeldNummers": [
       {
         "callResult": "overflowed",
@@ -3507,10 +3514,17 @@
         "nummer": "+31626328994",
         "teruggebeld": false,
         "tijd": "11:15"
+      },
+      {
+        "callResult": "abandoned",
+        "naam": "Onbekend",
+        "nummer": "+31614181470",
+        "teruggebeld": false,
+        "tijd": "11:47"
       }
     ],
     "terugGebeld": 0,
-    "totaalGemist": 5,
-    "totaalInbound": 5
+    "totaalGemist": 6,
+    "totaalInbound": 6
   }
 }
