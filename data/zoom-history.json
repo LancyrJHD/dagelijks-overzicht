@@ -3495,11 +3495,25 @@
         "nummer": "+31638062978",
         "teruggebeld": false,
         "tijd": "15:08"
+      },
+      {
+        "callResult": "overflowed",
+        "naam": "Onbekend",
+        "nummer": "+31638062978",
+        "teruggebeld": false,
+        "tijd": "15:12"
+      },
+      {
+        "callResult": "abandoned",
+        "naam": "Onbekend",
+        "nummer": "+31630322488",
+        "teruggebeld": false,
+        "tijd": "15:21"
       }
     ],
     "date": "2026-10-01",
-    "generated_at": "2026-10-01T13:20:39Z",
-    "nietTerugGebeld": 9,
+    "generated_at": "2026-10-01T13:30:57Z",
+    "nietTerugGebeld": 11,
     "nietTerugGebeldNummers": [
       {
         "callResult": "overflowed",
@@ -3563,10 +3577,24 @@
         "nummer": "+31638062978",
         "teruggebeld": false,
         "tijd": "15:08"
+      },
+      {
+        "callResult": "overflowed",
+        "naam": "Onbekend",
+        "nummer": "+31638062978",
+        "teruggebeld": false,
+        "tijd": "15:12"
+      },
+      {
+        "callResult": "abandoned",
+        "naam": "Onbekend",
+        "nummer": "+31630322488",
+        "teruggebeld": false,
+        "tijd": "15:21"
       }
     ],
     "terugGebeld": 0,
-    "totaalGemist": 9,
-    "totaalInbound": 9
+    "totaalGemist": 11,
+    "totaalInbound": 11
   }
 }
