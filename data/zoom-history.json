@@ -3432,13 +3432,29 @@
     "totaalInbound": 11
   },
   "2026-10-01": {
-    "alleGemistNummers": [],
+    "alleGemistNummers": [
+      {
+        "callResult": "overflowed",
+        "naam": "Onbekend",
+        "nummer": "+31624659057",
+        "teruggebeld": false,
+        "tijd": "09:00"
+      }
+    ],
     "date": "2026-10-01",
-    "generated_at": "2026-10-01T07:10:53Z",
-    "nietTerugGebeld": 0,
-    "nietTerugGebeldNummers": [],
+    "generated_at": "2026-10-01T07:20:43Z",
+    "nietTerugGebeld": 1,
+    "nietTerugGebeldNummers": [
+      {
+        "callResult": "overflowed",
+        "naam": "Onbekend",
+        "nummer": "+31624659057",
+        "teruggebeld": false,
+        "tijd": "09:00"
+      }
+    ],
     "terugGebeld": 0,
-    "totaalGemist": 0,
-    "totaalInbound": 0
+    "totaalGemist": 1,
+    "totaalInbound": 1
   }
 }

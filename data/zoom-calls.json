@@ -1,10 +1,26 @@
 {
   "date": "2026-10-01",
-  "generated_at": "2026-10-01T07:10:53Z",
-  "totaalInbound": 0,
-  "totaalGemist": 0,
+  "generated_at": "2026-10-01T07:20:43Z",
+  "totaalInbound": 1,
+  "totaalGemist": 1,
   "terugGebeld": 0,
-  "nietTerugGebeld": 0,
-  "nietTerugGebeldNummers": [],
-  "alleGemistNummers": []
+  "nietTerugGebeld": 1,
+  "nietTerugGebeldNummers": [
+    {
+      "nummer": "+31624659057",
+      "naam": "Onbekend",
+      "tijd": "09:00",
+      "callResult": "overflowed",
+      "teruggebeld": false
+    }
+  ],
+  "alleGemistNummers": [
+    {
+      "nummer": "+31624659057",
+      "naam": "Onbekend",
+      "tijd": "09:00",
+      "callResult": "overflowed",
+      "teruggebeld": false
+    }
+  ]
 }
