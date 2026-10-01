@@ -1,10 +1,10 @@
 {
   "date": "2026-10-01",
-  "generated_at": "2026-10-01T13:40:43Z",
-  "totaalInbound": 11,
-  "totaalGemist": 11,
+  "generated_at": "2026-10-01T13:50:48Z",
+  "totaalInbound": 12,
+  "totaalGemist": 12,
   "terugGebeld": 0,
-  "nietTerugGebeld": 11,
+  "nietTerugGebeld": 12,
   "nietTerugGebeldNummers": [
     {
       "nummer": "+31624659057",
@@ -81,6 +81,13 @@
       "naam": "Onbekend",
       "tijd": "15:21",
       "callResult": "abandoned",
+      "teruggebeld": false
+    },
+    {
+      "nummer": "+31622018474",
+      "naam": "Onbekend",
+      "tijd": "15:42",
+      "callResult": "overflowed",
       "teruggebeld": false
     }
   ],
@@ -160,6 +167,13 @@
       "naam": "Onbekend",
       "tijd": "15:21",
       "callResult": "abandoned",
+      "teruggebeld": false
+    },
+    {
+      "nummer": "+31622018474",
+      "naam": "Onbekend",
+      "tijd": "15:42",
+      "callResult": "overflowed",
       "teruggebeld": false
     }
   ]
