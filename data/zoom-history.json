@@ -3488,11 +3488,18 @@
         "nummer": "+31614181470",
         "teruggebeld": false,
         "tijd": "11:52"
+      },
+      {
+        "callResult": "abandoned",
+        "naam": "Onbekend",
+        "nummer": "+31638062978",
+        "teruggebeld": false,
+        "tijd": "15:08"
       }
     ],
     "date": "2026-10-01",
-    "generated_at": "2026-10-01T13:01:05Z",
-    "nietTerugGebeld": 8,
+    "generated_at": "2026-10-01T13:10:54Z",
+    "nietTerugGebeld": 9,
     "nietTerugGebeldNummers": [
       {
         "callResult": "overflowed",
@@ -3549,10 +3556,17 @@
         "nummer": "+31614181470",
         "teruggebeld": false,
         "tijd": "11:52"
+      },
+      {
+        "callResult": "abandoned",
+        "naam": "Onbekend",
+        "nummer": "+31638062978",
+        "teruggebeld": false,
+        "tijd": "15:08"
       }
     ],
     "terugGebeld": 0,
-    "totaalGemist": 8,
-    "totaalInbound": 8
+    "totaalGemist": 9,
+    "totaalInbound": 9
   }
 }
