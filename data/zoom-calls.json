@@ -1,10 +1,10 @@
 {
   "date": "2026-10-01",
-  "generated_at": "2026-10-01T09:12:37Z",
-  "totaalInbound": 3,
-  "totaalGemist": 3,
+  "generated_at": "2026-10-01T09:20:39Z",
+  "totaalInbound": 5,
+  "totaalGemist": 5,
   "terugGebeld": 0,
-  "nietTerugGebeld": 3,
+  "nietTerugGebeld": 5,
   "nietTerugGebeldNummers": [
     {
       "nummer": "+31624659057",
@@ -25,6 +25,20 @@
       "naam": "Onbekend",
       "tijd": "09:50",
       "callResult": "overflowed",
+      "teruggebeld": false
+    },
+    {
+      "nummer": "+31626328994",
+      "naam": "Onbekend",
+      "tijd": "11:12",
+      "callResult": "abandoned",
+      "teruggebeld": false
+    },
+    {
+      "nummer": "+31626328994",
+      "naam": "Onbekend",
+      "tijd": "11:15",
+      "callResult": "abandoned",
       "teruggebeld": false
     }
   ],
@@ -48,6 +62,20 @@
       "naam": "Onbekend",
       "tijd": "09:50",
       "callResult": "overflowed",
+      "teruggebeld": false
+    },
+    {
+      "nummer": "+31626328994",
+      "naam": "Onbekend",
+      "tijd": "11:12",
+      "callResult": "abandoned",
+      "teruggebeld": false
+    },
+    {
+      "nummer": "+31626328994",
+      "naam": "Onbekend",
+      "tijd": "11:15",
+      "callResult": "abandoned",
       "teruggebeld": false
     }
   ]

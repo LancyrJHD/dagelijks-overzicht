@@ -3453,11 +3453,25 @@
         "nummer": "+31639140021",
         "teruggebeld": false,
         "tijd": "09:50"
+      },
+      {
+        "callResult": "abandoned",
+        "naam": "Onbekend",
+        "nummer": "+31626328994",
+        "teruggebeld": false,
+        "tijd": "11:12"
+      },
+      {
+        "callResult": "abandoned",
+        "naam": "Onbekend",
+        "nummer": "+31626328994",
+        "teruggebeld": false,
+        "tijd": "11:15"
       }
     ],
     "date": "2026-10-01",
-    "generated_at": "2026-10-01T09:12:37Z",
-    "nietTerugGebeld": 3,
+    "generated_at": "2026-10-01T09:20:39Z",
+    "nietTerugGebeld": 5,
     "nietTerugGebeldNummers": [
       {
         "callResult": "overflowed",
@@ -3479,10 +3493,24 @@
         "nummer": "+31639140021",
         "teruggebeld": false,
         "tijd": "09:50"
+      },
+      {
+        "callResult": "abandoned",
+        "naam": "Onbekend",
+        "nummer": "+31626328994",
+        "teruggebeld": false,
+        "tijd": "11:12"
+      },
+      {
+        "callResult": "abandoned",
+        "naam": "Onbekend",
+        "nummer": "+31626328994",
+        "teruggebeld": false,
+        "tijd": "11:15"
       }
     ],
     "terugGebeld": 0,
-    "totaalGemist": 3,
-    "totaalInbound": 3
+    "totaalGemist": 5,
+    "totaalInbound": 5
   }
 }
