@@ -1,47 +1,10 @@
 {
-  "date": "2026-09-30",
-  "generated_at": "2026-09-30T20:57:02Z",
-  "totaalInbound": 11,
-  "totaalGemist": 3,
-  "terugGebeld": 1,
-  "nietTerugGebeld": 2,
-  "nietTerugGebeldNummers": [
-    {
-      "nummer": "+31641775606",
-      "naam": "Onbekend",
-      "tijd": "09:17",
-      "callResult": "abandoned",
-      "teruggebeld": false
-    },
-    {
-      "nummer": "+31685874400",
-      "naam": "Onbekend",
-      "tijd": "13:13",
-      "callResult": "overflowed",
-      "teruggebeld": false
-    }
-  ],
-  "alleGemistNummers": [
-    {
-      "nummer": "+31641775606",
-      "naam": "Onbekend",
-      "tijd": "09:17",
-      "callResult": "abandoned",
-      "teruggebeld": false
-    },
-    {
-      "nummer": "+31646466762",
-      "naam": "Onbekend",
-      "tijd": "10:58",
-      "callResult": "overflowed",
-      "teruggebeld": true
-    },
-    {
-      "nummer": "+31685874400",
-      "naam": "Onbekend",
-      "tijd": "13:13",
-      "callResult": "overflowed",
-      "teruggebeld": false
-    }
-  ]
+  "date": "2026-10-01",
+  "generated_at": "2026-10-01T05:00:55Z",
+  "totaalInbound": 0,
+  "totaalGemist": 0,
+  "terugGebeld": 0,
+  "nietTerugGebeld": 0,
+  "nietTerugGebeldNummers": [],
+  "alleGemistNummers": []
 }
