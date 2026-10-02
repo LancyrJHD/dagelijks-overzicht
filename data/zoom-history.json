@@ -3752,11 +3752,18 @@
         "nummer": "+31683570128",
         "teruggebeld": false,
         "tijd": "14:12"
+      },
+      {
+        "callResult": "abandoned",
+        "naam": "Onbekend",
+        "nummer": "+31657999015",
+        "teruggebeld": false,
+        "tijd": "14:18"
       }
     ],
     "date": "2026-10-02",
-    "generated_at": "2026-10-02T12:20:43Z",
-    "nietTerugGebeld": 18,
+    "generated_at": "2026-10-02T12:30:58Z",
+    "nietTerugGebeld": 19,
     "nietTerugGebeldNummers": [
       {
         "callResult": "overflowed",
@@ -3883,10 +3890,17 @@
         "nummer": "+31683570128",
         "teruggebeld": false,
         "tijd": "14:12"
+      },
+      {
+        "callResult": "abandoned",
+        "naam": "Onbekend",
+        "nummer": "+31657999015",
+        "teruggebeld": false,
+        "tijd": "14:18"
       }
     ],
     "terugGebeld": 0,
-    "totaalGemist": 18,
-    "totaalInbound": 18
+    "totaalGemist": 19,
+    "totaalInbound": 19
   }
 }
