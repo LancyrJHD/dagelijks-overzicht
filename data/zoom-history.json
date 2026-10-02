@@ -3759,11 +3759,18 @@
         "nummer": "+31657999015",
         "teruggebeld": false,
         "tijd": "14:18"
+      },
+      {
+        "callResult": "abandoned",
+        "naam": "Onbekend",
+        "nummer": "+31657999015",
+        "teruggebeld": false,
+        "tijd": "14:30"
       }
     ],
     "date": "2026-10-02",
-    "generated_at": "2026-10-02T12:30:58Z",
-    "nietTerugGebeld": 19,
+    "generated_at": "2026-10-02T12:40:54Z",
+    "nietTerugGebeld": 20,
     "nietTerugGebeldNummers": [
       {
         "callResult": "overflowed",
@@ -3897,10 +3904,17 @@
         "nummer": "+31657999015",
         "teruggebeld": false,
         "tijd": "14:18"
+      },
+      {
+        "callResult": "abandoned",
+        "naam": "Onbekend",
+        "nummer": "+31657999015",
+        "teruggebeld": false,
+        "tijd": "14:30"
       }
     ],
     "terugGebeld": 0,
-    "totaalGemist": 19,
-    "totaalInbound": 19
+    "totaalGemist": 20,
+    "totaalInbound": 20
   }
 }
