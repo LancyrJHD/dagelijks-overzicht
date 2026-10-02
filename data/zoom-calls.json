@@ -1,10 +1,10 @@
 {
   "date": "2026-10-02",
-  "generated_at": "2026-10-02T12:10:44Z",
-  "totaalInbound": 16,
-  "totaalGemist": 16,
+  "generated_at": "2026-10-02T12:20:43Z",
+  "totaalInbound": 18,
+  "totaalGemist": 18,
   "terugGebeld": 0,
-  "nietTerugGebeld": 16,
+  "nietTerugGebeld": 18,
   "nietTerugGebeldNummers": [
     {
       "nummer": "+31683570128",
@@ -116,6 +116,20 @@
       "naam": "Onbekend",
       "tijd": "13:10",
       "callResult": "overflowed",
+      "teruggebeld": false
+    },
+    {
+      "nummer": "+31620373524",
+      "naam": "Onbekend",
+      "tijd": "14:06",
+      "callResult": "overflowed",
+      "teruggebeld": false
+    },
+    {
+      "nummer": "+31683570128",
+      "naam": "Onbekend",
+      "tijd": "14:12",
+      "callResult": "abandoned",
       "teruggebeld": false
     }
   ],
@@ -230,6 +244,20 @@
       "naam": "Onbekend",
       "tijd": "13:10",
       "callResult": "overflowed",
+      "teruggebeld": false
+    },
+    {
+      "nummer": "+31620373524",
+      "naam": "Onbekend",
+      "tijd": "14:06",
+      "callResult": "overflowed",
+      "teruggebeld": false
+    },
+    {
+      "nummer": "+31683570128",
+      "naam": "Onbekend",
+      "tijd": "14:12",
+      "callResult": "abandoned",
       "teruggebeld": false
     }
   ]

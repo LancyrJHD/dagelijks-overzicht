@@ -1,6 +1,6 @@
 {
   "date": "2026-10-02",
-  "generated_at": "2026-10-02T12:10:41Z",
+  "generated_at": "2026-10-02T12:20:40Z",
   "tickets": [
     {
       "ticketNumber": "2820",
@@ -13,19 +13,31 @@
       "webUrl": "https://desk.zoho.eu/support/htjzlancyr/ShowHomePage.do#Cases/dv/195464000014363077",
       "channel": "Email",
       "doorgezetBrandmeester": false
+    },
+    {
+      "ticketNumber": "2821",
+      "tijd": "14:16",
+      "titel": "FW: Request for Legal Assistance - Proposed VSO",
+      "klant": "De juridische helpdesk",
+      "status": "Open",
+      "statusType": "",
+      "prioriteit": "Niet ingesteld",
+      "webUrl": "https://desk.zoho.eu/support/htjzlancyr/ShowHomePage.do#Cases/dv/195464000014375076",
+      "channel": "Email",
+      "doorgezetBrandmeester": false
     }
   ],
   "channelCounts": {
-    "Email": 1
+    "Email": 2
   },
   "brandmeesterCount": 0,
   "ticketStats": {
-    "nieuweVandaag": 1,
+    "nieuweVandaag": 2,
     "geslotenVandaag": 0,
-    "totaalOpen": 22,
+    "totaalOpen": 23,
     "inDeWacht": 13,
     "statusBreakdown": {
-      "Open": 9,
+      "Open": 10,
       "Gesloten": 675,
       "In de wacht": 13
     },
