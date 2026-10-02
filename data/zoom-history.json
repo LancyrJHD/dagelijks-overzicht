@@ -3731,11 +3731,18 @@
         "nummer": "+31621394304",
         "teruggebeld": false,
         "tijd": "12:52"
+      },
+      {
+        "callResult": "overflowed",
+        "naam": "Onbekend",
+        "nummer": "+31624980190",
+        "teruggebeld": false,
+        "tijd": "13:10"
       }
     ],
     "date": "2026-10-02",
-    "generated_at": "2026-10-02T11:10:43Z",
-    "nietTerugGebeld": 15,
+    "generated_at": "2026-10-02T11:20:46Z",
+    "nietTerugGebeld": 16,
     "nietTerugGebeldNummers": [
       {
         "callResult": "overflowed",
@@ -3841,10 +3848,17 @@
         "nummer": "+31621394304",
         "teruggebeld": false,
         "tijd": "12:52"
+      },
+      {
+        "callResult": "overflowed",
+        "naam": "Onbekend",
+        "nummer": "+31624980190",
+        "teruggebeld": false,
+        "tijd": "13:10"
       }
     ],
     "terugGebeld": 0,
-    "totaalGemist": 15,
-    "totaalInbound": 15
+    "totaalGemist": 16,
+    "totaalInbound": 16
   }
 }
