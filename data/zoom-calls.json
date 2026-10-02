@@ -1,10 +1,10 @@
 {
   "date": "2026-10-02",
-  "generated_at": "2026-10-02T10:51:25Z",
-  "totaalInbound": 13,
-  "totaalGemist": 13,
+  "generated_at": "2026-10-02T11:00:58Z",
+  "totaalInbound": 15,
+  "totaalGemist": 15,
   "terugGebeld": 0,
-  "nietTerugGebeld": 13,
+  "nietTerugGebeld": 15,
   "nietTerugGebeldNummers": [
     {
       "nummer": "+31683570128",
@@ -94,6 +94,20 @@
       "nummer": "+31623228438",
       "naam": "Onbekend",
       "tijd": "12:35",
+      "callResult": "overflowed",
+      "teruggebeld": false
+    },
+    {
+      "nummer": "+31621394304",
+      "naam": "Onbekend",
+      "tijd": "12:51",
+      "callResult": "abandoned",
+      "teruggebeld": false
+    },
+    {
+      "nummer": "+31621394304",
+      "naam": "Onbekend",
+      "tijd": "12:52",
       "callResult": "overflowed",
       "teruggebeld": false
     }
@@ -187,6 +201,20 @@
       "nummer": "+31623228438",
       "naam": "Onbekend",
       "tijd": "12:35",
+      "callResult": "overflowed",
+      "teruggebeld": false
+    },
+    {
+      "nummer": "+31621394304",
+      "naam": "Onbekend",
+      "tijd": "12:51",
+      "callResult": "abandoned",
+      "teruggebeld": false
+    },
+    {
+      "nummer": "+31621394304",
+      "naam": "Onbekend",
+      "tijd": "12:52",
       "callResult": "overflowed",
       "teruggebeld": false
     }

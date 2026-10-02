@@ -3717,11 +3717,25 @@
         "nummer": "+31623228438",
         "teruggebeld": false,
         "tijd": "12:35"
+      },
+      {
+        "callResult": "abandoned",
+        "naam": "Onbekend",
+        "nummer": "+31621394304",
+        "teruggebeld": false,
+        "tijd": "12:51"
+      },
+      {
+        "callResult": "overflowed",
+        "naam": "Onbekend",
+        "nummer": "+31621394304",
+        "teruggebeld": false,
+        "tijd": "12:52"
       }
     ],
     "date": "2026-10-02",
-    "generated_at": "2026-10-02T10:51:25Z",
-    "nietTerugGebeld": 13,
+    "generated_at": "2026-10-02T11:00:58Z",
+    "nietTerugGebeld": 15,
     "nietTerugGebeldNummers": [
       {
         "callResult": "overflowed",
@@ -3813,10 +3827,24 @@
         "nummer": "+31623228438",
         "teruggebeld": false,
         "tijd": "12:35"
+      },
+      {
+        "callResult": "abandoned",
+        "naam": "Onbekend",
+        "nummer": "+31621394304",
+        "teruggebeld": false,
+        "tijd": "12:51"
+      },
+      {
+        "callResult": "overflowed",
+        "naam": "Onbekend",
+        "nummer": "+31621394304",
+        "teruggebeld": false,
+        "tijd": "12:52"
       }
     ],
     "terugGebeld": 0,
-    "totaalGemist": 13,
-    "totaalInbound": 13
+    "totaalGemist": 15,
+    "totaalInbound": 15
   }
 }
