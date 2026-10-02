@@ -3628,6 +3628,13 @@
   "2026-10-02": {
     "alleGemistNummers": [
       {
+        "callResult": "overflowed",
+        "naam": "Onbekend",
+        "nummer": "+31683570128",
+        "teruggebeld": false,
+        "tijd": "09:07"
+      },
+      {
         "callResult": "abandoned",
         "naam": "Onbekend",
         "nummer": "+31636396149",
@@ -3640,12 +3647,26 @@
         "nummer": "+31622913240",
         "teruggebeld": false,
         "tijd": "09:08"
+      },
+      {
+        "callResult": "overflowed",
+        "naam": "Onbekend",
+        "nummer": "+31636396149",
+        "teruggebeld": false,
+        "tijd": "09:09"
       }
     ],
     "date": "2026-10-02",
-    "generated_at": "2026-10-02T07:10:39Z",
-    "nietTerugGebeld": 2,
+    "generated_at": "2026-10-02T07:20:35Z",
+    "nietTerugGebeld": 4,
     "nietTerugGebeldNummers": [
+      {
+        "callResult": "overflowed",
+        "naam": "Onbekend",
+        "nummer": "+31683570128",
+        "teruggebeld": false,
+        "tijd": "09:07"
+      },
       {
         "callResult": "abandoned",
         "naam": "Onbekend",
@@ -3659,10 +3680,17 @@
         "nummer": "+31622913240",
         "teruggebeld": false,
         "tijd": "09:08"
+      },
+      {
+        "callResult": "overflowed",
+        "naam": "Onbekend",
+        "nummer": "+31636396149",
+        "teruggebeld": false,
+        "tijd": "09:09"
       }
     ],
     "terugGebeld": 0,
-    "totaalGemist": 2,
-    "totaalInbound": 2
+    "totaalGemist": 4,
+    "totaalInbound": 4
   }
 }
