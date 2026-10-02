@@ -3689,11 +3689,25 @@
         "nummer": "+31627129843",
         "teruggebeld": false,
         "tijd": "10:46"
+      },
+      {
+        "callResult": "overflowed",
+        "naam": "Onbekend",
+        "nummer": "+31651442978",
+        "teruggebeld": false,
+        "tijd": "11:50"
+      },
+      {
+        "callResult": "overflowed",
+        "naam": "Onbekend",
+        "nummer": "+31627129843",
+        "teruggebeld": false,
+        "tijd": "11:54"
       }
     ],
     "date": "2026-10-02",
-    "generated_at": "2026-10-02T10:00:56Z",
-    "nietTerugGebeld": 9,
+    "generated_at": "2026-10-02T10:10:42Z",
+    "nietTerugGebeld": 11,
     "nietTerugGebeldNummers": [
       {
         "callResult": "overflowed",
@@ -3757,10 +3771,24 @@
         "nummer": "+31627129843",
         "teruggebeld": false,
         "tijd": "10:46"
+      },
+      {
+        "callResult": "overflowed",
+        "naam": "Onbekend",
+        "nummer": "+31651442978",
+        "teruggebeld": false,
+        "tijd": "11:50"
+      },
+      {
+        "callResult": "overflowed",
+        "naam": "Onbekend",
+        "nummer": "+31627129843",
+        "teruggebeld": false,
+        "tijd": "11:54"
       }
     ],
     "terugGebeld": 0,
-    "totaalGemist": 9,
-    "totaalInbound": 9
+    "totaalGemist": 11,
+    "totaalInbound": 11
   }
 }
