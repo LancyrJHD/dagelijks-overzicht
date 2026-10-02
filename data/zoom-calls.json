@@ -1,10 +1,40 @@
 {
   "date": "2026-10-02",
-  "generated_at": "2026-10-02T07:00:53Z",
-  "totaalInbound": 0,
-  "totaalGemist": 0,
+  "generated_at": "2026-10-02T07:10:39Z",
+  "totaalInbound": 2,
+  "totaalGemist": 2,
   "terugGebeld": 0,
-  "nietTerugGebeld": 0,
-  "nietTerugGebeldNummers": [],
-  "alleGemistNummers": []
+  "nietTerugGebeld": 2,
+  "nietTerugGebeldNummers": [
+    {
+      "nummer": "+31636396149",
+      "naam": "Onbekend",
+      "tijd": "09:07",
+      "callResult": "abandoned",
+      "teruggebeld": false
+    },
+    {
+      "nummer": "+31622913240",
+      "naam": "Onbekend",
+      "tijd": "09:08",
+      "callResult": "abandoned",
+      "teruggebeld": false
+    }
+  ],
+  "alleGemistNummers": [
+    {
+      "nummer": "+31636396149",
+      "naam": "Onbekend",
+      "tijd": "09:07",
+      "callResult": "abandoned",
+      "teruggebeld": false
+    },
+    {
+      "nummer": "+31622913240",
+      "naam": "Onbekend",
+      "tijd": "09:08",
+      "callResult": "abandoned",
+      "teruggebeld": false
+    }
+  ]
 }
