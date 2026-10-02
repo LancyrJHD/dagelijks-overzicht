@@ -1,10 +1,10 @@
 {
   "date": "2026-10-02",
-  "generated_at": "2026-10-02T14:40:44Z",
-  "totaalInbound": 21,
-  "totaalGemist": 21,
+  "generated_at": "2026-10-02T14:50:47Z",
+  "totaalInbound": 22,
+  "totaalGemist": 22,
   "terugGebeld": 0,
-  "nietTerugGebeld": 21,
+  "nietTerugGebeld": 22,
   "nietTerugGebeldNummers": [
     {
       "nummer": "+31683570128",
@@ -151,6 +151,13 @@
       "naam": "Onbekend",
       "tijd": "15:27",
       "callResult": "overflowed",
+      "teruggebeld": false
+    },
+    {
+      "nummer": "+31630549035",
+      "naam": "Onbekend",
+      "tijd": "16:42",
+      "callResult": "abandoned",
       "teruggebeld": false
     }
   ],
@@ -300,6 +307,13 @@
       "naam": "Onbekend",
       "tijd": "15:27",
       "callResult": "overflowed",
+      "teruggebeld": false
+    },
+    {
+      "nummer": "+31630549035",
+      "naam": "Onbekend",
+      "tijd": "16:42",
+      "callResult": "abandoned",
       "teruggebeld": false
     }
   ]

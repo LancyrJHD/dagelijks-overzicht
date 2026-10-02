@@ -3773,11 +3773,18 @@
         "nummer": "+31627129843",
         "teruggebeld": false,
         "tijd": "15:27"
+      },
+      {
+        "callResult": "abandoned",
+        "naam": "Onbekend",
+        "nummer": "+31630549035",
+        "teruggebeld": false,
+        "tijd": "16:42"
       }
     ],
     "date": "2026-10-02",
-    "generated_at": "2026-10-02T14:40:44Z",
-    "nietTerugGebeld": 21,
+    "generated_at": "2026-10-02T14:50:47Z",
+    "nietTerugGebeld": 22,
     "nietTerugGebeldNummers": [
       {
         "callResult": "overflowed",
@@ -3925,10 +3932,17 @@
         "nummer": "+31627129843",
         "teruggebeld": false,
         "tijd": "15:27"
+      },
+      {
+        "callResult": "abandoned",
+        "naam": "Onbekend",
+        "nummer": "+31630549035",
+        "teruggebeld": false,
+        "tijd": "16:42"
       }
     ],
     "terugGebeld": 0,
-    "totaalGemist": 21,
-    "totaalInbound": 21
+    "totaalGemist": 22,
+    "totaalInbound": 22
   }
 }
