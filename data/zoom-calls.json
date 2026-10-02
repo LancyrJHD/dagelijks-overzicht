@@ -1,10 +1,10 @@
 {
   "date": "2026-10-02",
-  "generated_at": "2026-10-02T10:30:51Z",
-  "totaalInbound": 11,
-  "totaalGemist": 11,
+  "generated_at": "2026-10-02T10:40:45Z",
+  "totaalInbound": 12,
+  "totaalGemist": 12,
   "terugGebeld": 0,
-  "nietTerugGebeld": 11,
+  "nietTerugGebeld": 12,
   "nietTerugGebeldNummers": [
     {
       "nummer": "+31683570128",
@@ -80,6 +80,13 @@
       "nummer": "+31627129843",
       "naam": "Onbekend",
       "tijd": "11:54",
+      "callResult": "overflowed",
+      "teruggebeld": false
+    },
+    {
+      "nummer": "+31687025564",
+      "naam": "Onbekend",
+      "tijd": "12:27",
       "callResult": "overflowed",
       "teruggebeld": false
     }
@@ -159,6 +166,13 @@
       "nummer": "+31627129843",
       "naam": "Onbekend",
       "tijd": "11:54",
+      "callResult": "overflowed",
+      "teruggebeld": false
+    },
+    {
+      "nummer": "+31687025564",
+      "naam": "Onbekend",
+      "tijd": "12:27",
       "callResult": "overflowed",
       "teruggebeld": false
     }
