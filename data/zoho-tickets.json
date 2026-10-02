@@ -1,16 +1,31 @@
 {
   "date": "2026-10-02",
-  "generated_at": "2026-10-02T10:40:43Z",
-  "tickets": [],
-  "channelCounts": {},
+  "generated_at": "2026-10-02T10:50:39Z",
+  "tickets": [
+    {
+      "ticketNumber": "2820",
+      "tijd": "12:47",
+      "titel": "Verzoek schadenummer [D3076375_I73935226]",
+      "klant": "Nino Roos van Raadshooven",
+      "status": "Open",
+      "statusType": "",
+      "prioriteit": "Niet ingesteld",
+      "webUrl": "https://desk.zoho.eu/support/htjzlancyr/ShowHomePage.do#Cases/dv/195464000014363077",
+      "channel": "Email",
+      "doorgezetBrandmeester": false
+    }
+  ],
+  "channelCounts": {
+    "Email": 1
+  },
   "brandmeesterCount": 0,
   "ticketStats": {
-    "nieuweVandaag": 0,
+    "nieuweVandaag": 1,
     "geslotenVandaag": 0,
-    "totaalOpen": 21,
+    "totaalOpen": 22,
     "inDeWacht": 13,
     "statusBreakdown": {
-      "Open": 8,
+      "Open": 9,
       "Gesloten": 677,
       "In de wacht": 13
     },

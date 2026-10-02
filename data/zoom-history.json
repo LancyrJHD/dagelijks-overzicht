@@ -3710,11 +3710,18 @@
         "nummer": "+31687025564",
         "teruggebeld": false,
         "tijd": "12:27"
+      },
+      {
+        "callResult": "overflowed",
+        "naam": "Onbekend",
+        "nummer": "+31623228438",
+        "teruggebeld": false,
+        "tijd": "12:35"
       }
     ],
     "date": "2026-10-02",
-    "generated_at": "2026-10-02T10:40:45Z",
-    "nietTerugGebeld": 12,
+    "generated_at": "2026-10-02T10:50:41Z",
+    "nietTerugGebeld": 13,
     "nietTerugGebeldNummers": [
       {
         "callResult": "overflowed",
@@ -3799,10 +3806,17 @@
         "nummer": "+31687025564",
         "teruggebeld": false,
         "tijd": "12:27"
+      },
+      {
+        "callResult": "overflowed",
+        "naam": "Onbekend",
+        "nummer": "+31623228438",
+        "teruggebeld": false,
+        "tijd": "12:35"
       }
     ],
     "terugGebeld": 0,
-    "totaalGemist": 12,
-    "totaalInbound": 12
+    "totaalGemist": 13,
+    "totaalInbound": 13
   }
 }
