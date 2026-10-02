@@ -3668,11 +3668,18 @@
         "nummer": "+31657567471",
         "teruggebeld": false,
         "tijd": "09:20"
+      },
+      {
+        "callResult": "abandoned",
+        "naam": "Onbekend",
+        "nummer": "+31683570128",
+        "teruggebeld": false,
+        "tijd": "09:29"
       }
     ],
     "date": "2026-10-02",
-    "generated_at": "2026-10-02T07:30:48Z",
-    "nietTerugGebeld": 6,
+    "generated_at": "2026-10-02T07:40:43Z",
+    "nietTerugGebeld": 7,
     "nietTerugGebeldNummers": [
       {
         "callResult": "overflowed",
@@ -3715,10 +3722,17 @@
         "nummer": "+31657567471",
         "teruggebeld": false,
         "tijd": "09:20"
+      },
+      {
+        "callResult": "abandoned",
+        "naam": "Onbekend",
+        "nummer": "+31683570128",
+        "teruggebeld": false,
+        "tijd": "09:29"
       }
     ],
     "terugGebeld": 0,
-    "totaalGemist": 6,
-    "totaalInbound": 6
+    "totaalGemist": 7,
+    "totaalInbound": 7
   }
 }
