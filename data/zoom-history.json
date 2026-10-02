@@ -3654,11 +3654,25 @@
         "nummer": "+31636396149",
         "teruggebeld": false,
         "tijd": "09:09"
+      },
+      {
+        "callResult": "overflowed",
+        "naam": "Onbekend",
+        "nummer": "+31646593152",
+        "teruggebeld": false,
+        "tijd": "09:11"
+      },
+      {
+        "callResult": "abandoned",
+        "naam": "Onbekend",
+        "nummer": "+31657567471",
+        "teruggebeld": false,
+        "tijd": "09:20"
       }
     ],
     "date": "2026-10-02",
-    "generated_at": "2026-10-02T07:20:35Z",
-    "nietTerugGebeld": 4,
+    "generated_at": "2026-10-02T07:30:48Z",
+    "nietTerugGebeld": 6,
     "nietTerugGebeldNummers": [
       {
         "callResult": "overflowed",
@@ -3687,10 +3701,24 @@
         "nummer": "+31636396149",
         "teruggebeld": false,
         "tijd": "09:09"
+      },
+      {
+        "callResult": "overflowed",
+        "naam": "Onbekend",
+        "nummer": "+31646593152",
+        "teruggebeld": false,
+        "tijd": "09:11"
+      },
+      {
+        "callResult": "abandoned",
+        "naam": "Onbekend",
+        "nummer": "+31657567471",
+        "teruggebeld": false,
+        "tijd": "09:20"
       }
     ],
     "terugGebeld": 0,
-    "totaalGemist": 4,
-    "totaalInbound": 4
+    "totaalGemist": 6,
+    "totaalInbound": 6
   }
 }

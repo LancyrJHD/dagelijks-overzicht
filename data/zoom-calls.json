@@ -1,10 +1,10 @@
 {
   "date": "2026-10-02",
-  "generated_at": "2026-10-02T07:20:35Z",
-  "totaalInbound": 4,
-  "totaalGemist": 4,
+  "generated_at": "2026-10-02T07:30:48Z",
+  "totaalInbound": 6,
+  "totaalGemist": 6,
   "terugGebeld": 0,
-  "nietTerugGebeld": 4,
+  "nietTerugGebeld": 6,
   "nietTerugGebeldNummers": [
     {
       "nummer": "+31683570128",
@@ -32,6 +32,20 @@
       "naam": "Onbekend",
       "tijd": "09:09",
       "callResult": "overflowed",
+      "teruggebeld": false
+    },
+    {
+      "nummer": "+31646593152",
+      "naam": "Onbekend",
+      "tijd": "09:11",
+      "callResult": "overflowed",
+      "teruggebeld": false
+    },
+    {
+      "nummer": "+31657567471",
+      "naam": "Onbekend",
+      "tijd": "09:20",
+      "callResult": "abandoned",
       "teruggebeld": false
     }
   ],
@@ -62,6 +76,20 @@
       "naam": "Onbekend",
       "tijd": "09:09",
       "callResult": "overflowed",
+      "teruggebeld": false
+    },
+    {
+      "nummer": "+31646593152",
+      "naam": "Onbekend",
+      "tijd": "09:11",
+      "callResult": "overflowed",
+      "teruggebeld": false
+    },
+    {
+      "nummer": "+31657567471",
+      "naam": "Onbekend",
+      "tijd": "09:20",
+      "callResult": "abandoned",
       "teruggebeld": false
     }
   ]
