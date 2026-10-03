@@ -1353,6 +1353,28 @@ a:focus-visible,
   .missed-calls-table thead th:nth-child(1),
   .missed-calls-table tbody td:nth-child(1) { display: none; }
 }
+
+/* ── Totaaloverzicht, donut met labels, uitleg (feedback 3 okt 2026) ── */
+.totaal-table { width: 100%; border-collapse: collapse; font-size: 14px; }
+.totaal-table th { text-align: left; font-size: 11px; letter-spacing: .06em; text-transform: uppercase; color: var(--ink-50); font-weight: 600; padding: 8px 12px 8px 0; border-bottom: 1px solid var(--line); white-space: nowrap; }
+.totaal-table td { padding: 11px 12px 11px 0; border-bottom: 1px solid var(--line); color: var(--navy); font-variant-numeric: tabular-nums; }
+.totaal-table tr:last-child td { border-bottom: none; }
+.totaal-table .tt-periode { font-weight: 600; }
+.totaal-table .tt-pct { color: var(--ink-50); font-size: 12px; }
+.totaal-note { color: var(--ink-50); font-size: 11px; margin-top: 10px; line-height: 1.5; }
+.donut-wrap { width: 100%; }
+.donut-callouts { width: 100%; max-width: 940px; height: auto; display: block; margin: 4px auto 0; }
+.donut-mobile { display: none; }
+.donut-legend-item { display: flex; align-items: center; gap: 8px; font-size: 13px; padding: 5px 0; color: var(--navy); }
+.donut-dot { width: 10px; height: 10px; border-radius: 50%; flex-shrink: 0; }
+@media (max-width: 760px) {
+  .donut-callouts { display: none; }
+  .donut-mobile { display: flex; flex-direction: column; align-items: center; gap: 12px; }
+  .donut-legend-mobile { width: 100%; }
+}
+.kpi-uitleg { color: var(--ink-50); font-size: 11px; line-height: 1.5; margin-top: 8px; }
+.verdeling-uitleg { color: var(--ink-50); font-size: 11px; line-height: 1.4; margin-top: 1px; }
+.verdeling-total { color: var(--ink-50); font-size: 12px; margin: -4px 0 12px 0; }
 </style>
   <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2/dist/umd/supabase.js"></script>
 </head>
@@ -1382,8 +1404,8 @@ a:focus-visible,
       <span class="refresh-btn-label">PDF</span>
     </button>
     <div id="view-toggle-group" style="display:none;align-items:center;border:1px solid var(--navy);border-radius:50px;overflow:hidden;margin-right:8px;font-family:inherit">
-      <button id="view-btn-medewerker" onclick="setManagementView(false)" style="border:none;cursor:pointer;font:inherit;font-size:12px;font-weight:600;padding:6px 14px;background:var(--navy);color:#fff">&#128100; Medewerker</button>
-      <button id="view-btn-management" onclick="setManagementView(true)" style="border:none;cursor:pointer;font:inherit;font-size:12px;font-weight:600;padding:6px 14px;background:#fff;color:var(--navy)">&#128202; Management</button>
+      <button id="view-btn-management" onclick="setView('management')" style="border:none;cursor:pointer;font:inherit;font-size:12px;font-weight:600;padding:6px 14px;background:#fff;color:var(--navy)">&#128202; Management</button>
+      <button id="view-btn-medewerker" onclick="setView('medewerker')" style="border:none;cursor:pointer;font:inherit;font-size:12px;font-weight:600;padding:6px 14px;background:var(--navy);color:#fff">&#128100; Medewerker</button>
     </div>
     <button class="logout-btn" id="profile-btn" onclick="openProfileModal()" style="display:none">&#128100; Profiel</button>
     <button class="logout-btn" id="logout-btn" onclick="authLogout()" style="display:none">Uitloggen</button>
@@ -3744,12 +3766,17 @@ function getZoomAggregate(keys) {
   let totaalInbound = 0, totaalGemist = 0, terugGebeld = 0;
   let nietTerugGebeld = [];
   let alleGemist = [];
+  const agenten = {};
   let anyData = false;
   keys.forEach(k => {
     const d = zoomHistory[k];
     if (!d) return;
     anyData = true;
     totaalInbound += d.totaalInbound || 0;
+    if (d.agenten) Object.entries(d.agenten).forEach(([naam, a]) => {
+      const t = agenten[naam] || (agenten[naam] = { beantwoord: 0, uitgaand: 0, gesprekstijdSec: 0 });
+      t.beantwoord += a.beantwoord || 0; t.uitgaand += a.uitgaand || 0; t.gesprekstijdSec += a.gesprekstijdSec || 0;
+    });
     totaalGemist += d.totaalGemist || 0;
     terugGebeld += d.terugGebeld || 0;
     (d.nietTerugGebeldNummers || []).forEach(m => {
@@ -3766,7 +3793,7 @@ function getZoomAggregate(keys) {
   });
   nietTerugGebeld.sort((a, b) => (a.datum + ' ' + a.tijd).localeCompare(b.datum + ' ' + b.tijd));
   alleGemist.sort((a, b) => (a.datum + ' ' + a.tijd).localeCompare(b.datum + ' ' + b.tijd));
-  return { totaalInbound, totaalGemist, terugGebeld, nietTerugGebeld, alleGemist, dataAvailable: anyData };
+  return { totaalInbound, totaalGemist, terugGebeld, nietTerugGebeld, alleGemist, agenten: Object.keys(agenten).length ? agenten : null, dataAvailable: anyData };
 }
 
 // Drukte moet het totaal aantal oproepen weerspiegelen (Zoom), niet het
@@ -3823,7 +3850,7 @@ function groupMissedCallsByNumber(entries) {
   }));
 }
 
-const VERKEERD_VERBONDEN_BACKFILL = { '2026-08-05': ['11:30','12:48','13:36'], '2026-08-07': ['13:23'], '2026-08-10': ['11:56'], '2026-08-11': ['13:17'], '2026-08-13': ['12:37'], '2026-08-14': ['13:14','15:51'] }; function aggregateEntries(entries) { let totalGesprekken = 0, totalOpgelost = 0, totalBrandmeester = 0; let totalTerugbel = 0, totalGeenDekking = 0, totalAfkoop = 0; let allConversations = []; let scores = []; let druktes = []; let juristScores = {}; entries.forEach(({ key, data }) => { totalGesprekken += (data.gesprekken || 0); if (data.stats) { totalOpgelost += (data.stats.opgelost || 0); totalBrandmeester += (data.stats.brandmeester || 0); totalTerugbel += (data.stats.terugbel || 0); totalGeenDekking += (data.stats.geenDekking || 0); totalAfkoop += (data.stats.afkoop || 0); } if (data.conversations) { const vvBackfill = VERKEERD_VERBONDEN_BACKFILL[key] || []; allConversations = allConversations.concat(data.conversations.map(c => (typeof c.verkeerdVerbonden === 'boolean') ? c : Object.assign({}, c, { verkeerdVerbonden: vvBackfill.includes(c.tijd) }))); } if (data.score && data.score > 0) { scores.push(data.score); /* Dagscore toekennen aan de jurist die die dag de meeste gesprekken deed (zelfde methode als Brandmeester van de dag), zodat het weekoverzicht per persoon een eigen gemiddelde kan tonen i.p.v. het teamgemiddelde. */ const dayTop = getBrandmeester(data.conversations || []); if (dayTop.name) { juristScores[dayTop.name] = juristScores[dayTop.name] || []; juristScores[dayTop.name].push(data.score); } } if (data.drukte) druktes.push(data.drukte); }); const avgScore = scores.length > 0 ? scores.reduce((a,b)=>a+b,0)/scores.length : 0; const drukte = druktes.length > 0 ? druktes[Math.floor(druktes.length/2)] : 'rustig'; const juristAvgScore = {}; for (const naam in juristScores) { const arr = juristScores[naam]; juristAvgScore[naam] = arr.reduce((a,b)=>a+b,0)/arr.length; } return { totalGesprekken, totalOpgelost, totalBrandmeester, totalTerugbel, totalGeenDekking, totalAfkoop, allConversations, avgScore, drukte, juristAvgScore }; }// ======================== SVG LINE CHART ========================
+const VERKEERD_VERBONDEN_BACKFILL = { '2026-08-05': ['11:30','12:48','13:36'], '2026-08-07': ['13:23'], '2026-08-10': ['11:56'], '2026-08-11': ['13:17'], '2026-08-13': ['12:37'], '2026-08-14': ['13:14','15:51'] }; function aggregateEntries(entries) { let totalGesprekken = 0, totalOpgelost = 0, totalBrandmeester = 0; let totalTerugbel = 0, totalGeenDekking = 0, totalAfkoop = 0; let allConversations = []; let scores = []; let druktes = []; let juristScores = {}; entries.forEach(({ key, data }) => { const _cs = (data.conversations || []).filter(c => !isInternalConversation(c)); if (_cs.length > 0) { totalGesprekken += _cs.length; _cs.forEach(c => { const _code = (c.uitkomst || [])[0]; if (_code === 'outcome-opgelost') totalOpgelost++; else if (_code === 'outcome-brandmeester') totalBrandmeester++; else if (_code === 'outcome-terugbel') totalTerugbel++; else if (_code === 'outcome-geen-dekking') totalGeenDekking++; else if (_code === 'outcome-afkoop') totalAfkoop++; }); } else { totalGesprekken += (data.gesprekken || 0); if (data.stats) { totalOpgelost += (data.stats.opgelost || 0); totalBrandmeester += (data.stats.brandmeester || 0); totalTerugbel += (data.stats.terugbel || 0); totalGeenDekking += (data.stats.geenDekking || 0); totalAfkoop += (data.stats.afkoop || 0); } } if (data.conversations) { const vvBackfill = VERKEERD_VERBONDEN_BACKFILL[key] || []; allConversations = allConversations.concat(_cs.map(c => (typeof c.verkeerdVerbonden === 'boolean') ? c : Object.assign({}, c, { verkeerdVerbonden: vvBackfill.includes(c.tijd) }))); } if (data.score && data.score > 0) { scores.push(data.score); /* Dagscore toekennen aan de jurist die die dag de meeste gesprekken deed (zelfde methode als Brandmeester van de dag), zodat het weekoverzicht per persoon een eigen gemiddelde kan tonen i.p.v. het teamgemiddelde. */ const dayTop = getBrandmeester(_cs); if (dayTop.name) { juristScores[dayTop.name] = juristScores[dayTop.name] || []; juristScores[dayTop.name].push(data.score); } } if (data.drukte) druktes.push(data.drukte); }); const avgScore = scores.length > 0 ? scores.reduce((a,b)=>a+b,0)/scores.length : 0; const drukte = druktes.length > 0 ? druktes[Math.floor(druktes.length/2)] : 'rustig'; const juristAvgScore = {}; for (const naam in juristScores) { const arr = juristScores[naam]; juristAvgScore[naam] = arr.reduce((a,b)=>a+b,0)/arr.length; } return { totalGesprekken, totalOpgelost, totalBrandmeester, totalTerugbel, totalGeenDekking, totalAfkoop, allConversations, avgScore, drukte, juristAvgScore }; }// ======================== SVG LINE CHART ========================
 
 // ======================== SVG DONUT CHART ========================
 const DONUT_COLORS = ['#AE986F', '#0D1F2E', '#5B7F95', '#8a7356', '#7A9E7E', '#B4654A', '#4A6670', '#C4AA82'];
@@ -3962,6 +3989,231 @@ function toggleGemisteOproepen() {
   if (arrow) arrow.innerHTML = isHidden ? '&#9652;' : '&#9662;';
 }
 
+// ======================== ROLLEN / WEERGAVEN ========================
+// Twee weergaven (feedback management 3 okt 2026): "management" (totaaloverzicht en
+// verdelingen bovenaan -- ook wat Lancyr wil zien -- daarna team en operationeel) en
+// "medewerker" (persoonlijk: hoe doe ik het, wie moet ik terugbellen, open tickets).
+const STAFF_BY_LOCAL = {
+  senneduifhuis: 'Senne Duifhuis',
+  jackiestam: 'Jackie Stam',
+  edgarstam: 'Edgar Stam',
+  dewiverver: 'Dewi Verver',
+  roelofvanbeijnum: 'Roelof van Beijnum',
+  woutertoonen: 'Wouter Toonen',
+  rowanros: 'Rowan Ros',
+};
+const STAFF_NAMES = new Set(Object.values(STAFF_BY_LOCAL));
+
+// Interne overleggen (Daily Huddle, teamoverleg, ...) zijn geen klantgesprekken en
+// mogen niet meetellen in totalen, verdelingen of het team-overzicht. De cloud-AI
+// filtert dit voortaan zelf (analyze_granola_ai.py); dit vangt historische data op.
+function isInternalConversation(c) {
+  if (!c) return false;
+  const titel = String(c.titel || '');
+  const pers = String(c.personen || '');
+  const uit = (c.uitkomst && c.uitkomst[1]) ? String(c.uitkomst[1]) : '';
+  if (/huddle|team\s?overleg|stand-?up|weekoverleg|intern overleg|^new note$/i.test(titel.trim())) return true;
+  if (/overleg met:/i.test(pers)) return true;
+  if (/intern overleg/i.test(uit)) return true;
+  return false;
+}
+
+
+// ======================== ONDERWERPEN: VARIANTEN SAMENVOEGEN ========================
+// De AI geeft vrije labels (79 verschillende in de data, bv. "Consument" naast
+// "Consumentenrecht"). Voor de weergave worden ze naar een vaste, korte lijst
+// teruggebracht; alles wat nergens past valt onder "Overig".
+const CATEGORIE_REGELS = [
+  [/route|routering|autoverzekering|verkeerd|doorverbonden|klantenservice|outbound|planning|intern/i, 'Routering / verkeerd verbonden'],
+  [/consument/i, 'Consumentenrecht'],
+  [/arbeid|ontslag|\bvso\b|werkgever|werknemer|wia|ziekte/i, 'Arbeidsrecht'],
+  [/huur/i, 'Huurrecht'],
+  [/bouw|aannemer|dakkapel|verbouw/i, 'Bouwrecht'],
+  [/buren|burenrecht/i, 'Burenrecht'],
+  [/bestuur|gemeente|vergunning|wmo|ncg|belasting|fiscaal/i, 'Bestuursrecht'],
+  [/verkeer|aanrijding|ongeval/i, 'Verkeersrecht'],
+  [/verzeker|polis|rechtsbijstand|dekking/i, 'Verzekeringsrecht'],
+  [/aansprakelijk|schade/i, 'Aansprakelijkheidsrecht'],
+  [/erf|nalatenschap|testament/i, 'Erfrecht'],
+  [/familie|scheiding|personen|alimentatie/i, 'Familierecht'],
+  [/vve|vereniging|mede-?eigenaar/i, 'VvE- en verenigingsrecht'],
+];
+function normCategorie(label) {
+  const l = String(label || '').trim();
+  if (!l || /^overig$/i.test(l)) return 'Overig';
+  for (const [re, naam] of CATEGORIE_REGELS) if (re.test(l)) return naam;
+  return 'Overig';
+}
+// ======================== TOTAALOVERZICHT (altijd zichtbaar) ========================
+function _weekdaysBetween(a, b) {
+  let n = 0;
+  const d = new Date(a.getFullYear(), a.getMonth(), a.getDate());
+  const e = new Date(b.getFullYear(), b.getMonth(), b.getDate());
+  while (d <= e) { const w = d.getDay(); if (w !== 0 && w !== 6) n++; d.setDate(d.getDate() + 1); }
+  return n;
+}
+function _keysBetween(a, b) {
+  const out = [];
+  const d = new Date(a.getFullYear(), a.getMonth(), a.getDate());
+  const e = new Date(b.getFullYear(), b.getMonth(), b.getDate());
+  while (d <= e) { out.push(dateKey(d)); d.setDate(d.getDate() + 1); }
+  return out;
+}
+function _fmtGem(n) { return n >= 10 ? String(Math.round(n)) : (Math.round(n * 10) / 10).toString().replace('.', ','); }
+
+function buildTotaalOverzichtHTML() {
+  const now = new Date();
+  const mon = getMonday(now);
+  const prevMon = new Date(mon); prevMon.setDate(mon.getDate() - 7);
+  const prevFri = new Date(prevMon); prevFri.setDate(prevMon.getDate() + 4);
+  const d3 = new Date(now); d3.setMonth(d3.getMonth() - 3);
+  const periods = [
+    { naam: 'Vorige week', van: prevMon, tot: prevFri },
+    { naam: 'Deze maand', van: new Date(now.getFullYear(), now.getMonth(), 1), tot: now },
+    { naam: 'Laatste 3 maanden', van: d3, tot: now },
+    { naam: 'Dit jaar (YTD)', van: new Date(now.getFullYear(), 0, 1), tot: now },
+  ];
+  const wdKeys = Object.keys(weekData).sort();
+  const firstData = wdKeys.length ? new Date(wdKeys[0] + 'T12:00:00') : null;
+  const zKeys = Object.keys(zoomHistory).sort();
+  const zoomSince = zKeys[0] || null;
+  let anyPartial = false;
+  const body = periods.map(p => {
+    const keys = _keysBetween(p.van, p.tot);
+    const entries = keys.filter(k => weekData[k]).map(k => ({ key: k, data: weekData[k] }));
+    const a = aggregateEntries(entries);
+    const z = getZoomAggregate(keys);
+    const effStart = firstData && firstData > p.van ? firstData : p.van;
+    const weken = Math.max(_weekdaysBetween(effStart, p.tot) / 5, 0.2);
+    const partial = !!(zoomSince && keys[0] < zoomSince && z.dataAvailable);
+    if (partial) anyPartial = true;
+    const oproepen = z.dataAvailable ? (z.totaalInbound + (partial ? '*' : '')) : '&mdash;';
+    const pct = a.totalGesprekken > 0 ? Math.round(100 * a.totalBrandmeester / a.totalGesprekken) : 0;
+    return `<tr>
+      <td class="tt-periode">${p.naam}</td>
+      <td>${oproepen}</td>
+      <td>${a.totalGesprekken}</td>
+      <td>${a.totalBrandmeester} <span class="tt-pct">(${pct}%)</span></td>
+      <td>${a.totalGesprekken > 0 ? _fmtGem(a.totalGesprekken / weken) : '&mdash;'}</td>
+    </tr>`;
+  }).join('');
+  const sinceTxt = zoomSince ? formatDateShortNL(zoomSince) + ' ' + zoomSince.slice(0, 4) : '';
+  return `
+    <div class="card">
+      <div class="chart-card-header">
+        <div class="chart-card-title">Totaaloverzicht</div>
+      </div>
+      <div style="overflow-x:auto">
+      <table class="totaal-table">
+        <thead>
+          <tr>
+            <th>Periode</th>
+            <th title="Alle binnenkomende telefoontjes volgens Zoom Phone, ook de gemiste">Oproepen</th>
+            <th title="Gesprekken die zijn opgenomen en geanalyseerd">Gesprekken</th>
+            <th title="Gesprekken die zijn doorverwezen naar Brandmeester (rechtsbijstand)">Naar Brandmeester</th>
+            <th title="Gemiddeld aantal gesprekken per werkweek in deze periode">Gem. gesprekken / week</th>
+          </tr>
+        </thead>
+        <tbody>${body}</tbody>
+      </table>
+      </div>
+      <div class="totaal-note">Oproepen = alle binnenkomende telefoontjes (Zoom Phone)${anyPartial ? `; <strong>*</strong> Zoom-data pas vanaf ${sinceTxt}, dus voor langere periodes een onderschatting` : ''}. Gesprekken = opgenomen en geanalyseerd; dat zijn er minder dan oproepen, omdat niet elk telefoontje wordt opgenomen.</div>
+    </div>`;
+}
+
+// ======================== SVG DONUT MET LABELS BIJ HET VAKJE ========================
+// Percentage + omschrijving + (aantal) staan direct bij elk vakje, met een
+// verbindingslijntje -- geen losse legenda ernaast waar je kleurtjes bij moet zoeken.
+function buildDonutChartLabeled(rows) {
+  const total = rows.reduce((s, r) => s + r[1], 0);
+  if (!total) return '';
+  const W = 940, H = 400, cx = W / 2, cy = H / 2, R = 128, r = 74;
+  const toRad = a => (a * Math.PI) / 180;
+  const color = (label, i) => label === 'Overig' ? '#9AA5B1' : DONUT_COLORS[i % DONUT_COLORS.length];
+  let ang = -90;
+  const slices = rows.map(([label, count], i) => {
+    const frac = count / total;
+    const sweep = rows.length === 1 ? 359.99 : Math.max(frac * 360, 0.6);
+    const a0 = ang, a1 = ang + sweep; ang = a1;
+    return { label, count, frac, a0, a1, mid: (a0 + a1) / 2, color: color(label, i) };
+  });
+  const paths = slices.map(s => {
+    const large = (s.a1 - s.a0) > 180 ? 1 : 0;
+    const p = (rad, a) => `${(cx + rad * Math.cos(toRad(a))).toFixed(2)} ${(cy + rad * Math.sin(toRad(a))).toFixed(2)}`;
+    const pct = Math.round(s.frac * 100);
+    return `<path d="M ${p(R, s.a0)} A ${R} ${R} 0 ${large} 1 ${p(R, s.a1)} L ${p(r, s.a1)} A ${r} ${r} 0 ${large} 0 ${p(r, s.a0)} Z" fill="${s.color}" stroke="#fff" stroke-width="1.5"><title>${escapeHtml(s.label)}: ${s.count} (${pct}%)</title></path>`;
+  }).join('');
+  // Labelposities per kant, met onderlinge afstand zodat ze niet overlappen
+  const side = { L: [], R: [] };
+  slices.forEach(s => {
+    const right = Math.cos(toRad(s.mid)) >= 0;
+    s.right = right;
+    s.ey = cy + (R + 16) * Math.sin(toRad(s.mid));
+    s.ly = s.ey;
+    side[right ? 'R' : 'L'].push(s);
+  });
+  ['L', 'R'].forEach(k => {
+    const arr = side[k].sort((a, b) => a.ly - b.ly);
+    for (let i = 1; i < arr.length; i++) if (arr[i].ly - arr[i - 1].ly < 24) arr[i].ly = arr[i - 1].ly + 24;
+    const over = arr.length ? arr[arr.length - 1].ly - (H - 18) : 0;
+    if (over > 0) arr.forEach(s => { s.ly -= over; });
+    if (arr.length && arr[0].ly < 18) { const sh = 18 - arr[0].ly; arr.forEach(s => { s.ly += sh; }); }
+  });
+  const labels = slices.map(s => {
+    const x0 = cx + (R - 3) * Math.cos(toRad(s.mid)), y0 = cy + (R - 3) * Math.sin(toRad(s.mid));
+    const ex = cx + (R + 16) * Math.cos(toRad(s.mid)), ey = s.ey;
+    const lx = s.right ? cx + R + 40 : cx - R - 40;
+    const anchor = s.right ? 'start' : 'end';
+    const tx = s.right ? lx + 6 : lx - 6;
+    let name = s.label; if (name.length > 30) name = name.slice(0, 29) + '…';
+    const pct = Math.round(s.frac * 100);
+    return `<polyline points="${x0.toFixed(1)},${y0.toFixed(1)} ${ex.toFixed(1)},${ey.toFixed(1)} ${lx.toFixed(1)},${s.ly.toFixed(1)}" fill="none" stroke="${s.color}" stroke-width="1.4"/>
+      <circle cx="${x0.toFixed(1)}" cy="${y0.toFixed(1)}" r="2.4" fill="${s.color}"/>
+      <text x="${tx.toFixed(1)}" y="${(s.ly + 4.5).toFixed(1)}" text-anchor="${anchor}" font-size="14" fill="#0D1F2E"><tspan font-weight="700">${pct}%</tspan> ${escapeHtml(name)} <tspan fill="rgba(13,31,46,0.6)">(${s.count})</tspan></text>`;
+  }).join('');
+  const svg = `<svg class="donut-callouts" viewBox="0 0 ${W} ${H}" role="img" aria-label="Verdeling per onderwerp">${paths}${labels}
+    <text x="${cx}" y="${cy + 2}" text-anchor="middle" font-size="34" font-weight="700" fill="#0D1F2E">${total}</text>
+    <text x="${cx}" y="${cy + 24}" text-anchor="middle" font-size="12" fill="rgba(13,31,46,0.6)">gesprekken</text></svg>`;
+  const legend = slices.map(s => `
+      <div class="donut-legend-item"><span class="donut-dot" style="background:${s.color}"></span><span><strong>${Math.round(s.frac * 100)}%</strong> ${escapeHtml(s.label)} <span style="color:var(--ink-50)">(${s.count})</span></span></div>`).join('');
+  return `<div class="donut-wrap">${svg}
+    <div class="donut-mobile">${buildDonutChart(rows.map(r => [r[0], r[1]]), 150)}<div class="donut-legend-mobile">${legend}</div></div></div>`;
+}
+
+// ======================== UITLEG GEMISTE-OPROEP-RESULTATEN ========================
+const CALL_RESULT_INFO = {
+  abandoned: ['Opgehangen', 'De beller hing zelf op terwijl de oproep nog in de wachtrij stond of overging.'],
+  overflowed: ['Overgelopen', 'De oproep liep over naar een andere bestemming en is niet door de Lancyr-wachtrij beantwoord.'],
+  no_answer: ['Niet beantwoord', 'De telefoon ging over maar niemand nam op.'],
+  voicemail: ['Voicemail', 'De beller heeft een voicemailbericht ingesproken.'],
+  missed: ['Gemist', 'De oproep is niet beantwoord.'],
+  busy: ['In gesprek', 'Alle lijnen waren bezet.'],
+  rejected: ['Geweigerd', 'De oproep is geweigerd.'],
+  call_failed: ['Mislukt', 'De verbinding kon niet tot stand komen.'],
+  wrong_number: ['Verkeerd nummer', 'De beller koos een verkeerd nummer.'],
+};
+function callResultLabelHTML(result) {
+  const parts = String(result || '').split(',').map(s => s.trim()).filter(Boolean);
+  if (!parts.length) return '&mdash;';
+  return parts.map(p => {
+    const info = CALL_RESULT_INFO[p.toLowerCase()];
+    return info ? `<span title="${escapeHtml(info[1])}" style="cursor:help;border-bottom:1px dotted var(--ink-30)">${escapeHtml(info[0])}</span> <span style="color:var(--ink-30);font-size:11px">(${escapeHtml(p)})</span>` : escapeHtml(p);
+  }).join(', ');
+}
+function callResultLegendHTML() {
+  return '<div style="color:var(--ink-50);font-size:11px;margin:12px 0 0 0;line-height:1.6">' +
+    Object.keys(CALL_RESULT_INFO).slice(0, 4).map(k => `<strong>${CALL_RESULT_INFO[k][0]}</strong> (${k}): ${CALL_RESULT_INFO[k][1]}`).join('<br>') +
+    '</div>';
+}
+
+// Telefoonnummer klikbaar maken zodat je direct kunt terugbellen (tel:-link).
+function telLinkHTML(nummer) {
+  const n = String(nummer || '').replace(/[^\d+]/g, '');
+  if (!n) return escapeHtml(nummer || '');
+  return `<a href="tel:${n}" style="color:var(--navy);font-weight:600;text-decoration:none" title="Bel dit nummer">&#128222; ${escapeHtml(nummer)}</a>`;
+}
+
+
 function renderDashboard(period) {
   const pd = getPeriodData(period);
   const agg = aggregateEntries(pd.entries);
@@ -4003,28 +4255,65 @@ function renderDashboard(period) {
       ? `${totalGesprekken} gesprekken · piek om ${piekTijd}`
       : `${totalGesprekken} gesprekken vandaag`);
 
-  // Verdeling per uitkomst
+  const role = currentRole();
+  const myNaam = currentStaffName();
+
+  // Drukte: vergelijk met het gemiddelde van de laatste werkdagen, anders is "matig" niets zeggend
+  let drukteVergelijkTxt = '';
+  (function () {
+    const ks = Object.keys(zoomHistory).sort().filter(k => k < todayKey() && typeof zoomHistory[k].totaalInbound === 'number').slice(-20);
+    if (ks.length >= 5) {
+      const avg = ks.reduce((s, k) => s + zoomHistory[k].totaalInbound, 0) / ks.length;
+      drukteVergelijkTxt = `gemiddeld ${Math.round(avg)} oproepen per werkdag (laatste ${ks.length} werkdagen)`;
+    }
+  })();
+
+  // Verdeling per uitkomst -- zelfde bron (de gesprekken) als de blokjes, met totaal en uitleg
+  const UITKOMST_LABEL = {
+    'outcome-opgelost': 'Telefonisch opgelost',
+    'outcome-terugbel': 'Terugbellen',
+    'outcome-brandmeester': 'Doorverwezen naar Brandmeester',
+    'outcome-afkoop': 'Afkoop',
+    'outcome-geen-dekking': 'Geen dekking',
+    'outcome-verkeerd': 'Verkeerd nummer',
+    'outcome-stam': 'Doorverwezen naar Stam Advocaten (VSO)',
+  };
+  const UITKOMST_UITLEG = {
+    'outcome-opgelost': 'Vraag direct aan de telefoon beantwoord, geen vervolgactie nodig.',
+    'outcome-terugbel': 'Medewerker belt later terug (iets uitzoeken, of er ontbreken stukken).',
+    'outcome-brandmeester': 'Doorverwezen naar Brandmeester (rechtsbijstand) voor verdere behandeling.',
+    'outcome-afkoop': 'Minnelijke regeling bereikt; Lancyr vergoedt het bedrag.',
+    'outcome-geen-dekking': 'Valt buiten de polis, dus geen dekking.',
+    'outcome-verkeerd': 'Beller had de verkeerde afdeling of het verkeerde nummer; geen juridische vraag.',
+    'outcome-stam': 'Doorverwezen naar Stam Advocaten (vaststellingsovereenkomst).',
+  };
   const uitkomstCounts = getUitkomstCounts(allConversations);
+  const uitkomstTotal = Object.values(uitkomstCounts).reduce((s, v) => s + v.count, 0);
   const maxUit = Math.max(...Object.values(uitkomstCounts).map(v=>v.count), 1);
   const verdelingRows = Object.entries(uitkomstCounts)
     .sort((a,b) => b[1].count - a[1].count)
-    .slice(0,6)
     .map(([key,{label,count}]) => `
       <div class="verdeling-item">
         <div class="verdeling-row">
-          <span class="verdeling-name">${label}</span>
-          <span class="verdeling-count">${count} &middot; ${totalGesprekken > 0 ? Math.round(100 * count / totalGesprekken) : 0}%</span>
+          <span class="verdeling-name">${escapeHtml(UITKOMST_LABEL[key] || label)}</span>
+          <span class="verdeling-count">${uitkomstTotal > 0 ? Math.round(100 * count / uitkomstTotal) : 0}% &middot; ${count}</span>
         </div>
         <div class="verdeling-bar-wrap">
           <div class="verdeling-bar-fill" style="width:${(count/maxUit*100).toFixed(0)}%"></div>
         </div>
+        ${UITKOMST_UITLEG[key] ? `<div class="verdeling-uitleg">${UITKOMST_UITLEG[key]}</div>` : ''}
       </div>`).join('') || '<p style="color:var(--ink-30);font-size:12px;padding:12px 0">Geen data</p>';
 
   // Team table
   const juristCounts = getJuristCounts(allConversations);
   const maxJC = Math.max(...Object.values(juristCounts), 1);
-  const teamRows = Object.entries(juristCounts)
-    .sort((a,b) => b[1]-a[1])
+  const teamOnbekend = Object.entries(juristCounts).filter(([n]) => !STAFF_NAMES.has(n)).reduce((s, [, n]) => s + n, 0);
+  // Medewerkers uit Granola-gesprekken EN uit Zoom (wie echt opnam), zodat iemand zonder Granola-opnames toch zichtbaar is
+  const zoomAg = zoomAgg.agenten || {};
+  const teamNamen = new Set([...Object.keys(juristCounts), ...Object.keys(zoomAg)].filter(n => STAFF_NAMES.has(n)));
+  const teamRows = [...teamNamen]
+    .map(n => [n, juristCounts[n] || 0])
+    .sort((a,b) => ((zoomAg[b[0]] ? zoomAg[b[0]].beantwoord : 0) - (zoomAg[a[0]] ? zoomAg[a[0]].beantwoord : 0)) || (b[1]-a[1]))
     .map(([name, count], idx) => {
       const emailMap = {
         'Wouter Toonen': 'woutertoonen@htjz.nl',
@@ -4033,6 +4322,7 @@ function renderDashboard(period) {
         'Edgar Stam': 'edgarstam@htjz.nl',
         'Senne Duifhuis': 'senneduifhuis@htjz.nl',
         'Roelof van Beijnum': 'roelofvanbeijnum@htjz.nl',
+        'Rowan Ros': 'rowanros@htjz.nl',
       };
       const email = emailMap[name] || '';
       const ps = email && _teamStatuses[email];
@@ -4048,13 +4338,14 @@ function renderDashboard(period) {
             </div>
           </div>
         </td>
+        ${zoomAgg.agenten ? `<td style="font-variant-numeric:tabular-nums">${zoomAg[name] ? zoomAg[name].beantwoord : '&mdash;'}<span style="color:var(--ink-50);font-size:12px"> / ${zoomAg[name] ? zoomAg[name].uitgaand : '&mdash;'}</span></td>` : ''}
         <td>
           <div>${count}</div>
           <div class="mini-gold-bar-wrap"><div class="mini-gold-bar-fill" style="width:${(count/maxJC*100).toFixed(0)}%"></div></div>
         </td>
         <td style="font-size:13px;color:var(--navy);font-weight:600">${juristAvgScore[name] > 0 ? juristAvgScore[name].toFixed(1) : '—'}<span style="font-size:11px;color:var(--ink-30)">/10</span></td>
       </tr>`;
-    }).join('') || '<tr><td colspan="3" style="text-align:center;padding:24px;color:var(--ink-30);font-size:13px">Geen teamdata beschikbaar</td></tr>';
+    }).join('') || '<tr><td colspan="4" style="text-align:center;padding:24px;color:var(--ink-30);font-size:13px">Geen teamdata beschikbaar</td></tr>';
 
   const activeCount = Object.keys(juristCounts).length;
 
@@ -4093,7 +4384,7 @@ function renderDashboard(period) {
   }
   const stats4 = [
     { label: 'Totaal gesprekken', value: totalGesprekken, variant: 'primary', extraHTML: dayCompareHTML },
-    { label: 'Eerstelijns opgelost', value: totalOpgelost, variant: 'default', extraHTML: '' },
+    { label: 'Telefonisch opgelost', value: totalOpgelost, variant: 'default', extraHTML: '' },
     { label: 'Naar Brandmeester', value: totalBrandmeester, variant: totalBrandmeester > 0 ? 'warn' : 'default', extraHTML: '' },
     { label: 'Afkoop', value: totalAfkoop, variant: 'default', extraHTML: '' },
     { label: 'Terugbellen', value: totalTerugbel, variant: 'default', extraHTML: '' },
@@ -4129,23 +4420,18 @@ function renderDashboard(period) {
   // aangepast zodat nieuwe gesprekken consistent "Routering" krijgen.
   const CATEGORIE_LABEL_MERGE = { 'Autoverzekering': 'Routering' };
   const categorieCounts = {};
-  allConversations.forEach(c => (c.tags || []).forEach(([, rawLabel]) => {
-    const label = CATEGORIE_LABEL_MERGE[rawLabel] || rawLabel;
-    if (label) categorieCounts[label] = (categorieCounts[label] || 0) + 1;
-  }));
-  const categorieTop = Object.entries(categorieCounts).sort((a, b) => b[1] - a[1]).slice(0, 8);
-  const categorieTotal = categorieTop.reduce((s, [, c]) => s + c, 0);
-  const categorieDonutSVG = buildDonutChart(categorieTop, 200);
-  const categorieRows = categorieTop
-    .map(([label, count], i) => {
-      const pct = categorieTotal > 0 ? Math.round(100 * count / categorieTotal) : 0;
-      return `
-      <div class="verdeling-item">
-        <div class="verdeling-row">
-          <span class="verdeling-name"><span style="display:inline-block;width:8px;height:8px;border-radius:50%;background:${DONUT_COLORS[i % DONUT_COLORS.length]};margin-right:7px;vertical-align:middle"></span><strong>${pct}%</strong> ${escapeHtml(label)} <span style="color:var(--ink-50);font-weight:400">(${count})</span></span>
-        </div>
-      </div>`;
-    }).join('') || '<p style="color:var(--ink-30);font-size:12px;padding:12px 0">Geen data</p>';
+  allConversations.forEach(c => {
+    const first = (c.tags || [])[0];
+    const rawLabel = first ? first[1] : 'Overig';
+    const label = normCategorie(rawLabel);
+    categorieCounts[label] = (categorieCounts[label] || 0) + 1;
+  });
+  const categorieOverig = categorieCounts['Overig'] || 0;
+  const categorieAll = Object.entries(categorieCounts).filter(([n]) => n !== 'Overig').sort((a, b) => b[1] - a[1]);
+  const categorieRowsDonut = categorieAll.slice(0, 8);
+  const categorieRest = categorieAll.slice(8).reduce((s, [, n]) => s + n, 0) + categorieOverig;
+  if (categorieRest > 0) categorieRowsDonut.push(['Overig', categorieRest]);
+  const categorieDonutHTML = buildDonutChartLabeled(categorieRowsDonut);
 
   const kanaalRows = Object.entries(zohoChannelCounts)
     .sort((a, b) => b[1] - a[1])
@@ -4214,8 +4500,56 @@ function renderDashboard(period) {
       ? '<div style="color:#b45309;font-size:11px;margin-top:10px">Let op: er zijn meer tickets dan in \u00e9\u00e9n keer opgehaald konden worden -- "Nog open" en "In de wacht" zijn mogelijk niet compleet.</div>'
       : `<div style="color:var(--ink-50);font-size:11px;margin-top:10px;font-style:italic">"In de wacht" = Zoho-status On Hold.${ticketSnapshotNote}</div>`;
 
-  const html = `
-    <!-- ZOOM PHONE: GEMISTE OPROEPEN -- alleen zichtbaar voor @htjz.nl-accounts -->
+
+  // ---- Rol-afhankelijke bouwstenen ----
+  const missedOpen = role === 'medewerker';
+  const mijnGesprekken = myNaam ? allConversations.filter(c => juristFromPersoon(c.personen) === myNaam) : [];
+  const mijnVV = mijnGesprekken.filter(c => c.verkeerdVerbonden).length;
+  const agMine = (myNaam && zoomAgg.agenten && zoomAgg.agenten[myNaam]) || null;
+
+  // "Nog terug te bellen" met klikbare nummers (bovenaan, ook als de details dichtgeklapt zijn)
+  // Alleen de laatste 3 werkdagen: oudere gemiste oproepen zijn niet meer te bellen en blijven anders eeuwig staan
+  const recentKeys = (() => { const ks = []; const d = new Date(); while (ks.length < 3) { if (d.getDay() !== 0 && d.getDay() !== 6) ks.push(dateKey(d)); d.setDate(d.getDate() - 1); } return ks.reverse(); })();
+  const zoomRecent = getZoomAggregate(recentKeys);
+  const terugbelGroepen = groupMissedCallsByNumber(zoomRecent.nietTerugGebeld || []);
+  const terugbelLijstHTML = (zoomAgg.dataAvailable && terugbelGroepen.length) ? `
+      <div style="background:var(--gold-10);border-radius:12px;padding:12px 14px;margin:0 0 12px 0">
+        <div style="font-size:12px;font-weight:700;color:var(--navy);margin-bottom:6px">Nog terug te bellen: ${terugbelGroepen.length} nummers <span style="font-weight:400;color:var(--ink-50)">(laatste 3 werkdagen)</span></div>
+        ${terugbelGroepen.map(g => `<div style="display:flex;justify-content:space-between;gap:12px;padding:4px 0;font-size:13px"><span>${telLinkHTML(g.nummer)}${g.count > 1 ? ` <span style="color:#b45309;font-weight:600">(${g.count}x)</span>` : ''}</span><span style="color:var(--ink-50)">${escapeHtml(formatDateShortNL(g.datum))} ${escapeHtml(g.tijden.join(', '))}</span></div>`).join('')}
+      </div>` : '';
+
+  // Medewerker: "Mijn dag"
+  const mijnDagKaarten = [
+    { label: myNaam ? 'Mijn gesprekken (opgenomen)' : 'Gesprekken (opgenomen)', value: myNaam ? mijnGesprekken.length : totalGesprekken },
+    { label: 'Door mij beantwoord (Zoom)', value: agMine ? agMine.beantwoord : '&mdash;' },
+    { label: 'Door mij gebeld (Zoom)', value: agMine ? agMine.uitgaand : '&mdash;' },
+    { label: 'Nog terug te bellen (3 werkdagen)', value: zoomRecent.dataAvailable ? terugbelGroepen.length : '&mdash;' },
+    { label: 'Open tickets', value: ticketStatsDisplay.totaalOpen },
+    { label: 'Verkeerd verbonden', value: myNaam ? mijnVV : verkeerdVerbondenCount },
+  ];
+  const mijnDagHTML = `
+    <div class="card">
+      <div class="chart-card-header"><div class="chart-card-title">${myNaam ? 'Mijn dag, ' + escapeHtml(myNaam.split(' ')[0]) : 'Mijn dag'}</div></div>
+      <div class="stat-strip">${mijnDagKaarten.map(s => `<div class="card stat-card"><div class="stat-label">${s.label}</div><div class="stat-value">${s.value}</div></div>`).join('')}</div>
+      <div class="totaal-note">${myNaam ? '' : 'Je account is niet gekoppeld aan een medewerkersnaam, daarom zie je hier teamcijfers. '}Gesprekken komen uit Granola-opnames (niet elk telefoontje wordt opgenomen); beantwoord en gebeld komen uit Zoom Phone${agMine ? '' : ' en zijn nog niet beschikbaar voor deze periode'}.</div>
+    </div>`;
+
+  // Medewerker: open tickets, klikbaar
+  const openTicketRows = (zohoOpenTickets && zohoOpenTickets.length ? zohoOpenTickets : zohoTicketsToday.filter(t => !/gesloten|closed/i.test(t.status || '')));
+  const openTicketsHTML = `
+    <div class="card">
+      <div class="gesprekken-header"><div class="gesprekken-title">Open tickets (${ticketStatsDisplay.totaalOpen})</div></div>
+      <div style="overflow-x:auto"><table class="gesprekken-table">
+        <thead><tr><th>Ticket</th><th>Klant</th><th>Onderwerp</th><th>Status</th><th>Aangemaakt</th></tr></thead>
+        <tbody>${openTicketRows.length ? openTicketRows.slice(0, 40).map(t => `<tr>
+          <td>${t.webUrl ? `<a href="${escapeHtml(t.webUrl)}" target="_blank" rel="noopener" style="font-weight:600">#${escapeHtml(t.ticketNumber)}</a>` : '#' + escapeHtml(t.ticketNumber)}</td>
+          <td>${escapeHtml(t.klant || '')}</td><td>${escapeHtml(t.titel || '')}</td><td>${escapeHtml(t.status || '')}</td>
+          <td>${escapeHtml(t.aangemaakt || t.tijd || '')}</td></tr>`).join('') : '<tr><td colspan="5" style="text-align:center;color:#94a3b8;">Geen open tickets gevonden</td></tr>'}</tbody>
+      </table></div>
+      ${zohoOpenTickets && zohoOpenTickets.length ? '' : '<div class="totaal-note">Alleen de tickets van vandaag zijn beschikbaar; de volledige lijst verschijnt na de eerstvolgende synchronisatie.</div>'}
+    </div>`;
+
+  const fragMissed = `    <!-- ZOOM PHONE: GEMISTE OPROEPEN -- alleen zichtbaar voor @htjz.nl-accounts -->
     ${canSeeMissedCalls ? `
     <div class="card">
       <div class="gesprekken-header">
@@ -4224,9 +4558,10 @@ function renderDashboard(period) {
       ${zoomAgg.dataAvailable ? `
       <button type="button" onclick="toggleGemisteOproepen()" style="display:flex;align-items:center;justify-content:space-between;width:100%;background:none;border:none;padding:2px 0 4px 0;margin:-4px 0 4px 0;cursor:pointer;text-align:left">
         <span style="font-size:14px;color:var(--ink-90)"><strong>${zoomAgg.totaalGemist}</strong> gemist &middot; <strong>${zoomAgg.terugGebeld}</strong> teruggebeld${zoomAgg.nietTerugGebeld.length ? ` &middot; <span style="color:#b45309;font-weight:600">${zoomAgg.nietTerugGebeld.length} nog niet teruggebeld</span>` : ''} <span style="font-size:10px;color:var(--ink-50);font-weight:400">(${zoomAgg.totaalInbound} totaal gebeld)</span></span>
-        <span id="gemiste-oproepen-arrow" style="color:var(--ink-50);font-size:12px">&#9662;</span>
+        <span id="gemiste-oproepen-arrow" style="color:var(--ink-50);font-size:12px">${missedOpen ? '&#9652;' : '&#9662;'}</span>
       </button>
-      <div id="gemiste-oproepen-detail" style="display:none">
+      ${terugbelLijstHTML}
+      <div id="gemiste-oproepen-detail" style="display:${missedOpen ? 'block' : 'none'}">
         <div style="color:var(--ink-50);font-size:11px;margin:0 0 12px 0;font-style:italic">
           Beta: gebaseerd op het Zoom-call-resultaat, aangevuld met een check van het routeringspad (call path) van de Lancyr-wachtrij zelf (sinds 25 aug 2026) om oproepen te herkennen die overliepen naar een andere bestemming &mdash; controleer bij twijfel alsnog de Zoom-telefonielog zelf.
         </div>
@@ -4249,8 +4584,8 @@ function renderDashboard(period) {
                 <tr>
                   <td>${escapeHtml(formatDateShortNL(g.datum))}</td>
                   <td>${escapeHtml(g.tijden.join(', '))}</td>
-                  <td>${escapeHtml(g.nummer)}${g.count > 1 ? ` <span style="color:#b45309;font-weight:600">(${g.count}x)</span>` : ''}</td>
-                  <td>${escapeHtml(g.callResult)}</td>
+                  <td>${telLinkHTML(g.nummer)}${g.count > 1 ? ` <span style="color:#b45309;font-weight:600">(${g.count}x)</span>` : ''}</td>
+                  <td>${callResultLabelHTML(g.callResult)}</td>
                   <td>${g.teruggebeld ? '<span style="color:var(--green)">Ja</span>' : '<span style="color:#b45309;font-weight:600">Nee</span>'}</td>
                 </tr>`).join('')
                 : `<tr><td colspan="5" style="text-align:center;color:#94a3b8;">Geen gemiste oproepen</td></tr>`;
@@ -4258,15 +4593,17 @@ function renderDashboard(period) {
           }</tbody>
         </table>
         </div>
+        ${callResultLegendHTML()}
       </div>
       ` : `<div style="color:var(--ink-50);font-size:12px;margin:-4px 0 0 0">Zoom-data nog niet beschikbaar voor deze periode</div>`}
     </div>
     ` : ''}
-    <!-- KPI HERO -->
+`;
+  const fragHero = `    <!-- KPI HERO -->
     <div class="kpi-row">
       <!-- Score -->
       <div class="card card-score">
-        <div class="score-label">Gem. klanttevredenheid</div>
+        <div class="score-label">Gem. kwaliteitsscore (AI)</div>
         ${avgScore > 0 ? `
         <div class="score-number">
           <span class="score-big">${scoreDisplay}</span>
@@ -4278,6 +4615,7 @@ function renderDashboard(period) {
         <div style="font-size:16px;font-weight:600;color:var(--ink-50);margin-top:10px">Nog geen beoordelingen ${period === 'vandaag' ? 'vandaag' : period === 'gisteren' ? 'gisteren' : 'in deze periode'}</div>
         ${weekAvgContextHTML}
         `}
+        <div class="kpi-uitleg">AI-beoordeling van de gesprekken op het helpdesk-protocol (polis en identiteit gecontroleerd, dekking en doorverwijzing correct). Dit is dus geen enquête onder klanten.</div>
         ${scoreRedenToggleHTML}
       </div>
 
@@ -4292,6 +4630,8 @@ function renderDashboard(period) {
           <div class="drukte-bar-fill" style="width:${druktePct}%"></div>
         </div>
         <div class="drukte-sub">${drukteSubText}</div>
+        ${drukteVergelijkTxt ? `<div class="drukte-sub" style="margin-top:2px">${drukteVergelijkTxt}</div>` : ''}
+        <div class="kpi-uitleg">Gebaseerd op het aantal binnenkomende oproepen per dag: minder dan 10 rustig, 10 t/m 15 matig, 16 of meer druk.</div>
       </div>
     </div>
 
@@ -4300,7 +4640,8 @@ function renderDashboard(period) {
 
     ${scoreRedenHTML}
 
-    ${noConversations ? `
+`;
+  const fragStats = `    ${noConversations ? `
     <div class="card">
       <div class="empty-state">
         <div style="font-size:32px;margin-bottom:8px">📭</div>
@@ -4315,7 +4656,8 @@ function renderDashboard(period) {
     </div>
     `}
 
-    ${period === 'vandaag' ? `
+`;
+  const fragKanaal = `    ${period === 'vandaag' ? `
     <!-- KANAALVERDELING (Zoho Desk, alleen vandaag) -->
     <div class="card">
       <div class="chart-card-header">
@@ -4324,7 +4666,8 @@ function renderDashboard(period) {
       <div class="verdeling-list">${kanaalRows}</div>
     </div>
     ` : ''}
-    <!-- ZOHO DESK TICKETS: KPI-STRIP (nieuw / gesloten / open / wacht) -- niet
+`;
+  const fragTickets = `    <!-- ZOHO DESK TICKETS: KPI-STRIP (nieuw / gesloten / open / wacht) -- niet
          meer aan periode==='vandaag' gebonden, want getTicketStatsAggregate
          werkt nu ook voor Gisteren/Deze week/Vorige week via de historie. -->
     <div class="card">
@@ -4352,8 +4695,8 @@ function renderDashboard(period) {
       ${ticketStatsCaveatHTML}
     </div>
 
-    ${managementViewActive && !noConversations ? `
-    <!-- MANAGEMENT-WEERGAVE: extra kaarten -->
+`;
+  const fragMgmtExtra = noConversations ? '' : `    <!-- MANAGEMENT-WEERGAVE: extra kaarten -->
     <div class="charts-row">
       <div class="card">
         <div class="chart-card-header">
@@ -4379,18 +4722,16 @@ function renderDashboard(period) {
         `}
       </div>
     </div>
+`;
+  const fragTotaal = buildTotaalOverzichtHTML();
+  const fragOnderwerpen = noConversations ? '' : `
     <div class="card">
       <div class="chart-card-header">
         <div class="chart-card-title">Onderwerpen (rechtsgebied)</div>
       </div>
-      <div style="display:flex;align-items:center;gap:24px;flex-wrap:wrap">
-        ${categorieDonutSVG}
-        <div class="verdeling-list" style="flex:1;min-width:180px">${categorieRows}</div>
-      </div>
-    </div>
-    ` : ''}
-
-    ${noConversations ? '' : `
+      ${categorieDonutHTML}
+    </div>`;
+  const fragCharts = `${noConversations ? '' : `
     <!-- CHARTS ROW -->
     <div class="charts-row">
       <div class="card">
@@ -4403,10 +4744,13 @@ function renderDashboard(period) {
         <div class="chart-card-header">
           <div class="chart-card-title">Verdeling per uitkomst</div>
         </div>
+        <div class="verdeling-total">Totaal: <strong>${uitkomstTotal}</strong> gesprekken</div>
         <div class="verdeling-list">${verdelingRows}</div>
       </div>
     </div>
 
+`}`;
+  const fragTeam = `${noConversations ? '' : `
     <!-- TEAM TABLE -->
     <div class="card">
       <div class="team-table-header">
@@ -4416,18 +4760,22 @@ function renderDashboard(period) {
         <thead>
           <tr>
             <th>Jurist</th>
-            <th>Gesprekken</th>
+            ${zoomAgg.agenten ? '<th title="Beantwoorde inkomende oproepen / uitgaande gesprekken volgens Zoom Phone, dus wie er echt aan de telefoon zat">Zoom: beantwoord / uitgaand</th>' : ''}
+            <th title="Opgenomen en geanalyseerd door Granola. Niet elk telefoontje wordt opgenomen, dus dit is niet het totaal aantal gesprekken per persoon.">Gesprekken (opgenomen)</th>
             <th>Score</th>
           </tr>
         </thead>
         <tbody>${teamRows}</tbody>
       </table>
+      <div class="totaal-note">Alleen herkende medewerkers${teamOnbekend ? ` &middot; ${teamOnbekend} gesprekken zonder herkende medewerker niet getoond` : ''}. ${zoomAgg.agenten ? 'Beantwoord/uitgaand komt uit Zoom Phone en is het volledige beeld; "opgenomen" komt uit Granola en is dat niet.' : 'Aantallen komen uit Granola-opnames en zijn daarom geen volledig beeld van het werk per persoon.'}</div>
     </div>
 
+`}`;
+  const fragRecent = `${noConversations ? '' : `
     <!-- RECENTE GESPREKKEN -->
     <div class="card">
       <div class="gesprekken-header">
-        <div class="gesprekken-title">Recente gesprekken</div>
+        <div class="gesprekken-title">${role === 'medewerker' && myNaam && mijnGesprekken.length ? 'Mijn recente gesprekken' : 'Recente gesprekken'}</div>
         <a href="#" class="gesprekken-link">Volledige log →</a>
       </div>
       <table class="gesprekken-table">
@@ -4443,9 +4791,8 @@ function renderDashboard(period) {
         <tbody>${gesprekkenRows}</tbody>
       </table>
     </div>
-    `}
-
-    ${period === 'vandaag' ? `
+`}`;
+  const fragZohoVandaag = `    ${period === 'vandaag' ? `
     <!-- ZOHO DESK TICKETS -->
     <div class="card">
       <div class="gesprekken-header">
@@ -4478,7 +4825,14 @@ function renderDashboard(period) {
       </table>
     </div>
     ` : ''}
-  `;
+`;
+
+  // ---- Samenstellen per weergave ----
+  // management: totalen en verdelingen bovenaan, daarna kwaliteit/drukte, gemiste oproepen, tickets en team
+  // medewerker: persoonlijk -- hoe doe ik het, wie moet ik terugbellen, welke tickets staan open
+  const html = role === 'management'
+    ? [fragTotaal, fragOnderwerpen, fragCharts, fragStats, fragMgmtExtra, fragHero, fragMissed, fragKanaal, fragTickets, fragTeam, fragRecent, fragZohoVandaag].join('')
+    : [mijnDagHTML, fragMissed, openTicketsHTML, fragHero, fragRecent, fragKanaal, fragTickets].join('');
 
   document.getElementById('dashboard').innerHTML = html;
 }
@@ -4599,6 +4953,7 @@ async function loadZohoTickets() {
     if (!resp.ok) return;
     const live = await resp.json();
     if (Array.isArray(live.tickets)) zohoTicketsToday = live.tickets;
+    if (Array.isArray(live.openTickets)) zohoOpenTickets = live.openTickets;
     if (live.channelCounts && typeof live.channelCounts === 'object') zohoChannelCounts = live.channelCounts;
     if (typeof live.brandmeesterCount === 'number') zohoBrandmeesterCount = live.brandmeesterCount;
     if (live.ticketStats && typeof live.ticketStats === 'object') zohoTicketStats = live.ticketStats;
@@ -4979,6 +5334,15 @@ let isManagement = false;
 // ── Gemiste-oproepen-kaart (Zoom Phone) is alleen zichtbaar voor @htjz.nl-accounts ──
 let canSeeMissedCalls = false;
 let managementViewActive = false;
+let activeView = 'medewerker';
+let isExternalUser = false;
+let currentUserEmail = '';
+let zohoOpenTickets = [];
+function currentRole() { return activeView; }
+function currentStaffName() {
+  const local = (currentUserEmail.split('@')[0] || '').toLowerCase().replace(/[^a-z]/g, '');
+  return STAFF_BY_LOCAL[local] || null;
+}
 let zohoChannelCounts = {};
 let zohoBrandmeesterCount = 0;
 let zohoTicketsTodayTotal = 0;
@@ -5016,31 +5380,45 @@ async function checkManagementAccess() {
     const sb = getSupabase();
     if (!sb) return;
     const { data: { user } } = await sb.auth.getUser();
-    isManagement = !!(user && user.email && MANAGEMENT_EMAILS.includes(user.email.toLowerCase()));
-    canSeeMissedCalls = !!(user && user.email && user.email.toLowerCase().endsWith('@htjz.nl'));
+    const em = ((user && user.email) || '').toLowerCase();
+    currentUserEmail = em;
+    isManagement = !!(em && MANAGEMENT_EMAILS.includes(em));
+    canSeeMissedCalls = !!(em && em.endsWith('@htjz.nl'));
+    isExternalUser = !!(em && !em.endsWith('@htjz.nl') && !em.endsWith('@juridische-check.nl') && !isManagement);  // bv. Lancyr: krijgt de managementindeling
   } catch (e) {
     console.log('[Management] kon rol niet bepalen:', e);
     isManagement = false;
     canSeeMissedCalls = false;
+    isExternalUser = false;
   }
   const group = document.getElementById('view-toggle-group');
   if (group) group.style.display = isManagement ? 'inline-flex' : 'none';
-  // Als toegang wegvalt (bv. uitgelogd) terugvallen op medewerkerweergave.
-  if (!isManagement) setManagementView(false);
+  // Standaardweergave per rol: extern en management = management (management onthoudt de laatste keuze), rest = medewerker
+  let v = (isExternalUser || isManagement) ? 'management' : 'medewerker';
+  if (isManagement) {
+    try { const saved = localStorage.getItem('lancyr_view'); if (saved === 'management' || saved === 'medewerker') v = saved; } catch (e) {}
+  }
+  setView(v, true);
 }
 
-function setManagementView(active) {
-  managementViewActive = active;
-  const bWerk = document.getElementById('view-btn-medewerker');
-  const bMgmt = document.getElementById('view-btn-management');
-  if (bWerk && bMgmt) {
-    bWerk.style.background = active ? '#fff' : 'var(--navy)';
-    bWerk.style.color = active ? 'var(--navy)' : '#fff';
-    bMgmt.style.background = active ? 'var(--navy)' : '#fff';
-    bMgmt.style.color = active ? '#fff' : 'var(--navy)';
-  }
-  renderDashboard(activePeriod);
+// Weergave kiezen: 'management' | 'medewerker'. Alleen management mag wisselen.
+function setView(view, skipRender) {
+  if (view !== 'management') view = 'medewerker';
+  if (!isManagement) view = isExternalUser ? 'management' : 'medewerker';
+  activeView = view;
+  managementViewActive = (view === 'management');
+  if (isManagement) { try { localStorage.setItem('lancyr_view', view); } catch (e) {} }
+  ['management', 'medewerker'].forEach(v => {
+    const b = document.getElementById('view-btn-' + v);
+    if (!b) return;
+    b.style.background = v === view ? 'var(--navy)' : '#fff';
+    b.style.color = v === view ? '#fff' : 'var(--navy)';
+  });
+  if (!skipRender) renderDashboard(activePeriod);
 }
+
+// Oude aanroep blijft werken
+function setManagementView(active) { setView(active ? 'management' : 'medewerker'); }
 
 function getSupabase() {
   if (!_supabase && typeof supabase !== 'undefined') {
@@ -5158,6 +5536,7 @@ async function authLogin() {
     return;
   }
   hideAuthOverlay();
+  await checkManagementAccess();
   await initDashboard();
 }
 

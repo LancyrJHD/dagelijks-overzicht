@@ -15,6 +15,7 @@ Design notes / resilience:
   entirely on GitHub's servers (no dependency on any local machine).
 """
 import os
+import re
 import json
 import time
 import urllib.request
@@ -60,6 +61,15 @@ VALID_OUTCOMES = {
 # Namen moeten exact overeenkomen met de lijst in ANALYZE_SYSTEM_PROMPT --
 # alles buiten deze lijst (incl. "Onbekend" of een hallucinatie) wordt
 # genegeerd en valt terug op de Granola-notitie-eigenaar.
+# Interne overleggen (Daily Huddle, teamoverleg, ...) zijn geen klantgesprekken en
+# mogen niet meetellen in totalen en teamstatistieken (bevinding 3 okt 2026).
+INTERNAL_TITLE_RE = re.compile(r'huddle|team\s?overleg|stand-?up|weekoverleg|intern overleg|sprint|retro', re.I)
+
+
+def is_internal_meeting(title):
+    return bool(INTERNAL_TITLE_RE.search(title or ''))
+
+
 KNOWN_STAFF = {
     "Senne Duifhuis", "Jackie Stam", "Edgar Stam", "Dewi Verver",
     "Roelof van Beijnum", "Wouter Toonen", "Rowan Ros",
@@ -105,8 +115,10 @@ Bepaal ook welke HTJZ-medewerker het gesprek daadwerkelijk voerde:
   transcript. Als het transcript geen duidelijke aanwijzing geeft welke medewerker het is,
   zet "medewerker" dan op "Onbekend" (verzin nooit een gok).
 
+- "intern_overleg": true ALLEEN als dit geen telefoongesprek met een beller/verzekerde is maar een intern overleg of teammeeting (zoals een Daily Huddle, teamoverleg, IT-meeting of een gesprek tussen collega's zonder beller). Bij twijfel: false.
+
 Geef ALLEEN geldige JSON terug, geen andere tekst, in dit exacte formaat:
-{"samenvatting": "max 3 zinnen, feitelijk en concreet, en vermeld expliciet of en wanneer de beller is geverifieerd en of er wel of geen inhoudelijk advies is gegeven", "tags": [["tag-x","Label"]], "uitkomst": ["outcome-x","Label"], "terugbel": true of false, "verkeerd_verbonden": true of false, "rechtsbijstand_verwijzing": true of false, "advies_gegeven": true of false, "identiteit_geverifieerd": true of false, "medewerker": "<naam of Onbekend>"}
+{"samenvatting": "max 3 zinnen, feitelijk en concreet, en vermeld expliciet of en wanneer de beller is geverifieerd en of er wel of geen inhoudelijk advies is gegeven", "tags": [["tag-x","Label"]], "uitkomst": ["outcome-x","Label"], "terugbel": true of false, "verkeerd_verbonden": true of false, "rechtsbijstand_verwijzing": true of false, "advies_gegeven": true of false, "identiteit_geverifieerd": true of false, "medewerker": "<naam of Onbekend>", "intern_overleg": true of false}
 """
 
 DAY_SYSTEM_PROMPT = """Je bent een juridische kwaliteitsanalist voor de Lancyr Juridische Helpdesk van HTJZ.
@@ -383,6 +395,9 @@ def main():
             continue
         if not is_lancyr_note(detail):
             continue
+        if is_internal_meeting(title):
+            print(f"  SKIP (intern overleg): {title}")
+            continue
 
         summary_md = detail.get('summary_markdown') or ''
         summary_text = detail.get('summary_text') or ''
@@ -410,6 +425,9 @@ def main():
             user_content += "\n\nSysteeminfo: geen Zoho-contactmatch gevonden voor dit tijdstip."
 
         ai_result = anthropic_call(ANALYZE_SYSTEM_PROMPT, user_content, max_tokens=600)
+        if ai_result and ai_result.get("intern_overleg") is True:
+            print(f"  SKIP (AI: intern overleg, geen klantgesprek): {title}")
+            continue
 
         if ai_result and ai_result.get("uitkomst") and ai_result["uitkomst"][0] in VALID_OUTCOMES:
             samenvatting = ai_result.get("samenvatting", "")

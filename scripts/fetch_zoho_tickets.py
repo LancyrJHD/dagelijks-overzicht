@@ -116,23 +116,40 @@ def fetch_tickets_for_stats(access_token, max_pages=10, page_size=100):
     all_tickets = []
     seen_ids = set()
     cap_reached = True
+    # Uitgebreid (voor de lijst met open tickets in het medewerkersscherm); valt
+    # automatisch terug op de oorspronkelijke minimale velden als Zoho dat weigert,
+    # zodat de bestaande ticketstatistieken nooit kunnen breken.
+    extended = True
     for page in range(max_pages):
         from_index = page * page_size + 1
-        url = f"{DESK_BASE}/tickets?" + urllib.parse.urlencode({
-            'limit': page_size,
-            'from': from_index,
-            'sortBy': '-modifiedTime',
-            'fields': 'id,status,statusType,createdTime,closedTime,modifiedTime',
-        })
-        req = urllib.request.Request(url, headers={
-            'Authorization': f'Zoho-oauthtoken {access_token}',
-            'orgId': ORG_ID,
-        })
-        try:
-            with urllib.request.urlopen(req, timeout=30) as resp:
-                page_data = json.loads(resp.read()).get('data', [])
-        except Exception as e:
-            print(f"  WAARSCHUWING: kon pagina {page + 1} van ticketstats niet ophalen ({e})")
+        page_data = None
+        for attempt in (0, 1):
+            params = {
+                'limit': page_size,
+                'from': from_index,
+                'sortBy': '-modifiedTime',
+                'fields': 'id,status,statusType,createdTime,closedTime,modifiedTime',
+            }
+            if extended:
+                params['fields'] += ',ticketNumber,subject,webUrl,email'
+                params['include'] = 'contacts'
+            url = f"{DESK_BASE}/tickets?" + urllib.parse.urlencode(params)
+            req = urllib.request.Request(url, headers={
+                'Authorization': f'Zoho-oauthtoken {access_token}',
+                'orgId': ORG_ID,
+            })
+            try:
+                with urllib.request.urlopen(req, timeout=30) as resp:
+                    page_data = json.loads(resp.read()).get('data', [])
+                break
+            except Exception as e:
+                if extended and attempt == 0:
+                    print(f"  WAARSCHUWING: uitgebreide ticketvelden geweigerd ({e}); terugvallen op minimale velden")
+                    extended = False
+                    continue
+                print(f"  WAARSCHUWING: kon pagina {page + 1} van ticketstats niet ophalen ({e})")
+                break
+        if page_data is None:
             cap_reached = False
             break
         if not page_data:
@@ -155,6 +172,34 @@ def fetch_tickets_for_stats(access_token, max_pages=10, page_size=100):
             cap_reached = False
             break
     return all_tickets, cap_reached
+
+
+def build_open_tickets(stats_tickets, limit=60):
+    """Lijst van niet-gesloten tickets (oudste eerst) voor het medewerkersscherm,
+    zodat je er direct op kunt klikken. Leeg als Zoho de uitgebreide velden niet gaf."""
+    out = []
+    for t in stats_tickets:
+        if _is_closed_status(t.get('status') or ''):
+            continue
+        if not t.get('ticketNumber'):
+            continue
+        created_raw = t.get('createdTime', '')
+        try:
+            aangemaakt = (datetime.fromisoformat(created_raw.replace('Z', '+00:00')) + AMS_OFFSET).strftime('%Y-%m-%d')
+        except Exception:
+            aangemaakt = ''
+        contact = t.get('contact') or {}
+        klant = ((contact.get('firstName') or '') + ' ' + (contact.get('lastName') or '')).strip() or t.get('email') or 'Onbekend'
+        out.append({
+            'ticketNumber': t.get('ticketNumber', ''),
+            'titel': t.get('subject') or '(geen onderwerp)',
+            'klant': klant,
+            'status': t.get('status', ''),
+            'aangemaakt': aangemaakt,
+            'webUrl': t.get('webUrl', ''),
+        })
+    out.sort(key=lambda e: e['aangemaakt'] or '9999')
+    return out[:limit]
 
 
 def compute_ticket_stats(nieuwe_vandaag_count, stats_tickets, cap_reached, today_str):
@@ -273,6 +318,7 @@ def main():
         'channelCounts': channel_counts,
         'brandmeesterCount': brandmeester_count,
         'ticketStats': ticket_stats,
+        'openTickets': build_open_tickets(stats_tickets),
     }
 
     os.makedirs('data', exist_ok=True)

@@ -93,6 +93,23 @@ HANDLED_RESULTS = {'answered', 'connected'}
 LANCYR_QUEUE_DID = '+31294799077'
 LANCYR_QUEUE_EXT = '807'
 
+# Medewerkers, op basis van het lokale deel van het e-mailadres (Zoom gebruikt
+# soms @juridische-check.nl, soms @htjz.nl) -> naam zoals in het dashboard.
+STAFF_BY_LOCAL = {
+    'senneduifhuis': 'Senne Duifhuis', 'jackiestam': 'Jackie Stam',
+    'edgarstam': 'Edgar Stam', 'dewiverver': 'Dewi Verver',
+    'roelofvanbeijnum': 'Roelof van Beijnum', 'woutertoonen': 'Wouter Toonen',
+    'rowanros': 'Rowan Ros',
+}
+
+
+def staff_name(name, email):
+    local = ''.join(ch for ch in (email or '').split('@')[0].lower() if ch.isalpha())
+    if local in STAFF_BY_LOCAL:
+        return STAFF_BY_LOCAL[local]
+    n = (name or '').split('|')[0].strip()
+    return n or None
+
 
 def get_access_token():
     creds = f'{CLIENT_ID}:{CLIENT_SECRET}'.encode()
@@ -261,6 +278,12 @@ def main():
     # gewaarschuwde WAARSCHUWING in de log, geen harde crash.
     missed = []
     outbound_calls = []
+    # BEVINDING 3 okt 2026: Granola kent alleen de opgenomen gesprekken (en
+    # schrijft ze bovendien toe aan de notitie-eigenaar), dus per-medewerker-
+    # aantallen daaruit zijn onbetrouwbaar. Zoom weet wel wie de oproep
+    # daadwerkelijk aannam (call path) en wie uitgaand belde.
+    agenten = {}
+    beantwoord_zonder_agent = 0
     totaal_inbound = 0
     queue_overflow_count = 0
     for log in logs:
@@ -283,6 +306,22 @@ def main():
                             is_missed = True
                             reden = f"wachtrij-segment result={queue_result!r} (top-level was {result!r})"
                             queue_overflow_count += 1
+                    if not is_missed:
+                        # Wie nam deze oproep aan? Laatste segment (niet het wachtrij-
+                        # segment zelf) met een afgehandeld resultaat en een gebelde medewerker.
+                        agent_el = None
+                        for el in elements:
+                            if el.get('event') == 'incoming':
+                                continue
+                            if (el.get('result') or '').lower() in HANDLED_RESULTS and (el.get('callee_email') or el.get('callee_name')):
+                                agent_el = el
+                        naam = staff_name(agent_el.get('callee_name'), agent_el.get('callee_email')) if agent_el else None
+                        if naam:
+                            a = agenten.setdefault(naam, {'beantwoord': 0, 'uitgaand': 0, 'gesprekstijdSec': 0})
+                            a['beantwoord'] += 1
+                            a['gesprekstijdSec'] += int(agent_el.get('talk_time') or log.get('duration') or 0)
+                        else:
+                            beantwoord_zonder_agent += 1
                 except urllib.error.HTTPError as e:
                     body = e.read().decode(errors='replace')
                     print(f"  WAARSCHUWING: call path ophalen mislukt voor {call_id!r} "
@@ -304,6 +343,11 @@ def main():
                 missed.append(log)
         elif direction == 'outbound':
             outbound_calls.append(log)
+            naam = staff_name(log.get('caller_name'), log.get('caller_email'))
+            if naam and result in HANDLED_RESULTS:
+                a = agenten.setdefault(naam, {'beantwoord': 0, 'uitgaand': 0, 'gesprekstijdSec': 0})
+                a['uitgaand'] += 1
+                a['gesprekstijdSec'] += int(log.get('duration') or 0)
 
     if queue_overflow_count:
         print(f"Wachtrij-overflow gedetecteerd bij {queue_overflow_count} oproep(en): "
@@ -365,6 +409,8 @@ def main():
         'nietTerugGebeld': len(niet_gebeld),
         'nietTerugGebeldNummers': niet_gebeld,
         'alleGemistNummers': alle_gemist,
+        'agenten': agenten,
+        'beantwoordZonderAgent': beantwoord_zonder_agent,
     }
     os.makedirs('data', exist_ok=True)
     with open(OUTPUT_PATH, 'w', encoding='utf-8') as f:
