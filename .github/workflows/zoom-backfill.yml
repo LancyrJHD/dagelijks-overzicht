@@ -1,0 +1,73 @@
+name: Backfill Zoom-historie (per medewerker)
+
+# Haalt voor een datumbereik per werkdag de Zoom-call-historie op en vult
+# data/zoom-history.json aan (o.a. wie elke oproep aannam en wie uitgaand belde),
+# zodat de teamcijfers in het dashboard ook voor eerdere dagen kloppen.
+# Raakt data/zoom-calls.json ("vandaag") NIET aan en draait los van de
+# geplande dagrapport-run. Handmatig starten via "Run workflow".
+
+on:
+  workflow_dispatch:
+    inputs:
+      van:
+        description: 'Startdatum (YYYY-MM-DD)'
+        required: true
+        default: '2026-08-17'
+      tot:
+        description: 'Einddatum (YYYY-MM-DD), leeg = gisteren'
+        required: false
+        default: ''
+
+concurrency:
+  group: zoom-backfill
+  cancel-in-progress: false
+
+jobs:
+  backfill:
+    runs-on: ubuntu-latest
+    timeout-minutes: 60
+    permissions:
+      contents: write
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v4
+      - name: Set up Python 3.11
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Zoom-historie per werkdag ophalen
+        env:
+          ZOOM_ACCOUNT_ID: ${{ secrets.ZOOM_ACCOUNT_ID }}
+          ZOOM_CLIENT_ID: ${{ secrets.ZOOM_CLIENT_ID }}
+          ZOOM_CLIENT_SECRET: ${{ secrets.ZOOM_CLIENT_SECRET }}
+          VAN: ${{ github.event.inputs.van }}
+          TOT: ${{ github.event.inputs.tot }}
+        run: |
+          python - <<'PY'
+          import os, subprocess, time, datetime as dt
+          van = dt.date.fromisoformat(os.environ['VAN'])
+          tot = dt.date.fromisoformat(os.environ['TOT']) if os.environ.get('TOT') else dt.date.today() - dt.timedelta(days=1)
+          d = van
+          fouten = 0
+          while d <= tot:
+              if d.weekday() < 5:
+                  env = dict(os.environ, ZOOM_DATE=d.isoformat(), ZOOM_HISTORY_ONLY='1')
+                  r = subprocess.run(['python', 'scripts/fetch_zoom_calls.py'], env=env)
+                  print(f'=== {d} klaar (exit {r.returncode}) ===', flush=True)
+                  if r.returncode != 0:
+                      fouten += 1
+                  time.sleep(1)
+              d += dt.timedelta(days=1)
+          print(f'Klaar, {fouten} dag(en) met een fout')
+          PY
+      - name: Commit en push data/zoom-history.json
+        run: |
+          git config user.name  "Lancyr Bot"
+          git config user.email "bot@htjz.nl"
+          git add data/zoom-history.json
+          if git diff --staged --quiet; then echo "Geen wijzigingen"; exit 0; fi
+          git commit -m "auto: zoom-historie backfill ${{ github.event.inputs.van }} t/m ${{ github.event.inputs.tot || 'gisteren' }}"
+          for i in 1 2 3 4; do
+            git pull --rebase --autostash -q && git push && break
+            echo "push-poging $i mislukt, opnieuw..."; sleep 5
+          done

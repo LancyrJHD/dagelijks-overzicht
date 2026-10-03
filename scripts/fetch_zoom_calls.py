@@ -67,6 +67,10 @@ CLIENT_SECRET = os.environ.get('ZOOM_CLIENT_SECRET', '')
 DIAGNOSE_ONLY = os.environ.get('ZOOM_DIAGNOSE_ONLY', '').lower() in ('1', 'true', 'yes')
 DIAGNOSE_NUMBER = os.environ.get('ZOOM_DIAGNOSE_NUMBER', '').strip()
 
+# Backfill-modus: alleen data/zoom-history.json bijwerken, data/zoom-calls.json
+# (de "vandaag"-data) NIET overschrijven -- zie .github/workflows/zoom-backfill.yml.
+HISTORY_ONLY = os.environ.get('ZOOM_HISTORY_ONLY', '').lower() in ('1', 'true', 'yes')
+
 TOKEN_URL = 'https://zoom.us/oauth/token'
 API_BASE = 'https://api.zoom.us/v2'
 OUTPUT_PATH = 'data/zoom-calls.json'
@@ -284,6 +288,7 @@ def main():
     # daadwerkelijk aannam (call path) en wie uitgaand belde.
     agenten = {}
     beantwoord_zonder_agent = 0
+    debug_paden = 0
     totaal_inbound = 0
     queue_overflow_count = 0
     for log in logs:
@@ -316,6 +321,10 @@ def main():
                             if (el.get('result') or '').lower() in HANDLED_RESULTS and (el.get('callee_email') or el.get('callee_name')):
                                 agent_el = el
                         naam = staff_name(agent_el.get('callee_name'), agent_el.get('callee_email')) if agent_el else None
+                        if debug_paden < 2:
+                            debug_paden += 1
+                            print("  [debug] call path van een beantwoorde oproep:",
+                                  json.dumps([{k: el.get(k) for k in ('event', 'result', 'callee_name', 'callee_ext_type', 'talk_time')} for el in elements], ensure_ascii=False))
                         if naam:
                             a = agenten.setdefault(naam, {'beantwoord': 0, 'uitgaand': 0, 'gesprekstijdSec': 0})
                             a['beantwoord'] += 1
@@ -413,8 +422,9 @@ def main():
         'beantwoordZonderAgent': beantwoord_zonder_agent,
     }
     os.makedirs('data', exist_ok=True)
-    with open(OUTPUT_PATH, 'w', encoding='utf-8') as f:
-        json.dump(result, f, ensure_ascii=False, indent=2)
+    if not HISTORY_ONLY:
+        with open(OUTPUT_PATH, 'w', encoding='utf-8') as f:
+            json.dump(result, f, ensure_ascii=False, indent=2)
     print(f"Saved: {totaal_inbound} binnenkomend, {len(missed)} gemist, "
           f"{gebeld_count} teruggebeld, {len(niet_gebeld)} niet teruggebeld "
           f"-> {OUTPUT_PATH}")
