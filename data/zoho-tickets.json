@@ -1,6 +1,6 @@
 {
   "date": "2026-10-05",
-  "generated_at": "2026-10-05T09:40:52Z",
+  "generated_at": "2026-10-05T09:50:49Z",
   "tickets": [
     {
       "ticketNumber": "2822",
@@ -61,21 +61,33 @@
       "webUrl": "https://desk.zoho.eu/support/htjzlancyr/ShowHomePage.do#Cases/dv/195464000014443001",
       "channel": "Phone",
       "doorgezetBrandmeester": false
+    },
+    {
+      "ticketNumber": "2829",
+      "tijd": "11:47",
+      "titel": "Juridisch advies meerwerkfactuur aannemer",
+      "klant": "E.J.L. Heijnen",
+      "status": "In de wacht",
+      "statusType": "",
+      "prioriteit": "Niet ingesteld",
+      "webUrl": "https://desk.zoho.eu/support/htjzlancyr/ShowHomePage.do#Cases/dv/195464000014445001",
+      "channel": "Phone",
+      "doorgezetBrandmeester": false
     }
   ],
   "channelCounts": {
-    "Phone": 5
+    "Phone": 6
   },
   "brandmeesterCount": 1,
   "ticketStats": {
-    "nieuweVandaag": 5,
+    "nieuweVandaag": 6,
     "geslotenVandaag": 15,
-    "totaalOpen": 15,
-    "inDeWacht": 14,
+    "totaalOpen": 16,
+    "inDeWacht": 15,
     "statusBreakdown": {
+      "In de wacht": 15,
       "Gesloten": 683,
-      "Open": 1,
-      "In de wacht": 14
+      "Open": 1
     },
     "capBereikt": false
   },
@@ -191,6 +203,14 @@
       "status": "Open",
       "aangemaakt": "2026-09-28",
       "webUrl": "https://desk.zoho.eu/support/htjzlancyr/ShowHomePage.do#Cases/dv/195464000014292046"
+    },
+    {
+      "ticketNumber": "2829",
+      "titel": "Juridisch advies meerwerkfactuur aannemer",
+      "klant": "E.J.L. Heijnen",
+      "status": "In de wacht",
+      "aangemaakt": "2026-10-05",
+      "webUrl": "https://desk.zoho.eu/support/htjzlancyr/ShowHomePage.do#Cases/dv/195464000014445001"
     },
     {
       "ticketNumber": "2824",
