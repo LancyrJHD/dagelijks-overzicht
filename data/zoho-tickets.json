@@ -1,18 +1,18 @@
 {
   "date": "2026-10-05",
-  "generated_at": "2026-10-05T09:10:52Z",
+  "generated_at": "2026-10-05T09:20:51Z",
   "tickets": [
     {
       "ticketNumber": "2822",
       "tijd": "09:03",
       "titel": "arbeidsconflict overtal",
       "klant": "E.L.M. deVries",
-      "status": "Open",
+      "status": "Gesloten",
       "statusType": "",
       "prioriteit": "Niet ingesteld",
       "webUrl": "https://desk.zoho.eu/support/htjzlancyr/ShowHomePage.do#Cases/dv/195464000014413001",
       "channel": "Phone",
-      "doorgezetBrandmeester": false
+      "doorgezetBrandmeester": true
     },
     {
       "ticketNumber": "2824",
@@ -66,15 +66,15 @@
   "channelCounts": {
     "Phone": 5
   },
-  "brandmeesterCount": 0,
+  "brandmeesterCount": 1,
   "ticketStats": {
     "nieuweVandaag": 5,
-    "geslotenVandaag": 12,
-    "totaalOpen": 18,
+    "geslotenVandaag": 14,
+    "totaalOpen": 16,
     "inDeWacht": 14,
     "statusBreakdown": {
-      "Gesloten": 680,
-      "Open": 4,
+      "Gesloten": 682,
+      "Open": 2,
       "In de wacht": 14
     },
     "capBereikt": false
@@ -199,22 +199,6 @@
       "status": "Open",
       "aangemaakt": "2026-09-28",
       "webUrl": "https://desk.zoho.eu/support/htjzlancyr/ShowHomePage.do#Cases/dv/195464000014292046"
-    },
-    {
-      "ticketNumber": "2819",
-      "titel": "Arbeidsconflict advies nodig",
-      "klant": "J.J. vanKoot",
-      "status": "Open",
-      "aangemaakt": "2026-10-01",
-      "webUrl": "https://desk.zoho.eu/support/htjzlancyr/ShowHomePage.do#Cases/dv/195464000014375023"
-    },
-    {
-      "ticketNumber": "2822",
-      "titel": "arbeidsconflict overtal",
-      "klant": "E.L.M. deVries",
-      "status": "Open",
-      "aangemaakt": "2026-10-05",
-      "webUrl": "https://desk.zoho.eu/support/htjzlancyr/ShowHomePage.do#Cases/dv/195464000014413001"
     },
     {
       "ticketNumber": "2824",
