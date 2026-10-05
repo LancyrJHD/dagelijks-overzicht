@@ -4830,10 +4830,11 @@ function renderDashboard(period) {
 
   // ---- Samenstellen per weergave ----
   // management: totalen en verdelingen bovenaan, daarna kwaliteit/drukte, gemiste oproepen, tickets en team
-  // medewerker: persoonlijk -- hoe doe ik het, wie moet ik terugbellen, welke tickets staan open
+  // medewerker: eerst persoonlijk (hoe doe ik het, wie moet ik terugbellen, welke tickets staan open),
+  //   daarna dezelfde overzichten als bij management; alleen het teamoverzicht is voor management
   const html = role === 'management'
     ? [fragTotaal, fragOnderwerpen, fragCharts, fragStats, fragMgmtExtra, fragHero, fragMissed, fragKanaal, fragTickets, fragTeam, fragRecent, fragZohoVandaag].join('')
-    : [mijnDagHTML, fragMissed, openTicketsHTML, fragHero, fragRecent, fragKanaal, fragTickets].join('');
+    : [mijnDagHTML, fragMissed, openTicketsHTML, fragTotaal, fragOnderwerpen, fragCharts, fragStats, fragHero, fragRecent, fragKanaal, fragTickets, fragZohoVandaag].join('');
 
   document.getElementById('dashboard').innerHTML = html;
 }
@@ -5394,11 +5395,8 @@ async function checkManagementAccess() {
   }
   const group = document.getElementById('view-toggle-group');
   if (group) group.style.display = isManagement ? 'inline-flex' : 'none';
-  // Standaardweergave per rol: extern en management = management (management onthoudt de laatste keuze), rest = medewerker
+  // Standaardweergave per rol: extern en management = management, rest = medewerker (keuze wordt bewust niet onthouden)
   let v = (isExternalUser || isManagement) ? 'management' : 'medewerker';
-  if (isManagement) {
-    try { const saved = localStorage.getItem('lancyr_view'); if (saved === 'management' || saved === 'medewerker') v = saved; } catch (e) {}
-  }
   setView(v, true);
 }
 
@@ -5408,7 +5406,6 @@ function setView(view, skipRender) {
   if (!isManagement) view = isExternalUser ? 'management' : 'medewerker';
   activeView = view;
   managementViewActive = (view === 'management');
-  if (isManagement) { try { localStorage.setItem('lancyr_view', view); } catch (e) {} }
   ['management', 'medewerker'].forEach(v => {
     const b = document.getElementById('view-btn-' + v);
     if (!b) return;

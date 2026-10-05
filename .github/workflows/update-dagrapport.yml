@@ -26,6 +26,15 @@ on:
         required: false
         default: ''
 
+# Runs mogen elkaar niet inhalen: GitHub's eigen schedule en cron-job.org starten
+# vaak tegelijk, en beide pushen dezelfde data/*.json -- de verliezer faalde dan op
+# de push en gaf een "run failed"-mail (11 van 12 mislukte runs tussen 9 en 30 sep
+# 2026 hadden een tweede run binnen enkele seconden). Met een queue draait de
+# tweede run pas als de eerste klaar is en checkt dan de nieuwste main uit.
+concurrency:
+  group: update-dagrapport
+  cancel-in-progress: false
+
 jobs:
   update:
     runs-on: ubuntu-latest
@@ -94,11 +103,22 @@ jobs:
           # GRANOLA_DATE) -- glob levert niets op als er geen backfill is
           # gedraaid; 2>/dev/null || true voorkomt dat 'git add' dan faalt.
           git add data/granola-backfill-*.json 2>/dev/null || true
-          # Alleen committen als er iets veranderd is
-          # git pull --rebase vlak voor de push voorkomt dat deze stap faalt
-          # wanneer een andere run (bv. handmatig gestart terwijl de geplande
-          # run ook loopt) intussen al heeft gepusht (bevinding 25 aug 2026).
-          git diff --staged --quiet && echo "Geen wijzigingen" || \
-            git commit -m "auto: lancyr dagrapport $(date -u '+%Y-%m-%d %H:%M UTC')" && \
-            git pull --rebase --autostash -q && \
-            git push
+          # Alleen committen als er iets veranderd is. Bij een race met een andere
+          # push (bv. een handmatige of lokale update) wordt opnieuw bovenop de
+          # nieuwste main gezet. Conflicten worden NIET stilletjes opgelost (dat zou
+          # de wijziging van de ander weggooien). Lukt het na een paar pogingen toch
+          # niet, dan is dat geen fout: de volgende run (10 min later) begint
+          # gewoon vanaf de nieuwste main en pusht dan wel -- een waarschuwing
+          # volstaat, anders volgt er onnodig een "run failed"-mail.
+          if git diff --staged --quiet; then echo "Geen wijzigingen"; exit 0; fi
+          git commit -m "auto: lancyr dagrapport $(date -u '+%Y-%m-%d %H:%M UTC')"
+          for i in 1 2 3; do
+            git fetch -q origin main
+            if git rebase -q origin/main && git push -q; then
+              echo "Gepusht (poging $i)"; exit 0
+            fi
+            git rebase --abort 2>/dev/null || true
+            echo "Push-poging $i mislukt, opnieuw..."; sleep $((i * 5))
+          done
+          echo "::warning::Push na 3 pogingen niet gelukt (waarschijnlijk een conflict met een gelijktijdige handmatige wijziging); de volgende run herstelt dit vanzelf."
+          exit 0
