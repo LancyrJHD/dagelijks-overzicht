@@ -1,6 +1,6 @@
 {
   "date": "2026-10-05",
-  "generated_at": "2026-10-05T07:50:43Z",
+  "generated_at": "2026-10-05T08:01:59Z",
   "tickets": [
     {
       "ticketNumber": "2822",
@@ -37,21 +37,33 @@
       "webUrl": "https://desk.zoho.eu/support/htjzlancyr/ShowHomePage.do#Cases/dv/195464000014428001",
       "channel": "Phone",
       "doorgezetBrandmeester": false
+    },
+    {
+      "ticketNumber": "2827",
+      "tijd": "09:51",
+      "titel": "Juridisch advies over aansprakelijkheid gemeente voor valrisico",
+      "klant": "W.B.P. van deHoven",
+      "status": "Gesloten",
+      "statusType": "",
+      "prioriteit": "Niet ingesteld",
+      "webUrl": "https://desk.zoho.eu/support/htjzlancyr/ShowHomePage.do#Cases/dv/195464000014429001",
+      "channel": "Phone",
+      "doorgezetBrandmeester": false
     }
   ],
   "channelCounts": {
-    "Phone": 3
+    "Phone": 4
   },
   "brandmeesterCount": 0,
   "ticketStats": {
-    "nieuweVandaag": 3,
-    "geslotenVandaag": 5,
+    "nieuweVandaag": 4,
+    "geslotenVandaag": 6,
     "totaalOpen": 24,
     "inDeWacht": 18,
     "statusBreakdown": {
-      "Gesloten": 673,
-      "In de wacht": 18,
-      "Open": 6
+      "Open": 6,
+      "Gesloten": 674,
+      "In de wacht": 18
     },
     "capBereikt": false
   },
