@@ -1,6 +1,6 @@
 {
   "date": "2026-10-05",
-  "generated_at": "2026-10-05T14:01:22Z",
+  "generated_at": "2026-10-05T14:10:57Z",
   "tickets": [
     {
       "ticketNumber": "2822",
@@ -145,22 +145,34 @@
       "webUrl": "https://desk.zoho.eu/support/htjzlancyr/ShowHomePage.do#Cases/dv/195464000014425068",
       "channel": "Phone",
       "doorgezetBrandmeester": false
+    },
+    {
+      "ticketNumber": "2836",
+      "tijd": "16:05",
+      "titel": "Ouderschapsplan en alimentatie – verzekeringsdekkingsvraag met Hartman",
+      "klant": "R.A.M. Hartman",
+      "status": "Gesloten",
+      "statusType": "",
+      "prioriteit": "Niet ingesteld",
+      "webUrl": "https://desk.zoho.eu/support/htjzlancyr/ShowHomePage.do#Cases/dv/195464000014421007",
+      "channel": "Phone",
+      "doorgezetBrandmeester": false
     }
   ],
   "channelCounts": {
-    "Phone": 11,
+    "Phone": 12,
     "Email": 1
   },
   "brandmeesterCount": 1,
   "ticketStats": {
-    "nieuweVandaag": 12,
-    "geslotenVandaag": 18,
+    "nieuweVandaag": 13,
+    "geslotenVandaag": 19,
     "totaalOpen": 20,
     "inDeWacht": 17,
     "statusBreakdown": {
+      "Gesloten": 686,
       "Open": 3,
-      "In de wacht": 17,
-      "Gesloten": 685
+      "In de wacht": 17
     },
     "capBereikt": false
   },

@@ -1,10 +1,10 @@
 {
   "date": "2026-10-05",
-  "generated_at": "2026-10-05T14:01:28Z",
-  "totaalInbound": 26,
-  "totaalGemist": 7,
-  "terugGebeld": 2,
-  "nietTerugGebeld": 5,
+  "generated_at": "2026-10-05T14:11:03Z",
+  "totaalInbound": 31,
+  "totaalGemist": 10,
+  "terugGebeld": 3,
+  "nietTerugGebeld": 7,
   "nietTerugGebeldNummers": [
     {
       "nummer": "+31617845026",
@@ -35,9 +35,23 @@
       "teruggebeld": false
     },
     {
+      "nummer": "+31638503143",
+      "naam": "Onbekend",
+      "tijd": "16:03",
+      "callResult": "abandoned",
+      "teruggebeld": false
+    },
+    {
       "nummer": "+31612830011",
       "naam": "Onbekend",
-      "tijd": "15:56",
+      "tijd": "16:09",
+      "callResult": "abandoned",
+      "teruggebeld": false
+    },
+    {
+      "nummer": "+31612830011",
+      "naam": "Onbekend",
+      "tijd": "16:10",
       "callResult": "abandoned",
       "teruggebeld": false
     }
@@ -90,14 +104,35 @@
       "naam": "Onbekend",
       "tijd": "15:56",
       "callResult": "abandoned",
+      "teruggebeld": true
+    },
+    {
+      "nummer": "+31638503143",
+      "naam": "Onbekend",
+      "tijd": "16:03",
+      "callResult": "abandoned",
+      "teruggebeld": false
+    },
+    {
+      "nummer": "+31612830011",
+      "naam": "Onbekend",
+      "tijd": "16:09",
+      "callResult": "abandoned",
+      "teruggebeld": false
+    },
+    {
+      "nummer": "+31612830011",
+      "naam": "Onbekend",
+      "tijd": "16:10",
+      "callResult": "abandoned",
       "teruggebeld": false
     }
   ],
   "agenten": {
     "Senne Duifhuis": {
-      "beantwoord": 19,
-      "uitgaand": 22,
-      "gesprekstijdSec": 6862
+      "beantwoord": 21,
+      "uitgaand": 23,
+      "gesprekstijdSec": 7308
     },
     "Dewi Verver": {
       "beantwoord": 0,

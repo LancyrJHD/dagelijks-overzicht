@@ -3953,9 +3953,9 @@
         "uitgaand": 1
       },
       "Senne Duifhuis": {
-        "beantwoord": 19,
-        "gesprekstijdSec": 6862,
-        "uitgaand": 22
+        "beantwoord": 21,
+        "gesprekstijdSec": 7308,
+        "uitgaand": 23
       }
     },
     "alleGemistNummers": [
@@ -4005,14 +4005,35 @@
         "callResult": "abandoned",
         "naam": "Onbekend",
         "nummer": "+31612830011",
-        "teruggebeld": false,
+        "teruggebeld": true,
         "tijd": "15:56"
+      },
+      {
+        "callResult": "abandoned",
+        "naam": "Onbekend",
+        "nummer": "+31638503143",
+        "teruggebeld": false,
+        "tijd": "16:03"
+      },
+      {
+        "callResult": "abandoned",
+        "naam": "Onbekend",
+        "nummer": "+31612830011",
+        "teruggebeld": false,
+        "tijd": "16:09"
+      },
+      {
+        "callResult": "abandoned",
+        "naam": "Onbekend",
+        "nummer": "+31612830011",
+        "teruggebeld": false,
+        "tijd": "16:10"
       }
     ],
     "beantwoordZonderAgent": 0,
     "date": "2026-10-05",
-    "generated_at": "2026-10-05T14:01:28Z",
-    "nietTerugGebeld": 5,
+    "generated_at": "2026-10-05T14:11:03Z",
+    "nietTerugGebeld": 7,
     "nietTerugGebeldNummers": [
       {
         "callResult": "abandoned",
@@ -4045,13 +4066,27 @@
       {
         "callResult": "abandoned",
         "naam": "Onbekend",
+        "nummer": "+31638503143",
+        "teruggebeld": false,
+        "tijd": "16:03"
+      },
+      {
+        "callResult": "abandoned",
+        "naam": "Onbekend",
         "nummer": "+31612830011",
         "teruggebeld": false,
-        "tijd": "15:56"
+        "tijd": "16:09"
+      },
+      {
+        "callResult": "abandoned",
+        "naam": "Onbekend",
+        "nummer": "+31612830011",
+        "teruggebeld": false,
+        "tijd": "16:10"
       }
     ],
-    "terugGebeld": 2,
-    "totaalGemist": 7,
-    "totaalInbound": 26
+    "terugGebeld": 3,
+    "totaalGemist": 10,
+    "totaalInbound": 31
   }
 }
