@@ -3953,8 +3953,8 @@
         "uitgaand": 1
       },
       "Senne Duifhuis": {
-        "beantwoord": 10,
-        "gesprekstijdSec": 2923,
+        "beantwoord": 11,
+        "gesprekstijdSec": 3439,
         "uitgaand": 10
       }
     },
@@ -3965,12 +3965,19 @@
         "nummer": "+31617845026",
         "teruggebeld": false,
         "tijd": "10:47"
+      },
+      {
+        "callResult": "abandoned",
+        "naam": "Onbekend",
+        "nummer": "+31625168975",
+        "teruggebeld": false,
+        "tijd": "11:30"
       }
     ],
     "beantwoordZonderAgent": 0,
     "date": "2026-10-05",
-    "generated_at": "2026-10-05T09:31:01Z",
-    "nietTerugGebeld": 1,
+    "generated_at": "2026-10-05T09:40:55Z",
+    "nietTerugGebeld": 2,
     "nietTerugGebeldNummers": [
       {
         "callResult": "abandoned",
@@ -3978,10 +3985,17 @@
         "nummer": "+31617845026",
         "teruggebeld": false,
         "tijd": "10:47"
+      },
+      {
+        "callResult": "abandoned",
+        "naam": "Onbekend",
+        "nummer": "+31625168975",
+        "teruggebeld": false,
+        "tijd": "11:30"
       }
     ],
     "terugGebeld": 0,
-    "totaalGemist": 1,
-    "totaalInbound": 11
+    "totaalGemist": 2,
+    "totaalInbound": 13
   }
 }
