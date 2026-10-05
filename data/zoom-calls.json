@@ -1,10 +1,10 @@
 {
   "date": "2026-10-05",
-  "generated_at": "2026-10-05T13:50:59Z",
-  "totaalInbound": 25,
-  "totaalGemist": 6,
+  "generated_at": "2026-10-05T14:01:28Z",
+  "totaalInbound": 26,
+  "totaalGemist": 7,
   "terugGebeld": 2,
-  "nietTerugGebeld": 4,
+  "nietTerugGebeld": 5,
   "nietTerugGebeldNummers": [
     {
       "nummer": "+31617845026",
@@ -32,6 +32,13 @@
       "naam": "Onbekend",
       "tijd": "13:59",
       "callResult": "overflowed",
+      "teruggebeld": false
+    },
+    {
+      "nummer": "+31612830011",
+      "naam": "Onbekend",
+      "tijd": "15:56",
+      "callResult": "abandoned",
       "teruggebeld": false
     }
   ],
@@ -77,6 +84,13 @@
       "tijd": "13:59",
       "callResult": "overflowed",
       "teruggebeld": true
+    },
+    {
+      "nummer": "+31612830011",
+      "naam": "Onbekend",
+      "tijd": "15:56",
+      "callResult": "abandoned",
+      "teruggebeld": false
     }
   ],
   "agenten": {

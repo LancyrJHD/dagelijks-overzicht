@@ -4000,12 +4000,19 @@
         "nummer": "+31642203604",
         "teruggebeld": true,
         "tijd": "13:59"
+      },
+      {
+        "callResult": "abandoned",
+        "naam": "Onbekend",
+        "nummer": "+31612830011",
+        "teruggebeld": false,
+        "tijd": "15:56"
       }
     ],
     "beantwoordZonderAgent": 0,
     "date": "2026-10-05",
-    "generated_at": "2026-10-05T13:50:59Z",
-    "nietTerugGebeld": 4,
+    "generated_at": "2026-10-05T14:01:28Z",
+    "nietTerugGebeld": 5,
     "nietTerugGebeldNummers": [
       {
         "callResult": "abandoned",
@@ -4034,10 +4041,17 @@
         "nummer": "+31641780700",
         "teruggebeld": false,
         "tijd": "13:59"
+      },
+      {
+        "callResult": "abandoned",
+        "naam": "Onbekend",
+        "nummer": "+31612830011",
+        "teruggebeld": false,
+        "tijd": "15:56"
       }
     ],
     "terugGebeld": 2,
-    "totaalGemist": 6,
-    "totaalInbound": 25
+    "totaalGemist": 7,
+    "totaalInbound": 26
   }
 }
