@@ -1,6 +1,6 @@
 {
   "date": "2026-10-05",
-  "generated_at": "2026-10-05T07:30:57Z",
+  "generated_at": "2026-10-05T07:40:44Z",
   "tickets": [
     {
       "ticketNumber": "2822",
@@ -13,21 +13,45 @@
       "webUrl": "https://desk.zoho.eu/support/htjzlancyr/ShowHomePage.do#Cases/dv/195464000014413001",
       "channel": "Phone",
       "doorgezetBrandmeester": false
+    },
+    {
+      "ticketNumber": "2824",
+      "tijd": "09:33",
+      "titel": "VSO",
+      "klant": "M.G. Gowda",
+      "status": "In de wacht",
+      "statusType": "",
+      "prioriteit": "Niet ingesteld",
+      "webUrl": "https://desk.zoho.eu/support/htjzlancyr/ShowHomePage.do#Cases/dv/195464000014427001",
+      "channel": "Phone",
+      "doorgezetBrandmeester": false
+    },
+    {
+      "ticketNumber": "2825",
+      "tijd": "09:35",
+      "titel": "verzekerde stuurt polisblad naar mij",
+      "klant": "P.H. deVries",
+      "status": "Open",
+      "statusType": "",
+      "prioriteit": "Niet ingesteld",
+      "webUrl": "https://desk.zoho.eu/support/htjzlancyr/ShowHomePage.do#Cases/dv/195464000014413066",
+      "channel": "Phone",
+      "doorgezetBrandmeester": false
     }
   ],
   "channelCounts": {
-    "Phone": 1
+    "Phone": 3
   },
   "brandmeesterCount": 0,
   "ticketStats": {
-    "nieuweVandaag": 1,
+    "nieuweVandaag": 3,
     "geslotenVandaag": 4,
-    "totaalOpen": 23,
-    "inDeWacht": 16,
+    "totaalOpen": 25,
+    "inDeWacht": 18,
     "statusBreakdown": {
-      "Gesloten": 672,
-      "In de wacht": 16,
-      "Open": 7
+      "Open": 7,
+      "In de wacht": 18,
+      "Gesloten": 672
     },
     "capBereikt": false
   },
@@ -193,6 +217,14 @@
       "webUrl": "https://desk.zoho.eu/support/htjzlancyr/ShowHomePage.do#Cases/dv/195464000014375023"
     },
     {
+      "ticketNumber": "2820",
+      "titel": "Verzoek schadenummer [D3076375_I73935226]",
+      "klant": "R.J. vanZelm",
+      "status": "In de wacht",
+      "aangemaakt": "2026-10-02",
+      "webUrl": "https://desk.zoho.eu/support/htjzlancyr/ShowHomePage.do#Cases/dv/195464000014363077"
+    },
+    {
       "ticketNumber": "2821",
       "titel": "FW: Request for Legal Assistance - Proposed VSO",
       "klant": "De juridische helpdesk",
@@ -201,12 +233,20 @@
       "webUrl": "https://desk.zoho.eu/support/htjzlancyr/ShowHomePage.do#Cases/dv/195464000014375076"
     },
     {
-      "ticketNumber": "2820",
-      "titel": "Verzoek schadenummer [D3076375_I73935226]",
-      "klant": "Nino Roos van Raadshooven",
+      "ticketNumber": "2825",
+      "titel": "verzekerde stuurt polisblad naar mij",
+      "klant": "P.H. deVries",
       "status": "Open",
-      "aangemaakt": "2026-10-02",
-      "webUrl": "https://desk.zoho.eu/support/htjzlancyr/ShowHomePage.do#Cases/dv/195464000014363077"
+      "aangemaakt": "2026-10-05",
+      "webUrl": "https://desk.zoho.eu/support/htjzlancyr/ShowHomePage.do#Cases/dv/195464000014413066"
+    },
+    {
+      "ticketNumber": "2824",
+      "titel": "VSO",
+      "klant": "M.G. Gowda",
+      "status": "In de wacht",
+      "aangemaakt": "2026-10-05",
+      "webUrl": "https://desk.zoho.eu/support/htjzlancyr/ShowHomePage.do#Cases/dv/195464000014427001"
     },
     {
       "ticketNumber": "2822",
