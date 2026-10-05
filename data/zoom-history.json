@@ -3953,8 +3953,8 @@
         "uitgaand": 1
       },
       "Senne Duifhuis": {
-        "beantwoord": 14,
-        "gesprekstijdSec": 4850,
+        "beantwoord": 15,
+        "gesprekstijdSec": 5217,
         "uitgaand": 16
       }
     },
@@ -3986,12 +3986,26 @@
         "nummer": "+31638503143",
         "teruggebeld": true,
         "tijd": "13:08"
+      },
+      {
+        "callResult": "overflowed",
+        "naam": "Onbekend",
+        "nummer": "+31641780700",
+        "teruggebeld": false,
+        "tijd": "13:59"
+      },
+      {
+        "callResult": "overflowed",
+        "naam": "Onbekend",
+        "nummer": "+31642203604",
+        "teruggebeld": false,
+        "tijd": "13:59"
       }
     ],
     "beantwoordZonderAgent": 0,
     "date": "2026-10-05",
-    "generated_at": "2026-10-05T12:00:20Z",
-    "nietTerugGebeld": 3,
+    "generated_at": "2026-10-05T12:10:51Z",
+    "nietTerugGebeld": 5,
     "nietTerugGebeldNummers": [
       {
         "callResult": "abandoned",
@@ -4013,10 +4027,24 @@
         "nummer": "+31636396149",
         "teruggebeld": false,
         "tijd": "11:44"
+      },
+      {
+        "callResult": "overflowed",
+        "naam": "Onbekend",
+        "nummer": "+31641780700",
+        "teruggebeld": false,
+        "tijd": "13:59"
+      },
+      {
+        "callResult": "overflowed",
+        "naam": "Onbekend",
+        "nummer": "+31642203604",
+        "teruggebeld": false,
+        "tijd": "13:59"
       }
     ],
     "terugGebeld": 1,
-    "totaalGemist": 4,
-    "totaalInbound": 18
+    "totaalGemist": 6,
+    "totaalInbound": 21
   }
 }

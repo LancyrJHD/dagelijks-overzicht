@@ -1,6 +1,6 @@
 {
   "date": "2026-10-05",
-  "generated_at": "2026-10-05T12:00:16Z",
+  "generated_at": "2026-10-05T12:10:48Z",
   "tickets": [
     {
       "ticketNumber": "2822",
@@ -97,20 +97,32 @@
       "webUrl": "https://desk.zoho.eu/support/htjzlancyr/ShowHomePage.do#Cases/dv/195464000014428076",
       "channel": "Phone",
       "doorgezetBrandmeester": false
+    },
+    {
+      "ticketNumber": "2832",
+      "tijd": "14:05",
+      "titel": "Arbeidsrechtelijk advies: targets en contractondertekening",
+      "klant": "S. Hendrison",
+      "status": "Gesloten",
+      "statusType": "",
+      "prioriteit": "Niet ingesteld",
+      "webUrl": "https://desk.zoho.eu/support/htjzlancyr/ShowHomePage.do#Cases/dv/195464000014446001",
+      "channel": "Phone",
+      "doorgezetBrandmeester": false
     }
   ],
   "channelCounts": {
-    "Phone": 7,
+    "Phone": 8,
     "Email": 1
   },
   "brandmeesterCount": 1,
   "ticketStats": {
-    "nieuweVandaag": 8,
-    "geslotenVandaag": 16,
+    "nieuweVandaag": 9,
+    "geslotenVandaag": 17,
     "totaalOpen": 17,
     "inDeWacht": 15,
     "statusBreakdown": {
-      "Gesloten": 684,
+      "Gesloten": 685,
       "Open": 2,
       "In de wacht": 15
     },
