@@ -3953,19 +3953,35 @@
         "uitgaand": 1
       },
       "Senne Duifhuis": {
-        "beantwoord": 7,
-        "gesprekstijdSec": 2236,
+        "beantwoord": 8,
+        "gesprekstijdSec": 2356,
         "uitgaand": 7
       }
     },
-    "alleGemistNummers": [],
+    "alleGemistNummers": [
+      {
+        "callResult": "abandoned",
+        "naam": "Onbekend",
+        "nummer": "+31617845026",
+        "teruggebeld": false,
+        "tijd": "10:47"
+      }
+    ],
     "beantwoordZonderAgent": 0,
     "date": "2026-10-05",
-    "generated_at": "2026-10-05T08:41:38Z",
-    "nietTerugGebeld": 0,
-    "nietTerugGebeldNummers": [],
+    "generated_at": "2026-10-05T08:51:27Z",
+    "nietTerugGebeld": 1,
+    "nietTerugGebeldNummers": [
+      {
+        "callResult": "abandoned",
+        "naam": "Onbekend",
+        "nummer": "+31617845026",
+        "teruggebeld": false,
+        "tijd": "10:47"
+      }
+    ],
     "terugGebeld": 0,
-    "totaalGemist": 0,
-    "totaalInbound": 7
+    "totaalGemist": 1,
+    "totaalInbound": 9
   }
 }

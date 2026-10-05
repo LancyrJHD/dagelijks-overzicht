@@ -1,17 +1,33 @@
 {
   "date": "2026-10-05",
-  "generated_at": "2026-10-05T08:41:38Z",
-  "totaalInbound": 7,
-  "totaalGemist": 0,
+  "generated_at": "2026-10-05T08:51:27Z",
+  "totaalInbound": 9,
+  "totaalGemist": 1,
   "terugGebeld": 0,
-  "nietTerugGebeld": 0,
-  "nietTerugGebeldNummers": [],
-  "alleGemistNummers": [],
+  "nietTerugGebeld": 1,
+  "nietTerugGebeldNummers": [
+    {
+      "nummer": "+31617845026",
+      "naam": "Onbekend",
+      "tijd": "10:47",
+      "callResult": "abandoned",
+      "teruggebeld": false
+    }
+  ],
+  "alleGemistNummers": [
+    {
+      "nummer": "+31617845026",
+      "naam": "Onbekend",
+      "tijd": "10:47",
+      "callResult": "abandoned",
+      "teruggebeld": false
+    }
+  ],
   "agenten": {
     "Senne Duifhuis": {
-      "beantwoord": 7,
+      "beantwoord": 8,
       "uitgaand": 7,
-      "gesprekstijdSec": 2236
+      "gesprekstijdSec": 2356
     },
     "Dewi Verver": {
       "beantwoord": 0,
