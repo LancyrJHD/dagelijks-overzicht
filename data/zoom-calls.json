@@ -1,10 +1,10 @@
 {
   "date": "2026-10-05",
-  "generated_at": "2026-10-05T11:01:13Z",
-  "totaalInbound": 16,
-  "totaalGemist": 3,
+  "generated_at": "2026-10-05T11:10:57Z",
+  "totaalInbound": 17,
+  "totaalGemist": 4,
   "terugGebeld": 0,
-  "nietTerugGebeld": 3,
+  "nietTerugGebeld": 4,
   "nietTerugGebeldNummers": [
     {
       "nummer": "+31617845026",
@@ -24,6 +24,13 @@
       "nummer": "+31636396149",
       "naam": "Onbekend",
       "tijd": "11:44",
+      "callResult": "abandoned",
+      "teruggebeld": false
+    },
+    {
+      "nummer": "+31638503143",
+      "naam": "Onbekend",
+      "tijd": "13:08",
       "callResult": "abandoned",
       "teruggebeld": false
     }
@@ -47,6 +54,13 @@
       "nummer": "+31636396149",
       "naam": "Onbekend",
       "tijd": "11:44",
+      "callResult": "abandoned",
+      "teruggebeld": false
+    },
+    {
+      "nummer": "+31638503143",
+      "naam": "Onbekend",
+      "tijd": "13:08",
       "callResult": "abandoned",
       "teruggebeld": false
     }

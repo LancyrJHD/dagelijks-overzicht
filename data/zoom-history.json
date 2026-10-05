@@ -3979,12 +3979,19 @@
         "nummer": "+31636396149",
         "teruggebeld": false,
         "tijd": "11:44"
+      },
+      {
+        "callResult": "abandoned",
+        "naam": "Onbekend",
+        "nummer": "+31638503143",
+        "teruggebeld": false,
+        "tijd": "13:08"
       }
     ],
     "beantwoordZonderAgent": 0,
     "date": "2026-10-05",
-    "generated_at": "2026-10-05T11:01:13Z",
-    "nietTerugGebeld": 3,
+    "generated_at": "2026-10-05T11:10:57Z",
+    "nietTerugGebeld": 4,
     "nietTerugGebeldNummers": [
       {
         "callResult": "abandoned",
@@ -4006,10 +4013,17 @@
         "nummer": "+31636396149",
         "teruggebeld": false,
         "tijd": "11:44"
+      },
+      {
+        "callResult": "abandoned",
+        "naam": "Onbekend",
+        "nummer": "+31638503143",
+        "teruggebeld": false,
+        "tijd": "13:08"
       }
     ],
     "terugGebeld": 0,
-    "totaalGemist": 3,
-    "totaalInbound": 16
+    "totaalGemist": 4,
+    "totaalInbound": 17
   }
 }
