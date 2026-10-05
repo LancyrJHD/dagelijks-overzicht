@@ -1,6 +1,6 @@
 {
   "date": "2026-10-05",
-  "generated_at": "2026-10-05T13:40:55Z",
+  "generated_at": "2026-10-05T13:50:55Z",
   "tickets": [
     {
       "ticketNumber": "2822",
@@ -115,7 +115,7 @@
       "tijd": "14:18",
       "titel": "Rechtsbijstandverzekering elektrische fiets moeder Gaarthuis",
       "klant": "J.M.T. Gaarthuis",
-      "status": "In de wacht",
+      "status": "Open",
       "statusType": "",
       "prioriteit": "Niet ingesteld",
       "webUrl": "https://desk.zoho.eu/support/htjzlancyr/ShowHomePage.do#Cases/dv/195464000014426020",
@@ -133,22 +133,34 @@
       "webUrl": "https://desk.zoho.eu/support/htjzlancyr/ShowHomePage.do#Cases/dv/195464000014429078",
       "channel": "Phone",
       "doorgezetBrandmeester": false
+    },
+    {
+      "ticketNumber": "2835",
+      "tijd": "15:46",
+      "titel": "Arbeidsrecht advies: ziekteverzuim en arbodarts procedure",
+      "klant": "B. Floor",
+      "status": "In de wacht",
+      "statusType": "",
+      "prioriteit": "Niet ingesteld",
+      "webUrl": "https://desk.zoho.eu/support/htjzlancyr/ShowHomePage.do#Cases/dv/195464000014425068",
+      "channel": "Phone",
+      "doorgezetBrandmeester": false
     }
   ],
   "channelCounts": {
-    "Phone": 10,
+    "Phone": 11,
     "Email": 1
   },
   "brandmeesterCount": 1,
   "ticketStats": {
-    "nieuweVandaag": 11,
+    "nieuweVandaag": 12,
     "geslotenVandaag": 18,
-    "totaalOpen": 19,
+    "totaalOpen": 20,
     "inDeWacht": 17,
     "statusBreakdown": {
+      "Open": 3,
       "In de wacht": 17,
-      "Gesloten": 685,
-      "Open": 2
+      "Gesloten": 685
     },
     "capBereikt": false
   },
@@ -277,9 +289,17 @@
       "ticketNumber": "2833",
       "titel": "Rechtsbijstandverzekering elektrische fiets moeder Gaarthuis",
       "klant": "J.M.T. Gaarthuis",
-      "status": "In de wacht",
+      "status": "Open",
       "aangemaakt": "2026-10-05",
       "webUrl": "https://desk.zoho.eu/support/htjzlancyr/ShowHomePage.do#Cases/dv/195464000014426020"
+    },
+    {
+      "ticketNumber": "2835",
+      "titel": "Arbeidsrecht advies: ziekteverzuim en arbodarts procedure",
+      "klant": "B. Floor",
+      "status": "In de wacht",
+      "aangemaakt": "2026-10-05",
+      "webUrl": "https://desk.zoho.eu/support/htjzlancyr/ShowHomePage.do#Cases/dv/195464000014425068"
     },
     {
       "ticketNumber": "2830",
