@@ -1,12 +1,18 @@
 {
   "date": "2026-10-05",
-  "generated_at": "2026-10-05T06:50:44Z",
+  "generated_at": "2026-10-05T07:01:04Z",
   "totaalInbound": 0,
   "totaalGemist": 0,
   "terugGebeld": 0,
   "nietTerugGebeld": 0,
   "nietTerugGebeldNummers": [],
   "alleGemistNummers": [],
-  "agenten": {},
+  "agenten": {
+    "Senne Duifhuis": {
+      "beantwoord": 0,
+      "uitgaand": 1,
+      "gesprekstijdSec": 167
+    }
+  },
   "beantwoordZonderAgent": 0
 }
