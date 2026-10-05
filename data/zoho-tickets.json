@@ -1,6 +1,6 @@
 {
   "date": "2026-10-05",
-  "generated_at": "2026-10-05T11:40:48Z",
+  "generated_at": "2026-10-05T11:50:47Z",
   "tickets": [
     {
       "ticketNumber": "2822",
@@ -85,22 +85,34 @@
       "webUrl": "https://desk.zoho.eu/support/htjzlancyr/ShowHomePage.do#Cases/dv/195464000014439023",
       "channel": "Email",
       "doorgezetBrandmeester": false
+    },
+    {
+      "ticketNumber": "2831",
+      "tijd": "13:41",
+      "titel": "Bjorn de Koeijer en Senne Duifhuis",
+      "klant": "B. deKoeijer",
+      "status": "Gesloten",
+      "statusType": "",
+      "prioriteit": "Niet ingesteld",
+      "webUrl": "https://desk.zoho.eu/support/htjzlancyr/ShowHomePage.do#Cases/dv/195464000014428076",
+      "channel": "Phone",
+      "doorgezetBrandmeester": false
     }
   ],
   "channelCounts": {
-    "Phone": 6,
+    "Phone": 7,
     "Email": 1
   },
   "brandmeesterCount": 1,
   "ticketStats": {
-    "nieuweVandaag": 7,
-    "geslotenVandaag": 15,
+    "nieuweVandaag": 8,
+    "geslotenVandaag": 16,
     "totaalOpen": 17,
     "inDeWacht": 15,
     "statusBreakdown": {
+      "Gesloten": 684,
       "Open": 2,
-      "In de wacht": 15,
-      "Gesloten": 683
+      "In de wacht": 15
     },
     "capBereikt": false
   },
