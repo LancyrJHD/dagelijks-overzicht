@@ -1,10 +1,10 @@
 {
   "date": "2026-10-05",
-  "generated_at": "2026-10-05T12:10:51Z",
+  "generated_at": "2026-10-05T12:21:05Z",
   "totaalInbound": 21,
   "totaalGemist": 6,
-  "terugGebeld": 1,
-  "nietTerugGebeld": 5,
+  "terugGebeld": 2,
+  "nietTerugGebeld": 4,
   "nietTerugGebeldNummers": [
     {
       "nummer": "+31617845026",
@@ -29,13 +29,6 @@
     },
     {
       "nummer": "+31641780700",
-      "naam": "Onbekend",
-      "tijd": "13:59",
-      "callResult": "overflowed",
-      "teruggebeld": false
-    },
-    {
-      "nummer": "+31642203604",
       "naam": "Onbekend",
       "tijd": "13:59",
       "callResult": "overflowed",
@@ -83,14 +76,14 @@
       "naam": "Onbekend",
       "tijd": "13:59",
       "callResult": "overflowed",
-      "teruggebeld": false
+      "teruggebeld": true
     }
   ],
   "agenten": {
     "Senne Duifhuis": {
       "beantwoord": 15,
-      "uitgaand": 16,
-      "gesprekstijdSec": 5217
+      "uitgaand": 17,
+      "gesprekstijdSec": 5589
     },
     "Dewi Verver": {
       "beantwoord": 0,

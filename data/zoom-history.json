@@ -3954,8 +3954,8 @@
       },
       "Senne Duifhuis": {
         "beantwoord": 15,
-        "gesprekstijdSec": 5217,
-        "uitgaand": 16
+        "gesprekstijdSec": 5589,
+        "uitgaand": 17
       }
     },
     "alleGemistNummers": [
@@ -3998,14 +3998,14 @@
         "callResult": "overflowed",
         "naam": "Onbekend",
         "nummer": "+31642203604",
-        "teruggebeld": false,
+        "teruggebeld": true,
         "tijd": "13:59"
       }
     ],
     "beantwoordZonderAgent": 0,
     "date": "2026-10-05",
-    "generated_at": "2026-10-05T12:10:51Z",
-    "nietTerugGebeld": 5,
+    "generated_at": "2026-10-05T12:21:05Z",
+    "nietTerugGebeld": 4,
     "nietTerugGebeldNummers": [
       {
         "callResult": "abandoned",
@@ -4034,16 +4034,9 @@
         "nummer": "+31641780700",
         "teruggebeld": false,
         "tijd": "13:59"
-      },
-      {
-        "callResult": "overflowed",
-        "naam": "Onbekend",
-        "nummer": "+31642203604",
-        "teruggebeld": false,
-        "tijd": "13:59"
       }
     ],
-    "terugGebeld": 1,
+    "terugGebeld": 2,
     "totaalGemist": 6,
     "totaalInbound": 21
   }

@@ -1,6 +1,6 @@
 {
   "date": "2026-10-05",
-  "generated_at": "2026-10-05T12:10:48Z",
+  "generated_at": "2026-10-05T12:21:00Z",
   "tickets": [
     {
       "ticketNumber": "2822",
@@ -109,22 +109,34 @@
       "webUrl": "https://desk.zoho.eu/support/htjzlancyr/ShowHomePage.do#Cases/dv/195464000014446001",
       "channel": "Phone",
       "doorgezetBrandmeester": false
+    },
+    {
+      "ticketNumber": "2833",
+      "tijd": "14:18",
+      "titel": "Rechtsbijstandverzekering elektrische fiets moeder Gaarthuis",
+      "klant": "J.M.T. Gaarthuis",
+      "status": "In de wacht",
+      "statusType": "",
+      "prioriteit": "Niet ingesteld",
+      "webUrl": "https://desk.zoho.eu/support/htjzlancyr/ShowHomePage.do#Cases/dv/195464000014426020",
+      "channel": "Phone",
+      "doorgezetBrandmeester": false
     }
   ],
   "channelCounts": {
-    "Phone": 8,
+    "Phone": 9,
     "Email": 1
   },
   "brandmeesterCount": 1,
   "ticketStats": {
-    "nieuweVandaag": 9,
+    "nieuweVandaag": 10,
     "geslotenVandaag": 17,
-    "totaalOpen": 17,
-    "inDeWacht": 15,
+    "totaalOpen": 18,
+    "inDeWacht": 16,
     "statusBreakdown": {
+      "In de wacht": 16,
       "Gesloten": 685,
-      "Open": 2,
-      "In de wacht": 15
+      "Open": 2
     },
     "capBereikt": false
   },
@@ -240,6 +252,14 @@
       "status": "Open",
       "aangemaakt": "2026-09-28",
       "webUrl": "https://desk.zoho.eu/support/htjzlancyr/ShowHomePage.do#Cases/dv/195464000014292046"
+    },
+    {
+      "ticketNumber": "2833",
+      "titel": "Rechtsbijstandverzekering elektrische fiets moeder Gaarthuis",
+      "klant": "J.M.T. Gaarthuis",
+      "status": "In de wacht",
+      "aangemaakt": "2026-10-05",
+      "webUrl": "https://desk.zoho.eu/support/htjzlancyr/ShowHomePage.do#Cases/dv/195464000014426020"
     },
     {
       "ticketNumber": "2830",
