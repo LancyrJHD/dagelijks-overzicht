@@ -1,13 +1,13 @@
 {
   "date": "2026-10-05",
-  "generated_at": "2026-10-05T08:31:31Z",
+  "generated_at": "2026-10-05T08:41:36Z",
   "tickets": [
     {
       "ticketNumber": "2822",
       "tijd": "09:03",
       "titel": "arbeidsconflict overtal",
       "klant": "E.L.M. deVries",
-      "status": "In de wacht",
+      "status": "Open",
       "statusType": "",
       "prioriteit": "Niet ingesteld",
       "webUrl": "https://desk.zoho.eu/support/htjzlancyr/ShowHomePage.do#Cases/dv/195464000014413001",
@@ -57,13 +57,13 @@
   "brandmeesterCount": 0,
   "ticketStats": {
     "nieuweVandaag": 4,
-    "geslotenVandaag": 6,
-    "totaalOpen": 23,
-    "inDeWacht": 18,
+    "geslotenVandaag": 8,
+    "totaalOpen": 21,
+    "inDeWacht": 14,
     "statusBreakdown": {
-      "Open": 5,
-      "Gesloten": 674,
-      "In de wacht": 18
+      "Open": 7,
+      "Gesloten": 676,
+      "In de wacht": 14
     },
     "capBereikt": false
   },
@@ -192,25 +192,9 @@
       "ticketNumber": "2770",
       "titel": "Leaseauto verlenging richting pensioen– juridisch advies",
       "klant": "G. Gaalman",
-      "status": "In de wacht",
+      "status": "Open",
       "aangemaakt": "2026-09-23",
       "webUrl": "https://desk.zoho.eu/support/htjzlancyr/ShowHomePage.do#Cases/dv/195464000014260001"
-    },
-    {
-      "ticketNumber": "2769",
-      "titel": "FW: 84215902_vd Weide: Een vraag stellen: Legaat en bijstandsuitkering/schuldsanering/bewind",
-      "klant": "J. Weide",
-      "status": "Open",
-      "aangemaakt": "2026-09-23",
-      "webUrl": "https://desk.zoho.eu/support/htjzlancyr/ShowHomePage.do#Cases/dv/195464000014197187"
-    },
-    {
-      "ticketNumber": "2793",
-      "titel": "Erfenis en schenking: advies bij moeder in verzorgingstehuis",
-      "klant": "M.H. Gubbels",
-      "status": "Open",
-      "aangemaakt": "2026-09-28",
-      "webUrl": "https://desk.zoho.eu/support/htjzlancyr/ShowHomePage.do#Cases/dv/195464000014259142"
     },
     {
       "ticketNumber": "2799",
@@ -224,7 +208,7 @@
       "ticketNumber": "2819",
       "titel": "Arbeidsconflict advies nodig",
       "klant": "J.J. vanKoot",
-      "status": "In de wacht",
+      "status": "Open",
       "aangemaakt": "2026-10-01",
       "webUrl": "https://desk.zoho.eu/support/htjzlancyr/ShowHomePage.do#Cases/dv/195464000014375023"
     },
@@ -232,9 +216,17 @@
       "ticketNumber": "2820",
       "titel": "Verzoek schadenummer [D3076375_I73935226]",
       "klant": "R.J. vanZelm",
-      "status": "In de wacht",
+      "status": "Open",
       "aangemaakt": "2026-10-02",
       "webUrl": "https://desk.zoho.eu/support/htjzlancyr/ShowHomePage.do#Cases/dv/195464000014363077"
+    },
+    {
+      "ticketNumber": "2822",
+      "titel": "arbeidsconflict overtal",
+      "klant": "E.L.M. deVries",
+      "status": "Open",
+      "aangemaakt": "2026-10-05",
+      "webUrl": "https://desk.zoho.eu/support/htjzlancyr/ShowHomePage.do#Cases/dv/195464000014413001"
     },
     {
       "ticketNumber": "2824",
@@ -243,14 +235,6 @@
       "status": "In de wacht",
       "aangemaakt": "2026-10-05",
       "webUrl": "https://desk.zoho.eu/support/htjzlancyr/ShowHomePage.do#Cases/dv/195464000014427001"
-    },
-    {
-      "ticketNumber": "2822",
-      "titel": "arbeidsconflict overtal",
-      "klant": "E.L.M. deVries",
-      "status": "In de wacht",
-      "aangemaakt": "2026-10-05",
-      "webUrl": "https://desk.zoho.eu/support/htjzlancyr/ShowHomePage.do#Cases/dv/195464000014413001"
     }
   ]
 }
