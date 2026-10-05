@@ -1,16 +1,31 @@
 {
   "date": "2026-10-05",
-  "generated_at": "2026-10-05T07:01:03Z",
-  "tickets": [],
-  "channelCounts": {},
+  "generated_at": "2026-10-05T07:10:44Z",
+  "tickets": [
+    {
+      "ticketNumber": "2822",
+      "tijd": "09:03",
+      "titel": "arbeidsconflict overtal",
+      "klant": "E.L.M. deVries",
+      "status": "In de wacht",
+      "statusType": "",
+      "prioriteit": "Niet ingesteld",
+      "webUrl": "https://desk.zoho.eu/support/htjzlancyr/ShowHomePage.do#Cases/dv/195464000014413001",
+      "channel": "Phone",
+      "doorgezetBrandmeester": false
+    }
+  ],
+  "channelCounts": {
+    "Phone": 1
+  },
   "brandmeesterCount": 0,
   "ticketStats": {
-    "nieuweVandaag": 0,
+    "nieuweVandaag": 1,
     "geslotenVandaag": 0,
-    "totaalOpen": 26,
-    "inDeWacht": 14,
+    "totaalOpen": 27,
+    "inDeWacht": 15,
     "statusBreakdown": {
-      "In de wacht": 14,
+      "In de wacht": 15,
       "Open": 12,
       "Gesloten": 669
     },
@@ -224,6 +239,14 @@
       "status": "Open",
       "aangemaakt": "2026-10-02",
       "webUrl": "https://desk.zoho.eu/support/htjzlancyr/ShowHomePage.do#Cases/dv/195464000014363077"
+    },
+    {
+      "ticketNumber": "2822",
+      "titel": "arbeidsconflict overtal",
+      "klant": "E.L.M. deVries",
+      "status": "In de wacht",
+      "aangemaakt": "2026-10-05",
+      "webUrl": "https://desk.zoho.eu/support/htjzlancyr/ShowHomePage.do#Cases/dv/195464000014413001"
     }
   ]
 }
