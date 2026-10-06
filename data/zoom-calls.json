@@ -1,10 +1,10 @@
 {
   "date": "2026-10-06",
-  "generated_at": "2026-10-06T13:01:12Z",
-  "totaalInbound": 9,
-  "totaalGemist": 9,
+  "generated_at": "2026-10-06T13:10:54Z",
+  "totaalInbound": 10,
+  "totaalGemist": 10,
   "terugGebeld": 0,
-  "nietTerugGebeld": 9,
+  "nietTerugGebeld": 10,
   "nietTerugGebeldNummers": [
     {
       "nummer": "+31683988994",
@@ -67,6 +67,13 @@
       "naam": "Onbekend",
       "tijd": "14:19",
       "callResult": "overflowed",
+      "teruggebeld": false
+    },
+    {
+      "nummer": "+31653637997",
+      "naam": "Onbekend",
+      "tijd": "15:05",
+      "callResult": "abandoned",
       "teruggebeld": false
     }
   ],
@@ -132,6 +139,13 @@
       "naam": "Onbekend",
       "tijd": "14:19",
       "callResult": "overflowed",
+      "teruggebeld": false
+    },
+    {
+      "nummer": "+31653637997",
+      "naam": "Onbekend",
+      "tijd": "15:05",
+      "callResult": "abandoned",
       "teruggebeld": false
     }
   ],
