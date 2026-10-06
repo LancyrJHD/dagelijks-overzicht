@@ -4091,14 +4091,30 @@
   },
   "2026-10-06": {
     "agenten": {},
-    "alleGemistNummers": [],
+    "alleGemistNummers": [
+      {
+        "callResult": "abandoned",
+        "naam": "Onbekend",
+        "nummer": "+31683988994",
+        "teruggebeld": false,
+        "tijd": "09:47"
+      }
+    ],
     "beantwoordZonderAgent": 0,
     "date": "2026-10-06",
-    "generated_at": "2026-10-06T07:40:49Z",
-    "nietTerugGebeld": 0,
-    "nietTerugGebeldNummers": [],
+    "generated_at": "2026-10-06T07:50:43Z",
+    "nietTerugGebeld": 1,
+    "nietTerugGebeldNummers": [
+      {
+        "callResult": "abandoned",
+        "naam": "Onbekend",
+        "nummer": "+31683988994",
+        "teruggebeld": false,
+        "tijd": "09:47"
+      }
+    ],
     "terugGebeld": 0,
-    "totaalGemist": 0,
-    "totaalInbound": 0
+    "totaalGemist": 1,
+    "totaalInbound": 1
   }
 }
