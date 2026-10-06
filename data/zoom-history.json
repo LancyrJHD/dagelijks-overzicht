@@ -4098,12 +4098,19 @@
         "nummer": "+31683988994",
         "teruggebeld": false,
         "tijd": "09:47"
+      },
+      {
+        "callResult": "abandoned",
+        "naam": "Onbekend",
+        "nummer": "+31628529431",
+        "teruggebeld": false,
+        "tijd": "10:36"
       }
     ],
     "beantwoordZonderAgent": 0,
     "date": "2026-10-06",
-    "generated_at": "2026-10-06T08:31:00Z",
-    "nietTerugGebeld": 1,
+    "generated_at": "2026-10-06T08:40:41Z",
+    "nietTerugGebeld": 2,
     "nietTerugGebeldNummers": [
       {
         "callResult": "abandoned",
@@ -4111,10 +4118,17 @@
         "nummer": "+31683988994",
         "teruggebeld": false,
         "tijd": "09:47"
+      },
+      {
+        "callResult": "abandoned",
+        "naam": "Onbekend",
+        "nummer": "+31628529431",
+        "teruggebeld": false,
+        "tijd": "10:36"
       }
     ],
     "terugGebeld": 0,
-    "totaalGemist": 1,
-    "totaalInbound": 1
+    "totaalGemist": 2,
+    "totaalInbound": 2
   }
 }

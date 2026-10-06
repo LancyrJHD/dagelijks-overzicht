@@ -1,15 +1,22 @@
 {
   "date": "2026-10-06",
-  "generated_at": "2026-10-06T08:31:00Z",
-  "totaalInbound": 1,
-  "totaalGemist": 1,
+  "generated_at": "2026-10-06T08:40:41Z",
+  "totaalInbound": 2,
+  "totaalGemist": 2,
   "terugGebeld": 0,
-  "nietTerugGebeld": 1,
+  "nietTerugGebeld": 2,
   "nietTerugGebeldNummers": [
     {
       "nummer": "+31683988994",
       "naam": "Onbekend",
       "tijd": "09:47",
+      "callResult": "abandoned",
+      "teruggebeld": false
+    },
+    {
+      "nummer": "+31628529431",
+      "naam": "Onbekend",
+      "tijd": "10:36",
       "callResult": "abandoned",
       "teruggebeld": false
     }
@@ -19,6 +26,13 @@
       "nummer": "+31683988994",
       "naam": "Onbekend",
       "tijd": "09:47",
+      "callResult": "abandoned",
+      "teruggebeld": false
+    },
+    {
+      "nummer": "+31628529431",
+      "naam": "Onbekend",
+      "tijd": "10:36",
       "callResult": "abandoned",
       "teruggebeld": false
     }
