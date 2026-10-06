@@ -1,10 +1,10 @@
 {
   "date": "2026-10-06",
-  "generated_at": "2026-10-06T11:20:45Z",
-  "totaalInbound": 6,
-  "totaalGemist": 6,
+  "generated_at": "2026-10-06T11:30:53Z",
+  "totaalInbound": 7,
+  "totaalGemist": 7,
   "terugGebeld": 0,
-  "nietTerugGebeld": 6,
+  "nietTerugGebeld": 7,
   "nietTerugGebeldNummers": [
     {
       "nummer": "+31683988994",
@@ -46,6 +46,13 @@
       "naam": "Onbekend",
       "tijd": "13:06",
       "callResult": "abandoned",
+      "teruggebeld": false
+    },
+    {
+      "nummer": "+31657802154",
+      "naam": "Onbekend",
+      "tijd": "13:14",
+      "callResult": "overflowed",
       "teruggebeld": false
     }
   ],
@@ -90,6 +97,13 @@
       "naam": "Onbekend",
       "tijd": "13:06",
       "callResult": "abandoned",
+      "teruggebeld": false
+    },
+    {
+      "nummer": "+31657802154",
+      "naam": "Onbekend",
+      "tijd": "13:14",
+      "callResult": "overflowed",
       "teruggebeld": false
     }
   ],
