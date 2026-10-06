@@ -1,18 +1,33 @@
 {
   "date": "2026-10-06",
-  "generated_at": "2026-10-06T05:50:37Z",
-  "tickets": [],
-  "channelCounts": {},
+  "generated_at": "2026-10-06T06:01:05Z",
+  "tickets": [
+    {
+      "ticketNumber": "2837",
+      "tijd": "07:50",
+      "titel": "Re: Ontvangstbevestiging - dekkingsbevestiging [D3076132_I73752806]",
+      "klant": "I.C. vanBiezen",
+      "status": "Open",
+      "statusType": "",
+      "prioriteit": "Niet ingesteld",
+      "webUrl": "https://desk.zoho.eu/support/htjzlancyr/ShowHomePage.do#Cases/dv/195464000014452001",
+      "channel": "Email",
+      "doorgezetBrandmeester": false
+    }
+  ],
+  "channelCounts": {
+    "Email": 1
+  },
   "brandmeesterCount": 0,
   "ticketStats": {
-    "nieuweVandaag": 0,
+    "nieuweVandaag": 1,
     "geslotenVandaag": 0,
-    "totaalOpen": 20,
+    "totaalOpen": 21,
     "inDeWacht": 18,
     "statusBreakdown": {
+      "Open": 3,
       "Gesloten": 686,
-      "In de wacht": 18,
-      "Open": 2
+      "In de wacht": 18
     },
     "capBereikt": false
   },
@@ -176,6 +191,14 @@
       "status": "In de wacht",
       "aangemaakt": "2026-10-05",
       "webUrl": "https://desk.zoho.eu/support/htjzlancyr/ShowHomePage.do#Cases/dv/195464000014427001"
+    },
+    {
+      "ticketNumber": "2837",
+      "titel": "Re: Ontvangstbevestiging - dekkingsbevestiging [D3076132_I73752806]",
+      "klant": "I.C. vanBiezen",
+      "status": "Open",
+      "aangemaakt": "2026-10-06",
+      "webUrl": "https://desk.zoho.eu/support/htjzlancyr/ShowHomePage.do#Cases/dv/195464000014452001"
     }
   ]
 }
