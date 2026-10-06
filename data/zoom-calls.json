@@ -1,10 +1,10 @@
 {
   "date": "2026-10-06",
-  "generated_at": "2026-10-06T14:40:42Z",
-  "totaalInbound": 12,
-  "totaalGemist": 12,
+  "generated_at": "2026-10-06T14:50:52Z",
+  "totaalInbound": 13,
+  "totaalGemist": 13,
   "terugGebeld": 0,
-  "nietTerugGebeld": 12,
+  "nietTerugGebeld": 13,
   "nietTerugGebeldNummers": [
     {
       "nummer": "+31683988994",
@@ -88,6 +88,13 @@
       "naam": "Onbekend",
       "tijd": "16:15",
       "callResult": "overflowed",
+      "teruggebeld": false
+    },
+    {
+      "nummer": "+31611429531",
+      "naam": "Onbekend",
+      "tijd": "16:45",
+      "callResult": "abandoned",
       "teruggebeld": false
     }
   ],
@@ -174,6 +181,13 @@
       "naam": "Onbekend",
       "tijd": "16:15",
       "callResult": "overflowed",
+      "teruggebeld": false
+    },
+    {
+      "nummer": "+31611429531",
+      "naam": "Onbekend",
+      "tijd": "16:45",
+      "callResult": "abandoned",
       "teruggebeld": false
     }
   ],
