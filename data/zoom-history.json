@@ -4140,12 +4140,19 @@
         "nummer": "+31657802154",
         "teruggebeld": false,
         "tijd": "13:14"
+      },
+      {
+        "callResult": "overflowed",
+        "naam": "Onbekend",
+        "nummer": "+31623228438",
+        "teruggebeld": false,
+        "tijd": "13:50"
       }
     ],
     "beantwoordZonderAgent": 0,
     "date": "2026-10-06",
-    "generated_at": "2026-10-06T11:50:44Z",
-    "nietTerugGebeld": 7,
+    "generated_at": "2026-10-06T12:01:07Z",
+    "nietTerugGebeld": 8,
     "nietTerugGebeldNummers": [
       {
         "callResult": "abandoned",
@@ -4195,10 +4202,17 @@
         "nummer": "+31657802154",
         "teruggebeld": false,
         "tijd": "13:14"
+      },
+      {
+        "callResult": "overflowed",
+        "naam": "Onbekend",
+        "nummer": "+31623228438",
+        "teruggebeld": false,
+        "tijd": "13:50"
       }
     ],
     "terugGebeld": 0,
-    "totaalGemist": 7,
-    "totaalInbound": 7
+    "totaalGemist": 8,
+    "totaalInbound": 8
   }
 }
