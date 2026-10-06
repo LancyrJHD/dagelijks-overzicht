@@ -4147,12 +4147,19 @@
         "nummer": "+31623228438",
         "teruggebeld": false,
         "tijd": "13:50"
+      },
+      {
+        "callResult": "overflowed",
+        "naam": "Onbekend",
+        "nummer": "+31653290077",
+        "teruggebeld": false,
+        "tijd": "14:19"
       }
     ],
     "beantwoordZonderAgent": 0,
     "date": "2026-10-06",
-    "generated_at": "2026-10-06T12:20:45Z",
-    "nietTerugGebeld": 8,
+    "generated_at": "2026-10-06T12:31:01Z",
+    "nietTerugGebeld": 9,
     "nietTerugGebeldNummers": [
       {
         "callResult": "abandoned",
@@ -4209,10 +4216,17 @@
         "nummer": "+31623228438",
         "teruggebeld": false,
         "tijd": "13:50"
+      },
+      {
+        "callResult": "overflowed",
+        "naam": "Onbekend",
+        "nummer": "+31653290077",
+        "teruggebeld": false,
+        "tijd": "14:19"
       }
     ],
     "terugGebeld": 0,
-    "totaalGemist": 8,
-    "totaalInbound": 8
+    "totaalGemist": 9,
+    "totaalInbound": 9
   }
 }

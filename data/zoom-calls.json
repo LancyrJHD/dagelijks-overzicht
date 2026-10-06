@@ -1,10 +1,10 @@
 {
   "date": "2026-10-06",
-  "generated_at": "2026-10-06T12:20:45Z",
-  "totaalInbound": 8,
-  "totaalGemist": 8,
+  "generated_at": "2026-10-06T12:31:01Z",
+  "totaalInbound": 9,
+  "totaalGemist": 9,
   "terugGebeld": 0,
-  "nietTerugGebeld": 8,
+  "nietTerugGebeld": 9,
   "nietTerugGebeldNummers": [
     {
       "nummer": "+31683988994",
@@ -59,6 +59,13 @@
       "nummer": "+31623228438",
       "naam": "Onbekend",
       "tijd": "13:50",
+      "callResult": "overflowed",
+      "teruggebeld": false
+    },
+    {
+      "nummer": "+31653290077",
+      "naam": "Onbekend",
+      "tijd": "14:19",
       "callResult": "overflowed",
       "teruggebeld": false
     }
@@ -117,6 +124,13 @@
       "nummer": "+31623228438",
       "naam": "Onbekend",
       "tijd": "13:50",
+      "callResult": "overflowed",
+      "teruggebeld": false
+    },
+    {
+      "nummer": "+31653290077",
+      "naam": "Onbekend",
+      "tijd": "14:19",
       "callResult": "overflowed",
       "teruggebeld": false
     }
