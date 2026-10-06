@@ -4168,12 +4168,19 @@
         "nummer": "+31611646632",
         "teruggebeld": false,
         "tijd": "16:00"
+      },
+      {
+        "callResult": "overflowed",
+        "naam": "Onbekend",
+        "nummer": "+31681708355",
+        "teruggebeld": false,
+        "tijd": "16:15"
       }
     ],
     "beantwoordZonderAgent": 0,
     "date": "2026-10-06",
-    "generated_at": "2026-10-06T14:20:50Z",
-    "nietTerugGebeld": 11,
+    "generated_at": "2026-10-06T14:31:00Z",
+    "nietTerugGebeld": 12,
     "nietTerugGebeldNummers": [
       {
         "callResult": "abandoned",
@@ -4251,10 +4258,17 @@
         "nummer": "+31611646632",
         "teruggebeld": false,
         "tijd": "16:00"
+      },
+      {
+        "callResult": "overflowed",
+        "naam": "Onbekend",
+        "nummer": "+31681708355",
+        "teruggebeld": false,
+        "tijd": "16:15"
       }
     ],
     "terugGebeld": 0,
-    "totaalGemist": 11,
-    "totaalInbound": 11
+    "totaalGemist": 12,
+    "totaalInbound": 12
   }
 }
