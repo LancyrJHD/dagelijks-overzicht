@@ -1,12 +1,67 @@
 {
   "date": "2026-10-07",
-  "generated_at": "2026-10-07T07:30:56Z",
-  "totaalInbound": 0,
-  "totaalGemist": 0,
+  "generated_at": "2026-10-07T07:41:01Z",
+  "totaalInbound": 3,
+  "totaalGemist": 3,
   "terugGebeld": 0,
-  "nietTerugGebeld": 0,
-  "nietTerugGebeldNummers": [],
-  "alleGemistNummers": [],
-  "agenten": {},
+  "nietTerugGebeld": 3,
+  "nietTerugGebeldNummers": [
+    {
+      "nummer": "+31611429531",
+      "naam": "Onbekend",
+      "tijd": "09:31",
+      "callResult": "abandoned",
+      "teruggebeld": false
+    },
+    {
+      "nummer": "+31615504975",
+      "naam": "Onbekend",
+      "tijd": "09:34",
+      "callResult": "abandoned",
+      "teruggebeld": false
+    },
+    {
+      "nummer": "+31615504975",
+      "naam": "Onbekend",
+      "tijd": "09:35",
+      "callResult": "abandoned",
+      "teruggebeld": false
+    }
+  ],
+  "alleGemistNummers": [
+    {
+      "nummer": "+31611429531",
+      "naam": "Onbekend",
+      "tijd": "09:31",
+      "callResult": "abandoned",
+      "teruggebeld": false
+    },
+    {
+      "nummer": "+31615504975",
+      "naam": "Onbekend",
+      "tijd": "09:34",
+      "callResult": "abandoned",
+      "teruggebeld": false
+    },
+    {
+      "nummer": "+31615504975",
+      "naam": "Onbekend",
+      "tijd": "09:35",
+      "callResult": "abandoned",
+      "teruggebeld": false
+    }
+  ],
+  "agenten": {
+    "Dewi Verver": {
+      "beantwoord": 0,
+      "uitgaand": 1,
+      "gesprekstijdSec": 7
+    },
+    "Senne Duifhuis": {
+      "beantwoord": 0,
+      "uitgaand": 1,
+      "gesprekstijdSec": 353
+    }
+  },
   "beantwoordZonderAgent": 0
 }

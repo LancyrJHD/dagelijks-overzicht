@@ -1,18 +1,45 @@
 {
   "date": "2026-10-07",
-  "generated_at": "2026-10-07T07:30:56Z",
-  "tickets": [],
-  "channelCounts": {},
+  "generated_at": "2026-10-07T07:41:01Z",
+  "tickets": [
+    {
+      "ticketNumber": "2838",
+      "tijd": "09:33",
+      "titel": "Belafspraak 7 oktober 9:30 uur",
+      "klant": "I. Sluiter-Mahabir",
+      "status": "Open",
+      "statusType": "",
+      "prioriteit": "Niet ingesteld",
+      "webUrl": "https://desk.zoho.eu/support/htjzlancyr/ShowHomePage.do#Cases/dv/195464000014480013",
+      "channel": "Phone",
+      "doorgezetBrandmeester": false
+    },
+    {
+      "ticketNumber": "2839",
+      "tijd": "09:39",
+      "titel": "Schadeclaim en WA-verzekering – contact wederpartij",
+      "klant": "R.A.V.I. Notten",
+      "status": "Gesloten",
+      "statusType": "",
+      "prioriteit": "Niet ingesteld",
+      "webUrl": "https://desk.zoho.eu/support/htjzlancyr/ShowHomePage.do#Cases/dv/195464000014495001",
+      "channel": "Phone",
+      "doorgezetBrandmeester": false
+    }
+  ],
+  "channelCounts": {
+    "Phone": 2
+  },
   "brandmeesterCount": 0,
   "ticketStats": {
-    "nieuweVandaag": 0,
-    "geslotenVandaag": 4,
-    "totaalOpen": 17,
+    "nieuweVandaag": 2,
+    "geslotenVandaag": 5,
+    "totaalOpen": 18,
     "inDeWacht": 15,
     "statusBreakdown": {
-      "Gesloten": 686,
-      "In de wacht": 15,
-      "Open": 2
+      "Gesloten": 687,
+      "Open": 3,
+      "In de wacht": 15
     },
     "capBereikt": false
   },
@@ -152,6 +179,14 @@
       "status": "In de wacht",
       "aangemaakt": "2026-10-05",
       "webUrl": "https://desk.zoho.eu/support/htjzlancyr/ShowHomePage.do#Cases/dv/195464000014427001"
+    },
+    {
+      "ticketNumber": "2838",
+      "titel": "Belafspraak 7 oktober 9:30 uur",
+      "klant": "I. Sluiter-Mahabir",
+      "status": "Open",
+      "aangemaakt": "2026-10-07",
+      "webUrl": "https://desk.zoho.eu/support/htjzlancyr/ShowHomePage.do#Cases/dv/195464000014480013"
     }
   ]
 }
