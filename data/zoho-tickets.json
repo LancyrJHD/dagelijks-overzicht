@@ -1,6 +1,6 @@
 {
   "date": "2026-10-07",
-  "generated_at": "2026-10-07T13:01:14Z",
+  "generated_at": "2026-10-07T13:10:58Z",
   "tickets": [
     {
       "ticketNumber": "2838",
@@ -67,28 +67,39 @@
       "tijd": "14:48",
       "titel": "Fw: Opzegging rechtsbijstandsverzekering 84195481 ",
       "klant": "A. Shamsi",
-      "status": "Open",
+      "status": "Gesloten",
       "statusType": "",
       "prioriteit": "Niet ingesteld",
       "webUrl": "https://desk.zoho.eu/support/htjzlancyr/ShowHomePage.do#Cases/dv/195464000014514023",
       "channel": "Email",
       "doorgezetBrandmeester": false
+    },
+    {
+      "ticketNumber": "2844",
+      "tijd": "15:01",
+      "titel": "Nieuw schadenummer nodig [D3076310_I74076211]",
+      "klant": "H.A.G. Kamperman",
+      "status": "In de wacht",
+      "statusType": "",
+      "prioriteit": "Niet ingesteld",
+      "webUrl": "https://desk.zoho.eu/support/htjzlancyr/ShowHomePage.do#Cases/dv/195464000014493031",
+      "channel": "Phone",
+      "doorgezetBrandmeester": false
     }
   ],
   "channelCounts": {
-    "Phone": 5,
+    "Phone": 6,
     "Email": 1
   },
   "brandmeesterCount": 1,
   "ticketStats": {
-    "nieuweVandaag": 6,
-    "geslotenVandaag": 10,
-    "totaalOpen": 18,
-    "inDeWacht": 15,
+    "nieuweVandaag": 7,
+    "geslotenVandaag": 13,
+    "totaalOpen": 16,
+    "inDeWacht": 16,
     "statusBreakdown": {
-      "Open": 3,
-      "Gesloten": 686,
-      "In de wacht": 15
+      "Gesloten": 689,
+      "In de wacht": 16
     },
     "capBereikt": false
   },
@@ -198,28 +209,12 @@
       "webUrl": "https://desk.zoho.eu/support/htjzlancyr/ShowHomePage.do#Cases/dv/195464000014108001"
     },
     {
-      "ticketNumber": "2799",
-      "titel": "VVE-geschil en verzekeringskwestie met Gerard Kuuman",
-      "klant": "G. Schuurman",
-      "status": "Open",
-      "aangemaakt": "2026-09-28",
-      "webUrl": "https://desk.zoho.eu/support/htjzlancyr/ShowHomePage.do#Cases/dv/195464000014292046"
-    },
-    {
       "ticketNumber": "2833",
       "titel": "Rechtsbijstandverzekering elektrische fiets moeder Gaarthuis",
       "klant": "J.M.T. Gaarthuis",
       "status": "In de wacht",
       "aangemaakt": "2026-10-05",
       "webUrl": "https://desk.zoho.eu/support/htjzlancyr/ShowHomePage.do#Cases/dv/195464000014426020"
-    },
-    {
-      "ticketNumber": "2830",
-      "titel": "FW: 84204424_Zuilhof: Een vraag stellen: geschil gemeente dakterras",
-      "klant": "De juridische helpdesk",
-      "status": "Open",
-      "aangemaakt": "2026-10-05",
-      "webUrl": "https://desk.zoho.eu/support/htjzlancyr/ShowHomePage.do#Cases/dv/195464000014439023"
     },
     {
       "ticketNumber": "2824",
@@ -230,12 +225,12 @@
       "webUrl": "https://desk.zoho.eu/support/htjzlancyr/ShowHomePage.do#Cases/dv/195464000014427001"
     },
     {
-      "ticketNumber": "2843",
-      "titel": "Fw: Opzegging rechtsbijstandsverzekering 84195481 ",
-      "klant": "A. Shamsi",
-      "status": "Open",
+      "ticketNumber": "2844",
+      "titel": "Nieuw schadenummer nodig [D3076310_I74076211]",
+      "klant": "H.A.G. Kamperman",
+      "status": "In de wacht",
       "aangemaakt": "2026-10-07",
-      "webUrl": "https://desk.zoho.eu/support/htjzlancyr/ShowHomePage.do#Cases/dv/195464000014514023"
+      "webUrl": "https://desk.zoho.eu/support/htjzlancyr/ShowHomePage.do#Cases/dv/195464000014493031"
     }
   ]
 }
