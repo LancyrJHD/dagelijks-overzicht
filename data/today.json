@@ -1,27 +1,27 @@
 {
   "date": "2026-10-07",
-  "generated_at": "2026-10-07T11:51:27Z",
+  "generated_at": "2026-10-07T12:01:50Z",
   "drukte": "druk",
   "gesprekken": 6,
   "stats": {
-    "opgelost": 1,
+    "opgelost": 2,
     "brandmeester": 1,
     "afkoop": 0,
-    "terugbel": 3,
+    "terugbel": 1,
     "geenDekking": 0,
-    "verkeerdNummer": 1
+    "verkeerdNummer": 2
   },
-  "score": 8.1,
+  "score": 8.4,
   "conversations": [
     {
       "tijd": "09:35",
       "titel": "Schadeclaim en BA-verzekering – contact wederpartij",
       "personen": "Verzekerde: I. Sluiter-Mahabir · Senne Duifhuis | Juridisch medewerker",
-      "samenvatting": "De beller heeft een schadeclaim waarbij zijn zoon (21 jaar) schade heeft veroorzaakt die onder de BA-verzekering valt. De wederpartij wil rechtstreeks contact met de beller in plaats van met de verzekering, wat volgens de medewerker hun recht is. De beller wordt geadviseerd de motivatie van de wederpartij in te dienen zodat HTJZ een definitief antwoord kan geven; identiteit is via Zoho automatisch geverifieerd, inhoudelijk advies is gegeven over aansprakelijkheid en procesgang.",
+      "samenvatting": "Beller belt over een schadeclaim waarin zijn 21-jarige zoon schade heeft veroorzaakt die onder de BA-verzekering van de beller valt. De medewerker geeft advies dat de zoon aansprakelijk is en onder de BA-verzekering valt, en dat de wederpartij het recht heeft rechtstreeks contact met de beller op te nemen in plaats van met de verzekeraar. De beller is via Zoho automatisch geverifieerd op telefoonnummer. De medewerker geeft inhoudelijk juridisch advies over de aansprakelijkheid en verzekeringsdekkingsvraag, en vraagt de beller de motivatie van de wederpartij in te sturen voor verdere beoordeling.",
       "tags": [
         [
           "tag-consument",
-          "Schadeclaim BA-verzekering"
+          "Consumentenrecht"
         ]
       ],
       "uitkomst": [
@@ -38,19 +38,19 @@
       "tijd": "09:42",
       "titel": "Telefonische vervolgafspraak met Roland Ross niet uitgevoerd",
       "personen": "Verzekerde: R.A.V.I. Notten · Senne Duifhuis | Juridisch medewerker",
-      "samenvatting": "Beller belt om te melden dat een vervolgafspraak met Roland Ross (Rowan Ross) om 09:30 uur niet is uitgevoerd; de medewerker verifieerde de beller via postcode en achternaam, constateerde dat een collega de beller eerder niet kon bereiken, en stuurde de zaak door naar Dewi Verver met het verzoek om contact op te nemen via het werktelefoon nummer van de beller. Geen inhoudelijk juridisch advies gegeven, alleen administratieve afhandeling van een gemiste vervolgafspraak.",
+      "samenvatting": "De beller belt omdat een geplande vervolgafspraak met Rowan Ross om half tien niet is uitgevoerd; de beller is niet gebeld ondanks het vrijhouden van zijn telefoonnummer. De medewerker Senna van der Scheur verifieert de beller via postcode en achternaam, stelt vast dat een collega al heeft geprobeerd te bellen, en stuurt de zaak door naar Dewi Verver (Davy Ferver) voor vervolgcontact. Geen inhoudelijk juridisch advies is gegeven; dit is een administrative/routeringskwestie.",
       "tags": [
         [
           "tag-overig",
-          "Routering/Administratie"
+          "Routering"
         ]
       ],
       "uitkomst": [
-        "outcome-terugbel",
-        "Terugbellen"
+        "outcome-verkeerd",
+        "Verkeerd nummer"
       ],
       "terugbel": true,
-      "verkeerdVerbonden": false,
+      "verkeerdVerbonden": true,
       "rechtsbijstandVerwijzing": false,
       "adviesGegeven": false,
       "identiteitGeverifieerd": true
@@ -58,8 +58,8 @@
     {
       "tijd": "09:46",
       "titel": "Verkeerd doorverbonden naar juridische helpdesk",
-      "personen": "Verzekerde: R.A.V.I. Notten · Senne Duifhuis",
-      "samenvatting": "Beller belde de juridische helpdesk met een praktische vraag over schadevrije jaren bij autoverzekering, welk onderwerp niet onder de juridische helpdesk valt. De medewerker stelde vast dat dit een verkeerd doorverbonden gesprek betreft en verwees de beller door naar Lancyr-klantenservice voor de juiste afdeling. Er is geen inhoudelijk juridisch advies gegeven.",
+      "personen": "Verzekerde: R.A.V.I. Notten · Senne Duifhuis | Juridisch medewerker",
+      "samenvatting": "Beller belde voor een praktische vraag over schadevrije jaren bij autoverzekering, maar werd verkeerd doorverbonden naar de juridische helpdesk. De medewerker Senna herkende snel dat dit niet het juiste nummer was en verwees de beller door naar het reguliere Lancyr-nummer om de juiste afdeling te bereiken. Geen inhoudelijk juridisch advies is gegeven.",
       "tags": [
         [
           "tag-overig",
@@ -80,7 +80,7 @@
       "tijd": "10:10",
       "titel": "Arbeidsconflict en ziektewet: rechtsbijstand intake",
       "personen": "Verzekerde: T.R.S. Dhoresing · Senne Duifhuis | Juridisch medewerker",
-      "samenvatting": "Beller met arbeidsconflict en ziektewet-zaak werd geverifieerd via postcode/huisnummer (systeem kende beller automatisch). De medewerker gaf geen inhoudelijk juridisch advies maar verwees de beller direct door naar de rechtsbijstandsafdeling voor verdere behandeling, wat conform protocol is omdat arbeidsconflicten altijd naar Brandmeester/rechtsbijstand moeten.",
+      "samenvatting": "Beller (T.R.S. Dhoresing) meldt arbeidsconflict met teammanager over verplicht kantoorwerk ondanks medische ongeschiktheid en ziektewetperiode van 1 jaar. Beller is automatisch geverifieerd via telefoonnummer (Zoho-contactkoppeling). Medewerker Senna heeft geen inhoudelijk juridisch advies gegeven, maar heeft de beller conform protocol onmiddellijk doorverwezen naar de rechtsbijstandsafdeling voor verdere behandeling van dit arbeidsrechtelijk geschil.",
       "tags": [
         [
           "tag-arbeidsrecht",
@@ -101,7 +101,7 @@
       "tijd": "10:32",
       "titel": "Reiskosten hoog tarief – advies stopzetting met Arjan",
       "personen": "Verzekerde: E.J. Maalderink · Senne Duifhuis",
-      "samenvatting": "Medewerker Senne (Lancyr Juridische Helpdesk) voerde telefonisch adviesgesprek met Arjan Melderink over arbeidsrechtelijke vraag: kan men stilzwijgende arbeidsvoorwaarden toepassen op reiskosten tegen hoog tarief? Medewerker gaf inhoudelijk juridisch advies dat deze mogelijkheid zwak is en dat werkgever waarschijnlijk vergoeding per direct mag stoppen en mogelijk teveel betaalde kan terugvorderen; advies was onderhandelen over stopzetting zonder terugvordering. Beller werd automatisch geverifieerd via telefoonnummer (Zoho-koppeling), en inhoudelijk juridisch advies is gegeven.",
+      "samenvatting": "Beller Arjan Meldering vraagt advies over stilzwijgende arbeidsvoorwaarden voor reiskosten tegen hoog tarief. De medewerker geeft inhoudelijk juridisch advies: de kans op behoud van het hoge tarief is zwak, de werkgever mag de vergoeding waarschijnlijk per direct stoppen en mogelijk teveel betaalde bedragen terugvorderen. Advies is om niet in te zetten op behoud maar te onderhandelen over stopzetting zonder terugvordering. Identiteit is geverifieerd via automatische Zoho-herkening op telefoonnummer.",
       "tags": [
         [
           "tag-arbeidsrecht",
@@ -122,18 +122,18 @@
       "tijd": "11:01",
       "titel": "VVE-onderzoekskosten en aansprakelijkheid met Jesse Verhulst",
       "personen": "Verzekerde: J. Verhulst · Senne Duifhuis | Juridisch medewerker",
-      "samenvatting": "Beller Jesse Verhulst (geverifieerd via Zoho-systeem op telefoonnummer) stelde vragen over VVE-onderzoekskosten voor een lekkagekwestie in een appartementencomplex. De medewerker gaf inhoudelijk juridisch advies: onderzoekskosten voor meerdere verdiepingen vallen onder VVE-verantwoordelijkheid wanneer gemeenschappelijke leidingen zijn onderzocht, en niet volledig op de beller kunnen worden verhaald. Beller zal dit argument naar de VVE sturen en kan terugbellen bij negatief antwoord.",
+      "samenvatting": "Jesse Verhulst belt over VVE-onderzoekskosten voor een lekkagekwestie. De medewerker geeft inhoudelijk juridisch advies: onderzoekskosten bij meerdere verdiepingen vallen onder VVE-dekking wanneer gemeenschappelijke leidingen worden onderzocht, niet onder persoonlijke aansprakelijkheid van de bewoner. De beller is via Zoho automatisch geverifieerd op telefoonnummer, en zal het advies per mail aan de VVE toesturen, met mogelijkheid tot vervolgcontact indien nodig.",
       "tags": [
         [
           "tag-huur",
-          "Huurrecht (VVE/lekkage)"
+          "Huurrecht/VVE-recht"
         ]
       ],
       "uitkomst": [
-        "outcome-terugbel",
-        "Terugbellen"
+        "outcome-opgelost",
+        "Telefonisch opgelost"
       ],
-      "terugbel": true,
+      "terugbel": false,
       "verkeerdVerbonden": false,
       "rechtsbijstandVerwijzing": false,
       "adviesGegeven": true,
@@ -143,42 +143,38 @@
   "acties": [],
   "analyse": {
     "goed": [
-      "09:35 Schadeclaim BA-verzekering: identiteit correct geverifieerd (Zoho), inhoudelijk advies gegeven over aansprakelijkheid en procesgang, vervolgstap (indiening motivatie) duidelijk benoemd",
-      "09:42 Vervolgafspraak gemist: identiteit geverifieerd (postcode/achternaam), administratieve afhandeling correct uitgevoerd met doorverwijzing naar Dewi Verver en concreet vervolgcontact via werktelefoon",
-      "09:46 Verkeerd doorverbonden: juiste routering naar Lancyr-klantenservice, geen onnodig juridisch advies gegeven",
-      "10:10 Arbeidsconflict: identiteit geverifieerd, correct geprotocolleerd doorverwezen naar Brandmeester (rechtsbijstand) zonder onterecht juridisch advies",
-      "10:32 Reiskosten hoog tarief: identiteit geverifieerd (Zoho telefoonnummer), inhoudelijk arbeidsrechtelijk advies gegeven met praktische onderhandelingsstrategie",
-      "11:01 VVE-onderzoekskosten: identiteit geverifieerd (Zoho), helder juridisch advies over aansprakelijkheid VVE, duidelijk vervolgplan (beller stuurt argument naar VVE, kan terugbellen)"
+      "09:35 BA-verzekering: identiteit correct geverifieerd (Zoho), juridisch advies gegeven over aansprakelijkheid en dekkingsvraag, vervolgstap (motivatie wederpartij) duidelijk benoemd",
+      "09:42 Vervolgafspraak: identiteit geverifieerd (postcode/achternaam), administratieve fout correct geïdentificeerd, doorgeleiding naar juiste collega (Dewi Verver) voor vervolgcontact",
+      "09:46 Verkeerd nummer: medewerker herkende snel dat dit niet de juridische helpdesk betrof, correcte doorverwijzing naar Lancyr-nummer",
+      "10:10 Arbeidsconflict: identiteit geverifieerd (Zoho), medewerker hield zich correct aan protocol door onmiddellijk door te verwijzen naar rechtsbijstandsafdeling (niet-juridische helpdesk kwestie)",
+      "10:32 Reiskosten: identiteit correct geverifieerd (Zoho), inhoudelijk juridisch advies gegeven over werkgeversrecht en onderhandelingsstrategie, duidelijke aanbeveling",
+      "11:01 VVE-onderzoekskosten: identiteit geverifieerd (Zoho), juridisch advies gegeven over dekkingsverschil VVE vs. persoonlijke aansprakelijkheid, vervolgstap (mail naar VVE) benoemd"
     ],
     "beter": [
-      "09:35 Schadeclaim BA-verzekering: geen formele dekkingscontrole (franchise EUR 250) vastgelegd in notities – bij schadeclaims moet altijd worden gecontroleerd of het schadebedrag de franchise overschrijdt",
-      "09:42 & 09:46 & 10:10: Geen concrete deadline voor vervolgcontacten afgesproken (09:42 'Dewi Verver belt terug' zonder termijn; 09:46 geen deadline; 10:10 geen deadline naar Brandmeester vermeld)"
+      "09:35 BA-verzekering: geen concrete deadline afgesproken voor terugbellen met vervolggegevens van wederpartij – wanneer verwacht u de motivatie in te sturen en wanneer belt u terug?",
+      "10:32 Reiskosten: geen concrete deadline afgesproken voor vervolgonderhandelingen – aanbeveling om binnen X werkdagen contact op te nemen met werkgever zou helpful zijn geweest"
     ]
   },
   "verkeerdVerbonden": {
-    "aantal": 1,
-    "percentage": 16.7
+    "aantal": 2,
+    "percentage": 33.3
   },
   "rechtsbijstandVerwijzingen": 1,
   "categorieen": [
+    [
+      "Routering",
+      2
+    ],
     [
       "Arbeidsrecht",
       2
     ],
     [
-      "Schadeclaim BA-verzekering",
+      "Consumentenrecht",
       1
     ],
     [
-      "Routering/Administratie",
-      1
-    ],
-    [
-      "Routering",
-      1
-    ],
-    [
-      "Huurrecht (VVE/lekkage)",
+      "Huurrecht/VVE-recht",
       1
     ]
   ]
