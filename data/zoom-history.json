@@ -4303,8 +4303,8 @@
     "agenten": {
       "Dewi Verver": {
         "beantwoord": 0,
-        "gesprekstijdSec": 7,
-        "uitgaand": 1
+        "gesprekstijdSec": 1067,
+        "uitgaand": 2
       },
       "Senne Duifhuis": {
         "beantwoord": 2,
@@ -4324,21 +4324,21 @@
         "callResult": "abandoned",
         "naam": "Onbekend",
         "nummer": "+31615504975",
-        "teruggebeld": false,
+        "teruggebeld": true,
         "tijd": "09:34"
       },
       {
         "callResult": "abandoned",
         "naam": "Onbekend",
         "nummer": "+31615504975",
-        "teruggebeld": false,
+        "teruggebeld": true,
         "tijd": "09:35"
       }
     ],
     "beantwoordZonderAgent": 0,
     "date": "2026-10-07",
-    "generated_at": "2026-10-07T08:01:06Z",
-    "nietTerugGebeld": 3,
+    "generated_at": "2026-10-07T08:10:40Z",
+    "nietTerugGebeld": 1,
     "nietTerugGebeldNummers": [
       {
         "callResult": "abandoned",
@@ -4346,23 +4346,9 @@
         "nummer": "+31611429531",
         "teruggebeld": false,
         "tijd": "09:31"
-      },
-      {
-        "callResult": "abandoned",
-        "naam": "Onbekend",
-        "nummer": "+31615504975",
-        "teruggebeld": false,
-        "tijd": "09:34"
-      },
-      {
-        "callResult": "abandoned",
-        "naam": "Onbekend",
-        "nummer": "+31615504975",
-        "teruggebeld": false,
-        "tijd": "09:35"
       }
     ],
-    "terugGebeld": 0,
+    "terugGebeld": 2,
     "totaalGemist": 3,
     "totaalInbound": 5
   }
