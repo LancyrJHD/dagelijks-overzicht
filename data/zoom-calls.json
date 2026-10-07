@@ -1,16 +1,23 @@
 {
   "date": "2026-10-07",
-  "generated_at": "2026-10-07T12:40:51Z",
-  "totaalInbound": 6,
-  "totaalGemist": 3,
+  "generated_at": "2026-10-07T12:50:49Z",
+  "totaalInbound": 7,
+  "totaalGemist": 4,
   "terugGebeld": 2,
-  "nietTerugGebeld": 1,
+  "nietTerugGebeld": 2,
   "nietTerugGebeldNummers": [
     {
       "nummer": "+31611429531",
       "naam": "Onbekend",
       "tijd": "09:31",
       "callResult": "abandoned",
+      "teruggebeld": false
+    },
+    {
+      "nummer": "+31634481467",
+      "naam": "Onbekend",
+      "tijd": "14:40",
+      "callResult": "overflowed",
       "teruggebeld": false
     }
   ],
@@ -35,6 +42,13 @@
       "tijd": "09:35",
       "callResult": "abandoned",
       "teruggebeld": true
+    },
+    {
+      "nummer": "+31634481467",
+      "naam": "Onbekend",
+      "tijd": "14:40",
+      "callResult": "overflowed",
+      "teruggebeld": false
     }
   ],
   "agenten": {

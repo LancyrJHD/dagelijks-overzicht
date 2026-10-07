@@ -1,6 +1,6 @@
 {
   "date": "2026-10-07",
-  "generated_at": "2026-10-07T12:40:50Z",
+  "generated_at": "2026-10-07T12:50:48Z",
   "tickets": [
     {
       "ticketNumber": "2838",
@@ -61,21 +61,34 @@
       "webUrl": "https://desk.zoho.eu/support/htjzlancyr/ShowHomePage.do#Cases/dv/195464000014511001",
       "channel": "Phone",
       "doorgezetBrandmeester": false
+    },
+    {
+      "ticketNumber": "2843",
+      "tijd": "14:48",
+      "titel": "Fw: Opzegging rechtsbijstandsverzekering 84195481 ",
+      "klant": "A. Shamsi",
+      "status": "Open",
+      "statusType": "",
+      "prioriteit": "Niet ingesteld",
+      "webUrl": "https://desk.zoho.eu/support/htjzlancyr/ShowHomePage.do#Cases/dv/195464000014514023",
+      "channel": "Email",
+      "doorgezetBrandmeester": false
     }
   ],
   "channelCounts": {
-    "Phone": 5
+    "Phone": 5,
+    "Email": 1
   },
   "brandmeesterCount": 1,
   "ticketStats": {
-    "nieuweVandaag": 5,
+    "nieuweVandaag": 6,
     "geslotenVandaag": 10,
-    "totaalOpen": 17,
+    "totaalOpen": 18,
     "inDeWacht": 15,
     "statusBreakdown": {
+      "Open": 3,
       "Gesloten": 686,
-      "In de wacht": 15,
-      "Open": 2
+      "In de wacht": 15
     },
     "capBereikt": false
   },
@@ -215,6 +228,14 @@
       "status": "In de wacht",
       "aangemaakt": "2026-10-05",
       "webUrl": "https://desk.zoho.eu/support/htjzlancyr/ShowHomePage.do#Cases/dv/195464000014427001"
+    },
+    {
+      "ticketNumber": "2843",
+      "titel": "Fw: Opzegging rechtsbijstandsverzekering 84195481 ",
+      "klant": "A. Shamsi",
+      "status": "Open",
+      "aangemaakt": "2026-10-07",
+      "webUrl": "https://desk.zoho.eu/support/htjzlancyr/ShowHomePage.do#Cases/dv/195464000014514023"
     }
   ]
 }
