@@ -1,7 +1,7 @@
 {
   "date": "2026-10-07",
-  "generated_at": "2026-10-07T07:41:01Z",
-  "totaalInbound": 3,
+  "generated_at": "2026-10-07T07:50:45Z",
+  "totaalInbound": 5,
   "totaalGemist": 3,
   "terugGebeld": 0,
   "nietTerugGebeld": 3,
@@ -52,15 +52,15 @@
     }
   ],
   "agenten": {
+    "Senne Duifhuis": {
+      "beantwoord": 2,
+      "uitgaand": 1,
+      "gesprekstijdSec": 539
+    },
     "Dewi Verver": {
       "beantwoord": 0,
       "uitgaand": 1,
       "gesprekstijdSec": 7
-    },
-    "Senne Duifhuis": {
-      "beantwoord": 0,
-      "uitgaand": 1,
-      "gesprekstijdSec": 353
     }
   },
   "beantwoordZonderAgent": 0
