@@ -1,13 +1,13 @@
 {
   "date": "2026-10-07",
-  "generated_at": "2026-10-07T08:10:40Z",
+  "generated_at": "2026-10-07T08:20:46Z",
   "tickets": [
     {
       "ticketNumber": "2838",
       "tijd": "09:33",
       "titel": "Belafspraak 7 oktober 9:30 uur",
       "klant": "I. Sluiter-Mahabir",
-      "status": "Open",
+      "status": "Gesloten",
       "statusType": "",
       "prioriteit": "Niet ingesteld",
       "webUrl": "https://desk.zoho.eu/support/htjzlancyr/ShowHomePage.do#Cases/dv/195464000014480013",
@@ -25,21 +25,33 @@
       "webUrl": "https://desk.zoho.eu/support/htjzlancyr/ShowHomePage.do#Cases/dv/195464000014495001",
       "channel": "Phone",
       "doorgezetBrandmeester": false
+    },
+    {
+      "ticketNumber": "2840",
+      "tijd": "10:16",
+      "titel": "Arbeidsconflict en ziektewet: rechtsbijstand intake",
+      "klant": "T.R.S. Dhoresing",
+      "status": "In de wacht",
+      "statusType": "",
+      "prioriteit": "Niet ingesteld",
+      "webUrl": "https://desk.zoho.eu/support/htjzlancyr/ShowHomePage.do#Cases/dv/195464000014505001",
+      "channel": "Phone",
+      "doorgezetBrandmeester": false
     }
   ],
   "channelCounts": {
-    "Phone": 2
+    "Phone": 3
   },
   "brandmeesterCount": 0,
   "ticketStats": {
-    "nieuweVandaag": 2,
-    "geslotenVandaag": 5,
-    "totaalOpen": 18,
-    "inDeWacht": 15,
+    "nieuweVandaag": 3,
+    "geslotenVandaag": 6,
+    "totaalOpen": 19,
+    "inDeWacht": 16,
     "statusBreakdown": {
       "Gesloten": 687,
-      "Open": 3,
-      "In de wacht": 15
+      "In de wacht": 16,
+      "Open": 3
     },
     "capBereikt": false
   },
@@ -149,6 +161,14 @@
       "webUrl": "https://desk.zoho.eu/support/htjzlancyr/ShowHomePage.do#Cases/dv/195464000014108001"
     },
     {
+      "ticketNumber": "2778",
+      "titel": "Arbeidsgeschil universiteit – taakstelling onderwijs/onderzoek doorverwijzing rechtsbijstand",
+      "klant": "J. deJonge",
+      "status": "Open",
+      "aangemaakt": "2026-09-23",
+      "webUrl": "https://desk.zoho.eu/support/htjzlancyr/ShowHomePage.do#Cases/dv/195464000014282001"
+    },
+    {
       "ticketNumber": "2799",
       "titel": "VVE-geschil en verzekeringskwestie met Gerard Kuuman",
       "klant": "G. Schuurman",
@@ -181,12 +201,12 @@
       "webUrl": "https://desk.zoho.eu/support/htjzlancyr/ShowHomePage.do#Cases/dv/195464000014427001"
     },
     {
-      "ticketNumber": "2838",
-      "titel": "Belafspraak 7 oktober 9:30 uur",
-      "klant": "I. Sluiter-Mahabir",
-      "status": "Open",
+      "ticketNumber": "2840",
+      "titel": "Arbeidsconflict en ziektewet: rechtsbijstand intake",
+      "klant": "T.R.S. Dhoresing",
+      "status": "In de wacht",
       "aangemaakt": "2026-10-07",
-      "webUrl": "https://desk.zoho.eu/support/htjzlancyr/ShowHomePage.do#Cases/dv/195464000014480013"
+      "webUrl": "https://desk.zoho.eu/support/htjzlancyr/ShowHomePage.do#Cases/dv/195464000014505001"
     }
   ]
 }
