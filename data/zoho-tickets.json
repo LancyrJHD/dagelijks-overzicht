@@ -1,6 +1,6 @@
 {
   "date": "2026-10-07",
-  "generated_at": "2026-10-07T09:50:50Z",
+  "generated_at": "2026-10-07T10:01:03Z",
   "tickets": [
     {
       "ticketNumber": "2838",
@@ -31,12 +31,12 @@
       "tijd": "10:16",
       "titel": "Arbeidsconflict en ziektewet: rechtsbijstand intake",
       "klant": "T.R.S. Dhoresing",
-      "status": "Open",
+      "status": "Gesloten",
       "statusType": "",
       "prioriteit": "Niet ingesteld",
       "webUrl": "https://desk.zoho.eu/support/htjzlancyr/ShowHomePage.do#Cases/dv/195464000014505001",
       "channel": "Phone",
-      "doorgezetBrandmeester": false
+      "doorgezetBrandmeester": true
     },
     {
       "ticketNumber": "2841",
@@ -66,16 +66,16 @@
   "channelCounts": {
     "Phone": 5
   },
-  "brandmeesterCount": 0,
+  "brandmeesterCount": 1,
   "ticketStats": {
     "nieuweVandaag": 5,
-    "geslotenVandaag": 9,
-    "totaalOpen": 18,
+    "geslotenVandaag": 10,
+    "totaalOpen": 17,
     "inDeWacht": 15,
     "statusBreakdown": {
-      "Open": 3,
-      "Gesloten": 690,
-      "In de wacht": 15
+      "Gesloten": 691,
+      "In de wacht": 15,
+      "Open": 2
     },
     "capBereikt": false
   },
@@ -215,14 +215,6 @@
       "status": "In de wacht",
       "aangemaakt": "2026-10-05",
       "webUrl": "https://desk.zoho.eu/support/htjzlancyr/ShowHomePage.do#Cases/dv/195464000014427001"
-    },
-    {
-      "ticketNumber": "2840",
-      "titel": "Arbeidsconflict en ziektewet: rechtsbijstand intake",
-      "klant": "T.R.S. Dhoresing",
-      "status": "Open",
-      "aangemaakt": "2026-10-07",
-      "webUrl": "https://desk.zoho.eu/support/htjzlancyr/ShowHomePage.do#Cases/dv/195464000014505001"
     }
   ]
 }
