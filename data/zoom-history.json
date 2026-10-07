@@ -4308,8 +4308,8 @@
       },
       "Senne Duifhuis": {
         "beantwoord": 3,
-        "gesprekstijdSec": 1296,
-        "uitgaand": 3
+        "gesprekstijdSec": 1341,
+        "uitgaand": 5
       }
     },
     "alleGemistNummers": [
@@ -4338,14 +4338,14 @@
         "callResult": "overflowed",
         "naam": "Onbekend",
         "nummer": "+31634481467",
-        "teruggebeld": false,
+        "teruggebeld": true,
         "tijd": "14:40"
       }
     ],
     "beantwoordZonderAgent": 0,
     "date": "2026-10-07",
-    "generated_at": "2026-10-07T12:50:49Z",
-    "nietTerugGebeld": 2,
+    "generated_at": "2026-10-07T13:01:16Z",
+    "nietTerugGebeld": 1,
     "nietTerugGebeldNummers": [
       {
         "callResult": "abandoned",
@@ -4353,16 +4353,9 @@
         "nummer": "+31611429531",
         "teruggebeld": false,
         "tijd": "09:31"
-      },
-      {
-        "callResult": "overflowed",
-        "naam": "Onbekend",
-        "nummer": "+31634481467",
-        "teruggebeld": false,
-        "tijd": "14:40"
       }
     ],
-    "terugGebeld": 2,
+    "terugGebeld": 3,
     "totaalGemist": 4,
     "totaalInbound": 7
   }

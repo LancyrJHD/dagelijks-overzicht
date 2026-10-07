@@ -1,23 +1,16 @@
 {
   "date": "2026-10-07",
-  "generated_at": "2026-10-07T12:50:49Z",
+  "generated_at": "2026-10-07T13:01:16Z",
   "totaalInbound": 7,
   "totaalGemist": 4,
-  "terugGebeld": 2,
-  "nietTerugGebeld": 2,
+  "terugGebeld": 3,
+  "nietTerugGebeld": 1,
   "nietTerugGebeldNummers": [
     {
       "nummer": "+31611429531",
       "naam": "Onbekend",
       "tijd": "09:31",
       "callResult": "abandoned",
-      "teruggebeld": false
-    },
-    {
-      "nummer": "+31634481467",
-      "naam": "Onbekend",
-      "tijd": "14:40",
-      "callResult": "overflowed",
       "teruggebeld": false
     }
   ],
@@ -48,14 +41,14 @@
       "naam": "Onbekend",
       "tijd": "14:40",
       "callResult": "overflowed",
-      "teruggebeld": false
+      "teruggebeld": true
     }
   ],
   "agenten": {
     "Senne Duifhuis": {
       "beantwoord": 3,
-      "uitgaand": 3,
-      "gesprekstijdSec": 1296
+      "uitgaand": 5,
+      "gesprekstijdSec": 1341
     },
     "Dewi Verver": {
       "beantwoord": 0,
