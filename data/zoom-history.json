@@ -4403,12 +4403,19 @@
         "nummer": "+31634258515",
         "teruggebeld": false,
         "tijd": "12:46"
+      },
+      {
+        "callResult": "abandoned",
+        "naam": "Onbekend",
+        "nummer": "+31685249723",
+        "teruggebeld": false,
+        "tijd": "13:11"
       }
     ],
     "beantwoordZonderAgent": 0,
     "date": "2026-10-08",
-    "generated_at": "2026-10-08T11:10:39Z",
-    "nietTerugGebeld": 6,
+    "generated_at": "2026-10-08T11:20:46Z",
+    "nietTerugGebeld": 7,
     "nietTerugGebeldNummers": [
       {
         "callResult": "overflowed",
@@ -4451,10 +4458,17 @@
         "nummer": "+31634258515",
         "teruggebeld": false,
         "tijd": "12:46"
+      },
+      {
+        "callResult": "abandoned",
+        "naam": "Onbekend",
+        "nummer": "+31685249723",
+        "teruggebeld": false,
+        "tijd": "13:11"
       }
     ],
     "terugGebeld": 0,
-    "totaalGemist": 6,
-    "totaalInbound": 6
+    "totaalGemist": 7,
+    "totaalInbound": 7
   }
 }

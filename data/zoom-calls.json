@@ -1,10 +1,10 @@
 {
   "date": "2026-10-08",
-  "generated_at": "2026-10-08T11:10:39Z",
-  "totaalInbound": 6,
-  "totaalGemist": 6,
+  "generated_at": "2026-10-08T11:20:46Z",
+  "totaalInbound": 7,
+  "totaalGemist": 7,
   "terugGebeld": 0,
-  "nietTerugGebeld": 6,
+  "nietTerugGebeld": 7,
   "nietTerugGebeldNummers": [
     {
       "nummer": "+31624445538",
@@ -45,6 +45,13 @@
       "nummer": "+31634258515",
       "naam": "Onbekend",
       "tijd": "12:46",
+      "callResult": "abandoned",
+      "teruggebeld": false
+    },
+    {
+      "nummer": "+31685249723",
+      "naam": "Onbekend",
+      "tijd": "13:11",
       "callResult": "abandoned",
       "teruggebeld": false
     }
@@ -89,6 +96,13 @@
       "nummer": "+31634258515",
       "naam": "Onbekend",
       "tijd": "12:46",
+      "callResult": "abandoned",
+      "teruggebeld": false
+    },
+    {
+      "nummer": "+31685249723",
+      "naam": "Onbekend",
+      "tijd": "13:11",
       "callResult": "abandoned",
       "teruggebeld": false
     }
