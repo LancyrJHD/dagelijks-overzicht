@@ -1,16 +1,23 @@
 {
   "date": "2026-10-08",
-  "generated_at": "2026-10-08T07:40:46Z",
-  "totaalInbound": 1,
-  "totaalGemist": 1,
+  "generated_at": "2026-10-08T07:50:39Z",
+  "totaalInbound": 2,
+  "totaalGemist": 2,
   "terugGebeld": 0,
-  "nietTerugGebeld": 1,
+  "nietTerugGebeld": 2,
   "nietTerugGebeldNummers": [
     {
       "nummer": "+31624445538",
       "naam": "Onbekend",
       "tijd": "09:25",
       "callResult": "overflowed",
+      "teruggebeld": false
+    },
+    {
+      "nummer": "+31619922595",
+      "naam": "Onbekend",
+      "tijd": "09:41",
+      "callResult": "abandoned",
       "teruggebeld": false
     }
   ],
@@ -20,6 +27,13 @@
       "naam": "Onbekend",
       "tijd": "09:25",
       "callResult": "overflowed",
+      "teruggebeld": false
+    },
+    {
+      "nummer": "+31619922595",
+      "naam": "Onbekend",
+      "tijd": "09:41",
+      "callResult": "abandoned",
       "teruggebeld": false
     }
   ],
