@@ -1,12 +1,28 @@
 {
   "date": "2026-10-08",
-  "generated_at": "2026-10-08T07:30:49Z",
-  "totaalInbound": 0,
-  "totaalGemist": 0,
+  "generated_at": "2026-10-08T07:40:46Z",
+  "totaalInbound": 1,
+  "totaalGemist": 1,
   "terugGebeld": 0,
-  "nietTerugGebeld": 0,
-  "nietTerugGebeldNummers": [],
-  "alleGemistNummers": [],
+  "nietTerugGebeld": 1,
+  "nietTerugGebeldNummers": [
+    {
+      "nummer": "+31624445538",
+      "naam": "Onbekend",
+      "tijd": "09:25",
+      "callResult": "overflowed",
+      "teruggebeld": false
+    }
+  ],
+  "alleGemistNummers": [
+    {
+      "nummer": "+31624445538",
+      "naam": "Onbekend",
+      "tijd": "09:25",
+      "callResult": "overflowed",
+      "teruggebeld": false
+    }
+  ],
   "agenten": {},
   "beantwoordZonderAgent": 0
 }

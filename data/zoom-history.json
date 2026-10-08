@@ -4361,14 +4361,30 @@
   },
   "2026-10-08": {
     "agenten": {},
-    "alleGemistNummers": [],
+    "alleGemistNummers": [
+      {
+        "callResult": "overflowed",
+        "naam": "Onbekend",
+        "nummer": "+31624445538",
+        "teruggebeld": false,
+        "tijd": "09:25"
+      }
+    ],
     "beantwoordZonderAgent": 0,
     "date": "2026-10-08",
-    "generated_at": "2026-10-08T07:30:49Z",
-    "nietTerugGebeld": 0,
-    "nietTerugGebeldNummers": [],
+    "generated_at": "2026-10-08T07:40:46Z",
+    "nietTerugGebeld": 1,
+    "nietTerugGebeldNummers": [
+      {
+        "callResult": "overflowed",
+        "naam": "Onbekend",
+        "nummer": "+31624445538",
+        "teruggebeld": false,
+        "tijd": "09:25"
+      }
+    ],
     "terugGebeld": 0,
-    "totaalGemist": 0,
-    "totaalInbound": 0
+    "totaalGemist": 1,
+    "totaalInbound": 1
   }
 }
