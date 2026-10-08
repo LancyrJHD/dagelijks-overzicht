@@ -1,16 +1,31 @@
 {
   "date": "2026-10-08",
-  "generated_at": "2026-10-08T16:40:45Z",
-  "tickets": [],
-  "channelCounts": {},
+  "generated_at": "2026-10-08T16:50:39Z",
+  "tickets": [
+    {
+      "ticketNumber": "2850",
+      "tijd": "18:44",
+      "titel": "FW: Belafspraak Ida Hogervorst_ Account onbekend",
+      "klant": "De juridische helpdesk",
+      "status": "Open",
+      "statusType": "",
+      "prioriteit": "Niet ingesteld",
+      "webUrl": "https://desk.zoho.eu/support/htjzlancyr/ShowHomePage.do#Cases/dv/195464000014530001",
+      "channel": "Email",
+      "doorgezetBrandmeester": false
+    }
+  ],
+  "channelCounts": {
+    "Email": 1
+  },
   "brandmeesterCount": 0,
   "ticketStats": {
-    "nieuweVandaag": 0,
+    "nieuweVandaag": 1,
     "geslotenVandaag": 0,
-    "totaalOpen": 18,
+    "totaalOpen": 19,
     "inDeWacht": 17,
     "statusBreakdown": {
-      "Open": 1,
+      "Open": 2,
       "Gesloten": 688,
       "In de wacht": 17
     },
@@ -160,6 +175,14 @@
       "status": "In de wacht",
       "aangemaakt": "2026-10-07",
       "webUrl": "https://desk.zoho.eu/support/htjzlancyr/ShowHomePage.do#Cases/dv/195464000014493031"
+    },
+    {
+      "ticketNumber": "2850",
+      "titel": "FW: Belafspraak Ida Hogervorst_ Account onbekend",
+      "klant": "De juridische helpdesk",
+      "status": "Open",
+      "aangemaakt": "2026-10-08",
+      "webUrl": "https://desk.zoho.eu/support/htjzlancyr/ShowHomePage.do#Cases/dv/195464000014530001"
     }
   ]
 }
