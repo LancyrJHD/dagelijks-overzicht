@@ -1,10 +1,10 @@
 {
   "date": "2026-10-08",
-  "generated_at": "2026-10-08T10:10:48Z",
-  "totaalInbound": 4,
-  "totaalGemist": 4,
+  "generated_at": "2026-10-08T10:20:47Z",
+  "totaalInbound": 5,
+  "totaalGemist": 5,
   "terugGebeld": 0,
-  "nietTerugGebeld": 4,
+  "nietTerugGebeld": 5,
   "nietTerugGebeldNummers": [
     {
       "nummer": "+31624445538",
@@ -32,6 +32,13 @@
       "naam": "Anonymous",
       "tijd": "11:03",
       "callResult": "overflowed",
+      "teruggebeld": false
+    },
+    {
+      "nummer": "+31687775046",
+      "naam": "Onbekend",
+      "tijd": "12:17",
+      "callResult": "abandoned",
       "teruggebeld": false
     }
   ],
@@ -62,6 +69,13 @@
       "naam": "Anonymous",
       "tijd": "11:03",
       "callResult": "overflowed",
+      "teruggebeld": false
+    },
+    {
+      "nummer": "+31687775046",
+      "naam": "Onbekend",
+      "tijd": "12:17",
+      "callResult": "abandoned",
       "teruggebeld": false
     }
   ],
