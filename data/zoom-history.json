@@ -4382,12 +4382,19 @@
         "nummer": "+31653821645",
         "teruggebeld": false,
         "tijd": "10:34"
+      },
+      {
+        "callResult": "overflowed",
+        "naam": "Anonymous",
+        "nummer": "Anonymous",
+        "teruggebeld": false,
+        "tijd": "11:03"
       }
     ],
     "beantwoordZonderAgent": 0,
     "date": "2026-10-08",
-    "generated_at": "2026-10-08T09:00:58Z",
-    "nietTerugGebeld": 3,
+    "generated_at": "2026-10-08T09:10:44Z",
+    "nietTerugGebeld": 4,
     "nietTerugGebeldNummers": [
       {
         "callResult": "overflowed",
@@ -4409,10 +4416,17 @@
         "nummer": "+31653821645",
         "teruggebeld": false,
         "tijd": "10:34"
+      },
+      {
+        "callResult": "overflowed",
+        "naam": "Anonymous",
+        "nummer": "Anonymous",
+        "teruggebeld": false,
+        "tijd": "11:03"
       }
     ],
     "terugGebeld": 0,
-    "totaalGemist": 3,
-    "totaalInbound": 3
+    "totaalGemist": 4,
+    "totaalInbound": 4
   }
 }
