@@ -4410,12 +4410,19 @@
         "nummer": "+31685249723",
         "teruggebeld": false,
         "tijd": "13:11"
+      },
+      {
+        "callResult": "overflowed",
+        "naam": "Onbekend",
+        "nummer": "+31685249723",
+        "teruggebeld": false,
+        "tijd": "13:12"
       }
     ],
     "beantwoordZonderAgent": 0,
     "date": "2026-10-08",
-    "generated_at": "2026-10-08T11:20:46Z",
-    "nietTerugGebeld": 7,
+    "generated_at": "2026-10-08T11:30:53Z",
+    "nietTerugGebeld": 8,
     "nietTerugGebeldNummers": [
       {
         "callResult": "overflowed",
@@ -4465,10 +4472,17 @@
         "nummer": "+31685249723",
         "teruggebeld": false,
         "tijd": "13:11"
+      },
+      {
+        "callResult": "overflowed",
+        "naam": "Onbekend",
+        "nummer": "+31685249723",
+        "teruggebeld": false,
+        "tijd": "13:12"
       }
     ],
     "terugGebeld": 0,
-    "totaalGemist": 7,
-    "totaalInbound": 7
+    "totaalGemist": 8,
+    "totaalInbound": 8
   }
 }
