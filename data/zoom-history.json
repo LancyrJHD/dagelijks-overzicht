@@ -4375,12 +4375,19 @@
         "nummer": "+31619922595",
         "teruggebeld": false,
         "tijd": "09:41"
+      },
+      {
+        "callResult": "abandoned",
+        "naam": "Onbekend",
+        "nummer": "+31653821645",
+        "teruggebeld": false,
+        "tijd": "10:34"
       }
     ],
     "beantwoordZonderAgent": 0,
     "date": "2026-10-08",
-    "generated_at": "2026-10-08T08:30:56Z",
-    "nietTerugGebeld": 2,
+    "generated_at": "2026-10-08T08:40:40Z",
+    "nietTerugGebeld": 3,
     "nietTerugGebeldNummers": [
       {
         "callResult": "overflowed",
@@ -4395,10 +4402,17 @@
         "nummer": "+31619922595",
         "teruggebeld": false,
         "tijd": "09:41"
+      },
+      {
+        "callResult": "abandoned",
+        "naam": "Onbekend",
+        "nummer": "+31653821645",
+        "teruggebeld": false,
+        "tijd": "10:34"
       }
     ],
     "terugGebeld": 0,
-    "totaalGemist": 2,
-    "totaalInbound": 2
+    "totaalGemist": 3,
+    "totaalInbound": 3
   }
 }
