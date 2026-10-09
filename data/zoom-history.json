@@ -4487,14 +4487,44 @@
   },
   "2026-10-09": {
     "agenten": {},
-    "alleGemistNummers": [],
+    "alleGemistNummers": [
+      {
+        "callResult": "overflowed",
+        "naam": "Onbekend",
+        "nummer": "+31610340552",
+        "teruggebeld": false,
+        "tijd": "09:01"
+      },
+      {
+        "callResult": "abandoned",
+        "naam": "Onbekend",
+        "nummer": "+31655198077",
+        "teruggebeld": false,
+        "tijd": "09:05"
+      }
+    ],
     "beantwoordZonderAgent": 0,
     "date": "2026-10-09",
-    "generated_at": "2026-10-09T07:00:55Z",
-    "nietTerugGebeld": 0,
-    "nietTerugGebeldNummers": [],
+    "generated_at": "2026-10-09T07:10:46Z",
+    "nietTerugGebeld": 2,
+    "nietTerugGebeldNummers": [
+      {
+        "callResult": "overflowed",
+        "naam": "Onbekend",
+        "nummer": "+31610340552",
+        "teruggebeld": false,
+        "tijd": "09:01"
+      },
+      {
+        "callResult": "abandoned",
+        "naam": "Onbekend",
+        "nummer": "+31655198077",
+        "teruggebeld": false,
+        "tijd": "09:05"
+      }
+    ],
     "terugGebeld": 0,
-    "totaalGemist": 0,
-    "totaalInbound": 0
+    "totaalGemist": 2,
+    "totaalInbound": 2
   }
 }
