@@ -4578,12 +4578,19 @@
         "nummer": "+31622624896",
         "teruggebeld": false,
         "tijd": "13:10"
+      },
+      {
+        "callResult": "overflowed",
+        "naam": "Onbekend",
+        "nummer": "+31627538694",
+        "teruggebeld": false,
+        "tijd": "14:00"
       }
     ],
     "beantwoordZonderAgent": 0,
     "date": "2026-10-09",
-    "generated_at": "2026-10-09T12:01:07Z",
-    "nietTerugGebeld": 13,
+    "generated_at": "2026-10-09T12:10:55Z",
+    "nietTerugGebeld": 14,
     "nietTerugGebeldNummers": [
       {
         "callResult": "overflowed",
@@ -4675,10 +4682,17 @@
         "nummer": "+31622624896",
         "teruggebeld": false,
         "tijd": "13:10"
+      },
+      {
+        "callResult": "overflowed",
+        "naam": "Onbekend",
+        "nummer": "+31627538694",
+        "teruggebeld": false,
+        "tijd": "14:00"
       }
     ],
     "terugGebeld": 0,
-    "totaalGemist": 13,
-    "totaalInbound": 13
+    "totaalGemist": 14,
+    "totaalInbound": 14
   }
 }
