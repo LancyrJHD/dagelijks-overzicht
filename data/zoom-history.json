@@ -4550,12 +4550,19 @@
         "nummer": "+31614249400",
         "teruggebeld": false,
         "tijd": "11:55"
+      },
+      {
+        "callResult": "overflowed",
+        "naam": "Onbekend",
+        "nummer": "+31653156789",
+        "teruggebeld": false,
+        "tijd": "12:02"
       }
     ],
     "beantwoordZonderAgent": 0,
     "date": "2026-10-09",
-    "generated_at": "2026-10-09T10:10:42Z",
-    "nietTerugGebeld": 9,
+    "generated_at": "2026-10-09T10:20:41Z",
+    "nietTerugGebeld": 10,
     "nietTerugGebeldNummers": [
       {
         "callResult": "overflowed",
@@ -4619,10 +4626,17 @@
         "nummer": "+31614249400",
         "teruggebeld": false,
         "tijd": "11:55"
+      },
+      {
+        "callResult": "overflowed",
+        "naam": "Onbekend",
+        "nummer": "+31653156789",
+        "teruggebeld": false,
+        "tijd": "12:02"
       }
     ],
     "terugGebeld": 0,
-    "totaalGemist": 9,
-    "totaalInbound": 9
+    "totaalGemist": 10,
+    "totaalInbound": 10
   }
 }
