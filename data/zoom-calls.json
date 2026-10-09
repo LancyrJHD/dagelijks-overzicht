@@ -1,10 +1,10 @@
 {
   "date": "2026-10-09",
-  "generated_at": "2026-10-09T11:10:45Z",
-  "totaalInbound": 11,
-  "totaalGemist": 11,
+  "generated_at": "2026-10-09T11:20:45Z",
+  "totaalInbound": 13,
+  "totaalGemist": 13,
   "terugGebeld": 0,
-  "nietTerugGebeld": 11,
+  "nietTerugGebeld": 13,
   "nietTerugGebeldNummers": [
     {
       "nummer": "+31610340552",
@@ -81,6 +81,20 @@
       "naam": "Onbekend",
       "tijd": "12:19",
       "callResult": "abandoned",
+      "teruggebeld": false
+    },
+    {
+      "nummer": "+31657802154",
+      "naam": "Onbekend",
+      "tijd": "13:05",
+      "callResult": "overflowed",
+      "teruggebeld": false
+    },
+    {
+      "nummer": "+31622624896",
+      "naam": "Onbekend",
+      "tijd": "13:10",
+      "callResult": "overflowed",
       "teruggebeld": false
     }
   ],
@@ -160,6 +174,20 @@
       "naam": "Onbekend",
       "tijd": "12:19",
       "callResult": "abandoned",
+      "teruggebeld": false
+    },
+    {
+      "nummer": "+31657802154",
+      "naam": "Onbekend",
+      "tijd": "13:05",
+      "callResult": "overflowed",
+      "teruggebeld": false
+    },
+    {
+      "nummer": "+31622624896",
+      "naam": "Onbekend",
+      "tijd": "13:10",
+      "callResult": "overflowed",
       "teruggebeld": false
     }
   ],

@@ -1,16 +1,31 @@
 {
   "date": "2026-10-09",
-  "generated_at": "2026-10-09T11:10:42Z",
-  "tickets": [],
-  "channelCounts": {},
+  "generated_at": "2026-10-09T11:20:42Z",
+  "tickets": [
+    {
+      "ticketNumber": "2851",
+      "tijd": "13:17",
+      "titel": "Wachten op belafspraak",
+      "klant": "H.W. deLeeuw",
+      "status": "Open",
+      "statusType": "",
+      "prioriteit": "Niet ingesteld",
+      "webUrl": "https://desk.zoho.eu/support/htjzlancyr/ShowHomePage.do#Cases/dv/195464000014541001",
+      "channel": "Email",
+      "doorgezetBrandmeester": false
+    }
+  ],
+  "channelCounts": {
+    "Email": 1
+  },
   "brandmeesterCount": 0,
   "ticketStats": {
-    "nieuweVandaag": 0,
+    "nieuweVandaag": 1,
     "geslotenVandaag": 0,
-    "totaalOpen": 20,
+    "totaalOpen": 21,
     "inDeWacht": 17,
     "statusBreakdown": {
-      "Open": 3,
+      "Open": 4,
       "Gesloten": 687,
       "In de wacht": 17
     },
@@ -176,6 +191,14 @@
       "status": "Open",
       "aangemaakt": "2026-10-08",
       "webUrl": "https://desk.zoho.eu/support/htjzlancyr/ShowHomePage.do#Cases/dv/195464000014530001"
+    },
+    {
+      "ticketNumber": "2851",
+      "titel": "Wachten op belafspraak",
+      "klant": "H.W. deLeeuw",
+      "status": "Open",
+      "aangemaakt": "2026-10-09",
+      "webUrl": "https://desk.zoho.eu/support/htjzlancyr/ShowHomePage.do#Cases/dv/195464000014541001"
     }
   ]
 }
