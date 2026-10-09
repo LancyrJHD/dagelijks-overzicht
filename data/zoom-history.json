@@ -4508,12 +4508,19 @@
         "nummer": "+31623728682",
         "teruggebeld": false,
         "tijd": "09:09"
+      },
+      {
+        "callResult": "overflowed",
+        "naam": "Onbekend",
+        "nummer": "+31615504975",
+        "teruggebeld": false,
+        "tijd": "09:43"
       }
     ],
     "beantwoordZonderAgent": 0,
     "date": "2026-10-09",
-    "generated_at": "2026-10-09T07:50:43Z",
-    "nietTerugGebeld": 3,
+    "generated_at": "2026-10-09T08:01:00Z",
+    "nietTerugGebeld": 4,
     "nietTerugGebeldNummers": [
       {
         "callResult": "overflowed",
@@ -4535,10 +4542,17 @@
         "nummer": "+31623728682",
         "teruggebeld": false,
         "tijd": "09:09"
+      },
+      {
+        "callResult": "overflowed",
+        "naam": "Onbekend",
+        "nummer": "+31615504975",
+        "teruggebeld": false,
+        "tijd": "09:43"
       }
     ],
     "terugGebeld": 0,
-    "totaalGemist": 3,
-    "totaalInbound": 3
+    "totaalGemist": 4,
+    "totaalInbound": 4
   }
 }
