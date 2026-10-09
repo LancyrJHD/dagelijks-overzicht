@@ -4557,12 +4557,19 @@
         "nummer": "+31653156789",
         "teruggebeld": false,
         "tijd": "12:02"
+      },
+      {
+        "callResult": "abandoned",
+        "naam": "Onbekend",
+        "nummer": "+31623121991",
+        "teruggebeld": false,
+        "tijd": "12:19"
       }
     ],
     "beantwoordZonderAgent": 0,
     "date": "2026-10-09",
-    "generated_at": "2026-10-09T10:20:41Z",
-    "nietTerugGebeld": 10,
+    "generated_at": "2026-10-09T10:30:52Z",
+    "nietTerugGebeld": 11,
     "nietTerugGebeldNummers": [
       {
         "callResult": "overflowed",
@@ -4633,10 +4640,17 @@
         "nummer": "+31653156789",
         "teruggebeld": false,
         "tijd": "12:02"
+      },
+      {
+        "callResult": "abandoned",
+        "naam": "Onbekend",
+        "nummer": "+31623121991",
+        "teruggebeld": false,
+        "tijd": "12:19"
       }
     ],
     "terugGebeld": 0,
-    "totaalGemist": 10,
-    "totaalInbound": 10
+    "totaalGemist": 11,
+    "totaalInbound": 11
   }
 }
