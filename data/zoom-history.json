@@ -4641,12 +4641,26 @@
         "nummer": "+31611429531",
         "teruggebeld": false,
         "tijd": "16:03"
+      },
+      {
+        "callResult": "abandoned",
+        "naam": "Onbekend",
+        "nummer": "+31654655691",
+        "teruggebeld": false,
+        "tijd": "16:20"
+      },
+      {
+        "callResult": "abandoned",
+        "naam": "Onbekend",
+        "nummer": "+31654655691",
+        "teruggebeld": false,
+        "tijd": "16:22"
       }
     ],
     "beantwoordZonderAgent": 0,
     "date": "2026-10-09",
-    "generated_at": "2026-10-09T14:20:51Z",
-    "nietTerugGebeld": 22,
+    "generated_at": "2026-10-09T14:31:01Z",
+    "nietTerugGebeld": 24,
     "nietTerugGebeldNummers": [
       {
         "callResult": "overflowed",
@@ -4801,10 +4815,24 @@
         "nummer": "+31611429531",
         "teruggebeld": false,
         "tijd": "16:03"
+      },
+      {
+        "callResult": "abandoned",
+        "naam": "Onbekend",
+        "nummer": "+31654655691",
+        "teruggebeld": false,
+        "tijd": "16:20"
+      },
+      {
+        "callResult": "abandoned",
+        "naam": "Onbekend",
+        "nummer": "+31654655691",
+        "teruggebeld": false,
+        "tijd": "16:22"
       }
     ],
     "terugGebeld": 0,
-    "totaalGemist": 22,
-    "totaalInbound": 22
+    "totaalGemist": 24,
+    "totaalInbound": 24
   }
 }

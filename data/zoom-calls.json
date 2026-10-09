@@ -1,10 +1,10 @@
 {
   "date": "2026-10-09",
-  "generated_at": "2026-10-09T14:20:51Z",
-  "totaalInbound": 22,
-  "totaalGemist": 22,
+  "generated_at": "2026-10-09T14:31:01Z",
+  "totaalInbound": 24,
+  "totaalGemist": 24,
   "terugGebeld": 0,
-  "nietTerugGebeld": 22,
+  "nietTerugGebeld": 24,
   "nietTerugGebeldNummers": [
     {
       "nummer": "+31610340552",
@@ -157,6 +157,20 @@
       "nummer": "+31611429531",
       "naam": "Onbekend",
       "tijd": "16:03",
+      "callResult": "abandoned",
+      "teruggebeld": false
+    },
+    {
+      "nummer": "+31654655691",
+      "naam": "Onbekend",
+      "tijd": "16:20",
+      "callResult": "abandoned",
+      "teruggebeld": false
+    },
+    {
+      "nummer": "+31654655691",
+      "naam": "Onbekend",
+      "tijd": "16:22",
       "callResult": "abandoned",
       "teruggebeld": false
     }
@@ -313,6 +327,20 @@
       "nummer": "+31611429531",
       "naam": "Onbekend",
       "tijd": "16:03",
+      "callResult": "abandoned",
+      "teruggebeld": false
+    },
+    {
+      "nummer": "+31654655691",
+      "naam": "Onbekend",
+      "tijd": "16:20",
+      "callResult": "abandoned",
+      "teruggebeld": false
+    },
+    {
+      "nummer": "+31654655691",
+      "naam": "Onbekend",
+      "tijd": "16:22",
       "callResult": "abandoned",
       "teruggebeld": false
     }
