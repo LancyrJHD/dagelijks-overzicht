@@ -4620,12 +4620,26 @@
         "nummer": "+31623728682",
         "teruggebeld": false,
         "tijd": "15:02"
+      },
+      {
+        "callResult": "overflowed",
+        "naam": "Onbekend",
+        "nummer": "+31611429531",
+        "teruggebeld": false,
+        "tijd": "15:03"
+      },
+      {
+        "callResult": "abandoned",
+        "naam": "Onbekend",
+        "nummer": "+31624180684",
+        "teruggebeld": false,
+        "tijd": "15:15"
       }
     ],
     "beantwoordZonderAgent": 0,
     "date": "2026-10-09",
-    "generated_at": "2026-10-09T13:10:51Z",
-    "nietTerugGebeld": 19,
+    "generated_at": "2026-10-09T13:20:53Z",
+    "nietTerugGebeld": 21,
     "nietTerugGebeldNummers": [
       {
         "callResult": "overflowed",
@@ -4759,10 +4773,24 @@
         "nummer": "+31623728682",
         "teruggebeld": false,
         "tijd": "15:02"
+      },
+      {
+        "callResult": "overflowed",
+        "naam": "Onbekend",
+        "nummer": "+31611429531",
+        "teruggebeld": false,
+        "tijd": "15:03"
+      },
+      {
+        "callResult": "abandoned",
+        "naam": "Onbekend",
+        "nummer": "+31624180684",
+        "teruggebeld": false,
+        "tijd": "15:15"
       }
     ],
     "terugGebeld": 0,
-    "totaalGemist": 19,
-    "totaalInbound": 19
+    "totaalGemist": 21,
+    "totaalInbound": 21
   }
 }
