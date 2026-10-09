@@ -1,10 +1,10 @@
 {
   "date": "2026-10-09",
-  "generated_at": "2026-10-09T09:50:43Z",
-  "totaalInbound": 6,
-  "totaalGemist": 6,
+  "generated_at": "2026-10-09T10:01:02Z",
+  "totaalInbound": 8,
+  "totaalGemist": 8,
   "terugGebeld": 0,
-  "nietTerugGebeld": 6,
+  "nietTerugGebeld": 8,
   "nietTerugGebeldNummers": [
     {
       "nummer": "+31610340552",
@@ -46,6 +46,20 @@
       "naam": "Onbekend",
       "tijd": "11:42",
       "callResult": "overflowed",
+      "teruggebeld": false
+    },
+    {
+      "nummer": "+31657999015",
+      "naam": "Onbekend",
+      "tijd": "11:44",
+      "callResult": "overflowed",
+      "teruggebeld": false
+    },
+    {
+      "nummer": "+31614249400",
+      "naam": "Onbekend",
+      "tijd": "11:51",
+      "callResult": "abandoned",
       "teruggebeld": false
     }
   ],
@@ -90,6 +104,20 @@
       "naam": "Onbekend",
       "tijd": "11:42",
       "callResult": "overflowed",
+      "teruggebeld": false
+    },
+    {
+      "nummer": "+31657999015",
+      "naam": "Onbekend",
+      "tijd": "11:44",
+      "callResult": "overflowed",
+      "teruggebeld": false
+    },
+    {
+      "nummer": "+31614249400",
+      "naam": "Onbekend",
+      "tijd": "11:51",
+      "callResult": "abandoned",
       "teruggebeld": false
     }
   ],
