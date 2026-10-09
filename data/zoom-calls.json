@@ -1,10 +1,10 @@
 {
   "date": "2026-10-09",
-  "generated_at": "2026-10-09T08:30:50Z",
-  "totaalInbound": 4,
-  "totaalGemist": 4,
+  "generated_at": "2026-10-09T08:40:51Z",
+  "totaalInbound": 5,
+  "totaalGemist": 5,
   "terugGebeld": 0,
-  "nietTerugGebeld": 4,
+  "nietTerugGebeld": 5,
   "nietTerugGebeldNummers": [
     {
       "nummer": "+31610340552",
@@ -32,6 +32,13 @@
       "naam": "Onbekend",
       "tijd": "09:43",
       "callResult": "overflowed",
+      "teruggebeld": false
+    },
+    {
+      "nummer": "+31623121991",
+      "naam": "Onbekend",
+      "tijd": "10:28",
+      "callResult": "abandoned",
       "teruggebeld": false
     }
   ],
@@ -62,6 +69,13 @@
       "naam": "Onbekend",
       "tijd": "09:43",
       "callResult": "overflowed",
+      "teruggebeld": false
+    },
+    {
+      "nummer": "+31623121991",
+      "naam": "Onbekend",
+      "tijd": "10:28",
+      "callResult": "abandoned",
       "teruggebeld": false
     }
   ],

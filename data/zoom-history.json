@@ -4515,12 +4515,19 @@
         "nummer": "+31615504975",
         "teruggebeld": false,
         "tijd": "09:43"
+      },
+      {
+        "callResult": "abandoned",
+        "naam": "Onbekend",
+        "nummer": "+31623121991",
+        "teruggebeld": false,
+        "tijd": "10:28"
       }
     ],
     "beantwoordZonderAgent": 0,
     "date": "2026-10-09",
-    "generated_at": "2026-10-09T08:30:50Z",
-    "nietTerugGebeld": 4,
+    "generated_at": "2026-10-09T08:40:51Z",
+    "nietTerugGebeld": 5,
     "nietTerugGebeldNummers": [
       {
         "callResult": "overflowed",
@@ -4549,10 +4556,17 @@
         "nummer": "+31615504975",
         "teruggebeld": false,
         "tijd": "09:43"
+      },
+      {
+        "callResult": "abandoned",
+        "naam": "Onbekend",
+        "nummer": "+31623121991",
+        "teruggebeld": false,
+        "tijd": "10:28"
       }
     ],
     "terugGebeld": 0,
-    "totaalGemist": 4,
-    "totaalInbound": 4
+    "totaalGemist": 5,
+    "totaalInbound": 5
   }
 }
