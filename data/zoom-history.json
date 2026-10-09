@@ -4634,12 +4634,19 @@
         "nummer": "+31624180684",
         "teruggebeld": false,
         "tijd": "15:15"
+      },
+      {
+        "callResult": "abandoned",
+        "naam": "Onbekend",
+        "nummer": "+31611429531",
+        "teruggebeld": false,
+        "tijd": "16:03"
       }
     ],
     "beantwoordZonderAgent": 0,
     "date": "2026-10-09",
-    "generated_at": "2026-10-09T14:01:08Z",
-    "nietTerugGebeld": 21,
+    "generated_at": "2026-10-09T14:10:46Z",
+    "nietTerugGebeld": 22,
     "nietTerugGebeldNummers": [
       {
         "callResult": "overflowed",
@@ -4787,10 +4794,17 @@
         "nummer": "+31624180684",
         "teruggebeld": false,
         "tijd": "15:15"
+      },
+      {
+        "callResult": "abandoned",
+        "naam": "Onbekend",
+        "nummer": "+31611429531",
+        "teruggebeld": false,
+        "tijd": "16:03"
       }
     ],
     "terugGebeld": 0,
-    "totaalGemist": 21,
-    "totaalInbound": 21
+    "totaalGemist": 22,
+    "totaalInbound": 22
   }
 }
