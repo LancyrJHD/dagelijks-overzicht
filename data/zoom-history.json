@@ -4592,12 +4592,19 @@
         "nummer": "+31637398933",
         "teruggebeld": false,
         "tijd": "14:26"
+      },
+      {
+        "callResult": "overflowed",
+        "naam": "Onbekend",
+        "nummer": "+31611429531",
+        "teruggebeld": false,
+        "tijd": "14:37"
       }
     ],
     "beantwoordZonderAgent": 0,
     "date": "2026-10-09",
-    "generated_at": "2026-10-09T12:40:47Z",
-    "nietTerugGebeld": 15,
+    "generated_at": "2026-10-09T12:50:46Z",
+    "nietTerugGebeld": 16,
     "nietTerugGebeldNummers": [
       {
         "callResult": "overflowed",
@@ -4703,10 +4710,17 @@
         "nummer": "+31637398933",
         "teruggebeld": false,
         "tijd": "14:26"
+      },
+      {
+        "callResult": "overflowed",
+        "naam": "Onbekend",
+        "nummer": "+31611429531",
+        "teruggebeld": false,
+        "tijd": "14:37"
       }
     ],
     "terugGebeld": 0,
-    "totaalGemist": 15,
-    "totaalInbound": 15
+    "totaalGemist": 16,
+    "totaalInbound": 16
   }
 }
