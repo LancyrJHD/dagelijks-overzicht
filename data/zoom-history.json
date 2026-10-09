@@ -4501,12 +4501,19 @@
         "nummer": "+31655198077",
         "teruggebeld": false,
         "tijd": "09:05"
+      },
+      {
+        "callResult": "overflowed",
+        "naam": "Onbekend",
+        "nummer": "+31623728682",
+        "teruggebeld": false,
+        "tijd": "09:09"
       }
     ],
     "beantwoordZonderAgent": 0,
     "date": "2026-10-09",
-    "generated_at": "2026-10-09T07:10:46Z",
-    "nietTerugGebeld": 2,
+    "generated_at": "2026-10-09T07:20:41Z",
+    "nietTerugGebeld": 3,
     "nietTerugGebeldNummers": [
       {
         "callResult": "overflowed",
@@ -4521,10 +4528,17 @@
         "nummer": "+31655198077",
         "teruggebeld": false,
         "tijd": "09:05"
+      },
+      {
+        "callResult": "overflowed",
+        "naam": "Onbekend",
+        "nummer": "+31623728682",
+        "teruggebeld": false,
+        "tijd": "09:09"
       }
     ],
     "terugGebeld": 0,
-    "totaalGemist": 2,
-    "totaalInbound": 2
+    "totaalGemist": 3,
+    "totaalInbound": 3
   }
 }
