@@ -1,10 +1,10 @@
 {
   "date": "2026-10-09",
-  "generated_at": "2026-10-09T09:40:48Z",
-  "totaalInbound": 5,
-  "totaalGemist": 5,
+  "generated_at": "2026-10-09T09:50:43Z",
+  "totaalInbound": 6,
+  "totaalGemist": 6,
   "terugGebeld": 0,
-  "nietTerugGebeld": 5,
+  "nietTerugGebeld": 6,
   "nietTerugGebeldNummers": [
     {
       "nummer": "+31610340552",
@@ -39,6 +39,13 @@
       "naam": "Onbekend",
       "tijd": "10:28",
       "callResult": "abandoned",
+      "teruggebeld": false
+    },
+    {
+      "nummer": "+31614249400",
+      "naam": "Onbekend",
+      "tijd": "11:42",
+      "callResult": "overflowed",
       "teruggebeld": false
     }
   ],
@@ -76,6 +83,13 @@
       "naam": "Onbekend",
       "tijd": "10:28",
       "callResult": "abandoned",
+      "teruggebeld": false
+    },
+    {
+      "nummer": "+31614249400",
+      "naam": "Onbekend",
+      "tijd": "11:42",
+      "callResult": "overflowed",
       "teruggebeld": false
     }
   ],
