@@ -4585,12 +4585,19 @@
         "nummer": "+31627538694",
         "teruggebeld": false,
         "tijd": "14:00"
+      },
+      {
+        "callResult": "overflowed",
+        "naam": "Onbekend",
+        "nummer": "+31637398933",
+        "teruggebeld": false,
+        "tijd": "14:26"
       }
     ],
     "beantwoordZonderAgent": 0,
     "date": "2026-10-09",
-    "generated_at": "2026-10-09T12:30:54Z",
-    "nietTerugGebeld": 14,
+    "generated_at": "2026-10-09T12:40:47Z",
+    "nietTerugGebeld": 15,
     "nietTerugGebeldNummers": [
       {
         "callResult": "overflowed",
@@ -4689,10 +4696,17 @@
         "nummer": "+31627538694",
         "teruggebeld": false,
         "tijd": "14:00"
+      },
+      {
+        "callResult": "overflowed",
+        "naam": "Onbekend",
+        "nummer": "+31637398933",
+        "teruggebeld": false,
+        "tijd": "14:26"
       }
     ],
     "terugGebeld": 0,
-    "totaalGemist": 14,
-    "totaalInbound": 14
+    "totaalGemist": 15,
+    "totaalInbound": 15
   }
 }
